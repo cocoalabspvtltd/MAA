@@ -34,6 +34,7 @@
     {
         // iPhone / iPod Touch
         return UIInterfaceOrientationMaskPortrait;
+//ccccg
     }
     
 }
