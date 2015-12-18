@@ -7,17 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCED1C0AA1D200E262F9 /* ResetPasswordOTPVC.m */; settings = {ASSET_TAGS = (); }; };
-		555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCF01C0AA25200E262F9 /* SignUpPage1VC.m */; settings = {ASSET_TAGS = (); }; };
-		555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCF31C0AA27700E262F9 /* SignUpPage2VC.m */; settings = {ASSET_TAGS = (); }; };
-		555BBCFE1C0AA5DC00E262F9 /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCFD1C0AA5DC00E262F9 /* HomePageVC.m */; settings = {ASSET_TAGS = (); }; };
-		55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFD1381C0979BE00A07A75 /* LoginPageVC.m */; settings = {ASSET_TAGS = (); }; };
-		55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C674E01C09D92D005AD9E5 /* JoinNowVC.m */; settings = {ASSET_TAGS = (); }; };
+		555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCED1C0AA1D200E262F9 /* ResetPasswordOTPVC.m */; };
+		555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCF01C0AA25200E262F9 /* SignUpPage1VC.m */; };
+		555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCF31C0AA27700E262F9 /* SignUpPage2VC.m */; };
+		555BBCFE1C0AA5DC00E262F9 /* HomePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCFD1C0AA5DC00E262F9 /* HomePageVC.m */; };
+		55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFD1381C0979BE00A07A75 /* LoginPageVC.m */; };
+		55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C674E01C09D92D005AD9E5 /* JoinNowVC.m */; };
 		55C674E31C09D986005AD9E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C674E21C09D986005AD9E5 /* QuartzCore.framework */; };
-		55D352D51C0B441C008CCEC1 /* QuestionsPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352D41C0B441C008CCEC1 /* QuestionsPageVC.m */; settings = {ASSET_TAGS = (); }; };
-		55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352D71C0B4485008CCEC1 /* ProfilePageVC.m */; settings = {ASSET_TAGS = (); }; };
-		55D352DB1C0B45E1008CCEC1 /* AppointmentPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352DA1C0B45E1008CCEC1 /* AppointmentPageVC.m */; settings = {ASSET_TAGS = (); }; };
-		55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352DD1C0B461E008CCEC1 /* NotificationsPageVC.m */; settings = {ASSET_TAGS = (); }; };
+		55D352D51C0B441C008CCEC1 /* QuestionsPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352D41C0B441C008CCEC1 /* QuestionsPageVC.m */; };
+		55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352D71C0B4485008CCEC1 /* ProfilePageVC.m */; };
+		55D352DB1C0B45E1008CCEC1 /* AppointmentPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352DA1C0B45E1008CCEC1 /* AppointmentPageVC.m */; };
+		55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352DD1C0B461E008CCEC1 /* NotificationsPageVC.m */; };
 		55D60D831C08B94600963D5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D60D821C08B94600963D5D /* main.m */; };
 		55D60D861C08B94600963D5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D60D851C08B94600963D5D /* AppDelegate.m */; };
 		55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8A1C08B94600963D5D /* Main.storyboard */; };
@@ -25,19 +25,19 @@
 		55D60D911C08B94600963D5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8F1C08B94600963D5D /* LaunchScreen.storyboard */; };
 		55D60D9C1C08B94700963D5D /* MAATests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D60D9B1C08B94700963D5D /* MAATests.m */; };
 		55D60DA71C08B94700963D5D /* MAAUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D60DA61C08B94700963D5D /* MAAUITests.m */; };
-		55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EAC8421C0A052D00F31280 /* ForgotpasswordVC.m */; settings = {ASSET_TAGS = (); }; };
-		55EAC8461C0A09CE00F31280 /* field__white_box2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55EAC8441C0A09CE00F31280 /* field__white_box2@2x.png */; settings = {ASSET_TAGS = (); }; };
-		55EAC8471C0A09CE00F31280 /* field_white_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55EAC8451C0A09CE00F31280 /* field_white_box@2x.png */; settings = {ASSET_TAGS = (); }; };
-		7C0981D81C1E661600B1BE99 /* SearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0981D71C1E661600B1BE99 /* SearchResultsVC.m */; settings = {ASSET_TAGS = (); }; };
-		7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C29EE791C1A72B400A9481E /* SearchTVC.m */; settings = {ASSET_TAGS = (); }; };
-		7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C840B671C19FF9B0044C99A /* SearchVC.m */; settings = {ASSET_TAGS = (); }; };
-		7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8AD8551C18A8FC00C4E3BD /* HomePageCVC.m */; settings = {ASSET_TAGS = (); }; };
-		7C8AD8641C18BBA500C4E3BD /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8AD85B1C18BBA500C4E3BD /* 4.png */; settings = {ASSET_TAGS = (); }; };
-		7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8AD85C1C18BBA500C4E3BD /* 5.png */; settings = {ASSET_TAGS = (); }; };
-		7C9FF5531C1F4D2400C72512 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9FF5521C1F4D2400C72512 /* 1.png */; settings = {ASSET_TAGS = (); }; };
-		7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FF5551C1F5F9A00C72512 /* SearchFilterVC.m */; settings = {ASSET_TAGS = (); }; };
-		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; settings = {ASSET_TAGS = (); }; };
-		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; settings = {ASSET_TAGS = (); }; };
+		55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55EAC8421C0A052D00F31280 /* ForgotpasswordVC.m */; };
+		55EAC8461C0A09CE00F31280 /* field__white_box2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55EAC8441C0A09CE00F31280 /* field__white_box2@2x.png */; };
+		55EAC8471C0A09CE00F31280 /* field_white_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 55EAC8451C0A09CE00F31280 /* field_white_box@2x.png */; };
+		7C0981D81C1E661600B1BE99 /* SearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C0981D71C1E661600B1BE99 /* SearchResultsVC.m */; };
+		7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C29EE791C1A72B400A9481E /* SearchTVC.m */; };
+		7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C840B671C19FF9B0044C99A /* SearchVC.m */; };
+		7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C8AD8551C18A8FC00C4E3BD /* HomePageCVC.m */; };
+		7C8AD8641C18BBA500C4E3BD /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8AD85B1C18BBA500C4E3BD /* 4.png */; };
+		7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8AD85C1C18BBA500C4E3BD /* 5.png */; };
+		7C9FF5531C1F4D2400C72512 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9FF5521C1F4D2400C72512 /* 1.png */; };
+		7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FF5551C1F5F9A00C72512 /* SearchFilterVC.m */; };
+		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
+		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
