@@ -20,7 +20,9 @@
     
     IBOutlet UIButton *buttonBack;
 }
-
+@property (nonatomic, strong) NSString *nameString;
+@property (nonatomic, strong) NSString *phoneNumberString;
+@property (nonatomic, strong) NSString *emailString;
 - (IBAction)funcButtonBack:(id)sender;
 
 - (IBAction)funcButtonSubmit:(id)sender;
