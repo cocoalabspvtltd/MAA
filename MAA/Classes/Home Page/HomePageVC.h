@@ -10,10 +10,10 @@
 
 @interface HomePageVC : UIViewController
 
-{    
-    IBOutlet UICollectionView *collectionViewHome;
+{
+    IBOutlet UISearchBar *searchBar;
     
-    IBOutlet UIButton *buttonSearch;
+    IBOutlet UICollectionView *collectionViewHome;
     
     NSArray *arrayHomePageListing;
     
