@@ -2592,7 +2592,7 @@
         <!--Verification Successfull-->
         <scene sceneID="fud-py-acX">
             <objects>
-                <viewController title="Verification Successfull" id="YO6-FO-za4" sceneMemberID="viewController">
+                <viewController title="Verification Successfull" id="YO6-FO-za4" customClass="OTPVerificationSuccessfulViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="z6e-TQ-hDB"/>
                         <viewControllerLayoutGuide type="bottom" id="zBF-iU-zQj"/>
@@ -3275,6 +3275,6 @@
         <image name="users" width="56" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="FpB-4z-5hg"/>
+        <segue reference="zPT-jC-iDc"/>
     </inferredMetricsTieBreakers>
 </document>
