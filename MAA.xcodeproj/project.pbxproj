@@ -42,6 +42,7 @@
 		C086ED021C285D25009DF69F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED011C285D25009DF69F /* CoreData.framework */; };
 		C086ED041C285D30009DF69F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED031C285D30009DF69F /* MobileCoreServices.framework */; };
 		C086ED061C285D3D009DF69F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED051C285D3D009DF69F /* SystemConfiguration.framework */; };
+		C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED1A1C287364009DF69F /* EmailSentVC.m */; };
 		C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BE979C1C2485510037E328 /* MBProgressHUD.m */; };
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BA1C24870D0037E328 /* libCLToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97B11C24862D0037E328 /* libCLToolKit.a */; };
@@ -153,6 +154,8 @@
 		C086ED011C285D25009DF69F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C086ED031C285D30009DF69F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C086ED051C285D3D009DF69F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C086ED191C287364009DF69F /* EmailSentVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmailSentVC.h; sourceTree = "<group>"; };
+		C086ED1A1C287364009DF69F /* EmailSentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailSentVC.m; sourceTree = "<group>"; };
 		C0BE979B1C2485510037E328 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SimpleLoadingView/MBProgressHUD.h; sourceTree = "<group>"; };
 		C0BE979C1C2485510037E328 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SimpleLoadingView/MBProgressHUD.m; sourceTree = "<group>"; };
 		C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLFacebookHandler.xcodeproj; path = CLFacebookHandler/CLFacebookHandler.xcodeproj; sourceTree = "<group>"; };
@@ -370,6 +373,8 @@
 				55EAC8421C0A052D00F31280 /* ForgotpasswordVC.m */,
 				555BBCEC1C0AA1D200E262F9 /* ResetPasswordOTPVC.h */,
 				555BBCED1C0AA1D200E262F9 /* ResetPasswordOTPVC.m */,
+				C086ED191C287364009DF69F /* EmailSentVC.h */,
+				C086ED1A1C287364009DF69F /* EmailSentVC.m */,
 			);
 			name = "Login Module";
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */,
+				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
