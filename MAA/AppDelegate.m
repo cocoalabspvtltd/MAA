@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginPageVC.h"
-
+#import "CLFacebookHandler/FacebookWrapper.h"
 @interface AppDelegate ()
 
 @end
@@ -18,7 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.    
+    // Override point for customization after application launch.
+    return [[FacebookWrapper standardWrapper] handlerApplication:application didFinishLaunchingWithOptions:launchOptions ];
     return YES;
 }
 
@@ -34,9 +35,12 @@
     {
         // iPhone / iPod Touch
         return UIInterfaceOrientationMaskPortrait;
-//ccccg
     }
     
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FacebookWrapper standardWrapper]handleapplication:application openURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -54,6 +58,7 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [[FacebookWrapper standardWrapper] activateApp];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
