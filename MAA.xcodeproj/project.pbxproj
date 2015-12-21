@@ -44,6 +44,7 @@
 		C086ED061C285D3D009DF69F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED051C285D3D009DF69F /* SystemConfiguration.framework */; };
 		C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED1A1C287364009DF69F /* EmailSentVC.m */; };
 		C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */; };
+		C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED231C287546009DF69F /* ResetPasswordVC.m */; };
 		C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BE979C1C2485510037E328 /* MBProgressHUD.m */; };
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BA1C24870D0037E328 /* libCLToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97B11C24862D0037E328 /* libCLToolKit.a */; };
@@ -159,6 +160,8 @@
 		C086ED1A1C287364009DF69F /* EmailSentVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmailSentVC.m; sourceTree = "<group>"; };
 		C086ED1F1C28748D009DF69F /* OTPVerificationSuccessfulViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OTPVerificationSuccessfulViewController.h; sourceTree = "<group>"; };
 		C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPVerificationSuccessfulViewController.m; sourceTree = "<group>"; };
+		C086ED221C287546009DF69F /* ResetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordVC.h; sourceTree = "<group>"; };
+		C086ED231C287546009DF69F /* ResetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordVC.m; sourceTree = "<group>"; };
 		C0BE979B1C2485510037E328 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SimpleLoadingView/MBProgressHUD.h; sourceTree = "<group>"; };
 		C0BE979C1C2485510037E328 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SimpleLoadingView/MBProgressHUD.m; sourceTree = "<group>"; };
 		C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLFacebookHandler.xcodeproj; path = CLFacebookHandler/CLFacebookHandler.xcodeproj; sourceTree = "<group>"; };
@@ -380,6 +383,8 @@
 				C086ED1A1C287364009DF69F /* EmailSentVC.m */,
 				C086ED1F1C28748D009DF69F /* OTPVerificationSuccessfulViewController.h */,
 				C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */,
+				C086ED221C287546009DF69F /* ResetPasswordVC.h */,
+				C086ED231C287546009DF69F /* ResetPasswordVC.m */,
 			);
 			name = "Login Module";
 			sourceTree = "<group>";
@@ -630,6 +635,7 @@
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
 				55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */,
+				C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */,
 				55D60D861C08B94600963D5D /* AppDelegate.m in Sources */,
 				C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */,
 				55D60D831C08B94600963D5D /* main.m in Sources */,
