@@ -10,6 +10,7 @@
 
 #define AppName @"MAA"
 #define ERROR @"error"
+#define ACCESS_TOKEN @"token"
 
 #define NoNetworkmessage @"Network not available"
 #define NoNetworkErrorName @"No internet Access"

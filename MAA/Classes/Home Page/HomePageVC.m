@@ -128,17 +128,20 @@
 #pragma mark - Get Categories api
 
 -(void)getCategoriesApiCall{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSLog(@"Access Token:%@",accessToken);
     NSString *getCategoriesUrlString = [Baseurl stringByAppendingString:GetCategoriesUrl];
     NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
-    [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"token"];
+    [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
     [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
     [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:@"offset"];
     [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:LimitValue] forKey:@"limit"];
     if(self.offsetValue == 0){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
-    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object;%@",responseObject);
         arrayHomePageListing = [responseObject valueForKey:Datakey];
         self.offsetValue++;
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

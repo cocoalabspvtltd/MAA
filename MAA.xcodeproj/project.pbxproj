@@ -38,7 +38,7 @@
 		7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FF5551C1F5F9A00C72512 /* SearchFilterVC.m */; };
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
-		C086ECE21C2859E7009DF69F /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ECDF1C2859E7009DF69F /* libNetworkHandler.a */; };
+		9F3B59FE1C2C68000057075A /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F3B59FB1C2C68000057075A /* libNetworkHandler.a */; };
 		C086ED021C285D25009DF69F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED011C285D25009DF69F /* CoreData.framework */; };
 		C086ED041C285D30009DF69F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED031C285D30009DF69F /* MobileCoreServices.framework */; };
 		C086ED061C285D3D009DF69F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED051C285D3D009DF69F /* SystemConfiguration.framework */; };
@@ -146,10 +146,10 @@
 		7CF40FE81C1D77600020EE33 /* block1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block1@2x.png"; sourceTree = "<group>"; };
 		7CF648091C1F36F5007DA73F /* SearchResultsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultsTVC.h; path = "Classes/Home Page/Search Results/SearchResultsTVC.h"; sourceTree = "<group>"; };
 		7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsTVC.m; path = "Classes/Home Page/Search Results/SearchResultsTVC.m"; sourceTree = "<group>"; };
-		C086ECDE1C2859E6009DF69F /* CLAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLAlertHandler.h; path = NwkHndler/CLAlertHandler.h; sourceTree = "<group>"; };
-		C086ECDF1C2859E7009DF69F /* libNetworkHandler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNetworkHandler.a; path = NwkHndler/libNetworkHandler.a; sourceTree = "<group>"; };
-		C086ECE01C2859E7009DF69F /* NetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkHandler.h; path = NwkHndler/NetworkHandler.h; sourceTree = "<group>"; };
-		C086ECE11C2859E7009DF69F /* RequestBodyGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestBodyGenerator.h; path = NwkHndler/RequestBodyGenerator.h; sourceTree = "<group>"; };
+		9F3B59FA1C2C68000057075A /* CLAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLAlertHandler.h; path = FacebookHandler/CLAlertHandler.h; sourceTree = "<group>"; };
+		9F3B59FB1C2C68000057075A /* libNetworkHandler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNetworkHandler.a; path = FacebookHandler/libNetworkHandler.a; sourceTree = "<group>"; };
+		9F3B59FC1C2C68000057075A /* NetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkHandler.h; path = FacebookHandler/NetworkHandler.h; sourceTree = "<group>"; };
+		9F3B59FD1C2C68000057075A /* RequestBodyGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestBodyGenerator.h; path = FacebookHandler/RequestBodyGenerator.h; sourceTree = "<group>"; };
 		C086ECED1C285B37009DF69F /* ServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceConstants.h; sourceTree = "<group>"; };
 		C086ECF31C285B51009DF69F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C086ECFD1C285BEF009DF69F /* MAA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAA-Prefix.pch"; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */,
 				C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */,
 				C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */,
-				C086ECE21C2859E7009DF69F /* libNetworkHandler.a in Frameworks */,
+				9F3B59FE1C2C68000057075A /* libNetworkHandler.a in Frameworks */,
 				C0BE97BA1C24870D0037E328 /* libCLToolKit.a in Frameworks */,
 				55C674E31C09D986005AD9E5 /* QuartzCore.framework in Frameworks */,
 			);
@@ -314,10 +314,10 @@
 		55D60D801C08B94600963D5D /* MAA */ = {
 			isa = PBXGroup;
 			children = (
-				C086ECDE1C2859E6009DF69F /* CLAlertHandler.h */,
-				C086ECDF1C2859E7009DF69F /* libNetworkHandler.a */,
-				C086ECE01C2859E7009DF69F /* NetworkHandler.h */,
-				C086ECE11C2859E7009DF69F /* RequestBodyGenerator.h */,
+				9F3B59FA1C2C68000057075A /* CLAlertHandler.h */,
+				9F3B59FB1C2C68000057075A /* libNetworkHandler.a */,
+				9F3B59FC1C2C68000057075A /* NetworkHandler.h */,
+				9F3B59FD1C2C68000057075A /* RequestBodyGenerator.h */,
 				C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */,
 				C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */,
 				C0BE979E1C2485560037E328 /* ProgressHud */,
@@ -802,6 +802,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MAA/NwkHndler",
+					"$(PROJECT_DIR)/MAA/FacebookHandler",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",
@@ -826,6 +827,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/MAA/NwkHndler",
+					"$(PROJECT_DIR)/MAA/FacebookHandler",
 				);
 				OTHER_LDFLAGS = (
 					"-all_load",

@@ -49,10 +49,9 @@
 }
 
 - (IBAction)loginButtonAction:(UIButton *)sender {
-    // [self settingHomePage];
-    if([self isValidLogIn]){
+    //if([self isValidLogIn]){
         [self callingLogInApi];
-    }
+   // }
 }
 - (IBAction)facebookButtonAction:(UIButton *)sender {
     [[FacebookWrapper standardWrapper] openSessionWithAllowLoginUI:YES];
@@ -90,8 +89,11 @@
     NSString *logInUrlString = [Baseurl stringByAppendingString:LogInUrl];
     NSMutableDictionary *logInDictionary = [[NSMutableDictionary alloc] init];
     NSString *passwordInSh1 = [self sha1:textFieldPassword.text];
-    [logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
-    [logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
+   
+    //[logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
+    [logInDictionary setValue:@"j@j.j" forKey:@"uname"];
+    [logInDictionary setValue:@"jjjjjj" forKey:@"pwd"];
+    //[logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
     NSLog(@"Log In Dictionary:%@",logInDictionary);
     NSLog(@"Log In url:%@",logInUrlString);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -104,6 +106,8 @@
             [errorAlert show];
         }
         else{
+            [[NSUserDefaults standardUserDefaults] setValue:[[responseObject valueForKey:Datakey] valueForKey:@"token"] forKey:ACCESS_TOKEN];
+            [[NSUserDefaults standardUserDefaults] synchronize];
             [self settingHomePage];
         }
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
