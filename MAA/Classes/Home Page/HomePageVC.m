@@ -7,11 +7,13 @@
 //
 
 #import "HomePageVC.h"
+#import "CLToolKit/ImageCache.h"
 #import <QuartzCore/QuartzCore.h>
 #import "HomePageCVC.h"
 
 @interface HomePageVC ()<UIScrollViewDelegate>
 @property (nonatomic, assign) int offsetValue;
+@property (nonatomic, assign) int limitValue;
 @property (nonatomic, strong) NSMutableArray *categoriesMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @end
@@ -34,6 +36,7 @@
 
 -(void)initialisation{
     self.offsetValue = 0;
+    self.limitValue = 10;
     self.categoriesMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -120,8 +123,26 @@
     //[cell.cellImageViewIcon setImage:[UIImage imageNamed:[arrayHomePageListingImages objectAtIndex:indexPath.row]]];
     NSLog(@"Text:%@",[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]);
     cell.cellLabelTitle.text = [[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
-    
-    
+    NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/Category"];
+    NSURL *imageUrl = [NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/en/4/4e/Tis_The_Season_To_Be_Fearless_Cover.jpg"];
+    UIImage *localImage;
+    localImage = [[ImageCache sharedCache] imageFromFolder:folderPath WithIdentifier:[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"]];
+    if(!localImage){
+        [MBProgressHUD showHUDAddedTo:cell.cellImageViewIcon animated:YES];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+            UIImage *tempImage = [UIImage imageWithData:imageData];
+            [[ImageCache sharedCache]addImage:tempImage toFolder:folderPath toCacheWithIdentifier:[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"]];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.cellImageViewIcon.image = tempImage;
+                [MBProgressHUD hideAllHUDsForView:cell.cellImageViewIcon animated:YES];
+            }
+                           );
+        });
+    }
+    else{
+        cell.cellImageViewIcon.image = localImage;
+    }
     return cell;
 }
 
@@ -135,7 +156,8 @@
     [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
     [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
     [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:@"offset"];
-    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:LimitValue] forKey:@"limit"];
+    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:@"limit"];
+    NSLog(@"Get Sub categories mutable Dictionary:%@",getSubcategoriesMutableDictionary);
     if(self.offsetValue == 0){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
@@ -143,14 +165,15 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Object;%@",responseObject);
         arrayHomePageListing = [responseObject valueForKey:Datakey];
-        self.offsetValue++;
+        self.offsetValue=self.offsetValue+self.limitValue;
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self.bottomProgressIndicatorView stopAnimating];
         [self.categoriesMutableArray addObjectsFromArray:arrayHomePageListing];
         [collectionViewHome reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [self.bottomProgressIndicatorView stopAnimating];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
-        self.offsetValue--;
         if([errorDescription isEqualToString:NoNetworkErrorName]){
             errorMessage = NoNetworkmessage;
         }
@@ -168,6 +191,7 @@
         float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
         if (endScrolling >= scrollView.contentSize.height)
         {
+            [self getCategoriesApiCall];
             [self.bottomProgressIndicatorView startAnimating];
         }
         else{
