@@ -11,7 +11,7 @@
 #import "ResetPasswordOTPVC.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@interface SignUpPage2VC ()<UIPickerViewDataSource,UIPickerViewDelegate>
+@interface SignUpPage2VC ()<UIPickerViewDataSource,UIPickerViewDelegate,UITextFieldDelegate>
 @property (nonatomic, strong) UIDatePicker *dobDatePicker;
 @property (nonatomic, strong) NSString *DOBstringValue;
 @property (nonatomic, strong) UIPickerView *genderPickerView;
@@ -286,6 +286,19 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ResetPasswordOTPVC *resetOTPPage = (ResetPasswordOTPVC *)[storyboard instantiateViewControllerWithIdentifier:@"ResetPasswordOTPVC"];
     [self.navigationController pushViewController:resetOTPPage animated:YES];
+}
+
+#pragma mark - TExtField Delegates
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if(textField == textFieldPassword){
+        [textFieldPassword resignFirstResponder];
+        [textFieldReTypePassword becomeFirstResponder];
+    }
+    else if (textField == textFieldReTypePassword){
+        [textFieldReTypePassword resignFirstResponder];
+    }
+    return YES;
 }
 /*
  #pragma mark - Navigation

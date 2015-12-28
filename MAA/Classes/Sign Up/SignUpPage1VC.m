@@ -10,7 +10,7 @@
 #import "SignUpPage1VC.h"
 #import "LoginPageVC.h"
 
-@interface SignUpPage1VC ()
+@interface SignUpPage1VC ()<UITextFieldDelegate>
 
 @end
 
@@ -124,6 +124,19 @@
     }];
 }
 
+
+#pragma mark - TextField Delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if(textField == textFieldName){
+        [textFieldName resignFirstResponder];
+        [textFieldPhone becomeFirstResponder];
+    }
+    else if (textField == textFieldEmail){
+        [textFieldEmail resignFirstResponder];
+    }
+    return YES;
+}
 /*
  #pragma mark - Navigation
  

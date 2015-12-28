@@ -3137,7 +3137,7 @@
                                             <constraint firstAttribute="height" constant="35" id="CRn-zV-MDV"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
                                         <connections>
                                             <outlet property="delegate" destination="USm-td-k5Z" id="FD2-Xk-Cd8"/>
                                         </connections>
@@ -3168,7 +3168,7 @@
                                             <constraint firstAttribute="height" constant="33" id="nCW-gD-6os"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                         <connections>
                                             <outlet property="delegate" destination="USm-td-k5Z" id="hHy-g4-BUJ"/>
                                         </connections>
@@ -3199,7 +3199,7 @@
                                             <constraint firstAttribute="height" constant="33" id="Dwc-F3-ovK"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="USm-td-k5Z" id="HFQ-CE-c3k"/>
                                         </connections>
@@ -3216,7 +3216,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="GKS-iV-rg9" kind="show" id="Soh-6Y-2dD"/>
+                                            <action selector="nextButtonAction:" destination="USm-td-k5Z" eventType="touchUpInside" id="LSa-oa-xhW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -3598,7 +3598,7 @@
         <!--Sign Up Page2VC-->
         <scene sceneID="pLw-NE-sc4">
             <objects>
-                <viewController id="GKS-iV-rg9" customClass="SignUpPage2VC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignUpPage2VC" id="GKS-iV-rg9" customClass="SignUpPage2VC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nUb-7E-GTx"/>
                         <viewControllerLayoutGuide type="bottom" id="LBc-Ds-A9N"/>
@@ -3705,7 +3705,7 @@
                                             <constraint firstAttribute="height" constant="33" id="vMI-JN-fdO"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="GKS-iV-rg9" id="5JV-ae-uTE"/>
                                         </connections>
@@ -3736,7 +3736,7 @@
                                             <constraint firstAttribute="height" constant="33" id="uCU-WI-4Og"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="GKS-iV-rg9" id="OPi-AQ-3gZ"/>
                                         </connections>
