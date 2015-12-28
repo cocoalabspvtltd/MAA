@@ -377,7 +377,7 @@
                                             <constraint firstAttribute="height" constant="35" id="uHG-1I-4BR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="Oo4-Bz-adI" id="YUB-le-kHm"/>
                                         </connections>
@@ -414,7 +414,7 @@
                                             <constraint firstAttribute="height" constant="33" id="SCZ-Eh-RMe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="Oo4-Bz-adI" id="akY-uX-q5B"/>
                                         </connections>
@@ -430,7 +430,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="2W9-Sa-CCV" kind="show" id="sdO-d5-hXn"/>
+                                            <action selector="nextButtonAction:" destination="Oo4-Bz-adI" eventType="touchUpInside" id="DT6-Ve-fPU"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -2601,7 +2601,7 @@
                                             <constraint firstAttribute="height" constant="35" id="RL5-xI-NxJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="done"/>
                                         <connections>
                                             <outlet property="delegate" destination="xP8-ly-slx" id="2hR-Ku-d4h"/>
                                         </connections>
@@ -2617,7 +2617,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="YO6-FO-za4" kind="show" id="X4s-um-MWA"/>
+                                            <action selector="verifyButtonAction:" destination="xP8-ly-slx" eventType="touchUpInside" id="MH5-FA-lDb"/>
                                         </connections>
                                     </button>
                                 </subviews>

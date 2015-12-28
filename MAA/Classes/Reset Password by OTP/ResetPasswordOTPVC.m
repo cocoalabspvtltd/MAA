@@ -51,6 +51,7 @@
     if([textFieldOTP.text empty]){
         valid = NO;
         errorMessageString = @"Please enter your OTP";
+        [textFieldOTP becomeFirstResponder];
     }
     if(![errorMessageString empty]){
         UIAlertView *validationAlert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];

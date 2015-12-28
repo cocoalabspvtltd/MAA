@@ -10,7 +10,7 @@
 #import "EmailSentVC.h"
 #import "ForgotpasswordVC.h"
 
-@interface ForgotpasswordVC ()
+@interface ForgotpasswordVC ()<UITextFieldDelegate>
 
 @end
 
@@ -160,6 +160,18 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ResetPasswordOTPVC *resetPasswordOTPVC = (ResetPasswordOTPVC *)[storyboard instantiateViewControllerWithIdentifier:@"ResetPasswordOTPVC"];
     [self.navigationController pushViewController:resetPasswordOTPVC animated:YES];
+}
+
+#pragma mark - TextField Delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if(textField == textFieldEmail){
+        [textFieldEmail resignFirstResponder];
+    }
+    else{
+        [textFieldPhone resignFirstResponder];
+    }
+    return YES;
 }
 /*
  #pragma mark - Navigation
