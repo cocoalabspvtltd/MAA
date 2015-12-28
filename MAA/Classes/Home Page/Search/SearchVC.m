@@ -128,7 +128,7 @@
     
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchDoctorUrlString] withBody:getDoctorListMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        self.doctorsArray = [responseObject valueForKey:@"data"];
+        self.doctorsArray = [responseObject valueForKey:Datakey];
         [tableViewSearch reloadData];
         NSLog(@"Respoinse object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -146,7 +146,7 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchDoctorUrlString] withBody:getLocationListMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Data:%@",responseObject);
-        //self.doctorsArray = [responseObject valueForKey:@"data"];
+        //self.doctorsArray = [responseObject valueForKey:Datakey];
         [tableViewSearch reloadData];
         NSLog(@"Respoinse object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {

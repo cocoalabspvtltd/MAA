@@ -11,7 +11,7 @@
 #import <CommonCrypto/CommonDigest.h>
 #import "CLFacebookHandler/FacebookWrapper.h"
 
-@interface LoginPageVC ()
+@interface LoginPageVC ()<UITextFieldDelegate>
 
 @end
 
@@ -246,8 +246,22 @@
 
 -(void)settingHomePage{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    HomePageVC *homePage = (HomePageVC *)[storyboard instantiateViewControllerWithIdentifier:@"HomePageVC"];
-    [self.navigationController pushViewController:homePage animated:NO];
+    UITabBarController *tabBarController = (UITabBarController *)[storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+    [self.navigationController pushViewController:tabBarController animated:NO];
 }
 
+
+#pragma mark - TextFieldDeleagtes
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if(textField == textFieldEmail){
+        [textFieldEmail resignFirstResponder];
+        [textFieldPassword becomeFirstResponder];
+        
+    }
+    else if (textField == textFieldPassword){
+        [textFieldPassword resignFirstResponder];
+    }
+    return YES;
+}
 @end
