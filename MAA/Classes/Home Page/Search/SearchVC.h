@@ -13,9 +13,11 @@
 {
     IBOutlet UITableView *tableViewSearch;
     
-    NSMutableDictionary *dictionaryArrayData;
+   // NSMutableDictionary *dictionaryArrayData;
     
-    NSMutableArray *arraySearchListing;
+   // NSMutableArray *arraySearchListing;
 }
+@property (strong, nonatomic) IBOutlet UISearchBar *locationSerchBar;
+@property (strong, nonatomic) IBOutlet UISearchBar *doctorSearchBar;
 
 @end

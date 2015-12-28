@@ -19,4 +19,4 @@
 #define ResetPasswordUrl @"reset"
 #define CheckEmailExistUrl @"check_email_exist"
 #define GetCategoriesUrl @"get_categories"
-
+#define GetDoctorListApi @"auto_complete"

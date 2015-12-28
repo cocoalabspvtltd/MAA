@@ -108,7 +108,6 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSLog(@"Coount:%lu",(unsigned long)self.categoriesMutableArray.count);
     return self.categoriesMutableArray.count;
 }
 
@@ -121,7 +120,6 @@
     cell.cellImageViewIcon.layer.masksToBounds = YES;
     
     //[cell.cellImageViewIcon setImage:[UIImage imageNamed:[arrayHomePageListingImages objectAtIndex:indexPath.row]]];
-    NSLog(@"Text:%@",[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]);
     cell.cellLabelTitle.text = [[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
     NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/Category"];
     NSURL *imageUrl = [NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/en/4/4e/Tis_The_Season_To_Be_Fearless_Cover.jpg"];
