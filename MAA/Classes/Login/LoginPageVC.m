@@ -36,11 +36,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)funcButtonLogin:(id)sender
-{
-    HomePageVC *homePage = [[HomePageVC alloc]init];
-    [self.navigationController pushViewController:homePage animated:YES];
-}
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
