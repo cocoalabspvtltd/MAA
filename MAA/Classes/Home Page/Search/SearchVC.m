@@ -11,6 +11,7 @@
 #import "SearchResultsVC.h"
 
 @interface SearchVC ()<UISearchBarDelegate>
+@property (nonatomic, assign) BOOL isLocationSearch;
 @property (nonatomic, strong) NSArray *doctorsArray;
 @end
 
@@ -20,7 +21,6 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
     tableViewSearch.estimatedRowHeight = 44.0;
     tableViewSearch.rowHeight = UITableViewAutomaticDimension;
     [self initialisation];
@@ -78,18 +78,33 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    SearchResultsVC *searchResults = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultsController"];
-    [self.navigationController pushViewController:searchResults animated:YES];
+    //self.doctorsArray
+    if(self.isLocationSearch){
+        
+    }
+    else{
+        if([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"department"]){
+            SearchResultsVC *searchResults = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultsController"];
+            searchResults.departmentId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            [self.navigationController pushViewController:searchResults animated:YES];
+        }
+        else{
+            
+        }
+        
+    }
 }
 
 #pragma mark - Search bar delegates
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     if(searchBar == self.doctorSearchBar){
+        self.isLocationSearch = NO;
         [self callingSearchDoctorApiWithText:searchText];
         
     }
     else if (searchBar == self.locationSerchBar){
+        self.isLocationSearch = YES;
         [self callingSearchLocationApiWithText:searchText];
     }
     NSLog(@"Search text:%@",searchText);

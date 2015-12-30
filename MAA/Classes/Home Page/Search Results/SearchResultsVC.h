@@ -12,9 +12,10 @@
 
 {
     IBOutlet UITableView *tableViewSearchResults;
-    
+   
 //    NSMutableDictionary *dictionaryArrayData;
     
     NSMutableArray *arraySearchResultListing;}
+@property (nonatomic, strong) NSString *departmentId;
 
 @end
