@@ -17,7 +17,8 @@
     
    // NSMutableArray *arraySearchListing;
 }
-@property (strong, nonatomic) IBOutlet UISearchBar *locationSerchBar;
 @property (strong, nonatomic) IBOutlet UISearchBar *doctorSearchBar;
+@property (strong, nonatomic) IBOutlet UISearchBar *locationSerchBar;
+
 
 @end
