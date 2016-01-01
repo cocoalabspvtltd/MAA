@@ -12,6 +12,7 @@
 
 @interface SearchVC ()<UISearchBarDelegate>
 @property (nonatomic, assign) BOOL isLocationSearch;
+@property (nonatomic, strong) NSArray *locationArray;
 @property (nonatomic, strong) NSArray *doctorsArray;
 @end
 
@@ -60,7 +61,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.doctorsArray.count;
+    if(self.isLocationSearch){
+        return self.locationArray.count;
+    }
+    else{
+        return self.doctorsArray.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -68,8 +74,14 @@
     SearchTVC *cell = [tableViewSearch dequeueReusableCellWithIdentifier:@"cellIdentifierSearch"forIndexPath:indexPath];
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.labelTitle.text = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"];
-    cell.labelDescription.text = [[self.doctorsArray objectAtIndex:indexPath.row]valueForKey:@"type"];
+    if(self.isLocationSearch){
+        cell.labelTitle.text = [[self.locationArray objectAtIndex:indexPath.row] valueForKey:@"location"];
+        cell.labelDescription.text = @"";
+    }
+    else{
+        cell.labelTitle.text = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"];
+        cell.labelDescription.text = [[self.doctorsArray objectAtIndex:indexPath.row]valueForKey:@"type"];
+    }
    // cell.labelTitle.text = [[arraySearchListing objectAtIndex:indexPath.row]valueForKey:@"Speciality"];
    // cell.labelDescription.text = [[arraySearchListing objectAtIndex:indexPath.row]valueForKey:@"Tag"];
     
@@ -161,7 +173,7 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchDoctorUrlString] withBody:getLocationListMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Data:%@",responseObject);
-        //self.doctorsArray = [responseObject valueForKey:Datakey];
+        self.locationArray = [responseObject valueForKey:Datakey];
         [tableViewSearch reloadData];
         NSLog(@"Respoinse object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
