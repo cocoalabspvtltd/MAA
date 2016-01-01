@@ -10,4 +10,9 @@
 
 @interface SearchFilterVC : UIViewController
 
+{
+    IBOutlet UILabel *labelMonday, *labelTuesday, *labelWednesday, *labelThursday, *labelFriday, *labelSaturday, *labelSunday;
+    
+}
+
 @end
