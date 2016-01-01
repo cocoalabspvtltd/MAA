@@ -839,9 +839,11 @@
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-Objc",
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Cocoa-Labs.MAA";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -862,6 +864,7 @@
 					"$(PROJECT_DIR)/MAA/NwkHndler",
 					"$(PROJECT_DIR)/MAA/FacebookHandler",
 				);
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-Objc",
