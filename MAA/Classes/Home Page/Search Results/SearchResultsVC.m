@@ -7,6 +7,7 @@
 //
 #define OnlineAllButtonSelectedBorderColor [UIColor whiteColor].CGColor
 
+#import "DoctorProfileVC.h"
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
 
@@ -111,7 +112,7 @@
         NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
         cell.cellLabelDescription.text = doctorDescription;
         cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
-        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@ Years",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
+        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
         if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
             cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
         }
@@ -124,8 +125,9 @@
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    SearchResultsVC *seachResults = [[SearchResultsVC alloc]init];
-//    [self.navigationController pushViewController:seachResults animated:YES];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+    [self.navigationController pushViewController:doctorPfofileVC animated:YES];
 }
 
 -(void)callingSearchapi{

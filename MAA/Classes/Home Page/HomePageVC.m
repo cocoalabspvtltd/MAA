@@ -8,6 +8,7 @@
 
 #import "HomePageVC.h"
 #import "DoctorProfileVC.h"
+#import "SearchResultsVC.h"
 #import "CLToolKit/ImageCache.h"
 #import <QuartzCore/QuartzCore.h>
 #import "HomePageCVC.h"
@@ -185,9 +186,12 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    DoctorProfileVC *doctorProfileVC = (DoctorProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
-    [self.navigationController pushViewController:doctorProfileVC animated:YES];
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    DoctorProfileVC *doctorProfileVC = (DoctorProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+//    [self.navigationController pushViewController:doctorProfileVC animated:YES];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SearchResultsVC *searchResultVC = (SearchResultsVC *)[storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
+        [self.navigationController pushViewController:searchResultVC animated:YES];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView

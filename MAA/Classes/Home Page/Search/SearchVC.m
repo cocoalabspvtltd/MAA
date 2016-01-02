@@ -96,7 +96,8 @@
     }
     else{
         if([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"department"]){
-            SearchResultsVC *searchResults = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchResultsController"];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
             searchResults.departmentId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             [self.navigationController pushViewController:searchResults animated:YES];
         }
