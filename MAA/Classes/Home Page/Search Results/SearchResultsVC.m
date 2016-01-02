@@ -142,7 +142,12 @@
     [searchMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [searchMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
     [searchMutableDictionary setValue:accesToken forKey:@"token"];
-    [searchMutableDictionary setValue:self.departmentId forKey:@"dept_id"];
+    if(self.isLocationSearch){
+        [searchMutableDictionary setValue:self.locationId forKey:@"location_id"];
+    }
+    else{
+        [searchMutableDictionary setValue:self.departmentId forKey:@"dept_id"];
+    }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchUrlString] withBody:searchMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

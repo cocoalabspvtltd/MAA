@@ -92,13 +92,18 @@
 {
     //self.doctorsArray
     if(self.isLocationSearch){
-        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
+        searchResults.locationId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"location_id"];
+        searchResults.isLocationSearch = YES;
+        [self.navigationController pushViewController:searchResults animated:YES];
     }
     else{
         if([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"department"]){
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
             searchResults.departmentId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            searchResults.isLocationSearch = NO;
             [self.navigationController pushViewController:searchResults animated:YES];
         }
 //        else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"department"]){
