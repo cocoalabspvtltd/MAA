@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface DoctorProfileVC : UIViewController
-
+@property (nonatomic, strong) NSString *entityId;
 @end

@@ -186,11 +186,9 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//    DoctorProfileVC *doctorProfileVC = (DoctorProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
-//    [self.navigationController pushViewController:doctorProfileVC animated:YES];
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         SearchResultsVC *searchResultVC = (SearchResultsVC *)[storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
+        searchResultVC.departmentId = [[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
         [self.navigationController pushViewController:searchResultVC animated:YES];
 }
 

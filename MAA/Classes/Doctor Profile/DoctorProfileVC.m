@@ -47,12 +47,21 @@
     NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *getEntityDetailsMutableDictionary = [[NSMutableDictionary alloc] init];
     [getEntityDetailsMutableDictionary setValue:accesstoken forKey:@"token"];
-    [getEntityDetailsMutableDictionary setValue:@"" forKey:@"id"];
+    [getEntityDetailsMutableDictionary setValue:self.entityId forKey:@"id"];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"Respnse Object;%@",responseObject);
+        NSLog(@"Doctor Detilst;%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
          NSLog(@"Respnse Error;%@",errorResponse);
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
     }];
 }
 /*

@@ -101,6 +101,9 @@
             searchResults.departmentId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             [self.navigationController pushViewController:searchResults animated:YES];
         }
+//        else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"department"]){
+//            
+//        }
         else{
             
         }
