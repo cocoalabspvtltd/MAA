@@ -2146,6 +2146,18 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1120"/>
+                    <connections>
+                        <outlet property="clinicNameLabel" destination="95E-xa-eFe" id="nhY-1L-doO"/>
+                        <outlet property="consultationFeeLabel" destination="fKJ-a7-OYw" id="soP-xr-Or5"/>
+                        <outlet property="coverImageView" destination="Kba-4Z-MMF" id="M2f-qD-cit"/>
+                        <outlet property="experienceLabel" destination="qTs-qZ-ZaR" id="qsy-MR-z9h"/>
+                        <outlet property="locationLabel" destination="7JN-8B-B0U" id="ZF3-2g-STd"/>
+                        <outlet property="profileImageView" destination="N09-Tc-w8g" id="gQm-2d-y3o"/>
+                        <outlet property="ratingLabel" destination="Jwc-rd-eq3" id="WjI-87-TLL"/>
+                        <outlet property="reviewCountLabel" destination="Glk-O6-saT" id="mMu-UU-Vpx"/>
+                        <outlet property="satisfiedpeopleLabel" destination="w7A-5Z-fQe" id="d7h-Uz-4jP"/>
+                        <outlet property="taglineLabel" destination="NdV-It-6q2" id="WVg-TN-rOj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSg-Nh-bF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
