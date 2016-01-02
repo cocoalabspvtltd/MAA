@@ -39,6 +39,7 @@
 		7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FF5551C1F5F9A00C72512 /* SearchFilterVC.m */; };
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
+		9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */; };
 		C086ED021C285D25009DF69F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED011C285D25009DF69F /* CoreData.framework */; };
 		C086ED041C285D30009DF69F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED031C285D30009DF69F /* MobileCoreServices.framework */; };
 		C086ED061C285D3D009DF69F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED051C285D3D009DF69F /* SystemConfiguration.framework */; };
@@ -154,6 +155,8 @@
 		7CF40FE81C1D77600020EE33 /* block1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block1@2x.png"; sourceTree = "<group>"; };
 		7CF648091C1F36F5007DA73F /* SearchResultsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultsTVC.h; path = "Classes/Home Page/Search Results/SearchResultsTVC.h"; sourceTree = "<group>"; };
 		7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsTVC.m; path = "Classes/Home Page/Search Results/SearchResultsTVC.m"; sourceTree = "<group>"; };
+		9FA914AC1C3797FB00BDCB5D /* DoctorProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorProfileVC.h; sourceTree = "<group>"; };
+		9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorProfileVC.m; sourceTree = "<group>"; };
 		C086ECED1C285B37009DF69F /* ServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceConstants.h; sourceTree = "<group>"; };
 		C086ECF31C285B51009DF69F /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		C086ECFD1C285BEF009DF69F /* MAA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAA-Prefix.pch"; sourceTree = "<group>"; };
@@ -340,6 +343,7 @@
 		55D60D801C08B94600963D5D /* MAA */ = {
 			isa = PBXGroup;
 			children = (
+				9FA914AB1C3797D400BDCB5D /* Doctor Profile */,
 				C0BAF02B1C31A175002F3137 /* CLAlertHandler.h */,
 				C0BAF02C1C31A175002F3137 /* libNetworkHandler.a */,
 				C0BAF02D1C31A175002F3137 /* NetworkHandler.h */,
@@ -455,6 +459,16 @@
 				7C9FF5551C1F5F9A00C72512 /* SearchFilterVC.m */,
 			);
 			name = "Search Filter";
+			sourceTree = "<group>";
+		};
+		9FA914AB1C3797D400BDCB5D /* Doctor Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9FA914AC1C3797FB00BDCB5D /* DoctorProfileVC.h */,
+				9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */,
+			);
+			name = "Doctor Profile";
+			path = "Classes/Doctor Profile";
 			sourceTree = "<group>";
 		};
 		C0BE979E1C2485560037E328 /* ProgressHud */ = {
@@ -674,6 +688,7 @@
 				7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */,
 				55D352DB1C0B45E1008CCEC1 /* AppointmentPageVC.m in Sources */,
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
+				9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */,
 				55D352D51C0B441C008CCEC1 /* QuestionsPageVC.m in Sources */,
 				7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
