@@ -21,3 +21,4 @@
 #define GetCategoriesUrl @"get_categories"
 #define GetDoctorListApi @"auto_complete"
 #define SearchDoctorsBasedOnLocationApi @"search_location"
+#define SearchApi @"search"

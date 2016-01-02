@@ -153,8 +153,8 @@
     NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
     [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
     [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
-    [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:@"offset"];
-    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:@"limit"];
+    [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
+    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
     NSLog(@"Get Sub categories mutable Dictionary:%@",getSubcategoriesMutableDictionary);
     if(self.offsetValue == 0){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];

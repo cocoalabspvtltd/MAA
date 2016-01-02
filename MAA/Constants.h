@@ -23,3 +23,5 @@
 #define ErrorMessagekey @"error_message"
 #define StatusKey @"status"
 #define Datakey @"data"
+#define LimitKey @"limit"
+#define Offsetkey @"offset"

@@ -177,7 +177,15 @@
         [tableViewSearch reloadData];
         NSLog(@"Respoinse object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
-        NSLog(@"Error Description:%@",errorResponse);
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
     }];
 
 }
