@@ -10,6 +10,7 @@
 #import "DoctorProfileVC.h"
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
+#import "CLToolKit/ImageCache.h"
 
 @interface SearchResultsVC ()<UIScrollViewDelegate,UISearchBarDelegate>
 @property (nonatomic, strong) NSArray *doctorsArray;
@@ -91,6 +92,8 @@
     cell.cellImageViewOnlineStatus.clipsToBounds = YES;
     cell.cellImageViewOnlineStatus.layer.cornerRadius = 5.00;
     cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
+    NSURL *imageUrl;
+    NSString *cacheIdentifier;
     if([self.onlineButton isSelected]){
         cell.cellLabelRating.text = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
         cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
@@ -104,6 +107,8 @@
         else{
             cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
         }
+        imageUrl = [NSURL URLWithString:[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
+        cacheIdentifier = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
  
     }
     else{
@@ -119,7 +124,30 @@
         else{
             cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
         }
+        imageUrl = [NSURL URLWithString:[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
+        cacheIdentifier = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
     }
+    NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/Doctor"];
+    //NSURL *imageUrl = [NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/en/4/4e/Tis_The_Season_To_Be_Fearless_Cover.jpg"];
+    UIImage *localImage;
+    localImage = [[ImageCache sharedCache] imageFromFolder:folderPath WithIdentifier:cacheIdentifier];
+    if(!localImage){
+        [MBProgressHUD showHUDAddedTo:cell.cellImageViewIcon animated:YES];
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+            NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+            UIImage *tempImage = [UIImage imageWithData:imageData];
+            [[ImageCache sharedCache]addImage:tempImage toFolder:folderPath toCacheWithIdentifier:cacheIdentifier];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                cell.cellImageViewIcon.image = tempImage;
+                [MBProgressHUD hideAllHUDsForView:cell.cellImageViewIcon animated:YES];
+            }
+                           );
+        });
+    }
+    else{
+        cell.cellImageViewIcon.image = localImage;
+    }
+
        return cell;
 }
 
