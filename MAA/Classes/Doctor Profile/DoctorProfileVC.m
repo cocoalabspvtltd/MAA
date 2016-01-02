@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
+     [self customisation];
+     [self addSubViews];
+    [self callingGetDoctorDetailsApi];
     // Do any additional setup after loading the view.
+}
+
+-(void)initialisation{
+    
+}
+
+-(void)customisation{
+    
+}
+
+-(void)addSubViews{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -24,6 +40,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Get Entity Details Api
+
+-(void)callingGetDoctorDetailsApi{
+    NSString *getEntityDetailsUrlString = [Baseurl stringByAppendingString:GetEntityDetailsUrl];
+    NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *getEntityDetailsMutableDictionary = [[NSMutableDictionary alloc] init];
+    [getEntityDetailsMutableDictionary setValue:accesstoken forKey:@"token"];
+    [getEntityDetailsMutableDictionary setValue:@"" forKey:@"id"];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Respnse Object;%@",responseObject);
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+         NSLog(@"Respnse Error;%@",errorResponse);
+    }];
+}
 /*
 #pragma mark - Navigation
 

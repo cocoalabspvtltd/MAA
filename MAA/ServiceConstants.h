@@ -22,3 +22,4 @@
 #define GetDoctorListApi @"auto_complete"
 #define SearchDoctorsBasedOnLocationApi @"search_location"
 #define SearchApi @"search"
+#define GetEntityDetailsUrl @"get_entity_details"

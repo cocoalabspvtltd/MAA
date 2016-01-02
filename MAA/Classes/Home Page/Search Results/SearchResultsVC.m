@@ -182,12 +182,14 @@
     self.isOnlineButtonSelected = NO;
     sender.layer.borderColor = OnlineAllButtonSelectedBorderColor;
     self.onlineButton.layer.borderColor = [UIColor clearColor].CGColor;
+    [tableViewSearchResults reloadData];
 }
 
 - (IBAction)onlineButtonAction:(UIButton *)sender {
     self.isOnlineButtonSelected = YES;
     sender.layer.borderColor = OnlineAllButtonSelectedBorderColor;
     self.allButton.layer.borderColor = [UIColor clearColor].CGColor;
+    [tableViewSearchResults reloadData];
 }
 
 @end
