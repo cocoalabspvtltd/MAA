@@ -5,6 +5,7 @@
 //  Created by Roshith on 14/12/15.
 //  Copyright © 2015 Cocoa Labs. All rights reserved.
 //
+#define OnlineAllButtonSelectedBorderColor [UIColor whiteColor].CGColor
 
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
@@ -14,7 +15,9 @@
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, strong) NSMutableArray *doctorsMutableArray;
+@property (nonatomic, strong) NSArray *onlineDoctorsArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
+@property (nonatomic, assign) BOOL isOnlineButtonSelected;
 @end
 
 @implementation SearchResultsVC
@@ -31,6 +34,8 @@
 -(void)initialisation{
     self.offsetValue = 0;
     self.limitValue = 10;
+    self.isOnlineButtonSelected = NO;
+    self.allButton.layer.borderColor = OnlineAllButtonSelectedBorderColor;
     self.doctorsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -64,7 +69,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.doctorsMutableArray.count;
+    if([self.onlineButton isSelected]){
+        return self.onlineDoctorsArray.count;
+    }
+    else{
+        return self.doctorsMutableArray.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -80,13 +90,36 @@
     cell.cellImageViewOnlineStatus.clipsToBounds = YES;
     cell.cellImageViewOnlineStatus.layer.cornerRadius = 5.00;
     cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
-    cell.cellLabelRating.text = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
-    cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
-    NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
-    cell.cellLabelDescription.text = doctorDescription;
-    cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
-    cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@ Years",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
-    return cell;
+    if([self.onlineButton isSelected]){
+        cell.cellLabelRating.text = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+        cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+        NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
+        cell.cellLabelDescription.text = doctorDescription;
+        cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
+        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@ Years",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
+        if([[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
+            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
+        }
+        else{
+            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
+        }
+ 
+    }
+    else{
+        cell.cellLabelRating.text = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+        cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+        NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
+        cell.cellLabelDescription.text = doctorDescription;
+        cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
+        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@ Years",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
+        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
+            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
+        }
+        else{
+            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
+        }
+    }
+       return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,6 +145,8 @@
         self.offsetValue=self.offsetValue+self.limitValue;
         [self.bottomProgressIndicatorView stopAnimating];
         [self.doctorsMutableArray addObjectsFromArray:self.doctorsArray];
+        NSPredicate *onlineDoctorsPredicate = [NSPredicate predicateWithFormat:@"SELF.is_online == 1"];
+        self.onlineDoctorsArray = [self.doctorsMutableArray filteredArrayUsingPredicate:onlineDoctorsPredicate];
         [tableViewSearchResults reloadData];
         NSLog(@"Response object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -144,8 +179,15 @@
     }
 }
 - (IBAction)allButtonAction:(UIButton *)sender {
+    self.isOnlineButtonSelected = NO;
+    sender.layer.borderColor = OnlineAllButtonSelectedBorderColor;
+    self.onlineButton.layer.borderColor = [UIColor clearColor].CGColor;
 }
+
 - (IBAction)onlineButtonAction:(UIButton *)sender {
+    self.isOnlineButtonSelected = YES;
+    sender.layer.borderColor = OnlineAllButtonSelectedBorderColor;
+    self.allButton.layer.borderColor = [UIColor clearColor].CGColor;
 }
 
 @end

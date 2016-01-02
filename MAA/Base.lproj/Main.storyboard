@@ -1122,9 +1122,16 @@
                                         <state key="normal" title="ONLINE DOCTORS">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="onlineButtonAction:" destination="48E-F8-RGl" eventType="touchUpInside" id="P0r-cU-8UF"/>
-                                            <segue destination="Tyj-fP-Vq8" kind="show" id="MbF-Vg-bdJ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSd-nw-dk1">
@@ -1137,6 +1144,14 @@
                                         <state key="normal" title="ALL">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="allButtonAction:" destination="48E-F8-RGl" eventType="touchUpInside" id="EqV-QY-YSo"/>
                                         </connections>
@@ -1340,6 +1355,8 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="allButton" destination="aSd-nw-dk1" id="dG3-en-3Zr"/>
+                        <outlet property="onlineButton" destination="T29-Dm-bd6" id="azQ-03-ovT"/>
                         <outlet property="tableViewSearchResults" destination="PiV-qU-buW" id="MJz-Cc-ZsQ"/>
                     </connections>
                 </viewController>
