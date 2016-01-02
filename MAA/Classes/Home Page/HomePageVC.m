@@ -7,11 +7,12 @@
 //
 
 #import "HomePageVC.h"
+#import "DoctorProfileVC.h"
 #import "CLToolKit/ImageCache.h"
 #import <QuartzCore/QuartzCore.h>
 #import "HomePageCVC.h"
 
-@interface HomePageVC ()<UIScrollViewDelegate>
+@interface HomePageVC ()<UIScrollViewDelegate,UICollectionViewDelegate>
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, strong) NSMutableArray *categoriesMutableArray;
@@ -181,6 +182,12 @@
         UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [erroralert show];
     }];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DoctorProfileVC *doctorProfileVC = (DoctorProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+    [self.navigationController pushViewController:doctorProfileVC animated:YES];
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
