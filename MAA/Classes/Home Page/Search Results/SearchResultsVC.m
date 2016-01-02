@@ -11,7 +11,7 @@
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
 
-@interface SearchResultsVC ()<UIScrollViewDelegate>
+@interface SearchResultsVC ()<UIScrollViewDelegate,UISearchBarDelegate>
 @property (nonatomic, strong) NSArray *doctorsArray;
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, assign) int limitValue;
@@ -200,6 +200,12 @@
     sender.layer.borderColor = OnlineAllButtonSelectedBorderColor;
     self.allButton.layer.borderColor = [UIColor clearColor].CGColor;
     [tableViewSearchResults reloadData];
+}
+
+#pragma mark - Search Bar Delegate
+
+-(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

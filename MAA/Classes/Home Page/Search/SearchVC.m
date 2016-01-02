@@ -8,6 +8,8 @@
 
 #import "SearchVC.h"
 #import "SearchTVC.h"
+#import "DoctorProfileVC.h"
+#import "HospitalProfile.h"
 #import "SearchResultsVC.h"
 
 @interface SearchVC ()<UISearchBarDelegate>
@@ -106,10 +108,17 @@
             searchResults.isLocationSearch = NO;
             [self.navigationController pushViewController:searchResults animated:YES];
         }
-//        else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"department"]){
-//            
-//        }
-        else{
+        else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+            doctorPfofileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            [self.navigationController pushViewController:doctorPfofileVC animated:YES];
+        }
+        else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"clinic"]){
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            HospitalProfile *hospitalProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"HospitalProfile"];
+            hospitalProfileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            [self.navigationController pushViewController:hospitalProfileVC animated:YES];
             
         }
         
