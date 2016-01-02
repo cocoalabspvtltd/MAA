@@ -143,5 +143,9 @@
         }
     }
 }
+- (IBAction)allButtonAction:(UIButton *)sender {
+}
+- (IBAction)onlineButtonAction:(UIButton *)sender {
+}
 
 @end
