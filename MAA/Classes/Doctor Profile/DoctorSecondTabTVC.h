@@ -1,5 +1,5 @@
 //
-//  DoctorProfileTVC.h
+//  DoctorSecondTabTVC.h
 //  MAA
 //
 //  Created by kiran on 03/01/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DoctorProfileTVC : UITableViewCell
+@interface DoctorSecondTabTVC : UITableViewCell
 
 @end

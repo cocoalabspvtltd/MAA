@@ -1,14 +1,14 @@
 //
-//  DoctorProfileTVC.m
+//  DoctorSecondTabTVC.m
 //  MAA
 //
 //  Created by kiran on 03/01/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
-#import "DoctorProfileTVC.h"
+#import "DoctorSecondTabTVC.h"
 
-@implementation DoctorProfileTVC
+@implementation DoctorSecondTabTVC
 
 - (void)awakeFromNib {
     // Initialization code
