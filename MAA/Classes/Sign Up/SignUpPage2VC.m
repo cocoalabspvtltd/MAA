@@ -285,6 +285,7 @@
 -(void)settingOTPPage{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ResetPasswordOTPVC *resetOTPPage = (ResetPasswordOTPVC *)[storyboard instantiateViewControllerWithIdentifier:@"ResetPasswordOTPVC"];
+    resetOTPPage.isfromRegistration = YES;
     [self.navigationController pushViewController:resetOTPPage animated:YES];
 }
 

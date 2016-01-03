@@ -4688,7 +4688,7 @@
                                             <constraint firstAttribute="height" constant="35" id="WdV-VR-S24"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="68A-To-71i" id="O1p-aS-IWy"/>
                                         </connections>
@@ -4715,7 +4715,7 @@
                                             <constraint firstAttribute="height" constant="33" id="EWA-3X-9iv"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="68A-To-71i" id="jhz-Hr-cQx"/>
                                         </connections>
@@ -4731,7 +4731,6 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="nextButtonAction:" destination="68A-To-71i" eventType="touchUpInside" id="I8n-lg-YrT"/>
                                             <action selector="submitButtonAction:" destination="68A-To-71i" eventType="touchUpInside" id="2CE-1g-Rja"/>
                                         </connections>
                                     </button>
@@ -4782,7 +4781,7 @@
                                 </constraints>
                                 <state key="normal" image="back_black"/>
                                 <connections>
-                                    <action selector="funcButtonBack:" destination="68A-To-71i" eventType="touchUpInside" id="acz-pa-u6P"/>
+                                    <action selector="backButtonAction:" destination="68A-To-71i" eventType="touchUpInside" id="Sd3-CC-rPS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -4797,10 +4796,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonBack" destination="hfP-V8-cm6" id="aMt-Gh-OdI"/>
-                        <outlet property="buttonNext" destination="NFT-ZN-ct2" id="Vbc-7f-pNJ"/>
-                        <outlet property="textFieldEmail" destination="6hT-XH-tpu" id="GoL-E1-vxM"/>
-                        <outlet property="textFieldPhone" destination="h5n-Go-TXG" id="PyZ-ra-LEs"/>
+                        <outlet property="passwordtextField" destination="6hT-XH-tpu" id="8Zx-ll-wB0"/>
+                        <outlet property="retypPasswordTextField" destination="h5n-Go-TXG" id="99a-7i-Zah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHc-eH-n4e" userLabel="First Responder" sceneMemberID="firstResponder"/>

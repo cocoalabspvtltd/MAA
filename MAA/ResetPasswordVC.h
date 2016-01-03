@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface ResetPasswordVC : UIViewController
+@property (strong, nonatomic) IBOutlet UITextField *passwordtextField;
+@property (strong, nonatomic) IBOutlet UITextField *retypPasswordTextField;
 
 @end

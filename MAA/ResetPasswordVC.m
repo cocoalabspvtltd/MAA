@@ -8,7 +8,7 @@
 
 #import "ResetPasswordVC.h"
 
-@interface ResetPasswordVC ()
+@interface ResetPasswordVC ()<UITextFieldDelegate>
 
 @end
 
@@ -24,14 +24,53 @@
     // Dispose of any resources that can be recreated.
 }
 
+/*
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
+
+- (IBAction)submitButtonAction:(UIButton *)sender {
+    if([self isValid]){
+        [self callingResetPasswordApi];
+    }
+}
+
+-(BOOL)isValid{
+    BOOL valid = YES;
+    NSString *messageString = @"";
+    if([self.passwordtextField.text empty]){
+        valid = NO;
+        [self.passwordtextField becomeFirstResponder];
+        messageString = @"Please enter password";
+    }
+    else if ([self.retypPasswordTextField.text empty]){
+        valid = NO;
+        [self.retypPasswordTextField becomeFirstResponder];
+        messageString = @"Please enter confirm password";
+    }
+    else if (![self.passwordtextField.text isEqualToString:self.retypPasswordTextField.text]){
+        valid = NO;
+        [self.passwordtextField becomeFirstResponder];
+        messageString = @"Password and confirm password should be same";
+    }
+    if(![messageString empty]){
+        UIAlertView *validationAlert = [[UIAlertView alloc] initWithTitle:AppName message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [validationAlert show];
+    }
+    return valid;
+}
 
 #pragma mark - Reset password api
 
 -(void)callingResetPasswordApi{
     NSString *resetPasswordUrlString = [Baseurl stringByAppendingString:ResetPasswordUrl];
     NSMutableDictionary *resetPasswordMutableDictionary = [[NSMutableDictionary alloc] init];
-    [resetPasswordMutableDictionary setValue:@"" forKey:@"oldpassword"];
-    [resetPasswordMutableDictionary setValue:@"" forKey:@"newpassword"];
+    [resetPasswordMutableDictionary setValue:self.passwordtextField.text forKey:@"oldpassword"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:resetPasswordUrlString] withBody:resetPasswordMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler]startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
@@ -58,16 +97,21 @@
         [erroralert show];
     }];
 }
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
-- (IBAction)submitButtonAction:(UIButton *)sender {
+- (IBAction)backButtonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - Textfield Delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    if(textField == self.passwordtextField){
+        [self.passwordtextField resignFirstResponder];
+        [self.retypPasswordTextField becomeFirstResponder];
+    }
+    else if (textField == self.retypPasswordTextField){
+        [self.retypPasswordTextField resignFirstResponder];
+    }
+    return YES;
+}
 @end

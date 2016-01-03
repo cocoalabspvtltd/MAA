@@ -76,8 +76,13 @@
             [errorAlert show];
         }
         else{
-            [self settingResetPasswordVc];
-            //[self settingOTPverificationSeccessFulView];
+            if(self.isfromRegistration){
+                [self settingOTPverificationSeccessFulView];
+            }
+            else{
+                [self settingResetPasswordVc];
+            }
+            
         }
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {

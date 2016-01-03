@@ -9,14 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface ResetPasswordOTPVC : UIViewController
-
 {
     IBOutlet UITextField *textFieldOTP;
     IBOutlet UIButton *buttonVerifyOTP;
 
     IBOutlet UIButton *buttonBack;
 }
-
+@property (nonatomic, assign) BOOL isfromRegistration;
 - (IBAction)funcButtonBack:(id)sender;
 
 @end
