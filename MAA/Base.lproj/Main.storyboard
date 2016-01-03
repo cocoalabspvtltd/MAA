@@ -4407,6 +4407,9 @@
                                                 <constraint firstItem="ggk-GQ-1mp" firstAttribute="leading" secondItem="cer-Ht-7iE" secondAttribute="trailing" constant="7" id="hJL-Xp-X78"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="timeLabel" destination="ggk-GQ-1mp" id="1um-bP-Ky6"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellServices" rowHeight="55" id="9R6-Gk-HrV" userLabel="Services collapsed" customClass="DoctorProfileTVC">
                                         <rect key="frame" x="0.0" y="226" width="600" height="55"/>
@@ -4428,7 +4431,7 @@
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="30" id="NFS-dq-39X" customClass="DoctorConsultingTimingTVC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="30" id="NFS-dq-39X">
                                         <rect key="frame" x="0.0" y="281" width="600" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NFS-dq-39X" id="KFZ-dq-jxt">
@@ -4447,11 +4450,8 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <outlet property="timeLabel" destination="ggk-GQ-1mp" id="9dB-Cs-7Ff"/>
-                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="qWe-yO-Q7a" userLabel="Comments">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellComments" rowHeight="120" id="qWe-yO-Q7a" userLabel="Comments" customClass="DoctorThirdTabTVC">
                                         <rect key="frame" x="0.0" y="311" width="600" height="120"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qWe-yO-Q7a" id="PK3-81-Qcv">
@@ -4576,6 +4576,16 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="fifthStarImageView" destination="gEw-KM-3GM" id="B84-VP-flZ"/>
+                                            <outlet property="firstStarImageView" destination="V53-Zp-xyd" id="hgu-zk-qXj"/>
+                                            <outlet property="fourthStarImageView" destination="Coq-t8-BdO" id="mCp-2a-rpX"/>
+                                            <outlet property="reviewContentLabel" destination="v2d-e2-TUw" id="sLK-re-vmU"/>
+                                            <outlet property="reviewrNameLabel" destination="UzR-4M-DAv" id="SK9-Cs-IIP"/>
+                                            <outlet property="secondStarImageView" destination="jxA-RZ-6zk" id="sWH-NF-6bf"/>
+                                            <outlet property="thirdStarImageView" destination="TK1-qj-OfV" id="eaU-Ll-eDN"/>
+                                            <outlet property="timeLabel" destination="61n-gB-tKu" id="pwp-9X-UKw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -4606,6 +4616,7 @@
                     <connections>
                         <outlet property="consultationFeeLabel" destination="CjI-V7-a2x" id="VPR-Ub-HP0"/>
                         <outlet property="coverImageView" destination="D5P-zS-4h5" id="lTt-GN-19K"/>
+                        <outlet property="doctoDetailsTableView" destination="jgg-14-rvu" id="Ed1-Sh-U4H"/>
                         <outlet property="doctorNameLabel" destination="h4u-f3-1mw" id="Rmu-nX-PtX"/>
                         <outlet property="experienceLabel" destination="LB3-7f-Q80" id="Syh-bN-1Fm"/>
                         <outlet property="firstTabImageView" destination="MiG-UI-HNr" id="EpS-Ob-XF4"/>
