@@ -4378,7 +4378,7 @@
                                             <outlet property="phoneNoLabel" destination="ovJ-cJ-fdm" id="S4N-Uj-9mt"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="42" id="DvM-JQ-6ME" userLabel="Timings">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellTimings" rowHeight="42" id="DvM-JQ-6ME" userLabel="Timings" customClass="DoctorConsultingTimingTVC">
                                         <rect key="frame" x="0.0" y="184" width="600" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DvM-JQ-6ME" id="HaX-c9-JQW">
@@ -4428,7 +4428,7 @@
                                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTimings" rowHeight="30" id="NFS-dq-39X" customClass="DoctorConsultingTimingTVC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="30" id="NFS-dq-39X" customClass="DoctorConsultingTimingTVC">
                                         <rect key="frame" x="0.0" y="281" width="600" height="30"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NFS-dq-39X" id="KFZ-dq-jxt">
@@ -4448,7 +4448,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.83921568627450982" green="0.83921568627450982" blue="0.83921568627450982" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="timeLabel" destination="5PJ-bo-7Kz" id="QSP-V7-yKb"/>
+                                            <outlet property="timeLabel" destination="ggk-GQ-1mp" id="9dB-Cs-7Ff"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="120" id="qWe-yO-Q7a" userLabel="Comments">
