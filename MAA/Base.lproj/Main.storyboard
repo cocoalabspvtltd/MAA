@@ -1613,6 +1613,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hAc-Cj-4U3">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                                <connections>
+                                                    <action selector="firstTabButtonAction:" destination="Tyj-fP-Vq8" eventType="touchUpInside" id="5ky-cq-3Le"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_red" translatesAutoresizingMaskIntoConstraints="NO" id="gSA-wv-f17">
                                                 <rect key="frame" x="80" y="15" width="20" height="20"/>
@@ -1623,7 +1626,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x2L-hL-NsM">
                                                 <rect key="frame" x="0.0" y="48" width="180" height="2"/>
-                                                <color key="backgroundColor" red="0.92941176469999998" green="0.031372549020000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="YHS-3G-zm0"/>
                                                 </constraints>
@@ -1648,6 +1651,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Lq-PI-ujn">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                                <connections>
+                                                    <action selector="secondTabButtonAction:" destination="Tyj-fP-Vq8" eventType="touchUpInside" id="7Sd-5C-3C4"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="users" translatesAutoresizingMaskIntoConstraints="NO" id="tJx-0M-Pj0">
                                                 <rect key="frame" x="80" y="15" width="20" height="20"/>
@@ -1658,7 +1664,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="krW-nP-I6A">
                                                 <rect key="frame" x="0.0" y="48" width="180" height="2"/>
-                                                <color key="backgroundColor" red="0.92941176469999998" green="0.031372549020000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Kig-JP-mUu"/>
                                                 </constraints>
@@ -1682,6 +1688,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqe-bj-0oU">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                                <connections>
+                                                    <action selector="thirdTabButtonAction:" destination="Tyj-fP-Vq8" eventType="touchUpInside" id="zSY-ir-rqe"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comments_o_red" translatesAutoresizingMaskIntoConstraints="NO" id="Msb-sc-N2H">
                                                 <rect key="frame" x="80" y="15" width="20" height="20"/>
@@ -1692,7 +1701,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NEj-4N-2px">
                                                 <rect key="frame" x="0.0" y="48" width="180" height="2"/>
-                                                <color key="backgroundColor" red="0.92941176469999998" green="0.031372549020000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="83W-BE-aqT"/>
                                                 </constraints>
@@ -2151,12 +2160,18 @@
                         <outlet property="consultationFeeLabel" destination="fKJ-a7-OYw" id="soP-xr-Or5"/>
                         <outlet property="coverImageView" destination="Kba-4Z-MMF" id="M2f-qD-cit"/>
                         <outlet property="experienceLabel" destination="qTs-qZ-ZaR" id="qsy-MR-z9h"/>
+                        <outlet property="firstTabImageView" destination="gSA-wv-f17" id="SNV-iI-1n6"/>
+                        <outlet property="firstTabSeparatorView" destination="x2L-hL-NsM" id="cGp-wp-MVU"/>
                         <outlet property="locationLabel" destination="7JN-8B-B0U" id="ZF3-2g-STd"/>
                         <outlet property="profileImageView" destination="N09-Tc-w8g" id="gQm-2d-y3o"/>
                         <outlet property="ratingLabel" destination="Jwc-rd-eq3" id="WjI-87-TLL"/>
                         <outlet property="reviewCountLabel" destination="Glk-O6-saT" id="mMu-UU-Vpx"/>
                         <outlet property="satisfiedpeopleLabel" destination="w7A-5Z-fQe" id="d7h-Uz-4jP"/>
+                        <outlet property="secondTabOmageView" destination="tJx-0M-Pj0" id="qyO-wG-bLv"/>
+                        <outlet property="secondTabSeparatorView" destination="krW-nP-I6A" id="z63-Tu-GiV"/>
                         <outlet property="taglineLabel" destination="NdV-It-6q2" id="WVg-TN-rOj"/>
+                        <outlet property="thirdTabImageView" destination="Msb-sc-N2H" id="SZD-QJ-FjC"/>
+                        <outlet property="thirdTabSeparatorView" destination="NEj-4N-2px" id="1GP-gm-fv1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LSg-Nh-bF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4083,6 +4098,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZxY-e6-TXG">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                                <connections>
+                                                    <action selector="firstTabButtonAction:" destination="DpW-NJ-ROB" eventType="touchUpInside" id="G0X-cT-Uz8"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_red" translatesAutoresizingMaskIntoConstraints="NO" id="MiG-UI-HNr">
                                                 <rect key="frame" x="80" y="15" width="20" height="20"/>
@@ -4093,7 +4111,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kg1-XD-dC9">
                                                 <rect key="frame" x="0.0" y="48" width="180" height="2"/>
-                                                <color key="backgroundColor" red="0.92941176469999998" green="0.031372549020000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="3wu-4m-XgI"/>
                                                 </constraints>
@@ -4118,6 +4136,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VVs-1l-yTp">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                                <connections>
+                                                    <action selector="secondTabButtonAction:" destination="DpW-NJ-ROB" eventType="touchUpInside" id="RNs-KJ-SZa"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="users" translatesAutoresizingMaskIntoConstraints="NO" id="MuA-MM-MEz">
                                                 <rect key="frame" x="80" y="15" width="20" height="20"/>
@@ -4128,7 +4149,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9Zf-MV-CtB">
                                                 <rect key="frame" x="0.0" y="48" width="180" height="2"/>
-                                                <color key="backgroundColor" red="0.92941176469999998" green="0.031372549020000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="8wk-tp-m9U"/>
                                                 </constraints>
@@ -4152,6 +4173,9 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G99-pE-2K8">
                                                 <rect key="frame" x="0.0" y="0.0" width="180" height="50"/>
+                                                <connections>
+                                                    <action selector="thirdTabButtonAction:" destination="DpW-NJ-ROB" eventType="touchUpInside" id="04V-Ze-QnE"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="comments_o_red" translatesAutoresizingMaskIntoConstraints="NO" id="4Wc-py-h7r">
                                                 <rect key="frame" x="80" y="15" width="20" height="20"/>
@@ -4162,7 +4186,7 @@
                                             </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mFX-cx-4KZ">
                                                 <rect key="frame" x="0.0" y="48" width="180" height="2"/>
-                                                <color key="backgroundColor" red="0.92941176469999998" green="0.031372549020000001" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="3nE-45-bjW"/>
                                                 </constraints>
@@ -4348,7 +4372,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="42" id="DvM-JQ-6ME" userLabel="Timings">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="42" id="DvM-JQ-6ME" userLabel="Timings">
                                         <rect key="frame" x="0.0" y="184" width="600" height="42"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DvM-JQ-6ME" id="HaX-c9-JQW">
@@ -4378,7 +4402,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="39" id="9R6-Gk-HrV" userLabel="Services collapsed">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellServices" rowHeight="39" id="9R6-Gk-HrV" userLabel="Services collapsed" customClass="DoctorProfileTVC">
                                         <rect key="frame" x="0.0" y="226" width="600" height="39"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9R6-Gk-HrV" id="uvP-eu-lL3">
@@ -4521,6 +4545,10 @@
                                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="DpW-NJ-ROB" id="ctB-WF-jSc"/>
+                                    <outlet property="delegate" destination="DpW-NJ-ROB" id="AoY-Ie-eId"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -4547,12 +4575,18 @@
                         <outlet property="coverImageView" destination="D5P-zS-4h5" id="lTt-GN-19K"/>
                         <outlet property="doctorNameLabel" destination="h4u-f3-1mw" id="Rmu-nX-PtX"/>
                         <outlet property="experienceLabel" destination="LB3-7f-Q80" id="Syh-bN-1Fm"/>
+                        <outlet property="firstTabImageView" destination="MiG-UI-HNr" id="EpS-Ob-XF4"/>
+                        <outlet property="firstTabSeparatorView" destination="Kg1-XD-dC9" id="XpD-ED-cJn"/>
                         <outlet property="locationLabel" destination="h0T-76-EDu" id="6Xi-Kb-HX4"/>
                         <outlet property="profileImageView" destination="xnX-Pr-kME" id="ckb-SN-Gxe"/>
                         <outlet property="ratingLabel" destination="h4u-f3-1mw" id="FBn-sb-h7U"/>
                         <outlet property="reviewCountLabel" destination="Fxa-h9-69R" id="VUI-Zi-IIt"/>
                         <outlet property="satisfiedpeopleLabel" destination="Spa-So-grc" id="GwQ-18-9h8"/>
+                        <outlet property="secondTabOmageView" destination="MuA-MM-MEz" id="d7n-xh-RA8"/>
+                        <outlet property="secondTabSeparatorView" destination="9Zf-MV-CtB" id="P29-QV-3Mv"/>
                         <outlet property="taglineLabel" destination="bdv-Sg-Xvu" id="qg0-3G-cr7"/>
+                        <outlet property="thirdTabImageView" destination="4Wc-py-h7r" id="GEL-KV-yb7"/>
+                        <outlet property="thirdTabSeparatorView" destination="mFX-cx-4KZ" id="Ucy-hX-PIj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zZL-h4-wVf" userLabel="First Responder" sceneMemberID="firstResponder"/>

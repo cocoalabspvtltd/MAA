@@ -19,5 +19,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *satisfiedpeopleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (strong, nonatomic) IBOutlet UIImageView *coverImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *firstTabSeparatorView;
+@property (strong, nonatomic) IBOutlet UIImageView *secondTabSeparatorView;
+@property (strong, nonatomic) IBOutlet UIImageView *thirdTabSeparatorView;
 @property (strong, nonatomic) IBOutlet UILabel *reviewCountLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *firstTabImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *thirdTabImageView;
+@property (strong, nonatomic) IBOutlet UIImageView *secondTabOmageView;
 @end

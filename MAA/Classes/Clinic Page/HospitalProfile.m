@@ -5,12 +5,17 @@
 //  Created by kiran on 02/01/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
+#define SeparatorTabViewSelectedBackGroundColor [UIColor redColor]
+#define SeparatorTabViewUnSelectedBackGroundColor [UIColor lightGrayColor]
+
 
 #import "CLToolKit/ImageCache.h"
 #import "HospitalProfile.h"
 
 @interface HospitalProfile ()
-
+@property (nonatomic, assign) BOOL isFirstTabSelected;
+@property (nonatomic, assign) BOOL isSecondTabSelected;
+@property (nonatomic, assign) BOOL isThirdTabSelected;
 @end
 
 @implementation HospitalProfile
@@ -24,7 +29,11 @@
     // Do any additional setup after loading the view.
 }
 -(void)initialisation{
-    
+    self.firstTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
+    self.isFirstTabSelected = YES;
+    self.isSecondTabSelected = NO;
+    self.isThirdTabSelected = NO;
+
 }
 
 -(void)customisation{
@@ -137,5 +146,31 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)firstTabButtonAction:(UIButton *)sender {
+    self.firstTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
+    self.secondTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.thirdTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.isFirstTabSelected = YES;
+    self.isSecondTabSelected  = NO;
+    self.isThirdTabSelected = NO;
+}
+- (IBAction)secondTabButtonAction:(UIButton *)sender {
+    self.secondTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
+    self.firstTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.thirdTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.isFirstTabSelected = NO;
+    self.isSecondTabSelected = YES;
+    self.isThirdTabSelected = NO;
+    
+}
+- (IBAction)thirdTabButtonAction:(UIButton *)sender {
+    self.thirdTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
+    self.secondTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.firstTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.isFirstTabSelected = NO;
+    self.isSecondTabSelected = NO;
+    self.isThirdTabSelected = YES;
+}
 
 @end

@@ -6,11 +6,17 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#define SeparatorTabViewSelectedBackGroundColor [UIColor redColor]
+#define SeparatorTabViewUnSelectedBackGroundColor [UIColor lightGrayColor]
+
 #import "CLToolKit/ImageCache.h"
 #import "DoctorProfileVC.h"
+#import "DoctorProfileTVC.h"
 
-@interface DoctorProfileVC ()
-
+@interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, assign) BOOL isFirstTabSelected;
+@property (nonatomic, assign) BOOL isSecondTabSelected;
+@property (nonatomic, assign) BOOL isThirdTabSelected;
 @end
 
 @implementation DoctorProfileVC
@@ -25,7 +31,10 @@
 }
 
 -(void)initialisation{
-    
+    self.firstTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
+    self.isFirstTabSelected = YES;
+    self.isSecondTabSelected = NO;
+    self.isThirdTabSelected = NO;
 }
 
 -(void)customisation{
@@ -140,5 +149,55 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -Tbable view Datasource and delegate
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.isSecondTabSelected){
+        DoctorProfileTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellServices"forIndexPath:indexPath];
+        return cell;
+    }
+    else if(self.isSecondTabSelected){
+        DoctorProfileTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellServices"forIndexPath:indexPath];
+        return cell;
+    }
+    else{
+        DoctorProfileTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellServices"forIndexPath:indexPath];
+        return cell;
+    }
+}
+- (IBAction)firstTabButtonAction:(UIButton *)sender {
+    self.firstTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
+    self.secondTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.thirdTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.isFirstTabSelected = YES;
+    self.isSecondTabSelected  = NO;
+    self.isThirdTabSelected = NO;
+}
+- (IBAction)secondTabButtonAction:(UIButton *)sender {
+    self.secondTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
+    self.firstTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.thirdTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.isFirstTabSelected = NO;
+    self.isSecondTabSelected = YES;
+    self.isThirdTabSelected = NO;
+    
+}
+- (IBAction)thirdTabButtonAction:(UIButton *)sender {
+    self.thirdTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
+    self.secondTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.firstTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
+    self.isFirstTabSelected = NO;
+    self.isSecondTabSelected = NO;
+    self.isThirdTabSelected = YES;
+}
 
 @end
