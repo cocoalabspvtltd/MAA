@@ -11,12 +11,17 @@
 
 #import "CLToolKit/ImageCache.h"
 #import "DoctorProfileVC.h"
-#import "DoctorProfileTVC.h"
+#import "DoctorFirstTabTVC.h"
+#import "DoctorSecondTabTVC.h"
+#import "DoctorThirdTabTVC.h"
+#import "DoctorConsultingTimingTVC.h"
 
 @interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, assign) BOOL isFirstTabSelected;
 @property (nonatomic, assign) BOOL isSecondTabSelected;
 @property (nonatomic, assign) BOOL isThirdTabSelected;
+@property (nonatomic, strong) NSArray *clinicDetailsArray;
+@property (nonatomic, strong) NSArray *reviewArray;
 @end
 
 @implementation DoctorProfileVC
@@ -64,8 +69,11 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
+        self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
+        NSLog(@"Clinic Details Array:%@",self.clinicDetailsArray);
+        [self.doctoDetailsTableView reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
-         NSLog(@"Respnse Error;%@",errorResponse);
+        NSLog(@"Respnse Error;%@",errorResponse);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
         if([errorDescription isEqualToString:NoNetworkErrorName]){
@@ -115,7 +123,7 @@
     else{
         self.profileImageView.image = localImage;
     }
-
+    
 }
 
 -(void)settingBannerImageWithurlString:(NSString *)urlString WithIdentifier:(id)identifier{
@@ -141,36 +149,64 @@
     }
 }
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 #pragma mark -Tbable view Datasource and delegate
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    if(self.isFirstTabSelected){
+        return self.clinicDetailsArray.count;
+    }
+    else
+        return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
+    if(self.isFirstTabSelected){
+        return [[[self.clinicDetailsArray objectAtIndex:section] valueForKey:@"timings"] count];
+        //return self.clinicDetailsArray.count;
+    }
+    else if (self.isThirdTabSelected){
+        return self.reviewArray.count;
+    }
+    else
+        return 1;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(self.isSecondTabSelected){
-        DoctorProfileTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellServices"forIndexPath:indexPath];
-        return cell;
+    if(self.isFirstTabSelected){
+        if(indexPath.row == 0){
+            DoctorFirstTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellDoctorFirstTabCell"forIndexPath:indexPath];
+            NSLog(@"Clinic Name:%@",[self.clinicDetailsArray valueForKey:@"clinic_name"]);
+            cell.doctorClinicNameLabel.text = [[self.clinicDetailsArray objectAtIndex:indexPath.section] valueForKey:@"clinic_name"];
+            cell.phoneNoLabel.text = [[self.clinicDetailsArray objectAtIndex:indexPath.section] valueForKey:@"phone"];
+            cell.consultationFeeLabel.text = [NSString stringWithFormat:@"Rs. %@ consultation fee",[[self.clinicDetailsArray objectAtIndex:indexPath.section]valueForKey:@"fee"]];
+            cell.addressLabel.text = [[[[self.clinicDetailsArray objectAtIndex:indexPath.section ] valueForKey:@"location"] objectAtIndex:0] valueForKey:@"address"];
+            return cell;
+        }
+        else{
+            DoctorConsultingTimingTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellTimings"forIndexPath:indexPath];
+            cell.timeLabel.text = [[[self.clinicDetailsArray objectAtIndex:indexPath.section] valueForKey:@"timings"] objectAtIndex:indexPath.row-1];
+            return cell;
+            
+        }
     }
     else if(self.isSecondTabSelected){
-        DoctorProfileTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellServices"forIndexPath:indexPath];
+        DoctorSecondTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellDoctorFirstTabCell"forIndexPath:indexPath];
         return cell;
     }
     else{
-        DoctorProfileTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellServices"forIndexPath:indexPath];
+        DoctorThirdTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellComments"forIndexPath:indexPath];
+        cell.reviewrNameLabel.text = [[self.reviewArray objectAtIndex:indexPath.row] valueForKey:@"reviewer"];
+        cell.reviewContentLabel.text = [[self.reviewArray objectAtIndex:indexPath.row] valueForKey:@"review"];
+        cell.timeLabel.text = [[self.reviewArray objectAtIndex:indexPath.row] valueForKey:@"time"];
         return cell;
     }
 }
@@ -181,6 +217,7 @@
     self.isFirstTabSelected = YES;
     self.isSecondTabSelected  = NO;
     self.isThirdTabSelected = NO;
+    [self.doctoDetailsTableView reloadData];
 }
 - (IBAction)secondTabButtonAction:(UIButton *)sender {
     self.secondTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
@@ -189,6 +226,7 @@
     self.isFirstTabSelected = NO;
     self.isSecondTabSelected = YES;
     self.isThirdTabSelected = NO;
+    [self.doctoDetailsTableView reloadData];
     
 }
 - (IBAction)thirdTabButtonAction:(UIButton *)sender {
@@ -198,6 +236,40 @@
     self.isFirstTabSelected = NO;
     self.isSecondTabSelected = NO;
     self.isThirdTabSelected = YES;
+    [self callinggetEntityReviewssApi];
+    [self.doctoDetailsTableView reloadData];
+}
+
+#pragma maRK - Calling get Entity Reviews Api
+
+-(void)callinggetEntityReviewssApi{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSString *getEntityReviewsUrlString = [Baseurl stringByAppendingString:GetEntityReviewsurl];
+    NSMutableDictionary *getEntityReviewsmutableDictionary = [[NSMutableDictionary alloc] init];
+    [getEntityReviewsmutableDictionary setValue:accessToken forKey:@"token"];
+    [getEntityReviewsmutableDictionary setValue:self.entityId forKey:@"id"];
+    [MBProgressHUD showHUDAddedTo:self.doctoDetailsTableView animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityReviewsUrlString] withBody:getEntityReviewsmutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response object:%@",responseObject);
+        [MBProgressHUD hideAllHUDsForView:self.doctoDetailsTableView animated:YES];
+        self.reviewArray = [responseObject valueForKey:Datakey];
+        [self.doctoDetailsTableView reloadData];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        NSLog(@"Error Description:%@",errorResponse);
+        [MBProgressHUD hideAllHUDsForView:self.doctoDetailsTableView animated:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+    
 }
 
 @end

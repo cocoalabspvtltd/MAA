@@ -26,4 +26,5 @@
 @property (strong, nonatomic) IBOutlet UIImageView *firstTabImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *thirdTabImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *secondTabOmageView;
+@property (strong, nonatomic) IBOutlet UITableView *doctoDetailsTableView;
 @end
