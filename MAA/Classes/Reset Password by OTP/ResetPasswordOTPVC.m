@@ -7,7 +7,7 @@
 //
 #import "OTPVerificationSuccessfulViewController.h"
 
-
+#import "ResetPasswordVC.h"
 #import "ResetPasswordOTPVC.h"
 
 @interface ResetPasswordOTPVC ()
@@ -76,7 +76,8 @@
             [errorAlert show];
         }
         else{
-            [self settingOTPverificationSeccessFulView];
+            [self settingResetPasswordVc];
+            //[self settingOTPverificationSeccessFulView];
         }
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -100,6 +101,12 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     OTPVerificationSuccessfulViewController *otpverificationSuccessfulPage = (OTPVerificationSuccessfulViewController *)[storyboard instantiateViewControllerWithIdentifier:@"OTPVerificationSuccessfulViewController"];
     [self.navigationController pushViewController:otpverificationSuccessfulPage animated:YES];
+}
+
+-(void)settingResetPasswordVc{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ResetPasswordVC *resetPasswordVC = (ResetPasswordVC *)[storyboard instantiateViewControllerWithIdentifier:@"ResetPasswordVC"];
+    [self.navigationController pushViewController:resetPasswordVC animated:YES];
 }
 /*
  #pragma mark - Navigation

@@ -27,7 +27,7 @@
 
 #pragma mark - Reset password api
 
--(void)callingResetPasswordView{
+-(void)callingResetPasswordApi{
     NSString *resetPasswordUrlString = [Baseurl stringByAppendingString:ResetPasswordUrl];
     NSMutableDictionary *resetPasswordMutableDictionary = [[NSMutableDictionary alloc] init];
     [resetPasswordMutableDictionary setValue:@"" forKey:@"oldpassword"];
@@ -67,5 +67,7 @@
  // Pass the selected object to the new view controller.
  }
  */
+- (IBAction)submitButtonAction:(UIButton *)sender {
+}
 
 @end
