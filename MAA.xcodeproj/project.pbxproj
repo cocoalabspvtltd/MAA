@@ -37,6 +37,10 @@
 		7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C8AD85C1C18BBA500C4E3BD /* 5.png */; };
 		7C9FF5531C1F4D2400C72512 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C9FF5521C1F4D2400C72512 /* 1.png */; };
 		7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9FF5551C1F5F9A00C72512 /* SearchFilterVC.m */; };
+		7CB682A81C38FF4300AC1F90 /* Players.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB682A51C38FF4300AC1F90 /* Players.png */; };
+		7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB682A61C38FF4300AC1F90 /* Players@2x.png */; };
+		7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CB682A71C38FF4300AC1F90 /* Players@3x.png */; };
+		7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97B11C24862D0037E328 /* libCLToolKit.a */; };
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
 		9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E727A1C38338B00B86477 /* HospitalProfile.m */; };
@@ -57,7 +61,6 @@
 		C0BAF02F1C31A175002F3137 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF02C1C31A175002F3137 /* libNetworkHandler.a */; };
 		C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BE979C1C2485510037E328 /* MBProgressHUD.m */; };
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
-		C0BE97BA1C24870D0037E328 /* libCLToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97B11C24862D0037E328 /* libCLToolKit.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
@@ -154,6 +157,9 @@
 		7C9FF5521C1F4D2400C72512 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		7C9FF5541C1F5F9A00C72512 /* SearchFilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchFilterVC.h; path = "Classes/Home Page/Search Filter/SearchFilterVC.h"; sourceTree = "<group>"; };
 		7C9FF5551C1F5F9A00C72512 /* SearchFilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchFilterVC.m; path = "Classes/Home Page/Search Filter/SearchFilterVC.m"; sourceTree = "<group>"; };
+		7CB682A51C38FF4300AC1F90 /* Players.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Players.png; sourceTree = "<group>"; };
+		7CB682A61C38FF4300AC1F90 /* Players@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Players@2x.png"; sourceTree = "<group>"; };
+		7CB682A71C38FF4300AC1F90 /* Players@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Players@3x.png"; sourceTree = "<group>"; };
 		7CF40FE81C1D77600020EE33 /* block1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block1@2x.png"; sourceTree = "<group>"; };
 		7CF648091C1F36F5007DA73F /* SearchResultsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultsTVC.h; path = "Classes/Home Page/Search Results/SearchResultsTVC.h"; sourceTree = "<group>"; };
 		7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsTVC.m; path = "Classes/Home Page/Search Results/SearchResultsTVC.m"; sourceTree = "<group>"; };
@@ -198,6 +204,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */,
 				C0BAF02A1C31A005002F3137 /* CoreTelephony.framework in Frameworks */,
 				C0BAF0281C319FEB002F3137 /* Foundation.framework in Frameworks */,
 				C0BAF0261C319FE3002F3137 /* UIKit.framework in Frameworks */,
@@ -211,7 +218,6 @@
 				C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */,
 				C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */,
 				C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */,
-				C0BE97BA1C24870D0037E328 /* libCLToolKit.a in Frameworks */,
 				55C674E31C09D986005AD9E5 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,6 +457,9 @@
 		7C8AD8571C18BB8100C4E3BD /* Doctor Images */ = {
 			isa = PBXGroup;
 			children = (
+				7CB682A51C38FF4300AC1F90 /* Players.png */,
+				7CB682A61C38FF4300AC1F90 /* Players@2x.png */,
+				7CB682A71C38FF4300AC1F90 /* Players@3x.png */,
 				7C9FF5521C1F4D2400C72512 /* 1.png */,
 				7C3682D51C2FFAFE002F31FA /* 2.jpg */,
 				7C8AD85B1C18BBA500C4E3BD /* 4.png */,
@@ -659,9 +668,12 @@
 				7C9FF5531C1F4D2400C72512 /* 1.png in Resources */,
 				7C8AD8641C18BBA500C4E3BD /* 4.png in Resources */,
 				7C3682D61C2FFAFE002F31FA /* 2.jpg in Resources */,
+				7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */,
+				7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
 				55D60D911C08B94600963D5D /* LaunchScreen.storyboard in Resources */,
 				55EAC8471C0A09CE00F31280 /* field_white_box@2x.png in Resources */,
+				7CB682A81C38FF4300AC1F90 /* Players.png in Resources */,
 				55D60D8E1C08B94600963D5D /* Assets.xcassets in Resources */,
 				55EAC8461C0A09CE00F31280 /* field__white_box2@2x.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
@@ -848,6 +860,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
