@@ -72,6 +72,7 @@
         self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
         NSLog(@"Clinic Details Array:%@",self.clinicDetailsArray);
         [self.doctoDetailsTableView reloadData];
+        
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         NSLog(@"Respnse Error;%@",errorResponse);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -91,14 +92,22 @@
 -(void)settingEntityDetailsWithData:(id)entityDetails{
     NSLog(@"Entity Details:%@",entityDetails);
     self.ratingLabel.text = [entityDetails valueForKey:@"rating"];
-    self.experienceLabel.text = [entityDetails valueForKey:@"experience"];
+    if(![[entityDetails valueForKey:@"experience"] isEqualToString:@"0"])
+    {
+       self.experienceLabel.text = [NSString stringWithFormat:@"%@",[entityDetails valueForKey:@"experience"]];
+    }
+    else{
+        self.experienceLabel.text = @"";
+    }
     self.doctorNameLabel.text = [entityDetails valueForKey:@"name"];
-    self.taglineLabel.text = [entityDetails valueForKey:@"tagline"];
+    if(!([entityDetails valueForKey:@"tagline"] == [NSNull null])){
+        self.taglineLabel.text = [entityDetails valueForKey:@"tagline"];
+    }
     self.locationLabel.text = [[entityDetails valueForKey:@"location"] valueForKey:@"location_name"];
     self.consultationFeeLabel.text = [NSString stringWithFormat:@"Rs. %@ consultation fee",[entityDetails valueForKey:@"average_fee"]];
     self.satisfiedpeopleLabel.text = [NSString stringWithFormat:@"%@ satisfied people",[entityDetails valueForKey:@"no_of_consultations"]];
     self.reviewCountLabel.text = [NSString stringWithFormat:@"%@ Reviews",[entityDetails valueForKey:@"no_of_reviews"]];
-    [self settingProfileImageWithurlString:[entityDetails valueForKey:@"logo_image"] WithIdentifier:[entityDetails valueForKey:@"id"]];
+   [self settingProfileImageWithurlString:[entityDetails valueForKey:@"logo_image"] WithIdentifier:[entityDetails valueForKey:@"id"]];
     [self settingBannerImageWithurlString:[entityDetails valueForKey:@"banner_image"] WithIdentifier:[entityDetails valueForKey:@"id"]];
 }
 
@@ -162,7 +171,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     if(self.isFirstTabSelected){
-        return self.clinicDetailsArray.count;
+            return self.clinicDetailsArray.count;
     }
     else
         return 1;
