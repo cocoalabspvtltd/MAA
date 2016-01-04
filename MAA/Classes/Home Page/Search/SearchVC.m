@@ -16,6 +16,7 @@
 @property (nonatomic, assign) BOOL isLocationSearch;
 @property (nonatomic, strong) NSArray *locationArray;
 @property (nonatomic, strong) NSArray *doctorsArray;
+@property (nonatomic, strong) NSString *locationIdString;
 @end
 
 @implementation SearchVC
@@ -34,6 +35,7 @@
 -(void)initialisation{
     self.doctorSearchBar.delegate = self;
     self.locationSerchBar.delegate = self;
+    self.locationIdString = @"";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -95,17 +97,20 @@
     //self.doctorsArray
     if(self.isLocationSearch){
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
-        searchResults.locationId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"location_id"];
-        searchResults.isLocationSearch = YES;
-        [self.navigationController pushViewController:searchResults animated:YES];
+        //SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
+        self.locationSerchBar.text =[[self.locationArray objectAtIndex:indexPath.row] valueForKey:@"location"];
+        self.locationIdString = [[self.locationArray objectAtIndex:indexPath.row] valueForKey:@"location_id"];
+        //searchResults.locationId = self.locationIdString;
+       // searchResults.isLocationSearch = YES;
+       // [self.navigationController pushViewController:searchResults animated:YES];
     }
     else{
         if([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"department"]){
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
             searchResults.departmentId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
-            searchResults.isLocationSearch = NO;
+            searchResults.locationId = self.locationIdString;
+            //searchResults.isLocationSearch = NO;
             [self.navigationController pushViewController:searchResults animated:YES];
         }
         else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
@@ -187,7 +192,6 @@
     [getLocationListMutableDictionary setValue:searchLocationText forKey:@"keyword"];
     [getLocationListMutableDictionary setValue:accessToken forKey:@"token"];
     NSString *searchDoctorUrlString = [Baseurl stringByAppendingString:SearchDoctorsBasedOnLocationApi];
-    
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchDoctorUrlString] withBody:getLocationListMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Data:%@",responseObject);

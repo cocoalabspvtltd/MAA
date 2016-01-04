@@ -8,6 +8,7 @@
 #define OnlineAllButtonSelectedBorderColor [UIColor whiteColor].CGColor
 
 #import "DoctorProfileVC.h"
+#import "HospitalProfile.h"
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
 #import "CLToolKit/ImageCache.h"
@@ -95,8 +96,13 @@
     NSURL *imageUrl;
     NSString *cacheIdentifier;
     if(self.isOnlineButtonSelected){
+        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
+            cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+        }
+        else{
+            cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+        }
         cell.cellLabelRating.text = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
-        cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
         NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
         cell.cellLabelDescription.text = doctorDescription;
         cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
@@ -113,7 +119,12 @@
     }
     else{
         cell.cellLabelRating.text = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
-        cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
+           cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+        }
+        else{
+          cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+        }
         NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
         cell.cellLabelDescription.text = doctorDescription;
         cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
@@ -154,14 +165,33 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+   
     if(self.isOnlineButtonSelected){
-       doctorPfofileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+        if([[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
+            DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+            doctorPfofileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            [self.navigationController pushViewController:doctorPfofileVC animated:YES];
+        }
+        else{
+            HospitalProfile *hospitalProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"HospitalProfile"];
+            hospitalProfileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            [self.navigationController pushViewController:hospitalProfileVC animated:YES];
+        }
+       
     }
     else{
-        doctorPfofileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
+            DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+            doctorPfofileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            [self.navigationController pushViewController:doctorPfofileVC animated:YES];
+        }
+        else{
+            HospitalProfile *hospitalProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"HospitalProfile"];
+            hospitalProfileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            [self.navigationController pushViewController:hospitalProfileVC animated:YES];
+        }
+
     }
-    [self.navigationController pushViewController:doctorPfofileVC animated:YES];
 }
 
 -(void)callingSearchapi{
@@ -175,12 +205,13 @@
     [searchMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [searchMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
     [searchMutableDictionary setValue:accesToken forKey:@"token"];
-    if(self.isLocationSearch){
+    //if(self.isLocationSearch){
         [searchMutableDictionary setValue:self.locationId forKey:@"location_id"];
-    }
-    else{
+    //}
+    //else{
         [searchMutableDictionary setValue:self.departmentId forKey:@"dept_id"];
-    }
+    //}
+    NSLog(@"Search Mutable Dictionary:%@",searchMutableDictionary);
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchUrlString] withBody:searchMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
