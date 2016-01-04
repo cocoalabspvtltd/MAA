@@ -99,6 +99,12 @@
     else{
         self.experienceLabel.text = @"";
     }
+    if([[entityDetails valueForKey:@"e_booking_avail"] isEqualToString:@"1"] ){
+        self.consultNowButton.hidden  = NO;
+    }
+    else{
+        self.consultNowButton.hidden = YES;
+    }
     self.doctorNameLabel.text = [entityDetails valueForKey:@"name"];
     if(!([entityDetails valueForKey:@"tagline"] == [NSNull null])){
         self.taglineLabel.text = [entityDetails valueForKey:@"tagline"];

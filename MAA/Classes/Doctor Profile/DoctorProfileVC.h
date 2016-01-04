@@ -27,4 +27,5 @@
 @property (strong, nonatomic) IBOutlet UIImageView *thirdTabImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *secondTabOmageView;
 @property (strong, nonatomic) IBOutlet UITableView *doctoDetailsTableView;
+@property (weak, nonatomic) IBOutlet UIButton *consultNowButton;
 @end
