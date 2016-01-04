@@ -71,7 +71,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if([self.onlineButton isSelected]){
+    if(self.isOnlineButtonSelected){
         return self.onlineDoctorsArray.count;
     }
     else{
@@ -94,7 +94,7 @@
     cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
     NSURL *imageUrl;
     NSString *cacheIdentifier;
-    if([self.onlineButton isSelected]){
+    if(self.isOnlineButtonSelected){
         cell.cellLabelRating.text = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
         cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
         NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
@@ -155,7 +155,12 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
-    doctorPfofileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+    if(self.isOnlineButtonSelected){
+       doctorPfofileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+    }
+    else{
+        doctorPfofileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+    }
     [self.navigationController pushViewController:doctorPfofileVC animated:YES];
 }
 
@@ -183,7 +188,7 @@
         self.offsetValue=self.offsetValue+self.limitValue;
         [self.bottomProgressIndicatorView stopAnimating];
         [self.doctorsMutableArray addObjectsFromArray:self.doctorsArray];
-        NSPredicate *onlineDoctorsPredicate = [NSPredicate predicateWithFormat:@"SELF.is_online == 1"];
+        NSPredicate *onlineDoctorsPredicate = [NSPredicate predicateWithFormat:@"SELF.is_online == %@",@"1"];
         self.onlineDoctorsArray = [self.doctorsMutableArray filteredArrayUsingPredicate:onlineDoctorsPredicate];
         [tableViewSearchResults reloadData];
         NSLog(@"Response object:%@",responseObject);
