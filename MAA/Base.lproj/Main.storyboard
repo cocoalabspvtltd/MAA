@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< Updated upstream
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AkY-4G-ZHb">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AkY-4G-ZHb">
+>>>>>>> Stashed changes
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -3510,10 +3514,10 @@
             </objects>
             <point key="canvasLocation" x="3055" y="1525"/>
         </scene>
-        <!--Appointment Filter-->
+        <!--Filter-->
         <scene sceneID="3uI-8u-J7A">
             <objects>
-                <viewController title="Appointment Filter" id="biq-3O-6Lr" sceneMemberID="viewController">
+                <viewController title="Filter" id="biq-3O-6Lr" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FcK-6V-8Or"/>
                         <viewControllerLayoutGuide type="bottom" id="G0R-7e-HjE"/>
@@ -3521,8 +3525,64 @@
                     <view key="view" contentMode="scaleToFill" id="v97-2a-WCb">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0rk-4l-Vv5">
+                                <rect key="frame" x="20" y="110" width="560" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91y-6M-zWo">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
+                                        <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyB-Ff-oRC">
+                                        <rect key="frame" x="148" y="0.0" width="140" height="50"/>
+                                        <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpY-az-Idc">
+                                        <rect key="frame" x="288" y="0.0" width="140" height="50"/>
+                                        <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVt-Rb-xL1">
+                                        <rect key="frame" x="420" y="0.0" width="140" height="50"/>
+                                        <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyJ-Yz-iQt">
+                                        <rect key="frame" x="140" y="0.0" width="140" height="50"/>
+                                        <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eh3-Dd-hZZ">
+                                <rect key="frame" x="20" y="81" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKg-6X-hU1">
+                                <rect key="frame" x="0.0" y="555" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.78823529410000004" green="0.79607843140000001" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="CLEAR FILTERS">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cy3-ns-TRV">
+                                <rect key="frame" x="300" y="555" width="300" height="45"/>
+                                <color key="backgroundColor" red="0.91372549020000005" green="0.17254901959999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="APPLY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SS9-Zu-Lja" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
