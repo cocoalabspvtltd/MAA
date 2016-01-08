@@ -204,6 +204,7 @@
             cell.phoneNoLabel.text = [[self.clinicDetailsArray objectAtIndex:indexPath.section] valueForKey:@"phone"];
             cell.consultationFeeLabel.text = [NSString stringWithFormat:@"Rs. %@ consultation fee",[[self.clinicDetailsArray objectAtIndex:indexPath.section]valueForKey:@"fee"]];
             cell.addressLabel.text = [[[self.clinicDetailsArray objectAtIndex:indexPath.section ] valueForKey:@"location"] valueForKey:@"address"];
+            cell.photosArray = [[self.clinicDetailsArray objectAtIndex:indexPath.section] valueForKey:@"images"];
             return cell;
         }
         else{
@@ -229,7 +230,7 @@
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.row == 0){
-        return 200;
+        return 150;
     }
     else{
         return 30;
