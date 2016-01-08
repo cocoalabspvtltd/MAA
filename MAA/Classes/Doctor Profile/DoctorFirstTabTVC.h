@@ -14,4 +14,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *addressLabel;
 @property (strong, nonatomic) IBOutlet UILabel *consultationFeeLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *photoCollectionView;
+@property (nonatomic, strong) NSArray *photosArray;
 @end

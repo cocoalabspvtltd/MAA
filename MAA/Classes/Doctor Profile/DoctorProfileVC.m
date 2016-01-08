@@ -16,7 +16,7 @@
 #import "DoctorThirdTabTVC.h"
 #import "DoctorConsultingTimingTVC.h"
 
-@interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (nonatomic, assign) BOOL isFirstTabSelected;
 @property (nonatomic, assign) BOOL isSecondTabSelected;
 @property (nonatomic, assign) BOOL isThirdTabSelected;
@@ -203,7 +203,8 @@
             cell.doctorClinicNameLabel.text = [[self.clinicDetailsArray objectAtIndex:indexPath.section] valueForKey:@"clinic_name"];
             cell.phoneNoLabel.text = [[self.clinicDetailsArray objectAtIndex:indexPath.section] valueForKey:@"phone"];
             cell.consultationFeeLabel.text = [NSString stringWithFormat:@"Rs. %@ consultation fee",[[self.clinicDetailsArray objectAtIndex:indexPath.section]valueForKey:@"fee"]];
-            cell.addressLabel.text = [[[[self.clinicDetailsArray objectAtIndex:indexPath.section ] valueForKey:@"location"] objectAtIndex:0] valueForKey:@"address"];
+            cell.addressLabel.text = [[[self.clinicDetailsArray objectAtIndex:indexPath.section ] valueForKey:@"location"] valueForKey:@"address"];
+            cell.photosArray = [[self.clinicDetailsArray objectAtIndex:indexPath.section] valueForKey:@"images"];
             return cell;
         }
         else{
@@ -225,6 +226,25 @@
         return cell;
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.isFirstTabSelected){
+        if(indexPath.row == 0){
+            return 150;
+        }
+        else{
+            return 30;
+        }
+    }
+    else if (self.isThirdTabSelected){
+        return 100;
+    }
+    else{
+        return 10;
+    }
+}
+
 - (IBAction)firstTabButtonAction:(UIButton *)sender {
     self.firstTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
     self.secondTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
@@ -287,4 +307,19 @@
     
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if(scrollView == self.doctoDetailsTableView){
+        float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
+        if (endScrolling >= scrollView.contentSize.height)
+        {
+            NSLog(@"End:");
+            //[self getCategoriesApiCall];
+           // [self.bottomProgressIndicatorView startAnimating];
+        }
+        else{
+            //[self.bottomProgressIndicatorView stopAnimating];
+        }
+    }
+}
 @end
