@@ -225,6 +225,17 @@
         return cell;
     }
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(indexPath.row == 0){
+        return 200;
+    }
+    else{
+        return 30;
+    }
+}
+
 - (IBAction)firstTabButtonAction:(UIButton *)sender {
     self.firstTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
     self.secondTabSeparatorView.backgroundColor = SeparatorTabViewUnSelectedBackGroundColor;
