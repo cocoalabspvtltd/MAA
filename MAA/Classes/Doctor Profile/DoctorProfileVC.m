@@ -16,7 +16,7 @@
 #import "DoctorThirdTabTVC.h"
 #import "DoctorConsultingTimingTVC.h"
 
-@interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (nonatomic, assign) BOOL isFirstTabSelected;
 @property (nonatomic, assign) BOOL isSecondTabSelected;
 @property (nonatomic, assign) BOOL isThirdTabSelected;
@@ -287,4 +287,19 @@
     
 }
 
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if(scrollView == self.doctoDetailsTableView){
+        float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
+        if (endScrolling >= scrollView.contentSize.height)
+        {
+            NSLog(@"End:");
+            //[self getCategoriesApiCall];
+           // [self.bottomProgressIndicatorView startAnimating];
+        }
+        else{
+            //[self.bottomProgressIndicatorView stopAnimating];
+        }
+    }
+}
 @end
