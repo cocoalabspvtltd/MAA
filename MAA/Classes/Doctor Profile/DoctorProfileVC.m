@@ -229,11 +229,19 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row == 0){
-        return 150;
+    if(self.isFirstTabSelected){
+        if(indexPath.row == 0){
+            return 150;
+        }
+        else{
+            return 30;
+        }
+    }
+    else if (self.isThirdTabSelected){
+        return 100;
     }
     else{
-        return 30;
+        return 10;
     }
 }
 
