@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface HospitalFirstTabTVC : UITableViewCell
+@property (strong, nonatomic) IBOutlet UILabel *phoneNumberLabel;
+@property (strong, nonatomic) IBOutlet UILabel *AddressLabel;
 
 @end

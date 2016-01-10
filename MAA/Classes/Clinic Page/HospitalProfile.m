@@ -10,12 +10,16 @@
 
 
 #import "CLToolKit/ImageCache.h"
+#import "HospitalFirstTabTVC.h"
+#import "HospitalThirdTabTVC.h"
 #import "HospitalProfile.h"
 
-@interface HospitalProfile ()
+@interface HospitalProfile ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, assign) BOOL isFirstTabSelected;
 @property (nonatomic, assign) BOOL isSecondTabSelected;
 @property (nonatomic, assign) BOOL isThirdTabSelected;
+@property (nonatomic, strong) NSArray *reviewArray;
+@property (nonatomic, strong) NSDictionary *hospitalDataDictionary;
 @end
 
 @implementation HospitalProfile
@@ -59,8 +63,10 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Hospital Detilst;%@",responseObject);
+        self.hospitalDataDictionary = [responseObject valueForKey:Datakey];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
          [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
+        [self.clinicTbableView reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         NSLog(@"Respnse Error;%@",errorResponse);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -136,7 +142,6 @@
         self.coverImageView.image = localImage;
     }
 }
-
 /*
 #pragma mark - Navigation
 
@@ -154,6 +159,7 @@
     self.isFirstTabSelected = YES;
     self.isSecondTabSelected  = NO;
     self.isThirdTabSelected = NO;
+    [self.clinicTbableView reloadData];
 }
 - (IBAction)secondTabButtonAction:(UIButton *)sender {
     self.secondTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
@@ -171,6 +177,75 @@
     self.isFirstTabSelected = NO;
     self.isSecondTabSelected = NO;
     self.isThirdTabSelected = YES;
+    [self callinggetEntityReviewssApi];
+}
+
+#pragma mark - Table view Data Sources
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(self.isFirstTabSelected){
+        return 10;
+    }
+    else if (self.isSecondTabSelected){
+        return 10;
+    }
+    else{
+        return self.reviewArray.count;
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.isFirstTabSelected){
+       // if(indexPath.row == 0){
+            HospitalFirstTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellClinicFirstTabCell"forIndexPath:indexPath];
+            cell.phoneNumberLabel.text = [self.hospitalDataDictionary valueForKey:@"phone"];
+            cell.AddressLabel.text = [[self.hospitalDataDictionary valueForKey:@"location"] valueForKey:@"location_name"];
+            return cell;
+      //  }
+    }
+    else if (self.isThirdTabSelected){
+        HospitalThirdTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellReviewCell"forIndexPath:indexPath];
+        cell.reviewerNameLabel.text = [[self.reviewArray objectAtIndex:indexPath.row ] valueForKey:@"reviewer"];
+         cell.reviewDescriptionLabel.text = [[self.reviewArray objectAtIndex:indexPath.row ] valueForKey:@"review"];
+        cell.timeLabel.text = [[self.reviewArray objectAtIndex:indexPath.row ] valueForKey:@"time"];
+        return cell;
+    }
+    return nil;
+}
+
+#pragma mark - Get Clinic Reviews Api
+
+-(void)callinggetEntityReviewssApi{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSString *getEntityReviewsUrlString = [Baseurl stringByAppendingString:GetEntityReviewsurl];
+    NSMutableDictionary *getEntityReviewsmutableDictionary = [[NSMutableDictionary alloc] init];
+    [getEntityReviewsmutableDictionary setValue:accessToken forKey:@"token"];
+    [getEntityReviewsmutableDictionary setValue:self.entityId forKey:@"id"];
+    [MBProgressHUD showHUDAddedTo:self.clinicTbableView animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityReviewsUrlString] withBody:getEntityReviewsmutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response object:%@",responseObject);
+        [MBProgressHUD hideAllHUDsForView:self.clinicTbableView animated:YES];
+        self.reviewArray = [responseObject valueForKey:Datakey];
+        [self.clinicTbableView reloadData];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        NSLog(@"Error Description:%@",errorResponse);
+        [MBProgressHUD hideAllHUDsForView:self.clinicTbableView animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+    
 }
 
 @end

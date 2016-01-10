@@ -25,5 +25,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *thirdTabSeparatorView;
 @property (strong, nonatomic) IBOutlet UIImageView *firstTabImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *thirdTabImageView;
+@property (strong, nonatomic) IBOutlet UITableView *clinicTbableView;
 @property (strong, nonatomic) IBOutlet UIImageView *secondTabOmageView;
 @end
