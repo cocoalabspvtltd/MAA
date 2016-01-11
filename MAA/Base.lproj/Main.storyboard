@@ -4602,6 +4602,12 @@
                                                         <constraint firstItem="um1-3L-Lwd" firstAttribute="centerX" secondItem="6p5-In-ZX3" secondAttribute="centerX" id="gu4-Zy-U8b"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="appointmentDateLabel" destination="gTK-uK-I2j" id="eL9-HN-hzQ"/>
+                                                    <outlet property="doctorNameLabel" destination="HRZ-D8-XZw" id="PPd-VS-8HP"/>
+                                                    <outlet property="isOnlineImageView" destination="MmN-pm-hZH" id="KrJ-YB-uT2"/>
+                                                    <outlet property="profileImageView" destination="wr9-1E-GO1" id="Wlv-cd-yis"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>

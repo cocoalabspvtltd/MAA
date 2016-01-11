@@ -9,5 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AppointmentTVC : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *isOnlineImageView;
+@property (weak, nonatomic) IBOutlet UILabel *doctorNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *appointmentDateLabel;
 @end
