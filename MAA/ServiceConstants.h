@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #define Baseurl @"http://freemaart.com/dev/my_maa/api/"
+//#define Baseurl @"http://freemaart.com/dev/my_maa/test/api/"
 
 
 #define LogInUrl @"login"
