@@ -70,6 +70,7 @@
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
+		C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E608CF1C44167F0027650B /* AppointmentTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +219,8 @@
 		C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLToolKit.xcodeproj; path = CLToolKit/CLToolKit.xcodeproj; sourceTree = "<group>"; };
 		C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MAA/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C0E608CE1C44167F0027650B /* AppointmentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentTVC.h; sourceTree = "<group>"; };
+		C0E608CF1C44167F0027650B /* AppointmentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -339,6 +342,8 @@
 			children = (
 				55D352D91C0B45E1008CCEC1 /* AppointmentPageVC.h */,
 				55D352DA1C0B45E1008CCEC1 /* AppointmentPageVC.m */,
+				C0E608CE1C44167F0027650B /* AppointmentTVC.h */,
+				C0E608CF1C44167F0027650B /* AppointmentTVC.m */,
 			);
 			name = "Appointment Page";
 			sourceTree = "<group>";
@@ -742,6 +747,7 @@
 				9F6BF5491C396AC8006FB97A /* DoctorConsultingTimingTVC.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
+				C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
 				55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */,

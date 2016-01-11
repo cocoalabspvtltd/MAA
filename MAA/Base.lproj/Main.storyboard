@@ -4454,6 +4454,9 @@
                                                     <constraint firstAttribute="width" constant="30" id="L77-El-j2E"/>
                                                     <constraint firstAttribute="height" constant="30" id="Xqx-No-eTw"/>
                                                 </constraints>
+                                                <connections>
+                                                    <action selector="closeButtonAction:" destination="MMB-bc-97t" eventType="touchUpInside" id="Akk-6s-FCh"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4488,7 +4491,7 @@
                                         <rect key="frame" x="8" y="8" width="584" height="416"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Soa-wH-FRy">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="appointmentCell" rowHeight="100" id="Soa-wH-FRy" customClass="AppointmentTVC">
                                                 <rect key="frame" x="0.0" y="28" width="584" height="100"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Soa-wH-FRy" id="6p5-In-ZX3">
@@ -4621,6 +4624,10 @@
                     <tabBarItem key="tabBarItem" title="" image="Players.png" id="KHs-Uy-X8U"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="appointmentTableView" destination="Wnd-hZ-uHE" id="k9s-PT-DrT"/>
+                        <outlet property="searchBar" destination="2ik-JM-Ef3" id="pIF-oJ-qI6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FO7-VM-bjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

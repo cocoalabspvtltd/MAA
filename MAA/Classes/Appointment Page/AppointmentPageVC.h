@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AppointmentPageVC : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *appointmentTableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 @end
