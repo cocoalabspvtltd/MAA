@@ -13,6 +13,7 @@
 #import "HospitalFirstTabTVC.h"
 #import "HospitalThirdTabTVC.h"
 #import "HospitalProfile.h"
+#import "HospitalAboutTVC.h"
 
 @interface HospitalProfile ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, assign) BOOL isFirstTabSelected;
@@ -183,12 +184,21 @@
 #pragma mark - Table view Data Sources
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    if(self.isFirstTabSelected){
+        return 2;
+    }
     return 1;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(self.isFirstTabSelected){
-        return 10;
+        if(section == 0){
+           return 1;
+        }
+        else if (section == 1){
+            return 1;
+        }
+        return 1;
     }
     else if (self.isSecondTabSelected){
         return 10;
@@ -198,14 +208,39 @@
     }
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.isFirstTabSelected){
+        if(indexPath.section == 0){
+            if(indexPath.row == 0){
+                return 80;
+            }
+            else{
+                return 20;
+            }
+        }
+        else if (indexPath.section == 1){
+            return 100;
+        }
+    }
+    return 100;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(self.isFirstTabSelected){
-       // if(indexPath.row == 0){
-            HospitalFirstTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellClinicFirstTabCell"forIndexPath:indexPath];
-            cell.phoneNumberLabel.text = [self.hospitalDataDictionary valueForKey:@"phone"];
-            cell.AddressLabel.text = [[self.hospitalDataDictionary valueForKey:@"location"] valueForKey:@"location_name"];
+        if(indexPath.section == 0){
+            if(indexPath.row == 0){
+                HospitalFirstTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellClinicFirstTabCell"forIndexPath:indexPath];
+                cell.phoneNumberLabel.text = [self.hospitalDataDictionary valueForKey:@"phone"];
+                cell.AddressLabel.text = [[self.hospitalDataDictionary valueForKey:@"location"] valueForKey:@"location_name"];
+                return cell;
+            }
+        }
+        else if (indexPath.section == 1){
+            HospitalAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"hospitalAboutCell"forIndexPath:indexPath];
+            cell.aboutDescriptionLabel.text = [self.hospitalDataDictionary valueForKey:@"description"];
             return cell;
-      //  }
+        }
+        return nil;
     }
     else if (self.isThirdTabSelected){
         HospitalThirdTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellReviewCell"forIndexPath:indexPath];
@@ -247,5 +282,19 @@
     }];
     
 }
+
+#pragma mark - Button Actions
+
+- (IBAction)consultNowButtonAction:(UIButton *)sender {
+}
+
+- (IBAction)callButtonAction:(UIButton *)sender {
+}
+
+- (IBAction)messageButtonAction:(UIButton *)sender {
+}
+- (IBAction)shareButtonAction:(UIButton *)sender {
+}
+
 
 @end

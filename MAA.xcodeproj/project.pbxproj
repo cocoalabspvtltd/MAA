@@ -47,10 +47,11 @@
 		9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */; };
 		9F6BF53F1C396AB1006FB97A /* DoctorSecondTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF53B1C396AB1006FB97A /* DoctorSecondTabTVC.m */; };
 		9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */; };
-		9F6BF5491C396AC8006FB97A /* DoctorConsultingTimingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5421C396AC8006FB97A /* DoctorConsultingTimingTVC.m */; };
 		9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */; };
 		9F6BF54B1C396AC8006FB97A /* HospitalSecondTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5461C396AC8006FB97A /* HospitalSecondTabTVC.m */; };
 		9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */; };
+		9F9878EE1C49BE0400DE68A9 /* DoctorConsultingTimingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9878ED1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.m */; };
+		9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */; };
 		9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */; };
 		C086ED021C285D25009DF69F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED011C285D25009DF69F /* CoreData.framework */; };
 		C086ED041C285D30009DF69F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED031C285D30009DF69F /* MobileCoreServices.framework */; };
@@ -179,14 +180,16 @@
 		9F6BF53B1C396AB1006FB97A /* DoctorSecondTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSecondTabTVC.m; sourceTree = "<group>"; };
 		9F6BF53C1C396AB1006FB97A /* DoctorThirdTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorThirdTabTVC.h; sourceTree = "<group>"; };
 		9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorThirdTabTVC.m; sourceTree = "<group>"; };
-		9F6BF5411C396AC8006FB97A /* DoctorConsultingTimingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorConsultingTimingTVC.h; sourceTree = "<group>"; };
-		9F6BF5421C396AC8006FB97A /* DoctorConsultingTimingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorConsultingTimingTVC.m; sourceTree = "<group>"; };
 		9F6BF5431C396AC8006FB97A /* HospitalFirstTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalFirstTabTVC.h; sourceTree = "<group>"; };
 		9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalFirstTabTVC.m; sourceTree = "<group>"; };
 		9F6BF5451C396AC8006FB97A /* HospitalSecondTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalSecondTabTVC.h; sourceTree = "<group>"; };
 		9F6BF5461C396AC8006FB97A /* HospitalSecondTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalSecondTabTVC.m; sourceTree = "<group>"; };
 		9F6BF5471C396AC8006FB97A /* HospitalThirdTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalThirdTabTVC.h; sourceTree = "<group>"; };
 		9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalThirdTabTVC.m; sourceTree = "<group>"; };
+		9F9878EC1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorConsultingTimingTVC.h; sourceTree = "<group>"; };
+		9F9878ED1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorConsultingTimingTVC.m; sourceTree = "<group>"; };
+		9F9878EF1C49BE2D00DE68A9 /* HospitalAboutTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalAboutTVC.h; sourceTree = "<group>"; };
+		9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalAboutTVC.m; sourceTree = "<group>"; };
 		9FA914AC1C3797FB00BDCB5D /* DoctorProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorProfileVC.h; sourceTree = "<group>"; };
 		9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorProfileVC.m; sourceTree = "<group>"; };
 		C086ECED1C285B37009DF69F /* ServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceConstants.h; sourceTree = "<group>"; };
@@ -506,8 +509,6 @@
 		9F5E72751C38334C00B86477 /* Clinic Page */ = {
 			isa = PBXGroup;
 			children = (
-				9F6BF5411C396AC8006FB97A /* DoctorConsultingTimingTVC.h */,
-				9F6BF5421C396AC8006FB97A /* DoctorConsultingTimingTVC.m */,
 				9F6BF5431C396AC8006FB97A /* HospitalFirstTabTVC.h */,
 				9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */,
 				9F6BF5451C396AC8006FB97A /* HospitalSecondTabTVC.h */,
@@ -516,6 +517,8 @@
 				9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */,
 				9F5E72791C38338B00B86477 /* HospitalProfile.h */,
 				9F5E727A1C38338B00B86477 /* HospitalProfile.m */,
+				9F9878EF1C49BE2D00DE68A9 /* HospitalAboutTVC.h */,
+				9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */,
 			);
 			name = "Clinic Page";
 			path = "Classes/Clinic Page";
@@ -524,6 +527,8 @@
 		9FA914AB1C3797D400BDCB5D /* Doctor Profile */ = {
 			isa = PBXGroup;
 			children = (
+				9F9878EC1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.h */,
+				9F9878ED1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.m */,
 				9F6BF5381C396AB1006FB97A /* DoctorFirstTabTVC.h */,
 				9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */,
 				9F6BF53A1C396AB1006FB97A /* DoctorSecondTabTVC.h */,
@@ -743,8 +748,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,
+				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
 				7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */,
-				9F6BF5491C396AC8006FB97A /* DoctorConsultingTimingTVC.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */,
@@ -757,6 +762,7 @@
 				55D60D831C08B94600963D5D /* main.m in Sources */,
 				C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */,
 				C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */,
+				9F9878EE1C49BE0400DE68A9 /* DoctorConsultingTimingTVC.m in Sources */,
 				55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */,
 				7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */,
 				555BBCFE1C0AA5DC00E262F9 /* HomePageVC.m in Sources */,
