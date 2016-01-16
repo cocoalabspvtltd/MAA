@@ -322,4 +322,18 @@
         }
     }
 }
+
+#pragma mark - Button Actions
+
+- (IBAction)consultNowButtonAction:(UIButton *)sender {
+}
+
+- (IBAction)callButtonAction:(UIButton *)sender {
+}
+
+- (IBAction)messageButtonAction:(UIButton *)sender {
+}
+- (IBAction)shareButtonAction:(UIButton *)sender {
+}
+
 @end
