@@ -86,8 +86,8 @@
     NSString *passwordInSh1 = [self sha1:textFieldPassword.text];
    
     //[logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
-    [logInDictionary setValue:@"j@j.j" forKey:@"uname"];
-    [logInDictionary setValue:@"jjjjjj" forKey:@"pwd"];
+    [logInDictionary setValue:@"anju" forKey:@"uname"];
+    [logInDictionary setValue:@"admin" forKey:@"pwd"];
     //[logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
     NSLog(@"Log In Dictionary:%@",logInDictionary);
     NSLog(@"Log In url:%@",logInUrlString);
