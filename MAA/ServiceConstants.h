@@ -28,3 +28,4 @@
 #define GetDoctorsAppointmentesUrl @"search_doctor_names"
 #define GetFilterInfoUrl @"get_filter_info"
 #define GetQuestionsApiUrl @"get_questions"
+#define AskQuestionUrl @"ask_question"
