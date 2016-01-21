@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestionsPageVC : UIViewController
+@property (weak, nonatomic) IBOutlet UISearchBar *searchbar;
+@property (weak, nonatomic) IBOutlet UITableView *questionsTableView;
 
 @end

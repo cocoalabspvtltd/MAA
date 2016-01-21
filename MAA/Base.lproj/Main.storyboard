@@ -2849,7 +2849,7 @@
         <!--Questions Page-->
         <scene sceneID="Ibz-Xn-gUY">
             <objects>
-                <viewController title="Questions Page" id="1bf-0R-8yH" customClass="QuestionsPageVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionsPageVC" title="Questions Page" id="1bf-0R-8yH" customClass="QuestionsPageVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KH7-zx-KUl"/>
                         <viewControllerLayoutGuide type="bottom" id="gq5-ex-KlP"/>
@@ -2950,7 +2950,7 @@
                                         <rect key="frame" x="8" y="8" width="564" height="344"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="140" id="Q0d-Go-Vdo">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="questionsCell" rowHeight="140" id="Q0d-Go-Vdo" customClass="QuestionsTVC">
                                                 <rect key="frame" x="0.0" y="28" width="564" height="140"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q0d-Go-Vdo" id="uiH-4P-pEn">
@@ -3025,8 +3025,16 @@
                                                     <constraint firstItem="WqG-DZ-3Vp" firstAttribute="centerX" secondItem="Q0d-Go-Vdo" secondAttribute="centerX" id="4JL-AF-xvT"/>
                                                     <constraint firstItem="WqG-DZ-3Vp" firstAttribute="width" secondItem="Q0d-Go-Vdo" secondAttribute="width" id="BB0-Sb-mEA"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outlet property="nameLabel" destination="ndw-Dl-KZq" id="BCN-QF-jv5"/>
+                                                    <outlet property="profileImageView" destination="Lwz-yp-V4G" id="7mw-GR-8TA"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="1bf-0R-8yH" id="b63-IE-y4k"/>
+                                            <outlet property="delegate" destination="1bf-0R-8yH" id="VKS-LE-Eoi"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -3083,6 +3091,10 @@
                     <tabBarItem key="tabBarItem" title="" image="Players.png" id="brI-Te-ATj"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="questionsTableView" destination="Jqw-Tt-tzG" id="3TX-2z-1kN"/>
+                        <outlet property="searchbar" destination="5pZ-EI-ajO" id="g4o-gh-BB2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yhk-of-aQR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -8321,6 +8333,6 @@
         <image name="users" width="56" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q50-MZ-tRA"/>
+        <segue reference="FpB-4z-5hg"/>
     </inferredMetricsTieBreakers>
 </document>
