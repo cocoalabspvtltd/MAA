@@ -59,6 +59,7 @@
 		C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED1A1C287364009DF69F /* EmailSentVC.m */; };
 		C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */; };
 		C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED231C287546009DF69F /* ResetPasswordVC.m */; };
+		C08BE7721C51525100770735 /* QuestionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE7711C51525100770735 /* QuestionsTVC.m */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
@@ -204,6 +205,8 @@
 		C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPVerificationSuccessfulViewController.m; sourceTree = "<group>"; };
 		C086ED221C287546009DF69F /* ResetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordVC.h; sourceTree = "<group>"; };
 		C086ED231C287546009DF69F /* ResetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordVC.m; sourceTree = "<group>"; };
+		C08BE7701C51525100770735 /* QuestionsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTVC.h; sourceTree = "<group>"; };
+		C08BE7711C51525100770735 /* QuestionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTVC.m; sourceTree = "<group>"; };
 		C093DE401C4025F100DCFB44 /* DoctorPhotoCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorPhotoCVC.h; sourceTree = "<group>"; };
 		C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorPhotoCVC.m; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -327,6 +330,8 @@
 			children = (
 				55D352D31C0B441C008CCEC1 /* QuestionsPageVC.h */,
 				55D352D41C0B441C008CCEC1 /* QuestionsPageVC.m */,
+				C08BE7701C51525100770735 /* QuestionsTVC.h */,
+				C08BE7711C51525100770735 /* QuestionsTVC.m */,
 			);
 			name = "Questions Page";
 			sourceTree = "<group>";
@@ -776,6 +781,7 @@
 				9F6BF54B1C396AC8006FB97A /* HospitalSecondTabTVC.m in Sources */,
 				7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */,
 				9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */,
+				C08BE7721C51525100770735 /* QuestionsTVC.m in Sources */,
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
