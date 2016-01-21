@@ -3129,6 +3129,9 @@
                                 <state key="normal" title="+">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="qkg-sh-oHf" kind="show" id="NDS-Gj-kFF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -3337,12 +3340,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9qG-UL-dZ6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3849" y="-201"/>
+            <point key="canvasLocation" x="4635" y="-201"/>
         </scene>
         <!--Ask Questions page-->
         <scene sceneID="O6y-Hn-eOz">
             <objects>
-                <viewController title="Ask Questions page" id="qkg-sh-oHf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AskQuestionsVC" title="Ask Questions page" id="qkg-sh-oHf" customClass="AskQuestionsVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3rX-fx-faX"/>
                         <viewControllerLayoutGuide type="bottom" id="xCH-NP-cbv"/>
@@ -3358,6 +3361,9 @@
                                 <state key="normal" title="ASK">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="askButtonAction:" destination="qkg-sh-oHf" eventType="touchUpInside" id="AAz-LP-OKM"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BlE-d4-r5W">
                                 <rect key="frame" x="0.0" y="64" width="600" height="491"/>
@@ -3408,10 +3414,16 @@
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="categoryTextField" destination="oHt-7y-y6r" id="mw3-Zf-wGf"/>
+                        <outlet property="doctorTextField" destination="rPq-g7-jHo" id="dzQ-oL-4ne"/>
+                        <outlet property="questionTextField" destination="JhW-id-N4N" id="Jk4-zF-zfZ"/>
+                        <outlet property="titleTextField" destination="h1B-mj-SHs" id="arC-hL-6Oh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G2j-p5-w6u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4745" y="-201"/>
+            <point key="canvasLocation" x="3909" y="-201"/>
         </scene>
         <!--Profile Page-->
         <scene sceneID="F7Y-hx-SwY">
