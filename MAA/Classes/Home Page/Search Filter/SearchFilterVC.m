@@ -48,11 +48,12 @@
 
 -(void)callingFilterInfoApi{
     NSString *searchInfoUrlString = [Baseurl stringByAppendingString:GetFilterInfoUrl];
+    NSLog(@"Search Info Url:%@",searchInfoUrlString);
     NSString *accessTokenString  = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *filterMutableDictionary = [[NSMutableDictionary alloc] init];
     [filterMutableDictionary setValue:accessTokenString forKey:@"token"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchInfoUrlString] withBody:filterMutableDictionary withMethodType:HTTPMethodGET withAccessToken:accessTokenString];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchInfoUrlString] withBody:filterMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Response Object:%@",responseObject);
@@ -68,6 +69,13 @@
         UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [erroralert show];
     }];
+}
+- (IBAction)maleButtonAction:(UIButton *)sender {
+}
+
+- (IBAction)isOnlineButtonAction:(UIButton *)sender {
+}
+- (IBAction)femaleButtonAction:(UIButton *)sender {
 }
 
 @end
