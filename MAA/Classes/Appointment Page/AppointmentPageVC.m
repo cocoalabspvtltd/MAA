@@ -8,7 +8,6 @@
 
 #import "AppointmentTVC.h"
 #import "AppointmentPageVC.h"
-#import "CLToolKit/ImageCache.h"
 
 
 @interface AppointmentPageVC ()<UITableViewDataSource,UITableViewDelegate,UISearchBarDelegate,UIScrollViewDelegate>

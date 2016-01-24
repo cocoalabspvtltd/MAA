@@ -11,5 +11,7 @@
 @interface QuestionsTVC : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 
+@property (strong, nonatomic) IBOutlet UILabel *questionLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UILabel *answerLabel;
 @end

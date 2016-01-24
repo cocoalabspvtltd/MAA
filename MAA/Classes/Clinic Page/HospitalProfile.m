@@ -9,7 +9,6 @@
 #define SeparatorTabViewUnSelectedBackGroundColor [UIColor lightGrayColor]
 
 
-#import "CLToolKit/ImageCache.h"
 #import "HospitalFirstTabTVC.h"
 #import "HospitalThirdTabTVC.h"
 #import "HospitalProfile.h"

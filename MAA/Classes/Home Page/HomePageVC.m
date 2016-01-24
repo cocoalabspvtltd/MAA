@@ -9,7 +9,6 @@
 #import "HomePageVC.h"
 #import "DoctorProfileVC.h"
 #import "SearchResultsVC.h"
-#import "CLToolKit/ImageCache.h"
 #import <QuartzCore/QuartzCore.h>
 #import "HomePageCVC.h"
 

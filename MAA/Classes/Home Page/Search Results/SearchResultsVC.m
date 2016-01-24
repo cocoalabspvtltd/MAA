@@ -11,7 +11,6 @@
 #import "HospitalProfile.h"
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
-#import "CLToolKit/ImageCache.h"
 
 @interface SearchResultsVC ()<UIScrollViewDelegate,UISearchBarDelegate>
 @property (nonatomic, strong) NSArray *doctorsArray;

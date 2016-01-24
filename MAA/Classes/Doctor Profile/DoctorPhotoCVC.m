@@ -7,7 +7,6 @@
 //
 
 #import "DoctorPhotoCVC.h"
-#import "CLToolKit/ImageCache.h"
 
 @implementation DoctorPhotoCVC
 
