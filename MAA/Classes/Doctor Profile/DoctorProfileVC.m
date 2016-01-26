@@ -13,14 +13,17 @@
 #import "DoctorFirstTabTVC.h"
 #import "DoctorSecondTabTVC.h"
 #import "DoctorThirdTabTVC.h"
+#import "DoctorServicesHV.h"
 #import "DoctorConsultingTimingTVC.h"
 
-@interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
+@interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,DoctorServicesDelegate>
 @property (nonatomic, assign) BOOL isFirstTabSelected;
 @property (nonatomic, assign) BOOL isSecondTabSelected;
 @property (nonatomic, assign) BOOL isThirdTabSelected;
 @property (nonatomic, strong) NSArray *clinicDetailsArray;
 @property (nonatomic, strong) NSArray *reviewArray;
+@property (nonatomic, assign) NSUInteger selectedService;
+@property (nonatomic, strong) NSArray *servicesArray;
 @end
 
 @implementation DoctorProfileVC
@@ -35,10 +38,12 @@
 }
 
 -(void)initialisation{
+    self.selectedService  = -1;
     self.firstTabSeparatorView.backgroundColor = SeparatorTabViewSelectedBackGroundColor;
     self.isFirstTabSelected = YES;
     self.isSecondTabSelected = NO;
     self.isThirdTabSelected = NO;
+    self.servicesArray = [NSArray arrayWithObjects:@"SERVICES",@"SPECIALIZATION",@"MEMEBERSHIP",@"QUALITY", nil];
 }
 
 -(void)customisation{
@@ -178,6 +183,9 @@
     if(self.isFirstTabSelected){
             return self.clinicDetailsArray.count;
     }
+    else if(self.isSecondTabSelected){
+        return self.servicesArray.count;
+    }
     else
         return 1;
 }
@@ -189,6 +197,14 @@
     }
     else if (self.isThirdTabSelected){
         return self.reviewArray.count;
+    }
+    else if (self.isSecondTabSelected){
+        if (section == self.selectedService){
+            return 1;
+        }
+        else{
+            return 0;
+        }
     }
     else
         return 1;
@@ -239,9 +255,26 @@
     else if (self.isThirdTabSelected){
         return 100;
     }
-    else{
-        return 10;
+    else if(self.isSecondTabSelected){
+        return 20;
     }
+    else
+        return 0;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(self.isSecondTabSelected){
+        return 70;
+    }
+    return 0;
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    DoctorServicesHV *doctorServicesheaderView = [[[NSBundle mainBundle] loadNibNamed:@"DoctorServicesHV" owner:self options:nil] firstObject];
+    doctorServicesheaderView.tag = 100+section;
+    doctorServicesheaderView.doctorServicesDelegate = self;
+    [doctorServicesheaderView.doctorServicesHVButton setTitle:[self.servicesArray objectAtIndex:section] forState:UIControlStateNormal];
+    return doctorServicesheaderView;
 }
 
 - (IBAction)firstTabButtonAction:(UIButton *)sender {
@@ -333,6 +366,13 @@
 - (IBAction)messageButtonAction:(UIButton *)sender {
 }
 - (IBAction)shareButtonAction:(UIButton *)sender {
+}
+
+#pragma mark - Doctor Services Delegate
+
+-(void)headerButtonClickWithTag:(NSUInteger)headerTag{
+    self.selectedService = headerTag - 100;
+    [self.doctoDetailsTableView reloadData];
 }
 
 @end

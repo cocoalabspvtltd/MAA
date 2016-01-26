@@ -123,7 +123,7 @@
     //[cell.cellImageViewIcon setImage:[UIImage imageNamed:[arrayHomePageListingImages objectAtIndex:indexPath.row]]];
     cell.cellLabelTitle.text = [[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
     NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/Category"];
-    NSURL *imageUrl = [NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/en/4/4e/Tis_The_Season_To_Be_Fearless_Cover.jpg"];
+    NSURL *imageUrl = [NSURL URLWithString:[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
     UIImage *localImage;
     localImage = [[ImageCache sharedCache] imageFromFolder:folderPath WithIdentifier:[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"]];
     if(!localImage){
