@@ -45,7 +45,6 @@
 		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
 		9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E727A1C38338B00B86477 /* HospitalProfile.m */; };
 		9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */; };
-		9F6BF53F1C396AB1006FB97A /* DoctorSecondTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF53B1C396AB1006FB97A /* DoctorSecondTabTVC.m */; };
 		9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */; };
 		9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */; };
 		9F6BF54B1C396AC8006FB97A /* HospitalSecondTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5461C396AC8006FB97A /* HospitalSecondTabTVC.m */; };
@@ -71,6 +70,8 @@
 		C0BAF0281C319FEB002F3137 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0271C319FEB002F3137 /* Foundation.framework */; };
 		C0BAF02A1C31A005002F3137 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0291C31A005002F3137 /* CoreTelephony.framework */; };
 		C0BAF02F1C31A175002F3137 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF02C1C31A175002F3137 /* libNetworkHandler.a */; };
+		C0BCBB541C592320003F7872 /* DoctorServicesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BCBB521C592320003F7872 /* DoctorServicesTVC.m */; };
+		C0BCBB551C592320003F7872 /* DoctorServicesTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0BCBB531C592320003F7872 /* DoctorServicesTVC.xib */; };
 		C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BE979C1C2485510037E328 /* MBProgressHUD.m */; };
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
@@ -180,8 +181,6 @@
 		9F5E727A1C38338B00B86477 /* HospitalProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalProfile.m; sourceTree = "<group>"; };
 		9F6BF5381C396AB1006FB97A /* DoctorFirstTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorFirstTabTVC.h; sourceTree = "<group>"; };
 		9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorFirstTabTVC.m; sourceTree = "<group>"; };
-		9F6BF53A1C396AB1006FB97A /* DoctorSecondTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorSecondTabTVC.h; sourceTree = "<group>"; };
-		9F6BF53B1C396AB1006FB97A /* DoctorSecondTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorSecondTabTVC.m; sourceTree = "<group>"; };
 		9F6BF53C1C396AB1006FB97A /* DoctorThirdTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorThirdTabTVC.h; sourceTree = "<group>"; };
 		9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorThirdTabTVC.m; sourceTree = "<group>"; };
 		9F6BF5431C396AC8006FB97A /* HospitalFirstTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalFirstTabTVC.h; sourceTree = "<group>"; };
@@ -227,6 +226,9 @@
 		C0BAF02C1C31A175002F3137 /* libNetworkHandler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNetworkHandler.a; path = NwkHndler/libNetworkHandler.a; sourceTree = "<group>"; };
 		C0BAF02D1C31A175002F3137 /* NetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkHandler.h; path = NwkHndler/NetworkHandler.h; sourceTree = "<group>"; };
 		C0BAF02E1C31A175002F3137 /* RequestBodyGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestBodyGenerator.h; path = NwkHndler/RequestBodyGenerator.h; sourceTree = "<group>"; };
+		C0BCBB511C592320003F7872 /* DoctorServicesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorServicesTVC.h; sourceTree = "<group>"; };
+		C0BCBB521C592320003F7872 /* DoctorServicesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorServicesTVC.m; sourceTree = "<group>"; };
+		C0BCBB531C592320003F7872 /* DoctorServicesTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorServicesTVC.xib; sourceTree = "<group>"; };
 		C0BE979B1C2485510037E328 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SimpleLoadingView/MBProgressHUD.h; sourceTree = "<group>"; };
 		C0BE979C1C2485510037E328 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SimpleLoadingView/MBProgressHUD.m; sourceTree = "<group>"; };
 		C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLFacebookHandler.xcodeproj; path = CLFacebookHandler/CLFacebookHandler.xcodeproj; sourceTree = "<group>"; };
@@ -546,8 +548,6 @@
 				9F9878ED1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.m */,
 				9F6BF5381C396AB1006FB97A /* DoctorFirstTabTVC.h */,
 				9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */,
-				9F6BF53A1C396AB1006FB97A /* DoctorSecondTabTVC.h */,
-				9F6BF53B1C396AB1006FB97A /* DoctorSecondTabTVC.m */,
 				9F6BF53C1C396AB1006FB97A /* DoctorThirdTabTVC.h */,
 				9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */,
 				9FA914AC1C3797FB00BDCB5D /* DoctorProfileVC.h */,
@@ -557,6 +557,9 @@
 				9FC62CE71C5725E200AF3EA3 /* DoctorServicesHV.h */,
 				9FC62CE81C5725E200AF3EA3 /* DoctorServicesHV.m */,
 				9FC62CED1C57267D00AF3EA3 /* DoctorServicesHV.xib */,
+				C0BCBB511C592320003F7872 /* DoctorServicesTVC.h */,
+				C0BCBB521C592320003F7872 /* DoctorServicesTVC.m */,
+				C0BCBB531C592320003F7872 /* DoctorServicesTVC.xib */,
 			);
 			name = "Doctor Profile";
 			path = "Classes/Doctor Profile";
@@ -740,6 +743,7 @@
 				55D60D8E1C08B94600963D5D /* Assets.xcassets in Resources */,
 				55EAC8461C0A09CE00F31280 /* field__white_box2@2x.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
+				C0BCBB551C592320003F7872 /* DoctorServicesTVC.xib in Resources */,
 				9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */,
 				55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */,
 			);
@@ -784,12 +788,12 @@
 				C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */,
 				9FC62CE91C5725E200AF3EA3 /* DoctorServicesHV.m in Sources */,
 				9F9878EE1C49BE0400DE68A9 /* DoctorConsultingTimingTVC.m in Sources */,
+				C0BCBB541C592320003F7872 /* DoctorServicesTVC.m in Sources */,
 				55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */,
 				7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */,
 				555BBCFE1C0AA5DC00E262F9 /* HomePageVC.m in Sources */,
 				7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */,
 				55D352DB1C0B45E1008CCEC1 /* AppointmentPageVC.m in Sources */,
-				9F6BF53F1C396AB1006FB97A /* DoctorSecondTabTVC.m in Sources */,
 				9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */,
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
 				9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */,

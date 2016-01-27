@@ -9,11 +9,12 @@
 #define SeparatorTabViewSelectedBackGroundColor [UIColor redColor]
 #define SeparatorTabViewUnSelectedBackGroundColor [UIColor lightGrayColor]
 
+
 #import "DoctorProfileVC.h"
 #import "DoctorFirstTabTVC.h"
-#import "DoctorSecondTabTVC.h"
 #import "DoctorThirdTabTVC.h"
 #import "DoctorServicesHV.h"
+#import "DoctorServicesTVC.h"
 #import "DoctorConsultingTimingTVC.h"
 
 @interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,DoctorServicesDelegate>
@@ -34,6 +35,7 @@
     [self customisation];
     [self addSubViews];
     [self callingGetDoctorDetailsApi];
+     [self.doctoDetailsTableView registerNib:[UINib nibWithNibName:@"DoctorServicesTVC" bundle:nil] forCellReuseIdentifier:@"cellServics"];
     // Do any additional setup after loading the view.
 }
 
@@ -230,7 +232,14 @@
         }
     }
     else if(self.isSecondTabSelected){
-        DoctorSecondTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellDoctorFirstTabCell"forIndexPath:indexPath];
+        DoctorServicesTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellServics" forIndexPath:indexPath];
+        if (cell == nil) {
+            // Load the top-level objects from the custom cell XIB.
+            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"DoctorServicesTVC" owner:self options:nil];
+            // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+            cell = [topLevelObjects lastObject];
+        }
+        cell.servicesLAbel.text = @"Hi";
         return cell;
     }
     else{

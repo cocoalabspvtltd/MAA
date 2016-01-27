@@ -1,14 +1,14 @@
 //
-//  DoctorSecondTabTVC.m
+//  DoctorServicesTVC.m
 //  MAA
 //
-//  Created by kiran on 03/01/16.
+//  Created by Cocoalabs India on 27/01/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
-#import "DoctorSecondTabTVC.h"
+#import "DoctorServicesTVC.h"
 
-@implementation DoctorSecondTabTVC
+@implementation DoctorServicesTVC
 
 - (void)awakeFromNib {
     // Initialization code
