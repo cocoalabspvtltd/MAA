@@ -72,6 +72,7 @@
 		C0BAF02F1C31A175002F3137 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF02C1C31A175002F3137 /* libNetworkHandler.a */; };
 		C0BCBB541C592320003F7872 /* DoctorServicesTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BCBB521C592320003F7872 /* DoctorServicesTVC.m */; };
 		C0BCBB551C592320003F7872 /* DoctorServicesTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0BCBB531C592320003F7872 /* DoctorServicesTVC.xib */; };
+		C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BCBB591C59377A003F7872 /* fc_right.png */; };
 		C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BE979C1C2485510037E328 /* MBProgressHUD.m */; };
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
@@ -229,6 +230,7 @@
 		C0BCBB511C592320003F7872 /* DoctorServicesTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorServicesTVC.h; sourceTree = "<group>"; };
 		C0BCBB521C592320003F7872 /* DoctorServicesTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorServicesTVC.m; sourceTree = "<group>"; };
 		C0BCBB531C592320003F7872 /* DoctorServicesTVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorServicesTVC.xib; sourceTree = "<group>"; };
+		C0BCBB591C59377A003F7872 /* fc_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fc_right.png; sourceTree = "<group>"; };
 		C0BE979B1C2485510037E328 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = SimpleLoadingView/MBProgressHUD.h; sourceTree = "<group>"; };
 		C0BE979C1C2485510037E328 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = SimpleLoadingView/MBProgressHUD.m; sourceTree = "<group>"; };
 		C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLFacebookHandler.xcodeproj; path = CLFacebookHandler/CLFacebookHandler.xcodeproj; sourceTree = "<group>"; };
@@ -401,6 +403,7 @@
 		55D60D801C08B94600963D5D /* MAA */ = {
 			isa = PBXGroup;
 			children = (
+				C0BCBB591C59377A003F7872 /* fc_right.png */,
 				9F5E72751C38334C00B86477 /* Clinic Page */,
 				9FA914AB1C3797D400BDCB5D /* Doctor Profile */,
 				C0BAF02B1C31A175002F3137 /* CLAlertHandler.h */,
@@ -736,6 +739,7 @@
 				7C3682D61C2FFAFE002F31FA /* 2.jpg in Resources */,
 				7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */,
 				7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */,
+				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
 				55D60D911C08B94600963D5D /* LaunchScreen.storyboard in Resources */,
 				55EAC8471C0A09CE00F31280 /* field_white_box@2x.png in Resources */,

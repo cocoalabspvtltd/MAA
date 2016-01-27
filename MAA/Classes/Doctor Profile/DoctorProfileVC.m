@@ -70,13 +70,14 @@
     NSMutableDictionary *getEntityDetailsMutableDictionary = [[NSMutableDictionary alloc] init];
     [getEntityDetailsMutableDictionary setValue:accesstoken forKey:@"token"];
     [getEntityDetailsMutableDictionary setValue:self.entityId forKey:@"id"];
+    [getEntityDetailsMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"format"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
         self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
-        NSLog(@"Clinic Details Array:%@",self.clinicDetailsArray);
+        NSLog(@"Clinic Details Array:%@",responseObject);
         [self.doctoDetailsTableView reloadData];
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
