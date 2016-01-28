@@ -29,3 +29,6 @@
 #define GetFilterInfoUrl @"get_filter_info"
 #define GetQuestionsApiUrl @"get_questions"
 #define AskQuestionUrl @"ask_question"
+#define doctor_url @"get_dash_info"
+#define doc_status_url @"set_doc_status"
+#define review_url @"get_reviews"

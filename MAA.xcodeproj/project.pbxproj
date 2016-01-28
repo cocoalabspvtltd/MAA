@@ -52,6 +52,13 @@
 		9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */; };
 		9F9878EE1C49BE0400DE68A9 /* DoctorConsultingTimingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9878ED1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.m */; };
 		9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */; };
+		9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */; };
+		9F991C5C1C5A1C5400F92C11 /* student.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C531C5A1C5400F92C11 /* student.m */; };
+		9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C541C5A1C5400F92C11 /* doctor_dash_xib.xib */; };
+		9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */; };
+		9F991C5F1C5A1C5400F92C11 /* doctorReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C581C5A1C5400F92C11 /* doctorReviewsViewController.m */; };
+		9F991C601C5A1C5400F92C11 /* search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C591C5A1C5400F92C11 /* search.xib */; };
+		9F991C611C5A1C5400F92C11 /* bin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C5A1C5A1C5400F92C11 /* bin.png */; };
 		9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */; };
 		9FC62CE91C5725E200AF3EA3 /* DoctorServicesHV.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC62CE81C5725E200AF3EA3 /* DoctorServicesHV.m */; };
 		9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC62CED1C57267D00AF3EA3 /* DoctorServicesHV.xib */; };
@@ -199,6 +206,17 @@
 		9F9878ED1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorConsultingTimingTVC.m; sourceTree = "<group>"; };
 		9F9878EF1C49BE2D00DE68A9 /* HospitalAboutTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalAboutTVC.h; sourceTree = "<group>"; };
 		9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalAboutTVC.m; sourceTree = "<group>"; };
+		9F991C501C5A1C5400F92C11 /* homepage_doctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homepage_doctorViewController.h; sourceTree = "<group>"; };
+		9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homepage_doctorViewController.m; sourceTree = "<group>"; };
+		9F991C521C5A1C5400F92C11 /* student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
+		9F991C531C5A1C5400F92C11 /* student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = student.m; sourceTree = "<group>"; };
+		9F991C541C5A1C5400F92C11 /* doctor_dash_xib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = doctor_dash_xib.xib; sourceTree = "<group>"; };
+		9F991C551C5A1C5400F92C11 /* doct_dashCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doct_dashCollectionViewCell.h; sourceTree = "<group>"; };
+		9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doct_dashCollectionViewCell.m; sourceTree = "<group>"; };
+		9F991C571C5A1C5400F92C11 /* doctorReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doctorReviewsViewController.h; sourceTree = "<group>"; };
+		9F991C581C5A1C5400F92C11 /* doctorReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doctorReviewsViewController.m; sourceTree = "<group>"; };
+		9F991C591C5A1C5400F92C11 /* search.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = search.xib; sourceTree = "<group>"; };
+		9F991C5A1C5A1C5400F92C11 /* bin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bin.png; sourceTree = "<group>"; };
 		9FA914AC1C3797FB00BDCB5D /* DoctorProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorProfileVC.h; sourceTree = "<group>"; };
 		9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorProfileVC.m; sourceTree = "<group>"; };
 		9FC62CE71C5725E200AF3EA3 /* DoctorServicesHV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorServicesHV.h; sourceTree = "<group>"; };
@@ -389,6 +407,7 @@
 		55D60D751C08B94600963D5D = {
 			isa = PBXGroup;
 			children = (
+				9F991C651C5A466300F92C11 /* Kiran */,
 				55C674E41C09D992005AD9E5 /* Frameworks */,
 				55D60D801C08B94600963D5D /* MAA */,
 				55D60D9A1C08B94700963D5D /* MAATests */,
@@ -553,6 +572,24 @@
 			);
 			name = "Clinic Page";
 			path = "Classes/Clinic Page";
+			sourceTree = "<group>";
+		};
+		9F991C651C5A466300F92C11 /* Kiran */ = {
+			isa = PBXGroup;
+			children = (
+				9F991C501C5A1C5400F92C11 /* homepage_doctorViewController.h */,
+				9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */,
+				9F991C521C5A1C5400F92C11 /* student.h */,
+				9F991C531C5A1C5400F92C11 /* student.m */,
+				9F991C541C5A1C5400F92C11 /* doctor_dash_xib.xib */,
+				9F991C551C5A1C5400F92C11 /* doct_dashCollectionViewCell.h */,
+				9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */,
+				9F991C571C5A1C5400F92C11 /* doctorReviewsViewController.h */,
+				9F991C581C5A1C5400F92C11 /* doctorReviewsViewController.m */,
+				9F991C591C5A1C5400F92C11 /* search.xib */,
+				9F991C5A1C5A1C5400F92C11 /* bin.png */,
+			);
+			name = Kiran;
 			sourceTree = "<group>";
 		};
 		9FA914AB1C3797D400BDCB5D /* Doctor Profile */ = {
@@ -748,8 +785,10 @@
 				7C9FF5531C1F4D2400C72512 /* 1.png in Resources */,
 				7C8AD8641C18BBA500C4E3BD /* 4.png in Resources */,
 				7C3682D61C2FFAFE002F31FA /* 2.jpg in Resources */,
+				9F991C611C5A1C5400F92C11 /* bin.png in Resources */,
 				C0BCBB631C59405D003F7872 /* angle-down.png in Resources */,
 				7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */,
+				9F991C601C5A1C5400F92C11 /* search.xib in Resources */,
 				7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */,
 				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
@@ -758,6 +797,7 @@
 				55EAC8471C0A09CE00F31280 /* field_white_box@2x.png in Resources */,
 				7CB682A81C38FF4300AC1F90 /* Players.png in Resources */,
 				55D60D8E1C08B94600963D5D /* Assets.xcassets in Resources */,
+				9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */,
 				55EAC8461C0A09CE00F31280 /* field__white_box2@2x.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0BCBB551C592320003F7872 /* DoctorServicesTVC.xib in Resources */,
@@ -788,15 +828,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				366EB8A61C59DAE900466CCE /* SettingsPageVC.m in Sources */,
+				9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */,
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,
 				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
 				7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */,
+				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
+				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
 				55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */,
+				9F991C5F1C5A1C5400F92C11 /* doctorReviewsViewController.m in Sources */,
 				C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */,
 				55D60D861C08B94600963D5D /* AppDelegate.m in Sources */,
 				C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */,

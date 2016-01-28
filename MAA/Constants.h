@@ -25,3 +25,7 @@
 #define Datakey @"data"
 #define LimitKey @"limit"
 #define Offsetkey @"offset"
+#define typekey @"type"
+#define keywordkey @"keyword"
+#define monthkey @"month"
+#define yearkey @"year"
