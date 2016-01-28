@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="mUS-p4-3cJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AkY-4G-ZHb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -1196,6 +1196,7 @@
                                     <constraint firstItem="NTE-xO-S1N" firstAttribute="leading" secondItem="VZN-iA-3w9" secondAttribute="leading" constant="5" id="hOl-lT-aHa"/>
                                     <constraint firstItem="Fgu-uf-OFi" firstAttribute="top" secondItem="VZN-iA-3w9" secondAttribute="top" id="kNu-ha-ATC"/>
                                     <constraint firstItem="AR1-L8-z6p" firstAttribute="top" secondItem="VZN-iA-3w9" secondAttribute="top" id="lc4-CM-keq"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fgu-uf-OFi" secondAttribute="bottom" id="sch-Gi-HDL"/>
                                     <constraint firstItem="NTE-xO-S1N" firstAttribute="centerY" secondItem="AR1-L8-z6p" secondAttribute="centerY" id="vAo-Ri-PBE"/>
                                     <constraint firstItem="TFo-KG-QiA" firstAttribute="leading" secondItem="Fgu-uf-OFi" secondAttribute="trailing" constant="4" id="vrj-wJ-g7L"/>
                                 </constraints>
@@ -1284,7 +1285,7 @@
                                                                     <rect key="frame" x="10" y="8" width="55" height="56"/>
                                                                     <animations/>
                                                                 </imageView>
-                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qwm-7a-jfo">
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="online_button_green" translatesAutoresizingMaskIntoConstraints="NO" id="qwm-7a-jfo">
                                                                     <rect key="frame" x="52" y="50" width="10" height="10"/>
                                                                     <animations/>
                                                                     <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -7144,12 +7145,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1120"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx9-z4-qhC" userLabel="Comment Button">
-                                <rect key="frame" x="524" y="1007" width="56" height="56"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.90588235289999997" green="0.17254901959999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" image="comments_o"/>
-                            </button>
                             <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="11w-pl-GCT" userLabel="View Review">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="1120"/>
                                 <subviews>
@@ -7624,7 +7619,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="155"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_red" translatesAutoresizingMaskIntoConstraints="NO" id="RU2-Px-Reh">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hospital" translatesAutoresizingMaskIntoConstraints="NO" id="RU2-Px-Reh">
                                                     <rect key="frame" x="8" y="8" width="20" height="20"/>
                                                     <animations/>
                                                     <constraints>
@@ -7661,7 +7656,7 @@
                                                     <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_red" translatesAutoresizingMaskIntoConstraints="NO" id="crb-2R-haE">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_pin" translatesAutoresizingMaskIntoConstraints="NO" id="crb-2R-haE">
                                                     <rect key="frame" x="8" y="63" width="20" height="20"/>
                                                     <animations/>
                                                     <constraints>
@@ -7758,7 +7753,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="41"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock_red" translatesAutoresizingMaskIntoConstraints="NO" id="cer-Ht-7iE">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clocok_grey" translatesAutoresizingMaskIntoConstraints="NO" id="cer-Ht-7iE">
                                                     <rect key="frame" x="8" y="11" width="20" height="20"/>
                                                     <animations/>
                                                     <constraints>
@@ -7992,6 +7987,12 @@
                                     <outlet property="delegate" destination="DpW-NJ-ROB" id="AoY-Ie-eId"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wx9-z4-qhC" userLabel="Comment Button">
+                                <rect key="frame" x="524" y="1007" width="56" height="56"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.90588235289999997" green="0.17254901959999999" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" image="comments_o"/>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -13118,12 +13119,14 @@
         <image name="email" width="56" height="44"/>
         <image name="field__white_box2.png" width="270" height="41"/>
         <image name="filter" width="34" height="34"/>
+        <image name="hospital" width="30" height="30"/>
         <image name="info" width="56" height="56"/>
         <image name="location-arrow-white" width="56" height="56"/>
         <image name="location_arrow" width="56" height="56"/>
         <image name="logo_text" width="609" height="161"/>
         <image name="map_current_loc" width="51" height="51"/>
         <image name="map_pin" width="56" height="56"/>
+        <image name="online_button_green" width="56" height="56"/>
         <image name="phone_white" width="56" height="56"/>
         <image name="search_grey" width="35" height="35"/>
         <image name="share" width="56" height="56"/>
