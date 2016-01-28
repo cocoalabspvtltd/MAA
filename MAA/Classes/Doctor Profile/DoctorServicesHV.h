@@ -11,6 +11,7 @@
 @interface DoctorServicesHV : UITableViewHeaderFooterView
 @property (strong, nonatomic) IBOutlet UIButton *doctorServicesHVButton;
 @property (nonatomic, assign) id<DoctorServicesDelegate>doctorServicesDelegate;
+@property (weak, nonatomic) IBOutlet UIImageView *doctorServicesHeaderImageViuew;
 @end
 @protocol  DoctorServicesDelegate <NSObject>
 

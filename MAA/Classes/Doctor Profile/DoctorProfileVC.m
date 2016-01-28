@@ -9,11 +9,12 @@
 #define SeparatorTabViewSelectedBackGroundColor [UIColor redColor]
 #define SeparatorTabViewUnSelectedBackGroundColor [UIColor lightGrayColor]
 
+
 #import "DoctorProfileVC.h"
 #import "DoctorFirstTabTVC.h"
-#import "DoctorSecondTabTVC.h"
 #import "DoctorThirdTabTVC.h"
 #import "DoctorServicesHV.h"
+#import "DoctorServicesTVC.h"
 #import "DoctorConsultingTimingTVC.h"
 
 @interface DoctorProfileVC ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate,DoctorServicesDelegate>
@@ -34,6 +35,7 @@
     [self customisation];
     [self addSubViews];
     [self callingGetDoctorDetailsApi];
+     [self.doctoDetailsTableView registerNib:[UINib nibWithNibName:@"DoctorServicesTVC" bundle:nil] forCellReuseIdentifier:@"cellServics"];
     // Do any additional setup after loading the view.
 }
 
@@ -43,7 +45,8 @@
     self.isFirstTabSelected = YES;
     self.isSecondTabSelected = NO;
     self.isThirdTabSelected = NO;
-    self.servicesArray = [NSArray arrayWithObjects:@"SERVICES",@"SPECIALIZATION",@"MEMEBERSHIP",@"QUALITY", nil];
+    self.doctoDetailsTableView.bounces = NO;
+   // self.servicesArray = [NSArray arrayWithObjects:@"SERVICES",@"SPECIALIZATION",@"MEMEBERSHIP",@"QUALITY", nil];
 }
 
 -(void)customisation{
@@ -68,13 +71,15 @@
     NSMutableDictionary *getEntityDetailsMutableDictionary = [[NSMutableDictionary alloc] init];
     [getEntityDetailsMutableDictionary setValue:accesstoken forKey:@"token"];
     [getEntityDetailsMutableDictionary setValue:self.entityId forKey:@"id"];
+    [getEntityDetailsMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"format"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
         self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
-        NSLog(@"Clinic Details Array:%@",self.clinicDetailsArray);
+        self.servicesArray = [[responseObject valueForKey:Datakey] valueForKey:@"attributes"];
+        NSLog(@"Services Array:%@",self.servicesArray);
         [self.doctoDetailsTableView reloadData];
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -200,7 +205,7 @@
     }
     else if (self.isSecondTabSelected){
         if (section == self.selectedService){
-            return 1;
+            return [[[self.servicesArray objectAtIndex:section] valueForKey:@"value"] count] ;
         }
         else{
             return 0;
@@ -230,7 +235,14 @@
         }
     }
     else if(self.isSecondTabSelected){
-        DoctorSecondTabTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellDoctorFirstTabCell"forIndexPath:indexPath];
+        DoctorServicesTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"cellServics" forIndexPath:indexPath];
+        if (cell == nil) {
+            // Load the top-level objects from the custom cell XIB.
+            NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"DoctorServicesTVC" owner:self options:nil];
+            // Grab a pointer to the first object (presumably the custom cell, as that's all the XIB should contain).
+            cell = [topLevelObjects lastObject];
+        }
+        cell.servicesLAbel.text = [[[self.servicesArray objectAtIndex:indexPath.section] valueForKey:@"value"] objectAtIndex:indexPath.row];
         return cell;
     }
     else{
@@ -264,7 +276,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     if(self.isSecondTabSelected){
-        return 70;
+        return 50;
     }
     return 0;
 }
@@ -273,7 +285,18 @@
     DoctorServicesHV *doctorServicesheaderView = [[[NSBundle mainBundle] loadNibNamed:@"DoctorServicesHV" owner:self options:nil] firstObject];
     doctorServicesheaderView.tag = 100+section;
     doctorServicesheaderView.doctorServicesDelegate = self;
-    [doctorServicesheaderView.doctorServicesHVButton setTitle:[self.servicesArray objectAtIndex:section] forState:UIControlStateNormal];
+    doctorServicesheaderView.doctorServicesHVButton.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 0, 250);
+    [doctorServicesheaderView.doctorServicesHVButton setTitle:[[self.servicesArray objectAtIndex:section] valueForKey:@"name"]forState:UIControlStateNormal];
+    if(self.selectedService == section){
+        [doctorServicesheaderView.doctorServicesHVButton setBackgroundColor:[UIColor darkGrayColor]];
+        doctorServicesheaderView.doctorServicesHeaderImageViuew.image = [UIImage imageNamed:@"angle-down"];
+        
+    }
+    else{
+        [doctorServicesheaderView.doctorServicesHVButton setBackgroundColor:[UIColor lightGrayColor]];
+         doctorServicesheaderView.doctorServicesHeaderImageViuew.image = [UIImage imageNamed:@"angle-right"];
+    }
+    
     return doctorServicesheaderView;
 }
 
@@ -371,7 +394,12 @@
 #pragma mark - Doctor Services Delegate
 
 -(void)headerButtonClickWithTag:(NSUInteger)headerTag{
-    self.selectedService = headerTag - 100;
+    if(self.selectedService == headerTag - 100){
+        self.selectedService = -1;
+    }
+    else{
+        self.selectedService = headerTag - 100;
+    }
     [self.doctoDetailsTableView reloadData];
 }
 
