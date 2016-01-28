@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		366EB8A61C59DAE900466CCE /* SettingsPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 366EB8A51C59DAE900466CCE /* SettingsPageVC.m */; };
 		555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCED1C0AA1D200E262F9 /* ResetPasswordOTPVC.m */; };
 		555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCF01C0AA25200E262F9 /* SignUpPage1VC.m */; };
 		555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BBCF31C0AA27700E262F9 /* SignUpPage2VC.m */; };
@@ -121,6 +122,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		366EB8A41C59DAE900466CCE /* SettingsPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsPageVC.h; path = "Classes/Settings Page/SettingsPageVC.h"; sourceTree = "<group>"; };
+		366EB8A51C59DAE900466CCE /* SettingsPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsPageVC.m; path = "Classes/Settings Page/SettingsPageVC.m"; sourceTree = "<group>"; };
 		555BBCEC1C0AA1D200E262F9 /* ResetPasswordOTPVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ResetPasswordOTPVC.h; path = "Classes/Reset Password by OTP/ResetPasswordOTPVC.h"; sourceTree = "<group>"; };
 		555BBCED1C0AA1D200E262F9 /* ResetPasswordOTPVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ResetPasswordOTPVC.m; path = "Classes/Reset Password by OTP/ResetPasswordOTPVC.m"; sourceTree = "<group>"; };
 		555BBCEF1C0AA25200E262F9 /* SignUpPage1VC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SignUpPage1VC.h; path = "Classes/Sign Up/SignUpPage1VC.h"; sourceTree = "<group>"; };
@@ -429,6 +432,8 @@
 				55D352E11C0B464C008CCEC1 /* Profile Page */,
 				55D352E21C0B465E008CCEC1 /* Appointment Page */,
 				55D352E31C0B4684008CCEC1 /* Notifications Page */,
+				366EB8A41C59DAE900466CCE /* SettingsPageVC.h */,
+				366EB8A51C59DAE900466CCE /* SettingsPageVC.m */,
 				55D60D8D1C08B94600963D5D /* Assets.xcassets */,
 				7C8AD8571C18BB8100C4E3BD /* Doctor Images */,
 				555BBCEB1C0AA16C00E262F9 /* Assets Extra */,
@@ -782,6 +787,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366EB8A61C59DAE900466CCE /* SettingsPageVC.m in Sources */,
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,
 				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
 				7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */,
