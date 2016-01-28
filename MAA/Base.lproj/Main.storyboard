@@ -4627,7 +4627,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="0.0" reuseIdentifier="settingsReusableCell" rowHeight="60" id="Tlr-eu-Ns9" customClass="SettingsTableViewCell">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="settingsReusableCell" rowHeight="60" id="Tlr-eu-Ns9" customClass="SettingsTableViewCell">
                                                 <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tlr-eu-Ns9" id="kEJ-2e-KHr">
@@ -4698,9 +4698,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY MAA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ORp-8B-Awa">
-                                <rect key="frame" x="254" y="553" width="86" height="15"/>
+                                <rect key="frame" x="260" y="553" width="80" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="86" id="NQP-IM-fXZ"/>
+                                    <constraint firstAttribute="width" constant="80" id="NQP-IM-fXZ"/>
                                     <constraint firstAttribute="height" constant="15" id="Z2I-z5-B1e"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="13"/>
@@ -4729,7 +4729,7 @@
                             <constraint firstItem="9Wl-bc-iW1" firstAttribute="centerX" secondItem="wy8-e6-Owo" secondAttribute="centerX" id="lsg-H0-ozF"/>
                             <constraint firstItem="tVH-HM-WHS" firstAttribute="top" secondItem="CVu-VM-WPZ" secondAttribute="bottom" constant="4" id="ota-4f-fah"/>
                             <constraint firstItem="tVH-HM-WHS" firstAttribute="centerX" secondItem="wy8-e6-Owo" secondAttribute="centerX" id="qOT-mA-2X8"/>
-                            <constraint firstItem="ORp-8B-Awa" firstAttribute="centerX" secondItem="CVu-VM-WPZ" secondAttribute="centerX" constant="-3" id="tKM-N9-HLx"/>
+                            <constraint firstItem="ORp-8B-Awa" firstAttribute="centerX" secondItem="CVu-VM-WPZ" secondAttribute="centerX" id="tKM-N9-HLx"/>
                             <constraint firstItem="hbJ-0I-sHU" firstAttribute="top" secondItem="tVH-HM-WHS" secondAttribute="bottom" id="y3M-Aa-eJG"/>
                             <constraint firstItem="tVH-HM-WHS" firstAttribute="top" secondItem="ORp-8B-Awa" secondAttribute="bottom" constant="12" id="zkQ-dH-izM"/>
                         </constraints>
