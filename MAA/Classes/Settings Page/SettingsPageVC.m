@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "HealthProfileVC.h"
 #import "SettingsTableViewCell.h"
 #import "SettingsPageVC.h"
 
@@ -51,7 +52,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+    return 60;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -79,5 +80,13 @@
         settingsTVC.iconImageView.image = [UIImage imageNamed:@"signOut"];
     }
     return settingsTVC;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 0){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        HealthProfileVC *myHealthProfileVC = (HealthProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"HealthProfileVC"];
+        [self.navigationController pushViewController:myHealthProfileVC animated:YES];
+    }
 }
 @end

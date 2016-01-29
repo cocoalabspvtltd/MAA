@@ -32,3 +32,4 @@
 #define doctor_url @"get_dash_info"
 #define doc_status_url @"set_doc_status"
 #define review_url @"get_reviews"
+#define getAccountinfoApiurl @"get_account_info"
