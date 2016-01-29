@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SettingsPageVC : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *settingsTableview;
 
 @end
