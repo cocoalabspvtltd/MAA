@@ -3387,6 +3387,9 @@
                                 <state key="normal" title="✎">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="editButtonAction:" destination="NyY-OE-h97" eventType="touchUpInside" id="0kq-9m-RFa"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7n-kr-jqj">
                                 <rect key="frame" x="240" y="144" width="120" height="120"/>
@@ -4047,6 +4050,18 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1650"/>
+                    <connections>
+                        <outlet property="bloodGroupTextField" destination="YP6-jw-7XM" id="I2g-YC-oCc"/>
+                        <outlet property="dateOfBirthTextField" destination="YP6-jw-7XM" id="5Kv-NP-Yav"/>
+                        <outlet property="fastingSugartextField" destination="CAj-qx-cOX" id="gzw-nh-DUu"/>
+                        <outlet property="gendertextField" destination="UKh-bZ-sXv" id="Fx5-YV-WPa"/>
+                        <outlet property="heightTextField" destination="BOV-ZS-b87" id="tIv-l1-wSP"/>
+                        <outlet property="highbpTextField" destination="yTZ-Xz-LhO" id="Oyf-Lw-cmc"/>
+                        <outlet property="lowbpTextField" destination="2Qc-Kz-kHD" id="TkD-ry-0WN"/>
+                        <outlet property="phoneTextField" destination="XbJ-4n-36k" id="Yce-Dy-y1E"/>
+                        <outlet property="postMealTextField" destination="cQu-5o-sXO" id="2w4-y1-dws"/>
+                        <outlet property="weightTextField" destination="ERo-Yr-h7Q" id="Iku-UF-syg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZD-KO-A69" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

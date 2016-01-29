@@ -45,6 +45,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getAccountInfoApiUrlSrtring] withBody:healthinfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [self populatingHealthDetailsWithResponsedata:[responseObject valueForKey:Datakey]];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Response :%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -62,4 +63,11 @@
     }];
 }
 
+
+- (IBAction)editButtonAction:(UIButton *)sender {
+}
+
+-(void)populatingHealthDetailsWithResponsedata:(id)healthData{
+    
+}
 @end
