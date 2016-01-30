@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *documantImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *arrowImageview;
+@property (nonatomic, strong) NSString *imageUrlString;
 
 @end

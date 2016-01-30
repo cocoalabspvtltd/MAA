@@ -229,11 +229,11 @@
         self.heightTextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"high_bp"];
     }
     self.userImagesArray = [profileData valueForKey:@"images"];
-    self.medicalDocumentsArray = [profileData valueForKey:@"medical_docs"];
-    //self.prescriptionsArray = [profileData valueForKey:@""];
-    NSLog(@"User Images:%@",self.userImagesArray);
     [self.photosCollectionView reloadData];
+    self.medicalDocumentsArray = [profileData valueForKey:@"medical_docs"];
     [self.medicalDocumantsCollectionview reloadData];
+    self.prescriptionsArray = [profileData valueForKey:@"prescription"];
+    [self.prescriptionsTableView reloadData];
 }
 
 -(void)viewWillLayoutSubviews{
@@ -298,7 +298,10 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    PerescriptionsTVC *prescriptionCell = [tableView dequeueReusableCellWithIdentifier:@"PerescriptionsTVC"];
+    PerescriptionsTVC *prescriptionCell = [tableView dequeueReusableCellWithIdentifier:@"prescriptionCell"];
+    prescriptionCell.imageUrlString = [[self.prescriptionsArray objectAtIndex:indexPath.row] valueForKey:@"image"];
+    prescriptionCell.nameLabel.text = [[self.prescriptionsArray objectAtIndex:indexPath.row] valueForKey:@"title"];
+    prescriptionCell.dateLabel.text = [[self.prescriptionsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
     return prescriptionCell;
 }
 
