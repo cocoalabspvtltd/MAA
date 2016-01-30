@@ -71,6 +71,7 @@
 		C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED231C287546009DF69F /* ResetPasswordVC.m */; };
 		C0871FC81C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */; };
 		C0871FCE1C5CB5C900E29E87 /* MedicalDocumantsCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0871FCD1C5CB5C900E29E87 /* MedicalDocumantsCVC.m */; };
+		C0871FD11C5CC55600E29E87 /* PerescriptionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0871FD01C5CC55600E29E87 /* PerescriptionsTVC.m */; };
 		C08BE7721C51525100770735 /* QuestionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE7711C51525100770735 /* QuestionsTVC.m */; };
 		C08BE77B1C5157B100770735 /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE77A1C5157B100770735 /* AskQuestionsVC.m */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
@@ -244,6 +245,8 @@
 		C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthProfileUserPhotosCVC.m; sourceTree = "<group>"; };
 		C0871FCC1C5CB5C900E29E87 /* MedicalDocumantsCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumantsCVC.h; sourceTree = "<group>"; };
 		C0871FCD1C5CB5C900E29E87 /* MedicalDocumantsCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumantsCVC.m; sourceTree = "<group>"; };
+		C0871FCF1C5CC55600E29E87 /* PerescriptionsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerescriptionsTVC.h; sourceTree = "<group>"; };
+		C0871FD01C5CC55600E29E87 /* PerescriptionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerescriptionsTVC.m; sourceTree = "<group>"; };
 		C08BE7701C51525100770735 /* QuestionsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTVC.h; sourceTree = "<group>"; };
 		C08BE7711C51525100770735 /* QuestionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTVC.m; sourceTree = "<group>"; };
 		C08BE7791C5157B100770735 /* AskQuestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsVC.h; sourceTree = "<group>"; };
@@ -476,6 +479,8 @@
 				C086ECED1C285B37009DF69F /* ServiceConstants.h */,
 				C086ECF31C285B51009DF69F /* Constants.h */,
 				C086ECFD1C285BEF009DF69F /* MAA-Prefix.pch */,
+				C0871FCF1C5CC55600E29E87 /* PerescriptionsTVC.h */,
+				C0871FD01C5CC55600E29E87 /* PerescriptionsTVC.m */,
 				C09BD06C1C5BDB2900D17ECF /* HealthProfileVC.h */,
 				C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */,
 				C0871FC61C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.h */,
@@ -868,6 +873,7 @@
 				C08BE77B1C5157B100770735 /* AskQuestionsVC.m in Sources */,
 				55D60D831C08B94600963D5D /* main.m in Sources */,
 				C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */,
+				C0871FD11C5CC55600E29E87 /* PerescriptionsTVC.m in Sources */,
 				C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */,
 				9FC62CE91C5725E200AF3EA3 /* DoctorServicesHV.m in Sources */,
 				9F9878EE1C49BE0400DE68A9 /* DoctorConsultingTimingTVC.m in Sources */,

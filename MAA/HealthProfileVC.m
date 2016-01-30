@@ -7,27 +7,134 @@
 //
 
 #import "HealthProfileVC.h"
+#import "PerescriptionsTVC.h"
 #import "MedicalDocumantsCVC.h"
 #import "HealthProfileUserPhotosCVC.h"
 
 
-@interface HealthProfileVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface HealthProfileVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
 @property (nonatomic, strong) NSArray *userImagesArray;
 @property (nonatomic, strong) NSArray *medicalDocumentsArray;
+@property (nonatomic, strong) NSArray *prescriptionsArray;
+@property (nonatomic, strong) NSArray *genderArray;
+@property (nonatomic, strong) UIPickerView *genderPickerView;
+@property (nonatomic, strong) NSString *stringGenderValue;
+@property (nonatomic, strong) UIDatePicker *dobDatePicker;
+@property (nonatomic, strong) NSString *DOBstringValue;
 @end
 
 @implementation HealthProfileVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self addGenderPickerDoneToolBar];
+    self.genderPickerView = [[UIPickerView alloc] init];
+    self.genderPickerView.tag = 101;
+    self.genderPickerView.dataSource = self;
+    self.genderPickerView.delegate = self;
+    self.genderArray = @[@"Male",@"Female",@"Unspecified"];
+    self.gendertextField.inputView = self.genderPickerView;
+    [self initialisingDOBDatePicker];
+    self.dateOfBirthTextField.inputView = self.dobDatePicker;
+    [self addDOBPickerDoneToolBar];
     [self callingHealthProfileApi];
     
     // Do any additional setup after loading the view.
 }
 
+-(void)addGenderPickerDoneToolBar {
+    
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolBar.barStyle = UIBarStyleBlackOpaque;
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTouched3:)];
+    
+    [toolBar setItems:[NSArray arrayWithObjects:doneButton, nil]];
+    self.gendertextField.inputAccessoryView = toolBar;
+}
+
+
+- (void)doneTouched3:(id)sender
+{
+    [self.view endEditing:YES];
+    self.gendertextField.text = self.stringGenderValue;
+}
+
+
+-(void)initialisingDOBDatePicker{
+    self.dobDatePicker = [[UIDatePicker alloc] init];
+    self.dobDatePicker.datePickerMode = UIDatePickerModeDate;
+    [self.dobDatePicker setDate:[NSDate date]];
+    [self.dobDatePicker setMaximumDate:[NSDate date]];
+    [self.dobDatePicker addTarget:self action:@selector(dobPickerValueChanged:) forControlEvents:UIControlEventValueChanged];
+}
+
+#pragma mark - PickerViewToolBar
+
+-(void)addDOBPickerDoneToolBar {
+    
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    toolBar.barStyle = UIBarStyleBlackOpaque;
+    
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneTouched:)];
+    
+    [toolBar setItems:[NSArray arrayWithObjects:doneButton, nil]];
+    self.dateOfBirthTextField.inputAccessoryView = toolBar;
+}
+
+- (void)doneTouched:(id)sender
+{
+    [self.view endEditing:YES];
+    if(self.DOBstringValue == nil) {
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+        [dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+        self.DOBstringValue = [dateFormatter stringFromDate:[NSDate date]];
+        [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+       // self.dobApiValueString = [dateFormatter stringFromDate:[self.dobDatePicker date]];
+    }
+    self.dateOfBirthTextField.text = self.DOBstringValue;
+    [self.dateOfBirthTextField resignFirstResponder];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - Picker View Data Source
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    if(pickerView.tag == 101){
+        return self.genderArray.count;
+    }
+    return 0;
+}
+
+#pragma mark - Picker View Delegates
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    
+    if(pickerView.tag == 101){
+        if (row==0) {
+            self.stringGenderValue = [self.genderArray objectAtIndex:0];
+            //self.genderIndex = 0;
+        }
+        return [self.genderArray objectAtIndex:row];
+    }
+    return nil;
+}
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    
+    if(pickerView.tag == 101){
+        self.stringGenderValue = [self.genderArray objectAtIndex:row];
+    }
 }
 
 /*
@@ -46,7 +153,7 @@
     NSMutableDictionary *healthinfoMutableDictionary = [[NSMutableDictionary alloc] init];
     NSArray *fieldArray = [NSArray arrayWithObjects:@"name",@"location",@"e_base_img",@"e_banner_img",@"dob",@"about",@"address",@"phone",@"gender",@"health_profile",@"images",@"medical_docs", nil];
     [healthinfoMutableDictionary setValue:accessToken forKey:@"token"];
-    [healthinfoMutableDictionary setValue:fieldArray forKey:@"fields"];
+   // [healthinfoMutableDictionary setValue:fieldArray forKey:@"fields"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getAccountInfoApiUrlSrtring] withBody:healthinfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
@@ -70,6 +177,17 @@
 
 
 - (IBAction)editButtonAction:(UIButton *)sender {
+    self.phoneTextField.enabled = YES;
+    self.heightTextField.enabled = YES;
+    self.weightTextField.enabled = YES;
+    self.bloodGroupTextField.enabled = YES;
+    self.dateOfBirthTextField.enabled = YES;
+    self.bloodGroupTextField.enabled = YES;
+    self.gendertextField.enabled = YES;
+    self.highbpTextField.enabled = YES;
+    self.lowbpTextField.enabled = YES;
+    self.fastingSugartextField.enabled = YES;
+    self.postMealTextField.enabled = YES;
 }
 
 -(void)populatingHealthDetailsWithResponsedata:(id)profileData{
@@ -112,6 +230,7 @@
     }
     self.userImagesArray = [profileData valueForKey:@"images"];
     self.medicalDocumentsArray = [profileData valueForKey:@"medical_docs"];
+    //self.prescriptionsArray = [profileData valueForKey:@""];
     NSLog(@"User Images:%@",self.userImagesArray);
     [self.photosCollectionView reloadData];
     [self.medicalDocumantsCollectionview reloadData];
@@ -168,6 +287,21 @@
 
 }
 
+#pragma mark - Table view Datasources
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.prescriptionsArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    PerescriptionsTVC *prescriptionCell = [tableView dequeueReusableCellWithIdentifier:@"PerescriptionsTVC"];
+    return prescriptionCell;
+}
+
 #pragma mark - Collection View Datasources
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -180,6 +314,9 @@
     }
     else if (collectionView == self.medicalDocumantsCollectionview){
         return self.medicalDocumentsArray.count;
+    }
+    else if (collectionView == self.prescriptionsCollectionview){
+        return self.prescriptionsArray.count;
     }
     else
         return 1;
@@ -198,6 +335,14 @@
         medicalCollectionViewCell.documantNameLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"title"];
         medicalCollectionViewCell.documantDatLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
         return medicalCollectionViewCell;
+    }
+    else if(collectionView == self.prescriptionsCollectionview){
+        MedicalDocumantsCVC *prescriptionCollectionViewCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"medicalDocumentsCell" forIndexPath:indexPath];
+        prescriptionCollectionViewCell.medicalDocumantImageUrlString = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"image"];
+        prescriptionCollectionViewCell.medicalDocumantsCoverImageview.backgroundColor = [UIColor lightGrayColor];
+        prescriptionCollectionViewCell.documantNameLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"title"];
+        prescriptionCollectionViewCell.documantDatLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
+        return prescriptionCollectionViewCell;
     }
     else{
         return nil;
