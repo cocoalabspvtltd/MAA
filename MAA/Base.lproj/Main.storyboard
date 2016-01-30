@@ -3394,6 +3394,9 @@
                                                     <action selector="editButtonAction:" destination="NyY-OE-h97" eventType="touchUpInside" id="0kq-9m-RFa"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lT-lb-fmA">
+                                                <rect key="frame" x="0.0" y="0.0" width="599" height="319"/>
+                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B7n-kr-jqj">
                                                 <rect key="frame" x="240" y="145" width="120" height="120"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4045,9 +4048,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6lT-lb-fmA">
-                                                <rect key="frame" x="0.0" y="0.0" width="599" height="319"/>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -4076,18 +4076,22 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1650"/>
                     <connections>
+                        <outlet property="addresslabel" destination="8xi-uQ-8qs" id="gwy-cO-tiQ"/>
                         <outlet property="bloodGroupTextField" destination="YP6-jw-7XM" id="I2g-YC-oCc"/>
                         <outlet property="dateOfBirthTextField" destination="YP6-jw-7XM" id="5Kv-NP-Yav"/>
                         <outlet property="fastingSugartextField" destination="CAj-qx-cOX" id="gzw-nh-DUu"/>
                         <outlet property="gendertextField" destination="UKh-bZ-sXv" id="Fx5-YV-WPa"/>
                         <outlet property="heightTextField" destination="BOV-ZS-b87" id="tIv-l1-wSP"/>
                         <outlet property="highbpTextField" destination="yTZ-Xz-LhO" id="Oyf-Lw-cmc"/>
+                        <outlet property="locationlabel" destination="sdD-Ty-X0F" id="O3L-xH-fxa"/>
                         <outlet property="lowbpTextField" destination="2Qc-Kz-kHD" id="TkD-ry-0WN"/>
                         <outlet property="medicalDocumantsCollectionview" destination="eT3-8v-OCG" id="sXC-50-gwh"/>
+                        <outlet property="nameLabel" destination="94x-Lu-u3e" id="z6f-h0-Dox"/>
                         <outlet property="phoneTextField" destination="XbJ-4n-36k" id="Yce-Dy-y1E"/>
                         <outlet property="postMealTextField" destination="cQu-5o-sXO" id="2w4-y1-dws"/>
                         <outlet property="prescriptionsCollectionview" destination="mXe-dP-7dG" id="w5O-P0-p5c"/>
                         <outlet property="prescriptionsTableView" destination="1Z9-fF-Pyf" id="BPk-Ru-DzH"/>
+                        <outlet property="profileBackgroundImageView" destination="6lT-lb-fmA" id="uPK-Ge-w6j"/>
                         <outlet property="profileImageView" destination="B7n-kr-jqj" id="QBm-Hq-gq4"/>
                         <outlet property="scrollView" destination="TOB-Jd-riO" id="0de-Uv-d2g"/>
                         <outlet property="weightTextField" destination="ERo-Yr-h7Q" id="Iku-UF-syg"/>
