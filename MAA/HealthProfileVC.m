@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self callingHealthProfileApi];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -68,6 +69,27 @@
 }
 
 -(void)populatingHealthDetailsWithResponsedata:(id)healthData{
-    
+    NSLog(@"Health Data:%@",healthData);
+    if(!([[healthData valueForKey:@"health_profile"] valueForKey:@"weight"] == [NSNull null])){
+        self.weightTextField.text = [[healthData valueForKey:@"health_profile"] valueForKey:@"weight"];
+    }
+    if (!([[healthData valueForKey:@"health_profile"] valueForKey:@"height"] == [NSNull null])){
+        self.heightTextField.text = [[healthData valueForKey:@"health_profile"] valueForKey:@"height"];
+    }
+    if (!([[[healthData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"name"] == [NSNull null])){
+        self.heightTextField.text = [[[healthData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"name"];
+    }
+    if (!([[healthData valueForKey:@"health_profile"] valueForKey:@"low_bp"] == [NSNull null])){
+        self.heightTextField.text = [[healthData valueForKey:@"health_profile"] valueForKey:@"low_bp"];
+    }
+    if (!([[healthData valueForKey:@"health_profile"] valueForKey:@"high_bp"] == [NSNull null])){
+        self.heightTextField.text = [[healthData valueForKey:@"health_profile"] valueForKey:@"high_bp"];
+    }
+//    if()
+    NSLog(@"Height:%@",[[healthData valueForKey:@"health_profile"] valueForKey:@"height"]);
+}
+
+-(void)viewWillLayoutSubviews{
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 1600);
 }
 @end

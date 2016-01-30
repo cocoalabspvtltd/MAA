@@ -18,6 +18,11 @@
 @property (weak, nonatomic) IBOutlet UITextField *lowbpTextField;
 @property (weak, nonatomic) IBOutlet UITextField *highbpTextField;
 @property (weak, nonatomic) IBOutlet UITextField *fastingSugartextField;
+@property (weak, nonatomic) IBOutlet UITableView *prescriptionsTableView;
 @property (weak, nonatomic) IBOutlet UITextField *postMealTextField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UICollectionView *medicalDocumantsCollectionview;
+@property (weak, nonatomic) IBOutlet UICollectionView *prescriptionsCollectionview;
 
 @end
