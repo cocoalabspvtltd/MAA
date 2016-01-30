@@ -69,6 +69,8 @@
 		C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED1A1C287364009DF69F /* EmailSentVC.m */; };
 		C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */; };
 		C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED231C287546009DF69F /* ResetPasswordVC.m */; };
+		C0871FC81C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */; };
+		C0871FCE1C5CB5C900E29E87 /* MedicalDocumantsCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0871FCD1C5CB5C900E29E87 /* MedicalDocumantsCVC.m */; };
 		C08BE7721C51525100770735 /* QuestionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE7711C51525100770735 /* QuestionsTVC.m */; };
 		C08BE77B1C5157B100770735 /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE77A1C5157B100770735 /* AskQuestionsVC.m */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
@@ -238,6 +240,10 @@
 		C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPVerificationSuccessfulViewController.m; sourceTree = "<group>"; };
 		C086ED221C287546009DF69F /* ResetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordVC.h; sourceTree = "<group>"; };
 		C086ED231C287546009DF69F /* ResetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordVC.m; sourceTree = "<group>"; };
+		C0871FC61C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthProfileUserPhotosCVC.h; sourceTree = "<group>"; };
+		C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthProfileUserPhotosCVC.m; sourceTree = "<group>"; };
+		C0871FCC1C5CB5C900E29E87 /* MedicalDocumantsCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumantsCVC.h; sourceTree = "<group>"; };
+		C0871FCD1C5CB5C900E29E87 /* MedicalDocumantsCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumantsCVC.m; sourceTree = "<group>"; };
 		C08BE7701C51525100770735 /* QuestionsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsTVC.h; sourceTree = "<group>"; };
 		C08BE7711C51525100770735 /* QuestionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTVC.m; sourceTree = "<group>"; };
 		C08BE7791C5157B100770735 /* AskQuestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsVC.h; sourceTree = "<group>"; };
@@ -472,6 +478,10 @@
 				C086ECFD1C285BEF009DF69F /* MAA-Prefix.pch */,
 				C09BD06C1C5BDB2900D17ECF /* HealthProfileVC.h */,
 				C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */,
+				C0871FC61C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.h */,
+				C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */,
+				C0871FCC1C5CB5C900E29E87 /* MedicalDocumantsCVC.h */,
+				C0871FCD1C5CB5C900E29E87 /* MedicalDocumantsCVC.m */,
 			);
 			path = MAA;
 			sourceTree = "<group>";
@@ -845,6 +855,7 @@
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
+				C0871FC81C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m in Sources */,
 				C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
@@ -876,6 +887,7 @@
 				7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */,
 				9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */,
 				C08BE7721C51525100770735 /* QuestionsTVC.m in Sources */,
+				C0871FCE1C5CB5C900E29E87 /* MedicalDocumantsCVC.m in Sources */,
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,

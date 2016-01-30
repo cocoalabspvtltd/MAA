@@ -26,8 +26,9 @@
 @property (weak, nonatomic) IBOutlet UITableView *prescriptionsTableView;
 @property (weak, nonatomic) IBOutlet UITextField *postMealTextField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-
-@property (weak, nonatomic) IBOutlet UICollectionView *medicalDocumantsCollectionview;
+@property (weak, nonatomic) IBOutlet UICollectionView *photosCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionView *prescriptionsCollectionview;
+@property (weak, nonatomic) IBOutlet UICollectionView *medicalDocumantsCollectionview;
+
 
 @end

@@ -3667,7 +3667,7 @@
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="fUu-5M-kbT">
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="healthProfilePhotoCell" id="fUu-5M-kbT" customClass="HealthProfileUserPhotosCVC">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3680,6 +3680,9 @@
                                                             </subviews>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                         </view>
+                                                        <connections>
+                                                            <outlet property="profilePhotosImageView" destination="v0U-ph-aJt" id="Pf8-nS-pS4"/>
+                                                        </connections>
                                                     </collectionViewCell>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="GK5-zL-QLD">
                                                         <rect key="frame" x="117" y="0.0" width="100" height="100"/>
@@ -3724,6 +3727,10 @@
                                                         </view>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="NyY-OE-h97" id="1ZM-mQ-ijn"/>
+                                                    <outlet property="delegate" destination="NyY-OE-h97" id="bdg-QE-GKN"/>
+                                                </connections>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGX-bh-QmX">
                                                 <rect key="frame" x="20" y="1018" width="51" height="20"/>
@@ -3773,7 +3780,7 @@
                                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         </collectionViewFlowLayout>
                                                         <cells>
-                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="am9-rp-WoK">
+                                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="medicalDocumentsCell" id="am9-rp-WoK" customClass="MedicalDocumantsCVC">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="120"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -3800,6 +3807,12 @@
                                                                     </subviews>
                                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                 </view>
+                                                                <connections>
+                                                                    <outlet property="documantDatLabel" destination="3zh-Q0-HTj" id="owN-xn-VB4"/>
+                                                                    <outlet property="documantNameLabel" destination="eGP-KE-Sev" id="ns3-WP-qn5"/>
+                                                                    <outlet property="medicalDocumantsCoverImageview" destination="38H-iv-zYf" id="8Am-Or-30U"/>
+                                                                    <outlet property="medicalDocumentsImageView" destination="D7I-FB-NnU" id="8pP-ij-WXx"/>
+                                                                </connections>
                                                             </collectionViewCell>
                                                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fdr-xq-WcT">
                                                                 <rect key="frame" x="117" y="0.0" width="100" height="120"/>
@@ -3886,6 +3899,10 @@
                                                                 </view>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="NyY-OE-h97" id="e3r-21-qak"/>
+                                                            <outlet property="delegate" destination="NyY-OE-h97" id="ekp-an-Y5A"/>
+                                                        </connections>
                                                     </collectionView>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0D-65-t9I">
                                                         <rect key="frame" x="470" y="10" width="80" height="80"/>
@@ -4088,6 +4105,7 @@
                         <outlet property="medicalDocumantsCollectionview" destination="eT3-8v-OCG" id="sXC-50-gwh"/>
                         <outlet property="nameLabel" destination="94x-Lu-u3e" id="z6f-h0-Dox"/>
                         <outlet property="phoneTextField" destination="XbJ-4n-36k" id="Yce-Dy-y1E"/>
+                        <outlet property="photosCollectionView" destination="EDS-6V-VJf" id="Fxf-q7-Ypy"/>
                         <outlet property="postMealTextField" destination="cQu-5o-sXO" id="2w4-y1-dws"/>
                         <outlet property="prescriptionsCollectionview" destination="mXe-dP-7dG" id="w5O-P0-p5c"/>
                         <outlet property="prescriptionsTableView" destination="1Z9-fF-Pyf" id="BPk-Ru-DzH"/>

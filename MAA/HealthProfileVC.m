@@ -7,9 +7,13 @@
 //
 
 #import "HealthProfileVC.h"
+#import "MedicalDocumantsCVC.h"
+#import "HealthProfileUserPhotosCVC.h"
 
-@interface HealthProfileVC ()
 
+@interface HealthProfileVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@property (nonatomic, strong) NSArray *userImagesArray;
+@property (nonatomic, strong) NSArray *medicalDocumentsArray;
 @end
 
 @implementation HealthProfileVC
@@ -106,11 +110,18 @@
     if (!([[profileData valueForKey:@"health_profile"] valueForKey:@"high_bp"] == [NSNull null])){
         self.heightTextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"high_bp"];
     }
+    self.userImagesArray = [profileData valueForKey:@"images"];
+    self.medicalDocumentsArray = [profileData valueForKey:@"medical_docs"];
+    NSLog(@"User Images:%@",self.userImagesArray);
+    [self.photosCollectionView reloadData];
+    [self.medicalDocumantsCollectionview reloadData];
 }
 
 -(void)viewWillLayoutSubviews{
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 1600);
 }
+
+#pragma mark - Dowloading Profile images
 
 -(void)downloadingProfileImageWithUrlString:(NSString *)profileImageUrlString{
     NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/UserImages"];
@@ -155,5 +166,41 @@
         self.profileBackgroundImageView.image = localImage;
     }
 
+}
+
+#pragma mark - Collection View Datasources
+
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if(collectionView == self.photosCollectionView){
+        return self.userImagesArray.count;
+    }
+    else if (collectionView == self.medicalDocumantsCollectionview){
+        return self.medicalDocumentsArray.count;
+    }
+    else
+        return 1;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(collectionView == self.photosCollectionView){
+        HealthProfileUserPhotosCVC *healthProfileCVC = [collectionView dequeueReusableCellWithReuseIdentifier:@"healthProfilePhotoCell" forIndexPath:indexPath];
+        healthProfileCVC.imageUrlString = [[self.userImagesArray  objectAtIndex:indexPath.row] valueForKey:@"image"];
+        return healthProfileCVC;
+    }
+    else if (collectionView == self.medicalDocumantsCollectionview){
+        MedicalDocumantsCVC *medicalCollectionViewCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"medicalDocumentsCell" forIndexPath:indexPath];
+        medicalCollectionViewCell.medicalDocumantImageUrlString = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"image"];
+        medicalCollectionViewCell.medicalDocumantsCoverImageview.backgroundColor = [UIColor lightGrayColor];
+        medicalCollectionViewCell.documantNameLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"title"];
+        medicalCollectionViewCell.documantDatLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
+        return medicalCollectionViewCell;
+    }
+    else{
+        return nil;
+    }
 }
 @end
