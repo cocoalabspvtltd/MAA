@@ -97,6 +97,18 @@
     [self.dateOfBirthTextField resignFirstResponder];
 }
 
+-(void)dobPickerValueChanged:(UIDatePicker *)picker{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    //[dateFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"GMT"]];
+    [dateFormatter setLocale:[NSLocale currentLocale]];
+    self.DOBstringValue = [dateFormatter stringFromDate:[self.dobDatePicker date]];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+//    self.dobApiValueString = [dateFormatter stringFromDate:[self.dobDatePicker date]];
+//    NSLog(@"DOB Apim String:%@",self.dobApiValueString);
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -151,9 +163,9 @@
     NSString *getAccountInfoApiUrlSrtring = [Baseurl stringByAppendingString:getAccountinfoApiurl];
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *healthinfoMutableDictionary = [[NSMutableDictionary alloc] init];
-    NSArray *fieldArray = [NSArray arrayWithObjects:@"name",@"location",@"e_base_img",@"e_banner_img",@"dob",@"about",@"address",@"phone",@"gender",@"health_profile",@"images",@"medical_docs", nil];
+    NSArray *fieldArray = [NSArray arrayWithObjects:@"name",@"location",@"e_base_img",@"e_banner_img",@"dob",@"about",@"address",@"phone",@"gender",@"health_profile",@"images",@"medical_docs",@"prescription", nil];
     [healthinfoMutableDictionary setValue:accessToken forKey:@"token"];
-   // [healthinfoMutableDictionary setValue:fieldArray forKey:@"fields"];
+    [healthinfoMutableDictionary setValue:fieldArray forKey:@"fields"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getAccountInfoApiUrlSrtring] withBody:healthinfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
@@ -237,7 +249,7 @@
 }
 
 -(void)viewWillLayoutSubviews{
-    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 1600);
+    self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 1400);
 }
 
 #pragma mark - Dowloading Profile images
@@ -318,9 +330,6 @@
     else if (collectionView == self.medicalDocumantsCollectionview){
         return self.medicalDocumentsArray.count;
     }
-    else if (collectionView == self.prescriptionsCollectionview){
-        return self.prescriptionsArray.count;
-    }
     else
         return 1;
 }
@@ -338,14 +347,6 @@
         medicalCollectionViewCell.documantNameLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"title"];
         medicalCollectionViewCell.documantDatLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
         return medicalCollectionViewCell;
-    }
-    else if(collectionView == self.prescriptionsCollectionview){
-        MedicalDocumantsCVC *prescriptionCollectionViewCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"medicalDocumentsCell" forIndexPath:indexPath];
-        prescriptionCollectionViewCell.medicalDocumantImageUrlString = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"image"];
-        prescriptionCollectionViewCell.medicalDocumantsCoverImageview.backgroundColor = [UIColor lightGrayColor];
-        prescriptionCollectionViewCell.documantNameLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"title"];
-        prescriptionCollectionViewCell.documantDatLabel.text = [[self.medicalDocumentsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
-        return prescriptionCollectionViewCell;
     }
     else{
         return nil;
