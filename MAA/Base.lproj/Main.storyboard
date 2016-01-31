@@ -6219,34 +6219,37 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0rk-4l-Vv5">
                                 <rect key="frame" x="20" y="110" width="560" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91y-6M-zWo">
-                                        <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Button"/>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TyB-Ff-oRC">
                                         <rect key="frame" x="148" y="0.0" width="140" height="50"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpY-az-Idc">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MpY-az-Idc">
                                         <rect key="frame" x="288" y="0.0" width="140" height="50"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVt-Rb-xL1">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVt-Rb-xL1">
                                         <rect key="frame" x="420" y="0.0" width="140" height="50"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <state key="normal" title="Button"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyJ-Yz-iQt">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FyJ-Yz-iQt">
                                         <rect key="frame" x="140" y="0.0" width="140" height="50"/>
                                         <animations/>
                                         <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Button"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91y-6M-zWo">
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="50"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.16180684989999999" green="0.62423058710000001" blue="0.065238229430000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Dab-sT-Zrl"/>
+                                        </constraints>
                                         <state key="normal" title="Button"/>
                                     </button>
                                 </subviews>
@@ -6260,6 +6263,7 @@
                                     <constraint firstItem="91y-6M-zWo" firstAttribute="width" secondItem="0rk-4l-Vv5" secondAttribute="width" multiplier="0.25" id="KBy-Fg-6H5"/>
                                     <constraint firstItem="FyJ-Yz-iQt" firstAttribute="leading" secondItem="91y-6M-zWo" secondAttribute="trailing" id="KIi-pi-zmN"/>
                                     <constraint firstItem="91y-6M-zWo" firstAttribute="centerY" secondItem="0rk-4l-Vv5" secondAttribute="centerY" id="Rif-Iy-pDb"/>
+                                    <constraint firstItem="FyJ-Yz-iQt" firstAttribute="height" secondItem="91y-6M-zWo" secondAttribute="height" id="U9J-X1-I92"/>
                                     <constraint firstItem="gVt-Rb-xL1" firstAttribute="height" secondItem="MpY-az-Idc" secondAttribute="height" id="YRU-f2-zCu"/>
                                     <constraint firstItem="MpY-az-Idc" firstAttribute="width" secondItem="FyJ-Yz-iQt" secondAttribute="width" id="bZh-LP-azc"/>
                                     <constraint firstItem="gVt-Rb-xL1" firstAttribute="width" secondItem="MpY-az-Idc" secondAttribute="width" id="h5g-tS-wN2"/>
