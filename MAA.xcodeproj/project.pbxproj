@@ -79,7 +79,8 @@
 		C09BD06E1C5BDB2900D17ECF /* HealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */; };
 		C09DBFB41C5FC37C0077E131 /* GetGalleryPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */; };
 		C09DBFB71C5FC5440077E131 /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */; };
-		C09DBFBA1C5FC5F20077E131 /* hotoGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB91C5FC5F20077E131 /* hotoGridCollectionViewCell.m */; };
+		C09DBFBE1C5FD0080077E131 /* PhotogridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFBC1C5FD0080077E131 /* PhotogridCollectionViewCell.m */; };
+		C09DBFBF1C5FD0080077E131 /* PhotogridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C09DBFBD1C5FD0080077E131 /* PhotogridCollectionViewCell.xib */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
 		C0BAF0241C319FC0002F3137 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0231C319FC0002F3137 /* CoreLocation.framework */; };
@@ -265,8 +266,9 @@
 		C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetGalleryPhotos.m; sourceTree = "<group>"; };
 		C09DBFB51C5FC5440077E131 /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
 		C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewController.m; sourceTree = "<group>"; };
-		C09DBFB81C5FC5F20077E131 /* hotoGridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hotoGridCollectionViewCell.h; sourceTree = "<group>"; };
-		C09DBFB91C5FC5F20077E131 /* hotoGridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hotoGridCollectionViewCell.m; sourceTree = "<group>"; };
+		C09DBFBB1C5FD0080077E131 /* PhotogridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotogridCollectionViewCell.h; sourceTree = "<group>"; };
+		C09DBFBC1C5FD0080077E131 /* PhotogridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotogridCollectionViewCell.m; sourceTree = "<group>"; };
+		C09DBFBD1C5FD0080077E131 /* PhotogridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotogridCollectionViewCell.xib; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C0BAF0231C319FC0002F3137 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -499,8 +501,9 @@
 				C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */,
 				C09DBFB51C5FC5440077E131 /* PhotoGridViewController.h */,
 				C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */,
-				C09DBFB81C5FC5F20077E131 /* hotoGridCollectionViewCell.h */,
-				C09DBFB91C5FC5F20077E131 /* hotoGridCollectionViewCell.m */,
+				C09DBFBB1C5FD0080077E131 /* PhotogridCollectionViewCell.h */,
+				C09DBFBC1C5FD0080077E131 /* PhotogridCollectionViewCell.m */,
+				C09DBFBD1C5FD0080077E131 /* PhotogridCollectionViewCell.xib */,
 				C0871FC61C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.h */,
 				C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */,
 				C0871FCC1C5CB5C900E29E87 /* MedicalDocumantsCVC.h */,
@@ -864,6 +867,7 @@
 				C0BCBB551C592320003F7872 /* DoctorServicesTVC.xib in Resources */,
 				9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */,
 				55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */,
+				C09DBFBF1C5FD0080077E131 /* PhotogridCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -894,6 +898,7 @@
 				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
 				7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */,
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
+				C09DBFBE1C5FD0080077E131 /* PhotogridCollectionViewCell.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				C0871FC81C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m in Sources */,
@@ -930,7 +935,6 @@
 				C05F4B651C5A94A300CCB6D9 /* SettingsTableViewCell.m in Sources */,
 				7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */,
 				9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */,
-				C09DBFBA1C5FC5F20077E131 /* hotoGridCollectionViewCell.m in Sources */,
 				C08BE7721C51525100770735 /* QuestionsTVC.m in Sources */,
 				C0871FCE1C5CB5C900E29E87 /* MedicalDocumantsCVC.m in Sources */,
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,

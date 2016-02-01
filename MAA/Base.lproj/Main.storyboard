@@ -4214,8 +4214,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="laQ-NF-WHq">
+                                <rect key="frame" x="20" y="550" width="560" height="40"/>
+                                <color key="backgroundColor" red="1" green="0.30208932919999998" blue="0.1494171567" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cV2-ua-NJZ"/>
+                                </constraints>
+                                <state key="normal" title="Upload Photos">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="uploadButtonAction:" destination="CKp-na-umh" eventType="touchUpInside" id="g1z-bT-LaR"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SvF-ab-Giz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="540"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ijf-3g-7Of">
                                     <size key="itemSize" width="178" height="123"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -4229,22 +4242,8 @@
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="178" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hQ8-hx-7KY">
-                                                    <rect key="frame" x="8" y="8" width="162" height="107"/>
-                                                </imageView>
-                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <constraints>
-                                            <constraint firstAttribute="trailingMargin" secondItem="hQ8-hx-7KY" secondAttribute="trailing" id="Bui-q8-hql"/>
-                                            <constraint firstItem="hQ8-hx-7KY" firstAttribute="top" secondItem="Zld-xL-E9y" secondAttribute="topMargin" id="HB9-kk-UsG"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="hQ8-hx-7KY" secondAttribute="bottom" id="KRZ-jS-e0B"/>
-                                            <constraint firstItem="hQ8-hx-7KY" firstAttribute="leading" secondItem="Zld-xL-E9y" secondAttribute="leadingMargin" id="jgh-Vs-GIZ"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="photoImageView" destination="hQ8-hx-7KY" id="rab-MB-Shq"/>
-                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
@@ -4255,10 +4254,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="cYI-K6-CQH" firstAttribute="top" secondItem="SvF-ab-Giz" secondAttribute="bottom" id="HoG-Iw-wrw"/>
                             <constraint firstItem="SvF-ab-Giz" firstAttribute="top" secondItem="SWU-yX-y4n" secondAttribute="bottom" constant="-20" id="NHe-AD-1rT"/>
                             <constraint firstItem="SvF-ab-Giz" firstAttribute="leading" secondItem="BGH-3K-Gat" secondAttribute="leadingMargin" constant="-20" id="ekH-P7-aLq"/>
+                            <constraint firstItem="laQ-NF-WHq" firstAttribute="leading" secondItem="BGH-3K-Gat" secondAttribute="leadingMargin" id="oN0-0r-c6V"/>
                             <constraint firstAttribute="trailingMargin" secondItem="SvF-ab-Giz" secondAttribute="trailing" constant="-20" id="rw7-vv-t4W"/>
+                            <constraint firstItem="cYI-K6-CQH" firstAttribute="top" secondItem="laQ-NF-WHq" secondAttribute="bottom" constant="10" id="uiR-q5-g9S"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="laQ-NF-WHq" secondAttribute="trailing" id="wHd-0e-BwE"/>
+                            <constraint firstItem="laQ-NF-WHq" firstAttribute="top" secondItem="SvF-ab-Giz" secondAttribute="bottom" constant="10" id="x7i-Fd-LZv"/>
                         </constraints>
                     </view>
                     <connections>

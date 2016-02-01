@@ -173,6 +173,10 @@
         [self populatingHealthDetailsWithResponsedata:[responseObject valueForKey:Datakey]];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Response :%@",responseObject);
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        PhotoGridViewController *photoGridViewController = (PhotoGridViewController *)[storyboard instantiateViewControllerWithIdentifier:@"PhotoGridViewController"];
+        [self.navigationController pushViewController:photoGridViewController animated:YES];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;

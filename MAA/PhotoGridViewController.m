@@ -6,23 +6,26 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
-#define PhotoCollectionviewCellIdentifier @"photoCollectionCell"
+#define PhotoCollectionviewCellIdentifier @"photoCollectionViewCell"
 
 #import "GetGalleryPhotos.h"
 #import "PhotoGridViewController.h"
-#import "hotoGridCollectionViewCell.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import "PhotogridCollectionViewCell.h"
 
 
 @interface PhotoGridViewController ()
 @property (nonatomic, strong) NSArray *galleryPhotosArray;
+@property (nonatomic, strong) NSMutableArray *selectedGalleryphotosArray;
 @end
 
 @implementation PhotoGridViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    UINib *nib = [UINib nibWithNibName:@"hotoGridCollectionViewCell" bundle: nil];
+    UINib *nib = [UINib nibWithNibName:@"PhotogridCollectionViewCell" bundle: nil];
     [self.photoCollectionView registerNib:nib forCellWithReuseIdentifier:PhotoCollectionviewCellIdentifier];
     [[GetGalleryPhotos getGelleryPhotosUtilities] gettingPhotosFromGallery:^(NSMutableArray *photos) {
         self.galleryPhotosArray = photos;
@@ -30,6 +33,11 @@
         [self.photoCollectionView reloadData];
     }];
     // Do any additional setup after loading the view.
+}
+
+-(void)initialisation{
+    self.selectedGalleryphotosArray = [[NSMutableArray alloc] init];
+    self.photoCollectionView.allowsMultipleSelection = YES;
 }
 
 #pragma mark - Collection View Datasources
@@ -44,13 +52,26 @@
 
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
-    hotoGridCollectionViewCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoCollectionviewCellIdentifier forIndexPath:indexPath];
+    PhotogridCollectionViewCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:PhotoCollectionviewCellIdentifier forIndexPath:indexPath];
+    ALAsset * asset = [self.galleryPhotosArray objectAtIndex:indexPath.row];
+    photoCell.photoImageView.image = [UIImage imageWithCGImage:[asset thumbnail]];
     return photoCell;
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [self.selectedGalleryphotosArray addObject:[self.galleryPhotosArray objectAtIndex:indexPath.row]];
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+    [self.selectedGalleryphotosArray removeObject:[self.galleryPhotosArray objectAtIndex:indexPath.row]];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)uploadButtonAction:(UIButton *)sender {
 }
 
 /*
