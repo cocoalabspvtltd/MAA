@@ -62,6 +62,7 @@
 		9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */; };
 		9FC62CE91C5725E200AF3EA3 /* DoctorServicesHV.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC62CE81C5725E200AF3EA3 /* DoctorServicesHV.m */; };
 		9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC62CED1C57267D00AF3EA3 /* DoctorServicesHV.xib */; };
+		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
 		C05F4B651C5A94A300CCB6D9 /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C05F4B641C5A94A300CCB6D9 /* SettingsTableViewCell.m */; };
 		C086ED021C285D25009DF69F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED011C285D25009DF69F /* CoreData.framework */; };
 		C086ED041C285D30009DF69F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED031C285D30009DF69F /* MobileCoreServices.framework */; };
@@ -227,6 +228,8 @@
 		9FC62CE71C5725E200AF3EA3 /* DoctorServicesHV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorServicesHV.h; sourceTree = "<group>"; };
 		9FC62CE81C5725E200AF3EA3 /* DoctorServicesHV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorServicesHV.m; sourceTree = "<group>"; };
 		9FC62CED1C57267D00AF3EA3 /* DoctorServicesHV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorServicesHV.xib; sourceTree = "<group>"; };
+		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
+		C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Doc'sAccntInfo.m"; sourceTree = "<group>"; };
 		C05F4B631C5A94A300CCB6D9 /* SettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewCell.h; sourceTree = "<group>"; };
 		C05F4B641C5A94A300CCB6D9 /* SettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewCell.m; sourceTree = "<group>"; };
 		C086ECED1C285B37009DF69F /* ServiceConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceConstants.h; sourceTree = "<group>"; };
@@ -422,6 +425,7 @@
 		55D60D751C08B94600963D5D = {
 			isa = PBXGroup;
 			children = (
+				C014EF031C5F3EA6009AB9DD /* Thanveer */,
 				9F991C651C5A466300F92C11 /* Kiran */,
 				55C674E41C09D992005AD9E5 /* Frameworks */,
 				55D60D801C08B94600963D5D /* MAA */,
@@ -639,6 +643,15 @@
 			);
 			name = "Doctor Profile";
 			path = "Classes/Doctor Profile";
+			sourceTree = "<group>";
+		};
+		C014EF031C5F3EA6009AB9DD /* Thanveer */ = {
+			isa = PBXGroup;
+			children = (
+				C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */,
+				C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */,
+			);
+			name = Thanveer;
 			sourceTree = "<group>";
 		};
 		C0BE979E1C2485560037E328 /* ProgressHud */ = {
@@ -864,6 +877,7 @@
 				C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
+				C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
 				55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */,
 				9F991C5F1C5A1C5400F92C11 /* doctorReviewsViewController.m in Sources */,
