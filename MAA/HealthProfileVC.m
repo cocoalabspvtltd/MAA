@@ -12,7 +12,7 @@
 #import "HealthProfileUserPhotosCVC.h"
 
 
-@interface HealthProfileVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate>
+@interface HealthProfileVC ()<UICollectionViewDataSource,UICollectionViewDelegate,UITableViewDataSource,UITableViewDelegate,UIPickerViewDataSource,UIPickerViewDelegate,HealthProfilePhotoCVCDelegate>
 @property (nonatomic, strong) NSArray *userImagesArray;
 @property (nonatomic, strong) NSArray *medicalDocumentsArray;
 @property (nonatomic, strong) NSArray *prescriptionsArray;
@@ -325,7 +325,7 @@
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     if(collectionView == self.photosCollectionView){
-        return self.userImagesArray.count;
+        return self.userImagesArray.count+1;
     }
     else if (collectionView == self.medicalDocumantsCollectionview){
         return self.medicalDocumentsArray.count;
@@ -337,7 +337,16 @@
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     if(collectionView == self.photosCollectionView){
         HealthProfileUserPhotosCVC *healthProfileCVC = [collectionView dequeueReusableCellWithReuseIdentifier:@"healthProfilePhotoCell" forIndexPath:indexPath];
-        healthProfileCVC.imageUrlString = [[self.userImagesArray  objectAtIndex:indexPath.row] valueForKey:@"image"];
+        healthProfileCVC.healthPhotoDelegate = self;
+        if(indexPath.row == 0){
+            healthProfileCVC.plusButton.hidden = NO;
+            //healthProfileCVC.profilePhotosImageView.hidden  =YES;
+        }
+        else{
+            healthProfileCVC.plusButton.hidden = YES;
+            // healthProfileCVC.profilePhotosImageView.hidden  =NO;
+            healthProfileCVC.imageUrlString = [[self.userImagesArray  objectAtIndex:(indexPath.row -1)] valueForKey:@"image"];
+        }
         return healthProfileCVC;
     }
     else if (collectionView == self.medicalDocumantsCollectionview){
@@ -351,5 +360,11 @@
     else{
         return nil;
     }
+}
+
+#pragma mark - Health Profile Photo CVC Delegate
+
+-(void)plusButtonActionDelegate{
+    
 }
 @end

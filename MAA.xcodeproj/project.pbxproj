@@ -77,6 +77,8 @@
 		C08BE77B1C5157B100770735 /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE77A1C5157B100770735 /* AskQuestionsVC.m */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
 		C09BD06E1C5BDB2900D17ECF /* HealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */; };
+		C09DBFB41C5FC37C0077E131 /* GetGalleryPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */; };
+		C09DBFB71C5FC5440077E131 /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
 		C0BAF0241C319FC0002F3137 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0231C319FC0002F3137 /* CoreLocation.framework */; };
@@ -258,6 +260,10 @@
 		C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorPhotoCVC.m; sourceTree = "<group>"; };
 		C09BD06C1C5BDB2900D17ECF /* HealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthProfileVC.h; sourceTree = "<group>"; };
 		C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthProfileVC.m; sourceTree = "<group>"; };
+		C09DBFB21C5FC37C0077E131 /* GetGalleryPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetGalleryPhotos.h; sourceTree = "<group>"; };
+		C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetGalleryPhotos.m; sourceTree = "<group>"; };
+		C09DBFB51C5FC5440077E131 /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
+		C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewController.m; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C0BAF0231C319FC0002F3137 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -425,6 +431,7 @@
 		55D60D751C08B94600963D5D = {
 			isa = PBXGroup;
 			children = (
+				C09DBFAE1C5FC3600077E131 /* Helper */,
 				C014EF031C5F3EA6009AB9DD /* Thanveer */,
 				9F991C651C5A466300F92C11 /* Kiran */,
 				55C674E41C09D992005AD9E5 /* Frameworks */,
@@ -487,6 +494,8 @@
 				C0871FD01C5CC55600E29E87 /* PerescriptionsTVC.m */,
 				C09BD06C1C5BDB2900D17ECF /* HealthProfileVC.h */,
 				C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */,
+				C09DBFB51C5FC5440077E131 /* PhotoGridViewController.h */,
+				C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */,
 				C0871FC61C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.h */,
 				C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */,
 				C0871FCC1C5CB5C900E29E87 /* MedicalDocumantsCVC.h */,
@@ -652,6 +661,15 @@
 				C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */,
 			);
 			name = Thanveer;
+			sourceTree = "<group>";
+		};
+		C09DBFAE1C5FC3600077E131 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C09DBFB21C5FC37C0077E131 /* GetGalleryPhotos.h */,
+				C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		C0BE979E1C2485560037E328 /* ProgressHud */ = {
@@ -891,6 +909,7 @@
 				C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */,
 				9FC62CE91C5725E200AF3EA3 /* DoctorServicesHV.m in Sources */,
 				9F9878EE1C49BE0400DE68A9 /* DoctorConsultingTimingTVC.m in Sources */,
+				C09DBFB41C5FC37C0077E131 /* GetGalleryPhotos.m in Sources */,
 				C0BCBB541C592320003F7872 /* DoctorServicesTVC.m in Sources */,
 				55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */,
 				7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */,
@@ -911,6 +930,7 @@
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
+				C09DBFB71C5FC5440077E131 /* PhotoGridViewController.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
 				7C0981D81C1E661600B1BE99 /* SearchResultsVC.m in Sources */,
