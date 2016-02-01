@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotoGridViewController : UIViewController
+@interface PhotoGridViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *photoCollectionView;
 
 @end

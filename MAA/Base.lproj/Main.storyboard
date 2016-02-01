@@ -4205,7 +4205,7 @@
         <!--Photo Grid View Controller-->
         <scene sceneID="fBN-1x-eEI">
             <objects>
-                <viewController id="CKp-na-umh" customClass="PhotoGridViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoGridViewController" id="CKp-na-umh" customClass="PhotoGridViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SWU-yX-y4n"/>
                         <viewControllerLayoutGuide type="bottom" id="cYI-K6-CQH"/>
@@ -4223,7 +4223,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zld-xL-E9y" customClass="hotoGridCollectionViewCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="photoCollectionCell" id="Zld-xL-E9y" customClass="hotoGridCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="178" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">

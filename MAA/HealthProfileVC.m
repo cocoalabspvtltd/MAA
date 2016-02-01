@@ -9,6 +9,7 @@
 #import "HealthProfileVC.h"
 #import "PerescriptionsTVC.h"
 #import "MedicalDocumantsCVC.h"
+#import "PhotoGridViewController.h"
 #import "HealthProfileUserPhotosCVC.h"
 
 
@@ -362,6 +363,12 @@
     }
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PhotoGridViewController *photoGridViewController = (PhotoGridViewController *)[storyboard instantiateViewControllerWithIdentifier:@"PhotoGridViewController"];
+    [self.navigationController pushViewController:photoGridViewController animated:YES];
+    
+}
 #pragma mark - Health Profile Photo CVC Delegate
 
 -(void)plusButtonActionDelegate{
