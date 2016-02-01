@@ -4217,22 +4217,40 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SvF-ab-Giz">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ijf-3g-7Of">
-                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="itemSize" width="178" height="123"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zld-xL-E9y">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zld-xL-E9y" customClass="hotoGridCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="123"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="178" height="123"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hQ8-hx-7KY">
+                                                    <rect key="frame" x="8" y="8" width="162" height="107"/>
+                                                </imageView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailingMargin" secondItem="hQ8-hx-7KY" secondAttribute="trailing" id="Bui-q8-hql"/>
+                                            <constraint firstItem="hQ8-hx-7KY" firstAttribute="top" secondItem="Zld-xL-E9y" secondAttribute="topMargin" id="HB9-kk-UsG"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="hQ8-hx-7KY" secondAttribute="bottom" id="KRZ-jS-e0B"/>
+                                            <constraint firstItem="hQ8-hx-7KY" firstAttribute="leading" secondItem="Zld-xL-E9y" secondAttribute="leadingMargin" id="jgh-Vs-GIZ"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="photoImageView" destination="hQ8-hx-7KY" id="rab-MB-Shq"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="CKp-na-umh" id="qRR-Y1-WFL"/>
+                                    <outlet property="delegate" destination="CKp-na-umh" id="x0i-oZ-Mvh"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -4243,6 +4261,9 @@
                             <constraint firstAttribute="trailingMargin" secondItem="SvF-ab-Giz" secondAttribute="trailing" constant="-20" id="rw7-vv-t4W"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="photoCollectionView" destination="SvF-ab-Giz" id="Nso-Kg-i59"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZYd-eG-I4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

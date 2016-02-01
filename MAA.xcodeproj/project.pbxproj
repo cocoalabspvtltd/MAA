@@ -79,6 +79,7 @@
 		C09BD06E1C5BDB2900D17ECF /* HealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */; };
 		C09DBFB41C5FC37C0077E131 /* GetGalleryPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */; };
 		C09DBFB71C5FC5440077E131 /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */; };
+		C09DBFBA1C5FC5F20077E131 /* hotoGridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB91C5FC5F20077E131 /* hotoGridCollectionViewCell.m */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
 		C0BAF0241C319FC0002F3137 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0231C319FC0002F3137 /* CoreLocation.framework */; };
@@ -264,6 +265,8 @@
 		C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetGalleryPhotos.m; sourceTree = "<group>"; };
 		C09DBFB51C5FC5440077E131 /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
 		C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewController.m; sourceTree = "<group>"; };
+		C09DBFB81C5FC5F20077E131 /* hotoGridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hotoGridCollectionViewCell.h; sourceTree = "<group>"; };
+		C09DBFB91C5FC5F20077E131 /* hotoGridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hotoGridCollectionViewCell.m; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C0BAF0231C319FC0002F3137 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -496,6 +499,8 @@
 				C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */,
 				C09DBFB51C5FC5440077E131 /* PhotoGridViewController.h */,
 				C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */,
+				C09DBFB81C5FC5F20077E131 /* hotoGridCollectionViewCell.h */,
+				C09DBFB91C5FC5F20077E131 /* hotoGridCollectionViewCell.m */,
 				C0871FC61C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.h */,
 				C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */,
 				C0871FCC1C5CB5C900E29E87 /* MedicalDocumantsCVC.h */,
@@ -925,6 +930,7 @@
 				C05F4B651C5A94A300CCB6D9 /* SettingsTableViewCell.m in Sources */,
 				7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */,
 				9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */,
+				C09DBFBA1C5FC5F20077E131 /* hotoGridCollectionViewCell.m in Sources */,
 				C08BE7721C51525100770735 /* QuestionsTVC.m in Sources */,
 				C0871FCE1C5CB5C900E29E87 /* MedicalDocumantsCVC.m in Sources */,
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,
