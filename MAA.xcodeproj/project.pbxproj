@@ -97,6 +97,8 @@
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
+		C0E19E261C6320A800720E64 /* AskedQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E19E251C6320A800720E64 /* AskedQuestionsViewController.m */; };
+		C0E19E2B1C63213B00720E64 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E19E2A1C63213B00720E64 /* View.xib */; };
 		C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E608CF1C44167F0027650B /* AppointmentTVC.m */; };
 /* End PBXBuildFile section */
 
@@ -291,6 +293,9 @@
 		C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLToolKit.xcodeproj; path = CLToolKit/CLToolKit.xcodeproj; sourceTree = "<group>"; };
 		C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MAA/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C0E19E241C6320A800720E64 /* AskedQuestionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskedQuestionsViewController.h; sourceTree = "<group>"; };
+		C0E19E251C6320A800720E64 /* AskedQuestionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskedQuestionsViewController.m; sourceTree = "<group>"; };
+		C0E19E2A1C63213B00720E64 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		C0E608CE1C44167F0027650B /* AppointmentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentTVC.h; sourceTree = "<group>"; };
 		C0E608CF1C44167F0027650B /* AppointmentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -665,8 +670,11 @@
 		C014EF031C5F3EA6009AB9DD /* Thanveer */ = {
 			isa = PBXGroup;
 			children = (
+				C0E19E2A1C63213B00720E64 /* View.xib */,
 				C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */,
 				C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */,
+				C0E19E241C6320A800720E64 /* AskedQuestionsViewController.h */,
+				C0E19E251C6320A800720E64 /* AskedQuestionsViewController.m */,
 			);
 			name = Thanveer;
 			sourceTree = "<group>";
@@ -853,6 +861,7 @@
 				C0BCBB631C59405D003F7872 /* angle-down.png in Resources */,
 				7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */,
 				9F991C601C5A1C5400F92C11 /* search.xib in Resources */,
+				C0E19E2B1C63213B00720E64 /* View.xib in Resources */,
 				7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */,
 				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
@@ -939,6 +948,7 @@
 				C0871FCE1C5CB5C900E29E87 /* MedicalDocumantsCVC.m in Sources */,
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
+				C0E19E261C6320A800720E64 /* AskedQuestionsViewController.m in Sources */,
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C09DBFB71C5FC5440077E131 /* PhotoGridViewController.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
