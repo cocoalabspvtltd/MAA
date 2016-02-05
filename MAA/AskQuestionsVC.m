@@ -14,7 +14,9 @@
 
 @implementation AskQuestionsVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+    _tblCategories.hidden=YES;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -47,7 +49,9 @@
     [askQuestionMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"id"];
     [askQuestionMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"category_id"];
     [askQuestionMutableDictionary setValue:self.titleTextField.text forKey:@"title"];
-    [askQuestionMutableDictionary setValue:self.questionTextField.text forKey:@"question"];
+
+// [askQuestionMutableDictionary setValue:self.questionTextField.text forKey:@"question"];
+    
     NSString *askQuestionUrlString = [Baseurl stringByAppendingString:AskQuestionUrl];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:askQuestionUrlString] withBody:askQuestionMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
@@ -68,4 +72,9 @@
     }];
 }
 
+- (IBAction)ChooseCategory:(id)sender
+{
+    _tblCategories.hidden=NO;
+
+}
 @end

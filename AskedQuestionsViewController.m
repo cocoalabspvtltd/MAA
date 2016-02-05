@@ -18,8 +18,7 @@
     [super viewDidLoad];
     self.floatimage.layer.cornerRadius = self.floatimage.frame.size.width / 2;
     self.floatimage.clipsToBounds = YES;
-    self.ImgProfile.layer.cornerRadius = self.ImgProfile.frame.size.width / 2;
-    self.ImgProfile.clipsToBounds = YES;
+    
     
     // Do any additional setup after loading the view.
 }
@@ -36,7 +35,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
@@ -51,6 +51,8 @@
         [[NSBundle mainBundle]loadNibNamed:@"View" owner:self options:nil];
         cell =_celll;
     }
+    self.ImgAskdPerson.layer.cornerRadius = self.ImgAskdPerson.frame.size.width / 2;
+    self.ImgAskdPerson.clipsToBounds = YES;
     
     return cell;
 }

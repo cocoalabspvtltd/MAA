@@ -7,12 +7,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AskedQuestionsViewController">
             <connections>
+                <outlet property="ImgAskdPerson" destination="YZT-tK-hD0" id="RLJ-9j-W3a"/>
                 <outlet property="ImgProfile" destination="YZT-tK-hD0" id="Cef-cS-Vv4"/>
                 <outlet property="celll" destination="hid-TA-XUM" id="Iis-Bq-pxh"/>
+                <outlet property="childview" destination="YZT-tK-hD0" id="KRa-7T-5Au"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="82" id="hid-TA-XUM" customClass="AskedQstionCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="hid-TA-XUM">
             <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hid-TA-XUM" id="3ZG-Bb-4bK">
