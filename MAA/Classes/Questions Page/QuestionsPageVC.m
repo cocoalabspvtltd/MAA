@@ -101,6 +101,7 @@
     
     return cell;
 }
+
 #pragma mark - Search Bar Api's
 
 -(void)callingGetQuestionsWithText:(NSString *)getQuestionsText{

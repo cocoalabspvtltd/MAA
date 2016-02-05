@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AskedQuestionsTVC : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *doctorImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *questionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *answerLabel;
+@property (weak, nonatomic) IBOutlet UILabel *descriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
