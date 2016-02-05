@@ -104,6 +104,7 @@
 		C0E19E261C6320A800720E64 /* AskedQuestionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E19E251C6320A800720E64 /* AskedQuestionsViewController.m */; };
 		C0E19E2B1C63213B00720E64 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E19E2A1C63213B00720E64 /* View.xib */; };
 		C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E608CF1C44167F0027650B /* AppointmentTVC.m */; };
+		C0FE76B41C650B5100466C97 /* AskedQuestionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0FE76B31C650B5100466C97 /* AskedQuestionsTVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -309,6 +310,8 @@
 		C0E19E2A1C63213B00720E64 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 		C0E608CE1C44167F0027650B /* AppointmentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentTVC.h; sourceTree = "<group>"; };
 		C0E608CF1C44167F0027650B /* AppointmentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentTVC.m; sourceTree = "<group>"; };
+		C0FE76B21C650B5100466C97 /* AskedQuestionsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskedQuestionsTVC.h; sourceTree = "<group>"; };
+		C0FE76B31C650B5100466C97 /* AskedQuestionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskedQuestionsTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -693,6 +696,8 @@
 				C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */,
 				C09BC2081C64BB7B00DAD2C4 /* CategoryCell.h */,
 				C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */,
+				C0FE76B21C650B5100466C97 /* AskedQuestionsTVC.h */,
+				C0FE76B31C650B5100466C97 /* AskedQuestionsTVC.m */,
 			);
 			name = Thanveer;
 			sourceTree = "<group>";
@@ -929,6 +934,7 @@
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
 				C09DBFBE1C5FD0080077E131 /* PhotogridCollectionViewCell.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
+				C0FE76B41C650B5100466C97 /* AskedQuestionsTVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				C0871FC81C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m in Sources */,
 				C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */,

@@ -1,21 +1,21 @@
 //
-//  DoctorConsultingTimingTVC.m
+//  AskedQuestionsTVC.m
 //  MAA
 //
-//  Created by kiran on 03/01/16.
+//  Created by Cocoalabs India on 05/02/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
-#import "DoctorConsultingTimingTVC.h"
+#import "AskedQuestionsTVC.h"
 
-@implementation DoctorConsultingTimingTVC
+@implementation AskedQuestionsTVC
 
 - (void)awakeFromNib {
     // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated] ;
+    [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
 }

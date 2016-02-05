@@ -6,9 +6,10 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#define AskedQuestionsTableViewCell @"askedQuestionsCell"
 #import "AskedQuestionsViewController.h"
 
-@interface AskedQuestionsViewController ()
+@interface AskedQuestionsViewController ()<UISearchBarDelegate>
 
 @end
 
@@ -18,6 +19,7 @@
     [super viewDidLoad];
     self.floatimage.layer.cornerRadius = self.floatimage.frame.size.width / 2;
     self.floatimage.clipsToBounds = YES;
+    [self.tblquestions registerNib:[UINib nibWithNibName:@"View" bundle:nil] forCellReuseIdentifier:AskedQuestionsTableViewCell];
     
     
     // Do any additional setup after loading the view.
@@ -45,14 +47,16 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    static NSString *cellIdent = @"cellidentifier";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdent];
-    if (cell==nil) {
-        [[NSBundle mainBundle]loadNibNamed:@"View" owner:self options:nil];
-        cell =_celll;
+    AskedQuestionsTVC *cell = [tableView dequeueReusableCellWithIdentifier:AskedQuestionsTableViewCell forIndexPath:indexPath];
+    if(cell == nil){
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"View" owner:self options:nil];
+        cell = (AskedQuestionsTVC *)[nib objectAtIndex:0];
     }
-    self.ImgAskdPerson.layer.cornerRadius = self.ImgAskdPerson.frame.size.width / 2;
-    self.ImgAskdPerson.clipsToBounds = YES;
+//    if (cell==nil) {
+//        [[NSBundle mainBundle]loadNibNamed:@"View" owner:self options:nil];
+//        cell =_celll;
+//    }
+    
     
     return cell;
 }
@@ -62,6 +66,10 @@
     [self performSegueWithIdentifier:@"fwdSegue" sender:nil];
 }
 
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    NSLog(@"Search Text:%@",searchText);
+}
 /*
 #pragma mark - Navigation
 

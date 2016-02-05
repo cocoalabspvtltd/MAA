@@ -5,16 +5,9 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AskedQuestionsViewController">
-            <connections>
-                <outlet property="ImgAskdPerson" destination="YZT-tK-hD0" id="RLJ-9j-W3a"/>
-                <outlet property="ImgProfile" destination="YZT-tK-hD0" id="Cef-cS-Vv4"/>
-                <outlet property="celll" destination="hid-TA-XUM" id="Iis-Bq-pxh"/>
-                <outlet property="childview" destination="YZT-tK-hD0" id="KRa-7T-5Au"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AskedQuestionsViewController"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="82" id="hid-TA-XUM">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="askedQuestionsCell" rowHeight="82" id="hid-TA-XUM" customClass="AskedQuestionsTVC">
             <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hid-TA-XUM" id="3ZG-Bb-4bK">
@@ -67,6 +60,12 @@
                     <constraint firstAttribute="trailingMargin" secondItem="fBk-yb-gFX" secondAttribute="trailing" constant="3" id="l76-Gh-a7e"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="answerLabel" destination="Emy-XB-ig3" id="t00-EH-OMV"/>
+                <outlet property="dateLabel" destination="fBk-yb-gFX" id="5mg-jZ-PDT"/>
+                <outlet property="doctorImageView" destination="YZT-tK-hD0" id="HPY-G4-dCY"/>
+                <outlet property="questionLabel" destination="1Yk-88-qLx" id="g7c-qf-IeS"/>
+            </connections>
             <point key="canvasLocation" x="358" y="337"/>
         </tableViewCell>
     </objects>
