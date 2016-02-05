@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSArray *questionsArray;
 @property (nonatomic, strong) NSMutableArray *questionsMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
+@property (nonatomic, assign) BOOL isTextSearchValueChanged;
 @end
 
 @implementation AskedQuestionsViewController
@@ -36,6 +37,7 @@
     self.offsetValue = 0;
     self.limitValue = 10;
     self.searchText = @"";
+    self.isTextSearchValueChanged = NO;
     self.questionsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -121,6 +123,8 @@
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
     self.searchText = searchText;
+    self.offsetValue = 0;
+    self.isTextSearchValueChanged = YES;
     [self.questionsMutableArray removeAllObjects];
     [self callingGetQuestionsWithText:searchText];
     NSLog(@"Search Text:%@",searchText);
@@ -141,6 +145,9 @@
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getQuestionsUrlString] withBody:getQuestionsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        if(self.isTextSearchValueChanged){
+            [self.questionsMutableArray removeAllObjects];
+        }
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         self.questionsArray = [responseObject valueForKey:Datakey];
         [self.questionsMutableArray addObjectsFromArray:self.questionsArray];
@@ -171,6 +178,7 @@
         float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
         if (endScrolling >= scrollView.contentSize.height)
         {
+            self.isTextSearchValueChanged = NO;
             [self callingGetQuestionsWithText:self.searchText];
             [self.bottomProgressIndicatorView startAnimating];
         }
