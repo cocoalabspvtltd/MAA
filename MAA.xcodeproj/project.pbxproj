@@ -45,6 +45,7 @@
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
 		9F2B0E081C65BA510053D023 /* QuestionsSDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */; };
+		9F2B0E0E1C65D64E0053D023 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E0D1C65D64D0053D023 /* AboutViewController.m */; };
 		9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E727A1C38338B00B86477 /* HospitalProfile.m */; };
 		9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */; };
 		9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */; };
@@ -210,6 +211,8 @@
 		7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsTVC.m; path = "Classes/Home Page/Search Results/SearchResultsTVC.m"; sourceTree = "<group>"; };
 		9F2B0E061C65BA510053D023 /* QuestionsSDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsSDetailVC.h; sourceTree = "<group>"; };
 		9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsSDetailVC.m; sourceTree = "<group>"; };
+		9F2B0E0C1C65D64D0053D023 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		9F2B0E0D1C65D64D0053D023 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		9F5E72791C38338B00B86477 /* HospitalProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalProfile.h; sourceTree = "<group>"; };
 		9F5E727A1C38338B00B86477 /* HospitalProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalProfile.m; sourceTree = "<group>"; };
 		9F6BF5381C396AB1006FB97A /* DoctorFirstTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorFirstTabTVC.h; sourceTree = "<group>"; };
@@ -703,6 +706,8 @@
 				C0FE76B31C650B5100466C97 /* AskedQuestionsTVC.m */,
 				9F2B0E061C65BA510053D023 /* QuestionsSDetailVC.h */,
 				9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */,
+				9F2B0E0C1C65D64D0053D023 /* AboutViewController.h */,
+				9F2B0E0D1C65D64D0053D023 /* AboutViewController.m */,
 			);
 			name = Thanveer;
 			sourceTree = "<group>";
@@ -966,6 +971,7 @@
 				55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */,
 				7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */,
 				555BBCFE1C0AA5DC00E262F9 /* HomePageVC.m in Sources */,
+				9F2B0E0E1C65D64E0053D023 /* AboutViewController.m in Sources */,
 				7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */,
 				55D352DB1C0B45E1008CCEC1 /* AppointmentPageVC.m in Sources */,
 				9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */,
