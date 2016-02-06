@@ -77,6 +77,8 @@
 		C0871FD11C5CC55600E29E87 /* PerescriptionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0871FD01C5CC55600E29E87 /* PerescriptionsTVC.m */; };
 		C08BE7721C51525100770735 /* QuestionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE7711C51525100770735 /* QuestionsTVC.m */; };
 		C08BE77B1C5157B100770735 /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE77A1C5157B100770735 /* AskQuestionsVC.m */; };
+		C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */; };
+		C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
 		C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */; };
 		C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */; };
@@ -271,6 +273,10 @@
 		C08BE7711C51525100770735 /* QuestionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsTVC.m; sourceTree = "<group>"; };
 		C08BE7791C5157B100770735 /* AskQuestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsVC.h; sourceTree = "<group>"; };
 		C08BE77A1C5157B100770735 /* AskQuestionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsVC.m; sourceTree = "<group>"; };
+		C08BF4401C65DAFC0047DC49 /* InvoicePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoicePageVC.h; sourceTree = "<group>"; };
+		C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoicePageVC.m; sourceTree = "<group>"; };
+		C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceCell.h; sourceTree = "<group>"; };
+		C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceCell.m; sourceTree = "<group>"; };
 		C093DE401C4025F100DCFB44 /* DoctorPhotoCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorPhotoCVC.h; sourceTree = "<group>"; };
 		C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorPhotoCVC.m; sourceTree = "<group>"; };
 		C09BC2051C64BB0E00DAD2C4 /* CategoriesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesList.h; sourceTree = "<group>"; };
@@ -708,6 +714,10 @@
 				9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */,
 				9F2B0E0C1C65D64D0053D023 /* AboutViewController.h */,
 				9F2B0E0D1C65D64D0053D023 /* AboutViewController.m */,
+				C08BF4401C65DAFC0047DC49 /* InvoicePageVC.h */,
+				C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */,
+				C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */,
+				C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */,
 			);
 			name = Thanveer;
 			sourceTree = "<group>";
@@ -962,6 +972,7 @@
 				C08BE77B1C5157B100770735 /* AskQuestionsVC.m in Sources */,
 				55D60D831C08B94600963D5D /* main.m in Sources */,
 				C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */,
+				C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */,
 				C0871FD11C5CC55600E29E87 /* PerescriptionsTVC.m in Sources */,
 				C0BE979D1C2485510037E328 /* MBProgressHUD.m in Sources */,
 				9FC62CE91C5725E200AF3EA3 /* DoctorServicesHV.m in Sources */,
@@ -976,6 +987,7 @@
 				55D352DB1C0B45E1008CCEC1 /* AppointmentPageVC.m in Sources */,
 				9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */,
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
+				C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */,
 				9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */,
 				55D352D51C0B441C008CCEC1 /* QuestionsPageVC.m in Sources */,
 				9F6BF54B1C396AC8006FB97A /* HospitalSecondTabTVC.m in Sources */,
