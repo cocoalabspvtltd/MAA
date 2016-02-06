@@ -13671,7 +13671,7 @@
         <!--About App-->
         <scene sceneID="VJ2-7v-NPi">
             <objects>
-                <viewController title="About App" id="0b7-lr-BLz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AboutViewController" title="About App" id="0b7-lr-BLz" customClass="AboutViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dk8-5T-wEq"/>
                         <viewControllerLayoutGuide type="bottom" id="jsv-RF-pJy"/>
@@ -13804,10 +13804,13 @@
                             <constraint firstItem="La5-ZS-DVn" firstAttribute="leading" secondItem="5Xs-5h-pMf" secondAttribute="leading" id="e58-X0-RFy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="versionLabel" destination="R0s-kx-gYg" id="Veb-sx-e9p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UlU-IV-JkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6144" y="4356"/>
+            <point key="canvasLocation" x="6141" y="4356"/>
         </scene>
         <!--Appoinments-->
         <scene sceneID="dEq-Ko-wOh">
