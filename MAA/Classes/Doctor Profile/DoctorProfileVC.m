@@ -396,11 +396,19 @@
 -(void)headerButtonClickWithTag:(NSUInteger)headerTag{
     if(self.selectedService == headerTag - 100){
         self.selectedService = -1;
+        [self.doctoDetailsTableView reloadData];
     }
     else{
         self.selectedService = headerTag - 100;
+        NSLog(@"Selectd Service:%lu",(unsigned long)self.selectedService);
+        NSMutableArray *indexPathMutableArray = [[NSMutableArray alloc] init];
+        for (int i = 0; i<[[[self.servicesArray objectAtIndex:self.selectedService] valueForKey:@"value"] count]; i++) {
+             NSIndexPath *iPath = [NSIndexPath indexPathForRow:i inSection:self.selectedService];
+            NSLog(@"Service Array count:%lu",[[[self.servicesArray objectAtIndex:self.selectedService] valueForKey:@"value"] count]);
+            [indexPathMutableArray addObject:iPath];
+        }
+        [self.doctoDetailsTableView insertRowsAtIndexPaths:indexPathMutableArray withRowAnimation:UITableViewRowAnimationFade];
     }
-    [self.doctoDetailsTableView reloadData];
 }
 
 @end
