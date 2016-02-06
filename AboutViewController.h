@@ -11,5 +11,6 @@
 
 @interface AboutViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
+- (IBAction)Back:(id)sender;
 
 @end

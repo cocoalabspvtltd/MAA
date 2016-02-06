@@ -13696,6 +13696,9 @@
                                             <constraint firstAttribute="width" constant="46" id="8RO-af-W8Z"/>
                                             <constraint firstAttribute="height" constant="30" id="EXe-pT-qaE"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="Back:" destination="0b7-lr-BLz" eventType="touchUpInside" id="Ksr-cK-Yhz"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYe-qg-MZo">
                                         <rect key="frame" x="62" y="11" width="47" height="21"/>
@@ -14091,6 +14094,7 @@
                         <outlet property="btnSelectD" destination="yOx-zw-Ocu" id="IwL-N9-u0p"/>
                         <outlet property="btnTo" destination="ukM-3C-Jca" id="eOb-vD-MUa"/>
                         <outlet property="btnfrom" destination="CLs-f3-ywf" id="Qs6-6i-k0P"/>
+                        <outlet property="searchBar" destination="ZTZ-Fd-1xV" id="MTc-Qg-KA6"/>
                         <outlet property="tblAppoinments" destination="EgL-QA-xGv" id="rLJ-SG-2Mn"/>
                         <outlet property="tblDropList" destination="AYz-tH-ew6" id="lfM-zW-TPh"/>
                     </connections>
