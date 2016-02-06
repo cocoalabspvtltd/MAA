@@ -14425,7 +14425,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kbu-4b-ozd">
-                                                    <rect key="frame" x="350" y="16" width="80" height="21"/>
+                                                    <rect key="frame" x="464" y="16" width="80" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="80" id="NFz-F0-3O8"/>
                                                     </constraints>
@@ -14437,7 +14437,7 @@
                                             <constraints>
                                                 <constraint firstItem="Kbu-4b-ozd" firstAttribute="top" secondItem="V5N-BI-g1z" secondAttribute="topMargin" constant="8" id="0x3-hL-D0c"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Kbu-4b-ozd" secondAttribute="bottom" constant="9" id="Aey-cX-1lb"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Kbu-4b-ozd" secondAttribute="trailing" constant="122" id="eul-Zv-ecw"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Kbu-4b-ozd" secondAttribute="trailing" constant="8" id="eul-Zv-ecw"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -14450,6 +14450,10 @@
                                     <constraint firstAttribute="height" constant="221" id="CPz-hN-Yze"/>
                                     <constraint firstAttribute="width" constant="122" id="gSm-EP-H03"/>
                                 </constraints>
+                                <imageView key="tableFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="rupee_black" id="oD3-bd-kBr">
+                                    <rect key="frame" x="0.0" y="0.0" width="122" height="15"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                             </tableView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="33C-Zb-gBY">
                                 <rect key="frame" x="20" y="106" width="122" height="221"/>
@@ -14458,9 +14462,6 @@
                                     <constraint firstAttribute="width" constant="122" id="FJl-Mt-Xof"/>
                                 </constraints>
                             </tableView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" image="rupee_black" translatesAutoresizingMaskIntoConstraints="NO" id="oD3-bd-kBr">
-                                <rect key="frame" x="354" y="174" width="15" height="15"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
