@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AkY-4G-ZHb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AkY-4G-ZHb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -13216,7 +13216,7 @@
                         <viewControllerLayoutGuide type="bottom" id="EIz-Vv-Bmh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ig1-Nj-mQd">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PtH-T7-GaL">
@@ -13261,10 +13261,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgW-90-NY7">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yUd-EZ-jkp">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="dataSource" destination="sSy-hA-oLe" id="vOl-zY-WLJ"/>
@@ -13272,7 +13272,7 @@
                                         </connections>
                                     </tableView>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="plus_white" translatesAutoresizingMaskIntoConstraints="NO" id="se7-1S-7Vh">
-                                        <rect key="frame" x="535" y="418" width="50" height="50"/>
+                                        <rect key="frame" x="535" y="467" width="50" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.14530435229999999" blue="0.17924686770000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6Tl-Tz-032"/>
@@ -13280,7 +13280,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAN-0M-JRH">
-                                        <rect key="frame" x="535" y="418" width="50" height="50"/>
+                                        <rect key="frame" x="535" y="467" width="50" height="50"/>
                                         <connections>
                                             <segue destination="qkg-sh-oHf" kind="show" id="b2e-la-zhP"/>
                                         </connections>
@@ -13331,17 +13331,17 @@
         <!--Question Detail-->
         <scene sceneID="8KX-Qs-n53">
             <objects>
-                <viewController title="Question Detail" id="kPD-0y-MLa" sceneMemberID="viewController">
+                <viewController title="Question Detail" id="kPD-0y-MLa" customClass="QuestionsSDetailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3AO-uo-eAi"/>
                         <viewControllerLayoutGuide type="bottom" id="aPe-AC-max"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aFs-Ah-k1Y">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-tC-DmR">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRm-QD-OxY">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
@@ -13387,10 +13387,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9B-CC-yE3">
-                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0q3-Hu-8GI">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTP-qy-lBB">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="186"/>
@@ -13438,7 +13438,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5n8-9V-BNi">
-                                                <rect key="frame" x="0.0" y="186" width="600" height="301"/>
+                                                <rect key="frame" x="0.0" y="186" width="600" height="350"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="5.png" translatesAutoresizingMaskIntoConstraints="NO" id="szg-LJ-qHM">
                                                         <rect key="frame" x="16" y="8" width="50" height="50"/>
@@ -13474,7 +13474,7 @@
                                                         </subviews>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vb4-Ls-qzW">
-                                                        <rect key="frame" x="16" y="66" width="568" height="228"/>
+                                                        <rect key="frame" x="16" y="66" width="568" height="277"/>
                                                         <string key="text">refers to the relationship between a guest and a host, wherein the host receives the guest with goodwill, including the reception and entertainment of guests, visitors, or strangers. Louis, chevalier de Jaucourt describes hospitality in the Encyclopédie as the virtue of a great soul that cares for the whole universe through the ties of humanity.refers to the relationship between a guest and a host, wherein the host receives the guest with goodwill, including the reception and entertainment of guests, visitors, or strangers. Louis, chevalier de Jaucourt describes hospitality in the Encyclopédie as the virtue of a great soul that cares for the whole universe through the ties of humanity</string>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                                         <nil key="highlightedColor"/>
@@ -13524,6 +13524,16 @@
                             <constraint firstItem="Gcx-tC-DmR" firstAttribute="leading" secondItem="aFs-Ah-k1Y" secondAttribute="leading" id="ynX-tQ-9jf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="answerDateLabel" destination="Vb4-Ls-qzW" id="GO9-zZ-FRx"/>
+                        <outlet property="answerLabe" destination="Vb4-Ls-qzW" id="N6h-5R-wh7"/>
+                        <outlet property="dateLabel" destination="jEx-Op-4Xx" id="xQy-6U-U3j"/>
+                        <outlet property="doctorNameLabel" destination="6BX-df-nsZ" id="NUd-Jo-uD4"/>
+                        <outlet property="doctorProfileImageView" destination="szg-LJ-qHM" id="TU8-1Z-tyz"/>
+                        <outlet property="doctorSpecialityLabel" destination="knN-2P-VHC" id="Ymn-6P-jFE"/>
+                        <outlet property="questionDetailLabe" destination="alm-Yf-aSl" id="IAP-Uj-3YJ"/>
+                        <outlet property="questionLabel" destination="7i3-e4-nHF" id="dlf-RA-O0v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Py6-Gw-hZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -14335,9 +14345,9 @@
     <inferredMetricsTieBreakers>
         <segue reference="Q50-MZ-tRA"/>
         <segue reference="fvG-ou-Cxz"/>
-        <segue reference="K7S-dP-gI5"/>
-        <segue reference="Qxi-WB-NrB"/>
+        <segue reference="dOx-ja-Ci9"/>
         <segue reference="dRY-b0-YNg"/>
         <segue reference="lPF-X1-Irh"/>
+        <segue reference="Qxi-WB-NrB"/>
     </inferredMetricsTieBreakers>
 </document>

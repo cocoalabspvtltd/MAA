@@ -44,6 +44,7 @@
 		7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97B11C24862D0037E328 /* libCLToolKit.a */; };
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
+		9F2B0E081C65BA510053D023 /* QuestionsSDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */; };
 		9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E727A1C38338B00B86477 /* HospitalProfile.m */; };
 		9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */; };
 		9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */; };
@@ -207,6 +208,8 @@
 		7CF40FE81C1D77600020EE33 /* block1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block1@2x.png"; sourceTree = "<group>"; };
 		7CF648091C1F36F5007DA73F /* SearchResultsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SearchResultsTVC.h; path = "Classes/Home Page/Search Results/SearchResultsTVC.h"; sourceTree = "<group>"; };
 		7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsTVC.m; path = "Classes/Home Page/Search Results/SearchResultsTVC.m"; sourceTree = "<group>"; };
+		9F2B0E061C65BA510053D023 /* QuestionsSDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionsSDetailVC.h; sourceTree = "<group>"; };
+		9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsSDetailVC.m; sourceTree = "<group>"; };
 		9F5E72791C38338B00B86477 /* HospitalProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalProfile.h; sourceTree = "<group>"; };
 		9F5E727A1C38338B00B86477 /* HospitalProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalProfile.m; sourceTree = "<group>"; };
 		9F6BF5381C396AB1006FB97A /* DoctorFirstTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorFirstTabTVC.h; sourceTree = "<group>"; };
@@ -698,6 +701,8 @@
 				C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */,
 				C0FE76B21C650B5100466C97 /* AskedQuestionsTVC.h */,
 				C0FE76B31C650B5100466C97 /* AskedQuestionsTVC.m */,
+				9F2B0E061C65BA510053D023 /* QuestionsSDetailVC.h */,
+				9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */,
 			);
 			name = Thanveer;
 			sourceTree = "<group>";
@@ -938,6 +943,7 @@
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				C0871FC81C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m in Sources */,
 				C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */,
+				9F2B0E081C65BA510053D023 /* QuestionsSDetailVC.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
 				C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */,
