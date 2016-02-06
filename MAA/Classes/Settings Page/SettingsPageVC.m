@@ -7,6 +7,7 @@
 //
 
 #import "HealthProfileVC.h"
+#import "AboutViewController.h"
 #import "SettingsTableViewCell.h"
 #import "SettingsPageVC.h"
 
@@ -89,7 +90,8 @@
         [self.navigationController pushViewController:myHealthProfileVC animated:YES];
     }
     else if (indexPath.row == 4){
-        
+        AboutViewController *aboutVC = (AboutViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
+        [self.navigationController pushViewController:aboutVC animated:YES];
     }
 }
 @end
