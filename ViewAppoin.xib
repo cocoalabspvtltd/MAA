@@ -145,21 +145,37 @@
                             <constraint firstAttribute="width" constant="20" id="bRj-4l-5l6"/>
                         </constraints>
                     </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hn4-K4-eta">
+                        <rect key="frame" x="255" y="60" width="22" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="22" id="M5r-ON-jnQ"/>
+                            <constraint firstAttribute="width" constant="22" id="jKR-Xm-7cf"/>
+                        </constraints>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcm-1z-0mr">
+                        <rect key="frame" x="288" y="60" width="22" height="22"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="OqP-qf-w6O" firstAttribute="centerY" secondItem="De9-ZA-SLU" secondAttribute="centerY" id="5YZ-Vf-jIf"/>
                     <constraint firstItem="O21-wP-BLf" firstAttribute="leading" secondItem="OqP-qf-w6O" secondAttribute="trailing" constant="8" symbolic="YES" id="7IS-tV-NLL"/>
+                    <constraint firstItem="Hn4-K4-eta" firstAttribute="width" secondItem="Qcm-1z-0mr" secondAttribute="width" id="8Et-LX-Gk5"/>
+                    <constraint firstItem="Hn4-K4-eta" firstAttribute="height" secondItem="Qcm-1z-0mr" secondAttribute="height" id="FPS-ME-st8"/>
+                    <constraint firstItem="Qcm-1z-0mr" firstAttribute="centerX" secondItem="MHy-rt-z4f" secondAttribute="centerX" constant="1" id="RPc-xc-P6s"/>
                     <constraint firstAttribute="trailing" secondItem="yxH-jx-nYo" secondAttribute="trailing" constant="16" id="UJt-fp-q9L"/>
                     <constraint firstItem="yxH-jx-nYo" firstAttribute="top" secondItem="l50-ft-9XX" secondAttribute="top" constant="8" id="XGY-VD-HAg"/>
                     <constraint firstItem="MHy-rt-z4f" firstAttribute="leading" secondItem="NfT-M1-dVG" secondAttribute="trailing" constant="12" id="a18-Bm-Xau"/>
                     <constraint firstItem="OqP-qf-w6O" firstAttribute="leading" secondItem="l50-ft-9XX" secondAttribute="leadingMargin" id="amA-bl-B6a"/>
                     <constraint firstItem="OqP-qf-w6O" firstAttribute="top" secondItem="yxH-jx-nYo" secondAttribute="top" id="eqT-Sm-uR2"/>
                     <constraint firstAttribute="bottomMargin" secondItem="NfT-M1-dVG" secondAttribute="bottom" constant="-1" id="fBv-06-C0l"/>
+                    <constraint firstItem="Hn4-K4-eta" firstAttribute="centerX" secondItem="NfT-M1-dVG" secondAttribute="centerX" id="gEq-r8-On3"/>
                     <constraint firstItem="OqP-qf-w6O" firstAttribute="bottom" secondItem="NfT-M1-dVG" secondAttribute="bottom" id="jnY-C5-Obf"/>
+                    <constraint firstItem="Hn4-K4-eta" firstAttribute="centerY" secondItem="NfT-M1-dVG" secondAttribute="centerY" id="sAE-o6-xW5"/>
                     <constraint firstAttribute="bottomMargin" secondItem="MHy-rt-z4f" secondAttribute="bottom" constant="-1" id="t2w-5F-sJt"/>
                     <constraint firstItem="O21-wP-BLf" firstAttribute="top" secondItem="l50-ft-9XX" secondAttribute="top" constant="9" id="tC5-km-zJV"/>
                     <constraint firstItem="NfT-M1-dVG" firstAttribute="leading" secondItem="O21-wP-BLf" secondAttribute="trailing" constant="20" id="vWq-it-bkC"/>
                     <constraint firstItem="OqP-qf-w6O" firstAttribute="centerX" secondItem="De9-ZA-SLU" secondAttribute="centerX" id="xry-AO-Bt0"/>
+                    <constraint firstItem="Qcm-1z-0mr" firstAttribute="centerY" secondItem="MHy-rt-z4f" secondAttribute="centerY" id="yX0-g5-gm8"/>
                 </constraints>
                 <variation key="default">
                     <mask key="subviews">
