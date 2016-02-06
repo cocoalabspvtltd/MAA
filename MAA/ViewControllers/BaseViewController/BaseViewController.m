@@ -23,6 +23,7 @@
 -(void)initView{
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -51,6 +51,18 @@
 		9F2B0E271C65FCE00053D023 /* AppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E261C65FCE00053D023 /* AppointmentTableViewCell.m */; };
 		9F2B0E291C65FEA70053D023 /* ViewAppoin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2B0E281C65FEA70053D023 /* ViewAppoin.xib */; };
 		9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E727A1C38338B00B86477 /* HospitalProfile.m */; };
+		9F5F0C171C66526800F7E99D /* calendar_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C0C1C66526800F7E99D /* calendar_white.png */; };
+		9F5F0C181C66526800F7E99D /* calendar_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C0D1C66526800F7E99D /* calendar_white@2x.png */; };
+		9F5F0C191C66526800F7E99D /* calendar_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C0E1C66526800F7E99D /* calendar_white@3x.png */; };
+		9F5F0C1A1C66526800F7E99D /* question_circle_gray.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C101C66526800F7E99D /* question_circle_gray.png */; };
+		9F5F0C1B1C66526800F7E99D /* question_circle_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C111C66526800F7E99D /* question_circle_gray@2x.png */; };
+		9F5F0C1C1C66526800F7E99D /* question_circle_gray@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C121C66526800F7E99D /* question_circle_gray@3x.png */; };
+		9F5F0C1D1C66526800F7E99D /* search_white.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C141C66526800F7E99D /* search_white.png */; };
+		9F5F0C1E1C66526800F7E99D /* search_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C151C66526800F7E99D /* search_white@2x.png */; };
+		9F5F0C1F1C66526800F7E99D /* search_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C161C66526800F7E99D /* search_white@3x.png */; };
+		9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C221C66551A00F7E99D /* PhotoGridViewController.m */; };
+		9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C261C6655AB00F7E99D /* PhotogridCollectionViewCell.m */; };
+		9F5F0C291C6655AB00F7E99D /* PhotogridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C271C6655AB00F7E99D /* PhotogridCollectionViewCell.xib */; };
 		9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */; };
 		9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */; };
 		9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */; };
@@ -94,9 +106,6 @@
 		C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */; };
 		C09BD06E1C5BDB2900D17ECF /* HealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */; };
 		C09DBFB41C5FC37C0077E131 /* GetGalleryPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */; };
-		C09DBFB71C5FC5440077E131 /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */; };
-		C09DBFBE1C5FD0080077E131 /* PhotogridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09DBFBC1C5FD0080077E131 /* PhotogridCollectionViewCell.m */; };
-		C09DBFBF1C5FD0080077E131 /* PhotogridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C09DBFBD1C5FD0080077E131 /* PhotogridCollectionViewCell.xib */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
 		C0BAF0241C319FC0002F3137 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0231C319FC0002F3137 /* CoreLocation.framework */; };
@@ -232,6 +241,20 @@
 		9F2B0E281C65FEA70053D023 /* ViewAppoin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewAppoin.xib; sourceTree = "<group>"; };
 		9F5E72791C38338B00B86477 /* HospitalProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalProfile.h; sourceTree = "<group>"; };
 		9F5E727A1C38338B00B86477 /* HospitalProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalProfile.m; sourceTree = "<group>"; };
+		9F5F0C0C1C66526800F7E99D /* calendar_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calendar_white.png; sourceTree = "<group>"; };
+		9F5F0C0D1C66526800F7E99D /* calendar_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_white@2x.png"; sourceTree = "<group>"; };
+		9F5F0C0E1C66526800F7E99D /* calendar_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "calendar_white@3x.png"; sourceTree = "<group>"; };
+		9F5F0C101C66526800F7E99D /* question_circle_gray.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = question_circle_gray.png; sourceTree = "<group>"; };
+		9F5F0C111C66526800F7E99D /* question_circle_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question_circle_gray@2x.png"; sourceTree = "<group>"; };
+		9F5F0C121C66526800F7E99D /* question_circle_gray@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "question_circle_gray@3x.png"; sourceTree = "<group>"; };
+		9F5F0C141C66526800F7E99D /* search_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search_white.png; sourceTree = "<group>"; };
+		9F5F0C151C66526800F7E99D /* search_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_white@2x.png"; sourceTree = "<group>"; };
+		9F5F0C161C66526800F7E99D /* search_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_white@3x.png"; sourceTree = "<group>"; };
+		9F5F0C211C66551A00F7E99D /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
+		9F5F0C221C66551A00F7E99D /* PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewController.m; sourceTree = "<group>"; };
+		9F5F0C251C6655AB00F7E99D /* PhotogridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotogridCollectionViewCell.h; sourceTree = "<group>"; };
+		9F5F0C261C6655AB00F7E99D /* PhotogridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotogridCollectionViewCell.m; sourceTree = "<group>"; };
+		9F5F0C271C6655AB00F7E99D /* PhotogridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotogridCollectionViewCell.xib; sourceTree = "<group>"; };
 		9F6BF5381C396AB1006FB97A /* DoctorFirstTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorFirstTabTVC.h; sourceTree = "<group>"; };
 		9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorFirstTabTVC.m; sourceTree = "<group>"; };
 		9F6BF53C1C396AB1006FB97A /* DoctorThirdTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorThirdTabTVC.h; sourceTree = "<group>"; };
@@ -308,11 +331,6 @@
 		C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthProfileVC.m; sourceTree = "<group>"; };
 		C09DBFB21C5FC37C0077E131 /* GetGalleryPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetGalleryPhotos.h; sourceTree = "<group>"; };
 		C09DBFB31C5FC37C0077E131 /* GetGalleryPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetGalleryPhotos.m; sourceTree = "<group>"; };
-		C09DBFB51C5FC5440077E131 /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
-		C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewController.m; sourceTree = "<group>"; };
-		C09DBFBB1C5FD0080077E131 /* PhotogridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotogridCollectionViewCell.h; sourceTree = "<group>"; };
-		C09DBFBC1C5FD0080077E131 /* PhotogridCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotogridCollectionViewCell.m; sourceTree = "<group>"; };
-		C09DBFBD1C5FD0080077E131 /* PhotogridCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotogridCollectionViewCell.xib; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C0BAF0231C319FC0002F3137 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -509,6 +527,7 @@
 		55D60D801C08B94600963D5D /* MAA */ = {
 			isa = PBXGroup;
 			children = (
+				9F5F0C061C664EDA00F7E99D /* Resources */,
 				9F2B0E1C1C65FB230053D023 /* CustomCells */,
 				9F2B0E0F1C65DFBF0053D023 /* ViewControllers */,
 				C0BCBB621C59405D003F7872 /* angle-down.png */,
@@ -550,11 +569,6 @@
 				C0871FD01C5CC55600E29E87 /* PerescriptionsTVC.m */,
 				C09BD06C1C5BDB2900D17ECF /* HealthProfileVC.h */,
 				C09BD06D1C5BDB2900D17ECF /* HealthProfileVC.m */,
-				C09DBFB51C5FC5440077E131 /* PhotoGridViewController.h */,
-				C09DBFB61C5FC5440077E131 /* PhotoGridViewController.m */,
-				C09DBFBB1C5FD0080077E131 /* PhotogridCollectionViewCell.h */,
-				C09DBFBC1C5FD0080077E131 /* PhotogridCollectionViewCell.m */,
-				C09DBFBD1C5FD0080077E131 /* PhotogridCollectionViewCell.xib */,
 				C0871FC61C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.h */,
 				C0871FC71C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m */,
 				C0871FCC1C5CB5C900E29E87 /* MedicalDocumantsCVC.h */,
@@ -656,6 +670,7 @@
 		9F2B0E0F1C65DFBF0053D023 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				9F5F0C201C66551A00F7E99D /* PhotogridViewController */,
 				9F2B0E1D1C65FB2D0053D023 /* AppointmentVC */,
 				9F2B0E181C65EDE10053D023 /* BaseViewController */,
 			);
@@ -674,6 +689,7 @@
 		9F2B0E1C1C65FB230053D023 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				9F5F0C241C6655AB00F7E99D /* PhotoGridCollectionViewCell */,
 				9F2B0E211C65FBBE0053D023 /* AppointmentTableViewCell */,
 			);
 			path = CustomCells;
@@ -714,6 +730,73 @@
 			);
 			name = "Clinic Page";
 			path = "Classes/Clinic Page";
+			sourceTree = "<group>";
+		};
+		9F5F0C061C664EDA00F7E99D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9F5F0C0A1C664F2000F7E99D /* Tabbar */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9F5F0C0A1C664F2000F7E99D /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				9F5F0C0B1C66526800F7E99D /* calendar_white */,
+				9F5F0C0F1C66526800F7E99D /* question_circle_gray */,
+				9F5F0C131C66526800F7E99D /* search_white */,
+			);
+			path = Tabbar;
+			sourceTree = "<group>";
+		};
+		9F5F0C0B1C66526800F7E99D /* calendar_white */ = {
+			isa = PBXGroup;
+			children = (
+				9F5F0C0C1C66526800F7E99D /* calendar_white.png */,
+				9F5F0C0D1C66526800F7E99D /* calendar_white@2x.png */,
+				9F5F0C0E1C66526800F7E99D /* calendar_white@3x.png */,
+			);
+			path = calendar_white;
+			sourceTree = "<group>";
+		};
+		9F5F0C0F1C66526800F7E99D /* question_circle_gray */ = {
+			isa = PBXGroup;
+			children = (
+				9F5F0C101C66526800F7E99D /* question_circle_gray.png */,
+				9F5F0C111C66526800F7E99D /* question_circle_gray@2x.png */,
+				9F5F0C121C66526800F7E99D /* question_circle_gray@3x.png */,
+			);
+			path = question_circle_gray;
+			sourceTree = "<group>";
+		};
+		9F5F0C131C66526800F7E99D /* search_white */ = {
+			isa = PBXGroup;
+			children = (
+				9F5F0C141C66526800F7E99D /* search_white.png */,
+				9F5F0C151C66526800F7E99D /* search_white@2x.png */,
+				9F5F0C161C66526800F7E99D /* search_white@3x.png */,
+			);
+			path = search_white;
+			sourceTree = "<group>";
+		};
+		9F5F0C201C66551A00F7E99D /* PhotogridViewController */ = {
+			isa = PBXGroup;
+			children = (
+				9F5F0C211C66551A00F7E99D /* PhotoGridViewController.h */,
+				9F5F0C221C66551A00F7E99D /* PhotoGridViewController.m */,
+			);
+			path = PhotogridViewController;
+			sourceTree = "<group>";
+		};
+		9F5F0C241C6655AB00F7E99D /* PhotoGridCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9F5F0C251C6655AB00F7E99D /* PhotogridCollectionViewCell.h */,
+				9F5F0C261C6655AB00F7E99D /* PhotogridCollectionViewCell.m */,
+				9F5F0C271C6655AB00F7E99D /* PhotogridCollectionViewCell.xib */,
+			);
+			path = PhotoGridCollectionViewCell;
 			sourceTree = "<group>";
 		};
 		9F991C651C5A466300F92C11 /* Kiran */ = {
@@ -974,18 +1057,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				7C9FF5531C1F4D2400C72512 /* 1.png in Resources */,
+				9F5F0C171C66526800F7E99D /* calendar_white.png in Resources */,
+				9F5F0C1A1C66526800F7E99D /* question_circle_gray.png in Resources */,
 				7C8AD8641C18BBA500C4E3BD /* 4.png in Resources */,
 				7C3682D61C2FFAFE002F31FA /* 2.jpg in Resources */,
 				C08BF45E1C660EC20047DC49 /* dot.png in Resources */,
 				9F991C611C5A1C5400F92C11 /* bin.png in Resources */,
 				C0BCBB631C59405D003F7872 /* angle-down.png in Resources */,
+				9F5F0C1C1C66526800F7E99D /* question_circle_gray@3x.png in Resources */,
 				7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */,
 				9F991C601C5A1C5400F92C11 /* search.xib in Resources */,
 				C0E19E2B1C63213B00720E64 /* View.xib in Resources */,
 				7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */,
+				9F5F0C191C66526800F7E99D /* calendar_white@3x.png in Resources */,
 				C08BF4501C6606800047DC49 /* InvoicePopup.xib in Resources */,
+				9F5F0C181C66526800F7E99D /* calendar_white@2x.png in Resources */,
 				C08BF45B1C6608AF0047DC49 /* rupeesymboltext.png in Resources */,
 				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
+				9F5F0C1F1C66526800F7E99D /* search_white@3x.png in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
 				55D60D911C08B94600963D5D /* LaunchScreen.storyboard in Resources */,
 				C0BCBB5E1C593F82003F7872 /* angle-right.png in Resources */,
@@ -999,10 +1088,13 @@
 				C08BF45A1C6608AF0047DC49 /* locationcircle.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0BCBB551C592320003F7872 /* DoctorServicesTVC.xib in Resources */,
+				9F5F0C1D1C66526800F7E99D /* search_white.png in Resources */,
+				9F5F0C1B1C66526800F7E99D /* question_circle_gray@2x.png in Resources */,
 				9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */,
+				9F5F0C1E1C66526800F7E99D /* search_white@2x.png in Resources */,
 				55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */,
-				C09DBFBF1C5FD0080077E131 /* PhotogridCollectionViewCell.xib in Resources */,
 				C08BF45C1C6608AF0047DC49 /* time.png in Resources */,
+				9F5F0C291C6655AB00F7E99D /* PhotogridCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,13 +1126,14 @@
 				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
 				7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */,
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
-				C09DBFBE1C5FD0080077E131 /* PhotogridCollectionViewCell.m in Sources */,
+				9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				C0FE76B41C650B5100466C97 /* AskedQuestionsTVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				C0871FC81C5CAD8700E29E87 /* HealthProfileUserPhotosCVC.m in Sources */,
 				C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */,
 				9F2B0E081C65BA510053D023 /* QuestionsSDetailVC.m in Sources */,
+				9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
 				C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */,
@@ -1085,7 +1178,6 @@
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				C0E19E261C6320A800720E64 /* AskedQuestionsViewController.m in Sources */,
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
-				C09DBFB71C5FC5440077E131 /* PhotoGridViewController.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
