@@ -46,6 +46,7 @@
 		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
 		9F2B0E081C65BA510053D023 /* QuestionsSDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */; };
 		9F2B0E0E1C65D64E0053D023 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E0D1C65D64D0053D023 /* AboutViewController.m */; };
+		9F2B0E121C65DFEF0053D023 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E111C65DFEF0053D023 /* BaseViewController.m */; };
 		9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E727A1C38338B00B86477 /* HospitalProfile.m */; };
 		9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5391C396AB1006FB97A /* DoctorFirstTabTVC.m */; };
 		9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF53D1C396AB1006FB97A /* DoctorThirdTabTVC.m */; };
@@ -215,6 +216,8 @@
 		9F2B0E071C65BA510053D023 /* QuestionsSDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionsSDetailVC.m; sourceTree = "<group>"; };
 		9F2B0E0C1C65D64D0053D023 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		9F2B0E0D1C65D64D0053D023 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
+		9F2B0E101C65DFEF0053D023 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		9F2B0E111C65DFEF0053D023 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		9F5E72791C38338B00B86477 /* HospitalProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalProfile.h; sourceTree = "<group>"; };
 		9F5E727A1C38338B00B86477 /* HospitalProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalProfile.m; sourceTree = "<group>"; };
 		9F6BF5381C396AB1006FB97A /* DoctorFirstTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorFirstTabTVC.h; sourceTree = "<group>"; };
@@ -491,6 +494,7 @@
 		55D60D801C08B94600963D5D /* MAA */ = {
 			isa = PBXGroup;
 			children = (
+				9F2B0E0F1C65DFBF0053D023 /* ViewControllers */,
 				C0BCBB621C59405D003F7872 /* angle-down.png */,
 				C0BCBB5D1C593F82003F7872 /* angle-right.png */,
 				C0BCBB591C59377A003F7872 /* fc_right.png */,
@@ -631,6 +635,15 @@
 				7C9FF5551C1F5F9A00C72512 /* SearchFilterVC.m */,
 			);
 			name = "Search Filter";
+			sourceTree = "<group>";
+		};
+		9F2B0E0F1C65DFBF0053D023 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9F2B0E101C65DFEF0053D023 /* BaseViewController.h */,
+				9F2B0E111C65DFEF0053D023 /* BaseViewController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		9F5E72751C38334C00B86477 /* Clinic Page */ = {
@@ -946,6 +959,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				366EB8A61C59DAE900466CCE /* SettingsPageVC.m in Sources */,
+				9F2B0E121C65DFEF0053D023 /* BaseViewController.m in Sources */,
 				9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */,
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,
 				C09BC20D1C64C49200DAD2C4 /* AppoinmentsDocs.m in Sources */,

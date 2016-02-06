@@ -1,25 +1,27 @@
 //
-//  AboutViewController.m
+//  BaseViewController.m
 //  MAA
 //
 //  Created by kiran on 06/02/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
-#import "AboutViewController.h"
+#import "BaseViewController.h"
 
-@interface AboutViewController ()
+@interface BaseViewController ()
 
 @end
 
-@implementation AboutViewController
+@implementation BaseViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSString * appVersionString = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
     // Do any additional setup after loading the view.
 }
 
+-(void)initView{
+    [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
