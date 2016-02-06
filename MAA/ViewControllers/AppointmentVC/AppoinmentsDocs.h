@@ -10,8 +10,6 @@
 
 @interface Appoinments : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblAppoinments;
-
-@property (strong, nonatomic) IBOutlet UITableViewCell *celll;
 @property (weak, nonatomic) IBOutlet UIButton *btnFilter;
 @property (weak, nonatomic) IBOutlet UIView *ChildView;
 - (IBAction)Filter:(id)sender;
