@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
+#define kUserName @"userName"
+#define MainStoryboardName @"Main"
+static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen";
+
 #define AppName @"MAA"
 #define ERROR @"error"
 #define ACCESS_TOKEN @"token"

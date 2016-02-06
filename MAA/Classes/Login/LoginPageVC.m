@@ -240,9 +240,9 @@
 #pragma mark - Setting Home Page
 
 -(void)settingHomePage{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UITabBarController *tabBarController = (UITabBarController *)[storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-    [self.navigationController pushViewController:tabBarController animated:NO];
+    [[NSUserDefaults standardUserDefaults] setValue:@"maaUser" forKey:kUserName];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ShowLogInScreenObserver object:nil];
 }
 
 

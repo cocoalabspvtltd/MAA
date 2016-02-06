@@ -19,9 +19,42 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [self addObserver];
+    [self initWindow];
     return [[FacebookWrapper standardWrapper] handlerApplication:application didFinishLaunchingWithOptions:launchOptions ];
     return YES;
 }
+
+-(void)initWindow{
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    if(![self isLoggedIn]){
+        UINavigationController *navigationController = [sb instantiateViewControllerWithIdentifier:@"LogInNavigationController"];
+        self.window.rootViewController = navigationController;
+    }
+    else{
+        UITabBarController *tabbarController = [sb instantiateViewControllerWithIdentifier:@"TabBarController"];
+        self.window.rootViewController = tabbarController;
+    }
+}
+
+-(BOOL)isLoggedIn{
+    BOOL isLoggedIn = YES;
+    if(![[[NSUserDefaults standardUserDefaults] valueForKey:kUserName] length]>0){
+        isLoggedIn = NO;
+    }
+    return isLoggedIn;
+}
+
+#pragma mark - NSNotification Observer
+
+- (void)addObserver {
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(showHomeView:) name:ShowLogInScreenObserver object:nil];
+}
+
+-(void)showHomeView:(id)sender{
+    [self initWindow];
+}
+
 
 - (NSUInteger) application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
 {

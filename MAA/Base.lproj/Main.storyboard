@@ -6875,10 +6875,10 @@
             </objects>
             <point key="canvasLocation" x="1375" y="2633"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Log In Navigation Controller-->
         <scene sceneID="25B-MQ-ZkK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AkY-4G-ZHb" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LogInNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="AkY-4G-ZHb" customClass="LogInNavigationController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="eIn-eF-rWs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
