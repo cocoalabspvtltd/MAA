@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self callingGetQuestionsDetailsApi];
+    self.navigationController.navigationBar.hidden = YES;
     // Do any additional setup after loading the view.
 }
 

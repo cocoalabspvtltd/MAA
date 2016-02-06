@@ -83,10 +83,13 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     if(indexPath.row == 0){
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         HealthProfileVC *myHealthProfileVC = (HealthProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"HealthProfileVC"];
         [self.navigationController pushViewController:myHealthProfileVC animated:YES];
+    }
+    else if (indexPath.row == 4){
+        
     }
 }
 @end
