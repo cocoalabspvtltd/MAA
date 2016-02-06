@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface QuestionsSDetailVC : UIViewController
+@property (nonatomic, strong) NSString *questionId;
 @property (strong, nonatomic) IBOutlet UILabel *questionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *questionDetailLabe;

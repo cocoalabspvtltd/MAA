@@ -7,6 +7,8 @@
 //
 
 #define AskedQuestionsTableViewCell @"askedQuestionsCell"
+
+#import "QuestionsSDetailVC.h"
 #import "AskedQuestionsViewController.h"
 
 @interface AskedQuestionsViewController ()<UISearchBarDelegate,UIScrollViewDelegate>
@@ -117,7 +119,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
 
 {
-    [self performSegueWithIdentifier:@"fwdSegue" sender:nil];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    QuestionsSDetailVC *questiosDetailVC = [storyboard instantiateViewControllerWithIdentifier:@"QuestionsSDetailVC"];
+    questiosDetailVC.questionId = [[self.questionsMutableArray objectAtIndex:indexPath.row] valueForKey:@"que_id"];
+    [self.navigationController pushViewController:questiosDetailVC animated:YES];
 }
 
 
