@@ -8,8 +8,11 @@
 
 #import "InvoicePageVC.h"
 
-@interface InvoicePageVC ()
-
+@interface InvoicePageVC ()<UITableViewDataSource,UITableViewDelegate>
+{
+    NSArray *Months;
+    NSArray *Year;
+}
 @end
 
 @implementation InvoicePageVC
@@ -18,6 +21,12 @@
     [super viewDidLoad];
     _tblMonth.hidden=YES;
     _tblYear.hidden=YES;
+
+    Months=@[@"January",@"February",@"March",@"April",@"May",@"June",@"July",@"August",@"September",@"October",@"November",@"December"];
+    
+    Year=@[@"2015",@"2016"];
+    _tblMonth.delegate=self;
+    _tblMonth.dataSource=self;
     
     // Do any additional setup after loading the view.
 }
@@ -27,6 +36,36 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    if (tableView==_tblMonth)
+    {
+        return Months.count;
+        
+    }
+    
+    return 1;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *TableIdentifier=@"TableItem";
+    
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:TableIdentifier];
+    cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TableIdentifier];
+    cell.textLabel.text=[Months objectAtIndex:indexPath.row];
+
+    return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *x = Months[indexPath.row];
+    [_btnMonth setTitle:x forState:UIControlStateNormal];
+    
+}
 /*
 #pragma mark - Navigation
 
@@ -50,6 +89,7 @@
     if (_tblYear.hidden==YES) {
         _tblYear.hidden=NO;
     }
-    _tblYear.hidden=YES;
+    else
+        _tblYear.hidden=YES;
 }
 @end
