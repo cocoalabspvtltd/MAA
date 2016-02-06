@@ -165,4 +165,63 @@ NSString *flag=0;
     else
         _tblDropList.hidden=YES;
 }
+
+#pragma mark - Calling Search Doctor Names Api
+
+
+//-(void)getSearchDoctorNamesForAppointmentesApiCallWithSearchText:(NSString *)keywordText{
+//    self.searchTextString = keywordText;
+//    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+//    NSLog(@"Access Token:%@",accessToken);
+//    NSString *getDoctorsAppointmentsUrlString = [Baseurl stringByAppendingString:GetDoctorsAppointmentesUrl];
+//    NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
+//    [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
+//    [getSubcategoriesMutableDictionary  setValue:keywordText forKey:@"keyword"];
+//    [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
+//    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
+//    NSLog(@"Get Sub categories mutable Dictionary:%@",getSubcategoriesMutableDictionary);
+//    if(self.offsetValue == 0){
+//        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    }
+//    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getDoctorsAppointmentsUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
+//    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+//        NSLog(@"Response Object;%@",responseObject);
+//        self.appointmentDoctorsArray = [responseObject valueForKey:Datakey];
+//        self.offsetValue=self.offsetValue+self.limitValue;
+//        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//        [self.bottomProgressIndicatorView stopAnimating];
+//        [self.appointmentDoctorsMutableArray addObjectsFromArray:self.appointmentDoctorsArray];
+//        [self.appointmentTableView reloadData];
+//    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+//        [self.bottomProgressIndicatorView stopAnimating];
+//        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+//        NSString *errorMessage;
+//        if([errorDescription isEqualToString:NoNetworkErrorName]){
+//            errorMessage = NoNetworkmessage;
+//        }
+//        else{
+//            errorMessage = ConnectiontoServerFailedMessage;
+//        }
+//        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [erroralert show];
+//    }];
+//}
+//
+//#pragma mark - Scroll View Delegate
+//
+//- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+//{
+//    if(scrollView == self.appointmentTableView){
+//        float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
+//        if (endScrolling >= scrollView.contentSize.height)
+//        {
+//            [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString];
+//            [self.bottomProgressIndicatorView startAnimating];
+//        }
+//        else{
+//            [self.bottomProgressIndicatorView stopAnimating];
+//        }
+//    }
+//}
+
 @end
