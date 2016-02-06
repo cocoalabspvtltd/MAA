@@ -83,6 +83,12 @@
 		C08BE77B1C5157B100770735 /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BE77A1C5157B100770735 /* AskQuestionsVC.m */; };
 		C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */; };
 		C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */; };
+		C08BF4501C6606800047DC49 /* InvoicePopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08BF44F1C6606800047DC49 /* InvoicePopup.xib */; };
+		C08BF4591C6608AF0047DC49 /* calender.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF4551C6608AF0047DC49 /* calender.png */; };
+		C08BF45A1C6608AF0047DC49 /* locationcircle.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF4561C6608AF0047DC49 /* locationcircle.png */; };
+		C08BF45B1C6608AF0047DC49 /* rupeesymboltext.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF4571C6608AF0047DC49 /* rupeesymboltext.png */; };
+		C08BF45C1C6608AF0047DC49 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF4581C6608AF0047DC49 /* time.png */; };
+		C08BF45E1C660EC20047DC49 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF45D1C660EC20047DC49 /* dot.png */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
 		C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */; };
 		C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */; };
@@ -286,6 +292,12 @@
 		C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoicePageVC.m; sourceTree = "<group>"; };
 		C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceCell.h; sourceTree = "<group>"; };
 		C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceCell.m; sourceTree = "<group>"; };
+		C08BF44F1C6606800047DC49 /* InvoicePopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoicePopup.xib; sourceTree = "<group>"; };
+		C08BF4551C6608AF0047DC49 /* calender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender.png; sourceTree = "<group>"; };
+		C08BF4561C6608AF0047DC49 /* locationcircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationcircle.png; sourceTree = "<group>"; };
+		C08BF4571C6608AF0047DC49 /* rupeesymboltext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rupeesymboltext.png; sourceTree = "<group>"; };
+		C08BF4581C6608AF0047DC49 /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
+		C08BF45D1C660EC20047DC49 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		C093DE401C4025F100DCFB44 /* DoctorPhotoCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorPhotoCVC.h; sourceTree = "<group>"; };
 		C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorPhotoCVC.m; sourceTree = "<group>"; };
 		C09BC2051C64BB0E00DAD2C4 /* CategoriesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesList.h; sourceTree = "<group>"; };
@@ -768,8 +780,22 @@
 				C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */,
 				C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */,
 				C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */,
+				C08BF44F1C6606800047DC49 /* InvoicePopup.xib */,
+				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
+			sourceTree = "<group>";
+		};
+		C08BF4541C66086F0047DC49 /* dummyicons */ = {
+			isa = PBXGroup;
+			children = (
+				C08BF4551C6608AF0047DC49 /* calender.png */,
+				C08BF4561C6608AF0047DC49 /* locationcircle.png */,
+				C08BF4571C6608AF0047DC49 /* rupeesymboltext.png */,
+				C08BF4581C6608AF0047DC49 /* time.png */,
+				C08BF45D1C660EC20047DC49 /* dot.png */,
+			);
+			name = dummyicons;
 			sourceTree = "<group>";
 		};
 		C09DBFAE1C5FC3600077E131 /* Helper */ = {
@@ -950,12 +976,15 @@
 				7C9FF5531C1F4D2400C72512 /* 1.png in Resources */,
 				7C8AD8641C18BBA500C4E3BD /* 4.png in Resources */,
 				7C3682D61C2FFAFE002F31FA /* 2.jpg in Resources */,
+				C08BF45E1C660EC20047DC49 /* dot.png in Resources */,
 				9F991C611C5A1C5400F92C11 /* bin.png in Resources */,
 				C0BCBB631C59405D003F7872 /* angle-down.png in Resources */,
 				7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */,
 				9F991C601C5A1C5400F92C11 /* search.xib in Resources */,
 				C0E19E2B1C63213B00720E64 /* View.xib in Resources */,
 				7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */,
+				C08BF4501C6606800047DC49 /* InvoicePopup.xib in Resources */,
+				C08BF45B1C6608AF0047DC49 /* rupeesymboltext.png in Resources */,
 				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
 				55D60D911C08B94600963D5D /* LaunchScreen.storyboard in Resources */,
@@ -965,12 +994,15 @@
 				55D60D8E1C08B94600963D5D /* Assets.xcassets in Resources */,
 				9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */,
 				9F2B0E291C65FEA70053D023 /* ViewAppoin.xib in Resources */,
+				C08BF4591C6608AF0047DC49 /* calender.png in Resources */,
 				55EAC8461C0A09CE00F31280 /* field__white_box2@2x.png in Resources */,
+				C08BF45A1C6608AF0047DC49 /* locationcircle.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0BCBB551C592320003F7872 /* DoctorServicesTVC.xib in Resources */,
 				9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */,
 				55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */,
 				C09DBFBF1C5FD0080077E131 /* PhotogridCollectionViewCell.xib in Resources */,
+				C08BF45C1C6608AF0047DC49 /* time.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
