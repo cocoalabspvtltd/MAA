@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface AboutViewController : UIViewController
+@interface AboutViewController : BaseViewController
 @property (weak, nonatomic) IBOutlet UILabel *versionLabel;
 
 @end

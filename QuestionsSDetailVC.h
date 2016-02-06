@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface QuestionsSDetailVC : UIViewController
+@interface QuestionsSDetailVC : BaseViewController
 @property (nonatomic, strong) NSString *questionId;
 @property (strong, nonatomic) IBOutlet UILabel *questionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *dateLabel;
