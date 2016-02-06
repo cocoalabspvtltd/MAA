@@ -6,10 +6,11 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "SettingsPageVC.h"
 #import "HealthProfileVC.h"
 #import "AboutViewController.h"
+
 #import "SettingsTableViewCell.h"
-#import "SettingsPageVC.h"
 
 @interface SettingsPageVC ()<UITableViewDataSource,UITableViewDelegate>
 
