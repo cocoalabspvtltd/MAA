@@ -33,3 +33,4 @@
 #define doc_status_url @"set_doc_status"
 #define review_url @"get_reviews"
 #define getAccountinfoApiurl @"get_account_info"
+#define logoutApiUrl @"logout"

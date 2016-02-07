@@ -94,5 +94,69 @@
         AboutViewController *aboutVC = (AboutViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
         [self.navigationController pushViewController:aboutVC animated:YES];
     }
+    else if(indexPath.row == 5){
+        
+        [self callingLogoutAlertViewController];
+        
+    }
 }
+
+#pragma mark - Calling Alert View Controller
+
+-(void)callingLogoutAlertViewController{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:@"Are you sure want to logout?"
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   [self callingSignOutApi];
+                                                   
+                                               }];
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleDefault
+                                                   handler:^(UIAlertAction * action) {
+                                                       [alert dismissViewControllerAnimated:YES completion:nil];
+                                                       
+                                                   }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - Calling Logout Api
+
+-(void)callingSignOutApi{
+    NSString *logoutApiUrlSrtring = [Baseurl stringByAppendingString:logoutApiUrl];
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *logoutMutableDictionary = [[NSMutableDictionary alloc] init];
+    [logoutMutableDictionary setValue:accessToken forKey:@"token"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:logoutApiUrlSrtring] withBody:logoutMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self implementingLogot];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+        NSLog(@"Error :%@",errorResponse);
+    }];
+  
+}
+
+-(void)implementingLogot{
+    [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:kUserName];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+    [[NSNotificationCenter defaultCenter] postNotificationName:ShowLogInScreenObserver object:nil];
+ }
 @end
