@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface AppointmentTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *doctorNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *feeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *doctorImageView;
 
 @end
