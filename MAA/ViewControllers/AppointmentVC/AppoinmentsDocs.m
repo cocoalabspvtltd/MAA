@@ -20,6 +20,7 @@
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, strong) NSString *searchTextString;
 @property (nonatomic, strong) NSArray *appointmentDoctorsArray;
+@property (nonatomic, assign) BOOL isSearchtextChanged;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, strong) NSMutableArray *appointmentDoctorsMutableArray;
 
@@ -50,6 +51,7 @@ NSString *flag=0;
     self.offsetValue = 0;
     self.limitValue = 10;
     self.searchBar.delegate = self;
+    self.isSearchtextChanged = NO;
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     self.appointmentDoctorsMutableArray = [[NSMutableArray alloc] init];
@@ -80,7 +82,7 @@ NSString *flag=0;
     }
     else if (tableView==_tblAppoinments)
     {
-        return  4;
+        return  self.appointmentDoctorsMutableArray.count;
     }
     return 1;
 }
@@ -92,6 +94,7 @@ NSString *flag=0;
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ViewAppoin" owner:self options:nil];
             cell = (AppointmentTableViewCell *)[nib objectAtIndex:0];
         }
+        cell.doctorNameLabel.text = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
         return cell;
     }
     else{
@@ -124,6 +127,7 @@ NSString *flag=0;
 #pragma mark - Search Bar Delegate
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    self.isSearchtextChanged  = YES;
     [self.appointmentDoctorsMutableArray removeAllObjects];
     self.offsetValue = 0;
     [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:searchText];
@@ -222,7 +226,9 @@ NSString *flag=0;
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getDoctorsAppointmentsUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"Response Object;%@",responseObject);
+        if(self.isSearchtextChanged){
+            [self.appointmentDoctorsMutableArray removeAllObjects];
+        }
         self.appointmentDoctorsArray = [responseObject valueForKey:Datakey];
         self.offsetValue=self.offsetValue+self.limitValue;
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -252,6 +258,7 @@ NSString *flag=0;
         float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
         if (endScrolling >= scrollView.contentSize.height)
         {
+            self.isSearchtextChanged = NO;
             [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString];
             [self.bottomProgressIndicatorView startAnimating];
         }
