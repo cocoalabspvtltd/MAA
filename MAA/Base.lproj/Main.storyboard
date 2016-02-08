@@ -538,7 +538,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqo-pO-rjV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="-297"/>
+            <point key="canvasLocation" x="1389" y="-795"/>
         </scene>
         <!--Email Sent-->
         <scene sceneID="Ebj-T1-Mcp">
@@ -610,7 +610,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cqt-du-r7l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="-1844"/>
+            <point key="canvasLocation" x="550" y="-1542"/>
         </scene>
         <!--Home Page-->
         <scene sceneID="xgR-lX-mae">
@@ -762,6 +762,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Players.png" id="GJK-tk-Ept"/>
+                    <navigationItem key="navigationItem" id="OJO-Zf-KpP"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -770,7 +771,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8B8-kH-QD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2167" y="-1045"/>
+            <point key="canvasLocation" x="612" y="-2353"/>
         </scene>
         <!--Search-->
         <scene sceneID="ZN7-Ax-P5v">
@@ -979,6 +980,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" image="Players.png" id="TSF-vI-Ped"/>
+                    <navigationItem key="navigationItem" id="IZV-fE-Emw"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -989,7 +991,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k9o-15-Vuw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4031" y="-95"/>
+            <point key="canvasLocation" x="1438" y="-2285"/>
         </scene>
         <!--Doctor Chat-->
         <scene sceneID="olM-vB-4mN">
@@ -2700,7 +2702,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NN3-3t-XPv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="lnf-EP-YGc" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4734" y="-2110"/>
+            <point key="canvasLocation" x="4591" y="-2285"/>
         </scene>
         <!--Questions Page-->
         <scene sceneID="Ibz-Xn-gUY">
@@ -4345,7 +4347,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lnc-kC-yC8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="-1059"/>
+            <point key="canvasLocation" x="2095" y="-795"/>
         </scene>
         <!--Verification Successfull-->
         <scene sceneID="fud-py-acX">
@@ -4416,7 +4418,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IJP-10-EJT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1375" y="-1844"/>
+            <point key="canvasLocation" x="1328" y="-1488"/>
         </scene>
         <!--Sign Up Page1VC-->
         <scene sceneID="s3s-S4-jmb">
@@ -4766,7 +4768,41 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qYg-3d-Ttp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3638" y="-2857"/>
+            <point key="canvasLocation" x="3535" y="-3727"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="3tL-EO-Wel">
+            <objects>
+                <navigationController id="Gnm-4e-ZLN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="dfJ-g5-pbt"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AAV-iP-Kwo">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tIx-wg-S6z" kind="relationship" relationship="rootViewController" id="2t6-6h-nF3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zHg-v7-cEh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2237" y="-3005"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="XgI-bh-Bsc">
+            <objects>
+                <navigationController id="4iJ-mA-2Gi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="9mQ-bG-Qhx"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MwR-5i-1uD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="sSy-hA-oLe" kind="relationship" relationship="rootViewController" id="doQ-G4-j2x"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b1G-1w-Boc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2912" y="-2993"/>
         </scene>
         <!--Settings Navigation Controller-->
         <scene sceneID="TdG-L3-QlO">
@@ -4783,7 +4819,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qTA-9b-O3A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="-2882"/>
+            <point key="canvasLocation" x="2826" y="-3752"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mAv-w5-det">
@@ -6227,7 +6263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FO7-VM-bjG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3246" y="759"/>
+            <point key="canvasLocation" x="3100" y="567"/>
         </scene>
         <!--Filter-->
         <scene sceneID="3uI-8u-J7A">
@@ -7280,16 +7316,16 @@
                         <color key="selectedImageTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="GaK-g8-jkC" kind="relationship" relationship="viewControllers" id="dRY-b0-YNg"/>
-                        <segue destination="7Gj-Dd-X0e" kind="relationship" relationship="viewControllers" id="Qxi-WB-NrB"/>
-                        <segue destination="tIx-wg-S6z" kind="relationship" relationship="viewControllers" id="t5e-gX-yuO"/>
-                        <segue destination="sSy-hA-oLe" kind="relationship" relationship="viewControllers" id="K7S-dP-gI5"/>
-                        <segue destination="aTa-yT-2Z4" kind="relationship" relationship="viewControllers" id="v4x-0v-9d8"/>
+                        <segue destination="MPC-fH-fWa" kind="relationship" relationship="viewControllers" id="KKU-B6-Bsb"/>
+                        <segue destination="M3k-R6-wnE" kind="relationship" relationship="viewControllers" id="piN-oN-i1G"/>
+                        <segue destination="Gnm-4e-ZLN" kind="relationship" relationship="viewControllers" id="d0B-ya-agq"/>
+                        <segue destination="4iJ-mA-2Gi" kind="relationship" relationship="viewControllers" id="ALq-4b-y2Y"/>
+                        <segue destination="aTa-yT-2Z4" kind="relationship" relationship="viewControllers" id="U24-Wq-cwj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fcL-8U-Rkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2074" y="-2747"/>
+            <point key="canvasLocation" x="1346" y="-3762"/>
         </scene>
         <!--Doctor Profile-->
         <scene sceneID="jNM-zJ-htK">
@@ -8274,7 +8310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CHc-eH-n4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="654" y="-297"/>
+            <point key="canvasLocation" x="480" y="-539"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="oqZ-B4-eOB">
@@ -13219,6 +13255,40 @@
             </objects>
             <point key="canvasLocation" x="2246" y="173"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="2pK-hs-oxh">
+            <objects>
+                <navigationController id="MPC-fH-fWa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="coq-cV-b9V"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="BFm-fk-i0t">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GaK-g8-jkC" kind="relationship" relationship="rootViewController" id="Ct0-e5-A1b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wsW-MG-t3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="612" y="-3117"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="MwI-k4-Bjl">
+            <objects>
+                <navigationController id="M3k-R6-wnE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="D9K-cN-NJl"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="iXA-Hs-TNp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Gj-Dd-X0e" kind="relationship" relationship="rootViewController" id="NoA-rF-ykh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RX2-Eb-1yx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1438" y="-3005"/>
+        </scene>
         <!--Question Page-->
         <scene sceneID="tzM-Q7-quB">
             <objects>
@@ -13231,10 +13301,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AgW-90-NY7">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AgW-90-NY7">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yUd-EZ-jkp">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="114" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yUd-EZ-jkp">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
@@ -13242,7 +13312,7 @@
                                             <outlet property="delegate" destination="sSy-hA-oLe" id="nug-2f-zFR"/>
                                         </connections>
                                     </tableView>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="plus_white" translatesAutoresizingMaskIntoConstraints="NO" id="se7-1S-7Vh">
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="plus_white" translatesAutoresizingMaskIntoConstraints="NO" id="se7-1S-7Vh">
                                         <rect key="frame" x="535" y="418" width="50" height="50"/>
                                         <color key="backgroundColor" red="1" green="0.14530435229999999" blue="0.17924686770000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -13250,7 +13320,7 @@
                                             <constraint firstAttribute="width" constant="50" id="bSo-zf-BJg"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAN-0M-JRH">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aAN-0M-JRH">
                                         <rect key="frame" x="535" y="418" width="50" height="50"/>
                                         <connections>
                                             <segue destination="qkg-sh-oHf" kind="show" id="b2e-la-zhP"/>
@@ -13271,7 +13341,7 @@
                                     <constraint firstItem="yUd-EZ-jkp" firstAttribute="leading" secondItem="AgW-90-NY7" secondAttribute="leading" id="ykU-qf-BkR"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vYp-sU-qMI">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vYp-sU-qMI">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="slider_white" translatesAutoresizingMaskIntoConstraints="NO" id="x3Y-4z-U5f">
@@ -13326,6 +13396,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Players.png" id="nxi-5t-8TD"/>
+                    <navigationItem key="navigationItem" id="5Mf-eP-7Iy"/>
                     <connections>
                         <outlet property="childview" destination="AgW-90-NY7" id="hGW-Vh-Dm5"/>
                         <outlet property="floatbutton" destination="aAN-0M-JRH" id="Deb-3Y-7Bf"/>
@@ -13338,7 +13409,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AO2-Kg-ZQE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3783" y="4287"/>
+            <point key="canvasLocation" x="2932" y="-2263"/>
         </scene>
         <!--Question Detail-->
         <scene sceneID="8KX-Qs-n53">
@@ -13352,10 +13423,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-tC-DmR">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gcx-tC-DmR">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                             </scrollView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRm-QD-OxY">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mRm-QD-OxY">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="back_white" translatesAutoresizingMaskIntoConstraints="NO" id="wXi-Jv-56f">
@@ -13398,11 +13469,11 @@
                                     <constraint firstItem="pih-LH-yzH" firstAttribute="leading" secondItem="mRm-QD-OxY" secondAttribute="leading" constant="11" id="rdL-Uh-h4N"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9B-CC-yE3">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9B-CC-yE3">
                                 <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0q3-Hu-8GI">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="443"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fTP-qy-lBB">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="186"/>
@@ -13449,7 +13520,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5n8-9V-BNi">
-                                                <rect key="frame" x="0.0" y="186" width="600" height="301"/>
+                                                <rect key="frame" x="0.0" y="186" width="600" height="257"/>
                                                 <subviews>
                                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="5.png" translatesAutoresizingMaskIntoConstraints="NO" id="szg-LJ-qHM">
                                                         <rect key="frame" x="16" y="8" width="50" height="50"/>
@@ -13493,7 +13564,7 @@
                                                             </label>
                                                         </subviews>
                                                     </stackView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vb4-Ls-qzW">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vb4-Ls-qzW">
                                                         <rect key="frame" x="16" y="66" width="568" height="228"/>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="13"/>
                                                         <nil key="highlightedColor"/>
@@ -13839,7 +13910,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ito-TK-yAR">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ito-TK-yAR">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <subviews>
                                     <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="slider_white" translatesAutoresizingMaskIntoConstraints="NO" id="wXJ-hf-jQb">
@@ -13881,16 +13952,16 @@
                                     <constraint firstAttribute="bottom" secondItem="XqU-wL-U4R" secondAttribute="bottom" constant="6" id="w7u-VY-8uZ"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EgL-QA-xGv">
-                                <rect key="frame" x="8" y="72" width="584" height="471"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EgL-QA-xGv">
+                                <rect key="frame" x="8" y="72" width="584" height="520"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="tIx-wg-S6z" id="Eta-bO-fEY"/>
                                     <outlet property="delegate" destination="tIx-wg-S6z" id="yDK-EJ-SUR"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YUy-Go-yhG">
-                                <rect key="frame" x="8" y="72" width="584" height="471"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YUy-Go-yhG">
+                                <rect key="frame" x="8" y="72" width="584" height="520"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Peiod" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AfQ-3z-UvE">
                                         <rect key="frame" x="8" y="0.0" width="39" height="21"/>
@@ -14100,6 +14171,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Players.png" id="idi-O9-u77"/>
+                    <navigationItem key="navigationItem" id="aNs-e5-1HV"/>
                     <connections>
                         <outlet property="ChildView" destination="YUy-Go-yhG" id="lTG-AM-KX2"/>
                         <outlet property="FromDate" destination="f1o-Ap-sQA" id="c5v-k9-cDH"/>
@@ -14116,7 +14188,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9c-vq-TcG" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7733" y="4342"/>
+            <point key="canvasLocation" x="2237" y="-2270"/>
         </scene>
         <!--Appoinment Detail-->
         <scene sceneID="giK-1p-37Q">
@@ -14800,11 +14872,11 @@
         <image name="video" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Qxi-WB-NrB"/>
-        <segue reference="dRY-b0-YNg"/>
-        <segue reference="K7S-dP-gI5"/>
-        <segue reference="Q50-MZ-tRA"/>
-        <segue reference="fvG-ou-Cxz"/>
+        <segue reference="NoA-rF-ykh"/>
+        <segue reference="doQ-G4-j2x"/>
+        <segue reference="Ct0-e5-A1b"/>
         <segue reference="3a7-fl-iNI"/>
+        <segue reference="FpB-4z-5hg"/>
+        <segue reference="fvG-ou-Cxz"/>
     </inferredMetricsTieBreakers>
 </document>
