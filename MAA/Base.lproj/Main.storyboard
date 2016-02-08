@@ -761,7 +761,7 @@
                             <constraint firstItem="QHz-bE-TiR" firstAttribute="centerX" secondItem="fV4-OV-uUk" secondAttribute="centerX" id="vTJ-bY-fbg"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Players.png" id="GJK-tk-Ept"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="search_white" id="GJK-tk-Ept"/>
                     <navigationItem key="navigationItem" id="OJO-Zf-KpP"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -771,7 +771,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8B8-kH-QD8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612" y="-2353"/>
+            <point key="canvasLocation" x="491" y="-2431"/>
         </scene>
         <!--Search-->
         <scene sceneID="ZN7-Ax-P5v">
@@ -7303,10 +7303,10 @@
             </objects>
             <point key="canvasLocation" x="5534" y="1529"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="Yqs-n9-Thi">
             <objects>
-                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="auk-hG-eu0" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarController" automaticallyAdjustsScrollViewInsets="NO" id="auk-hG-eu0" customClass="TabBarViewController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="grU-hR-0IJ">
                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
@@ -13255,11 +13255,11 @@
             </objects>
             <point key="canvasLocation" x="2246" y="173"/>
         </scene>
-        <!--Item-->
+        <!--Home-->
         <scene sceneID="2pK-hs-oxh">
             <objects>
-                <navigationController id="MPC-fH-fWa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="coq-cV-b9V"/>
+                <navigationController title="Home" id="MPC-fH-fWa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" id="coq-cV-b9V"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BFm-fk-i0t">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -13270,7 +13270,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wsW-MG-t3g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="612" y="-3117"/>
+            <point key="canvasLocation" x="491" y="-3192"/>
         </scene>
         <!--Item-->
         <scene sceneID="MwI-k4-Bjl">
@@ -14864,6 +14864,7 @@
         <image name="plus_white" width="29" height="29"/>
         <image name="rupee_black" width="29" height="29"/>
         <image name="search_grey" width="35" height="35"/>
+        <image name="search_white" width="29" height="29"/>
         <image name="share" width="56" height="56"/>
         <image name="slider_white" width="29" height="29"/>
         <image name="star" width="59" height="56"/>
@@ -14872,9 +14873,9 @@
         <image name="video" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="NoA-rF-ykh"/>
-        <segue reference="doQ-G4-j2x"/>
+        <segue reference="Ut8-Vp-X0m"/>
         <segue reference="Ct0-e5-A1b"/>
+        <segue reference="doQ-G4-j2x"/>
         <segue reference="3a7-fl-iNI"/>
         <segue reference="FpB-4z-5hg"/>
         <segue reference="fvG-ou-Cxz"/>

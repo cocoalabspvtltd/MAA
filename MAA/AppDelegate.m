@@ -26,6 +26,7 @@
 }
 
 -(void)initWindow{
+   
     UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
     if(![self isLoggedIn]){
         UINavigationController *navigationController = [sb instantiateViewControllerWithIdentifier:@"LogInNavigationController"];
@@ -34,7 +35,9 @@
     else{
         UITabBarController *tabbarController = [sb instantiateViewControllerWithIdentifier:@"TabBarController"];
         self.window.rootViewController = tabbarController;
+         [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"bar_b"]];
     }
+    
 }
 
 -(BOOL)isLoggedIn{

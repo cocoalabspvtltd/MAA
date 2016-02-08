@@ -127,6 +127,11 @@
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
+		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
+		C0C78D6B1C68F62D002A534A /* home_white.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C78D681C68F62D002A534A /* home_white.png */; };
+		C0C78D6C1C68F62D002A534A /* home_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C78D691C68F62D002A534A /* home_white@2x.png */; };
+		C0C78D6D1C68F62D002A534A /* home_white@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C78D6A1C68F62D002A534A /* home_white@3x.png */; };
+		C0C78D731C68FEF5002A534A /* bar_b.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C78D721C68FEF5002A534A /* bar_b.png */; };
 		C0E608D01C44167F0027650B /* AppointmentTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E608CF1C44167F0027650B /* AppointmentTVC.m */; };
 /* End PBXBuildFile section */
 
@@ -364,6 +369,12 @@
 		C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLToolKit.xcodeproj; path = CLToolKit/CLToolKit.xcodeproj; sourceTree = "<group>"; };
 		C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MAA/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		C0C78D681C68F62D002A534A /* home_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home_white.png; sourceTree = "<group>"; };
+		C0C78D691C68F62D002A534A /* home_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_white@2x.png"; sourceTree = "<group>"; };
+		C0C78D6A1C68F62D002A534A /* home_white@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home_white@3x.png"; sourceTree = "<group>"; };
+		C0C78D721C68FEF5002A534A /* bar_b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bar_b.png; sourceTree = "<group>"; };
 		C0E608CE1C44167F0027650B /* AppointmentTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentTVC.h; sourceTree = "<group>"; };
 		C0E608CF1C44167F0027650B /* AppointmentTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentTVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -562,6 +573,8 @@
 				55D60D921C08B94600963D5D /* Info.plist */,
 				55D60D811C08B94600963D5D /* Supporting Files */,
 				C086ECFD1C285BEF009DF69F /* MAA-Prefix.pch */,
+				C0C78D541C68F00E002A534A /* TabBarViewController.h */,
+				C0C78D551C68F00E002A534A /* TabBarViewController.m */,
 			);
 			path = MAA;
 			sourceTree = "<group>";
@@ -736,6 +749,10 @@
 		9F5F0C0A1C664F2000F7E99D /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
+				C0C78D721C68FEF5002A534A /* bar_b.png */,
+				C0C78D681C68F62D002A534A /* home_white.png */,
+				C0C78D691C68F62D002A534A /* home_white@2x.png */,
+				C0C78D6A1C68F62D002A534A /* home_white@3x.png */,
 				9F5F0C0B1C66526800F7E99D /* calendar_white */,
 				9F5F0C0F1C66526800F7E99D /* question_circle_gray */,
 				9F5F0C131C66526800F7E99D /* search_white */,
@@ -1208,15 +1225,18 @@
 				7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */,
 				9F5F0C191C66526800F7E99D /* calendar_white@3x.png in Resources */,
 				C08BF4501C6606800047DC49 /* InvoicePopup.xib in Resources */,
+				C0C78D731C68FEF5002A534A /* bar_b.png in Resources */,
 				9F5F0C181C66526800F7E99D /* calendar_white@2x.png in Resources */,
 				C08BF45B1C6608AF0047DC49 /* rupeesymboltext.png in Resources */,
 				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
 				9F5F0C1F1C66526800F7E99D /* search_white@3x.png in Resources */,
+				C0C78D6B1C68F62D002A534A /* home_white.png in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
 				55D60D911C08B94600963D5D /* LaunchScreen.storyboard in Resources */,
 				C0BCBB5E1C593F82003F7872 /* angle-right.png in Resources */,
 				55EAC8471C0A09CE00F31280 /* field_white_box@2x.png in Resources */,
 				7CB682A81C38FF4300AC1F90 /* Players.png in Resources */,
+				C0C78D6D1C68F62D002A534A /* home_white@3x.png in Resources */,
 				55D60D8E1C08B94600963D5D /* Assets.xcassets in Resources */,
 				9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */,
 				9F2B0E291C65FEA70053D023 /* ViewAppoin.xib in Resources */,
@@ -1230,6 +1250,7 @@
 				9F5F0C1B1C66526800F7E99D /* question_circle_gray@2x.png in Resources */,
 				9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */,
 				9F5F0C1E1C66526800F7E99D /* search_white@2x.png in Resources */,
+				C0C78D6C1C68F62D002A534A /* home_white@2x.png in Resources */,
 				55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */,
 				C08BF45C1C6608AF0047DC49 /* time.png in Resources */,
 				9F5F0C291C6655AB00F7E99D /* PhotogridCollectionViewCell.xib in Resources */,
@@ -1297,6 +1318,7 @@
 				55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */,
 				7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */,
 				9F5F0C391C665D3100F7E99D /* AskedQuestionsViewController.m in Sources */,
+				C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */,
 				555BBCFE1C0AA5DC00E262F9 /* HomePageVC.m in Sources */,
 				7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */,
 				9F5F0C381C665D3100F7E99D /* QuestionsSDetailVC.m in Sources */,

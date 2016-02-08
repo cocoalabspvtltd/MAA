@@ -49,6 +49,7 @@ NSString *flag=0;
 -(void)initialisation{
     self.offsetValue = 0;
     self.limitValue = 10;
+    self.searchBar.delegate = self;
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     self.appointmentDoctorsMutableArray = [[NSMutableArray alloc] init];
