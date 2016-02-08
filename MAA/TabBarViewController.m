@@ -18,31 +18,34 @@
     [super viewDidLoad];
     UITabBarItem *tabBarItem = [self.tabBar.items objectAtIndex:0];
     UIImage *unselectedImage = [UIImage imageNamed:@"home_white"];
-    UIImage *selectedImage = [UIImage imageNamed:@"bar_b"];
+    UIImage *selectedImage = [UIImage imageNamed:@"home_white_selected"];
     [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-  //  [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
-//    tabBarItem = [self.tabBar.items objectAtIndex:1];
-//    unselectedImage = [UIImage imageNamed:@"ic_tabNews"];
-//    selectedImage = [UIImage imageNamed:@"ic_tabNews"];
-//    [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    [tabBarItem setSelectedImage: selectedImage];
-//    tabBarItem = [self.tabBar.items objectAtIndex:2];
-//    unselectedImage = [UIImage imageNamed:@"ic_tabNotifications"];
-//    selectedImage = [UIImage imageNamed:@"ic_tabNotifications"];
-//    [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    [tabBarItem setSelectedImage: selectedImage];
-//    tabBarItem = [self.tabBar.items objectAtIndex:3];
-//    unselectedImage = [UIImage imageNamed:@"ic_events"];
-//    selectedImage = [UIImage imageNamed:@"ic_events"];
-//    [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    [tabBarItem setSelectedImage: selectedImage];
-//    tabBarItem = [self.tabBar.items objectAtIndex:4];
-//    unselectedImage = [UIImage imageNamed:@"ic_tabMore"];
-//    selectedImage = [UIImage imageNamed:@"ic_tabMore"];
-//    [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
-//    [tabBarItem setSelectedImage: selectedImage];
-    // Do any additional setup after loading the view.
+    tabBarItem = [self.tabBar.items objectAtIndex:1];
+    unselectedImage = [UIImage imageNamed:@"search_white"];
+    selectedImage = [UIImage imageNamed:@"search_white"];
+    [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    tabBarItem = [self.tabBar.items objectAtIndex:2];
+    unselectedImage = [UIImage imageNamed:@"calendar_white"];
+    selectedImage = [UIImage imageNamed:@"calendar_white"];
+    [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    tabBarItem = [self.tabBar.items objectAtIndex:3];
+    unselectedImage = [UIImage imageNamed:@"question_mark"];
+    selectedImage = [UIImage imageNamed:@"question_mark"];
+    [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
+    tabBarItem = [self.tabBar.items objectAtIndex:4];
+    unselectedImage = [UIImage imageNamed:@"settings"];
+    selectedImage = [UIImage imageNamed:@"settings"];
+    [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+   //  Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
