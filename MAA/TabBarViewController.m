@@ -18,7 +18,7 @@
     [super viewDidLoad];
     UITabBarItem *tabBarItem = [self.tabBar.items objectAtIndex:0];
     UIImage *unselectedImage = [UIImage imageNamed:@"home_white"];
-    UIImage *selectedImage = [UIImage imageNamed:@"home_white_selected"];
+    UIImage *selectedImage = [UIImage imageNamed:@"barbq"];
     [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
