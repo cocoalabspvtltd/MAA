@@ -28,28 +28,28 @@
                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calender.png" translatesAutoresizingMaskIntoConstraints="NO" id="24O-oZ-SDl">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calender" translatesAutoresizingMaskIntoConstraints="NO" id="24O-oZ-SDl">
                             <rect key="frame" x="11" y="60" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="30" id="AMA-WX-aA9"/>
                                 <constraint firstAttribute="width" constant="30" id="fA3-CV-Fbe"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rupeesymboltext.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fru-n1-D44">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rupeesymboltext" translatesAutoresizingMaskIntoConstraints="NO" id="Fru-n1-D44">
                             <rect key="frame" x="11" y="116" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="E9s-r9-fVl"/>
                                 <constraint firstAttribute="height" constant="30" id="GaJ-lx-s49"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationcircle.png" translatesAutoresizingMaskIntoConstraints="NO" id="DLq-iZ-nbf">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locationcircle" translatesAutoresizingMaskIntoConstraints="NO" id="DLq-iZ-nbf">
                             <rect key="frame" x="11" y="172" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="Ata-aj-46o"/>
                                 <constraint firstAttribute="height" constant="30" id="dYq-pF-ZSi"/>
                             </constraints>
                         </imageView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot.png" translatesAutoresizingMaskIntoConstraints="NO" id="rDC-Wu-FhY">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dot" translatesAutoresizingMaskIntoConstraints="NO" id="rDC-Wu-FhY">
                             <rect key="frame" x="11" y="228" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="24i-kB-cDl"/>
@@ -137,7 +137,7 @@
                                 </label>
                             </subviews>
                         </stackView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time.png" translatesAutoresizingMaskIntoConstraints="NO" id="khn-Zf-w4v">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="khn-Zf-w4v">
                             <rect key="frame" x="153" y="59" width="30" height="30"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="30" id="1dU-YU-PwR"/>
@@ -213,10 +213,10 @@
         </view>
     </objects>
     <resources>
-        <image name="calender.png" width="1536" height="1536"/>
-        <image name="dot.png" width="1536" height="1536"/>
-        <image name="locationcircle.png" width="1536" height="1536"/>
-        <image name="rupeesymboltext.png" width="1536" height="1536"/>
-        <image name="time.png" width="1536" height="1536"/>
+        <image name="calender" width="29" height="29"/>
+        <image name="dot" width="29" height="29"/>
+        <image name="locationcircle" width="29" height="29"/>
+        <image name="rupeesymboltext" width="29" height="29"/>
+        <image name="time" width="29" height="29"/>
     </resources>
 </document>

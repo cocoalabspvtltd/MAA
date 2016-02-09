@@ -91,6 +91,15 @@
 		9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */; };
 		9FC62CE91C5725E200AF3EA3 /* DoctorServicesHV.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC62CE81C5725E200AF3EA3 /* DoctorServicesHV.m */; };
 		9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC62CED1C57267D00AF3EA3 /* DoctorServicesHV.xib */; };
+		C005EFF01C69B7880095E2CC /* EndCall.png in Resources */ = {isa = PBXBuildFile; fileRef = C005EFEF1C69B7880095E2CC /* EndCall.png */; };
+		C005EFF21C69B9380095E2CC /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = C005EFF11C69B9380095E2CC /* speaker.png */; };
+		C005EFF41C69B9440095E2CC /* microphone-slash.png in Resources */ = {isa = PBXBuildFile; fileRef = C005EFF31C69B9440095E2CC /* microphone-slash.png */; };
+		C005EFF61C69B94C0095E2CC /* video_camera.png in Resources */ = {isa = PBXBuildFile; fileRef = C005EFF51C69B94C0095E2CC /* video_camera.png */; };
+		C005F0021C6A00E20095E2CC /* microphone_slash_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0011C6A00E20095E2CC /* microphone_slash_none.png */; };
+		C005F0041C6A00EE0095E2CC /* video_camera_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0031C6A00EE0095E2CC /* video_camera_off.png */; };
+		C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0051C6A00F70095E2CC /* microphone_off.png */; };
+		C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0071C6A010A0095E2CC /* video_camera_none.png */; };
+		C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0091C6A011C0095E2CC /* phone_none.png */; };
 		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
 		C03364FC1C68798600A1ECDA /* AppoinmentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C03364FB1C68798600A1ECDA /* AppoinmentDetailVC.m */; };
 		C03365021C6879D100A1ECDA /* PreviousAppoinmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C03365011C6879D100A1ECDA /* PreviousAppoinmentCell.m */; };
@@ -329,6 +338,15 @@
 		9FC62CE71C5725E200AF3EA3 /* DoctorServicesHV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorServicesHV.h; sourceTree = "<group>"; };
 		9FC62CE81C5725E200AF3EA3 /* DoctorServicesHV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorServicesHV.m; sourceTree = "<group>"; };
 		9FC62CED1C57267D00AF3EA3 /* DoctorServicesHV.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DoctorServicesHV.xib; sourceTree = "<group>"; };
+		C005EFEF1C69B7880095E2CC /* EndCall.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EndCall.png; sourceTree = "<group>"; };
+		C005EFF11C69B9380095E2CC /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
+		C005EFF31C69B9440095E2CC /* microphone-slash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "microphone-slash.png"; sourceTree = "<group>"; };
+		C005EFF51C69B94C0095E2CC /* video_camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera.png; sourceTree = "<group>"; };
+		C005F0011C6A00E20095E2CC /* microphone_slash_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_slash_none.png; sourceTree = "<group>"; };
+		C005F0031C6A00EE0095E2CC /* video_camera_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera_off.png; sourceTree = "<group>"; };
+		C005F0051C6A00F70095E2CC /* microphone_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_off.png; sourceTree = "<group>"; };
+		C005F0071C6A010A0095E2CC /* video_camera_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera_none.png; sourceTree = "<group>"; };
+		C005F0091C6A011C0095E2CC /* phone_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_none.png; sourceTree = "<group>"; };
 		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
 		C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Doc'sAccntInfo.m"; sourceTree = "<group>"; };
 		C03364FA1C68798600A1ECDA /* AppoinmentDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailVC.h; sourceTree = "<group>"; };
@@ -595,6 +613,10 @@
 				55D352E21C0B465E008CCEC1 /* Appointment Page */,
 				55D352E31C0B4684008CCEC1 /* Notifications Page */,
 				55D60D8D1C08B94600963D5D /* Assets.xcassets */,
+				C005EFEF1C69B7880095E2CC /* EndCall.png */,
+				C005EFF11C69B9380095E2CC /* speaker.png */,
+				C005EFF31C69B9440095E2CC /* microphone-slash.png */,
+				C005EFF51C69B94C0095E2CC /* video_camera.png */,
 				7C8AD8571C18BB8100C4E3BD /* Doctor Images */,
 				555BBCEB1C0AA16C00E262F9 /* Assets Extra */,
 				55D60D8F1C08B94600963D5D /* LaunchScreen.storyboard */,
@@ -1087,11 +1109,16 @@
 		C08BF4541C66086F0047DC49 /* dummyicons */ = {
 			isa = PBXGroup;
 			children = (
+				C005F0011C6A00E20095E2CC /* microphone_slash_none.png */,
 				C08BF4551C6608AF0047DC49 /* calender.png */,
 				C08BF4561C6608AF0047DC49 /* locationcircle.png */,
 				C08BF4571C6608AF0047DC49 /* rupeesymboltext.png */,
 				C08BF4581C6608AF0047DC49 /* time.png */,
 				C08BF45D1C660EC20047DC49 /* dot.png */,
+				C005F0051C6A00F70095E2CC /* microphone_off.png */,
+				C005F0031C6A00EE0095E2CC /* video_camera_off.png */,
+				C005F0071C6A010A0095E2CC /* video_camera_none.png */,
+				C005F0091C6A011C0095E2CC /* phone_none.png */,
 			);
 			name = dummyicons;
 			sourceTree = "<group>";
@@ -1253,6 +1280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C005EFF21C69B9380095E2CC /* speaker.png in Resources */,
 				C0C78D891C690C88002A534A /* question_mark@3x.png in Resources */,
 				7C9FF5531C1F4D2400C72512 /* 1.png in Resources */,
 				9F5F0C171C66526800F7E99D /* calendar_white.png in Resources */,
@@ -1263,6 +1291,8 @@
 				C0C78D821C690BF6002A534A /* search_white@2x.png in Resources */,
 				C08BF45E1C660EC20047DC49 /* dot.png in Resources */,
 				C0C78D871C690C88002A534A /* question_mark.png in Resources */,
+				C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */,
+				C005F0041C6A00EE0095E2CC /* video_camera_off.png in Resources */,
 				C0C78D991C6915A8002A534A /* home-selected.png in Resources */,
 				9F991C611C5A1C5400F92C11 /* bin.png in Resources */,
 				C0BCBB631C59405D003F7872 /* angle-down.png in Resources */,
@@ -1272,6 +1302,7 @@
 				9F991C601C5A1C5400F92C11 /* search.xib in Resources */,
 				7CB682A91C38FF4300AC1F90 /* Players@2x.png in Resources */,
 				9F5F0C191C66526800F7E99D /* calendar_white@3x.png in Resources */,
+				C005EFF61C69B94C0095E2CC /* video_camera.png in Resources */,
 				C0C78D881C690C88002A534A /* question_mark@2x.png in Resources */,
 				C0C78D941C69138A002A534A /* barbq-plain.png in Resources */,
 				C0C78D811C690BF6002A534A /* search_white.png in Resources */,
@@ -1280,6 +1311,7 @@
 				C08BF45B1C6608AF0047DC49 /* rupeesymboltext.png in Resources */,
 				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
 				9F5F0C1F1C66526800F7E99D /* search_white@3x.png in Resources */,
+				C005EFF41C69B9440095E2CC /* microphone-slash.png in Resources */,
 				C0C78D6B1C68F62D002A534A /* home_white.png in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
 				55D60D911C08B94600963D5D /* LaunchScreen.storyboard in Resources */,
@@ -1290,6 +1322,7 @@
 				7CB682A81C38FF4300AC1F90 /* Players.png in Resources */,
 				C0C78D8F1C690CD4002A534A /* settings@3x.png in Resources */,
 				C0C78D6D1C68F62D002A534A /* home_white@3x.png in Resources */,
+				C005F0021C6A00E20095E2CC /* microphone_slash_none.png in Resources */,
 				55D60D8E1C08B94600963D5D /* Assets.xcassets in Resources */,
 				9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */,
 				9F2B0E291C65FEA70053D023 /* ViewAppoin.xib in Resources */,
@@ -1300,13 +1333,16 @@
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0BCBB551C592320003F7872 /* DoctorServicesTVC.xib in Resources */,
 				9F5F0C401C665E8100F7E99D /* View.xib in Resources */,
+				C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */,
 				9F5F0C1D1C66526800F7E99D /* search_white.png in Resources */,
 				9F5F0C1B1C66526800F7E99D /* question_circle_gray@2x.png in Resources */,
+				C005EFF01C69B7880095E2CC /* EndCall.png in Resources */,
 				9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */,
 				9F5F0C1E1C66526800F7E99D /* search_white@2x.png in Resources */,
 				C0C78D6C1C68F62D002A534A /* home_white@2x.png in Resources */,
 				55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */,
 				C0C78D7D1C690BC6002A534A /* calendar_white@3x.png in Resources */,
+				C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */,
 				C0C78D8D1C690CD4002A534A /* settings.png in Resources */,
 				C08BF45C1C6608AF0047DC49 /* time.png in Resources */,
 				9F5F0C291C6655AB00F7E99D /* PhotogridCollectionViewCell.xib in Resources */,
