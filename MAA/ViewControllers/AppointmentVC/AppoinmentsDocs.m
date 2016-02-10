@@ -8,6 +8,7 @@
 
 #define AppointmentTableViewCellIdentifier @"appointmentCell"
 #import "AppoinmentsDocs.h"
+#import "AppoinmentDetailVC.h"
 #import "AppointmentTableViewCell.h"
 
 @interface AppoinmentsDocs ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate>
@@ -120,6 +121,12 @@ NSString *flag=0;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if(tableView == self.tblAppoinments){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+        
+        AppoinmentDetailVC *appointmentDetailVC = (AppoinmentDetailVC *)[storyboard instantiateViewControllerWithIdentifier:@"AppoinmentDetailVC"];
+        [self.navigationController pushViewController:appointmentDetailVC animated:YES];
+    }
     NSString *x = DDL[indexPath.row];
     [_btnDropDown setTitle:x forState:UIControlStateNormal];
     

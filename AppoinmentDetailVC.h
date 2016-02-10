@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface AppoinmentDetailVC : UIViewController
+@interface AppoinmentDetailVC : BaseViewController
 - (IBAction)Back:(id)sender;
 
 @end
