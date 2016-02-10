@@ -44,7 +44,6 @@
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */; };
 		9F2B0E1B1C65EDE10053D023 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E1A1C65EDE10053D023 /* BaseViewController.m */; };
-		9F2B0E201C65FB960053D023 /* AppoinmentsDocs.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E1F1C65FB960053D023 /* AppoinmentsDocs.m */; };
 		9F2B0E271C65FCE00053D023 /* AppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E261C65FCE00053D023 /* AppointmentTableViewCell.m */; };
 		9F2B0E291C65FEA70053D023 /* ViewAppoin.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F2B0E281C65FEA70053D023 /* ViewAppoin.xib */; };
 		9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E727A1C38338B00B86477 /* HospitalProfile.m */; };
@@ -121,6 +120,7 @@
 		C0117E591C6B92420054D8DB /* settings-a.png in Resources */ = {isa = PBXBuildFile; fileRef = C0117E3B1C6B92420054D8DB /* settings-a.png */; };
 		C0117E5A1C6B92420054D8DB /* settings-a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0117E3C1C6B92420054D8DB /* settings-a@2x.png */; };
 		C0117E5B1C6B92420054D8DB /* settings-a@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0117E3D1C6B92420054D8DB /* settings-a@3x.png */; };
+		C0117E5E1C6BA5940054D8DB /* AppoinmentsDocs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0117E5D1C6BA5940054D8DB /* AppoinmentsDocs.m */; };
 		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
 		C03364FC1C68798600A1ECDA /* AppoinmentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C03364FB1C68798600A1ECDA /* AppoinmentDetailVC.m */; };
 		C03365021C6879D100A1ECDA /* PreviousAppoinmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C03365011C6879D100A1ECDA /* PreviousAppoinmentCell.m */; };
@@ -261,8 +261,6 @@
 		7CF6480A1C1F36F5007DA73F /* SearchResultsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SearchResultsTVC.m; path = "Classes/Home Page/Search Results/SearchResultsTVC.m"; sourceTree = "<group>"; };
 		9F2B0E191C65EDE10053D023 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		9F2B0E1A1C65EDE10053D023 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		9F2B0E1E1C65FB960053D023 /* AppoinmentsDocs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentsDocs.h; sourceTree = "<group>"; };
-		9F2B0E1F1C65FB960053D023 /* AppoinmentsDocs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentsDocs.m; sourceTree = "<group>"; };
 		9F2B0E251C65FCE00053D023 /* AppointmentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppointmentTableViewCell.h; sourceTree = "<group>"; };
 		9F2B0E261C65FCE00053D023 /* AppointmentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppointmentTableViewCell.m; sourceTree = "<group>"; };
 		9F2B0E281C65FEA70053D023 /* ViewAppoin.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewAppoin.xib; sourceTree = "<group>"; };
@@ -371,6 +369,8 @@
 		C0117E3B1C6B92420054D8DB /* settings-a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-a.png"; path = "New/settings-a/settings-a.png"; sourceTree = "<group>"; };
 		C0117E3C1C6B92420054D8DB /* settings-a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-a@2x.png"; path = "New/settings-a/settings-a@2x.png"; sourceTree = "<group>"; };
 		C0117E3D1C6B92420054D8DB /* settings-a@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-a@3x.png"; path = "New/settings-a/settings-a@3x.png"; sourceTree = "<group>"; };
+		C0117E5C1C6BA5940054D8DB /* AppoinmentsDocs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentsDocs.h; sourceTree = "<group>"; };
+		C0117E5D1C6BA5940054D8DB /* AppoinmentsDocs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentsDocs.m; sourceTree = "<group>"; };
 		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
 		C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Doc'sAccntInfo.m"; sourceTree = "<group>"; };
 		C03364FA1C68798600A1ECDA /* AppoinmentDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailVC.h; sourceTree = "<group>"; };
@@ -760,8 +760,8 @@
 		9F2B0E1D1C65FB2D0053D023 /* AppointmentVC */ = {
 			isa = PBXGroup;
 			children = (
-				9F2B0E1E1C65FB960053D023 /* AppoinmentsDocs.h */,
-				9F2B0E1F1C65FB960053D023 /* AppoinmentsDocs.m */,
+				C0117E5C1C6BA5940054D8DB /* AppoinmentsDocs.h */,
+				C0117E5D1C6BA5940054D8DB /* AppoinmentsDocs.m */,
 			);
 			path = AppointmentVC;
 			sourceTree = "<group>";
@@ -1358,8 +1358,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9F2B0E201C65FB960053D023 /* AppoinmentsDocs.m in Sources */,
 				9F5F0C6C1C6668FF00F7E99D /* PerescriptionsTVC.m in Sources */,
+				C0117E5E1C6BA5940054D8DB /* AppoinmentsDocs.m in Sources */,
 				9F5F0C521C66638200F7E99D /* QuestionsTVC.m in Sources */,
 				9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */,
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,

@@ -10,7 +10,7 @@
 #import "AppoinmentsDocs.h"
 #import "AppointmentTableViewCell.h"
 
-@interface Appoinments ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate>
+@interface AppoinmentsDocs ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate>
 {
     NSArray *DDL;
     UILabel *name;
@@ -27,7 +27,7 @@
 @end
 NSString *flag=0;
 
-@implementation Appoinments
+@implementation AppoinmentsDocs
 
 - (void)viewDidLoad {
     [super viewDidLoad];

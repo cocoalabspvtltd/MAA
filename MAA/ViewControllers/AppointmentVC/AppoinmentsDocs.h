@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface Appoinments : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface AppoinmentsDocs : UIViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblAppoinments;
 @property (weak, nonatomic) IBOutlet UIButton *btnFilter;
 @property (weak, nonatomic) IBOutlet UIView *ChildView;
