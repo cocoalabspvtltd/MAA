@@ -25,7 +25,7 @@
 #define SearchApi @"search"
 #define GetEntityDetailsUrl @"get_entity_details"
 #define GetEntityReviewsurl @"get_entity_reviews"
-#define GetDoctorsAppointmentesUrl @"search_doctor_names"
+#define GetUserAppointmentesUrl @"get_patient_appointments"
 #define GetFilterInfoUrl @"get_filter_info"
 #define GetQuestionsApiUrl @"get_questions"
 #define AskQuestionUrl @"ask_question"

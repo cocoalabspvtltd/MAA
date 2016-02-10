@@ -95,6 +95,7 @@ NSString *flag=0;
             cell = (AppointmentTableViewCell *)[nib objectAtIndex:0];
         }
         cell.doctorNameLabel.text = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
+        cell.feeLabel.text = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"consult_fee"];
         return cell;
     }
     else{
@@ -214,7 +215,7 @@ NSString *flag=0;
     self.searchTextString = keywordText;
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSLog(@"Access Token:%@",accessToken);
-    NSString *getDoctorsAppointmentsUrlString = [Baseurl stringByAppendingString:GetDoctorsAppointmentesUrl];
+    NSString *getDoctorsAppointmentsUrlString = [Baseurl stringByAppendingString:GetUserAppointmentesUrl];
     NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
     [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
     [getSubcategoriesMutableDictionary  setValue:keywordText forKey:@"keyword"];
@@ -226,6 +227,7 @@ NSString *flag=0;
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getDoctorsAppointmentsUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object;%@",responseObject);
         if(self.isSearchtextChanged){
             [self.appointmentDoctorsMutableArray removeAllObjects];
         }

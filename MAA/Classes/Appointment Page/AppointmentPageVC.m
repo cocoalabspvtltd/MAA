@@ -128,7 +128,7 @@
     self.searchTextString = keywordText;
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSLog(@"Access Token:%@",accessToken);
-    NSString *getDoctorsAppointmentsUrlString = [Baseurl stringByAppendingString:GetDoctorsAppointmentesUrl];
+    NSString *getDoctorsAppointmentsUrlString = [Baseurl stringByAppendingString:GetUserAppointmentesUrl];
     NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
     [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
     [getSubcategoriesMutableDictionary  setValue:keywordText forKey:@"keyword"];
