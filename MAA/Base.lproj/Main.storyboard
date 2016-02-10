@@ -13571,6 +13571,9 @@
                                         </constraints>
                                         <color key="barTintColor" red="1" green="0.14530435229999999" blue="0.17924686770000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="sSy-hA-oLe" id="AkU-dL-4Qu"/>
+                                        </connections>
                                     </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.14530435229999999" blue="0.17924686770000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -13602,6 +13605,7 @@
                     <tabBarItem key="tabBarItem" title="" image="Players.png" id="nxi-5t-8TD"/>
                     <navigationItem key="navigationItem" id="5Mf-eP-7Iy"/>
                     <connections>
+                        <outlet property="askedQuestionsSearchBar" destination="529-se-ULe" id="BKY-Wr-1Sw"/>
                         <outlet property="childview" destination="AgW-90-NY7" id="hGW-Vh-Dm5"/>
                         <outlet property="floatbutton" destination="aAN-0M-JRH" id="Deb-3Y-7Bf"/>
                         <outlet property="floatimage" destination="se7-1S-7Vh" id="kao-m9-LGQ"/>
@@ -13647,9 +13651,7 @@
                                             <constraint firstAttribute="width" constant="46" id="Fcx-Ot-R7D"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="sSy-hA-oLe" kind="show" id="dOx-ja-Ci9">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <action selector="backButtonAction:" destination="kPD-0y-MLa" eventType="touchUpInside" id="5Ds-Tp-VsD"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXD-9i-ld9">
@@ -16038,10 +16040,10 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="FpB-4z-5hg"/>
-        <segue reference="B53-wd-Ahd"/>
-        <segue reference="aue-uf-5SZ"/>
         <segue reference="fvG-ou-Cxz"/>
-        <segue reference="W69-Ux-SHq"/>
+        <segue reference="aue-uf-5SZ"/>
         <segue reference="nDN-bk-ewb"/>
+        <segue reference="W69-Ux-SHq"/>
+        <segue reference="NoA-rF-ykh"/>
     </inferredMetricsTieBreakers>
 </document>
