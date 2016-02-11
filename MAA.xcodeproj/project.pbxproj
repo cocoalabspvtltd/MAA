@@ -129,11 +129,6 @@
 		C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */; };
 		C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */; };
 		C08BF4501C6606800047DC49 /* InvoicePopup.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08BF44F1C6606800047DC49 /* InvoicePopup.xib */; };
-		C08BF4591C6608AF0047DC49 /* calender.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF4551C6608AF0047DC49 /* calender.png */; };
-		C08BF45A1C6608AF0047DC49 /* locationcircle.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF4561C6608AF0047DC49 /* locationcircle.png */; };
-		C08BF45B1C6608AF0047DC49 /* rupeesymboltext.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF4571C6608AF0047DC49 /* rupeesymboltext.png */; };
-		C08BF45C1C6608AF0047DC49 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF4581C6608AF0047DC49 /* time.png */; };
-		C08BF45E1C660EC20047DC49 /* dot.png in Resources */ = {isa = PBXBuildFile; fileRef = C08BF45D1C660EC20047DC49 /* dot.png */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
 		C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */; };
 		C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */; };
@@ -386,11 +381,6 @@
 		C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceCell.h; sourceTree = "<group>"; };
 		C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceCell.m; sourceTree = "<group>"; };
 		C08BF44F1C6606800047DC49 /* InvoicePopup.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InvoicePopup.xib; sourceTree = "<group>"; };
-		C08BF4551C6608AF0047DC49 /* calender.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = calender.png; sourceTree = "<group>"; };
-		C08BF4561C6608AF0047DC49 /* locationcircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationcircle.png; sourceTree = "<group>"; };
-		C08BF4571C6608AF0047DC49 /* rupeesymboltext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rupeesymboltext.png; sourceTree = "<group>"; };
-		C08BF4581C6608AF0047DC49 /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
-		C08BF45D1C660EC20047DC49 /* dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dot.png; sourceTree = "<group>"; };
 		C093DE401C4025F100DCFB44 /* DoctorPhotoCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorPhotoCVC.h; sourceTree = "<group>"; };
 		C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorPhotoCVC.m; sourceTree = "<group>"; };
 		C09BC2051C64BB0E00DAD2C4 /* CategoriesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesList.h; sourceTree = "<group>"; };
@@ -1083,11 +1073,6 @@
 			isa = PBXGroup;
 			children = (
 				C005F0011C6A00E20095E2CC /* microphone_slash_none.png */,
-				C08BF4551C6608AF0047DC49 /* calender.png */,
-				C08BF4561C6608AF0047DC49 /* locationcircle.png */,
-				C08BF4571C6608AF0047DC49 /* rupeesymboltext.png */,
-				C08BF4581C6608AF0047DC49 /* time.png */,
-				C08BF45D1C660EC20047DC49 /* dot.png */,
 				C005F0051C6A00F70095E2CC /* microphone_off.png */,
 				C005F0031C6A00EE0095E2CC /* video_camera_off.png */,
 				C005F0071C6A010A0095E2CC /* video_camera_none.png */,
@@ -1264,7 +1249,6 @@
 				C0117E4F1C6B92420054D8DB /* ques-a@3x.png in Resources */,
 				C0117E551C6B92420054D8DB /* search-a@3x.png in Resources */,
 				C0117E531C6B92420054D8DB /* search-a.png in Resources */,
-				C08BF45E1C660EC20047DC49 /* dot.png in Resources */,
 				C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */,
 				C0117E4C1C6B92420054D8DB /* ques@3x.png in Resources */,
 				C0117E4A1C6B92420054D8DB /* ques.png in Resources */,
@@ -1277,7 +1261,6 @@
 				C0117E581C6B92420054D8DB /* settings@3x.png in Resources */,
 				C08BF4501C6606800047DC49 /* InvoicePopup.xib in Resources */,
 				C0117E3F1C6B92420054D8DB /* cal@2x.png in Resources */,
-				C08BF45B1C6608AF0047DC49 /* rupeesymboltext.png in Resources */,
 				C0117E511C6B92420054D8DB /* search@2x.png in Resources */,
 				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
 				C0117E5B1C6B92420054D8DB /* settings-a@3x.png in Resources */,
@@ -1297,9 +1280,7 @@
 				C0117E421C6B92420054D8DB /* cal-a@2x.png in Resources */,
 				9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */,
 				9F2B0E291C65FEA70053D023 /* ViewAppoin.xib in Resources */,
-				C08BF4591C6608AF0047DC49 /* calender.png in Resources */,
 				55EAC8461C0A09CE00F31280 /* field__white_box2@2x.png in Resources */,
-				C08BF45A1C6608AF0047DC49 /* locationcircle.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0117E561C6B92420054D8DB /* settings.png in Resources */,
 				C0117E491C6B92420054D8DB /* home-a@3x.png in Resources */,
@@ -1314,7 +1295,6 @@
 				C0117E441C6B92420054D8DB /* home.png in Resources */,
 				C0117E4B1C6B92420054D8DB /* ques@2x.png in Resources */,
 				C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */,
-				C08BF45C1C6608AF0047DC49 /* time.png in Resources */,
 				C0117E5A1C6B92420054D8DB /* settings-a@2x.png in Resources */,
 				C0117E4D1C6B92420054D8DB /* ques-a.png in Resources */,
 				9F5F0C291C6655AB00F7E99D /* PhotogridCollectionViewCell.xib in Resources */,
