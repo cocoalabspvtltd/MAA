@@ -11,5 +11,5 @@
 
 @interface AppoinmentDetailVC : BaseViewController
 - (IBAction)Back:(id)sender;
-
+@property (nonatomic, strong) NSString *appointmentIdString;
 @end

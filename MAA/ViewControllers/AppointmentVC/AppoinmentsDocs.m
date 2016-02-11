@@ -128,6 +128,8 @@ NSString *flag=0;
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
         
         AppoinmentDetailVC *appointmentDetailVC = (AppoinmentDetailVC *)[storyboard instantiateViewControllerWithIdentifier:@"AppoinmentDetailVC"];
+        appointmentDetailVC.hidesBottomBarWhenPushed = YES;
+        appointmentDetailVC.appointmentIdString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
         [self.navigationController pushViewController:appointmentDetailVC animated:YES];
     }
     NSString *x = DDL[indexPath.row];
