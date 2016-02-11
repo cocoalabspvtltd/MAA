@@ -37,9 +37,9 @@
     [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm a"];
     NSDate *currentDate = [dateFormatter dateFromString:timeStampString];
     [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm a"];
+    [self comparingDateWithToday:timeStampString];
     NSLog(@"ConvertedDate:%@",[dateFormatter stringFromDate:currentDate]);
     [dateFormatter setDateFormat:@"MMM"];
-    NSLog(@"%@",[dateFormatter stringFromDate:currentDate]);
     NSString *monthFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
     self.monthLabel.text = monthFromCurrentDateString;
     [dateFormatter setDateFormat:@"HH mm a"];
@@ -53,16 +53,54 @@
 -(void)splittingDate:(NSDate *)timeDate{
     NSUInteger componentFlags = NSCalendarUnitYear | NSCalendarUnitMonth |NSCalendarUnitDay| NSCalendarUnitHour|NSCalendarUnitMinute;
     NSDateComponents *components = [[NSCalendar currentCalendar] components:componentFlags fromDate:timeDate];
-    NSInteger year = [components year];
-    NSInteger month = [components month];
     NSInteger day = [components day];
-    NSInteger hour = [components hour];
-    NSInteger min = [components minute];
     self.dayLabel.text = [NSString stringWithFormat:@"%ld",(long)day];
-    NSLog(@"YEar:%ld",(long)year);
-    NSLog(@"YEar:%ld",(long)month);
-     NSLog(@"YEar:%ld",(long)day);
-     NSLog(@"Hour:%ld",(long)hour);
-     NSLog(@"minute:%ld",(long)min);
+}
+
+-(void)comparingDateWithToday:(NSString *)comparingDateString{
+    NSDate *today = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"dd-MM-yyyy HH:mm a";
+    [formatter setTimeZone:[NSTimeZone localTimeZone]];
+    NSDate *responseDate = [formatter dateFromString:comparingDateString];
+    if([responseDate compare:today] == NSOrderedAscending ){
+        self.playbutton.hidden = YES;
+        self.playImageView.hidden = YES;
+        self.closeButton.hidden = YES;
+        self.closeImageView.hidden = YES;
+    }
+    else{
+        self.playbutton.hidden = NO;
+        self.playImageView.hidden = NO;
+        self.closeButton.hidden = NO;
+        self.closeImageView.hidden = NO;
+    }
+}
+
+-(void)setTypeString:(NSString *)typeString{
+    if([typeString isEqualToString:@"1"]){
+        self.appointmentTypeLabel.text = @"Direct Appointment";
+        self.playbutton.hidden = YES;
+        self.playImageView.hidden = YES;
+        self.closeButton.hidden = YES;
+        self.closeImageView.hidden = YES;
+        
+    }
+    else if ([typeString isEqualToString:@"2"]){
+       self.appointmentTypeLabel.text = @"Text Chat";
+        
+    }
+    else if ([typeString isEqualToString:@"3"]){
+       self.appointmentTypeLabel.text = @"Audio Call";
+    }
+    else if ([typeString isEqualToString:@"4"]){
+        self.appointmentTypeLabel.text = @"Video Call";
+    }
+    
+}
+
+- (IBAction)closeButtonAction:(UIButton *)sender {
+}
+- (IBAction)plabuttonAction:(UIButton *)sender {
 }
 @end

@@ -99,6 +99,7 @@ NSString *flag=0;
         cell.feeLabel.text = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"consult_fee"];
         cell.rightprofileImageurlString = [[[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"doctor_details"] valueForKey:@"logo_image"];
         cell.timeStampString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"timestamp"];
+        cell.typeString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"];
         return cell;
     }
     else{

@@ -18,4 +18,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *closeImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *playImageView;
+@property (weak, nonatomic) IBOutlet UIButton *playbutton;
+@property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (nonatomic, strong) NSString *typeString;
+@property (weak, nonatomic) IBOutlet UILabel *appointmentTypeLabel;
 @end

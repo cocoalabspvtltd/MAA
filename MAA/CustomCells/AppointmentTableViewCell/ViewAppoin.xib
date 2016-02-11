@@ -7,7 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="Appoinments"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="appointmentCell" rowHeight="98" id="dED-xs-lBv" customClass="AppointmentTableViewCell">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="appointmentCell" rowHeight="98" id="dED-xs-lBv" customClass="AppointmentTableViewCell">
             <rect key="frame" x="0.0" y="0.0" width="584" height="89"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dED-xs-lBv" id="l50-ft-9XX">
@@ -128,9 +128,15 @@
                             <constraint firstAttribute="height" constant="22" id="M5r-ON-jnQ"/>
                             <constraint firstAttribute="width" constant="22" id="jKR-Xm-7cf"/>
                         </constraints>
+                        <connections>
+                            <action selector="plabuttonAction:" destination="dED-xs-lBv" eventType="touchUpInside" id="9hk-ij-03G"/>
+                        </connections>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcm-1z-0mr">
                         <rect key="frame" x="278" y="60" width="22" height="22"/>
+                        <connections>
+                            <action selector="closeButtonAction:" destination="dED-xs-lBv" eventType="touchUpInside" id="0kS-wR-sOA"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
@@ -156,11 +162,16 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="appointmentTypeLabel" destination="tuJ-BT-sxO" id="7xH-xL-5HC"/>
+                <outlet property="closeButton" destination="Qcm-1z-0mr" id="MIH-KJ-x6a"/>
+                <outlet property="closeImageView" destination="MHy-rt-z4f" id="tEK-5W-mA2"/>
                 <outlet property="dayLabel" destination="P8k-HB-zDh" id="wmX-Jq-R9v"/>
                 <outlet property="doctorNameLabel" destination="WTl-Jp-q55" id="Oa3-yD-QSR"/>
                 <outlet property="feeLabel" destination="yDa-xn-uDK" id="eXd-K3-aBJ"/>
                 <outlet property="leftStatusImageView" destination="OqP-qf-w6O" id="XaV-sv-B7s"/>
                 <outlet property="monthLabel" destination="MgV-xa-saJ" id="nxL-gd-Hz9"/>
+                <outlet property="playImageView" destination="NfT-M1-dVG" id="R2d-GC-Wqe"/>
+                <outlet property="playbutton" destination="Hn4-K4-eta" id="pII-dA-81f"/>
                 <outlet property="rightProfileImageView" destination="yxH-jx-nYo" id="4sR-5f-qlE"/>
                 <outlet property="timeLabel" destination="4wB-6x-WWW" id="n9D-aN-Lml"/>
             </connections>
