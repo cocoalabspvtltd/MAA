@@ -75,11 +75,16 @@
                         </subviews>
                     </stackView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yxH-jx-nYo">
-                        <rect key="frame" x="523" y="8" width="45" height="45"/>
+                        <rect key="frame" x="522" y="8" width="46" height="45"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="45" id="8AG-jJ-pU3"/>
+                            <constraint firstAttribute="width" constant="46" id="8AG-jJ-pU3"/>
                             <constraint firstAttribute="height" constant="45" id="Ng5-eb-gai"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="23"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="YAX-fJ-Ji3">
                         <rect key="frame" x="13" y="8" width="54" height="64"/>
@@ -180,9 +185,10 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="doctorImageView" destination="OqP-qf-w6O" id="ICe-hf-4uJ"/>
                 <outlet property="doctorNameLabel" destination="WTl-Jp-q55" id="Oa3-yD-QSR"/>
                 <outlet property="feeLabel" destination="yDa-xn-uDK" id="eXd-K3-aBJ"/>
+                <outlet property="leftStatusImageView" destination="OqP-qf-w6O" id="XaV-sv-B7s"/>
+                <outlet property="rightProfileImageView" destination="yxH-jx-nYo" id="4sR-5f-qlE"/>
             </connections>
             <point key="canvasLocation" x="448" y="312.5"/>
         </tableViewCell>

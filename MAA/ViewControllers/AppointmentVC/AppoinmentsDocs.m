@@ -95,8 +95,9 @@ NSString *flag=0;
             NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"ViewAppoin" owner:self options:nil];
             cell = (AppointmentTableViewCell *)[nib objectAtIndex:0];
         }
-        cell.doctorNameLabel.text = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
+        cell.doctorNameLabel.text = [[[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"doctor_details"] valueForKey:@"name"];
         cell.feeLabel.text = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"consult_fee"];
+        cell.rightprofileImageurlString = [[[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"doctor_details"] valueForKey:@"logo_image"];;
         return cell;
     }
     else{

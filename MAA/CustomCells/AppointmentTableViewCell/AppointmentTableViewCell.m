@@ -20,4 +20,14 @@
     // Configure the view for the selected state
 }
 
+-(void)setRightprofileImageurlString:(NSString *)rightprofileImageurlString{
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:rightprofileImageurlString]];
+        UIImage *tempImage = [UIImage imageWithData:imageData];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.rightProfileImageView.image = tempImage;
+        }
+                       );
+    });
+}
 @end

@@ -11,6 +11,8 @@
 @interface AppointmentTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *doctorNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *feeLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *doctorImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *leftStatusImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *rightProfileImageView;
+@property (nonatomic, strong) NSString *rightprofileImageurlString;
 
 @end
