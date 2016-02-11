@@ -25,6 +25,7 @@
     [self initialisation];
     self.searchbar.delegate = self;
     [self addSubViews];
+    
     // Do any additional setup after loading the view.
 }
 

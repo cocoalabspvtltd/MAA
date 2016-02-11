@@ -128,28 +128,28 @@
                         </subviews>
                     </stackView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play_green" translatesAutoresizingMaskIntoConstraints="NO" id="NfT-M1-dVG">
-                        <rect key="frame" x="256" y="61" width="20" height="20"/>
+                        <rect key="frame" x="246" y="61" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="AD2-C7-hPL"/>
                             <constraint firstAttribute="width" constant="20" id="sdc-DI-0wE"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="close_red" translatesAutoresizingMaskIntoConstraints="NO" id="MHy-rt-z4f">
-                        <rect key="frame" x="288" y="61" width="20" height="20"/>
+                        <rect key="frame" x="278" y="61" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="PBx-6F-aNM"/>
                             <constraint firstAttribute="width" constant="20" id="bRj-4l-5l6"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hn4-K4-eta">
-                        <rect key="frame" x="255" y="60" width="22" height="22"/>
+                        <rect key="frame" x="245" y="60" width="22" height="22"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="22" id="M5r-ON-jnQ"/>
                             <constraint firstAttribute="width" constant="22" id="jKR-Xm-7cf"/>
                         </constraints>
                     </button>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcm-1z-0mr">
-                        <rect key="frame" x="288" y="60" width="22" height="22"/>
+                        <rect key="frame" x="278" y="60" width="22" height="22"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -169,7 +169,7 @@
                     <constraint firstItem="Hn4-K4-eta" firstAttribute="centerY" secondItem="NfT-M1-dVG" secondAttribute="centerY" id="sAE-o6-xW5"/>
                     <constraint firstAttribute="bottomMargin" secondItem="MHy-rt-z4f" secondAttribute="bottom" constant="-1" id="t2w-5F-sJt"/>
                     <constraint firstItem="O21-wP-BLf" firstAttribute="top" secondItem="l50-ft-9XX" secondAttribute="top" constant="9" id="tC5-km-zJV"/>
-                    <constraint firstItem="NfT-M1-dVG" firstAttribute="leading" secondItem="O21-wP-BLf" secondAttribute="trailing" constant="20" id="vWq-it-bkC"/>
+                    <constraint firstItem="NfT-M1-dVG" firstAttribute="leading" secondItem="O21-wP-BLf" secondAttribute="trailing" constant="10" id="vWq-it-bkC"/>
                     <constraint firstItem="OqP-qf-w6O" firstAttribute="centerX" secondItem="De9-ZA-SLU" secondAttribute="centerX" id="xry-AO-Bt0"/>
                     <constraint firstItem="Qcm-1z-0mr" firstAttribute="centerY" secondItem="MHy-rt-z4f" secondAttribute="centerY" id="yX0-g5-gm8"/>
                 </constraints>

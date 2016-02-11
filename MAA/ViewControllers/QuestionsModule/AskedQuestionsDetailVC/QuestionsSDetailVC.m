@@ -17,6 +17,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self callingGetQuestionsDetailsApi];
+    self.doctorProfileImageView.layer.cornerRadius = self.doctorProfileImageView.frame.size.width / 2;
+    self.doctorProfileImageView.clipsToBounds = YES;
+    
     // Do any additional setup after loading the view.
 }
 

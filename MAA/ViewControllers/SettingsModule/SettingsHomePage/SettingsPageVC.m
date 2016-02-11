@@ -20,6 +20,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBarHidden=YES;
     // Do any additional setup after loading the view.
     
 }
@@ -54,32 +55,34 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 60;
+    return 50;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     SettingsTableViewCell *settingsTVC = [tableView dequeueReusableCellWithIdentifier:@"settingsReusableCell"forIndexPath:indexPath];
     if(indexPath.row == 0){
         settingsTVC.headingLabel.text = @"My Health Profile";
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"ecg-heart-red"];
     }
     else if (indexPath.row == 1){
         settingsTVC.headingLabel.text = @"Account Settings";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"AccountSettings"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"gear"];
     }
     else if (indexPath.row == 2){
         settingsTVC.headingLabel.text = @"My Reviews";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"Reviews"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"speechbubblered"];
     }
     else if (indexPath.row == 3){
         settingsTVC.headingLabel.text = @"Invoices";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"Invoices"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"file"];
     }
     else if (indexPath.row == 4){
         settingsTVC.headingLabel.text = @"About";
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"info-red"];
     }
     else if (indexPath.row == 5){
         settingsTVC.headingLabel.text = @"Sign Out";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"signOut"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"uploadside"];
     }
     return settingsTVC;
 }
