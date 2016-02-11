@@ -26,5 +26,4 @@
 @property (weak, nonatomic) IBOutlet UITableView *tblDropList;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *tableViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
-
 @end

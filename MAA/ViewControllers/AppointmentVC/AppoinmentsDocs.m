@@ -97,7 +97,8 @@ NSString *flag=0;
         }
         cell.doctorNameLabel.text = [[[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"doctor_details"] valueForKey:@"name"];
         cell.feeLabel.text = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"consult_fee"];
-        cell.rightprofileImageurlString = [[[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"doctor_details"] valueForKey:@"logo_image"];;
+        cell.rightprofileImageurlString = [[[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"doctor_details"] valueForKey:@"logo_image"];
+        cell.timeStampString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"timestamp"];
         return cell;
     }
     else{

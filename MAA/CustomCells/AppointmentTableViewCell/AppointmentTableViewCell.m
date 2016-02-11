@@ -30,4 +30,39 @@
                        );
     });
 }
+
+-(void)setTimeStampString:(NSString *)timeStampString{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm a"];
+    NSDate *currentDate = [dateFormatter dateFromString:timeStampString];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm a"];
+    NSLog(@"ConvertedDate:%@",[dateFormatter stringFromDate:currentDate]);
+    [dateFormatter setDateFormat:@"MMM"];
+    NSLog(@"%@",[dateFormatter stringFromDate:currentDate]);
+    NSString *monthFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
+    self.monthLabel.text = monthFromCurrentDateString;
+    [dateFormatter setDateFormat:@"HH mm a"];
+    NSString *timeStringFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
+    self.timeLabel.text = timeStringFromCurrentDateString;
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    [self splittingDate:currentDate];
+    
+}
+
+-(void)splittingDate:(NSDate *)timeDate{
+    NSUInteger componentFlags = NSCalendarUnitYear | NSCalendarUnitMonth |NSCalendarUnitDay| NSCalendarUnitHour|NSCalendarUnitMinute;
+    NSDateComponents *components = [[NSCalendar currentCalendar] components:componentFlags fromDate:timeDate];
+    NSInteger year = [components year];
+    NSInteger month = [components month];
+    NSInteger day = [components day];
+    NSInteger hour = [components hour];
+    NSInteger min = [components minute];
+    self.dayLabel.text = [NSString stringWithFormat:@"%ld",(long)day];
+    NSLog(@"YEar:%ld",(long)year);
+    NSLog(@"YEar:%ld",(long)month);
+     NSLog(@"YEar:%ld",(long)day);
+     NSLog(@"Hour:%ld",(long)hour);
+     NSLog(@"minute:%ld",(long)min);
+}
 @end

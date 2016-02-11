@@ -14,5 +14,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *leftStatusImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *rightProfileImageView;
 @property (nonatomic, strong) NSString *rightprofileImageurlString;
-
+@property (nonatomic, strong) NSString *timeStampString;
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@property (weak, nonatomic) IBOutlet UILabel *monthLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @end
