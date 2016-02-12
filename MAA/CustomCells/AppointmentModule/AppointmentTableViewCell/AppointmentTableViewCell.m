@@ -43,7 +43,7 @@
     [dateFormatter setDateFormat:@"MMM"];
     NSString *monthFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
     self.monthLabel.text = monthFromCurrentDateString;
-    [dateFormatter setDateFormat:@"HH mm a"];
+    [dateFormatter setDateFormat:@"HH:mm a"];
     NSString *timeStringFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
     self.timeLabel.text = timeStringFromCurrentDateString;
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
@@ -60,7 +60,7 @@
     NSUInteger componentFlags = NSCalendarUnitYear | NSCalendarUnitMonth |NSCalendarUnitDay| NSCalendarUnitHour|NSCalendarUnitMinute;
     NSDateComponents *components = [[NSCalendar currentCalendar] components:componentFlags fromDate:timeDate];
     NSInteger day = [components day];
-    self.dayLabel.text = [NSString stringWithFormat:@"%ld",(long)day];
+    self.dayLabel.text = [NSString stringWithFormat:@"%02ld",(long)day];
 }
 
 -(void)comparingDateWithToday:(NSString *)comparingDateString{

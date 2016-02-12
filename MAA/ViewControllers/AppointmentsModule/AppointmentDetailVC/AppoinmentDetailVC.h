@@ -11,6 +11,7 @@
 
 @interface AppoinmentDetailVC : BaseViewController
 - (IBAction)Back:(id)sender;
+@property (weak, nonatomic) IBOutlet UIImageView *leftStatusImageview;
 @property (weak, nonatomic) IBOutlet UILabel *doctorNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *feesLabel;
 @property (weak, nonatomic) IBOutlet UILabel *appontmentTypeLabel;
@@ -20,4 +21,5 @@
 @property (nonatomic, strong) NSString *appointmentIdString;
 @property (weak, nonatomic) IBOutlet UITableView *previousAppointmentTableview;
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *appointmentTypeimageview;
 @end

@@ -133,8 +133,10 @@ NSString *flag=0;
         appointmentDetailVC.appointmentIdString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
         [self.navigationController pushViewController:appointmentDetailVC animated:YES];
     }
-    NSString *x = DDL[indexPath.row];
-    [_btnDropDown setTitle:x forState:UIControlStateNormal];
+    else{
+        NSString *x = DDL[indexPath.row];
+        [_btnDropDown setTitle:x forState:UIControlStateNormal];
+    }
     
 }
 
