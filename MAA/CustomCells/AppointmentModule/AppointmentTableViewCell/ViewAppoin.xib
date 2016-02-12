@@ -57,7 +57,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="hvj-g9-jxG">
                                 <rect key="frame" x="0.0" y="55" width="147" height="15"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video" translatesAutoresizingMaskIntoConstraints="NO" id="hSb-DN-c71">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="video-black.png" translatesAutoresizingMaskIntoConstraints="NO" id="hSb-DN-c71">
                                         <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="Bfl-wi-GPK"/>
@@ -183,6 +183,6 @@
         <image name="close_red" width="29" height="29"/>
         <image name="play_green" width="29" height="29"/>
         <image name="rupee_black" width="29" height="29"/>
-        <image name="video" width="30" height="30"/>
+        <image name="video-black.png" width="29" height="29"/>
     </resources>
 </document>

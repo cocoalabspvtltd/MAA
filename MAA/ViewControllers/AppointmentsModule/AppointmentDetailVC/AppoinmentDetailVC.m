@@ -75,6 +75,9 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Object;%@",responseObject);
         [self settingDoctorDetailsWithDictionary:[[responseObject valueForKey:Datakey] valueForKey:@"doctor_details"]];
+        if(!([[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"] == [NSNull null])){
+            self.feesLabel.text = [[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"];
+        }
         [self settingStatusWithstatuString:[[responseObject valueForKey:Datakey] valueForKey:@"status"]];
         [self settingTypeWithtypeString:[[responseObject valueForKey:Datakey] valueForKey:@"type"]];
         [self settingTimeStampString:[[responseObject valueForKey:Datakey] valueForKey:@"timestamp"]];
@@ -114,24 +117,27 @@
 
 -(void)settingTypeWithtypeString:(NSString *)typeString{
     if([typeString isEqualToString:@"1"]){
+        self.appointmentTypeimageview.image = [UIImage imageNamed:@"direct-apnt-black"];
         self.appontmentTypeLabel.text = @"Direct Appointment";
-        //        self.playbutton.hidden = YES;
-        //        self.playImageView.hidden = YES;
-        //        self.closeButton.hidden = YES;
-        //        self.closeImageView.hidden = YES;
+//        self.playbutton.hidden = YES;
+//        self.playImageView.hidden = YES;
+//        self.closeButton.hidden = YES;
+//        self.closeImageView.hidden = YES;
         
     }
     else if ([typeString isEqualToString:@"2"]){
+        self.appointmentTypeimageview.image = [UIImage imageNamed:@"chat-black"];
         self.appontmentTypeLabel.text = @"Text Chat";
         
     }
     else if ([typeString isEqualToString:@"3"]){
+        self.appointmentTypeimageview.image = [UIImage imageNamed:@"audio-black"];
         self.appontmentTypeLabel.text = @"Audio Call";
     }
     else if ([typeString isEqualToString:@"4"]){
-         self.appontmentTypeLabel.text = @"Video Call";
-    }
-}
+        self.appointmentTypeimageview.image = [UIImage imageNamed:@"video-black"];
+        self.appontmentTypeLabel.text = @"Video Call";
+    }}
 
 -(void)settingStatusWithstatuString:(NSString *)statusString{
     if([statusString isEqualToString:@"1"]){

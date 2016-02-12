@@ -85,6 +85,7 @@
 
 -(void)setTypeString:(NSString *)typeString{
     if([typeString isEqualToString:@"1"]){
+        self.appointmrntTypeIconimageView.image = [UIImage imageNamed:@"direct-apnt-black"];
         self.appointmentTypeLabel.text = @"Direct Appointment";
         self.playbutton.hidden = YES;
         self.playImageView.hidden = YES;
@@ -93,13 +94,16 @@
         
     }
     else if ([typeString isEqualToString:@"2"]){
+       self.appointmrntTypeIconimageView.image = [UIImage imageNamed:@"chat-black"];
        self.appointmentTypeLabel.text = @"Text Chat";
         
     }
     else if ([typeString isEqualToString:@"3"]){
+       self.appointmrntTypeIconimageView.image = [UIImage imageNamed:@"audio-black"];
        self.appointmentTypeLabel.text = @"Audio Call";
     }
     else if ([typeString isEqualToString:@"4"]){
+        self.appointmrntTypeIconimageView.image = [UIImage imageNamed:@"video-black"];
         self.appointmentTypeLabel.text = @"Video Call";
     }
     
