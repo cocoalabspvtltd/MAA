@@ -6,7 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="eTU-MS-WF4">
+        <view contentMode="scaleToFill" id="eTU-MS-WF4" customClass="Invoicepopup">
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -209,6 +209,15 @@
                 <constraint firstItem="opy-KH-uTX" firstAttribute="centerY" secondItem="eTU-MS-WF4" secondAttribute="centerY" id="VHL-0Q-KkW"/>
                 <constraint firstItem="opy-KH-uTX" firstAttribute="centerX" secondItem="eTU-MS-WF4" secondAttribute="centerX" id="bdL-3V-TYs"/>
             </constraints>
+            <connections>
+                <outlet property="dateLabel" destination="gR2-Y2-Lrb" id="cMn-Es-sxN"/>
+                <outlet property="feeLabel" destination="YxR-nE-yKe" id="tMR-zD-3AS"/>
+                <outlet property="invoiceNoLabel" destination="mCm-E5-bnA" id="Q3P-no-Xf5"/>
+                <outlet property="locationLabel" destination="Cfq-vZ-IDx" id="jpa-vf-F6x"/>
+                <outlet property="selectedTimeLabel" destination="glg-na-77F" id="j2z-yW-KOz"/>
+                <outlet property="statusLabel" destination="Nxi-dW-zTi" id="7kL-mB-pmQ"/>
+                <outlet property="typeOfappointmentLabel" destination="IBT-fO-gvz" id="7dD-j2-yEA"/>
+            </connections>
             <point key="canvasLocation" x="101" y="550"/>
         </view>
     </objects>
