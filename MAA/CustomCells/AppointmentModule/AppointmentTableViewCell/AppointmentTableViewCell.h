@@ -25,4 +25,5 @@
 @property (nonatomic, strong) NSString *typeString;
 @property (weak, nonatomic) IBOutlet UILabel *appointmentTypeLabel;
 @property (nonatomic, strong) NSString *statusString;
+@property (weak, nonatomic) IBOutlet UIImageView *appointmrntTypeIconimageView;
 @end
