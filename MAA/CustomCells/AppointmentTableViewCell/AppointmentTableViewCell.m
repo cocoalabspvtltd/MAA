@@ -34,10 +34,11 @@
 -(void)setTimeStampString:(NSString *)timeStampString{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm a"];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
     NSDate *currentDate = [dateFormatter dateFromString:timeStampString];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy HH:mm a"];
-    [self comparingDateWithToday:timeStampString];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
+    //[self comparingDateWithToday:timeStampString];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     NSLog(@"ConvertedDate:%@",[dateFormatter stringFromDate:currentDate]);
     [dateFormatter setDateFormat:@"MMM"];
     NSString *monthFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
@@ -47,6 +48,11 @@
     self.timeLabel.text = timeStringFromCurrentDateString;
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     [self splittingDate:currentDate];
+    
+    self.playbutton.hidden = YES;
+    self.playImageView.hidden = YES;
+    self.closeButton.hidden = YES;
+    self.closeImageView.hidden = YES;
     
 }
 
@@ -95,6 +101,19 @@
     }
     else if ([typeString isEqualToString:@"4"]){
         self.appointmentTypeLabel.text = @"Video Call";
+    }
+    
+}
+
+-(void)setStatusString:(NSString *)statusString{
+    if([statusString isEqualToString:@"1"]){
+        self.leftStatusImageView.backgroundColor = [UIColor colorWithRed:0 green:0.588 blue:0.533 alpha:1];
+    }
+    else if ([statusString isEqualToString:@"2"]){
+        self.leftStatusImageView.backgroundColor = [UIColor colorWithRed:0.827 green:0.184 blue:0.184 alpha:1];
+    }
+    else if ([statusString isEqualToString:@"3"]){
+        self.leftStatusImageView.backgroundColor = [UIColor colorWithRed:1 green:0.757 blue:0.027 alpha:1];
     }
     
 }

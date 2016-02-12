@@ -24,4 +24,5 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (nonatomic, strong) NSString *typeString;
 @property (weak, nonatomic) IBOutlet UILabel *appointmentTypeLabel;
+@property (nonatomic, strong) NSString *statusString;
 @end

@@ -41,7 +41,7 @@ NSString *flag=0;
     _tblAppoinments.delegate=self;
     [self initialisation];
     [self addSubViews];
-    
+    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:@""];
     DDL=@[@"Any",@"Audio Call",@"Video Call",@"Direct Appoinment",@"Chat"];
     
     [self.tblAppoinments registerNib:[UINib nibWithNibName:@"ViewAppoin" bundle:nil] forCellReuseIdentifier:AppointmentTableViewCellIdentifier];
@@ -100,6 +100,7 @@ NSString *flag=0;
         cell.rightprofileImageurlString = [[[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"doctor_details"] valueForKey:@"logo_image"];
         cell.timeStampString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"timestamp"];
         cell.typeString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"];
+        cell.statusString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"status"];
         return cell;
     }
     else{
