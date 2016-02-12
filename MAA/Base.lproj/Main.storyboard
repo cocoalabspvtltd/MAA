@@ -14418,6 +14418,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="xgP-e0-WOY"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="edit_white"/>
+                                                <connections>
+                                                    <action selector="noteButtonAction:" destination="n57-v8-jFH" eventType="touchUpInside" id="rAB-0N-AgE"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydz-JV-CdO">
                                                 <rect key="frame" x="35" y="0.0" width="30" height="30"/>
@@ -14426,6 +14429,9 @@
                                                     <constraint firstAttribute="width" constant="30" id="YL6-YR-RTO"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="note_white"/>
+                                                <connections>
+                                                    <action selector="invoiceButtonAction:" destination="n57-v8-jFH" eventType="touchUpInside" id="vt7-A8-y6c"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdo-Iq-WEF">
                                                 <rect key="frame" x="70" y="0.0" width="30" height="30"/>
@@ -14434,6 +14440,9 @@
                                                     <constraint firstAttribute="height" constant="30" id="b1d-1I-dw3"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="comments_white"/>
+                                                <connections>
+                                                    <action selector="chatHistorybuttonAction:" destination="n57-v8-jFH" eventType="touchUpInside" id="ENT-W7-xgk"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -14705,13 +14714,17 @@
                     <connections>
                         <outlet property="appointmentTypeimageview" destination="G8f-TE-7s8" id="WDS-6z-NYj"/>
                         <outlet property="appontmentTypeLabel" destination="AKZ-xm-E0H" id="X05-Qe-3uN"/>
+                        <outlet property="chatHistoryButton" destination="xdo-Iq-WEF" id="CPp-EV-mKF"/>
                         <outlet property="dayLabel" destination="GTV-4H-YL3" id="Umd-zF-cAq"/>
                         <outlet property="doctorImageView" destination="Tfn-9i-3G0" id="Hm2-Qu-5cT"/>
                         <outlet property="doctorNameLabel" destination="aMx-XA-Kj4" id="VSc-sM-xfO"/>
                         <outlet property="feesLabel" destination="t9z-aR-ZfE" id="egL-VY-ImR"/>
+                        <outlet property="invoiceButton" destination="Ydz-JV-CdO" id="was-uP-wct"/>
                         <outlet property="leftStatusImageview" destination="si3-EH-GFN" id="4Tq-DE-Jz3"/>
                         <outlet property="monthLabel" destination="kkW-MM-xQK" id="R6i-ED-tgA"/>
+                        <outlet property="noteButton" destination="fkB-oW-FyT" id="664-mH-7As"/>
                         <outlet property="previousAppointmentTableview" destination="naU-yB-lFt" id="KP6-jX-G5y"/>
+                        <outlet property="startAppointmentButton" destination="IbL-3v-DaR" id="owe-ua-k54"/>
                         <outlet property="timeLabel" destination="wJY-aJ-TnB" id="3S4-Re-FMo"/>
                     </connections>
                 </viewController>

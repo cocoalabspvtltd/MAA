@@ -78,8 +78,8 @@
         if(!([[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"] == [NSNull null])){
             self.feesLabel.text = [[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"];
         }
-        [self settingStatusWithstatuString:[[responseObject valueForKey:Datakey] valueForKey:@"status"]];
         [self settingTypeWithtypeString:[[responseObject valueForKey:Datakey] valueForKey:@"type"]];
+        [self settingStatusWithstatuString:[[responseObject valueForKey:Datakey] valueForKey:@"status"]];
         [self settingTimeStampString:[[responseObject valueForKey:Datakey] valueForKey:@"timestamp"]];
         self.previousAppointmentsArray = [[responseObject valueForKey:Datakey] valueForKey:@"previous_appointments"];
         
@@ -119,6 +119,7 @@
     if([typeString isEqualToString:@"1"]){
         self.appointmentTypeimageview.image = [UIImage imageNamed:@"direct-apnt-black"];
         self.appontmentTypeLabel.text = @"Direct Appointment";
+        self.chatHistoryButton.hidden = YES;
 //        self.playbutton.hidden = YES;
 //        self.playImageView.hidden = YES;
 //        self.closeButton.hidden = YES;
@@ -133,20 +134,30 @@
     else if ([typeString isEqualToString:@"3"]){
         self.appointmentTypeimageview.image = [UIImage imageNamed:@"audio-black"];
         self.appontmentTypeLabel.text = @"Audio Call";
+        self.chatHistoryButton.hidden = YES;
     }
     else if ([typeString isEqualToString:@"4"]){
         self.appointmentTypeimageview.image = [UIImage imageNamed:@"video-black"];
         self.appontmentTypeLabel.text = @"Video Call";
+        self.chatHistoryButton.hidden = YES;
     }}
 
 -(void)settingStatusWithstatuString:(NSString *)statusString{
     if([statusString isEqualToString:@"1"]){
+        [self.startAppointmentButton setTitle:@"START APPOINTMENT" forState:UIControlStateNormal];
+         self.chatHistoryButton.hidden = YES;
         self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:0 green:0.588 blue:0.533 alpha:1];
     }
     else if ([statusString isEqualToString:@"2"]){
+        if(![self.appontmentTypeLabel.text isEqualToString:@"Text Chat"]){
+            self.chatHistoryButton.hidden = YES;
+        }
+        [self.startAppointmentButton setTitle:@"PRESCRIPTIONS" forState:UIControlStateNormal];
         self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:0.827 green:0.184 blue:0.184 alpha:1];
     }
     else if ([statusString isEqualToString:@"3"]){
+        self.startAppointmentButton.hidden = YES;
+         self.chatHistoryButton.hidden = YES;
         self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:1 green:0.757 blue:0.027 alpha:1];
     }
 }
@@ -197,7 +208,13 @@
 //        self.closeImageView.hidden = NO;
     }
 }
+- (IBAction)noteButtonAction:(id)sender {
+}
 
+- (IBAction)invoiceButtonAction:(UIButton *)sender {
+}
+- (IBAction)chatHistorybuttonAction:(UIButton *)sender {
+}
 
 - (IBAction)startappointmentbuttonAction:(UIButton *)sender {
 }

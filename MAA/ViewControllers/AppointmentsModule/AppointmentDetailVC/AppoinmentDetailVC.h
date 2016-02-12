@@ -21,5 +21,9 @@
 @property (nonatomic, strong) NSString *appointmentIdString;
 @property (weak, nonatomic) IBOutlet UITableView *previousAppointmentTableview;
 @property (weak, nonatomic) IBOutlet UILabel *dayLabel;
+@property (weak, nonatomic) IBOutlet UIButton *startAppointmentButton;
+@property (weak, nonatomic) IBOutlet UIButton *noteButton;
+@property (weak, nonatomic) IBOutlet UIButton *invoiceButton;
+@property (weak, nonatomic) IBOutlet UIButton *chatHistoryButton;
 @property (weak, nonatomic) IBOutlet UIImageView *appointmentTypeimageview;
 @end
