@@ -14569,6 +14569,9 @@
                                 <state key="normal" title="START APPOINMENT">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="startappointmentbuttonAction:" destination="n57-v8-jFH" eventType="touchUpInside" id="aQ0-wa-wuA"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Previous Appoinments" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yJt-bm-HNd">
                                 <rect key="frame" x="5" y="150" width="154" height="18"/>
@@ -14580,7 +14583,7 @@
                                 <rect key="frame" x="14" y="176" width="572" height="386"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="40" id="9QL-he-cM0" customClass="PreviousAppoinmentCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="previousappointmentCell" rowHeight="40" id="9QL-he-cM0" customClass="PreviousAppoinmentCell">
                                         <rect key="frame" x="0.0" y="28" width="572" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9QL-he-cM0" id="qfs-it-3zn">
@@ -14665,8 +14668,18 @@
                                                 <constraint firstItem="XSs-qc-vXO" firstAttribute="leading" secondItem="GAf-Aa-AHE" secondAttribute="trailing" constant="3" id="vk2-uo-Kji"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayLabel" destination="fXH-pJ-LdB" id="uIW-HI-XcF"/>
+                                            <outlet property="locationLabel" destination="0cj-pD-ehy" id="plk-9K-7tv"/>
+                                            <outlet property="monthLabel" destination="3QA-AK-rKF" id="PLK-7r-hZ4"/>
+                                            <outlet property="timeLabel" destination="6ou-g5-sqG" id="lnc-YR-jHn"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="n57-v8-jFH" id="ZAv-jg-Pfl"/>
+                                    <outlet property="delegate" destination="n57-v8-jFH" id="1ft-M0-oso"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -14689,6 +14702,16 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Players.png" id="3sI-cF-cc7"/>
+                    <connections>
+                        <outlet property="appontmentTypeLabel" destination="AKZ-xm-E0H" id="X05-Qe-3uN"/>
+                        <outlet property="dayLabel" destination="GTV-4H-YL3" id="Umd-zF-cAq"/>
+                        <outlet property="doctorImageView" destination="Tfn-9i-3G0" id="Hm2-Qu-5cT"/>
+                        <outlet property="doctorNameLabel" destination="aMx-XA-Kj4" id="VSc-sM-xfO"/>
+                        <outlet property="feesLabel" destination="t9z-aR-ZfE" id="egL-VY-ImR"/>
+                        <outlet property="monthLabel" destination="kkW-MM-xQK" id="R6i-ED-tgA"/>
+                        <outlet property="previousAppointmentTableview" destination="naU-yB-lFt" id="KP6-jX-G5y"/>
+                        <outlet property="timeLabel" destination="wJY-aJ-TnB" id="3S4-Re-FMo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyN-EX-Iwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

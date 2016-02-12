@@ -8,8 +8,10 @@
 
 #import "AppoinmentDetailVC.h"
 
-@interface AppoinmentDetailVC ()
+#import "PreviousAppoinmentCell.h"
 
+@interface AppoinmentDetailVC ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong) NSArray *previousAppointmentsArray;
 @end
 
 @implementation AppoinmentDetailVC
@@ -39,6 +41,23 @@
 }
 */
 
+#pragma mark - Table View Datatsources
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.previousAppointmentsArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    PreviousAppoinmentCell *cell = [self.previousAppointmentTableview dequeueReusableCellWithIdentifier:@"previousappointmentCell"forIndexPath:indexPath];
+    cell.timeStampString = [[self.previousAppointmentsArray objectAtIndex:indexPath.row] valueForKey:@"timestamp"];
+    cell.locationString = [[self.previousAppointmentsArray objectAtIndex:indexPath.row] valueForKey:@"location"];
+    return cell;
+}
+
 - (IBAction)Back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
@@ -55,7 +74,8 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getPatientsAppointmentsDetailUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Object;%@",responseObject);
-        
+        self.previousAppointmentsArray = [[responseObject valueForKey:Datakey] valueForKey:@"previous_appointments"];
+        [self.previousAppointmentTableview reloadData];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
        
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -142,5 +162,7 @@
     
 }
 
+- (IBAction)startappointmentbuttonAction:(UIButton *)sender {
+}
 
 @end
