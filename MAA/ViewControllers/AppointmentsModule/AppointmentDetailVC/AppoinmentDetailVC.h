@@ -25,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *noteButton;
 @property (weak, nonatomic) IBOutlet UIButton *invoiceButton;
 @property (weak, nonatomic) IBOutlet UIButton *chatHistoryButton;
+@property (weak, nonatomic) IBOutlet UILabel *noPrevoisappointmentsLAbel;
 @property (weak, nonatomic) IBOutlet UIImageView *appointmentTypeimageview;
 @end

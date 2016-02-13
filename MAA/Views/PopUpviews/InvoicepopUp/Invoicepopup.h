@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface Invoicepopup : UIView
+
+@property (nonatomic, strong) id invoiceDetails;
 @property (weak, nonatomic) IBOutlet UILabel *invoiceNoLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *selectedTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *feeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeOfappointmentLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @end

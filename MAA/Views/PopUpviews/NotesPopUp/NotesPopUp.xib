@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NotesPopUp">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rzA-16-Mmu">
+                    <rect key="frame" x="0.0" y="10" width="600" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Q53-Wz-X3y"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NrA-JY-agS">
+                    <rect key="frame" x="0.0" y="60" width="600" height="540"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="NrA-JY-agS" secondAttribute="bottom" id="4Jy-bI-gN6"/>
+                <constraint firstAttribute="trailing" secondItem="rzA-16-Mmu" secondAttribute="trailing" id="FQL-66-sLt"/>
+                <constraint firstItem="NrA-JY-agS" firstAttribute="top" secondItem="rzA-16-Mmu" secondAttribute="bottom" id="JWo-p9-SUf"/>
+                <constraint firstItem="NrA-JY-agS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="QF9-rm-1SK"/>
+                <constraint firstItem="rzA-16-Mmu" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="10" id="bG4-br-6Sj"/>
+                <constraint firstAttribute="trailing" secondItem="NrA-JY-agS" secondAttribute="trailing" id="wuA-fx-bSi"/>
+                <constraint firstItem="rzA-16-Mmu" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xV5-D5-T7e"/>
+            </constraints>
+            <connections>
+                <outlet property="noteDescriptionLabel" destination="NrA-JY-agS" id="azJ-hT-erW"/>
+            </connections>
+            <point key="canvasLocation" x="260" y="278"/>
+        </view>
+    </objects>
+</document>

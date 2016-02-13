@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "NotesPopUp.h"
 #import "Invoicepopup.h"
 #import "AppoinmentDetailVC.h"
 
@@ -15,7 +16,9 @@
 @property (nonatomic, strong) NSArray *previousAppointmentsArray;
 @property (nonatomic, strong) UIView *topTransparentView;
 @property (nonatomic, strong) Invoicepopup *invoicePopupVew;
+@property (nonatomic, strong) NotesPopUp *notesPopupView;
 @property (nonatomic, strong) id invoiceDetails;
+@property (nonatomic, strong) NSString *notesString;
 @end
 
 @implementation AppoinmentDetailVC
@@ -55,6 +58,7 @@
 
 -(void)topTransparentViewTapGestureAction:(UITapGestureRecognizer *)tapGesture{
     [self.invoicePopupVew removeFromSuperview];
+    [self.notesPopupView removeFromSuperview];
     self.topTransparentView.hidden = YES;
 }
 /*
@@ -88,6 +92,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - Calling Appointment Detail Api
 
 -(void)getAppointmentsDetailsApi{
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
@@ -109,7 +114,14 @@
         [self settingTimeStampString:[[responseObject valueForKey:Datakey] valueForKey:@"timestamp"]];
         self.previousAppointmentsArray = [[responseObject valueForKey:Datakey] valueForKey:@"previous_appointments"];
         [self.previousAppointmentTableview reloadData];
+        if(self.previousAppointmentsArray.count == 0){
+            self.noPrevoisappointmentsLAbel.hidden = NO;
+        }
         self.invoiceDetails = [[responseObject valueForKey:Datakey] valueForKey:@"invoice"];
+        self.notesString = [[responseObject valueForKey:Datakey] valueForKey:@"notes"];
+        if(self.notesString.length == 0){
+            self.noteButton.hidden = YES;
+        }
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
        
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -236,8 +248,25 @@
     }
 }
 
+#pragma mark - Note Button Action
+
 - (IBAction)noteButtonAction:(id)sender {
+    self.topTransparentView.hidden = NO;
+    self.notesPopupView = [[[NSBundle mainBundle]
+                            loadNibNamed:@"NotesPopUp"
+                            owner:self options:nil]
+                           firstObject];
+    CGFloat xMargin = 10,yMargin = 150;
+    self.notesPopupView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
+    [self populatingNotesDetailsInInVoiceview];
+    [self.view addSubview:self.notesPopupView];
 }
+
+-(void)populatingNotesDetailsInInVoiceview{
+    self.notesPopupView.notesString  = self.notesString;
+}
+
+#pragma mark - Invoice Button Action
 
 - (IBAction)invoiceButtonAction:(UIButton *)sender {
     self.topTransparentView.hidden = NO;
@@ -252,60 +281,7 @@
 }
 
 -(void)populatingInvoiceDetailsInInVoiceview{
-    if(!([self.invoiceDetails valueForKey:@"invoice_no"] == [NSNull null])){
-        self.invoicePopupVew.invoiceNoLabel.text = [self.invoiceDetails valueForKey:@"invoice_no"];
-    }
-    else{
-        self.invoicePopupVew.invoiceNoLabel.text = @"";
-    }
-    if(!([self.invoiceDetails valueForKey:@"date"] == [NSNull null])){
-        self.invoicePopupVew.dateLabel.text = [self.invoiceDetails valueForKey:@"date"];
-    }
-    else{
-        self.invoicePopupVew.dateLabel.text = @"";
-    }
-    if(!([self.invoiceDetails valueForKey:@"time"] == [NSNull null])){
-        self.invoicePopupVew.selectedTimeLabel.text = [self.invoiceDetails valueForKey:@"time"];
-    }
-    else{
-        self.invoicePopupVew.selectedTimeLabel.text = @"";
-    }
-    if(!([self.invoiceDetails valueForKey:@"amount"] == [NSNull null])){
-       self.invoicePopupVew.feeLabel.text =  [self.invoiceDetails valueForKey:@"amount"];
-    }
-    else{
-       self.invoicePopupVew.feeLabel.text = @"";
-    }
-    if(!([self.invoiceDetails valueForKey:@"location"] == [NSNull null])){
-        self.invoicePopupVew.locationLabel.text = [self.invoiceDetails valueForKey:@"location"];
-    }
-    else{
-        self.invoicePopupVew.locationLabel.text = @"";
-    }
-    if(!([self.invoiceDetails valueForKey:@"status"] == [NSNull null])){
-        self.invoicePopupVew.statusLabel.text = [self.invoiceDetails valueForKey:@"status"];
-    }
-    else{
-        self.invoicePopupVew.statusLabel.text = @"";
-    }
-    if(!([self.invoiceDetails valueForKey:@"type"] == [NSNull null])){
-        NSString *typeString = [self.invoiceDetails valueForKey:@"type"];
-        if([typeString isEqualToString:@"1"]){
-            self.invoicePopupVew.typeOfappointmentLabel.text = @"Direct Appointment";
-        }
-        else if ([typeString isEqualToString:@"2"]){
-            self.invoicePopupVew.typeOfappointmentLabel.text = @"Text Chat";
-        }
-        else if ([typeString isEqualToString:@"3"]){
-            self.invoicePopupVew.typeOfappointmentLabel.text = @"Audio Call";
-        }
-        else if ([typeString isEqualToString:@"4"]){
-            self.invoicePopupVew.typeOfappointmentLabel.text = @"Video Call";
-        }
-    }
-    else{
-      self.invoicePopupVew.typeOfappointmentLabel.text = @"";
-    }
+    self.invoicePopupVew.invoiceDetails = self.invoiceDetails;
 }
 
 - (IBAction)chatHistorybuttonAction:(UIButton *)sender {
