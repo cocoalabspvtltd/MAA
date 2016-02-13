@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
     UITabBarItem *tabBarItem = [self.tabBar.items objectAtIndex:0];
     UIImage *unselectedImage = [UIImage imageNamed:@"home"];
     UIImage *selectedImage = [UIImage imageNamed:@"home-a"];

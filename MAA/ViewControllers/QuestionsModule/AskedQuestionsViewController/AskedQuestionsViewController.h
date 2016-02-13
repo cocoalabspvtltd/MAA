@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "AskedQuestionsTVC.h"
+#import "BaseViewController.h"
 
-@interface AskedQuestionsViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
+@interface AskedQuestionsViewController : BaseViewController<UITableViewDelegate,UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UIImageView *floatimage;
 @property (weak, nonatomic) IBOutlet UIButton *floatbutton;
 @property (weak, nonatomic) IBOutlet UISearchBar *askedQuestionsSearchBar;

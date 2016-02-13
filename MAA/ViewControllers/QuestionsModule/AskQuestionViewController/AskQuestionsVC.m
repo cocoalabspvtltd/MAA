@@ -8,7 +8,7 @@
 
 #import "AskQuestionsVC.h"
 
-@interface AskQuestionsVC ()
+@interface AskQuestionsVC ()<UITabBarControllerDelegate,UITabBarDelegate>
 
 @end
 
@@ -18,6 +18,7 @@
 {
     _tblCategories.hidden=YES;
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -38,7 +39,6 @@
 - (IBAction)askButtonAction:(UIButton *)sender {
     [self callingAskQuestionApi];
 }
-
 
 #pragma mark - Ask Question api
 

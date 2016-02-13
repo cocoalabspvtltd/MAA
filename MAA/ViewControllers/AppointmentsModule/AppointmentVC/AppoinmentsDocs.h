@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface AppoinmentsDocs : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface AppoinmentsDocs : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblAppoinments;
 @property (weak, nonatomic) IBOutlet UIButton *btnFilter;
 @property (weak, nonatomic) IBOutlet UIView *ChildView;

@@ -30,19 +30,29 @@
     self.floatimage.layer.cornerRadius = self.floatimage.frame.size.width / 2;
     self.floatimage.clipsToBounds = YES;
     [self.tblquestions registerNib:[UINib nibWithNibName:@"View" bundle:nil] forCellReuseIdentifier:AskedQuestionsTableViewCell];
-    [self callingGetQuestionsWithText:@""];
-    
     // Do any additional setup after loading the view.
 }
 
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    if(tabBarController.selectedIndex == 3){
+       [self initialisingApiParameters];
+    }
+}
+
 -(void)initialisation{
-    self.offsetValue = 0;
-    self.limitValue = 10;
     self.searchText = @"";
-    self.isTextSearchValueChanged = NO;
+    [self initialisingApiParameters];
     self.questionsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+}
+
+-(void)initialisingApiParameters{
+    self.offsetValue = 0;
+    self.limitValue = 10;
+    self.isTextSearchValueChanged = NO;
+    [self.questionsMutableArray removeAllObjects];
+    [self callingGetQuestionsWithText:self.searchText];
 }
 
 -(void)addSubViews{

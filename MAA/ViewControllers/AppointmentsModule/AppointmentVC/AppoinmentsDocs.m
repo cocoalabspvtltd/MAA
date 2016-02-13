@@ -41,7 +41,6 @@ NSString *flag=0;
     _tblAppoinments.delegate=self;
     [self initialisation];
     [self addSubViews];
-    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:@""];
     DDL=@[@"Any",@"Audio Call",@"Video Call",@"Direct Appoinment",@"Chat"];
     
     [self.tblAppoinments registerNib:[UINib nibWithNibName:@"ViewAppoin" bundle:nil] forCellReuseIdentifier:AppointmentTableViewCellIdentifier];
@@ -49,15 +48,27 @@ NSString *flag=0;
 }
 
 -(void)initialisation{
-    self.offsetValue = 0;
-    self.limitValue = 10;
+    self.searchTextString = @"";
+    [self initialisingApiParameters];
     self.searchBar.delegate = self;
-    self.isSearchtextChanged = NO;
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     self.appointmentDoctorsMutableArray = [[NSMutableArray alloc] init];
 }
 
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    if(tabBarController.selectedIndex == 2){
+        [self initialisingApiParameters];
+    }
+}
+
+-(void)initialisingApiParameters{
+    self.offsetValue = 0;
+    self.limitValue = 10;
+    self.isSearchtextChanged = NO;
+    [self.appointmentDoctorsMutableArray removeAllObjects];
+    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString];
+}
 -(void)addSubViews{
     [self.view addSubview:self.bottomProgressIndicatorView];
 }

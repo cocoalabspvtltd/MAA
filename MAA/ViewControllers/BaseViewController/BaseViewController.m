@@ -8,7 +8,7 @@
 
 #import "BaseViewController.h"
 
-@interface BaseViewController ()
+@interface BaseViewController ()<UITabBarControllerDelegate>
 
 @end
 
@@ -22,6 +22,10 @@
 
 -(void)initView{
     [self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+  self.tabBarController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
