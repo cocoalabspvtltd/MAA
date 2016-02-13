@@ -10,5 +10,9 @@
 
 @interface PhotoGridViewController : UIViewController<UICollectionViewDataSource,UICollectionViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *photoCollectionView;
-
+@property (nonatomic, assign) BOOL isFromMedicalRegitrationFromDR;
+@property (nonatomic, assign) BOOL isFromMedicalDegreeFromDR;
+@property (nonatomic, assign) BOOL isFromGovernmentIdFromDR;
+@property (weak, nonatomic) IBOutlet UIButton *uploadPhotosButton;
+@property (nonatomic, assign) BOOL isFromPrescriptionLetterFromDR;
 @end

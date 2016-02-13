@@ -11,7 +11,7 @@
 
 @interface DoctorRegistrationVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic,assign) BOOL isMedicalRegistarionDocumentButtonSelected;
-@property (nonatomic,assign) BOOL isMedicalRegistarionButtonSelected;
+@property (nonatomic,assign) BOOL isCertificatemedicalDegreeButtonSelected;
 @property (nonatomic,assign) BOOL governmentIdproofButtonSelected;
 @property (nonatomic, assign) BOOL presriptionHeaderCopyButtonSelected;
 @end
@@ -40,29 +40,29 @@
 
 - (IBAction)medicalregistationDocumnetbuttonAction:(UIButton *)sender {
     self.isMedicalRegistarionDocumentButtonSelected = YES;
-    self.isMedicalRegistarionButtonSelected = NO;
+    self.isCertificatemedicalDegreeButtonSelected = NO;
     self.governmentIdproofButtonSelected = NO;
     self.presriptionHeaderCopyButtonSelected = NO;
     [self addingActionSheet];
 }
 
-- (IBAction)medicalRegistrationbuttonAction:(UIButton *)sender {
+- (IBAction)certificateMedicalDegreeRegistrationbuttonAction:(UIButton *)sender {
     self.isMedicalRegistarionDocumentButtonSelected = NO;
-    self.isMedicalRegistarionButtonSelected = YES;
+    self.isCertificatemedicalDegreeButtonSelected = YES;
     self.governmentIdproofButtonSelected = NO;
     self.presriptionHeaderCopyButtonSelected = NO;
     [self addingActionSheet];
 }
 - (IBAction)governmentIdProofButtonAction:(UIButton *)sender {
     self.isMedicalRegistarionDocumentButtonSelected = NO;
-    self.isMedicalRegistarionButtonSelected = NO;
+    self.isCertificatemedicalDegreeButtonSelected = NO;
     self.governmentIdproofButtonSelected = YES;
     self.presriptionHeaderCopyButtonSelected = NO;
     [self addingActionSheet];
 }
 - (IBAction)prescriptionLetterHeaderCopyButtonAction:(UIButton *)sender {
     self.isMedicalRegistarionDocumentButtonSelected = NO;
-    self.isMedicalRegistarionButtonSelected = NO;
+    self.isCertificatemedicalDegreeButtonSelected = NO;
     self.governmentIdproofButtonSelected = NO;
     self.presriptionHeaderCopyButtonSelected = YES;
     [self addingActionSheet];
@@ -113,6 +113,10 @@
     else if(buttonIndex == 1){
         UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
         PhotoGridViewController *photoGridViewCntrlr = [sb instantiateViewControllerWithIdentifier:@"PhotoGridViewController"];
+        photoGridViewCntrlr.isFromMedicalRegitrationFromDR = self.isMedicalRegistarionDocumentButtonSelected;
+        photoGridViewCntrlr.isFromMedicalDegreeFromDR = self.isCertificatemedicalDegreeButtonSelected;
+        photoGridViewCntrlr.isFromGovernmentIdFromDR = self.governmentIdproofButtonSelected;
+        photoGridViewCntrlr.isFromPrescriptionLetterFromDR = self.presriptionHeaderCopyButtonSelected;
         [self presentViewController:photoGridViewCntrlr animated:YES completion:nil];
 //        [self.navigationController pushViewController:photoGridViewCntrlr animated:YES];
         photoGridViewCntrlr.title = @"Gallery Photos";

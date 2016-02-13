@@ -16,20 +16,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="253" height="134"/>
                         <color key="backgroundColor" red="1" green="0.14530435229999999" blue="0.17924686770000001" alpha="1" colorSpace="calibratedRGB"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tick-red.png" translatesAutoresizingMaskIntoConstraints="NO" id="uu4-0P-qJb">
+                        <rect key="frame" x="102" y="42" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="6ym-Rt-cGG"/>
+                            <constraint firstAttribute="width" constant="50" id="i2X-Qc-g8h"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstItem="uu4-0P-qJb" firstAttribute="centerY" secondItem="1HF-uR-GHA" secondAttribute="centerY" id="F6Y-Nk-iE3"/>
                 <constraint firstItem="1HF-uR-GHA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="GjL-iD-Ua2"/>
                 <constraint firstAttribute="bottom" secondItem="1HF-uR-GHA" secondAttribute="bottom" id="Kij-fK-n9b"/>
+                <constraint firstItem="uu4-0P-qJb" firstAttribute="centerX" secondItem="1HF-uR-GHA" secondAttribute="centerX" id="Xy2-SX-3ov"/>
                 <constraint firstAttribute="trailing" secondItem="1HF-uR-GHA" secondAttribute="trailing" id="iI5-ac-pp5"/>
                 <constraint firstItem="1HF-uR-GHA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="yIN-c3-Eat"/>
             </constraints>
             <size key="customSize" width="253" height="134"/>
             <connections>
                 <outlet property="photoImageView" destination="1HF-uR-GHA" id="YBj-gj-tnH"/>
+                <outlet property="tickImageView" destination="uu4-0P-qJb" id="47L-Ur-XqY"/>
             </connections>
             <point key="canvasLocation" x="153.5" y="367"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="tick-red.png" width="50" height="50"/>
+    </resources>
 </document>

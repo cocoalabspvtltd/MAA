@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PhotogridCollectionViewCell : UICollectionViewCell
-
+@property (weak, nonatomic) IBOutlet UIImageView *tickImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *photoImageView;
 @end
