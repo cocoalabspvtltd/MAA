@@ -17,7 +17,6 @@
 #define ForgotPasswordUrlForMobileOTP @"send_otp"
 #define RegisterUrl @"sign_up"
 #define VerifyOTPurl @"verify_otp"
-#define ResetPasswordUrl @"reset"
 #define CheckEmailExistUrl @"check_email_exist"
 #define EditAccountInfoUrl @"edit_account_info"
 

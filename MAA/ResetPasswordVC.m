@@ -65,24 +65,21 @@
     return valid;
 }
 
-#pragma mark - Reset password api
+#pragma mark - Calling Edit Account Info api
 
 -(void)callingResetPasswordApi{
-    NSString *resetPasswordUrlString = [Baseurl stringByAppendingString:ResetPasswordUrl];
-    NSMutableDictionary *resetPasswordMutableDictionary = [[NSMutableDictionary alloc] init];
-    [resetPasswordMutableDictionary setValue:self.passwordtextField.text forKey:@"oldpassword"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:resetPasswordUrlString] withBody:resetPasswordMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
-    [[NetworkHandler sharedHandler]startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"Response Object:%@",responseObject);
+    NSString *editAccountInfoUrlString = [Baseurl stringByAppendingString:EditAccountInfoUrl];
+    NSMutableDictionary *editAccountInfoMutableDictionary = [[NSMutableDictionary alloc] init];
+    [editAccountInfoMutableDictionary setValue:self.passwordtextField.text forKey:@"pwd"];
+   // [editAccountInfoMutableDictionary setValue:self.tokenString forKey:@"token"];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response object:%@",responseObject);
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        UIAlertView *passwordresetSuccessfulAlert = [[UIAlertView alloc] initWithTitle:AppName message:@"Password reset successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [passwordresetSuccessfulAlert show];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        if([[responseObject valueForKey:StatusKey] isEqualToString:ERROR]){
-            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:AppName message:[responseObject valueForKey:ErrorMessagekey] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [errorAlert show];
-        }
-        else{
-            [self.navigationController popToRootViewControllerAnimated:YES];
-        }
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -97,6 +94,7 @@
         [erroralert show];
     }];
 }
+
 - (IBAction)backButtonAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

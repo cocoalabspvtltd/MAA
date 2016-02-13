@@ -6,9 +6,13 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#define TypeCodeForRegisterAsAuser @"1"
+#define TypeCodeForRegisterAsADoctor @"2"
+
 #define Usertext @"You can use this application for Searching Doctors, to make Appointments With them, to Consult them Online, ask Health related questions and to review the Doctors"
 #define RegisterdPractiotionarText @"Use can use this application for conducting online appointments with patients."
 
+#import "DoctorRegistrationVC.h"
 #import "SelectUsageViewController.h"
 
 @interface SelectUsageViewController ()
@@ -40,12 +44,12 @@
     if([self.termsOfServiceButton isSelected]){
         if([self.doctoSelectionButton isSelected]){
             if(self.isUsertypeStatusNull){
-                [self callingEditAccountInfoApiWithTypeString:@"2"];
+                [self callingEditAccountInfoApiWithTypeString:TypeCodeForRegisterAsADoctor];
             }
         }
         else if ([self.userSelectionButton isSelected]){
             if(self.isUsertypeStatusNull){
-                [self callingEditAccountInfoApiWithTypeString:@"1"];
+                [self callingEditAccountInfoApiWithTypeString:TypeCodeForRegisterAsAuser];
             }
         }
     }
@@ -90,7 +94,12 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response object:%@",responseObject);
-        [self settingHomePage];
+        if([typeString isEqualToString:TypeCodeForRegisterAsAuser]){
+            [self settingHomePage];
+        }
+        else if([typeString isEqualToString:TypeCodeForRegisterAsADoctor]){
+            [self settingDoctorRegistrationPage];
+        }
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -114,4 +123,10 @@
  
 }
 
+
+-(void)settingDoctorRegistrationPage{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    DoctorRegistrationVC *doctorRegistrationVC = (DoctorRegistrationVC *)[storyboard instantiateViewControllerWithIdentifier:@"DoctorRegistrationVC"];
+    [self.navigationController pushViewController:doctorRegistrationVC animated:YES];
+}
 @end
