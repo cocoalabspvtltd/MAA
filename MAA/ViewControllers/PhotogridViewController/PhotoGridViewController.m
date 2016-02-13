@@ -99,6 +99,7 @@
             [self.selectedGalleryphotosArray removeObject:[self.galleryPhotosArray objectAtIndex:self.previousIndexPath.row]];
         }
     }
+    self.previousIndexPath = indexPath;
     selectedCell.tickImageView.hidden = NO;
     [self.selectedGalleryphotosArray addObject:[self.galleryPhotosArray objectAtIndex:indexPath.row]];
 }
