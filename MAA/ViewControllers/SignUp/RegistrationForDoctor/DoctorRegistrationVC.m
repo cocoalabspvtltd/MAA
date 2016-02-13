@@ -8,7 +8,7 @@
 
 #import "DoctorRegistrationVC.h"
 
-@interface DoctorRegistrationVC ()
+@interface DoctorRegistrationVC ()<UIActionSheetDelegate>
 
 @end
 
@@ -33,18 +33,47 @@
     // Pass the selected object to the new view controller.
 }
 */
-- (IBAction)backButtonAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 - (IBAction)medicalregistationDocumnetbuttonAction:(UIButton *)sender {
+    [self addingActionSheet];
 }
 
 - (IBAction)medicalRegistrationbuttonAction:(UIButton *)sender {
+    [self addingActionSheet];
 }
 - (IBAction)governmentIdProofButtonAction:(UIButton *)sender {
+    [self addingActionSheet];
 }
 - (IBAction)prescriptionLetterHeaderCopyButtonAction:(UIButton *)sender {
+    [self addingActionSheet];
 }
+
+
+#pragma mark - Adding Action Sheet
+
+-(void)addingActionSheet{
+    NSString *actionSheetTitle = @"Choose Photos"; //Action Sheet Title
+    NSString *cameraTitle = @"Camera"; //Action Sheet Button Titles
+    NSString *galleryTitle = @"Gallery";
+    NSString *cancelTitle = @"Cancel";
+    UIActionSheet *actionSheet;
+    actionSheet = [[UIActionSheet alloc]
+                   initWithTitle:actionSheetTitle
+                   delegate:self
+                   cancelButtonTitle:cancelTitle
+                   destructiveButtonTitle:cameraTitle
+                   otherButtonTitles:galleryTitle, nil];
+    [actionSheet showInView:self.view];
+}
+
+
+
+
 - (IBAction)submitButtonAction:(UIButton *)sender {
 }
+
+- (IBAction)backButtonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 @end
