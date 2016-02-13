@@ -19,6 +19,10 @@
 #define VerifyOTPurl @"verify_otp"
 #define ResetPasswordUrl @"reset"
 #define CheckEmailExistUrl @"check_email_exist"
+#define EditAccountInfoUrl @"edit_account_info"
+
+
+
 #define GetCategoriesUrl @"get_categories"
 #define GetDoctorListApi @"auto_complete"
 #define SearchDoctorsBasedOnLocationApi @"search_location"

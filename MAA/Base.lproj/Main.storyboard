@@ -15715,10 +15715,10 @@
             </objects>
             <point key="canvasLocation" x="13914" y="4347"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Usage View Controller-->
         <scene sceneID="uLZ-A4-Rud">
             <objects>
-                <viewController id="j86-GA-yFN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SelectUsageViewController" id="j86-GA-yFN" customClass="SelectUsageViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9O0-Tv-Aav"/>
                         <viewControllerLayoutGuide type="bottom" id="bij-Ei-2ro"/>
@@ -15745,6 +15745,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="Back:" destination="0b7-lr-BLz" eventType="touchUpInside" id="14b-uU-YAh"/>
+                                            <action selector="backButtonAction:" destination="j86-GA-yFN" eventType="touchUpInside" id="7hY-hm-ZCN"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Usage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H81-RS-Ho6">
@@ -15806,6 +15807,9 @@
                                     <constraint firstAttribute="height" constant="30" id="GLo-4g-hKW"/>
                                     <constraint firstAttribute="width" constant="30" id="oDv-eU-kcy"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="registeredPractitionerCheckButtonAction:" destination="j86-GA-yFN" eventType="touchUpInside" id="hYq-au-L0z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Xz-vas">
                                 <rect key="frame" x="15" y="179" width="30" height="30"/>
@@ -15813,6 +15817,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Zz0-sZ-8uN"/>
                                     <constraint firstAttribute="width" constant="30" id="bYf-9E-Qtu"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="userCheckButtonAction:" destination="j86-GA-yFN" eventType="touchUpInside" id="tbz-s6-yBS"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-zg-Coo">
                                 <rect key="frame" x="20" y="244" width="560" height="29"/>
@@ -15837,6 +15844,9 @@
                                             <constraint firstAttribute="width" constant="20" id="18q-Xw-CjL"/>
                                             <constraint firstAttribute="height" constant="20" id="EjL-KN-hkx"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="termsofServiceButtonAction:" destination="j86-GA-yFN" eventType="touchUpInside" id="AIL-Zk-FaR"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I Accept terms of service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Blt-qz-9Ql">
                                         <rect key="frame" x="25" y="0.0" width="152" height="20"/>
@@ -15852,6 +15862,9 @@
                                 <state key="normal" title="PROCEED">
                                     <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="proceddButtonAction:" destination="j86-GA-yFN" eventType="touchUpInside" id="Tfo-TI-Fu3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQj-06-Y9D">
                                 <rect key="frame" x="243" y="368" width="114" height="30"/>
@@ -15896,6 +15909,12 @@
                             <constraint firstItem="uNH-Rr-tGy" firstAttribute="centerY" secondItem="jce-yk-yg1" secondAttribute="centerY" id="yWY-Ra-7zk"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="eAa-zg-Coo" id="P5B-m1-kUB"/>
+                        <outlet property="doctoSelectionButton" destination="vh4-wU-cTz" id="woe-W0-Stg"/>
+                        <outlet property="termsOfServiceButton" destination="eT9-JX-ssM" id="xtr-Zn-nsZ"/>
+                        <outlet property="userSelectionButton" destination="5Rg-Xz-vas" id="Vp7-xW-i6x"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPI-nX-1Ke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

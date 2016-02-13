@@ -239,12 +239,13 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:registerApiUrlString] withBody:registerMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSLog(@"Response object;%@",responseObject);
         if([[responseObject valueForKey:StatusKey] isEqualToString:ERROR]){
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:AppName message:[responseObject valueForKey:ErrorMessagekey] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [errorAlert show];
         }
         else{
-            [self settingOTPPage];
+            [self callingSendOTPApi];
         }
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -310,5 +311,32 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+#pragma mark - Calling Send OTP api
+
+-(void)callingSendOTPApi{
+    NSMutableDictionary *sendOtpDictionary = [[NSMutableDictionary alloc] init];
+    [sendOtpDictionary setValue:self.phoneNumberString forKey:@"phone"];
+    NSString *sendOTPUrlString = [Baseurl stringByAppendingString:ForgotPasswordUrlForMobileOTP];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:sendOTPUrlString] withBody:sendOtpDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSLog(@"Response object;%@",responseObject);
+           [self settingOTPPage];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+ 
+}
 
 @end

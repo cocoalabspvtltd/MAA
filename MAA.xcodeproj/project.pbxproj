@@ -85,6 +85,7 @@
 		C08437F61C6EEEA900610ADC /* NotesPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437F51C6EEEA900610ADC /* NotesPopUp.m */; };
 		C08437F81C6EEEC100610ADC /* NotesPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08437F71C6EEEC100610ADC /* NotesPopUp.xib */; };
 		C08437FC1C6F019600610ADC /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437FB1C6F019600610ADC /* AskQuestionsVC.m */; };
+		C08438061C6F3DAC00610ADC /* SelectUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08438051C6F3DAC00610ADC /* SelectUsageViewController.m */; };
 		C086ED021C285D25009DF69F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED011C285D25009DF69F /* CoreData.framework */; };
 		C086ED041C285D30009DF69F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED031C285D30009DF69F /* MobileCoreServices.framework */; };
 		C086ED061C285D3D009DF69F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED051C285D3D009DF69F /* SystemConfiguration.framework */; };
@@ -339,6 +340,8 @@
 		C08437F71C6EEEC100610ADC /* NotesPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotesPopUp.xib; sourceTree = "<group>"; };
 		C08437FA1C6F019600610ADC /* AskQuestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsVC.h; sourceTree = "<group>"; };
 		C08437FB1C6F019600610ADC /* AskQuestionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsVC.m; sourceTree = "<group>"; };
+		C08438041C6F3DAC00610ADC /* SelectUsageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectUsageViewController.h; sourceTree = "<group>"; };
+		C08438051C6F3DAC00610ADC /* SelectUsageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectUsageViewController.m; sourceTree = "<group>"; };
 		C086ECFD1C285BEF009DF69F /* MAA-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MAA-Prefix.pch"; sourceTree = "<group>"; };
 		C086ED011C285D25009DF69F /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		C086ED031C285D30009DF69F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -721,6 +724,7 @@
 		9F2B0E0F1C65DFBF0053D023 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C08437FF1C6F3CE500610ADC /* SignUp */,
 				C0BBC48F1C6E2BED005083B1 /* AppointmentsModule */,
 				9F5F0C441C66604100F7E99D /* SettingsModule */,
 				9F5F0C311C665D3100F7E99D /* QuestionsModule */,
@@ -1040,6 +1044,23 @@
 				C08437FB1C6F019600610ADC /* AskQuestionsVC.m */,
 			);
 			path = AskQuestionViewController;
+			sourceTree = "<group>";
+		};
+		C08437FF1C6F3CE500610ADC /* SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				C08438031C6F3D7100610ADC /* Selectusage */,
+			);
+			path = SignUp;
+			sourceTree = "<group>";
+		};
+		C08438031C6F3D7100610ADC /* Selectusage */ = {
+			isa = PBXGroup;
+			children = (
+				C08438041C6F3DAC00610ADC /* SelectUsageViewController.h */,
+				C08438051C6F3DAC00610ADC /* SelectUsageViewController.m */,
+			);
+			path = Selectusage;
 			sourceTree = "<group>";
 		};
 		C08BF4541C66086F0047DC49 /* dummyicons */ = {
@@ -1502,6 +1523,7 @@
 				7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */,
 				9F5F0C381C665D3100F7E99D /* QuestionsSDetailVC.m in Sources */,
 				55D352DB1C0B45E1008CCEC1 /* AppointmentPageVC.m in Sources */,
+				C08438061C6F3DAC00610ADC /* SelectUsageViewController.m in Sources */,
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,
 				9F5F0C5F1C66676B00F7E99D /* SettingsTableViewCell.m in Sources */,
 				9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */,
