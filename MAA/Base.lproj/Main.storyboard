@@ -15496,6 +15496,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="Back:" destination="0b7-lr-BLz" eventType="touchUpInside" id="9Nv-NZ-H1O"/>
+                                            <action selector="backButtonAction:" destination="eMW-sP-txl" eventType="touchUpInside" id="T84-yt-KuX"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Doc's Registration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8S-ur-M9P">
@@ -15576,7 +15577,7 @@
                                     <constraint firstAttribute="height" constant="3" id="gV0-7g-XFQ"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The folloeing files are to be attached (as image)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lk-O5-tyz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The following files are to be attached (as image)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lk-O5-tyz">
                                 <rect key="frame" x="8" y="249" width="582" height="16"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -15596,6 +15597,9 @@
                                     <constraint firstAttribute="height" constant="30" id="olS-0n-jbf"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="back_white"/>
+                                <connections>
+                                    <action selector="medicalregistationDocumnetbuttonAction:" destination="eMW-sP-txl" eventType="touchUpInside" id="EZZ-bp-vB2"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Certificate of Medical Degree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rui-EV-CYP">
                                 <rect key="frame" x="10" y="329" width="527" height="20"/>
@@ -15611,6 +15615,9 @@
                                     <constraint firstAttribute="height" constant="30" id="YKS-p1-Pdn"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="back_white"/>
+                                <connections>
+                                    <action selector="medicalRegistrationbuttonAction:" destination="eMW-sP-txl" eventType="touchUpInside" id="BIu-P5-j2l"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Govt.ID Proof" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8iD-2O-L2v">
                                 <rect key="frame" x="10" y="369" width="527" height="20"/>
@@ -15626,6 +15633,9 @@
                                     <constraint firstAttribute="height" constant="30" id="Hed-iR-5cx"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="back_white"/>
+                                <connections>
+                                    <action selector="governmentIdProofButtonAction:" destination="eMW-sP-txl" eventType="touchUpInside" id="oYF-CZ-UAQ"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prescription Letter Head Copy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79r-ro-M12">
                                 <rect key="frame" x="10" y="407" width="527" height="20"/>
@@ -15641,6 +15651,9 @@
                                     <constraint firstAttribute="width" constant="30" id="wsN-cc-vfu"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="back_white"/>
+                                <connections>
+                                    <action selector="prescriptionLetterHeaderCopyButtonAction:" destination="eMW-sP-txl" eventType="touchUpInside" id="h2N-Ej-gid"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtb-0f-h1s">
                                 <rect key="frame" x="527" y="551" width="53" height="29"/>
@@ -15648,6 +15661,9 @@
                                 <state key="normal" title="SUBMIT">
                                     <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="submitButtonAction:" destination="eMW-sP-txl" eventType="touchUpInside" id="I8O-x6-j5M"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -15710,10 +15726,15 @@
                             <constraint firstItem="Nxz-it-fgN" firstAttribute="trailing" secondItem="wKv-eY-UZu" secondAttribute="trailingMargin" id="yCc-oa-0Tn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="issueingTextField" destination="fwI-S3-0nU" id="bk0-Ua-jLZ"/>
+                        <outlet property="registrationTextField" destination="jWu-BR-QEH" id="N6x-PR-NJh"/>
+                        <outlet property="tagLineTextField" destination="7rS-zu-XKo" id="HeU-6Z-iN6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d8Y-Cn-zHu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="13914" y="4347"/>
+            <point key="canvasLocation" x="14590" y="4373"/>
         </scene>
         <!--Select Usage View Controller-->
         <scene sceneID="uLZ-A4-Rud">
@@ -15918,7 +15939,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tPI-nX-1Ke" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="14535" y="4347"/>
+            <point key="canvasLocation" x="13905" y="4366"/>
         </scene>
     </scenes>
     <resources>

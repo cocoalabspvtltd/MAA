@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DoctorRegistrationVC : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *tagLineTextField;
+@property (weak, nonatomic) IBOutlet UITextField *registrationTextField;
 
+@property (weak, nonatomic) IBOutlet UITextField *issueingTextField;
 @end

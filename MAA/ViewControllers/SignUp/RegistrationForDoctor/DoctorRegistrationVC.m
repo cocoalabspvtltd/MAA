@@ -33,5 +33,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)backButtonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)medicalregistationDocumnetbuttonAction:(UIButton *)sender {
+}
 
+- (IBAction)medicalRegistrationbuttonAction:(UIButton *)sender {
+}
+- (IBAction)governmentIdProofButtonAction:(UIButton *)sender {
+}
+- (IBAction)prescriptionLetterHeaderCopyButtonAction:(UIButton *)sender {
+}
+- (IBAction)submitButtonAction:(UIButton *)sender {
+}
 @end
