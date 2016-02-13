@@ -6,10 +6,14 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "PhotoGridViewController.h"
 #import "DoctorRegistrationVC.h"
 
-@interface DoctorRegistrationVC ()<UIActionSheetDelegate>
-
+@interface DoctorRegistrationVC ()<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@property (nonatomic,assign) BOOL isMedicalRegistarionDocumentButtonSelected;
+@property (nonatomic,assign) BOOL isMedicalRegistarionButtonSelected;
+@property (nonatomic,assign) BOOL governmentIdproofButtonSelected;
+@property (nonatomic, assign) BOOL presriptionHeaderCopyButtonSelected;
 @end
 
 @implementation DoctorRegistrationVC
@@ -35,16 +39,32 @@
 */
 
 - (IBAction)medicalregistationDocumnetbuttonAction:(UIButton *)sender {
+    self.isMedicalRegistarionDocumentButtonSelected = YES;
+    self.isMedicalRegistarionButtonSelected = NO;
+    self.governmentIdproofButtonSelected = NO;
+    self.presriptionHeaderCopyButtonSelected = NO;
     [self addingActionSheet];
 }
 
 - (IBAction)medicalRegistrationbuttonAction:(UIButton *)sender {
+    self.isMedicalRegistarionDocumentButtonSelected = NO;
+    self.isMedicalRegistarionButtonSelected = YES;
+    self.governmentIdproofButtonSelected = NO;
+    self.presriptionHeaderCopyButtonSelected = NO;
     [self addingActionSheet];
 }
 - (IBAction)governmentIdProofButtonAction:(UIButton *)sender {
+    self.isMedicalRegistarionDocumentButtonSelected = NO;
+    self.isMedicalRegistarionButtonSelected = NO;
+    self.governmentIdproofButtonSelected = YES;
+    self.presriptionHeaderCopyButtonSelected = NO;
     [self addingActionSheet];
 }
 - (IBAction)prescriptionLetterHeaderCopyButtonAction:(UIButton *)sender {
+    self.isMedicalRegistarionDocumentButtonSelected = NO;
+    self.isMedicalRegistarionButtonSelected = NO;
+    self.governmentIdproofButtonSelected = NO;
+    self.presriptionHeaderCopyButtonSelected = YES;
     [self addingActionSheet];
 }
 
@@ -56,8 +76,7 @@
     NSString *cameraTitle = @"Camera"; //Action Sheet Button Titles
     NSString *galleryTitle = @"Gallery";
     NSString *cancelTitle = @"Cancel";
-    UIActionSheet *actionSheet;
-    actionSheet = [[UIActionSheet alloc]
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
                    initWithTitle:actionSheetTitle
                    delegate:self
                    cancelButtonTitle:cancelTitle
@@ -66,6 +85,56 @@
     [actionSheet showInView:self.view];
 }
 
+#pragma mark - Action sheet Delegates
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    if(buttonIndex == 0){
+        if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            
+            UIAlertView *noCameraAlertView = [[UIAlertView alloc] initWithTitle:AppName
+                                                                        message:@"Device has no camera"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles: nil];
+            
+            [noCameraAlertView show];
+            
+        }
+        else{
+            if([[CLUtilities standardUtilities] goToCamera]){
+                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                [self presentViewController:picker animated:YES completion:NULL];
+            }
+        }
+    }
+    else if(buttonIndex == 1){
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+        PhotoGridViewController *photoGridViewCntrlr = [sb instantiateViewControllerWithIdentifier:@"PhotoGridViewController"];
+        [self presentViewController:photoGridViewCntrlr animated:YES completion:nil];
+//        [self.navigationController pushViewController:photoGridViewCntrlr animated:YES];
+        photoGridViewCntrlr.title = @"Gallery Photos";
+    }
+    
+}
+
+#pragma mark - Image Picker Delegates
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    //UIImage *chosenImage  = [[CLUtilities standardUtilities] scaleAndRotateImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
+ //   NSData *imageData = UIImageJPEGRepresentation(chosenImage, 0.5);
+//    [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:GiftImageKeyForUserDefaults];
+//    [[NSUserDefaults standardUserDefaults] synchronize];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
 
 
 
