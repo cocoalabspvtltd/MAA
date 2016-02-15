@@ -82,6 +82,11 @@
 		C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0071C6A010A0095E2CC /* video_camera_none.png */; };
 		C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0091C6A011C0095E2CC /* phone_none.png */; };
 		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
+		C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C381C71B96C00662BB4 /* ViewProfileVC.m */; };
+		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
+		C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C401C71EC5300662BB4 /* professionalInfo.xib */; };
+		C0447C431C71F43F00662BB4 /* proinfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C421C71F43F00662BB4 /* proinfo.xib */; };
+		C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C441C71F79500662BB4 /* proinfo2.xib */; };
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
@@ -340,6 +345,13 @@
 		C005F0091C6A011C0095E2CC /* phone_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_none.png; sourceTree = "<group>"; };
 		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
 		C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Doc'sAccntInfo.m"; sourceTree = "<group>"; };
+		C0447C371C71B96C00662BB4 /* ViewProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileVC.h; sourceTree = "<group>"; };
+		C0447C381C71B96C00662BB4 /* ViewProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewProfileVC.m; sourceTree = "<group>"; };
+		C0447C3D1C71EB2200662BB4 /* specialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = specialCell.h; sourceTree = "<group>"; };
+		C0447C3E1C71EB2200662BB4 /* specialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = specialCell.m; sourceTree = "<group>"; };
+		C0447C401C71EC5300662BB4 /* professionalInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = professionalInfo.xib; sourceTree = "<group>"; };
+		C0447C421C71F43F00662BB4 /* proinfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = proinfo.xib; sourceTree = "<group>"; };
+		C0447C441C71F79500662BB4 /* proinfo2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = proinfo2.xib; sourceTree = "<group>"; };
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
@@ -1036,6 +1048,13 @@
 				C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */,
 				C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */,
 				C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */,
+				C0447C371C71B96C00662BB4 /* ViewProfileVC.h */,
+				C0447C381C71B96C00662BB4 /* ViewProfileVC.m */,
+				C0447C401C71EC5300662BB4 /* professionalInfo.xib */,
+				C0447C441C71F79500662BB4 /* proinfo2.xib */,
+				C0447C421C71F43F00662BB4 /* proinfo.xib */,
+				C0447C3D1C71EB2200662BB4 /* specialCell.h */,
+				C0447C3E1C71EB2200662BB4 /* specialCell.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -1443,6 +1462,7 @@
 				C0BBC4CD1C6E6544005083B1 /* InvoicePopup.xib in Resources */,
 				C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */,
 				C0BBC4B61C6E5B8E005083B1 /* video-black@3x.png in Resources */,
+				C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */,
 				C0BBC47F1C6E2AE7005083B1 /* ques-a@3x.png in Resources */,
 				C0BBC4AE1C6E5B8E005083B1 /* audio-black.png in Resources */,
 				C0BBC4B11C6E5B8E005083B1 /* chat-black.png in Resources */,
@@ -1471,6 +1491,8 @@
 				C0BBC4B01C6E5B8E005083B1 /* audio-black@3x.png in Resources */,
 				C0BBC4C81C6E64D6005083B1 /* settings.png in Resources */,
 				C08437F81C6EEEC100610ADC /* NotesPopUp.xib in Resources */,
+				C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */,
+				C0447C431C71F43F00662BB4 /* proinfo.xib in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
 				55D60D911C08B94600963D5D /* LaunchScreen.storyboard in Resources */,
 				C0BBC4AF1C6E5B8E005083B1 /* audio-black@2x.png in Resources */,
@@ -1548,8 +1570,10 @@
 				9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */,
 				C0BBC4971C6E2C5E005083B1 /* AppoinmentDetailVC.m in Sources */,
 				9F5F0C561C66672300F7E99D /* MBProgressHUD.m in Sources */,
+				C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				C0BBC4A01C6E4046005083B1 /* AppointmentTableViewCell.m in Sources */,
+				C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */,
 				9F5F0C431C665F6D00F7E99D /* AskedQuestionsTVC.m in Sources */,
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
 				C0BBC4A21C6E4046005083B1 /* PreviousAppoinmentCell.m in Sources */,
