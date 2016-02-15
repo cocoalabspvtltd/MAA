@@ -22,7 +22,9 @@
 
 @implementation ViewProfileVC
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+    self.viewProfessional.hidden=YES;
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
@@ -42,9 +44,23 @@
 }
 */
 
-- (IBAction)personal:(id)sender {
+- (IBAction)personal:(id)sender
+{
+    if (self.viewPersonal.hidden==YES) {
+        self.viewPersonal.hidden=NO;
+        
+    }
+    else
+        self.viewPersonal.hidden=YES;
+    
 }
 
-- (IBAction)professional:(id)sender {
+- (IBAction)professional:(id)sender
+{
+    if (self.viewProfessional.hidden==YES) {
+        self.viewProfessional.hidden=NO;
+    }
+    else
+        self.viewProfessional.hidden=YES;
 }
 @end
