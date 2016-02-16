@@ -26,8 +26,8 @@
 }
 
 -(void)initWindow{
-   
-    UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+  
+   UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
     if(![self isLoggedIn]){
         UINavigationController *navigationController = [sb instantiateViewControllerWithIdentifier:@"LogInNavigationController"];
         self.window.rootViewController = navigationController;

@@ -13,5 +13,9 @@
 - (IBAction)professional:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *viewPersonal;
 @property (weak, nonatomic) IBOutlet UIView *viewProfessional;
+@property (weak, nonatomic) IBOutlet UIImageView *imgprofile;
+@property (weak, nonatomic) IBOutlet UIButton *btnpersonal;
+@property (weak, nonatomic) IBOutlet UIButton *btnprofessional;
+@property (weak, nonatomic) IBOutlet UIScrollView *scroller;
 
 @end

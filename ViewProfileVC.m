@@ -26,6 +26,10 @@
 {
     self.viewProfessional.hidden=YES;
     [super viewDidLoad];
+    self.imgprofile.layer.cornerRadius = self.imgprofile.frame.size.width / 2;
+    self.imgprofile.clipsToBounds = YES;
+    self.btnpersonal.backgroundColor=[UIColor redColor];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -44,23 +48,37 @@
 }
 */
 
+-(void) viewDidLayoutSubviews
+{
+    if (self.viewPersonal.hidden==NO) {
+        [_scroller setContentSize:CGSizeMake(self.view.frame.size.width, 870)];
+
+    }
+    else if (self.viewProfessional.hidden==NO)
+        [_scroller setContentSize:CGSizeMake(self.view.frame.size.width, 1432)];
+ 
+        
+}
+
 - (IBAction)personal:(id)sender
 {
-    if (self.viewPersonal.hidden==YES) {
-        self.viewPersonal.hidden=NO;
-        
-    }
-    else
-        self.viewPersonal.hidden=YES;
     
-}
+    
+    
+        self.viewProfessional.hidden=YES;
+        self.btnprofessional.backgroundColor=[UIColor clearColor];
+        self.btnpersonal.backgroundColor=[UIColor redColor];
+        [_scroller setContentSize:CGSizeMake(self.view.frame.size.width, 870)];
+        
+    
+
+   }
 
 - (IBAction)professional:(id)sender
 {
-    if (self.viewProfessional.hidden==YES) {
         self.viewProfessional.hidden=NO;
-    }
-    else
-        self.viewProfessional.hidden=YES;
+        self.btnprofessional.backgroundColor=[UIColor redColor];
+        self.btnpersonal.backgroundColor=[UIColor clearColor];
+        [_scroller setContentSize:CGSizeMake(self.view.frame.size.width, 1432)];
 }
 @end
