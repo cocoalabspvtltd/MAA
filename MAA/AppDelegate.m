@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "LoginPageVC.h"
+#import "DoctorRegistrationVC.h"
 #import "CLFacebookHandler/FacebookWrapper.h"
 @interface AppDelegate ()
 
@@ -26,7 +27,13 @@
 }
 
 -(void)initWindow{
-  
+    
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+//    DoctorRegistrationVC *doctorRegistrationVC = (DoctorRegistrationVC *)[storyboard instantiateViewControllerWithIdentifier:@"DoctorRegistrationVC"];
+//    UINavigationController *doctorRegistrationnvCntlr = [[UINavigationController alloc] initWithRootViewController:doctorRegistrationVC];
+//    self.window.rootViewController = doctorRegistrationnvCntlr;
+    //[self.navigationController pushViewController:doctorRegistrationVC animated:YES];
+
    UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
     if(![self isLoggedIn]){
         UINavigationController *navigationController = [sb instantiateViewControllerWithIdentifier:@"LogInNavigationController"];

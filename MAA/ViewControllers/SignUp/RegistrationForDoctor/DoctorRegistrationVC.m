@@ -117,8 +117,8 @@
         photoGridViewCntrlr.isFromMedicalDegreeFromDR = self.isCertificatemedicalDegreeButtonSelected;
         photoGridViewCntrlr.isFromGovernmentIdFromDR = self.governmentIdproofButtonSelected;
         photoGridViewCntrlr.isFromPrescriptionLetterFromDR = self.presriptionHeaderCopyButtonSelected;
-        [self presentViewController:photoGridViewCntrlr animated:YES completion:nil];
-//        [self.navigationController pushViewController:photoGridViewCntrlr animated:YES];
+        //[self presentViewController:photoGridViewCntrlr animated:YES completion:nil];
+        [self.navigationController pushViewController:photoGridViewCntrlr animated:YES];
         photoGridViewCntrlr.title = @"Gallery Photos";
     }
     

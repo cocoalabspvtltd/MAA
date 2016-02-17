@@ -34,6 +34,7 @@
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.photoCollectionView reloadData];
     }];
+    self.navigationController.navigationBarHidden = NO;
     // Do any additional setup after loading the view.
 }
 
@@ -117,6 +118,56 @@
 }
 
 - (IBAction)uploadButtonAction:(UIButton *)sender {
+    if(self.selectedGalleryphotosArray.count == 0){
+        [self callingAlertViewControllerWithString:@"Please select Photos to upload"];
+    }
+    else{
+        if(self.isFromMedicalRegitrationFromDR){
+            NSString *folderPath = [NSString stringWithFormat:FolderPathForDoctorRegistration];
+            UIImage *convertedImage = [self convertingMedicalregistrationImageAsset:[self.selectedGalleryphotosArray objectAtIndex:0]];
+            NSString *imagePath = [[ImageCache sharedCache] addImage:convertedImage toFolder:folderPath toCacheWithIdentifier:MedicalRegistratioCertificateIdentifier];
+            NSLog(@"Image path:%@",imagePath);
+        }
+        else if(self.isFromMedicalDegreeFromDR){
+            NSString *folderPath = [NSString stringWithFormat:FolderPathForDoctorRegistration];
+            UIImage *convertedImage = [self convertingMedicalregistrationImageAsset:[self.selectedGalleryphotosArray objectAtIndex:0]];
+            [[ImageCache sharedCache] addImage:convertedImage toFolder:folderPath toCacheWithIdentifier:MedicalDegreeCertificateidentifier];
+        }
+        else if(self.isFromGovernmentIdFromDR){
+            NSString *folderPath = [NSString stringWithFormat:FolderPathForDoctorRegistration];
+            UIImage *convertedImage = [self convertingMedicalregistrationImageAsset:[self.selectedGalleryphotosArray objectAtIndex:0]];
+            [[ImageCache sharedCache] addImage:convertedImage toFolder:folderPath toCacheWithIdentifier:GovernmentIdCertifiateIdentifier];
+        }
+        else if(self.isFromPrescriptionLetterFromDR){
+            NSString *folderPath = [NSString stringWithFormat:FolderPathForDoctorRegistration];
+            UIImage *convertedImage = [self convertingMedicalregistrationImageAsset:[self.selectedGalleryphotosArray objectAtIndex:0]];
+            [[ImageCache sharedCache] addImage:convertedImage toFolder:folderPath toCacheWithIdentifier:PrescriptionletterCertificateIdentifier];
+        }
+
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+-(UIImage *)convertingMedicalregistrationImageAsset:(ALAsset *)imageAsset{
+    ALAsset * asset = imageAsset;
+    return [UIImage imageWithCGImage:[asset thumbnail]];
+}
+
+-(void)callingAlertViewControllerWithString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 /*

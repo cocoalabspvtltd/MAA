@@ -33,3 +33,14 @@ static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen"
 #define keywordkey @"keyword"
 #define monthkey @"month"
 #define yearkey @"year"
+
+#pragma mark - Folder Paths
+
+#define FolderPathForDoctorRegistration @"Maa/Photos/DoctorRegistarionTempFolder"
+
+#pragma mark - Image Identifiers
+
+#define MedicalRegistratioCertificateIdentifier @"MedicalRegistrationCertificateidentifier"
+#define MedicalDegreeCertificateidentifier @"MedicalDegreeCertificateidentifier"
+#define GovernmentIdCertifiateIdentifier @"GovernmentIdCertificateIdentifier"
+#define PrescriptionletterCertificateIdentifier @"PrescriptionLetterIdentifier"
