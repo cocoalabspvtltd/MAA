@@ -121,7 +121,7 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
     if(self.bodyDictionary.count !=0) {
         [urlRequest setHTTPBody:[[RequestBodyGenerator sharedBodyGenerator]requestBodyGeneratorWith:self.bodyDictionary]];
     }
-    urlRequest.timeoutInterval = 20;
+    urlRequest.timeoutInterval = 200;
     self.requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
     [self.requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         success([NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]);
