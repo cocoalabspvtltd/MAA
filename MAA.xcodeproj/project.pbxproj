@@ -106,6 +106,7 @@
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
 		C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */; };
 		C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */; };
+		C0AED7311C74E4AB007E602B /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AED72E1C74E213007E602B /* libNetworkHandler.a */; };
 		C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8D1C08B94600963D5D /* Assets.xcassets */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
@@ -113,7 +114,6 @@
 		C0BAF0261C319FE3002F3137 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0251C319FE3002F3137 /* UIKit.framework */; };
 		C0BAF0281C319FEB002F3137 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0271C319FEB002F3137 /* Foundation.framework */; };
 		C0BAF02A1C31A005002F3137 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0291C31A005002F3137 /* CoreTelephony.framework */; };
-		C0BAF02F1C31A175002F3137 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF02C1C31A175002F3137 /* libNetworkHandler.a */; };
 		C0BBC4711C6E2AE7005083B1 /* cal-a.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC4531C6E2AE7005083B1 /* cal-a.png */; };
 		C0BBC4721C6E2AE7005083B1 /* cal-a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC4541C6E2AE7005083B1 /* cal-a@2x.png */; };
 		C0BBC4731C6E2AE7005083B1 /* cal-a@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC4551C6E2AE7005083B1 /* cal-a@3x.png */; };
@@ -405,10 +405,6 @@
 		C0BAF0251C319FE3002F3137 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C0BAF0271C319FEB002F3137 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C0BAF0291C31A005002F3137 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		C0BAF02B1C31A175002F3137 /* CLAlertHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CLAlertHandler.h; path = NwkHndler/CLAlertHandler.h; sourceTree = "<group>"; };
-		C0BAF02C1C31A175002F3137 /* libNetworkHandler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libNetworkHandler.a; path = NwkHndler/libNetworkHandler.a; sourceTree = "<group>"; };
-		C0BAF02D1C31A175002F3137 /* NetworkHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NetworkHandler.h; path = NwkHndler/NetworkHandler.h; sourceTree = "<group>"; };
-		C0BAF02E1C31A175002F3137 /* RequestBodyGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RequestBodyGenerator.h; path = NwkHndler/RequestBodyGenerator.h; sourceTree = "<group>"; };
 		C0BBC4531C6E2AE7005083B1 /* cal-a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-a.png"; sourceTree = "<group>"; };
 		C0BBC4541C6E2AE7005083B1 /* cal-a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-a@2x.png"; sourceTree = "<group>"; };
 		C0BBC4551C6E2AE7005083B1 /* cal-a@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cal-a@3x.png"; sourceTree = "<group>"; };
@@ -484,6 +480,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AED7311C74E4AB007E602B /* libNetworkHandler.a in Frameworks */,
 				7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */,
 				C0BAF02A1C31A005002F3137 /* CoreTelephony.framework in Frameworks */,
 				C0BAF0281C319FEB002F3137 /* Foundation.framework in Frameworks */,
@@ -491,7 +488,6 @@
 				C0BAF0241C319FC0002F3137 /* CoreLocation.framework in Frameworks */,
 				C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */,
 				C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */,
-				C0BAF02F1C31A175002F3137 /* libNetworkHandler.a in Frameworks */,
 				C086ED061C285D3D009DF69F /* SystemConfiguration.framework in Frameworks */,
 				C086ED041C285D30009DF69F /* MobileCoreServices.framework in Frameworks */,
 				C086ED021C285D25009DF69F /* CoreData.framework in Frameworks */,
@@ -640,10 +636,6 @@
 				C0BCBB591C59377A003F7872 /* fc_right.png */,
 				9F5E72751C38334C00B86477 /* Clinic Page */,
 				9FA914AB1C3797D400BDCB5D /* Doctor Profile */,
-				C0BAF02B1C31A175002F3137 /* CLAlertHandler.h */,
-				C0BAF02C1C31A175002F3137 /* libNetworkHandler.a */,
-				C0BAF02D1C31A175002F3137 /* NetworkHandler.h */,
-				C0BAF02E1C31A175002F3137 /* RequestBodyGenerator.h */,
 				C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */,
 				C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */,
 				55D60D8A1C08B94600963D5D /* Main.storyboard */,
