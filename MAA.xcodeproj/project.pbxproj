@@ -190,6 +190,20 @@
 			remoteGlobalIDString = 55D60D7D1C08B94600963D5D;
 			remoteInfo = MAA;
 		};
+		C0AED72D1C74E213007E602B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F191A3031AAD5B270003BBEF;
+			remoteInfo = NetworkHandler;
+		};
+		C0AED72F1C74E213007E602B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F191A30E1AAD5B280003BBEF;
+			remoteInfo = NetworkHandlerTests;
+		};
 		C0BE97A41C2485C40037E328 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */;
@@ -384,6 +398,7 @@
 		C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesList.m; sourceTree = "<group>"; };
 		C09BC2081C64BB7B00DAD2C4 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
+		C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkHandler.xcodeproj; path = NetworkHandlerFullFrameWork/NetworkHandler.xcodeproj; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C0BAF0231C319FC0002F3137 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -826,6 +841,7 @@
 		9F5F0C2A1C66573D00F7E99D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */,
 				C08438131C6F79A200610ADC /* Utilities */,
 				9F5F0C531C66672300F7E99D /* SimpleLoadingView */,
 				9F5F0C2C1C66589E00F7E99D /* GetGalleryPhotos */,
@@ -1142,6 +1158,15 @@
 			name = dummyicons;
 			sourceTree = "<group>";
 		};
+		C0AED7291C74E213007E602B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C0AED72E1C74E213007E602B /* libNetworkHandler.a */,
+				C0AED7301C74E213007E602B /* NetworkHandlerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		C0BBC4521C6E2AE7005083B1 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1406,6 +1431,10 @@
 					ProductGroup = C0BE97AB1C24862D0037E328 /* Products */;
 					ProjectRef = C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */;
 				},
+				{
+					ProductGroup = C0AED7291C74E213007E602B /* Products */;
+					ProjectRef = C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1417,6 +1446,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		C0AED72E1C74E213007E602B /* libNetworkHandler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libNetworkHandler.a;
+			remoteRef = C0AED72D1C74E213007E602B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C0AED7301C74E213007E602B /* NetworkHandlerTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = NetworkHandlerTests.xctest;
+			remoteRef = C0AED72F1C74E213007E602B /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
