@@ -17,6 +17,7 @@
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, strong) NSMutableArray *categoriesMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
+@property (readonly) OTConnection *otConnection;
 @end
 
 @implementation HomePageVC

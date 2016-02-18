@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <OpenTok/OpenTok.h>
+
 
 @interface HomePageVC : UIViewController
 
