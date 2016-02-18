@@ -45,6 +45,17 @@
     self.questionsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    [self addingGesturerecognizerToView];
+}
+
+-(void)addingGesturerecognizerToView{
+    UITapGestureRecognizer *tapgetureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    tapgetureRecognizer.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer:tapgetureRecognizer];
+}
+
+-(void)tapGestureAction:(UITapGestureRecognizer *)tapgesture{
+    [self.view endEditing:YES];
 }
 
 -(void)initialisingApiParameters{

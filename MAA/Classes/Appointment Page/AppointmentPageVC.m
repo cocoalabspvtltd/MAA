@@ -49,6 +49,7 @@
     
 }
 
+
 -(void)viewWillLayoutSubviews{
     self.bottomProgressIndicatorView.frame = CGRectMake(self.view.frame.size.width/2 - 5, self.view.frame.size.height - 20, 10, 10);
 }
