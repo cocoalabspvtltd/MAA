@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <OpenTok/OpenTok.h>
+#import "BaseViewController.h"
 
 
-@interface HomePageVC : UIViewController
+@interface HomePageVC : BaseViewController
 
 {
     IBOutlet UISearchBar *searchBar;

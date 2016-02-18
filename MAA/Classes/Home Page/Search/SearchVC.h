@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BaseViewController.h"
 
-@interface SearchVC : UIViewController
+@interface SearchVC : BaseViewController
 
 {
     IBOutlet UITableView *tableViewSearch;
