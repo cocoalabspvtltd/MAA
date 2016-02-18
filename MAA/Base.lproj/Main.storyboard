@@ -4567,8 +4567,8 @@
                                 <color key="onTintColor" red="0.92941176470588238" green="0.69803921568627447" blue="0.69803921568627447" alpha="0.348792109929078" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" red="0.82745098039215681" green="0.18431372549019609" blue="0.18431372549019609" alpha="1" colorSpace="calibratedRGB"/>
                             </switch>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="yzA-OZ-b58">
-                                <rect key="frame" x="0.0" y="97" width="600" height="336"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="yzA-OZ-b58">
+                                <rect key="frame" x="0.0" y="97" width="600" height="379"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="0.0" reuseIdentifier="settingsReusableCell" rowHeight="50" id="Vah-eD-6c8" customClass="SettingsTableViewCell">
@@ -4645,7 +4645,7 @@
                         <constraints>
                             <constraint firstItem="yzA-OZ-b58" firstAttribute="top" secondItem="TNq-d5-24i" secondAttribute="bottom" constant="8" id="4lX-je-H0S"/>
                             <constraint firstItem="ROV-5l-tF5" firstAttribute="top" secondItem="ggF-fD-bpP" secondAttribute="bottom" constant="8" id="5jp-wv-74P"/>
-                            <constraint firstItem="Zel-S1-tnN" firstAttribute="top" secondItem="yzA-OZ-b58" secondAttribute="bottom" constant="43" id="B87-RD-G16"/>
+                            <constraint firstItem="Zel-S1-tnN" firstAttribute="top" secondItem="yzA-OZ-b58" secondAttribute="bottom" id="B87-RD-G16"/>
                             <constraint firstItem="hbJ-0I-sHU" firstAttribute="top" secondItem="Zel-S1-tnN" secondAttribute="bottom" constant="13" id="CGD-mm-M2N"/>
                             <constraint firstAttribute="trailing" secondItem="TNq-d5-24i" secondAttribute="trailing" constant="20" id="Xw1-54-EKj"/>
                             <constraint firstItem="yzA-OZ-b58" firstAttribute="leading" secondItem="wy8-e6-Owo" secondAttribute="leading" id="b7E-1x-59q"/>
@@ -4703,7 +4703,7 @@
         <!--Settings Navigation Controller-->
         <scene sceneID="TdG-L3-QlO">
             <objects>
-                <navigationController title="Settings Navigation Controller" id="aTa-yT-2Z4" sceneMemberID="viewController">
+                <navigationController title="Settings Navigation Controller" navigationBarHidden="YES" id="aTa-yT-2Z4" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" id="HyD-8w-VJI"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="pWp-V3-9rH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
