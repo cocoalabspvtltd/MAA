@@ -54,7 +54,7 @@ NSString *flag=0;
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     self.appointmentDoctorsMutableArray = [[NSMutableArray alloc] init];
-    [self  addingGesturerecognizerToView];
+   // [self  addingGesturerecognizerToView];
 }
 
 -(void)addingGesturerecognizerToView{

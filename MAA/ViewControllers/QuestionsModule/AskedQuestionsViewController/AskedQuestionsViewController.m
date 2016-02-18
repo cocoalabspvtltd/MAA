@@ -45,7 +45,7 @@
     self.questionsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-    [self addingGesturerecognizerToView];
+    //[self addingGesturerecognizerToView];
 }
 
 -(void)addingGesturerecognizerToView{
