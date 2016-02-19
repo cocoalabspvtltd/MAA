@@ -241,6 +241,8 @@
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
 		C0CD39081C75DA5000D31828 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CD39071C75DA5000D31828 /* categories.xib */; };
 		C0CD390F1C75DF8800D31828 /* categoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CD390E1C75DF8800D31828 /* categoryCell.xib */; };
+		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
+		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -607,6 +609,9 @@
 		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		C0CD39071C75DA5000D31828 /* categories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categories.xib; sourceTree = "<group>"; };
 		C0CD390E1C75DF8800D31828 /* categoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categoryCell.xib; sourceTree = "<group>"; };
+		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
+		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
+		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1201,6 +1206,9 @@
 				C0447C3E1C71EB2200662BB4 /* specialCell.m */,
 				C0CD39071C75DA5000D31828 /* categories.xib */,
 				C0CD390E1C75DF8800D31828 /* categoryCell.xib */,
+				C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */,
+				C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */,
+				C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -1764,6 +1772,7 @@
 				C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */,
 				C0BBC47E1C6E2AE7005083B1 /* ques-a@2x.png in Resources */,
 				C0BBC4831C6E2AE7005083B1 /* search-a.png in Resources */,
+				C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */,
 				7C9FF5531C1F4D2400C72512 /* 1.png in Resources */,
 				7C8AD8641C18BBA500C4E3BD /* 4.png in Resources */,
 				C09EF6D61C76211800806600 /* _index.scss in Resources */,
@@ -1985,6 +1994,7 @@
 				7C9FF5561C1F5F9A00C72512 /* SearchFilterVC.m in Sources */,
 				9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */,
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,
+				C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
