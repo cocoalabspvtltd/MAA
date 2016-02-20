@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface AppoinmentDetailDocVC : UIViewController
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *heightOfTblAllergy;
 @property (weak, nonatomic) IBOutlet UIScrollView *Scroller;
 @property (weak, nonatomic) IBOutlet UIView *profileView;
 @property (weak, nonatomic) IBOutlet UIView *prescriptionView;
