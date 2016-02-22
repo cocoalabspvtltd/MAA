@@ -239,9 +239,11 @@
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
-		C0CD39081C75DA5000D31828 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CD39071C75DA5000D31828 /* categories.xib */; };
-		C0CD390F1C75DF8800D31828 /* categoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CD390E1C75DF8800D31828 /* categoryCell.xib */; };
 		C0E71FB11C7B0B240038BFF5 /* myHealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FB01C7B0B240038BFF5 /* myHealthProfileVC.m */; };
+		C0E71FBE1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */; };
+		C0E71FBF1C7B4E6E0038BFF5 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */; };
+		C0E71FCD1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FCB1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m */; };
+		C0E71FCE1C7B50350038BFF5 /* categoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E71FCC1C7B50350038BFF5 /* categoryCell.xib */; };
 		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
 		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
 /* End PBXBuildFile section */
@@ -608,10 +610,14 @@
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		C0CD39071C75DA5000D31828 /* categories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categories.xib; sourceTree = "<group>"; };
-		C0CD390E1C75DF8800D31828 /* categoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categoryCell.xib; sourceTree = "<group>"; };
 		C0E71FAF1C7B0B240038BFF5 /* myHealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHealthProfileVC.h; sourceTree = "<group>"; };
 		C0E71FB01C7B0B240038BFF5 /* myHealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myHealthProfileVC.m; sourceTree = "<group>"; };
+		C0E71FBB1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsCategoryView.h; sourceTree = "<group>"; };
+		C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsCategoryView.m; sourceTree = "<group>"; };
+		C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categories.xib; sourceTree = "<group>"; };
+		C0E71FCA1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionCategosyTableViewCell.h; sourceTree = "<group>"; };
+		C0E71FCB1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionCategosyTableViewCell.m; sourceTree = "<group>"; };
+		C0E71FCC1C7B50350038BFF5 /* categoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categoryCell.xib; sourceTree = "<group>"; };
 		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
 		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
 		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
@@ -1030,6 +1036,7 @@
 		9F5F0C3A1C665E1D00F7E99D /* QuestionsModuleCells */ = {
 			isa = PBXGroup;
 			children = (
+				C0E71FC91C7B50350038BFF5 /* AskQuestionCategoryTableViewCell */,
 				9F5F0C3B1C665E1D00F7E99D /* AskedQuestionsCell */,
 			);
 			path = QuestionsModuleCells;
@@ -1207,8 +1214,6 @@
 				C0447C441C71F79500662BB4 /* proinfo2.xib */,
 				C0447C3D1C71EB2200662BB4 /* specialCell.h */,
 				C0447C3E1C71EB2200662BB4 /* specialCell.m */,
-				C0CD39071C75DA5000D31828 /* categories.xib */,
-				C0CD390E1C75DF8800D31828 /* categoryCell.xib */,
 				C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */,
 				C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */,
 				C0E71FAF1C7B0B240038BFF5 /* myHealthProfileVC.h */,
@@ -1582,6 +1587,7 @@
 		C0BBC4BE1C6E63EE005083B1 /* PopUpviews */ = {
 			isa = PBXGroup;
 			children = (
+				C0E71FBA1C7B4E6E0038BFF5 /* QuestionsCategoriesview */,
 				C08437F01C6EEE9300610ADC /* NotesPopUp */,
 				C0BBC4CB1C6E6544005083B1 /* InvoicepopUp */,
 			);
@@ -1613,6 +1619,26 @@
 				C0BE97B11C24862D0037E328 /* libCLToolKit.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C0E71FBA1C7B4E6E0038BFF5 /* QuestionsCategoriesview */ = {
+			isa = PBXGroup;
+			children = (
+				C0E71FBB1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.h */,
+				C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */,
+				C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */,
+			);
+			path = QuestionsCategoriesview;
+			sourceTree = "<group>";
+		};
+		C0E71FC91C7B50350038BFF5 /* AskQuestionCategoryTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0E71FCA1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.h */,
+				C0E71FCB1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m */,
+				C0E71FCC1C7B50350038BFF5 /* categoryCell.xib */,
+			);
+			path = AskQuestionCategoryTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1799,7 +1825,6 @@
 				C09EF6D11C76211800806600 /* OTStreamVideoType.html in Resources */,
 				C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */,
 				C09EF6D01C76211800806600 /* OTSessionErrorCode.html in Resources */,
-				C0CD390F1C75DF8800D31828 /* categoryCell.xib in Resources */,
 				C09EF6F11C76211800806600 /* OTVideoCapture.html in Resources */,
 				C09EF6E11C76211800806600 /* disclosure.png in Resources */,
 				C09EF6F21C76211800806600 /* OTVideoCaptureConsumer.html in Resources */,
@@ -1828,6 +1853,7 @@
 				C09EF6E71C76211800806600 /* OTAudioBus.html in Resources */,
 				C09EF6C31C76211800806600 /* OTStream.html in Resources */,
 				C09EF6F01C76211800806600 /* OTSubscriberKitNetworkStatsDelegate.html in Resources */,
+				C0E71FBF1C7B4E6E0038BFF5 /* categories.xib in Resources */,
 				C0BCBB631C59405D003F7872 /* angle-down.png in Resources */,
 				C0BBC4811C6E2AE7005083B1 /* ques@2x.png in Resources */,
 				7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */,
@@ -1882,7 +1908,6 @@
 				C09EF6CA1C76211800806600 /* OTCameraCaptureFrameRate.html in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0BBC4851C6E2AE7005083B1 /* search-a@3x.png in Resources */,
-				C0CD39081C75DA5000D31828 /* categories.xib in Resources */,
 				C09EF6E51C76211800806600 /* index.html in Resources */,
 				C0BBC4781C6E2AE7005083B1 /* home-a@2x.png in Resources */,
 				C09EF6D41C76211800806600 /* OTVideoOrientation.html in Resources */,
@@ -1893,6 +1918,7 @@
 				C09EF6BF1C76211800806600 /* OTError.html in Resources */,
 				C09EF6DC1C76211800806600 /* _xcode.scss in Resources */,
 				C0BBC4871C6E2AE7005083B1 /* search@2x.png in Resources */,
+				C0E71FCE1C7B50350038BFF5 /* categoryCell.xib in Resources */,
 				C0BBC4BA1C6E5C82005083B1 /* direct-apnt-black@2x.png in Resources */,
 				C09EF6E21C76211800806600 /* disclosure_open.png in Resources */,
 				C0BBC4821C6E2AE7005083B1 /* ques@3x.png in Resources */,
@@ -1944,6 +1970,7 @@
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,
 				C09EF6F71C76211800806600 /* README.md in Sources */,
 				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
+				C0E71FBE1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m in Sources */,
 				7C8AD8561C18A8FC00C4E3BD /* HomePageCVC.m in Sources */,
 				9F5F0C6B1C6668FF00F7E99D /* MedicalDocumantsCVC.m in Sources */,
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
@@ -1951,6 +1978,7 @@
 				C0BBC4D01C6E65BB005083B1 /* Invoicepopup.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
+				C0E71FCD1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m in Sources */,
 				9F5F0C6A1C6668FF00F7E99D /* HealthProfileUserPhotosCVC.m in Sources */,
 				9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */,
 				C0BBC4971C6E2C5E005083B1 /* AppoinmentDetailVC.m in Sources */,
