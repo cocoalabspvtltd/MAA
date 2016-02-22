@@ -85,10 +85,10 @@
     NSMutableDictionary *logInDictionary = [[NSMutableDictionary alloc] init];
     NSString *passwordInSh1 = [self sha1:textFieldPassword.text];
    
-    //[logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
-    [logInDictionary setValue:@"anju@gmail.com" forKey:@"uname"];
-    [logInDictionary setValue:@"admin" forKey:@"pwd"];
-    //[logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
+    [logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
+   // [logInDictionary setValue:@"anju@gmail.com" forKey:@"uname"];
+   // [logInDictionary setValue:@"admin123" forKey:@"pwd"];
+    [logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
     NSLog(@"Log In Dictionary:%@",logInDictionary);
     NSLog(@"Log In url:%@",logInUrlString);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

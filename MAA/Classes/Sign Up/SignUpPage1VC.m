@@ -98,7 +98,8 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString *checkEmailUrlString = [Baseurl stringByAppendingString:CheckEmailExistUrl];
     NSMutableDictionary *checkEmailmutableDictionary = [[NSMutableDictionary alloc] init];
-    [checkEmailmutableDictionary setValue:textFieldEmail.text forKey:@"email"];
+    [checkEmailmutableDictionary setValue:textFieldEmail.text forKey:@"email"];\
+    [checkEmailmutableDictionary setValue:textFieldPhone.text forKey:@"phone"];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:checkEmailUrlString] withBody:checkEmailmutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response object:%@",responseObject);
