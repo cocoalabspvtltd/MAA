@@ -126,7 +126,8 @@ NSString *flag=0;
         cell.statusString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"status"];
         return cell;
     }
-    else{
+    else
+    {
         static NSString *TableIdentifier=@"TableItem";
         UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:TableIdentifier];
         if (cell==nil)

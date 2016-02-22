@@ -43,7 +43,7 @@
 - (IBAction)Others:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tblPrescriptions;
 @property (weak, nonatomic) IBOutlet UIImageView *imgFloat;
-- (IBAction)FoatAddPrescription:(id)sender;
+- (IBAction)FloatAddPrescription:(id)sender;
 
 
 @end

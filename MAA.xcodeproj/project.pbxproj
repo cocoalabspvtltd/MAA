@@ -241,6 +241,7 @@
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
 		C0CD39081C75DA5000D31828 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CD39071C75DA5000D31828 /* categories.xib */; };
 		C0CD390F1C75DF8800D31828 /* categoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0CD390E1C75DF8800D31828 /* categoryCell.xib */; };
+		C0E71FB11C7B0B240038BFF5 /* myHealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FB01C7B0B240038BFF5 /* myHealthProfileVC.m */; };
 		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
 		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
 /* End PBXBuildFile section */
@@ -609,6 +610,8 @@
 		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		C0CD39071C75DA5000D31828 /* categories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categories.xib; sourceTree = "<group>"; };
 		C0CD390E1C75DF8800D31828 /* categoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categoryCell.xib; sourceTree = "<group>"; };
+		C0E71FAF1C7B0B240038BFF5 /* myHealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHealthProfileVC.h; sourceTree = "<group>"; };
+		C0E71FB01C7B0B240038BFF5 /* myHealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myHealthProfileVC.m; sourceTree = "<group>"; };
 		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
 		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
 		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
@@ -1208,6 +1211,8 @@
 				C0CD390E1C75DF8800D31828 /* categoryCell.xib */,
 				C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */,
 				C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */,
+				C0E71FAF1C7B0B240038BFF5 /* myHealthProfileVC.h */,
+				C0E71FB01C7B0B240038BFF5 /* myHealthProfileVC.m */,
 				C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
@@ -1999,6 +2004,7 @@
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
+				C0E71FB11C7B0B240038BFF5 /* myHealthProfileVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
 				7C0981D81C1E661600B1BE99 /* SearchResultsVC.m in Sources */,
 				C08438161C6F79A200610ADC /* CLUtilities.m in Sources */,

@@ -11,6 +11,7 @@
 @interface AppoinmentDetailDocVC ()<UITableViewDelegate,UITableViewDataSource>
 {
     NSArray *DummyAllergy;
+    //CGFloat height;
 }
 
 @end
@@ -19,12 +20,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    DummyAllergy=@[@"aaa",@"aaa",@"aaa",@"aaa",@"aaa"];
+    DummyAllergy=@[@"aaa",@"aaa",@"aaa",@"aaa"];
     self.prescriptionView.hidden=YES;
     _btnProfile.backgroundColor=[UIColor redColor];
     _tblAllergies.delegate=self;
     _tblAllergies.dataSource=self;
-  
+    
+    self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
+    self.imgFloat.clipsToBounds = YES;
     
     // Do any additional setup after loading the view.
 }
@@ -72,17 +75,6 @@
 }
 
 
--(void) viewDidLayoutSubviews
-{
-   // if (self.viewPersonal.hidden==NO) {
-        [_Scroller setContentSize:CGSizeMake(self.view.frame.size.width,705)];
-    
-  //  }
-  //  else if (self.viewProfessional.hidden==NO)
-      //  [_Scroller setContentSize:CGSizeMake(self.view.frame.size.width, self.profileView.frame.size.height)];
-    
-    
-}
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -92,14 +84,14 @@
 - (void)adjustHeightOfTableview
 {
     CGFloat height = self.tblAllergies.contentSize.height;
-    CGFloat maxHeight = self.tblAllergies.superview.frame.size.height - self.tblAllergies.frame.origin.y;
+ //   CGFloat maxHeight = self.tblAllergies.superview.frame.size.height - self.tblAllergies.frame.origin.y;
     
     // if the height of the content is greater than the maxHeight of
     // total space on the screen, limit the height to the size of the
     // superview.
     
-    if (height > maxHeight)
-        height = maxHeight;
+//    if (height > maxHeight)
+//        height = maxHeight;
     
     // now set the height constraint accordingly
     
@@ -108,6 +100,20 @@
         [self.view setNeedsUpdateConstraints];
     }];
 }
+
+-(void) viewDidLayoutSubviews
+{
+    // if (self.viewPersonal.hidden==NO) {
+    CGFloat  height = self.tblAllergies.contentSize.height+450;
+    [_Scroller setContentSize:CGSizeMake(self.view.frame.size.width,height)];
+    
+    //  }
+    //  else if (self.viewProfessional.hidden==NO)
+    //  [_Scroller setContentSize:CGSizeMake(self.view.frame.size.width, self.profileView.frame.size.height)];
+    
+    
+}
+
 
 - (IBAction)Profile:(id)sender
 {
@@ -150,8 +156,6 @@
 }
 - (IBAction)Others:(id)sender {
 }
-- (IBAction)AddPrescriptions:(id)sender {
-}
-- (IBAction)FoatAddPrescription:(id)sender {
+- (IBAction)FloatAddPrescription:(id)sender {
 }
 @end

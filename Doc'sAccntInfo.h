@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-
 @interface Doc_sAccntInfo : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *txtemail;
