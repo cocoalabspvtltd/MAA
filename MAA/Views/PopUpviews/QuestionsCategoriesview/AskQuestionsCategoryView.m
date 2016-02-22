@@ -32,7 +32,6 @@
 */
 
 -(void)setCategoriesArray:(NSArray *)categoriesArray{
-    NSLog(@"Categories Array:%@",categoriesArray);
     self.categoryListArray = categoriesArray;
     [self.categoriesTableView reloadData];
 }
@@ -60,6 +59,12 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 50;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.askQuestionsCategoryDelegate && [self.askQuestionsCategoryDelegate respondsToSelector:@selector(salectedCategoryWithIndex:withCategoryName:)]){
+        [self.askQuestionsCategoryDelegate salectedCategoryWithIndex:[[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"id"] withCategoryName:[[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+    }
 }
 
 @end

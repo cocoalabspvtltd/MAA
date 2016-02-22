@@ -9,9 +9,10 @@
 #import "AskQuestionsVC.h"
 #import "AskQuestionsCategoryView.h"
 
-@interface AskQuestionsVC ()<UITabBarControllerDelegate,UITabBarDelegate>
+@interface AskQuestionsVC ()<UITabBarControllerDelegate,UITabBarDelegate,AskQuestionsCategoryViewDeleagte>
 @property (nonatomic, strong) UIView *topTransparentView;
 @property (nonatomic, strong) AskQuestionsCategoryView *askQuestionsCategoryView;
+@property (nonatomic, strong) NSString *selectedCategoryId;
 @end
 
 @implementation AskQuestionsVC
@@ -73,7 +74,7 @@
     NSMutableDictionary *askQuestionMutableDictionary = [[NSMutableDictionary alloc] init];
     [askQuestionMutableDictionary setValue:accessToken forKey:@"token"];
     [askQuestionMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"id"];
-    [askQuestionMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"category_id"];
+    [askQuestionMutableDictionary setValue:self.selectedCategoryId forKey:@"category_id"];
     [askQuestionMutableDictionary setValue:self.titleTextField.text forKey:@"title"];
     [askQuestionMutableDictionary setValue:self.questionTextField.text forKey:@"question"];
     NSString *askQuestionUrlString = [Baseurl stringByAppendingString:AskQuestionUrl];
@@ -109,6 +110,7 @@
                             firstObject];
     CGFloat xMargin = 10,yMargin = 150;
     self.askQuestionsCategoryView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
+    self.askQuestionsCategoryView.askQuestionsCategoryDelegate = self;
    // [self populatingInvoiceDetailsInInVoiceview];
     [self.view addSubview:self.askQuestionsCategoryView];
     [self getCategoriesApiCall];
@@ -146,5 +148,13 @@
     }];
 }
 
+#pragma mark - Ask Questions Category view Delegate
+
+-(void)salectedCategoryWithIndex:(NSString *)selectedCategoryIndex withCategoryName:(NSString *)categoryName{
+    self.selectedCategoryId = selectedCategoryIndex;
+    self.topTransparentView.hidden = YES;
+    [self.askQuestionsCategoryView removeFromSuperview];
+    NSLog(@"Selectd category ID:%@",selectedCategoryIndex);
+}
 
 @end
