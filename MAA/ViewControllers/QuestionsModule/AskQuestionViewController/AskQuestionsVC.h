@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *questionDescriptionTextField;
 @property (weak, nonatomic) IBOutlet UIButton *btnChooseCategry;
 - (IBAction)ChooseCategory:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *chooseCategoryButton;
+@property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
 
 
 

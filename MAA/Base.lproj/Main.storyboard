@@ -2996,7 +2996,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qkg-sh-oHf" id="5iV-nf-dJ4"/>
+                                        </connections>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6NS-D4-TzW">
                                         <rect key="frame" x="10" y="111" width="580" height="1"/>
@@ -3007,7 +3010,10 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="qkg-sh-oHf" id="jTO-NR-9dY"/>
+                                        </connections>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="K8U-7y-Fao">
                                         <rect key="frame" x="10" y="162" width="580" height="1"/>
@@ -3139,6 +3145,8 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="btnChooseCategry" destination="s2D-vI-M4v" id="vCx-FP-ivo"/>
+                        <outlet property="categoryImageView" destination="nQ6-os-rlS" id="woJ-6v-xcZ"/>
+                        <outlet property="chooseCategoryButton" destination="s2D-vI-M4v" id="Wrb-Rb-WHy"/>
                         <outlet property="questionDescriptionTextField" destination="rPq-g7-jHo" id="EaS-lj-CgU"/>
                         <outlet property="questionTextField" destination="oHt-7y-y6r" id="xms-cj-TCM"/>
                         <outlet property="titleTextField" destination="h1B-mj-SHs" id="arC-hL-6Oh"/>
@@ -17237,7 +17245,6 @@
         <!--My Health ProfileVC-->
         <scene sceneID="wYy-ND-a7I">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5SE-14-2gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="Zg2-pG-2hW" customClass="myHealthProfileVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PNW-4U-pnq"/>
@@ -17752,6 +17759,7 @@
                         <outlet property="tblDropDown" destination="TGk-ru-FO1" id="TD0-tL-C44"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5SE-14-2gj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="16566" y="4353.5"/>
         </scene>

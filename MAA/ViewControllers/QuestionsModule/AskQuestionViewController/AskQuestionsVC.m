@@ -9,21 +9,35 @@
 #import "AskQuestionsVC.h"
 #import "AskQuestionsCategoryView.h"
 
-@interface AskQuestionsVC ()<UITabBarControllerDelegate,UITabBarDelegate,AskQuestionsCategoryViewDeleagte>
+@interface AskQuestionsVC ()<UITabBarControllerDelegate,UITabBarDelegate,UITextFieldDelegate,AskQuestionsCategoryViewDeleagte>
 @property (nonatomic, strong) UIView *topTransparentView;
 @property (nonatomic, strong) AskQuestionsCategoryView *askQuestionsCategoryView;
 @property (nonatomic, strong) NSString *selectedCategoryId;
+@property (nonatomic, strong) UITapGestureRecognizer *textFieldEditingTapgesture;
 @end
 
 @implementation AskQuestionsVC
 
 - (void)viewDidLoad
 {
+    [self addingTapGeture];
     [self addingToptransparentView];
     self.topTransparentView.hidden = YES;
+    self.selectedCategoryId = @"";
     [super viewDidLoad];
     
+    
     // Do any additional setup after loading the view.
+}
+
+-(void)addingTapGeture{
+    self.textFieldEditingTapgesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singletapAction:)];
+     self.textFieldEditingTapgesture.numberOfTapsRequired = 1;
+    [self.view addGestureRecognizer: self.textFieldEditingTapgesture];
+}
+
+-(void)singletapAction:(UITapGestureRecognizer *)tapgesture{
+    [self.view endEditing:YES];
 }
 
 -(void)addingToptransparentView{
@@ -44,6 +58,7 @@
 }
 
 -(void)topTransparentViewTapGestureAction:(UITapGestureRecognizer *)tapGesture{
+    [self.view addGestureRecognizer:self.textFieldEditingTapgesture];
     [self.askQuestionsCategoryView removeFromSuperview];
     self.topTransparentView.hidden = YES;
 }
@@ -63,7 +78,9 @@
 }
 */
 - (IBAction)askButtonAction:(UIButton *)sender {
-    [self callingAskQuestionApi];
+    if([self isValidInputs]){
+        [self callingAskQuestionApi];
+    }
 }
 
 
@@ -103,6 +120,8 @@
 
 - (IBAction)ChooseCategory:(id)sender
 {
+    [self.view removeGestureRecognizer:self.textFieldEditingTapgesture];
+    [self.view endEditing:YES];
     self.topTransparentView.hidden = NO;
     self.askQuestionsCategoryView = [[[NSBundle mainBundle]
                              loadNibNamed:@"categories"
@@ -153,8 +172,62 @@
 -(void)salectedCategoryWithIndex:(NSString *)selectedCategoryIndex withCategoryName:(NSString *)categoryName{
     self.selectedCategoryId = selectedCategoryIndex;
     self.topTransparentView.hidden = YES;
+    [self.chooseCategoryButton setTitle:categoryName forState:UIControlStateNormal];
     [self.askQuestionsCategoryView removeFromSuperview];
+    [self.view addGestureRecognizer:self.textFieldEditingTapgesture];
     NSLog(@"Selectd category ID:%@",selectedCategoryIndex);
 }
 
+#pragma mark - Text field Delegate
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if(textField == self.questionTextField){
+        [textField resignFirstResponder];
+        [self.questionDescriptionTextField becomeFirstResponder];
+    }
+    else if (textField == self.questionDescriptionTextField){
+        [textField resignFirstResponder];
+    }
+    return YES;
+}
+
+#pragma mark - Validation
+
+-(BOOL)isValidInputs{
+    BOOL valid = YES;
+    NSString *alertMessage = @"";
+    if([self.questionTextField.text empty]){
+        alertMessage = @"Please enter your question";
+        valid = NO;
+    }
+    else if ([self.questionDescriptionTextField.text empty]){
+        alertMessage = @"Please enter your question description";
+        valid = NO;
+    }
+    else if ([self.selectedCategoryId empty]){
+        alertMessage = @"Please choose category";
+        valid = NO;
+    }
+    if(![alertMessage empty]){
+        [self callingAlertViewControllerWithString:alertMessage];
+    }
+    return valid;
+}
+
+-(void)callingAlertViewControllerWithString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 @end
