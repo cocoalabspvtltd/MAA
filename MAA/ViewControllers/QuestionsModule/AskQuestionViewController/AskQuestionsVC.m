@@ -18,7 +18,6 @@
 
 - (void)viewDidLoad
 {
-    _tblCategories.hidden=YES;
     [self addingToptransparentView];
     self.topTransparentView.hidden = YES;
     [super viewDidLoad];
@@ -66,6 +65,7 @@
     [self callingAskQuestionApi];
 }
 
+
 #pragma mark - Ask Question api
 
 -(void)callingAskQuestionApi{
@@ -96,10 +96,13 @@
     }];
 }
 
+- (IBAction)backButtonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 - (IBAction)ChooseCategory:(id)sender
 {
     self.topTransparentView.hidden = NO;
-    _tblCategories.hidden=NO;
     self.askQuestionsCategoryView = [[[NSBundle mainBundle]
                              loadNibNamed:@"categories"
                              owner:self options:nil]
@@ -108,9 +111,40 @@
     self.askQuestionsCategoryView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
    // [self populatingInvoiceDetailsInInVoiceview];
     [self.view addSubview:self.askQuestionsCategoryView];
+    [self getCategoriesApiCall];
 
 }
-- (IBAction)backButtonAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+
+#pragma mark - Get Categories api
+
+-(void)getCategoriesApiCall{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSLog(@"Access Token:%@",accessToken);
+    NSString *getCategoriesUrlString = [Baseurl stringByAppendingString:GetCategoriesUrl];
+    NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
+    [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
+    [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
+    [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:0] forKey:Offsetkey];
+    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:100] forKey:LimitKey];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object;%@",responseObject);
+        self.askQuestionsCategoryView.categoriesArray = [responseObject valueForKey:Datakey];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
 }
+
+
 @end

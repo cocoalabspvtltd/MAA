@@ -10,30 +10,21 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" alpha="0.59999999999999998" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZFm-hh-gFc">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AEA-MG-jg5">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                    <subviews>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="67" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AEA-MG-jg5">
-                            <rect key="frame" x="20" y="20" width="560" height="560"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </tableView>
-                    </subviews>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                    <constraints>
-                        <constraint firstItem="AEA-MG-jg5" firstAttribute="top" secondItem="ZFm-hh-gFc" secondAttribute="top" constant="20" id="E1J-XZ-w3V"/>
-                        <constraint firstAttribute="trailing" secondItem="AEA-MG-jg5" secondAttribute="trailing" constant="20" id="QO0-Jz-kdV"/>
-                        <constraint firstAttribute="bottom" secondItem="AEA-MG-jg5" secondAttribute="bottom" constant="20" id="chW-JP-gzt"/>
-                        <constraint firstItem="AEA-MG-jg5" firstAttribute="leading" secondItem="ZFm-hh-gFc" secondAttribute="leading" constant="20" id="wm4-J7-JMw"/>
-                    </constraints>
-                </view>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="ZFm-hh-gFc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="A9n-nU-jSM"/>
-                <constraint firstAttribute="trailing" secondItem="ZFm-hh-gFc" secondAttribute="trailing" id="hDO-Ho-KZ0"/>
-                <constraint firstItem="ZFm-hh-gFc" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="pjq-yQ-TLH"/>
-                <constraint firstAttribute="bottom" secondItem="ZFm-hh-gFc" secondAttribute="bottom" id="zsI-do-Z5N"/>
+                <constraint firstItem="AEA-MG-jg5" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="FRH-dJ-y6o"/>
+                <constraint firstItem="AEA-MG-jg5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Wvl-sQ-JgP"/>
+                <constraint firstAttribute="bottom" secondItem="AEA-MG-jg5" secondAttribute="bottom" id="vEY-SK-Yaa"/>
+                <constraint firstAttribute="trailing" secondItem="AEA-MG-jg5" secondAttribute="trailing" id="wmD-OG-gGi"/>
             </constraints>
+            <connections>
+                <outlet property="categoriesTableView" destination="AEA-MG-jg5" id="w3k-CQ-mdl"/>
+            </connections>
         </view>
     </objects>
 </document>

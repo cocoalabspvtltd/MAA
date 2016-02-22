@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AskQuestionCategosyTableViewCell : UITableViewCell
-
-@property (weak, nonatomic) IBOutlet UILabel *categoryNameLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
+
+@property (weak, nonatomic) IBOutlet UILabel *categoryLAbel;
+
 
 @end

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AskQuestionsCategoryView : UIView
-
+@property (nonatomic, strong) NSArray *categoriesArray;
+@property (weak, nonatomic) IBOutlet UITableView *categoriesTableView;
 @end
