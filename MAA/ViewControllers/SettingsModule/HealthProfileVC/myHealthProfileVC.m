@@ -96,7 +96,17 @@ CGFloat ht=0;
     else
         _tblDropDown.hidden=YES;
 }
+- (IBAction)prescriptionsButtonAction:(UIButton *)sender {
+}
+- (IBAction)medicalDocumentsbuttonAction:(UIButton *)sender {
+}
+- (IBAction)imagesButtonAction:(UIButton *)sender {
+}
+- (IBAction)allergiesButtonAction:(UIButton *)sender {
+}
 
+- (IBAction)submitButtonAction:(UIButton *)sender {
+}
 #pragma mark - Calling Health Profile Api
 
 -(void)callingHealthProfileApi{

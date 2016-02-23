@@ -90,15 +90,15 @@
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *askQuestionMutableDictionary = [[NSMutableDictionary alloc] init];
     [askQuestionMutableDictionary setValue:accessToken forKey:@"token"];
-    [askQuestionMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"id"];
     [askQuestionMutableDictionary setValue:self.selectedCategoryId forKey:@"category_id"];
-    [askQuestionMutableDictionary setValue:self.titleTextField.text forKey:@"title"];
-    [askQuestionMutableDictionary setValue:self.questionTextField.text forKey:@"question"];
+    [askQuestionMutableDictionary setValue:self.questionTextField.text forKey:@"title"];
+    [askQuestionMutableDictionary setValue:self.questionDescriptionTextField.text forKey:@"question"];
     NSString *askQuestionUrlString = [Baseurl stringByAppendingString:AskQuestionUrl];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:askQuestionUrlString] withBody:askQuestionMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"REsponse Object:%@",responseObject);
+        [self callingAlertViewControllerAfterAddingQuestionWithString:[[responseObject valueForKey:Datakey] valueForKey:@"message"]];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -224,6 +224,23 @@
                                                handler:^(UIAlertAction * action){
                                                    //Do Some action here
                                                    
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)callingAlertViewControllerAfterAddingQuestionWithString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   [self.navigationController popViewControllerAnimated:YES];
                                                    
                                                }];
     
