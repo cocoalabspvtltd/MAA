@@ -17245,7 +17245,7 @@
         <!--My Health ProfileVC-->
         <scene sceneID="wYy-ND-a7I">
             <objects>
-                <viewController id="Zg2-pG-2hW" customClass="myHealthProfileVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myHealthProfileVC" hidesBottomBarWhenPushed="YES" id="Zg2-pG-2hW" customClass="myHealthProfileVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PNW-4U-pnq"/>
                         <viewControllerLayoutGuide type="bottom" id="kWX-PU-yMU"/>
@@ -17273,6 +17273,7 @@
                                         <connections>
                                             <action selector="Back:" destination="0b7-lr-BLz" eventType="touchUpInside" id="skI-lB-Co0"/>
                                             <action selector="backButtonAction:" destination="j86-GA-yFN" eventType="touchUpInside" id="eh7-rr-vmo"/>
+                                            <action selector="backbuttonAction:" destination="Zg2-pG-2hW" eventType="touchUpInside" id="IYs-3p-fR2"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-Ar-7gN">

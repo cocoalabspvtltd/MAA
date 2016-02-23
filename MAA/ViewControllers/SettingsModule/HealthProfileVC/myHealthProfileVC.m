@@ -82,6 +82,9 @@ CGFloat ht=0;
     [_scroller setContentSize:CGSizeMake(self.view.frame.size.width,height)];
     
 }
+- (IBAction)backbuttonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)DropDown:(id)sender
 {

@@ -7,7 +7,7 @@
 //
 
 #import "SettingsPageVC.h"
-#import "HealthProfileVC.h"
+#import "myHealthProfileVC.h"
 #import "AboutViewController.h"
 
 #import "SettingsTableViewCell.h"
@@ -90,8 +90,8 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     if(indexPath.row == 0){
-        HealthProfileVC *myHealthProfileVC = (HealthProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"HealthProfileVC"];
-        [self.navigationController pushViewController:myHealthProfileVC animated:YES];
+        myHealthProfileVC *healthProfileVC = (myHealthProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"myHealthProfileVC"];
+        [self.navigationController pushViewController:healthProfileVC animated:YES];
     }
     else if (indexPath.row == 4){
         AboutViewController *aboutVC = (AboutViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];

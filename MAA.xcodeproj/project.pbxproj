@@ -85,6 +85,7 @@
 		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
 		C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C401C71EC5300662BB4 /* professionalInfo.xib */; };
 		C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C441C71F79500662BB4 /* proinfo2.xib */; };
+		C056DBBC1C7CC2EB00F1F03C /* myHealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C056DBBB1C7CC2EB00F1F03C /* myHealthProfileVC.m */; };
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
@@ -239,7 +240,6 @@
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
-		C0E71FB11C7B0B240038BFF5 /* myHealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FB01C7B0B240038BFF5 /* myHealthProfileVC.m */; };
 		C0E71FBE1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */; };
 		C0E71FBF1C7B4E6E0038BFF5 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */; };
 		C0E71FCD1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FCB1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m */; };
@@ -435,6 +435,8 @@
 		C0447C3E1C71EB2200662BB4 /* specialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = specialCell.m; sourceTree = "<group>"; };
 		C0447C401C71EC5300662BB4 /* professionalInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = professionalInfo.xib; sourceTree = "<group>"; };
 		C0447C441C71F79500662BB4 /* proinfo2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = proinfo2.xib; sourceTree = "<group>"; };
+		C056DBBA1C7CC2EB00F1F03C /* myHealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHealthProfileVC.h; sourceTree = "<group>"; };
+		C056DBBB1C7CC2EB00F1F03C /* myHealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myHealthProfileVC.m; sourceTree = "<group>"; };
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
@@ -610,8 +612,6 @@
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		C0E71FAF1C7B0B240038BFF5 /* myHealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHealthProfileVC.h; sourceTree = "<group>"; };
-		C0E71FB01C7B0B240038BFF5 /* myHealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myHealthProfileVC.m; sourceTree = "<group>"; };
 		C0E71FBB1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsCategoryView.h; sourceTree = "<group>"; };
 		C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsCategoryView.m; sourceTree = "<group>"; };
 		C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categories.xib; sourceTree = "<group>"; };
@@ -1074,6 +1074,8 @@
 		9F5F0C491C66614200F7E99D /* HealthProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				C056DBBA1C7CC2EB00F1F03C /* myHealthProfileVC.h */,
+				C056DBBB1C7CC2EB00F1F03C /* myHealthProfileVC.m */,
 				9F5F0C4A1C66614200F7E99D /* HealthProfileVC.h */,
 				9F5F0C4B1C66614200F7E99D /* HealthProfileVC.m */,
 			);
@@ -1216,8 +1218,6 @@
 				C0447C3E1C71EB2200662BB4 /* specialCell.m */,
 				C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */,
 				C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */,
-				C0E71FAF1C7B0B240038BFF5 /* myHealthProfileVC.h */,
-				C0E71FB01C7B0B240038BFF5 /* myHealthProfileVC.m */,
 				C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
@@ -2031,8 +2031,8 @@
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
+				C056DBBC1C7CC2EB00F1F03C /* myHealthProfileVC.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
-				C0E71FB11C7B0B240038BFF5 /* myHealthProfileVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
 				7C0981D81C1E661600B1BE99 /* SearchResultsVC.m in Sources */,
 				C08438161C6F79A200610ADC /* CLUtilities.m in Sources */,
