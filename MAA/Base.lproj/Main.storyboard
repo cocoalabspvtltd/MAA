@@ -17276,7 +17276,7 @@
                                             <action selector="backbuttonAction:" destination="Zg2-pG-2hW" eventType="touchUpInside" id="IYs-3p-fR2"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-Ar-7gN">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Back" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Ah-Ar-7gN">
                                         <rect key="frame" x="62" y="11" width="42" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -17295,6 +17295,9 @@
                                             <constraint firstAttribute="height" constant="30" id="JFz-I2-Hfn"/>
                                             <constraint firstAttribute="width" constant="46" id="pJk-nl-LaN"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="editButtonAction:" destination="Zg2-pG-2hW" eventType="touchUpInside" id="aHP-Bl-38z"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.14530435229999999" blue="0.17924686770000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -17755,9 +17758,16 @@
                     <size key="freeformSize" width="600" height="725"/>
                     <connections>
                         <outlet property="ContentView" destination="ugS-jc-mpd" id="m3j-hR-mCO"/>
+                        <outlet property="bloodGroupButton" destination="OvS-hC-VvH" id="zyh-Fi-VbQ"/>
                         <outlet property="btnDropDown" destination="OvS-hC-VvH" id="erz-ge-Nr7"/>
+                        <outlet property="fastingSugarTextField" destination="GvK-kU-5CM" id="18N-Hc-s3v"/>
+                        <outlet property="heightTextField" destination="0F7-kN-AcQ" id="cYk-zt-kjC"/>
+                        <outlet property="hightextField" destination="eBb-l9-q1o" id="eaG-Xe-UZv"/>
+                        <outlet property="lowBPtextField" destination="LVu-fd-FwW" id="kRH-cw-GoE"/>
+                        <outlet property="postMealSugarTextField" destination="fca-O5-0xx" id="Mfs-FT-5ex"/>
                         <outlet property="scroller" destination="vQx-lZ-Pda" id="0bq-3p-4Js"/>
                         <outlet property="tblDropDown" destination="TGk-ru-FO1" id="TD0-tL-C44"/>
+                        <outlet property="weightTextField" destination="Kp1-jp-fjl" id="sFe-aH-Bav"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5SE-14-2gj" userLabel="First Responder" sceneMemberID="firstResponder"/>

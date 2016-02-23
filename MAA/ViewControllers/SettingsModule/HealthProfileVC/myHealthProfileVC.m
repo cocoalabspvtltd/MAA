@@ -24,7 +24,7 @@ CGFloat ht=0;
     [super viewDidLoad];
     BloodGrups=@[@"O +",@"O -",@"A +",@"A -",@"B +",@"B -",@"AB +",@"AB -"];
     _tblDropDown.hidden=YES;
-    
+    [self callingHealthProfileApi];
     
     
     // Do any additional setup after loading the view.
@@ -85,6 +85,8 @@ CGFloat ht=0;
 - (IBAction)backbuttonAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+- (IBAction)editButtonAction:(UIButton *)sender {
+}
 
 - (IBAction)DropDown:(id)sender
 {
@@ -93,5 +95,89 @@ CGFloat ht=0;
     }
     else
         _tblDropDown.hidden=YES;
+}
+
+#pragma mark - Calling Health Profile Api
+
+-(void)callingHealthProfileApi{
+    NSString *getAccountInfoApiUrlSrtring = [Baseurl stringByAppendingString:getAccountinfoApiurl];
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *healthinfoMutableDictionary = [[NSMutableDictionary alloc] init];
+    NSArray *fieldArray = [NSArray arrayWithObjects:@"name",@"location",@"e_base_img",@"e_banner_img",@"dob",@"about",@"address",@"phone",@"gender",@"health_profile",@"images",@"medical_docs",@"prescription", nil];
+    [healthinfoMutableDictionary setValue:accessToken forKey:@"token"];
+    [healthinfoMutableDictionary setValue:fieldArray forKey:@"fields"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getAccountInfoApiUrlSrtring] withBody:healthinfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [self populatingHealthDetailsWithResponsedata:[responseObject valueForKey:Datakey]];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSLog(@"Response :%@",responseObject);
+        
+       
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+        NSLog(@"Error :%@",errorResponse);
+    }];
+}
+
+-(void)populatingHealthDetailsWithResponsedata:(id)profileData{
+    NSLog(@"Health Data:%@",profileData);
+//    if(!([profileData valueForKey:@"e_base_img"] == [NSNull null])){
+//        [self downloadingProfileImageWithUrlString:[profileData valueForKey:@"e_base_img"]];
+//    }
+//    if(!([profileData valueForKey:@"e_banner_img"] == [NSNull null])){
+//        [self downloadingProfileBackgroundImageWithurlString:[profileData valueForKey:@"e_banner_img"]];
+//    }
+//    if(!([profileData valueForKey:@"name"] == [NSNull null])){
+//        self.nameLabel.text = [profileData valueForKey:@"name"];
+//    }
+//    if(!([profileData valueForKey:@"location"] == [NSNull null])){
+//        self.locationlabel.text = [profileData valueForKey:@"location"];
+//    }
+//    if(!([profileData valueForKey:@"address"] == [NSNull null])){
+//        self.addresslabel.text = [profileData valueForKey:@"address"];
+//    }
+//    if(!([profileData valueForKey:@"phone"] == [NSNull null])){
+//        self.phoneTextField.text = [profileData valueForKey:@"phone"];
+//    }
+    if(!([[profileData valueForKey:@"health_profile"] valueForKey:@"weight"] == [NSNull null])){
+        self.weightTextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"weight"];
+    }
+    if (!([[profileData valueForKey:@"health_profile"] valueForKey:@"height"] == [NSNull null])){
+        self.heightTextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"height"];
+    }
+    if (!([[[profileData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"name"] == [NSNull null])){
+        NSString *bloodGroup = [[[profileData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"name"];        [self.bloodGroupButton setTitle:bloodGroup forState:UIControlStateNormal];
+    }
+//    if(!([profileData valueForKey:@"dob"] == [NSNull null])){
+//        self.dateOfBirthTextField.text = [profileData valueForKey:@"dob"];
+//    }
+    if (!([[profileData valueForKey:@"health_profile"] valueForKey:@"low_bp"] == [NSNull null])){
+        self.lowBPtextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"low_bp"];
+    }
+    if (!([[profileData valueForKey:@"health_profile"] valueForKey:@"high_bp"] == [NSNull null])){
+        self.hightextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"high_bp"];
+    }
+    if(!([[profileData valueForKey:@"health_profile"] valueForKey:@"fasting_sugar"] == [NSNull null])){
+        self.fastingSugarTextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"fasting_sugar"] ;
+    }
+    if(!([[profileData valueForKey:@"health_profile"] valueForKey:@"post_meal_sugar"] == [NSNull null])){
+        self.postMealSugarTextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"post_meal_sugar"] ;
+    }
+//    self.userImagesArray = [profileData valueForKey:@"images"];
+//    [self.photosCollectionView reloadData];
+//    self.medicalDocumentsArray = [profileData valueForKey:@"medical_docs"];
+//    [self.medicalDocumantsCollectionview reloadData];
+//    self.prescriptionsArray = [profileData valueForKey:@"prescription"];
+//    [self.prescriptionsTableView reloadData];
 }
 @end
