@@ -177,7 +177,7 @@
 		C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830701C7D7BD0000A60C9 /* ImagesVC.m */; };
 		C0A830751C7D7BD0000A60C9 /* MyAllergies.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830721C7D7BD0000A60C9 /* MyAllergies.m */; };
 		C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */; };
-		C0AED7311C74E4AB007E602B /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AED72E1C74E213007E602B /* libNetworkHandler.a */; };
+		C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */; };
 		C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8D1C08B94600963D5D /* Assets.xcassets */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
@@ -266,16 +266,16 @@
 			remoteGlobalIDString = 55D60D7D1C08B94600963D5D;
 			remoteInfo = MAA;
 		};
-		C0AED72D1C74E213007E602B /* PBXContainerItemProxy */ = {
+		C0A831261C7DE4D6000A60C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */;
+			containerPortal = C0A831211C7DE4D5000A60C9 /* NetworkHandler.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F191A3031AAD5B270003BBEF;
 			remoteInfo = NetworkHandler;
 		};
-		C0AED72F1C74E213007E602B /* PBXContainerItemProxy */ = {
+		C0A831281C7DE4D6000A60C9 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */;
+			containerPortal = C0A831211C7DE4D5000A60C9 /* NetworkHandler.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F191A30E1AAD5B280003BBEF;
 			remoteInfo = NetworkHandlerTests;
@@ -548,7 +548,9 @@
 		C0A830721C7D7BD0000A60C9 /* MyAllergies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAllergies.m; sourceTree = "<group>"; };
 		C0A830FD1C7DC6FF000A60C9 /* MedicalDocumentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsVC.h; sourceTree = "<group>"; };
 		C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumentsVC.m; sourceTree = "<group>"; };
-		C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkHandler.xcodeproj; path = NetworkHandlerFullFrameWork/NetworkHandler.xcodeproj; sourceTree = "<group>"; };
+		C0A831001C7DD05A000A60C9 /* TMDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDCollectionViewCell.h; sourceTree = "<group>"; };
+		C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDCollectionViewCell.m; sourceTree = "<group>"; };
+		C0A831211C7DE4D5000A60C9 /* NetworkHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NetworkHandler.xcodeproj; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C0BAF0231C319FC0002F3137 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -647,7 +649,6 @@
 				C09EF7041C7622D800806600 /* VideoToolbox.framework in Frameworks */,
 				C09EF7021C7622CD00806600 /* CoreMedia.framework in Frameworks */,
 				C09EF7001C7622BD00806600 /* OpenGLES.framework in Frameworks */,
-				C0AED7311C74E4AB007E602B /* libNetworkHandler.a in Frameworks */,
 				7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */,
 				C0BAF0261C319FE3002F3137 /* UIKit.framework in Frameworks */,
 				C0BAF0241C319FC0002F3137 /* CoreLocation.framework in Frameworks */,
@@ -995,7 +996,7 @@
 		9F5F0C2A1C66573D00F7E99D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */,
+				C0A831211C7DE4D5000A60C9 /* NetworkHandler.xcodeproj */,
 				C08438131C6F79A200610ADC /* Utilities */,
 				9F5F0C531C66672300F7E99D /* SimpleLoadingView */,
 				9F5F0C2C1C66589E00F7E99D /* GetGalleryPhotos */,
@@ -1152,6 +1153,8 @@
 			children = (
 				9F5F0C651C6668FF00F7E99D /* MedicalDocumantsCVC.h */,
 				9F5F0C661C6668FF00F7E99D /* MedicalDocumantsCVC.m */,
+				C0A831001C7DD05A000A60C9 /* TMDCollectionViewCell.h */,
+				C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */,
 			);
 			path = MedicalDocumentesCVC;
 			sourceTree = "<group>";
@@ -1471,11 +1474,11 @@
 			path = MedicalDocumentsVC;
 			sourceTree = "<group>";
 		};
-		C0AED7291C74E213007E602B /* Products */ = {
+		C0A831221C7DE4D5000A60C9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C0AED72E1C74E213007E602B /* libNetworkHandler.a */,
-				C0AED7301C74E213007E602B /* NetworkHandlerTests.xctest */,
+				C0A831271C7DE4D6000A60C9 /* libNetworkHandler.a */,
+				C0A831291C7DE4D6000A60C9 /* NetworkHandlerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1766,8 +1769,8 @@
 					ProjectRef = C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */;
 				},
 				{
-					ProductGroup = C0AED7291C74E213007E602B /* Products */;
-					ProjectRef = C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */;
+					ProductGroup = C0A831221C7DE4D5000A60C9 /* Products */;
+					ProjectRef = C0A831211C7DE4D5000A60C9 /* NetworkHandler.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1780,18 +1783,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		C0AED72E1C74E213007E602B /* libNetworkHandler.a */ = {
+		C0A831271C7DE4D6000A60C9 /* libNetworkHandler.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libNetworkHandler.a;
-			remoteRef = C0AED72D1C74E213007E602B /* PBXContainerItemProxy */;
+			remoteRef = C0A831261C7DE4D6000A60C9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		C0AED7301C74E213007E602B /* NetworkHandlerTests.xctest */ = {
+		C0A831291C7DE4D6000A60C9 /* NetworkHandlerTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = NetworkHandlerTests.xctest;
-			remoteRef = C0AED72F1C74E213007E602B /* PBXContainerItemProxy */;
+			remoteRef = C0A831281C7DE4D6000A60C9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */ = {
@@ -1990,6 +1993,7 @@
 				C0BBC4931C6E2BED005083B1 /* AppoinmentsDocs.m in Sources */,
 				C08437FC1C6F019600610ADC /* AskQuestionsVC.m in Sources */,
 				9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */,
+				C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */,
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,
 				C09EF6F71C76211800806600 /* README.md in Sources */,
 				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,

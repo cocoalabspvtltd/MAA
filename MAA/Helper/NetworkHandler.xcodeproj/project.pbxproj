@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		60CCD2B31AAD5F7200710A3F /* NetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CCD2B21AAD5F7200710A3F /* NetworkHandler.m */; };
+		7B4A43D51C217FDF000E96F6 /* NetworkHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60CCD2B21AAD5F7200710A3F /* NetworkHandler.m */; };
+		7B4A43D61C217FE6000E96F6 /* NetworkHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60CCD2B11AAD5F7200710A3F /* NetworkHandler.h */; };
 		F15057991AB008F700BEBF68 /* CLAlertHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F15057961AB0086A00BEBF68 /* CLAlertHandler.h */; };
 		F150579A1AB0094A00BEBF68 /* CLAlertHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F15057971AB0086A00BEBF68 /* CLAlertHandler.m */; };
 		F1537D9A1AB6D4BB00E866C1 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = F1537D881AB6D4BB00E866C1 /* AFHTTPRequestOperation.m */; };
@@ -22,7 +23,6 @@
 		F191A30F1AAD5B280003BBEF /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F191A3031AAD5B270003BBEF /* libNetworkHandler.a */; };
 		F1D9685B1AADB4ED00C6F660 /* RequestBodyGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D9685A1AADB4ED00C6F660 /* RequestBodyGenerator.m */; };
 		F1D9685C1AADB6EC00C6F660 /* RequestBodyGenerator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F1D968591AADB4ED00C6F660 /* RequestBodyGenerator.h */; };
-		F1D9685D1AADB9E000C6F660 /* NetworkHandler.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 60CCD2B11AAD5F7200710A3F /* NetworkHandler.h */; };
 		F1D968621AADBB0500C6F660 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = F1D968611AADBB0500C6F660 /* Reachability.m */; };
 /* End PBXBuildFile section */
 
@@ -43,8 +43,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				7B4A43D61C217FE6000E96F6 /* NetworkHandler.h in CopyFiles */,
 				F15057991AB008F700BEBF68 /* CLAlertHandler.h in CopyFiles */,
-				F1D9685D1AADB9E000C6F660 /* NetworkHandler.h in CopyFiles */,
 				F1D9685C1AADB6EC00C6F660 /* RequestBodyGenerator.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -283,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B4A43D51C217FDF000E96F6 /* NetworkHandler.m in Sources */,
 				F1537D9F1AB6D4BB00E866C1 /* AFURLConnectionOperation.m in Sources */,
 				F1537D9A1AB6D4BB00E866C1 /* AFHTTPRequestOperation.m in Sources */,
 				F1537D9D1AB6D4BB00E866C1 /* AFNetworkReachabilityManager.m in Sources */,
@@ -291,7 +292,6 @@
 				F150579A1AB0094A00BEBF68 /* CLAlertHandler.m in Sources */,
 				F1537DA11AB6D4BB00E866C1 /* AFURLResponseSerialization.m in Sources */,
 				F1D968621AADBB0500C6F660 /* Reachability.m in Sources */,
-				60CCD2B31AAD5F7200710A3F /* NetworkHandler.m in Sources */,
 				F1537D9B1AB6D4BB00E866C1 /* AFHTTPRequestOperationManager.m in Sources */,
 				F1537D9E1AB6D4BB00E866C1 /* AFSecurityPolicy.m in Sources */,
 				F1D9685B1AADB4ED00C6F660 /* RequestBodyGenerator.m in Sources */,

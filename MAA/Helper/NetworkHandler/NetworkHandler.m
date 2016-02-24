@@ -19,9 +19,9 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
 
 @interface NetworkHandler()
 
-@property (nonatomic, strong) NSString * accesstoken;
 @property (nonatomic, strong) NSURL * requestUrl;
 @property (nonatomic, assign) MethodType methodType;
+@property (nonatomic, strong) NSString * accesstoken;
 @property (nonatomic, strong) NSMutableDictionary *bodyDictionary;
 @property (nonatomic, strong) AFHTTPRequestOperation *requestOperation;
 
@@ -88,7 +88,7 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
         self.requestUrl = requestUrl;
         self.bodyDictionary = data;
         self.methodType = method;
-         self.accesstoken =accesstoken;
+        self.accesstoken =accesstoken;
     }
     return self;
 }
@@ -111,17 +111,17 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
         failure(@"No internet Access",nil);
         return;
     }
-
+    
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:self.requestUrl];
     [urlRequest setHTTPMethod:[self httpMethodForRequest:self.methodType]];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Accept"];
     if(self.accesstoken.length!=0)
-        [urlRequest setValue:self.accesstoken forHTTPHeaderField:@"Authorization"];
+        [urlRequest setValue:self.accesstoken forHTTPHeaderField:@"access-token"];
     if(self.bodyDictionary.count !=0) {
         [urlRequest setHTTPBody:[[RequestBodyGenerator sharedBodyGenerator]requestBodyGeneratorWith:self.bodyDictionary]];
     }
-    urlRequest.timeoutInterval = 200;
+    urlRequest.timeoutInterval = 100;
     self.requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
     [self.requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
         success([NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingAllowFragments error:nil]);
@@ -129,7 +129,7 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Erro Description:%@",error.localizedDescription);
         if(operation.responseObject){
-        failure([error localizedDescription],[NSJSONSerialization JSONObjectWithData:operation.responseObject options:NSJSONReadingAllowFragments error:nil]);
+            failure([error localizedDescription],[NSJSONSerialization JSONObjectWithData:operation.responseObject options:NSJSONReadingAllowFragments error:nil]);
         }
         else{
             failure([error localizedDescription],nil);
@@ -163,7 +163,7 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
 
 #pragma mark - File Upload
 
--(void)startUploadRequest:(NSString *)filename withData:(NSData *)Data withType:(FileType)fileType
+-(void)startUploadRequest:(NSString *)filename withData:(NSData *)Data withType:(FileType)fileType withUrlParameter:(NSString *)urlParameter
              SuccessBlock:(void (^)( id responseObject))success
             ProgressBlock:(void (^)( NSUInteger bytesWritten,long long totalBytesWritten, long long totalBytesExpectedToWrite))progress
              FailureBlock:(void (^)( NSString *errorDescription,id errorResponse))failure {
@@ -171,17 +171,15 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
         failure(CLNetworkErrorMessage,nil);
         return;
     }
-    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:[NSURL URLWithString:@"http://52.26.69.168/weekenderNew/index.php/"]];
+    AFHTTPRequestOperationManager *manager = [[AFHTTPRequestOperationManager alloc] initWithBaseURL:self.requestUrl];
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"text/json", @"text/javascript",@"text/html",@"text/plain", nil];
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults]valueForKey:@"accessToken"];
-    [manager.requestSerializer setValue:accessToken forHTTPHeaderField:@"access_token" ];
+    [manager.requestSerializer setValue:self.accesstoken forHTTPHeaderField:@"access-token" ];
     NSLog(@"Body dictionary:%@",self.bodyDictionary);
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    AFHTTPRequestOperation *op = [manager POST:@"app/imageUpload" parameters:self.bodyDictionary constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+    AFHTTPRequestOperation *op = [manager POST:urlParameter parameters:self.bodyDictionary constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         if (Data != nil) {
             [formData appendPartWithFileData:Data name:@"file" fileName:filename mimeType:[self mimeTypeOfFile:fileType]];
         }
-                
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);
         NSLog(@"Success: %@ ***** %@", operation.responseString, responseObject );
@@ -199,6 +197,7 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
     }];
     [op start];
 }
+
 
 #pragma mark - Cancell All Operations
 

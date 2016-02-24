@@ -14,5 +14,6 @@
 
 - (IBAction)Back:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *AddPopup;
+@property (weak, nonatomic) IBOutlet UICollectionView *medicalDocumentsCollectionView;
 
 @end

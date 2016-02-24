@@ -17438,7 +17438,7 @@
                                     <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="pny-0B-e3w">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="tmdReuseCollectionCell" id="pny-0B-e3w" customClass="TMDCollectionViewCell">
                                         <rect key="frame" x="10" y="10" width="135" height="135"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -17447,6 +17447,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u1Y-0a-3oI">
                                                     <rect key="frame" x="0.0" y="0.0" width="135" height="135"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <gestureRecognizers/>
                                                     <connections>
                                                         <outletCollection property="gestureRecognizers" destination="voQ-KI-0bO" appends="YES" id="eHu-vf-bf0"/>
@@ -17461,8 +17462,14 @@
                                             <constraint firstAttribute="trailing" secondItem="u1Y-0a-3oI" secondAttribute="trailing" id="tKL-WN-bBW"/>
                                             <constraint firstAttribute="bottom" secondItem="u1Y-0a-3oI" secondAttribute="bottom" id="wMj-ux-G7n"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="medicalDocumentImageView" destination="u1Y-0a-3oI" id="OGl-MB-xaV"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="fhm-wA-lx5" id="FhY-ow-NLb"/>
+                                </connections>
                             </collectionView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="plus_white" translatesAutoresizingMaskIntoConstraints="NO" id="MJ4-zU-chD">
                                 <rect key="frame" x="528" y="528" width="50" height="50"/>
@@ -17493,6 +17500,9 @@
                                         <state key="normal" title="Take photo">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="takePhotoButtonAction:" destination="fhm-wA-lx5" eventType="touchUpInside" id="Rxp-FS-vbt"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iu2-iE-1gb">
                                         <rect key="frame" x="10" y="92" width="230" height="30"/>
@@ -17500,6 +17510,9 @@
                                         <state key="normal" title="Choose from library">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="chooseFromGalleryButtonAction:" destination="fhm-wA-lx5" eventType="touchUpInside" id="Zqm-qf-qf1"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-pC-m1K">
                                         <rect key="frame" x="10" y="132" width="230" height="30"/>
@@ -17553,6 +17566,7 @@
                     <connections>
                         <outlet property="AddPopup" destination="YyW-js-sQg" id="mm6-ov-u1h"/>
                         <outlet property="imgFloat" destination="MJ4-zU-chD" id="xtz-zC-4qr"/>
+                        <outlet property="medicalDocumentsCollectionView" destination="DHX-Jw-CFf" id="hFB-0v-5U7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JRJ-Sb-erw" userLabel="First Responder" sceneMemberID="firstResponder"/>
