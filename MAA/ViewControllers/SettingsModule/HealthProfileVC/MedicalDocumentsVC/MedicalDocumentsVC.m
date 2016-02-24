@@ -19,6 +19,7 @@
     [super viewDidLoad];
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
     self.imgFloat.clipsToBounds = YES;
+    //[self callingGetDocumentsApi];
     [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
     _AddPopup.hidden=YES;
     // Do any additional setup after loading the view.
@@ -94,7 +95,7 @@
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *getDocumentsMutableDictionary = [[NSMutableDictionary alloc] init];
     [getDocumentsMutableDictionary setValue:accessToken forKey:@"token"];
-    
+    [getDocumentsMutableDictionary setValue:@"1" forKey:@"type"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getDocumentsApiUrlSrtring] withBody:getDocumentsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
@@ -117,45 +118,38 @@
 
 
 -(void)callingImageUploadingApiWithImage:(UIImage *)uploadingImage{
-//    "medical_docs":[{"status":"1","title":"med_doc_title","image":"med_doc_img1.jpg"}]
-//}
     NSData *uploadingImageData = UIImageJPEGRepresentation(uploadingImage, 0.1);
     NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSString *fileUploadUrlString = Baseurl;
-    NSMutableArray *fileuploadingMutableArray = [[NSMutableArray alloc] init];
-    NSMutableDictionary *fileuploadingMutableDictionary = [[NSMutableDictionary alloc] init];
-    [fileuploadingMutableDictionary setObject:@"1" forKey:@"status"];
-    [fileuploadingMutableDictionary setObject:@"med_doc_title" forKey:@"title"];
-    [fileuploadingMutableDictionary setObject:@"med_doc_img1.jpg" forKey:@"image"];
-    [fileuploadingMutableArray addObject:fileuploadingMutableDictionary];
     NSString *accesstokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *imageUploadingDictionary = [[NSMutableDictionary alloc] init];
-    [imageUploadingDictionary setObject:fileuploadingMutableArray forKey:@"medical_docs"];
     [imageUploadingDictionary setObject:accesstoken forKey:@"token"];
+    [imageUploadingDictionary setObject:@"Title1" forKey:@"title"];
+      [imageUploadingDictionary setObject:@"1" forKey:@"type"];
     NSLog(@"Image Uploading Dictionary:%@",imageUploadingDictionary);
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:fileUploadUrlString] withBody:imageUploadingDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstokenString];
    
-    [[NetworkHandler sharedHandler] startUploadRequest:@"med_doc_img1.jpg" withData:uploadingImageData withType:fileTypeJPGImage withUrlParameter:EditAccountInfoUrl SuccessBlock:^(id responseObject) {
-        NSLog(@"Response Object:%@",responseObject);
-//        self.uploadedImagesCount++;
-//        [self addingUploadedProfileImagesToLocalWithIdentifier:self.uploadedImagesCount];
+    [[NetworkHandler sharedHandler] startUploadRequest:@"med_doc_img1.jpg" withData:uploadingImageData withType:fileTypeJPGImage withUrlParameter:AddImageurl SuccessBlock:^(id responseObject) {
+        NSDictionary *jsonObject=[NSJSONSerialization
+                                  JSONObjectWithData:responseObject
+                                  options:NSJSONReadingMutableLeaves
+                                  error:nil];
+        NSLog(@"jsonObject is %@",jsonObject);
         
     } ProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         NSLog(@"Error Response:%@",errorResponse);
+        NSString *errorMessage;
         if([errorDescription isEqualToString:NoNetworkErrorName]){
-//            UIAlertView *networkUnavailableAlert =  [[UIAlertView alloc] initWithTitle:AppName message:NetworkUnavailableMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-//            [networkUnavailableAlert show];
+            errorMessage = NoNetworkmessage;
         }
         else{
-//            self.uploadTryingCount++;
-//            if(self.uploadTryingCount>1){
-//                self.uploadedImagesCount++;
-//            }
-//            [self addingPhotosToApi];
+            errorMessage = ConnectiontoServerFailedMessage;
         }
-        
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+        NSLog(@"Error :%@",errorResponse);
     }];
     
 }

@@ -178,7 +178,7 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     AFHTTPRequestOperation *op = [manager POST:urlParameter parameters:self.bodyDictionary constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         if (Data != nil) {
-            [formData appendPartWithFileData:Data name:@"file" fileName:filename mimeType:[self mimeTypeOfFile:fileType]];
+            [formData appendPartWithFileData:Data name:@"images" fileName:filename mimeType:[self mimeTypeOfFile:fileType]];
         }
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);
