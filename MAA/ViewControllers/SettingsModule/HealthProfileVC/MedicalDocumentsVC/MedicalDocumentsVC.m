@@ -54,6 +54,7 @@
     }
     else if (self.isFromAllergies){
         self.headingLabel.text = @"Allergies";
+        self.imgFloat.hidden = YES;
     }
     else if (self.isFromPrescriptions){
         self.headingLabel.text = @"Prescriptions";
