@@ -10,4 +10,7 @@
 
 @implementation TMDCollectionViewCell
 
+-(void)setDocumentUrlString:(NSString *)documentUrlString{
+    
+}
 @end

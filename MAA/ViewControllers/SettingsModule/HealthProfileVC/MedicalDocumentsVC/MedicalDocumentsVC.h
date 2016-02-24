@@ -9,10 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface MedicalDocumentsVC : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *headingLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *imgFloat;
 - (IBAction)floatButton:(id)sender;
-
-- (IBAction)Back:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *AddPopup;
 @property (weak, nonatomic) IBOutlet UICollectionView *medicalDocumentsCollectionView;
 @property (nonatomic, assign) BOOL isFromPrescriptions;

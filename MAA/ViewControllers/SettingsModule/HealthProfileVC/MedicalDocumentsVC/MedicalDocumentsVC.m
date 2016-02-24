@@ -10,17 +10,23 @@
 #import "TMDCollectionViewCell.h"
 #import "PhotoGridViewController.h"
 
-@interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
-
+@interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
+@property (nonatomic, assign) int limitValue;
+@property (nonatomic, assign) int offsetValue;
+@property (nonatomic, strong) NSMutableArray *photosMutableArray;
+@property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @end
 
 @implementation MedicalDocumentsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
+    [self addSubViews];
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
     self.imgFloat.clipsToBounds = YES;
-    //[self callingGetDocumentsApi];
+    [self initialisingHeadingLabeltext];
+    [self callingGetDocumentsApi];
    // [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
     _AddPopup.hidden=YES;
     // Do any additional setup after loading the view.
@@ -31,6 +37,36 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)initialisation{
+    self.limitValue = 20;
+    self.offsetValue = 0;
+    self.photosMutableArray = [[NSMutableArray alloc] init];
+    self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
+    self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+}
+
+-(void)initialisingHeadingLabeltext{
+    if(self.isFromMedicalDocuments){
+        self.headingLabel.text = @"Medical Documents";
+    }
+    else if (self.isFromImages){
+        self.headingLabel.text = @"Images";
+    }
+    else if (self.isFromAllergies){
+        self.headingLabel.text = @"Allergies";
+    }
+    else if (self.isFromPrescriptions){
+        self.headingLabel.text = @"Prescriptions";
+    }
+}
+
+-(void)addSubViews{
+    [self.view addSubview:self.bottomProgressIndicatorView];
+}
+
+-(void)viewWillLayoutSubviews{
+    self.bottomProgressIndicatorView.frame = CGRectMake(self.view.frame.size.width/2 - 5, self.view.frame.size.height - 20, 10, 10);
+}
 #pragma mark - Collection View Data sources
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -38,7 +74,7 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 10;
+    return self.photosMutableArray.count;
 }
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -97,36 +133,6 @@
     _AddPopup.hidden=YES;
 }
 
-
-#pragma mark - Get Images Api
-
--(void)callingGetDocumentsApi{
-    NSString *getDocumentsApiUrlSrtring = [Baseurl stringByAppendingString:GetHealthProfilImagesUrl];
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
-    NSMutableDictionary *getDocumentsMutableDictionary = [[NSMutableDictionary alloc] init];
-    [getDocumentsMutableDictionary setValue:accessToken forKey:@"token"];
-    [getDocumentsMutableDictionary setValue:@"1" forKey:@"type"];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getDocumentsApiUrlSrtring] withBody:getDocumentsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
-    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"Response Object:%@",responseObject);
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        NSString *errorMessage;
-        if([errorDescription isEqualToString:NoNetworkErrorName]){
-            errorMessage = NoNetworkmessage;
-        }
-        else{
-            errorMessage = ConnectiontoServerFailedMessage;
-        }
-        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [erroralert show];
-        NSLog(@"Error :%@",errorResponse);
-    }];
-}
-
-
 -(void)callingImageUploadingApiWithImage:(UIImage *)uploadingImage{
     NSData *uploadingImageData = UIImageJPEGRepresentation(uploadingImage, 0.1);
     NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
@@ -135,10 +141,10 @@
     NSMutableDictionary *imageUploadingDictionary = [[NSMutableDictionary alloc] init];
     [imageUploadingDictionary setObject:accesstoken forKey:@"token"];
     [imageUploadingDictionary setObject:@"Title1" forKey:@"title"];
-      [imageUploadingDictionary setObject:@"1" forKey:@"type"];
+    [imageUploadingDictionary setObject:@"1" forKey:@"type"];
     NSLog(@"Image Uploading Dictionary:%@",imageUploadingDictionary);
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:fileUploadUrlString] withBody:imageUploadingDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstokenString];
-   
+    
     [[NetworkHandler sharedHandler] startUploadRequest:@"med_doc_img1.jpg" withData:uploadingImageData withType:fileTypeJPGImage withUrlParameter:AddImageurl SuccessBlock:^(id responseObject) {
         NSDictionary *jsonObject=[NSJSONSerialization
                                   JSONObjectWithData:responseObject
@@ -162,6 +168,59 @@
         NSLog(@"Error :%@",errorResponse);
     }];
     
+}
+
+#pragma mark - Get Images Api
+
+-(void)callingGetDocumentsApi{
+    NSString *getDocumentsApiUrlSrtring = [Baseurl stringByAppendingString:GetHealthProfilImagesUrl];
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *getDocumentsMutableDictionary = [[NSMutableDictionary alloc] init];
+    [getDocumentsMutableDictionary setValue:accessToken forKey:@"token"];
+    [getDocumentsMutableDictionary setValue:@"1" forKey:@"type"];
+    [getDocumentsMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
+    [getDocumentsMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
+    if(self.offsetValue == 0){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getDocumentsApiUrlSrtring] withBody:getDocumentsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object:%@",responseObject);
+        self.offsetValue = self.offsetValue+self.limitValue;
+        [self.bottomProgressIndicatorView stopAnimating];
+        NSArray *imagesArray = [responseObject valueForKey:Datakey];
+        [self.photosMutableArray addObjectsFromArray:imagesArray];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self.medicalDocumentsCollectionView reloadData];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [self.bottomProgressIndicatorView stopAnimating];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+        NSLog(@"Error :%@",errorResponse);
+    }];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if(scrollView == self.medicalDocumentsCollectionView){
+        float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
+        if (endScrolling >= scrollView.contentSize.height)
+        {
+            [self callingGetDocumentsApi];
+            [self.bottomProgressIndicatorView startAnimating];
+        }
+        else{
+            [self.bottomProgressIndicatorView stopAnimating];
+        }
+    }
 }
 
 @end

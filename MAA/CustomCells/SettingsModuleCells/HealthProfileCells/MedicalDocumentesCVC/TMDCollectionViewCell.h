@@ -10,5 +10,5 @@
 
 @interface TMDCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *medicalDocumentImageView;
-
+@property (nonatomic, strong) NSString *documentUrlString;
 @end
