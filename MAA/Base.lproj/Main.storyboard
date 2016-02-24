@@ -18294,7 +18294,7 @@
         <!--MedicalDocumentDetailPage-->
         <scene sceneID="xbp-qq-B8T">
             <objects>
-                <viewController title="MedicalDocumentDetailPage" id="yIb-lx-GFy" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MedicalDocumentsDetailVC" title="MedicalDocumentDetailPage" id="yIb-lx-GFy" customClass="MedicalDocumentsDetailVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mgb-rB-l6B"/>
                         <viewControllerLayoutGuide type="bottom" id="d5W-lO-Xu1"/>
@@ -18341,14 +18341,8 @@
                                     <constraint firstItem="10m-Kp-xVQ" firstAttribute="leading" secondItem="geM-M8-9Kf" secondAttribute="leading" constant="8" id="uEc-G9-eic"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCi-eZ-8sA">
-                                <rect key="frame" x="20" y="79" width="559" height="20"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="U32-yH-SBr">
-                                <rect key="frame" x="36" y="107" width="528" height="462"/>
+                                <rect key="frame" x="36" y="91" width="528" height="478"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ui4-Er-VcF">
                                 <rect key="frame" x="20" y="572" width="35" height="20"/>
@@ -18356,23 +18350,32 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GuI-Dr-7F6">
+                                <rect key="frame" x="20" y="69" width="560" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="U32-yH-SBr" firstAttribute="leading" secondItem="AJW-Xe-3pR" secondAttribute="leadingMargin" constant="16" id="6GV-Ep-FXJ"/>
-                            <constraint firstItem="DCi-eZ-8sA" firstAttribute="leading" secondItem="AJW-Xe-3pR" secondAttribute="leading" constant="20" id="8pA-d5-Dhh"/>
                             <constraint firstAttribute="trailing" secondItem="geM-M8-9Kf" secondAttribute="trailing" id="B3A-Sj-B1k"/>
+                            <constraint firstItem="U32-yH-SBr" firstAttribute="top" secondItem="GuI-Dr-7F6" secondAttribute="bottom" constant="5" id="IQq-E7-9oB"/>
                             <constraint firstItem="geM-M8-9Kf" firstAttribute="leading" secondItem="AJW-Xe-3pR" secondAttribute="leading" id="Iwo-zK-fV5"/>
+                            <constraint firstItem="GuI-Dr-7F6" firstAttribute="top" secondItem="geM-M8-9Kf" secondAttribute="bottom" constant="5" id="J2q-Bc-XRe"/>
                             <constraint firstItem="Ui4-Er-VcF" firstAttribute="top" secondItem="U32-yH-SBr" secondAttribute="bottom" constant="3" id="Kx1-eU-mpo"/>
                             <constraint firstItem="Ui4-Er-VcF" firstAttribute="leading" secondItem="AJW-Xe-3pR" secondAttribute="leadingMargin" id="Tjz-OW-7lV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GuI-Dr-7F6" secondAttribute="trailing" id="diu-VD-8ms"/>
+                            <constraint firstItem="GuI-Dr-7F6" firstAttribute="leading" secondItem="AJW-Xe-3pR" secondAttribute="leadingMargin" id="meY-sz-Vrl"/>
                             <constraint firstItem="geM-M8-9Kf" firstAttribute="top" secondItem="mgb-rB-l6B" secondAttribute="bottom" id="pQa-6v-LOo"/>
-                            <constraint firstItem="U32-yH-SBr" firstAttribute="top" secondItem="DCi-eZ-8sA" secondAttribute="bottom" constant="8" id="qjU-nC-ih4"/>
                             <constraint firstItem="d5W-lO-Xu1" firstAttribute="top" secondItem="Ui4-Er-VcF" secondAttribute="bottom" constant="8" id="rU8-CM-M0u"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="DCi-eZ-8sA" secondAttribute="trailing" constant="1" id="rmY-Wh-Y39"/>
-                            <constraint firstItem="DCi-eZ-8sA" firstAttribute="top" secondItem="geM-M8-9Kf" secondAttribute="bottom" constant="15" id="tPy-5F-9sq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="U32-yH-SBr" secondAttribute="trailing" constant="16" id="y72-2g-r7D"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="medicalDocumentImageView" destination="U32-yH-SBr" id="fcA-HY-g75"/>
+                        <outlet property="titleTextField" destination="GuI-Dr-7F6" id="KMM-QN-bJJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="orp-GM-7Nl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

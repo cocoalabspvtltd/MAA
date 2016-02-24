@@ -9,6 +9,7 @@
 #define PhotoCollectionviewCellIdentifier @"photoCollectionViewCell"
 
 #import "GetGalleryPhotos.h"
+#import "MedicalDocumentsDetailVC.h"
 #import "PhotoGridViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h>
 #import "PhotogridCollectionViewCell.h"
@@ -159,6 +160,10 @@
             UIImage *convertedImage = [self convertingMedicalregistrationImageAsset:[self.selectedGalleryphotosArray objectAtIndex:0]];
             [self callingImageUploadingApiForHealthprofileWithImage:convertedImage];
         }
+        else if (self.isFromMedicalDocuments){
+            UIImage *convertedImage = [self convertingMedicalregistrationImageAsset:[self.selectedGalleryphotosArray objectAtIndex:0]];
+            [self showingDocumentsDetailViewWithImage:convertedImage];
+        }
     }
 }
 
@@ -238,6 +243,15 @@
         NSLog(@"Error :%@",errorResponse);
     }];
     
+}
+
+#pragma mark - Showing Documents Detail View
+
+-(void)showingDocumentsDetailViewWithImage:(UIImage *)documentImage{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MedicalDocumentsDetailVC *medicalDocumentsDetailVC = (MedicalDocumentsDetailVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsDetailVC"];
+    medicalDocumentsDetailVC.medicalDocumentImage = documentImage;
+    [self.navigationController pushViewController:medicalDocumentsDetailVC animated:YES];
 }
 
 #pragma mark - adding Alert View Controller
