@@ -10,7 +10,7 @@
 #import "TMDCollectionViewCell.h"
 #import "PhotoGridViewController.h"
 
-@interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate>
+@interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, strong) NSMutableArray *photosMutableArray;
@@ -120,7 +120,43 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)takePhotoButtonAction:(UIButton *)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+        if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+            
+            UIAlertView *noCameraAlertView = [[UIAlertView alloc] initWithTitle:AppName
+                                                                        message:@"Device has no camera"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles: nil];
+            
+            [noCameraAlertView show];
+            
+        }
+        else{
+            if([[CLUtilities standardUtilities] goToCamera]){
+                picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                [self presentViewController:picker animated:YES completion:NULL];
+            }
+        }
     _AddPopup.hidden=YES;
+}
+
+#pragma mark - Image Picker Delegates
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    //UIImage *chosenImage  = [[CLUtilities standardUtilities] scaleAndRotateImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
+    //   NSData *imageData = UIImageJPEGRepresentation(chosenImage, 0.5);
+    //    [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:GiftImageKeyForUserDefaults];
+    //    [[NSUserDefaults standardUserDefaults] synchronize];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
 }
 
 - (IBAction)chooseFromGalleryButtonAction:(UIButton *)sender {
