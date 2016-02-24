@@ -78,7 +78,7 @@ CGFloat ht=0;
 -(void) viewDidLayoutSubviews
 {
 
-    CGFloat  height = self.ContentView.frame.size.height+50;
+    CGFloat  height = self.ContentView.frame.size.height+154;
     
     [_scroller setContentSize:CGSizeMake(self.view.frame.size.width,height)];
     

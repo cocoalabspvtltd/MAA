@@ -14242,7 +14242,9 @@
                                             <constraint firstAttribute="height" constant="30" id="Cmc-zz-z0X"/>
                                             <constraint firstAttribute="width" constant="122" id="E2c-FN-Fkh"/>
                                         </constraints>
-                                        <state key="normal" title="All ▾"/>
+                                        <state key="normal" title="All ▾">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="ClickMonth:" destination="V9u-d0-VN4" eventType="touchUpInside" id="D1L-fS-yBS"/>
                                         </connections>
@@ -17563,7 +17565,7 @@
         <!--My Health ProfileVC-->
         <scene sceneID="aCr-1d-d20">
             <objects>
-                <viewController id="b44-lA-1e7" customClass="myHealthProfileVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="myHealthProfileVC" hidesBottomBarWhenPushed="YES" id="b44-lA-1e7" customClass="myHealthProfileVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RqX-6q-i6O"/>
                         <viewControllerLayoutGuide type="bottom" id="dT5-SA-VvX"/>
@@ -17588,9 +17590,12 @@
                                             <constraint firstAttribute="height" constant="30" id="7q4-dy-ffk"/>
                                             <constraint firstAttribute="width" constant="46" id="ixQ-fq-svH"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="backbuttonAction:" destination="b44-lA-1e7" eventType="touchUpInside" id="de6-GM-YKi"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84C-ad-ksf">
-                                        <rect key="frame" x="62" y="11" width="42" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84C-ad-ksf">
+                                        <rect key="frame" x="62" y="11" width="112" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -18045,8 +18050,11 @@
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1Y-bb-OBd">
-                                <rect key="frame" x="0.0" y="695" width="600" height="30"/>
+                                <rect key="frame" x="0.0" y="681" width="600" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="SK4-40-Msq"/>
+                                </constraints>
                                 <state key="normal" title="Submit">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -18075,6 +18083,7 @@
                         <outlet property="ContentView" destination="xqD-Mv-HuJ" id="9SF-GB-uXU"/>
                         <outlet property="btnDropDown" destination="9l4-Fp-Shi" id="M0Q-Jy-cSP"/>
                         <outlet property="fastingSugarTextField" destination="cyI-Tg-MkL" id="tA7-mW-tz9"/>
+                        <outlet property="headingLabel" destination="84C-ad-ksf" id="Oqp-hI-tva"/>
                         <outlet property="heightTextField" destination="zB8-Dx-c0L" id="nMV-zL-sUU"/>
                         <outlet property="hightextField" destination="bL2-4r-UW6" id="JI6-fO-yZR"/>
                         <outlet property="lowBPtextField" destination="rz3-L5-9eY" id="sPe-8D-ZcN"/>
