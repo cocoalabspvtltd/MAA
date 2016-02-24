@@ -13,7 +13,7 @@
     NSArray *BloodGrups;
     
 }
-
+@property (nonatomic, strong) NSString *selectedBloodGroupId;
 @end
 
 @implementation myHealthProfileVC
@@ -22,8 +22,8 @@ CGFloat ht=0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    BloodGrups=@[@"O +",@"O -",@"A +",@"A -",@"B +",@"B -",@"AB +",@"AB -"];
     _tblDropDown.hidden=YES;
+    self.selectedBloodGroupId = @"";
     [self callingHealthProfileApi];
     
     
@@ -53,7 +53,7 @@ CGFloat ht=0;
     }
     
         
-        cell.textLabel.text=[BloodGrups objectAtIndex:indexPath.row];
+        cell.textLabel.text=[[BloodGrups objectAtIndex:indexPath.row] valueForKey:@"name"];
         cell.textLabel.font=[UIFont systemFontOfSize:(11.0)];
         cell.textLabel.textAlignment=NSTextAlignmentCenter;
     
@@ -61,7 +61,8 @@ CGFloat ht=0;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSString *x = BloodGrups[indexPath.row];
+    NSString *x = [BloodGrups[indexPath.row] valueForKey:@"name"];
+    self.selectedBloodGroupId = [BloodGrups[indexPath.row] valueForKey:@"id"];
     [_btnDropDown setTitle:x forState:UIControlStateNormal];
     _tblDropDown.hidden=YES;
     
@@ -89,7 +90,15 @@ CGFloat ht=0;
 }
 - (IBAction)editButtonAction:(UIButton *)sender
 {
-    
+    self.heightTextField.enabled = YES;
+    self.weightTextField.enabled = YES;
+    self.btnDropDown.enabled = YES;
+    self.lowBPtextField.enabled = YES;
+    self.hightextField.enabled = YES;
+    self.fastingSugarTextField.enabled = YES;
+    self.postMealSugarTextField.enabled  =YES;
+    self.notestextField.enabled = YES;
+    self.submitButton.enabled = YES;
 }
 
 - (IBAction)DropDown:(id)sender
@@ -119,26 +128,23 @@ CGFloat ht=0;
 
 - (IBAction)submitButtonAction:(UIButton *)sender
 {
-    
+    [self callingSubmitHealthProfile];
 }
 
 #pragma mark - Calling Health Profile Api
 
 -(void)callingHealthProfileApi{
-    NSString *getAccountInfoApiUrlSrtring = [Baseurl stringByAppendingString:getAccountinfoApiurl];
+    NSString *getAccountInfoApiUrlSrtring = [Baseurl stringByAppendingString:GetHealthProfileUrl];
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *healthinfoMutableDictionary = [[NSMutableDictionary alloc] init];
-    NSArray *fieldArray = [NSArray arrayWithObjects:@"name",@"location",@"e_base_img",@"e_banner_img",@"dob",@"about",@"address",@"phone",@"gender",@"health_profile",@"images",@"medical_docs",@"prescription", nil];
     [healthinfoMutableDictionary setValue:accessToken forKey:@"token"];
-    [healthinfoMutableDictionary setValue:fieldArray forKey:@"fields"];
+    [healthinfoMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"show_blood_groups"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getAccountInfoApiUrlSrtring] withBody:healthinfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object:%@",responseObject);
         [self populatingHealthDetailsWithResponsedata:[responseObject valueForKey:Datakey]];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        NSLog(@"Response :%@",responseObject);
-        
-       
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -155,7 +161,6 @@ CGFloat ht=0;
 }
 
 -(void)populatingHealthDetailsWithResponsedata:(id)profileData{
-    NSLog(@"Health Data:%@",profileData);
 //    if(!([profileData valueForKey:@"e_base_img"] == [NSNull null])){
 //        [self downloadingProfileImageWithUrlString:[profileData valueForKey:@"e_base_img"]];
 //    }
@@ -184,12 +189,17 @@ CGFloat ht=0;
         NSString *bloodGroup = [[[profileData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"name"];
         [self.btnDropDown setTitle:bloodGroup forState:UIControlStateNormal];
     }
+    if (!([[[profileData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"id"] == [NSNull null])){
+        self.selectedBloodGroupId = [[[profileData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"id"];
+    }
 //    if(!([profileData valueForKey:@"dob"] == [NSNull null])){
 //        self.dateOfBirthTextField.text = [profileData valueForKey:@"dob"];
 //    }
     if (!([[profileData valueForKey:@"health_profile"] valueForKey:@"low_bp"] == [NSNull null])){
         self.lowBPtextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"low_bp"];
     }
+    BloodGrups = [profileData valueForKey:@"blood_groups"];
+    [self.tblDropDown reloadData];
     if (!([[profileData valueForKey:@"health_profile"] valueForKey:@"high_bp"] == [NSNull null])){
         self.hightextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"high_bp"];
     }
@@ -199,11 +209,95 @@ CGFloat ht=0;
     if(!([[profileData valueForKey:@"health_profile"] valueForKey:@"post_meal_sugar"] == [NSNull null])){
         self.postMealSugarTextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"post_meal_sugar"] ;
     }
+    if(!([[profileData valueForKey:@"health_profile"] valueForKey:@"notes"] == [NSNull null])){
+        self.notestextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"notes"];
+    }
 //    self.userImagesArray = [profileData valueForKey:@"images"];
 //    [self.photosCollectionView reloadData];
 //    self.medicalDocumentsArray = [profileData valueForKey:@"medical_docs"];
 //    [self.medicalDocumantsCollectionview reloadData];
 //    self.prescriptionsArray = [profileData valueForKey:@"prescription"];
 //    [self.prescriptionsTableView reloadData];
+}
+
+
+#pragma mark - Calling Edit Account Info api
+
+-(void)callingSubmitHealthProfile{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSString *editAccountInfoUrlString = [Baseurl stringByAppendingString:EditAccountInfoUrl];
+    NSString *tokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *editAccountInfoMutableDictionary = [[NSMutableDictionary alloc] init];
+    [editAccountInfoMutableDictionary setValue:self.heightTextField.text forKey:@"height"];
+    [editAccountInfoMutableDictionary setValue:self.weightTextField.text forKey:@"weight"];
+    [editAccountInfoMutableDictionary setValue:self.lowBPtextField.text forKey:@"low_bp"];
+    [editAccountInfoMutableDictionary setValue:self.hightextField.text forKey:@"high_bp"];
+    [editAccountInfoMutableDictionary setValue:self.fastingSugarTextField.text forKey:@"fasting_sugar"];
+    [editAccountInfoMutableDictionary setValue:self.postMealSugarTextField.text forKey:@"post_meal_sugar"];
+    [editAccountInfoMutableDictionary setValue:self.notestextField.text forKey:@"notes"];
+    [editAccountInfoMutableDictionary setValue:tokenString forKey:@"token"];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [self disablingControlsAfterSubmittingUserDetails];
+        [self callingAlertViewControllerWithPopActionWithMessageString:[[responseObject valueForKey:Datakey] valueForKey:@"message"]];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        [self callingAlertViewControllerWithMessageString:errorMessage];
+    }];
+}
+
+-(void)callingAlertViewControllerWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                  
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)callingAlertViewControllerWithPopActionWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   [self.navigationController popViewControllerAnimated:YES];
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)disablingControlsAfterSubmittingUserDetails{
+    self.heightTextField.enabled = NO;
+    self.weightTextField.enabled = NO;
+    self.btnDropDown.enabled = NO;
+    self.lowBPtextField.enabled = NO;
+    self.hightextField.enabled = NO;
+    self.fastingSugarTextField.enabled = NO;
+    self.postMealSugarTextField.enabled  =NO;
+    self.notestextField.enabled = NO;
+    self.submitButton.enabled = NO;
 }
 @end

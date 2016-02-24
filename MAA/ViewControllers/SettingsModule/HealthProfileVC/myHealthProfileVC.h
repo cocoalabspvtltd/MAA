@@ -21,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *fastingSugarTextField;
 @property (weak, nonatomic) IBOutlet UITextField *postMealSugarTextField;
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
+@property (weak, nonatomic) IBOutlet UITextField *notestextField;
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 
 @end
