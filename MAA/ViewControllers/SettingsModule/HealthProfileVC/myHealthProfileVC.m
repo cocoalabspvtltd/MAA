@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "MedicalDocumentsVC.h"
 #import "myHealthProfileVC.h"
 
 @interface myHealthProfileVC ()
@@ -115,7 +116,9 @@ CGFloat ht=0;
 }
 - (IBAction)medicalDocumentsbuttonAction:(UIButton *)sender
 {
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
+    [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
 }
 - (IBAction)imagesButtonAction:(UIButton *)sender
 {

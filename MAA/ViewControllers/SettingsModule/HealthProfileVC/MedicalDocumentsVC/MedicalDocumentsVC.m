@@ -59,4 +59,7 @@
         _AddPopup.superview.backgroundColor=[UIColor whiteColor];
     
 }
+- (IBAction)backButtonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

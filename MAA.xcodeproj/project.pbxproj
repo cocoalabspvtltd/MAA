@@ -174,9 +174,9 @@
 		C09EF70A1C76234300806600 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF7091C76234300806600 /* CoreVideo.framework */; };
 		C09EF70C1C76249C00806600 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF70B1C76249C00806600 /* OpenTok.framework */; };
 		C09EF70E1C7625AB00806600 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF70D1C7625AB00806600 /* libc++.tbd */; };
-		C0A830731C7D7BD0000A60C9 /* MedicalDocumentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A8306E1C7D7BD0000A60C9 /* MedicalDocumentsVC.m */; };
 		C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830701C7D7BD0000A60C9 /* ImagesVC.m */; };
 		C0A830751C7D7BD0000A60C9 /* MyAllergies.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830721C7D7BD0000A60C9 /* MyAllergies.m */; };
+		C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */; };
 		C0AED7311C74E4AB007E602B /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0AED72E1C74E213007E602B /* libNetworkHandler.a */; };
 		C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8D1C08B94600963D5D /* Assets.xcassets */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
@@ -542,12 +542,12 @@
 		C09EF7091C76234300806600 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		C09EF70B1C76249C00806600 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.7.1/OpenTok.framework"; sourceTree = "<group>"; };
 		C09EF70D1C7625AB00806600 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		C0A8306D1C7D7BD0000A60C9 /* MedicalDocumentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsVC.h; sourceTree = "<group>"; };
-		C0A8306E1C7D7BD0000A60C9 /* MedicalDocumentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumentsVC.m; sourceTree = "<group>"; };
 		C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesVC.h; sourceTree = "<group>"; };
 		C0A830701C7D7BD0000A60C9 /* ImagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesVC.m; sourceTree = "<group>"; };
 		C0A830711C7D7BD0000A60C9 /* MyAllergies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAllergies.h; sourceTree = "<group>"; };
 		C0A830721C7D7BD0000A60C9 /* MyAllergies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAllergies.m; sourceTree = "<group>"; };
+		C0A830FD1C7DC6FF000A60C9 /* MedicalDocumentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsVC.h; sourceTree = "<group>"; };
+		C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumentsVC.m; sourceTree = "<group>"; };
 		C0AED7281C74E213007E602B /* NetworkHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkHandler.xcodeproj; path = NetworkHandlerFullFrameWork/NetworkHandler.xcodeproj; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1083,6 +1083,7 @@
 		9F5F0C491C66614200F7E99D /* HealthProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				C0A830FC1C7DC6FF000A60C9 /* MedicalDocumentsVC */,
 				C056DBBA1C7CC2EB00F1F03C /* myHealthProfileVC.h */,
 				C056DBBB1C7CC2EB00F1F03C /* myHealthProfileVC.m */,
 				9F5F0C4A1C66614200F7E99D /* HealthProfileVC.h */,
@@ -1228,8 +1229,6 @@
 				C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */,
 				C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */,
 				C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */,
-				C0A8306D1C7D7BD0000A60C9 /* MedicalDocumentsVC.h */,
-				C0A8306E1C7D7BD0000A60C9 /* MedicalDocumentsVC.m */,
 				C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */,
 				C0A830701C7D7BD0000A60C9 /* ImagesVC.m */,
 				C0A830711C7D7BD0000A60C9 /* MyAllergies.h */,
@@ -1461,6 +1460,15 @@
 				C09EF6B61C76211800806600 /* OTVideoRender.html */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C0A830FC1C7DC6FF000A60C9 /* MedicalDocumentsVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0A830FD1C7DC6FF000A60C9 /* MedicalDocumentsVC.h */,
+				C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */,
+			);
+			path = MedicalDocumentsVC;
 			sourceTree = "<group>";
 		};
 		C0AED7291C74E213007E602B /* Products */ = {
@@ -1982,7 +1990,6 @@
 				C0BBC4931C6E2BED005083B1 /* AppoinmentsDocs.m in Sources */,
 				C08437FC1C6F019600610ADC /* AskQuestionsVC.m in Sources */,
 				9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */,
-				C0A830731C7D7BD0000A60C9 /* MedicalDocumentsVC.m in Sources */,
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,
 				C09EF6F71C76211800806600 /* README.md in Sources */,
 				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
@@ -1997,6 +2004,7 @@
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				C0E71FCD1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m in Sources */,
 				9F5F0C6A1C6668FF00F7E99D /* HealthProfileUserPhotosCVC.m in Sources */,
+				C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */,
 				9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */,
 				C0BBC4971C6E2C5E005083B1 /* AppoinmentDetailVC.m in Sources */,
 				9F5F0C561C66672300F7E99D /* MBProgressHUD.m in Sources */,
