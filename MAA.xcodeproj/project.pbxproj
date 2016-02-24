@@ -178,6 +178,7 @@
 		C0A830751C7D7BD0000A60C9 /* MyAllergies.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830721C7D7BD0000A60C9 /* MyAllergies.m */; };
 		C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */; };
 		C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */; };
+		C0A8312A1C7DE503000A60C9 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A831271C7DE4D6000A60C9 /* libNetworkHandler.a */; };
 		C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8D1C08B94600963D5D /* Assets.xcassets */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
@@ -639,6 +640,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0A8312A1C7DE503000A60C9 /* libNetworkHandler.a in Frameworks */,
 				C09EF70E1C7625AB00806600 /* libc++.tbd in Frameworks */,
 				C09EF70C1C76249C00806600 /* OpenTok.framework in Frameworks */,
 				C09EF70A1C76234300806600 /* CoreVideo.framework in Frameworks */,
