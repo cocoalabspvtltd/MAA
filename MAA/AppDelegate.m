@@ -34,17 +34,17 @@
 //    self.window.rootViewController = doctorRegistrationnvCntlr;
     //[self.navigationController pushViewController:doctorRegistrationVC animated:YES];
 
-   UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
-    if(![self isLoggedIn]){
-        UINavigationController *navigationController = [sb instantiateViewControllerWithIdentifier:@"LogInNavigationController"];
-        self.window.rootViewController = navigationController;
-    }
-    else
-    {
-        UITabBarController *tabbarController = [sb instantiateViewControllerWithIdentifier:@"TabBarController"];
-        self.window.rootViewController = tabbarController;
-         [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"bar_b"]];
-    }
+//   UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+//    if(![self isLoggedIn]){
+//        UINavigationController *navigationController = [sb instantiateViewControllerWithIdentifier:@"LogInNavigationController"];
+//        self.window.rootViewController = navigationController;
+//    }
+//    else
+//    {
+//        UITabBarController *tabbarController = [sb instantiateViewControllerWithIdentifier:@"TabBarController"];
+//    self.window.rootViewController = tabbarController;
+//         [[UITabBar appearance] setSelectionIndicatorImage:[UIImage imageNamed:@"bar_b"]];
+//    }
     
 }
 
@@ -63,7 +63,7 @@
 }
 
 -(void)showHomeView:(id)sender{
-    [self initWindow];
+  //  [self initWindow];
 }
 
 

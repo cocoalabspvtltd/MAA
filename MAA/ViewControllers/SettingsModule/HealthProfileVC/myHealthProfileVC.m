@@ -55,6 +55,7 @@ CGFloat ht=0;
         
         cell.textLabel.text=[BloodGrups objectAtIndex:indexPath.row];
         cell.textLabel.font=[UIFont systemFontOfSize:(11.0)];
+        cell.textLabel.textAlignment=NSTextAlignmentCenter;
     
     return cell;
 }
@@ -82,10 +83,13 @@ CGFloat ht=0;
     [_scroller setContentSize:CGSizeMake(self.view.frame.size.width,height)];
     
 }
-- (IBAction)backbuttonAction:(UIButton *)sender {
+- (IBAction)backbuttonAction:(UIButton *)sender
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (IBAction)editButtonAction:(UIButton *)sender {
+- (IBAction)editButtonAction:(UIButton *)sender
+{
+    
 }
 
 - (IBAction)DropDown:(id)sender
@@ -96,17 +100,28 @@ CGFloat ht=0;
     else
         _tblDropDown.hidden=YES;
 }
-- (IBAction)prescriptionsButtonAction:(UIButton *)sender {
+- (IBAction)prescriptionsButtonAction:(UIButton *)sender
+{
+    
 }
-- (IBAction)medicalDocumentsbuttonAction:(UIButton *)sender {
+- (IBAction)medicalDocumentsbuttonAction:(UIButton *)sender
+{
+    
 }
-- (IBAction)imagesButtonAction:(UIButton *)sender {
+- (IBAction)imagesButtonAction:(UIButton *)sender
+{
+    
 }
-- (IBAction)allergiesButtonAction:(UIButton *)sender {
+- (IBAction)allergiesButtonAction:(UIButton *)sender
+{
+    
 }
 
-- (IBAction)submitButtonAction:(UIButton *)sender {
+- (IBAction)submitButtonAction:(UIButton *)sender
+{
+    
 }
+
 #pragma mark - Calling Health Profile Api
 
 -(void)callingHealthProfileApi{
@@ -166,7 +181,8 @@ CGFloat ht=0;
         self.heightTextField.text = [[profileData valueForKey:@"health_profile"] valueForKey:@"height"];
     }
     if (!([[[profileData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"name"] == [NSNull null])){
-        NSString *bloodGroup = [[[profileData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"name"];        [self.bloodGroupButton setTitle:bloodGroup forState:UIControlStateNormal];
+        NSString *bloodGroup = [[[profileData valueForKey:@"health_profile"] valueForKey:@"blood_group"] valueForKey:@"name"];
+        [self.btnDropDown setTitle:bloodGroup forState:UIControlStateNormal];
     }
 //    if(!([profileData valueForKey:@"dob"] == [NSNull null])){
 //        self.dateOfBirthTextField.text = [profileData valueForKey:@"dob"];
