@@ -15,4 +15,11 @@
 @property (nonatomic, assign) BOOL isFromGovernmentIdFromDR;
 @property (weak, nonatomic) IBOutlet UIButton *uploadPhotosButton;
 @property (nonatomic, assign) BOOL isFromPrescriptionLetterFromDR;
+
+#pragma mark - HealthProfile
+
+@property (nonatomic, assign) BOOL isFromePrescriptions;
+@property (nonatomic, assign) BOOL isFromMedicalDocuments;
+@property (nonatomic, assign) BOOL isFromImages;
+
 @end

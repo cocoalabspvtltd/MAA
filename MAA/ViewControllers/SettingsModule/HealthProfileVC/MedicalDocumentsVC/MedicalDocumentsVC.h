@@ -15,5 +15,9 @@
 - (IBAction)Back:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *AddPopup;
 @property (weak, nonatomic) IBOutlet UICollectionView *medicalDocumentsCollectionView;
+@property (nonatomic, assign) BOOL isFromPrescriptions;
+@property (nonatomic, assign) BOOL isFromMedicalDocuments;
+@property (nonatomic, assign) BOOL isFromImages;
+@property (nonatomic, assign) BOOL isFromAllergies;
 
 @end

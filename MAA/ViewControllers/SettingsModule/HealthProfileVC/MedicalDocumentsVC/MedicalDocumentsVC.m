@@ -8,6 +8,7 @@
 
 #import "MedicalDocumentsVC.h"
 #import "TMDCollectionViewCell.h"
+#import "PhotoGridViewController.h"
 
 @interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 
@@ -20,7 +21,7 @@
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
     self.imgFloat.clipsToBounds = YES;
     //[self callingGetDocumentsApi];
-    [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
+   // [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
     _AddPopup.hidden=YES;
     // Do any additional setup after loading the view.
 }
@@ -83,8 +84,17 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)takePhotoButtonAction:(UIButton *)sender {
+    _AddPopup.hidden=YES;
 }
+
 - (IBAction)chooseFromGalleryButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PhotoGridViewController *photoGridViewController = (PhotoGridViewController *)[storyboard instantiateViewControllerWithIdentifier:@"PhotoGridViewController"];
+    photoGridViewController.isFromMedicalDocuments = self.isFromMedicalDocuments;
+    photoGridViewController.isFromImages = self.isFromImages;
+    photoGridViewController.isFromePrescriptions = self.isFromPrescriptions;
+    [self.navigationController pushViewController:photoGridViewController animated:YES];
+    _AddPopup.hidden=YES;
 }
 
 

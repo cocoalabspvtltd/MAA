@@ -112,20 +112,31 @@ CGFloat ht=0;
 }
 - (IBAction)prescriptionsButtonAction:(UIButton *)sender
 {
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
+    medicalDocumentsVC.isFromPrescriptions = YES;
+    [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
 }
 - (IBAction)medicalDocumentsbuttonAction:(UIButton *)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
     MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
+    medicalDocumentsVC.isFromMedicalDocuments = YES;
     [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
 }
 - (IBAction)imagesButtonAction:(UIButton *)sender
 {
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
+    medicalDocumentsVC.isFromImages = YES;
+    [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
 }
 - (IBAction)allergiesButtonAction:(UIButton *)sender
 {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
+    medicalDocumentsVC.isFromAllergies = YES;
+    [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
     
 }
 

@@ -61,6 +61,18 @@
         self.photoCollectionView.allowsMultipleSelection = NO;
         [self.uploadPhotosButton setTitle:@"Choose Prescription Letter" forState:UIControlStateNormal];
     }
+    else if (self.isFromePrescriptions){
+        self.photoCollectionView.allowsMultipleSelection = NO;
+        [self.uploadPhotosButton setTitle:@"Choose Prescription" forState:UIControlStateNormal];
+    }
+    else if (self.isFromMedicalDocuments){
+        self.photoCollectionView.allowsMultipleSelection = NO;
+        [self.uploadPhotosButton setTitle:@"Choose Medical Document" forState:UIControlStateNormal];
+    }
+    else if (self.isFromImages){
+        self.photoCollectionView.allowsMultipleSelection = NO;
+        [self.uploadPhotosButton setTitle:@"Choose Image" forState:UIControlStateNormal];
+    }
     else{
        self.photoCollectionView.allowsMultipleSelection = YES;
     }
@@ -143,8 +155,10 @@
             UIImage *convertedImage = [self convertingMedicalregistrationImageAsset:[self.selectedGalleryphotosArray objectAtIndex:0]];
             [[ImageCache sharedCache] addImage:convertedImage toFolder:folderPath toCacheWithIdentifier:PrescriptionletterCertificateIdentifier];
         }
-
-        [self.navigationController popViewControllerAnimated:YES];
+        else if (self.isFromImages){
+            UIImage *convertedImage = [self convertingMedicalregistrationImageAsset:[self.selectedGalleryphotosArray objectAtIndex:0]];
+            [self callingImageUploadingApiForHealthprofileWithImage:convertedImage];
+        }
     }
 }
 
@@ -180,4 +194,68 @@
 }
 */
 
+-(void)callingImageUploadingApiForHealthprofileWithImage:(UIImage *)uploadingImage{
+    NSData *uploadingImageData = UIImageJPEGRepresentation(uploadingImage, 0.1);
+    NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSString *fileUploadUrlString = Baseurl;
+    NSString *accesstokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *imageUploadingDictionary = [[NSMutableDictionary alloc] init];
+    [imageUploadingDictionary setObject:accesstoken forKey:@"token"];
+    //[imageUploadingDictionary setObject:@"Title1" forKey:@"title"];
+    if(self.isFromImages){
+        [imageUploadingDictionary setObject:@"1" forKey:@"type"];
+    }
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSLog(@"Image Uploading Dictionary:%@",imageUploadingDictionary);
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:fileUploadUrlString] withBody:imageUploadingDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstokenString];
+    
+    [[NetworkHandler sharedHandler] startUploadRequest:@"med_doc_img1.jpg" withData:uploadingImageData withType:fileTypeJPGImage withUrlParameter:AddImageurl SuccessBlock:^(id responseObject) {
+        NSDictionary *jsonObject=[NSJSONSerialization
+                                  JSONObjectWithData:responseObject
+                                  options:NSJSONReadingMutableLeaves
+                                  error:nil];
+        NSLog(@"jsonObject is %@",jsonObject);
+        NSString *alerMessage;
+        if(self.isFromImages){
+            alerMessage = @"Profile Image Uploaded Successfully";
+        }
+        [self callingAlertViewControllerWithMessageString:alerMessage];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+    } ProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        NSLog(@"Error Response:%@",errorResponse);
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+        NSLog(@"Error :%@",errorResponse);
+    }];
+    
+}
+
+#pragma mark - adding Alert View Controller
+
+-(void)callingAlertViewControllerWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   [self.navigationController popViewControllerAnimated:YES];
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 @end
