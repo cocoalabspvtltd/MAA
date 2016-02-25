@@ -23,5 +23,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
 @property (weak, nonatomic) IBOutlet UITextField *notestextField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIImageView *underLineImg1;
+@property (weak, nonatomic) IBOutlet UIImageView *underLineImg2;
+@property (weak, nonatomic) IBOutlet UIImageView *underLineImg3;
+@property (weak, nonatomic) IBOutlet UIImageView *underLineImg4;
+@property (weak, nonatomic) IBOutlet UIImageView *underLineImg5;
+@property (weak, nonatomic) IBOutlet UIImageView *underLineImg6;
 
 @end

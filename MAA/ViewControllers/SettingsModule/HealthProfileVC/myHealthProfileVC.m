@@ -26,6 +26,13 @@ CGFloat ht=0;
     _tblDropDown.hidden=YES;
     self.selectedBloodGroupId = @"";
     [self callingHealthProfileApi];
+    self.underLineImg1.backgroundColor=[UIColor clearColor];
+    self.underLineImg2.backgroundColor=[UIColor clearColor];
+    self.underLineImg3.backgroundColor=[UIColor clearColor];
+    self.underLineImg4.backgroundColor=[UIColor clearColor];
+    self.underLineImg5.backgroundColor=[UIColor clearColor];
+    self.underLineImg6.backgroundColor=[UIColor clearColor];
+    self.submitButton.hidden=YES;
     
     
     // Do any additional setup after loading the view.
@@ -87,10 +94,12 @@ CGFloat ht=0;
 }
 - (IBAction)backbuttonAction:(UIButton *)sender
 {
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)editButtonAction:(UIButton *)sender
 {
+    
     self.heightTextField.enabled = YES;
     self.weightTextField.enabled = YES;
     self.btnDropDown.enabled = YES;
@@ -100,6 +109,13 @@ CGFloat ht=0;
     self.postMealSugarTextField.enabled  =YES;
     self.notestextField.enabled = YES;
     self.submitButton.enabled = YES;
+    self.underLineImg1.backgroundColor=[UIColor redColor];
+    self.underLineImg2.backgroundColor=[UIColor redColor];
+    self.underLineImg3.backgroundColor=[UIColor redColor];
+    self.underLineImg4.backgroundColor=[UIColor redColor];
+    self.underLineImg5.backgroundColor=[UIColor redColor];
+    self.underLineImg6.backgroundColor=[UIColor redColor];
+    self.submitButton.hidden=NO;
 }
 
 - (IBAction)DropDown:(id)sender
@@ -143,6 +159,11 @@ CGFloat ht=0;
 - (IBAction)submitButtonAction:(UIButton *)sender
 {
     [self callingSubmitHealthProfile];
+    self.underLineImg1.backgroundColor=[UIColor clearColor];
+    self.underLineImg2.backgroundColor=[UIColor clearColor];
+    self.underLineImg3.backgroundColor=[UIColor clearColor];
+    self.underLineImg4.backgroundColor=[UIColor clearColor];
+    
 }
 
 #pragma mark - Calling Health Profile Api
@@ -313,5 +334,10 @@ CGFloat ht=0;
     self.postMealSugarTextField.enabled  =NO;
     self.notestextField.enabled = NO;
     self.submitButton.enabled = NO;
+    self.underLineImg1.backgroundColor=[UIColor clearColor];
+    self.underLineImg2.backgroundColor=[UIColor clearColor];
+    self.underLineImg3.backgroundColor=[UIColor clearColor];
+    self.underLineImg4.backgroundColor=[UIColor clearColor];
+   
 }
 @end
