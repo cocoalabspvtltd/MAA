@@ -105,6 +105,7 @@
     self.longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressTap:)];
     [photoCell addGestureRecognizer:_longPress];
     NSString *imageUrlString = [[self.photosMutableArray objectAtIndex:indexPath.row] valueForKey:@"url"];
+    NSLog(@"Image Url:%@",imageUrlString);
     [photoCell.medicalDocumentImageView  sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     return photoCell;
     
@@ -211,13 +212,22 @@
     self.topTransparentView.hidden=YES;
 }
 
+- (IBAction)chooseLibraryButtonAction:(UIButton *)sender {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:NULL];
+    _AddPopup.hidden=YES;
+    self.topTransparentView.hidden=YES;
+}
+
 #pragma mark - Image Picker Delegates
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    //UIImage *chosenImage  = [[CLUtilities standardUtilities] scaleAndRotateImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
-    //   NSData *imageData = UIImageJPEGRepresentation(chosenImage, 0.5);
-    //    [[NSUserDefaults standardUserDefaults] setObject:imageData forKey:GiftImageKeyForUserDefaults];
-    //    [[NSUserDefaults standardUserDefaults] synchronize];
+    UIImage *chosenImage  = [[CLUtilities standardUtilities] scaleAndRotateImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
+    [self callingImageUploadingApiWithImage:chosenImage];
     [picker dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -247,20 +257,23 @@
     NSMutableDictionary *imageUploadingDictionary = [[NSMutableDictionary alloc] init];
     [imageUploadingDictionary setObject:accesstoken forKey:@"token"];
     [imageUploadingDictionary setObject:@"Title1" forKey:@"title"];
-    [imageUploadingDictionary setObject:@"1" forKey:@"type"];
-    NSLog(@"Image Uploading Dictionary:%@",imageUploadingDictionary);
+    [imageUploadingDictionary setObject:[NSNumber numberWithInt:self.medicalType] forKey:@"type"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:fileUploadUrlString] withBody:imageUploadingDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstokenString];
     
     [[NetworkHandler sharedHandler] startUploadRequest:@"med_doc_img1.jpg" withData:uploadingImageData withType:fileTypeJPGImage withUrlParameter:AddImageurl SuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self callingAlertViewControllerWithMessageString:@"Document added successfully"];
         NSDictionary *jsonObject=[NSJSONSerialization
                                   JSONObjectWithData:responseObject
                                   options:NSJSONReadingMutableLeaves
                                   error:nil];
-        NSLog(@"jsonObject is %@",jsonObject);
-        
+        [self.photosMutableArray insertObject:[[jsonObject valueForKey:Datakey] objectAtIndex:0] atIndex:0];
+        [self.medicalDocumentsCollectionView reloadData];
     } ProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Error Response:%@",errorResponse);
         NSString *errorMessage;
         if([errorDescription isEqualToString:NoNetworkErrorName]){
@@ -291,7 +304,7 @@
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getDocumentsApiUrlSrtring] withBody:getDocumentsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"Response Object:%@",responseObject);
+       
         self.offsetValue = self.offsetValue+self.limitValue;
         [self.bottomProgressIndicatorView stopAnimating];
         NSArray *imagesArray = [responseObject valueForKey:Datakey];
@@ -333,5 +346,22 @@
 {
     self.topTransparentView.hidden=YES;
     _editTitleViewPopup.hidden=YES;
+}
+
+-(void)callingAlertViewControllerWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end
