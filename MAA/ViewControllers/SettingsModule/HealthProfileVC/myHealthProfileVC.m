@@ -140,6 +140,10 @@ CGFloat ht=0;
     medicalDocumentsVC.isFromMedicalDocuments = YES;
     [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
 }
+- (IBAction)imagesActions:(UIButton *)sender {
+}
+
+
 - (IBAction)imagesButtonAction:(UIButton *)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];

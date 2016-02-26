@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *photosMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, strong) UIView *topTransparentView;
+@property (nonatomic, assign) int medicalType;
 @end
 
 @implementation MedicalDocumentsVC
@@ -31,7 +32,13 @@
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
     self.imgFloat.clipsToBounds = YES;
     [self initialisingHeadingLabeltext];
-    [self callingGetDocumentsApi];
+    if(self.isFromImages){
+        self.medicalType = 1;
+    }
+    else if(self.isFromMedicalDocuments){
+        self.medicalType = 1;
+    }
+    [self callingGetDocumentsApiWithType:self.medicalType];
    // [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
     _AddPopup.hidden=YES;
     _editTitleViewPopup.hidden=YES;
@@ -94,12 +101,11 @@
 
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     TMDCollectionViewCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"tmdReuseCollectionCell" forIndexPath:indexPath];
-    //photoCell.profileImageUrl = [self.photosFinalArray objectAtIndex:indexPath.row];
     photoCell.backgroundColor = [UIColor greenColor];
-    
     self.longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressTap:)];
     [photoCell addGestureRecognizer:_longPress];
-    
+    NSString *imageUrlString = [[self.photosMutableArray objectAtIndex:indexPath.row] valueForKey:@"url"];
+    [photoCell.medicalDocumentImageView  sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     return photoCell;
     
 }
@@ -272,12 +278,12 @@
 
 #pragma mark - Get Images Api
 
--(void)callingGetDocumentsApi{
+-(void)callingGetDocumentsApiWithType:(int)type{
     NSString *getDocumentsApiUrlSrtring = [Baseurl stringByAppendingString:GetHealthProfilImagesUrl];
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *getDocumentsMutableDictionary = [[NSMutableDictionary alloc] init];
     [getDocumentsMutableDictionary setValue:accessToken forKey:@"token"];
-    [getDocumentsMutableDictionary setValue:@"1" forKey:@"type"];
+    [getDocumentsMutableDictionary setValue:[NSNumber numberWithInt:type] forKey:@"type"];
     [getDocumentsMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [getDocumentsMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
     if(self.offsetValue == 0){
@@ -314,7 +320,7 @@
         float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
         if (endScrolling >= scrollView.contentSize.height)
         {
-            [self callingGetDocumentsApi];
+            [self callingGetDocumentsApiWithType:self.medicalType];
             [self.bottomProgressIndicatorView startAnimating];
         }
         else{
