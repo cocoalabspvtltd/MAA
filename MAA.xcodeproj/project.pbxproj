@@ -80,6 +80,7 @@
 		C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0051C6A00F70095E2CC /* microphone_off.png */; };
 		C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0071C6A010A0095E2CC /* video_camera_none.png */; };
 		C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0091C6A011C0095E2CC /* phone_none.png */; };
+		C010F17F1C80570400A0CB88 /* FeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C010F17E1C80570400A0CB88 /* FeedBackVC.m */; };
 		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
 		C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C381C71B96C00662BB4 /* ViewProfileVC.m */; };
 		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
@@ -432,6 +433,8 @@
 		C005F0051C6A00F70095E2CC /* microphone_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_off.png; sourceTree = "<group>"; };
 		C005F0071C6A010A0095E2CC /* video_camera_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera_none.png; sourceTree = "<group>"; };
 		C005F0091C6A011C0095E2CC /* phone_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_none.png; sourceTree = "<group>"; };
+		C010F17D1C80570400A0CB88 /* FeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackVC.h; sourceTree = "<group>"; };
+		C010F17E1C80570400A0CB88 /* FeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackVC.m; sourceTree = "<group>"; };
 		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
 		C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Doc'sAccntInfo.m"; sourceTree = "<group>"; };
 		C0447C371C71B96C00662BB4 /* ViewProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileVC.h; sourceTree = "<group>"; };
@@ -1242,6 +1245,8 @@
 				C0A830701C7D7BD0000A60C9 /* ImagesVC.m */,
 				C0A830711C7D7BD0000A60C9 /* MyAllergies.h */,
 				C0A830721C7D7BD0000A60C9 /* MyAllergies.m */,
+				C010F17D1C80570400A0CB88 /* FeedBackVC.h */,
+				C010F17E1C80570400A0CB88 /* FeedBackVC.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -2033,6 +2038,7 @@
 				C0BBC4A01C6E4046005083B1 /* AppointmentTableViewCell.m in Sources */,
 				C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */,
 				9F5F0C431C665F6D00F7E99D /* AskedQuestionsTVC.m in Sources */,
+				C010F17F1C80570400A0CB88 /* FeedBackVC.m in Sources */,
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
 				C0BBC4A21C6E4046005083B1 /* PreviousAppoinmentCell.m in Sources */,
 				C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */,

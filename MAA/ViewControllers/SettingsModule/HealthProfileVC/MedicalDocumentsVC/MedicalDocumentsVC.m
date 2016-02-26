@@ -15,12 +15,17 @@
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, strong) NSMutableArray *photosMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
+@property (nonatomic, strong) UIView *topTransparentView;
 @end
 
 @implementation MedicalDocumentsVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self addingToptransparentView];
+   //self.topTransparentView.hidden = YES;
+    
     [self initialisation];
     [self addSubViews];
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
@@ -29,9 +34,18 @@
     [self callingGetDocumentsApi];
    // [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
     _AddPopup.hidden=YES;
+    _editTitleViewPopup.hidden=YES;
     // Do any additional setup after loading the view.
 }
-
+-(void)addingToptransparentView
+{
+    self.topTransparentView = [[UIView alloc] init];
+    self.topTransparentView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.topTransparentView.backgroundColor = [UIColor blackColor];
+    self.topTransparentView.layer.opacity = 0.5;
+    self.topTransparentView.hidden = YES;
+    [self.view addSubview:self.topTransparentView];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -82,6 +96,10 @@
     TMDCollectionViewCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"tmdReuseCollectionCell" forIndexPath:indexPath];
     //photoCell.profileImageUrl = [self.photosFinalArray objectAtIndex:indexPath.row];
     photoCell.backgroundColor = [UIColor greenColor];
+    
+    self.longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressTap:)];
+    [photoCell addGestureRecognizer:_longPress];
+    
     return photoCell;
     
 }
@@ -95,12 +113,54 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)longPressTap:(id)sender
+{
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+        // Cancel button tappped do nothing.
+        
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit Title" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+    {
+        if (_editTitleViewPopup.hidden==YES)
+        {
+           
+            self.topTransparentView.hidden=NO;
+            _editTitleViewPopup.hidden=NO;
+            [self.topTransparentView addSubview:_editTitleViewPopup];
+        }
+        
+        // take photo button tapped.
+        //[self takePhoto];
+        
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        
+        // choose photo button tapped.
+       // [self choosePhoto];
+        
+    }]];
+    
+//    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Delete Photo" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+//        
+//         Distructive button tapped.
+//        [self deletePhoto];
+//        
+//    }]];
+    
+    
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
 - (IBAction)floatButton:(id)sender
 {
-    
+    self.topTransparentView.hidden=NO;
         _AddPopup.hidden=NO;
-    _AddPopup.superview.backgroundColor=[UIColor lightGrayColor];
+    [self.topTransparentView addSubview:_AddPopup];
+   // _AddPopup.superview.backgroundColor=[UIColor lightGrayColor];
     
     
 //    _AddPopup.superview.alpha=.06;
@@ -112,9 +172,9 @@
 //}
 - (IBAction)Cancel:(id)sender
 {
-    
+    self.topTransparentView.hidden=YES;
         _AddPopup.hidden=YES;
-        _AddPopup.superview.backgroundColor=[UIColor whiteColor];
+       // _AddPopup.superview.backgroundColor=[UIColor whiteColor];
     
 }
 - (IBAction)backButtonAction:(UIButton *)sender {
@@ -142,6 +202,7 @@
             }
         }
     _AddPopup.hidden=YES;
+    self.topTransparentView.hidden=YES;
 }
 
 #pragma mark - Image Picker Delegates
@@ -168,6 +229,7 @@
     photoGridViewController.isFromePrescriptions = self.isFromPrescriptions;
     [self.navigationController pushViewController:photoGridViewController animated:YES];
     _AddPopup.hidden=YES;
+    _topTransparentView.hidden=YES;
 }
 
 -(void)callingImageUploadingApiWithImage:(UIImage *)uploadingImage{
@@ -260,4 +322,9 @@
     }
 }
 
+- (IBAction)cancelEditTitlePopup:(id)sender
+{
+    self.topTransparentView.hidden=YES;
+    _editTitleViewPopup.hidden=YES;
+}
 @end

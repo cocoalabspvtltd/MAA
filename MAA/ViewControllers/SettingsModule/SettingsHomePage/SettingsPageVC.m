@@ -9,6 +9,7 @@
 #import "SettingsPageVC.h"
 #import "myHealthProfileVC.h"
 #import "AboutViewController.h"
+#import "FeedBackVC.h"
 
 #import "SettingsTableViewCell.h"
 
@@ -51,11 +52,12 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 6;
+    return 7;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 45;
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -81,9 +83,14 @@
         settingsTVC.iconImageView.image = [UIImage imageNamed:@"info-red"];
     }
     else if (indexPath.row == 5){
+        settingsTVC.headingLabel.text = @"Feedback";
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"feedback"];
+    }
+    else if (indexPath.row == 6){
         settingsTVC.headingLabel.text = @"Sign Out";
         settingsTVC.iconImageView.image = [UIImage imageNamed:@"uploadside"];
     }
+    
     return settingsTVC;
 }
 
@@ -97,7 +104,12 @@
         AboutViewController *aboutVC = (AboutViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
         [self.navigationController pushViewController:aboutVC animated:YES];
     }
-    else if(indexPath.row == 5){
+    else if (indexPath.row==5)
+    {
+        FeedBackVC *feedbackVC = (FeedBackVC *)[storyboard instantiateViewControllerWithIdentifier:@"FeedBackVC"];
+        [self.navigationController pushViewController:feedbackVC animated:YES];
+    }
+    else if(indexPath.row == 6){
         
         [self callingLogoutAlertViewController];
         

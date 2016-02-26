@@ -31,8 +31,8 @@
 }
 -(void)viewDidAppear:(BOOL)animated
 {
-    _childView.backgroundColor=[UIColor whiteColor];
-    _ppupView.alpha=.6;
+    
+   
     
 }
 
@@ -57,7 +57,8 @@
 - (IBAction)FloatButton:(id)sender
 {
     _ppupView.hidden=NO;
-    _ppupView.backgroundColor=[UIColor lightGrayColor];
+    _ppupView.backgroundColor=[UIColor blackColor];
+    self.ppupView.layer.opacity = 0.5;
     //self.view.backgroundColor=[UIColor lightGrayColor];
     
     
