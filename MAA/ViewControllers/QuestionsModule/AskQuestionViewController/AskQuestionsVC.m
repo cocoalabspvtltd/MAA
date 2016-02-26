@@ -140,7 +140,6 @@
 
 -(void)getCategoriesApiCall{
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
-    NSLog(@"Access Token:%@",accessToken);
     NSString *getCategoriesUrlString = [Baseurl stringByAppendingString:GetCategoriesUrl];
     NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
     [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
@@ -150,7 +149,6 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"Response Object;%@",responseObject);
         self.askQuestionsCategoryView.categoriesArray = [responseObject valueForKey:Datakey];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -169,13 +167,13 @@
 
 #pragma mark - Ask Questions Category view Delegate
 
--(void)salectedCategoryWithIndex:(NSString *)selectedCategoryIndex withCategoryName:(NSString *)categoryName{
+-(void)salectedCategoryWithIndex:(NSString *)selectedCategoryIndex withCategoryName:(NSString *)categoryName withImageUrlString:(NSString *)imageUrlString{
     self.selectedCategoryId = selectedCategoryIndex;
     self.topTransparentView.hidden = YES;
     [self.chooseCategoryButton setTitle:categoryName forState:UIControlStateNormal];
     [self.askQuestionsCategoryView removeFromSuperview];
+    [self.categoryImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     [self.view addGestureRecognizer:self.textFieldEditingTapgesture];
-    NSLog(@"Selectd category ID:%@",selectedCategoryIndex);
 }
 
 #pragma mark - Text field Delegate

@@ -67,32 +67,9 @@
     self.doctorSpecialityLabel.text = [detailsData valueForKey:@"tagline"];
     self.answerDateLabel.text = [detailsData valueForKey:@"answer_timestamp"];
     self.answerLabe.text = [detailsData valueForKey:@"answer"];
-    [self settingDoctorProfileImageWithUrlStrimg:[detailsData valueForKey:@"answeree_image"] withAnswereID: [detailsData valueForKey:@"answeree_id"]];
+    NSString *profileImageurlString = [detailsData valueForKey:@"answeree_image"];
+    [self.doctorProfileImageView sd_setImageWithURL:[NSURL URLWithString:profileImageurlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
 }
-
--(void)settingDoctorProfileImageWithUrlStrimg:(NSString *)profileImageUrlString withAnswereID:(NSString *)answereID{
-        NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/Doctor"];
-        NSURL *imageUrl = [NSURL URLWithString:profileImageUrlString];
-        UIImage *localImage;
-        localImage = [[ImageCache sharedCache] imageFromFolder:folderPath WithIdentifier:answereID];
-        if(!localImage){
-            [MBProgressHUD showHUDAddedTo:self.doctorProfileImageView animated:YES];
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-                UIImage *tempImage = [UIImage imageWithData:imageData];
-                [[ImageCache sharedCache]addImage:tempImage toFolder:folderPath toCacheWithIdentifier:answereID];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    self.doctorProfileImageView.image = tempImage;
-                    [MBProgressHUD hideAllHUDsForView:self.doctorProfileImageView animated:YES];
-                }
-                               );
-            });
-        }
-        else{
-            self.doctorProfileImageView.image = localImage;
-        }
-        
-    }
 
 /*
 #pragma mark - Navigation

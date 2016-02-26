@@ -15,6 +15,6 @@
 @end
 @protocol AskQuestionsCategoryViewDeleagte <NSObject>
 
--(void)salectedCategoryWithIndex:(NSString *)selectedCategoryIndex withCategoryName:(NSString *)categoryName;
+-(void)salectedCategoryWithIndex:(NSString *)selectedCategoryIndex withCategoryName:(NSString *)categoryName withImageUrlString:(NSString *)imageUrlString;
 
 @end

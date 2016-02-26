@@ -113,28 +113,8 @@
     if(!([[self.questionsMutableArray objectAtIndex:indexPath.row] valueForKey:@"question_timestamp"]  == [NSNull null]) ){
         cell.dateLabel.text = [[self.questionsMutableArray objectAtIndex:indexPath.row] valueForKey:@"question_timestamp"];
     }
-   // NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/Doctor"];
-    NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/QuestionImages"];
-    UIImage *localImage;
-    NSString *cacheIdentifier = [[self.questionsMutableArray objectAtIndex:indexPath.row] valueForKey:@"que_id"];
-    NSString *profileImageUrlString = [[self.questionsMutableArray objectAtIndex:indexPath.row] valueForKey:@"cat_logo"];
-    localImage = [[ImageCache sharedCache] imageFromFolder:folderPath WithIdentifier:cacheIdentifier];
-    if(!localImage){
-        [MBProgressHUD showHUDAddedTo:cell.profileImageView animated:YES];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:profileImageUrlString]];
-            UIImage *tempImage = [UIImage imageWithData:imageData];
-            [[ImageCache sharedCache]addImage:tempImage toFolder:folderPath toCacheWithIdentifier:cacheIdentifier];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                cell.profileImageView.image = tempImage;
-                [MBProgressHUD hideAllHUDsForView:cell.profileImageView animated:YES];
-            }
-                           );
-        });
-    }
-    else{
-        cell.profileImageView.image = localImage;
-    }
+    NSString *imageViewUrlString = [[self.questionsMutableArray objectAtIndex:indexPath.row] valueForKey:@"cat_logo"];
+    [cell.profileImageView sd_setImageWithURL:[NSURL URLWithString:imageViewUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     return cell;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath;
@@ -180,7 +160,6 @@
         self.offsetValue=self.offsetValue+self.limitValue;
         [self.tblquestions reloadData];
         [self.bottomProgressIndicatorView stopAnimating];
-        NSLog(@"Response Object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.bottomProgressIndicatorView stopAnimating];

@@ -998,42 +998,6 @@
             </objects>
             <point key="canvasLocation" x="6961" y="-2360"/>
         </scene>
-        <!--Doctor Video Call-->
-        <scene sceneID="uZq-2p-PFK">
-            <objects>
-                <viewController title="Doctor Video Call" id="bnE-WS-yrP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GBh-Cn-6dn"/>
-                        <viewControllerLayoutGuide type="bottom" id="Vfe-BF-cDz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Xpm-6b-zr6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hk4-hF-M4S" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8239" y="-1844"/>
-        </scene>
-        <!--Consult Now Page-->
-        <scene sceneID="x9Z-Z5-JqW">
-            <objects>
-                <viewController title="Consult Now Page" id="6Mp-cZ-9K3" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WyB-du-FLf"/>
-                        <viewControllerLayoutGuide type="bottom" id="ydg-0U-za1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3AL-kV-q8X">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="obP-7Q-Ne4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8177" y="-1015"/>
-        </scene>
         <!--Search Results-->
         <scene sceneID="z0d-dr-f40">
             <objects>
@@ -3027,12 +2991,23 @@
                                             <action selector="ChooseCategory:" destination="qkg-sh-oHf" eventType="touchUpInside" id="0cO-9s-1Bv"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nQ6-os-rlS">
-                                        <rect key="frame" x="145" y="117" width="30" height="30"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nQ6-os-rlS">
+                                        <rect key="frame" x="137" y="117" width="30" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="brT-u7-a2p"/>
+                                            <constraint firstAttribute="width" constant="30" id="brT-u7-a2p">
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="keyPath">
+                                                        <integer key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </constraint>
                                             <constraint firstAttribute="height" constant="30" id="j4o-U6-zvj"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -3051,7 +3026,7 @@
                                     <constraint firstItem="6NS-D4-TzW" firstAttribute="leading" secondItem="oHt-7y-y6r" secondAttribute="leading" id="pUQ-DU-ANv"/>
                                     <constraint firstItem="6NS-D4-TzW" firstAttribute="width" secondItem="oHt-7y-y6r" secondAttribute="width" id="u4Y-iR-FLM"/>
                                     <constraint firstItem="oHt-7y-y6r" firstAttribute="top" secondItem="BlE-d4-r5W" secondAttribute="top" constant="10" id="wkO-3u-D6w"/>
-                                    <constraint firstItem="nQ6-os-rlS" firstAttribute="leading" secondItem="s2D-vI-M4v" secondAttribute="trailing" constant="8" id="zhH-hp-yFb"/>
+                                    <constraint firstItem="nQ6-os-rlS" firstAttribute="leading" secondItem="s2D-vI-M4v" secondAttribute="trailing" id="zhH-hp-yFb"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cif-Ja-FeG">
@@ -10523,63 +10498,6 @@
             <point key="canvasLocation" x="6897" y="4356"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="lPq-8Y-Ggm">
-            <objects>
-                <viewController id="lZo-1F-O4B" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="C0V-Ql-OaS"/>
-                        <viewControllerLayoutGuide type="bottom" id="m4V-Vv-9n5"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="xEi-yr-iCZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.90404040399999996" green="0.90404040399999996" blue="0.90404040399999996" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2BP-dt-WgZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7597" y="3405"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1a6-HR-sbs">
-            <objects>
-                <viewController id="JBW-Vt-WuP" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="tsw-Wn-NDf"/>
-                        <viewControllerLayoutGuide type="bottom" id="Gcx-WI-WJJ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GQB-cE-1AO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.90404040399999996" green="0.90404040399999996" blue="0.90404040399999996" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jqi-Qg-ibH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8423" y="3155"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="AxZ-Bp-Sqs">
-            <objects>
-                <viewController id="XJb-vv-Mze" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ceH-ZN-JdK"/>
-                        <viewControllerLayoutGuide type="bottom" id="wIA-xj-dBS"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RHT-dI-Ob6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.90404040399999996" green="0.90404040399999996" blue="0.90404040399999996" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tK5-ZX-4Wn" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9175" y="3155"/>
-        </scene>
-        <!--View Controller-->
         <scene sceneID="1fZ-92-P02">
             <objects>
                 <viewController id="ICh-GZ-B0x" sceneMemberID="viewController">
@@ -16317,26 +16235,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Fm-mU-4uy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="15897" y="4247"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="8YK-OU-JPz">
-            <objects>
-                <viewController id="icY-3A-fay" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CcE-Q0-Erf"/>
-                        <viewControllerLayoutGuide type="bottom" id="wj5-oB-J1d"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="ZxF-qU-S3d">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="705"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="705"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8hE-JB-cGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="17194" y="4353.5"/>
         </scene>
         <!--Select Usage View Controller-->
         <scene sceneID="uLZ-A4-Rud">

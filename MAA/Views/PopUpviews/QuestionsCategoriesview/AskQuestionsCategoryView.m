@@ -64,8 +64,8 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(self.askQuestionsCategoryDelegate && [self.askQuestionsCategoryDelegate respondsToSelector:@selector(salectedCategoryWithIndex:withCategoryName:)]){
-        [self.askQuestionsCategoryDelegate salectedCategoryWithIndex:[[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"id"] withCategoryName:[[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+    if(self.askQuestionsCategoryDelegate && [self.askQuestionsCategoryDelegate respondsToSelector:@selector(salectedCategoryWithIndex:withCategoryName:withImageUrlString:)]){
+        [self.askQuestionsCategoryDelegate salectedCategoryWithIndex:[[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"id"] withCategoryName:[[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"name"] withImageUrlString:[[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
     }
 }
 
