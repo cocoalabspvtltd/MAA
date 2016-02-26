@@ -54,6 +54,8 @@
         categoryCell = (AskQuestionCategosyTableViewCell *)[nib objectAtIndex:0];
     }
     categoryCell.categoryLAbel.text = [[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"name"];
+    NSString *logoImage =  [[self.categoryListArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"];
+    [categoryCell.categoryImageView sd_setImageWithURL:[NSURL URLWithString:logoImage] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     return categoryCell;
 }
 

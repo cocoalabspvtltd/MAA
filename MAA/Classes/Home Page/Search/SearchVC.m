@@ -76,7 +76,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SearchTVC *cell = [tableViewSearch dequeueReusableCellWithIdentifier:@"cellIdentifierSearch"forIndexPath:indexPath];
-    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     if(self.isLocationSearch){
         cell.labelTitle.text = [[self.locationArray objectAtIndex:indexPath.row] valueForKey:@"location"];

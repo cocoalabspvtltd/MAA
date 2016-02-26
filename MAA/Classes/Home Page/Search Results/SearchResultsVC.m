@@ -93,7 +93,6 @@
     cell.cellImageViewOnlineStatus.layer.cornerRadius = 5.00;
     cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
     NSURL *imageUrl;
-    NSString *cacheIdentifier;
     if(self.isOnlineButtonSelected){
         if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
             cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
@@ -113,8 +112,6 @@
             cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
         }
         imageUrl = [NSURL URLWithString:[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
-        cacheIdentifier = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
- 
     }
     else{
         cell.cellLabelRating.text = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
@@ -135,30 +132,9 @@
             cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
         }
         imageUrl = [NSURL URLWithString:[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
-        cacheIdentifier = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
     }
-    NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/Doctor"];
-    //NSURL *imageUrl = [NSURL URLWithString:@"https://upload.wikimedia.org/wikipedia/en/4/4e/Tis_The_Season_To_Be_Fearless_Cover.jpg"];
-    UIImage *localImage;
-    localImage = [[ImageCache sharedCache] imageFromFolder:folderPath WithIdentifier:cacheIdentifier];
-    if(!localImage){
-        [MBProgressHUD showHUDAddedTo:cell.cellImageViewIcon animated:YES];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-            UIImage *tempImage = [UIImage imageWithData:imageData];
-            [[ImageCache sharedCache]addImage:tempImage toFolder:folderPath toCacheWithIdentifier:cacheIdentifier];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                cell.cellImageViewIcon.image = tempImage;
-                [MBProgressHUD hideAllHUDsForView:cell.cellImageViewIcon animated:YES];
-            }
-                           );
-        });
-    }
-    else{
-        cell.cellImageViewIcon.image = localImage;
-    }
-
-       return cell;
+    [cell.cellImageViewIcon sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

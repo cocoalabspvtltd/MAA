@@ -230,6 +230,7 @@
     [self.navigationController pushViewController:photoGridViewController animated:YES];
     _AddPopup.hidden=YES;
     _topTransparentView.hidden=YES;
+    
 }
 
 -(void)callingImageUploadingApiWithImage:(UIImage *)uploadingImage{

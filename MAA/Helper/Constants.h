@@ -39,7 +39,7 @@ static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen"
 #define FolderPathForDoctorRegistration @"Maa/Photos/DoctorRegistarionTempFolder"
 
 #pragma mark - Image Identifiers
-
+#define PlaceholderImageNameForUser @"loadingImage"
 #define MedicalRegistratioCertificateIdentifier @"MedicalRegistrationCertificateidentifier"
 #define MedicalDegreeCertificateidentifier @"MedicalDegreeCertificateidentifier"
 #define GovernmentIdCertifiateIdentifier @"GovernmentIdCertificateIdentifier"

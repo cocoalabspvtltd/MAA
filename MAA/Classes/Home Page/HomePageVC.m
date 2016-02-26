@@ -117,33 +117,12 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     HomePageCVC *cell=[collectionViewHome dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    
     cell.cellImageViewIcon.clipsToBounds = YES;
     cell.cellImageViewIcon.layer.cornerRadius = 30.00;
     cell.cellImageViewIcon.layer.masksToBounds = YES;
-    
-    //[cell.cellImageViewIcon setImage:[UIImage imageNamed:[arrayHomePageListingImages objectAtIndex:indexPath.row]]];
     cell.cellLabelTitle.text = [[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
-    NSString *folderPath = [NSString stringWithFormat:@"Maa/Photos/Category"];
     NSURL *imageUrl = [NSURL URLWithString:[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
-    UIImage *localImage;
-    localImage = [[ImageCache sharedCache] imageFromFolder:folderPath WithIdentifier:[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"]];
-    if(!localImage){
-        [MBProgressHUD showHUDAddedTo:cell.cellImageViewIcon animated:YES];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-            UIImage *tempImage = [UIImage imageWithData:imageData];
-            [[ImageCache sharedCache]addImage:tempImage toFolder:folderPath toCacheWithIdentifier:[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"]];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                cell.cellImageViewIcon.image = tempImage;
-                [MBProgressHUD hideAllHUDsForView:cell.cellImageViewIcon animated:YES];
-            }
-                           );
-        });
-    }
-    else{
-        cell.cellImageViewIcon.image = localImage;
-    }
+    [cell.cellImageViewIcon sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     return cell;
 }
 
@@ -151,20 +130,17 @@
 
 -(void)getCategoriesApiCall{
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
-    NSLog(@"Access Token:%@",accessToken);
     NSString *getCategoriesUrlString = [Baseurl stringByAppendingString:GetCategoriesUrl];
     NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
     [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
     [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
     [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
-    NSLog(@"Get Sub categories mutable Dictionary:%@",getSubcategoriesMutableDictionary);
     if(self.offsetValue == 0){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"Response Object;%@",responseObject);
         arrayHomePageListing = [responseObject valueForKey:Datakey];
         self.offsetValue=self.offsetValue+self.limitValue;
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

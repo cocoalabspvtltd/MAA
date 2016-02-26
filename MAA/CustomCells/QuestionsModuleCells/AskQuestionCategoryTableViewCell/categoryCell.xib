@@ -14,13 +14,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="560" height="49"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kZM-TT-xGT">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kZM-TT-xGT">
                         <rect key="frame" x="8" y="9" width="30" height="30"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="30" id="b16-jt-Vln"/>
                             <constraint firstAttribute="height" constant="30" id="yTm-Tt-U0O"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layre.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9P-3C-iYi">
                         <rect key="frame" x="46" y="13" width="506" height="21"/>
