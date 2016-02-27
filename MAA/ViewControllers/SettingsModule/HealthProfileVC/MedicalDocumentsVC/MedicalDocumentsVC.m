@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "ImageFullView.h"
 #import "MedicalDocumentsVC.h"
 #import "TMDCollectionViewCell.h"
 #import "PhotoGridViewController.h"
@@ -17,6 +18,7 @@
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, strong) UIView *topTransparentView;
 @property (nonatomic, assign) int medicalType;
+@property (nonatomic, strong) ImageFullView *imageFulleView;
 @end
 
 @implementation MedicalDocumentsVC
@@ -111,6 +113,17 @@
     
 }
 
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    self.imageFulleView = [[[NSBundle mainBundle]
+                            loadNibNamed:@"ImageFullView"
+                            owner:self options:nil]
+                           firstObject];
+    CGFloat xMargin = 0,yMargin = 20;
+    self.imageFulleView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - yMargin);
+    self.imageFulleView.selecetdIndex = (int)indexPath.row;
+    self.imageFulleView.imagesArray = self.photosMutableArray;
+    [self.view addSubview:self.imageFulleView];
+}
 /*
 #pragma mark - Navigation
 
@@ -258,10 +271,12 @@
     [imageUploadingDictionary setObject:accesstoken forKey:@"token"];
     [imageUploadingDictionary setObject:@"Title1" forKey:@"title"];
     [imageUploadingDictionary setObject:[NSNumber numberWithInt:self.medicalType] forKey:@"type"];
+    NSLog(@"Image upload:%@",imageUploadingDictionary);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:fileUploadUrlString] withBody:imageUploadingDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstokenString];
     
     [[NetworkHandler sharedHandler] startUploadRequest:@"med_doc_img1.jpg" withData:uploadingImageData withType:fileTypeJPGImage withUrlParameter:AddImageurl SuccessBlock:^(id responseObject) {
+        NSLog(@"Response object;%@",responseObject);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self callingAlertViewControllerWithMessageString:@"Document added successfully"];
         NSDictionary *jsonObject=[NSJSONSerialization
@@ -269,6 +284,7 @@
                                   options:NSJSONReadingMutableLeaves
                                   error:nil];
         [self.photosMutableArray insertObject:[[jsonObject valueForKey:Datakey] objectAtIndex:0] atIndex:0];
+        NSLog(@"Json:%@",jsonObject);
         [self.medicalDocumentsCollectionView reloadData];
     } ProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
         

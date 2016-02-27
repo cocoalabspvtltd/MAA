@@ -124,6 +124,8 @@
 		C092EC101C80B86000F7B18B /* loadingImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0D1C80B86000F7B18B /* loadingImage@2x.png */; };
 		C092EC111C80B86000F7B18B /* loadingImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
+		C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09A8ABE1C8177D800BAA532 /* ImageFullView.m */; };
+		C09A8AC11C8177EB00BAA532 /* ImageFullView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */; };
 		C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */; };
 		C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */; };
 		C09EF6BC1C76211800806600 /* OTAudioDeviceManager.html in Resources */ = {isa = PBXBuildFile; fileRef = C09EF6791C76211800806600 /* OTAudioDeviceManager.html */; };
@@ -530,6 +532,9 @@
 		C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadingImage@3x.png"; sourceTree = "<group>"; };
 		C093DE401C4025F100DCFB44 /* DoctorPhotoCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorPhotoCVC.h; sourceTree = "<group>"; };
 		C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorPhotoCVC.m; sourceTree = "<group>"; };
+		C09A8ABD1C8177D800BAA532 /* ImageFullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFullView.h; sourceTree = "<group>"; };
+		C09A8ABE1C8177D800BAA532 /* ImageFullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFullView.m; sourceTree = "<group>"; };
+		C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageFullView.xib; sourceTree = "<group>"; };
 		C09BC2051C64BB0E00DAD2C4 /* CategoriesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesList.h; sourceTree = "<group>"; };
 		C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesList.m; sourceTree = "<group>"; };
 		C09BC2081C64BB7B00DAD2C4 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
@@ -1452,6 +1457,16 @@
 			path = ImageLoad;
 			sourceTree = "<group>";
 		};
+		C09A8AB71C8177C100BAA532 /* ImageFullView */ = {
+			isa = PBXGroup;
+			children = (
+				C09A8ABD1C8177D800BAA532 /* ImageFullView.h */,
+				C09A8ABE1C8177D800BAA532 /* ImageFullView.m */,
+				C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */,
+			);
+			path = ImageFullView;
+			sourceTree = "<group>";
+		};
 		C09EF6751C76211800806600 /* OpenTok-iOS-2.7.1 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1748,6 +1763,7 @@
 		C0BBC4BE1C6E63EE005083B1 /* PopUpviews */ = {
 			isa = PBXGroup;
 			children = (
+				C09A8AB71C8177C100BAA532 /* ImageFullView */,
 				C0E71FBA1C7B4E6E0038BFF5 /* QuestionsCategoriesview */,
 				C08437F01C6EEE9300610ADC /* NotesPopUp */,
 				C0BBC4CB1C6E6544005083B1 /* InvoicepopUp */,
@@ -1971,6 +1987,7 @@
 				C0BBC4841C6E2AE7005083B1 /* search-a@2x.png in Resources */,
 				C09EF6EC1C76211800806600 /* OTSessionDelegate.html in Resources */,
 				C0BBC4BB1C6E5C82005083B1 /* direct-apnt-black@3x (1).png in Resources */,
+				C09A8AC11C8177EB00BAA532 /* ImageFullView.xib in Resources */,
 				C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */,
 				C0BBC47B1C6E2AE7005083B1 /* home@2x.png in Resources */,
 				C09EF6C81C76211800806600 /* OTVideoFormat.html in Resources */,
@@ -2169,6 +2186,7 @@
 				9F5F0C5A1C66673A00F7E99D /* SettingsPageVC.m in Sources */,
 				9F2B0E1B1C65EDE10053D023 /* BaseViewController.m in Sources */,
 				C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */,
+				C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
 				55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */,
 				9F991C5F1C5A1C5400F92C11 /* doctorReviewsViewController.m in Sources */,
