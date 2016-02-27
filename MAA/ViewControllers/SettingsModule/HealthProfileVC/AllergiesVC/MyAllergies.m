@@ -6,8 +6,9 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
-#define AllergyTableViewCellIdentifier @"allergyCell"
+#define AllergyTableViewCellIdentifier @"allergiesCell"
 #import "MyAllergies.h"
+#import "AllergiesTableViewCell.h"
 
 @interface MyAllergies ()<UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 @property (nonatomic, strong) NSMutableArray *allergyMutableArray;
@@ -27,7 +28,7 @@
     _ppupView.hidden=YES;
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
     self.imgFloat.clipsToBounds = YES;
-    [self.tblAllergies registerClass:[UITableViewCell class] forCellReuseIdentifier:AllergyTableViewCellIdentifier];
+    [self.tblAllergies registerNib:[UINib nibWithNibName:@"AllergiesTableViewCell" bundle:nil] forCellReuseIdentifier:AllergyTableViewCellIdentifier];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,15 +62,52 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:AllergyTableViewCellIdentifier forIndexPath:indexPath];
+    AllergiesTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:AllergyTableViewCellIdentifier forIndexPath:indexPath];
     if(cell == nil){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AllergyTableViewCellIdentifier];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"AllergiesTableViewCell" owner:self options:nil];
+        cell = (AllergiesTableViewCell *)[nib objectAtIndex:0];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.textLabel.text  = [[self.allergyMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.allergyNameLabel.text  = [[self.allergyMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
     return cell;
 }
 
+#pragma mark - Long Presss Gesture Action
+
+-(void)longPressTap:(UILongPressGestureRecognizer *)longPressgesture{
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+            // Cancel button tappped do nothing.
+            
+        }]];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit Title" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                                {
+                                    _ppupView.hidden=NO;
+                                    _ppupView.backgroundColor=[UIColor blackColor];
+                                    self.ppupView.layer.opacity = 0.5;
+                                    
+                                }]];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+            
+            // choose photo button tapped.
+            // [self choosePhoto];
+            
+        }]];
+        
+        //    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Delete Photo" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+        //        
+        //         Distructive button tapped.
+        //        [self deletePhoto];
+        //        
+        //    }]];
+        
+        
+        [self presentViewController:actionSheet animated:YES completion:nil];
+}
 
 - (IBAction)FloatButton:(id)sender
 {
@@ -96,6 +134,7 @@
 
 - (IBAction)addButtonAction:(UIButton *)sender {
     if([self isValidAllergyInput]){
+        [self.allergyTextField resignFirstResponder];
         [self addingAllergies];
     }
 }

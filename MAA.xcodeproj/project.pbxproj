@@ -125,6 +125,8 @@
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
 		C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB3C1C81A1140087AA4F /* MyAllergies.m */; };
 		C095DB411C81A1140087AA4F /* myHealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB3F1C81A1140087AA4F /* myHealthProfileVC.m */; };
+		C095DB461C81B9A80087AA4F /* AllergiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB441C81B9A80087AA4F /* AllergiesTableViewCell.m */; };
+		C095DB471C81B9A80087AA4F /* AllergiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C095DB451C81B9A80087AA4F /* AllergiesTableViewCell.xib */; };
 		C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09A8ABE1C8177D800BAA532 /* ImageFullView.m */; };
 		C09A8AC11C8177EB00BAA532 /* ImageFullView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */; };
 		C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */; };
@@ -534,6 +536,9 @@
 		C095DB3C1C81A1140087AA4F /* MyAllergies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAllergies.m; sourceTree = "<group>"; };
 		C095DB3E1C81A1140087AA4F /* myHealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHealthProfileVC.h; sourceTree = "<group>"; };
 		C095DB3F1C81A1140087AA4F /* myHealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myHealthProfileVC.m; sourceTree = "<group>"; };
+		C095DB431C81B9A80087AA4F /* AllergiesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllergiesTableViewCell.h; sourceTree = "<group>"; };
+		C095DB441C81B9A80087AA4F /* AllergiesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllergiesTableViewCell.m; sourceTree = "<group>"; };
+		C095DB451C81B9A80087AA4F /* AllergiesTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllergiesTableViewCell.xib; sourceTree = "<group>"; };
 		C09A8ABD1C8177D800BAA532 /* ImageFullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFullView.h; sourceTree = "<group>"; };
 		C09A8ABE1C8177D800BAA532 /* ImageFullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFullView.m; sourceTree = "<group>"; };
 		C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageFullView.xib; sourceTree = "<group>"; };
@@ -1203,6 +1208,7 @@
 		9F5F0C601C6668FF00F7E99D /* HealthProfileCells */ = {
 			isa = PBXGroup;
 			children = (
+				C095DB421C81B7E10087AA4F /* AleergiesTableViewCell */,
 				9F5F0C611C6668FF00F7E99D /* HealthProfileUserPhotosCVC */,
 				9F5F0C641C6668FF00F7E99D /* MedicalDocumentesCVC */,
 				9F5F0C671C6668FF00F7E99D /* PrescriptionTVC */,
@@ -1471,6 +1477,16 @@
 				C095DB3F1C81A1140087AA4F /* myHealthProfileVC.m */,
 			);
 			path = MyHealthProfileVC;
+			sourceTree = "<group>";
+		};
+		C095DB421C81B7E10087AA4F /* AleergiesTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C095DB431C81B9A80087AA4F /* AllergiesTableViewCell.h */,
+				C095DB441C81B9A80087AA4F /* AllergiesTableViewCell.m */,
+				C095DB451C81B9A80087AA4F /* AllergiesTableViewCell.xib */,
+			);
+			path = AleergiesTableViewCell;
 			sourceTree = "<group>";
 		};
 		C09A8AB71C8177C100BAA532 /* ImageFullView */ = {
@@ -2046,6 +2062,7 @@
 				C0BBC4721C6E2AE7005083B1 /* cal-a@2x.png in Resources */,
 				9F991C611C5A1C5400F92C11 /* bin.png in Resources */,
 				C09EF6CC1C76211800806600 /* OTPixelFormat.html in Resources */,
+				C095DB471C81B9A80087AA4F /* AllergiesTableViewCell.xib in Resources */,
 				C09EF6E71C76211800806600 /* OTAudioBus.html in Resources */,
 				C09EF6C31C76211800806600 /* OTStream.html in Resources */,
 				C09EF6F01C76211800806600 /* OTSubscriberKitNetworkStatsDelegate.html in Resources */,
@@ -2209,6 +2226,7 @@
 				C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */,
 				55D60D861C08B94600963D5D /* AppDelegate.m in Sources */,
 				C08437F61C6EEEA900610ADC /* NotesPopUp.m in Sources */,
+				C095DB461C81B9A80087AA4F /* AllergiesTableViewCell.m in Sources */,
 				C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */,
 				55D60D831C08B94600963D5D /* main.m in Sources */,
 				C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */,
