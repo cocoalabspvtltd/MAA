@@ -34,12 +34,6 @@
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
     self.imgFloat.clipsToBounds = YES;
     [self initialisingHeadingLabeltext];
-    if(self.isFromImages){
-        self.medicalType = 1;
-    }
-    else if(self.isFromMedicalDocuments){
-        self.medicalType = 1;
-    }
     [self callingGetDocumentsApiWithType:self.medicalType];
    // [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
     _AddPopup.hidden=YES;
@@ -70,9 +64,11 @@
 
 -(void)initialisingHeadingLabeltext{
     if(self.isFromMedicalDocuments){
+        self.medicalType = 2;
         self.headingLabel.text = @"Medical Documents";
     }
     else if (self.isFromImages){
+        self.medicalType = 1;
         self.headingLabel.text = @"Images";
     }
     else if (self.isFromAllergies){
@@ -269,7 +265,9 @@
     NSString *accesstokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *imageUploadingDictionary = [[NSMutableDictionary alloc] init];
     [imageUploadingDictionary setObject:accesstoken forKey:@"token"];
-    [imageUploadingDictionary setObject:@"Title1" forKey:@"title"];
+    if(self.medicalType == 2){
+       [imageUploadingDictionary setObject:@"Title1" forKey:@"title"];
+    }
     [imageUploadingDictionary setObject:[NSNumber numberWithInt:self.medicalType] forKey:@"type"];
     NSLog(@"Image upload:%@",imageUploadingDictionary);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

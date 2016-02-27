@@ -141,16 +141,13 @@ CGFloat ht=0;
     [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
 }
 - (IBAction)imagesActions:(UIButton *)sender {
-}
-
-
-- (IBAction)imagesButtonAction:(UIButton *)sender
-{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
     MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
     medicalDocumentsVC.isFromImages = YES;
     [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
 }
+
+
 - (IBAction)allergiesButtonAction:(UIButton *)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
