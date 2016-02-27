@@ -5,7 +5,7 @@
 //  Created by Cocoalabs India on 22/02/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
-
+#import "MyAllergies.h"
 #import "MedicalDocumentsVC.h"
 #import "myHealthProfileVC.h"
 
@@ -147,14 +147,11 @@ CGFloat ht=0;
     [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
 }
 
-
 - (IBAction)allergiesButtonAction:(UIButton *)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
-    MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
-    medicalDocumentsVC.isFromAllergies = YES;
-    [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
-    
+    MyAllergies *myAllergiesVC = (MyAllergies *)[storyboard instantiateViewControllerWithIdentifier:@"MyAllergies"];
+    [self.navigationController pushViewController:myAllergiesVC animated:YES];
 }
 
 - (IBAction)submitButtonAction:(UIButton *)sender

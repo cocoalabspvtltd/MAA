@@ -12,8 +12,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgFloat;
 - (IBAction)FloatButton:(id)sender;
 @property (weak, nonatomic) IBOutlet UIView *ppupView;
-@property (weak, nonatomic) IBOutlet UIButton *Back;
 @property (weak, nonatomic) IBOutlet UITableView *tblAllergies;
 @property (weak, nonatomic) IBOutlet UIView *childView;
+@property (weak, nonatomic) IBOutlet UITextField *allergyTextField;
 
 @end

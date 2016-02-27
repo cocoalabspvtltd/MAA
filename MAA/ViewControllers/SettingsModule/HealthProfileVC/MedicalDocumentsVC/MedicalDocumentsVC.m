@@ -10,6 +10,7 @@
 #import "MedicalDocumentsVC.h"
 #import "TMDCollectionViewCell.h"
 #import "PhotoGridViewController.h"
+#import "MedicalDocumentsDetailVC.h"
 
 @interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic, assign) int limitValue;
@@ -70,10 +71,6 @@
     else if (self.isFromImages){
         self.medicalType = 1;
         self.headingLabel.text = @"Images";
-    }
-    else if (self.isFromAllergies){
-        self.headingLabel.text = @"Allergies";
-        self.imgFloat.hidden = YES;
     }
     else if (self.isFromPrescriptions){
         self.headingLabel.text = @"Prescriptions";
@@ -235,9 +232,23 @@
 #pragma mark - Image Picker Delegates
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    [picker dismissViewControllerAnimated:YES completion:NULL];
     UIImage *chosenImage  = [[CLUtilities standardUtilities] scaleAndRotateImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
     [self callingImageUploadingApiWithImage:chosenImage];
-    [picker dismissViewControllerAnimated:YES completion:NULL];
+//    if(self.medicalType == 2){
+//        [self addingTitleEditingViewControllerWithChhosenImage:chosenImage];
+//    }
+//    else{
+//        [self callingImageUploadingApiWithImage:chosenImage];
+//    }
+    
+}
+
+-(void)addingTitleEditingViewControllerWithChhosenImage:(UIImage *)choosenImage{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MedicalDocumentsDetailVC *medicalDocumentsDetailVC = (MedicalDocumentsDetailVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsDetailVC"];
+    medicalDocumentsDetailVC.medicalDocumentImage = choosenImage;
+    [self.navigationController pushViewController:medicalDocumentsDetailVC animated:YES];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -246,17 +257,17 @@
     
 }
 
-- (IBAction)chooseFromGalleryButtonAction:(UIButton *)sender {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    PhotoGridViewController *photoGridViewController = (PhotoGridViewController *)[storyboard instantiateViewControllerWithIdentifier:@"PhotoGridViewController"];
-    photoGridViewController.isFromMedicalDocuments = self.isFromMedicalDocuments;
-    photoGridViewController.isFromImages = self.isFromImages;
-    photoGridViewController.isFromePrescriptions = self.isFromPrescriptions;
-    [self.navigationController pushViewController:photoGridViewController animated:YES];
-    _AddPopup.hidden=YES;
-    _topTransparentView.hidden=YES;
-    
-}
+//- (IBAction)chooseFromGalleryButtonAction:(UIButton *)sender {
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    PhotoGridViewController *photoGridViewController = (PhotoGridViewController *)[storyboard instantiateViewControllerWithIdentifier:@"PhotoGridViewController"];
+//    photoGridViewController.isFromMedicalDocuments = self.isFromMedicalDocuments;
+//    photoGridViewController.isFromImages = self.isFromImages;
+//    photoGridViewController.isFromePrescriptions = self.isFromPrescriptions;
+//    [self.navigationController pushViewController:photoGridViewController animated:YES];
+//    _AddPopup.hidden=YES;
+//    _topTransparentView.hidden=YES;
+//    
+//}
 
 -(void)callingImageUploadingApiWithImage:(UIImage *)uploadingImage{
     NSData *uploadingImageData = UIImageJPEGRepresentation(uploadingImage, 0.1);

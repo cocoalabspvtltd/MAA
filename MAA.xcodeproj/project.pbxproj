@@ -86,7 +86,6 @@
 		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
 		C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C401C71EC5300662BB4 /* professionalInfo.xib */; };
 		C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C441C71F79500662BB4 /* proinfo2.xib */; };
-		C056DBBC1C7CC2EB00F1F03C /* myHealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C056DBBB1C7CC2EB00F1F03C /* myHealthProfileVC.m */; };
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
@@ -124,6 +123,8 @@
 		C092EC101C80B86000F7B18B /* loadingImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0D1C80B86000F7B18B /* loadingImage@2x.png */; };
 		C092EC111C80B86000F7B18B /* loadingImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
+		C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB3C1C81A1140087AA4F /* MyAllergies.m */; };
+		C095DB411C81A1140087AA4F /* myHealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB3F1C81A1140087AA4F /* myHealthProfileVC.m */; };
 		C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09A8ABE1C8177D800BAA532 /* ImageFullView.m */; };
 		C09A8AC11C8177EB00BAA532 /* ImageFullView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */; };
 		C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */; };
@@ -197,7 +198,6 @@
 		C09EF70C1C76249C00806600 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF70B1C76249C00806600 /* OpenTok.framework */; };
 		C09EF70E1C7625AB00806600 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF70D1C7625AB00806600 /* libc++.tbd */; };
 		C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830701C7D7BD0000A60C9 /* ImagesVC.m */; };
-		C0A830751C7D7BD0000A60C9 /* MyAllergies.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830721C7D7BD0000A60C9 /* MyAllergies.m */; };
 		C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */; };
 		C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */; };
 		C0A8312A1C7DE503000A60C9 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A831271C7DE4D6000A60C9 /* libNetworkHandler.a */; };
@@ -464,8 +464,6 @@
 		C0447C3E1C71EB2200662BB4 /* specialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = specialCell.m; sourceTree = "<group>"; };
 		C0447C401C71EC5300662BB4 /* professionalInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = professionalInfo.xib; sourceTree = "<group>"; };
 		C0447C441C71F79500662BB4 /* proinfo2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = proinfo2.xib; sourceTree = "<group>"; };
-		C056DBBA1C7CC2EB00F1F03C /* myHealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHealthProfileVC.h; sourceTree = "<group>"; };
-		C056DBBB1C7CC2EB00F1F03C /* myHealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myHealthProfileVC.m; sourceTree = "<group>"; };
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
@@ -532,6 +530,10 @@
 		C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadingImage@3x.png"; sourceTree = "<group>"; };
 		C093DE401C4025F100DCFB44 /* DoctorPhotoCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorPhotoCVC.h; sourceTree = "<group>"; };
 		C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorPhotoCVC.m; sourceTree = "<group>"; };
+		C095DB3B1C81A1140087AA4F /* MyAllergies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAllergies.h; sourceTree = "<group>"; };
+		C095DB3C1C81A1140087AA4F /* MyAllergies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAllergies.m; sourceTree = "<group>"; };
+		C095DB3E1C81A1140087AA4F /* myHealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHealthProfileVC.h; sourceTree = "<group>"; };
+		C095DB3F1C81A1140087AA4F /* myHealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myHealthProfileVC.m; sourceTree = "<group>"; };
 		C09A8ABD1C8177D800BAA532 /* ImageFullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFullView.h; sourceTree = "<group>"; };
 		C09A8ABE1C8177D800BAA532 /* ImageFullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFullView.m; sourceTree = "<group>"; };
 		C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageFullView.xib; sourceTree = "<group>"; };
@@ -609,8 +611,6 @@
 		C09EF70D1C7625AB00806600 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesVC.h; sourceTree = "<group>"; };
 		C0A830701C7D7BD0000A60C9 /* ImagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesVC.m; sourceTree = "<group>"; };
-		C0A830711C7D7BD0000A60C9 /* MyAllergies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAllergies.h; sourceTree = "<group>"; };
-		C0A830721C7D7BD0000A60C9 /* MyAllergies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAllergies.m; sourceTree = "<group>"; };
 		C0A830FD1C7DC6FF000A60C9 /* MedicalDocumentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsVC.h; sourceTree = "<group>"; };
 		C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumentsVC.m; sourceTree = "<group>"; };
 		C0A831001C7DD05A000A60C9 /* TMDCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDCollectionViewCell.h; sourceTree = "<group>"; };
@@ -1154,10 +1154,10 @@
 		9F5F0C491C66614200F7E99D /* HealthProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				C095DB3A1C81A1140087AA4F /* AllergiesVC */,
+				C095DB3D1C81A1140087AA4F /* MyHealthProfileVC */,
 				C0A8312B1C7E0F6F000A60C9 /* MedicalDocumentsDetailVC */,
 				C0A830FC1C7DC6FF000A60C9 /* MedicalDocumentsVC */,
-				C056DBBA1C7CC2EB00F1F03C /* myHealthProfileVC.h */,
-				C056DBBB1C7CC2EB00F1F03C /* myHealthProfileVC.m */,
 				9F5F0C4A1C66614200F7E99D /* HealthProfileVC.h */,
 				9F5F0C4B1C66614200F7E99D /* HealthProfileVC.m */,
 			);
@@ -1305,8 +1305,6 @@
 				C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */,
 				C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */,
 				C0A830701C7D7BD0000A60C9 /* ImagesVC.m */,
-				C0A830711C7D7BD0000A60C9 /* MyAllergies.h */,
-				C0A830721C7D7BD0000A60C9 /* MyAllergies.m */,
 				C010F17D1C80570400A0CB88 /* FeedBackVC.h */,
 				C010F17E1C80570400A0CB88 /* FeedBackVC.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
@@ -1455,6 +1453,24 @@
 				C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */,
 			);
 			path = ImageLoad;
+			sourceTree = "<group>";
+		};
+		C095DB3A1C81A1140087AA4F /* AllergiesVC */ = {
+			isa = PBXGroup;
+			children = (
+				C095DB3B1C81A1140087AA4F /* MyAllergies.h */,
+				C095DB3C1C81A1140087AA4F /* MyAllergies.m */,
+			);
+			path = AllergiesVC;
+			sourceTree = "<group>";
+		};
+		C095DB3D1C81A1140087AA4F /* MyHealthProfileVC */ = {
+			isa = PBXGroup;
+			children = (
+				C095DB3E1C81A1140087AA4F /* myHealthProfileVC.h */,
+				C095DB3F1C81A1140087AA4F /* myHealthProfileVC.m */,
+			);
+			path = MyHealthProfileVC;
 			sourceTree = "<group>";
 		};
 		C09A8AB71C8177C100BAA532 /* ImageFullView */ = {
@@ -2160,7 +2176,6 @@
 				9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */,
 				C0BBC4D01C6E65BB005083B1 /* Invoicepopup.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
-				C0A830751C7D7BD0000A60C9 /* MyAllergies.m in Sources */,
 				555BBCF41C0AA27700E262F9 /* SignUpPage2VC.m in Sources */,
 				C0E71FCD1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m in Sources */,
 				9F5F0C6A1C6668FF00F7E99D /* HealthProfileUserPhotosCVC.m in Sources */,
@@ -2184,6 +2199,7 @@
 				C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */,
 				C092EBFE1C80B1E000F7B18B /* UIImage+GIF.m in Sources */,
 				9F5F0C5A1C66673A00F7E99D /* SettingsPageVC.m in Sources */,
+				C095DB411C81A1140087AA4F /* myHealthProfileVC.m in Sources */,
 				9F2B0E1B1C65EDE10053D023 /* BaseViewController.m in Sources */,
 				C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */,
 				C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */,
@@ -2218,6 +2234,7 @@
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,
 				9F5F0C5F1C66676B00F7E99D /* SettingsTableViewCell.m in Sources */,
 				C092EBFA1C80B1E000F7B18B /* SDWebImageDownloaderOperation.m in Sources */,
+				C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */,
 				9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */,
 				C092EC021C80B1E000F7B18B /* UIImageView+WebCache.m in Sources */,
 				9F5F0C4C1C66614200F7E99D /* HealthProfileVC.m in Sources */,
@@ -2235,7 +2252,6 @@
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
-				C056DBBC1C7CC2EB00F1F03C /* myHealthProfileVC.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
 				7C0981D81C1E661600B1BE99 /* SearchResultsVC.m in Sources */,

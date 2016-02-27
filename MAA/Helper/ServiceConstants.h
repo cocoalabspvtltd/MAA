@@ -41,3 +41,5 @@
 #define AddImageurl @"add_images"
 #define getAccountinfoApiurl @"get_account_info"
 #define logoutApiUrl @"logout"
+#define GetAllergiesUrl @"get_allergies"
+#define AddAllergiesUrl @"add_allergy"

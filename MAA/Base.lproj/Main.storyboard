@@ -17278,9 +17278,7 @@
                                             <constraint firstAttribute="height" constant="30" id="Q7j-9T-zss"/>
                                         </constraints>
                                         <connections>
-                                            <segue destination="b44-lA-1e7" kind="show" id="DAW-d1-cbt">
-                                                <nil key="action"/>
-                                            </segue>
+                                            <action selector="backButtonAction:" destination="z5O-s0-pdc" eventType="touchUpInside" id="aLK-jo-qOm"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Allergies" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oPz-Rr-7Jx">
@@ -17304,9 +17302,13 @@
                                     <constraint firstItem="oPz-Rr-7Jx" firstAttribute="leading" secondItem="391-2c-neN" secondAttribute="trailing" constant="8" id="usx-qy-G4w"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NQN-FP-KdH">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NQN-FP-KdH">
                                 <rect key="frame" x="10" y="74" width="580" height="518"/>
                                 <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="z5O-s0-pdc" id="eMV-Un-9sO"/>
+                                    <outlet property="delegate" destination="z5O-s0-pdc" id="nzL-ne-61r"/>
+                                </connections>
                             </tableView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="plus_white" translatesAutoresizingMaskIntoConstraints="NO" id="kLo-cO-oUg">
                                 <rect key="frame" x="528" y="528" width="50" height="50"/>
@@ -17352,7 +17354,10 @@
                                                     <constraint firstAttribute="height" constant="30" id="S6p-Dq-alY"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" returnKeyType="done"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="z5O-s0-pdc" id="2Em-mW-VBg"/>
+                                                </connections>
                                             </textField>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="HUK-za-hSj">
                                                 <rect key="frame" x="9" y="90" width="232" height="3"/>
@@ -17366,6 +17371,9 @@
                                                 <state key="normal" title="Add">
                                                     <color key="titleColor" red="0.0" green="0.58823529409999997" blue="0.53333333329999999" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="addButtonAction:" destination="z5O-s0-pdc" eventType="touchUpInside" id="vWb-v1-Kfc"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8FF-al-Jt0">
                                                 <rect key="frame" x="187" y="110" width="48" height="30"/>
@@ -17428,6 +17436,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="allergyTextField" destination="Eh9-PB-8gy" id="sz0-rw-wUy"/>
                         <outlet property="childView" destination="CTp-xD-KDW" id="IrN-zd-xxJ"/>
                         <outlet property="imgFloat" destination="kLo-cO-oUg" id="GRo-b2-piT"/>
                         <outlet property="ppupView" destination="ac7-uT-H6w" id="h1e-Jl-FJx"/>
