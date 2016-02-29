@@ -16,6 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.feedbacktextView.layer.borderWidth = .5f;
+    self.feedbacktextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    
     // Do any additional setup after loading the view.
 }
 

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface FeedBackVC : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *feedbacktextView;
 
 @end
