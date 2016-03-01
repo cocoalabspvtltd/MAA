@@ -14,7 +14,7 @@
 #import "PhotoGridViewController.h"
 #import "MedicalDocumentsDetailVC.h"
 
-@interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,TMDCollectionViewCellDelegate>
+@interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,TMDCollectionViewCellDelegate,MedicalDocumentsDetailDelegate>
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, strong) NSMutableArray *photosMutableArray;
@@ -48,8 +48,7 @@
 {
     self.topTransparentView = [[UIView alloc] init];
     self.topTransparentView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.topTransparentView.backgroundColor = [UIColor blackColor];
-    self.topTransparentView.layer.opacity = 0.5;
+    self.topTransparentView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.5];
     self.topTransparentView.hidden = YES;
     [self.view addSubview:self.topTransparentView];
 }
@@ -196,13 +195,12 @@
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     [picker dismissViewControllerAnimated:YES completion:NULL];
     UIImage *chosenImage  = [[CLUtilities standardUtilities] scaleAndRotateImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
-    [self callingImageUploadingApiWithImage:chosenImage];
-//    if(self.medicalType == 2){
-//        [self addingTitleEditingViewControllerWithChhosenImage:chosenImage];
-//    }
-//    else{
-//        [self callingImageUploadingApiWithImage:chosenImage];
-//    }
+    if(self.medicalType == 2){
+        [self addingTitleEditingViewControllerWithChhosenImage:chosenImage];
+    }
+    else{
+        [self callingImageUploadingApiWithImage:chosenImage];
+    }
     
 }
 
@@ -210,7 +208,16 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MedicalDocumentsDetailVC *medicalDocumentsDetailVC = (MedicalDocumentsDetailVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsDetailVC"];
     medicalDocumentsDetailVC.medicalDocumentImage = choosenImage;
+    medicalDocumentsDetailVC.medicalDetailDelegate = self;
     [self.navigationController pushViewController:medicalDocumentsDetailVC animated:YES];
+}
+
+#pragma mark - Medical Document Detail Delegates
+
+-(void)imageUploadedActionDelegateWithData:(id)uploadedImageDetails{
+    [self.photosMutableArray insertObject:uploadedImageDetails atIndex:0];
+    [self callingAlertViewControllerWithMessageString:@"Medical Document added successfully"];
+    [self.medicalDocumentsCollectionView reloadData];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
@@ -238,9 +245,6 @@
     NSString *accesstokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *imageUploadingDictionary = [[NSMutableDictionary alloc] init];
     [imageUploadingDictionary setObject:accesstoken forKey:@"token"];
-    if(self.medicalType == 2){
-       [imageUploadingDictionary setObject:@"Title1" forKey:@"title"];
-    }
     [imageUploadingDictionary setObject:[NSNumber numberWithInt:self.medicalType] forKey:@"type"];
     NSLog(@"Image upload:%@",imageUploadingDictionary);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -356,33 +360,26 @@
 #pragma mark - TMD cell delegate
 
 -(void)longPressActionWithIndex:(NSUInteger)cellIndex{
-    NSLog(@"Cell Index:%lu",(unsigned long)cellIndex);
     NSUInteger selectedIndex = cellIndex - TmdCellTag;
-    NSLog(@"Photos array object:%@",[self.photosMutableArray objectAtIndex:selectedIndex]);
     UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
         
-        // Cancel button tappped do nothing.
-        
     }]];
-    
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit Title" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
-                            {
-                                if (_editTitleViewPopup.hidden==YES)
+    if(self.isFromMedicalDocuments){
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit Title" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                                 {
+                                    if (_editTitleViewPopup.hidden==YES)
+                                    {
+                                        
+                                        self.topTransparentView.hidden=NO;
+                                        _editTitleViewPopup.hidden=NO;
+                                        self.selectedIndex = selectedIndex;
+                                        [self.topTransparentView addSubview:_editTitleViewPopup];
+                                        self.popUpTitleTextField.text = [[self.photosMutableArray objectAtIndex:selectedIndex] valueForKey:@"title"];
+                                    }
                                     
-                                    self.topTransparentView.hidden=NO;
-                                    _editTitleViewPopup.hidden=NO;
-                                    self.selectedIndex = selectedIndex;
-                                    [self.topTransparentView addSubview:_editTitleViewPopup];
-                                    self.popUpTitleTextField.text = [[self.photosMutableArray objectAtIndex:selectedIndex] valueForKey:@"title"];
-                                }
-                                
-                               
-                                
-                            }]];
-    
+                                }]];
+    }
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
         [self callingEditOrDeleteDocumentsApiWithStatus:0 withSelectdIndex:self.selectedIndex];
         // choose photo button tapped.
@@ -397,8 +394,7 @@
     }
 }
 
-//"medical_docs":[{"status":"1","title":"med_doc_title","image":"med_doc_img1.jpg"}]
-//}
+#pragma mark - Calling Delete Or Edi Api of Document
 
 -(void)callingEditOrDeleteDocumentsApiWithStatus:(int)status withSelectdIndex:(NSUInteger)selectedIndex{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];

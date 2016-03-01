@@ -7,9 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol MedicalDocumentsDetailDelegate;
 @interface MedicalDocumentsDetailVC : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
 @property (weak, nonatomic) IBOutlet UIImageView *medicalDocumentImageView;
 @property (nonatomic, strong) UIImage *medicalDocumentImage;
+@property (nonatomic, assign) id<MedicalDocumentsDetailDelegate>medicalDetailDelegate;
+@end
+@protocol MedicalDocumentsDetailDelegate <NSObject>
+
+-(void)imageUploadedActionDelegateWithData:(id)uploadedImageDetails;
+
 @end
