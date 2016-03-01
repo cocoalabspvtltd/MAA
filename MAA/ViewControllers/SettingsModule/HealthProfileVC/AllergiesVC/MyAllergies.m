@@ -69,7 +69,7 @@
     }
     cell.tag = 100+indexPath.row;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    //cell.allergiesCellDelegate = self;
+    cell.allergiesCellDelegate = self;
     cell.allergyNameLabel.text  = [[self.allergyMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
     return cell;
 }
@@ -256,9 +256,8 @@
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit Title" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
                             {
                                 _ppupView.hidden=NO;
-                                _ppupView.backgroundColor=[UIColor blackColor];
+                                _ppupView.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.5];
                                 self.allergyTextField.text = [[self.allergyMutableArray objectAtIndex:index] valueForKey:@"name"];;
-                                self.ppupView.layer.opacity = 0.5;
                                 self.isFromupdate = YES;
                                 self.selectedIndex = index;
                             }]];
