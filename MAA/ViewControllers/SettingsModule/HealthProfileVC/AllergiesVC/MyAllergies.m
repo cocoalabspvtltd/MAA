@@ -69,7 +69,7 @@
     }
     cell.tag = 100+indexPath.row;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.allergiesCellDelegate = self;
+    //cell.allergiesCellDelegate = self;
     cell.allergyNameLabel.text  = [[self.allergyMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
     return cell;
 }
