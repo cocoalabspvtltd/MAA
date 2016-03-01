@@ -20,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILongPressGestureRecognizer *longPress;
 @property (weak, nonatomic) IBOutlet UIView *editTitleViewPopup;
 - (IBAction)cancelEditTitlePopup:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *popUpTitleTextField;
 
 @end

@@ -59,14 +59,13 @@ CGFloat ht=0;
     {
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TableIdentifier];
     }
-    
-        
-        cell.textLabel.text=[[BloodGrups objectAtIndex:indexPath.row] valueForKey:@"name"];
-        cell.textLabel.font=[UIFont systemFontOfSize:(11.0)];
-        cell.textLabel.textAlignment=NSTextAlignmentCenter;
-    
+    cell.textLabel.text=[[BloodGrups objectAtIndex:indexPath.row] valueForKey:@"name"];
+    cell.textLabel.font=[UIFont systemFontOfSize:(11.0)];
+    cell.textLabel.textAlignment=NSTextAlignmentCenter;
+    cell.tag = 300+indexPath.row;
     return cell;
 }
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *x = [BloodGrups[indexPath.row] valueForKey:@"name"];

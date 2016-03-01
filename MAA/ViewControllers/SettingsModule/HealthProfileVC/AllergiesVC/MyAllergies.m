@@ -78,8 +78,7 @@
 - (IBAction)FloatButton:(id)sender
 {
     _ppupView.hidden=NO;
-    _ppupView.backgroundColor=[UIColor blackColor];
-    self.ppupView.layer.opacity = 0.5;
+    _ppupView.backgroundColor=[[UIColor blackColor] colorWithAlphaComponent:0.5];
     
     
 }

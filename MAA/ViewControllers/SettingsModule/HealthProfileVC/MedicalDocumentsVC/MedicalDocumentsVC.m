@@ -6,13 +6,15 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#define TmdCellTag 300
+
 #import "ImageFullView.h"
 #import "MedicalDocumentsVC.h"
 #import "TMDCollectionViewCell.h"
 #import "PhotoGridViewController.h"
 #import "MedicalDocumentsDetailVC.h"
 
-@interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface MedicalDocumentsVC ()<UICollectionViewDelegate,UICollectionViewDataSource,UIScrollViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,TMDCollectionViewCellDelegate>
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, strong) NSMutableArray *photosMutableArray;
@@ -20,6 +22,7 @@
 @property (nonatomic, strong) UIView *topTransparentView;
 @property (nonatomic, assign) int medicalType;
 @property (nonatomic, strong) ImageFullView *imageFulleView;
+@property (nonatomic, assign) NSUInteger selectedIndex;
 @end
 
 @implementation MedicalDocumentsVC
@@ -97,8 +100,8 @@
 -(UICollectionViewCell*)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     TMDCollectionViewCell *photoCell = [collectionView dequeueReusableCellWithReuseIdentifier:@"tmdReuseCollectionCell" forIndexPath:indexPath];
     photoCell.backgroundColor = [UIColor greenColor];
-    self.longPress = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressTap:)];
-    [photoCell addGestureRecognizer:_longPress];
+    photoCell.tmdCellDelegate = self;
+    photoCell.tag = indexPath.row+TmdCellTag;
     NSString *imageUrlString = [[self.photosMutableArray objectAtIndex:indexPath.row] valueForKey:@"url"];
     NSLog(@"Image Url:%@",imageUrlString);
     [photoCell.medicalDocumentImageView  sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
@@ -126,48 +129,7 @@
     // Pass the selected object to the new view controller.
 }
 */
--(void)longPressTap:(id)sender
-{
-    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-    
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
-        
-        // Cancel button tappped do nothing.
-        
-    }]];
-    
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit Title" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
-    {
-        if (_editTitleViewPopup.hidden==YES)
-        {
-           
-            self.topTransparentView.hidden=NO;
-            _editTitleViewPopup.hidden=NO;
-            [self.topTransparentView addSubview:_editTitleViewPopup];
-        }
-        
-        // take photo button tapped.
-        //[self takePhoto];
-        
-    }]];
-    
-    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        
-        // choose photo button tapped.
-       // [self choosePhoto];
-        
-    }]];
-    
-//    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Delete Photo" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
-//        
-//         Distructive button tapped.
-//        [self deletePhoto];
-//        
-//    }]];
-    
-    
-    [self presentViewController:actionSheet animated:YES completion:nil];
-}
+
 - (IBAction)floatButton:(id)sender
 {
     self.topTransparentView.hidden=NO;
@@ -371,6 +333,7 @@
 {
     self.topTransparentView.hidden=YES;
     _editTitleViewPopup.hidden=YES;
+    [self.popUpTitleTextField resignFirstResponder];
 }
 
 -(void)callingAlertViewControllerWithMessageString:(NSString *)alertMessage{
@@ -388,5 +351,119 @@
     
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - TMD cell delegate
+
+-(void)longPressActionWithIndex:(NSUInteger)cellIndex{
+    NSLog(@"Cell Index:%lu",(unsigned long)cellIndex);
+    NSUInteger selectedIndex = cellIndex - TmdCellTag;
+    NSLog(@"Photos array object:%@",[self.photosMutableArray objectAtIndex:selectedIndex]);
+    UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+        
+        // Cancel button tappped do nothing.
+        
+    }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit Title" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action)
+                            {
+                                if (_editTitleViewPopup.hidden==YES)
+                                {
+                                    
+                                    self.topTransparentView.hidden=NO;
+                                    _editTitleViewPopup.hidden=NO;
+                                    self.selectedIndex = selectedIndex;
+                                    [self.topTransparentView addSubview:_editTitleViewPopup];
+                                    self.popUpTitleTextField.text = [[self.photosMutableArray objectAtIndex:selectedIndex] valueForKey:@"title"];
+                                }
+                                
+                               
+                                
+                            }]];
+    
+    [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        [self callingEditOrDeleteDocumentsApiWithStatus:0 withSelectdIndex:self.selectedIndex];
+        // choose photo button tapped.
+        // [self choosePhoto];
+        
+    }]];
+    [self presentViewController:actionSheet animated:YES completion:nil];
+}
+- (IBAction)updateButtonAction:(UIButton *)sender {
+    if([self isValidInputPopUpCredentials]){
+        [self callingEditOrDeleteDocumentsApiWithStatus:1 withSelectdIndex:self.selectedIndex];
+    }
+}
+
+//"medical_docs":[{"status":"1","title":"med_doc_title","image":"med_doc_img1.jpg"}]
+//}
+
+-(void)callingEditOrDeleteDocumentsApiWithStatus:(int)status withSelectdIndex:(NSUInteger)selectedIndex{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSString *editAccountInfoUrlString = [Baseurl stringByAppendingString:EditAccountInfoUrl];
+    NSString *tokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *contentDictionary = [[NSMutableDictionary alloc] init];
+    [contentDictionary setValue:[NSNumber numberWithInt:status] forKey:@"status"];
+    NSString *titleString = [[self.photosMutableArray objectAtIndex:selectedIndex] valueForKey:@"title"];
+    NSString *idString = [[self.photosMutableArray objectAtIndex:selectedIndex] valueForKey:@"id"];
+    if(status == 0){
+        [contentDictionary setValue:titleString forKey:@"title"];
+    }
+    else{
+        [contentDictionary setValue:self.popUpTitleTextField.text forKey:@"title"];
+    }
+    [contentDictionary setValue:idString forKey:@"id"];
+    NSMutableArray *contentsArray = [[NSMutableArray alloc] init];
+    [contentsArray addObject:contentDictionary];
+    NSMutableDictionary *editAccountInfoMutableDictionary = [[NSMutableDictionary alloc] init];
+    [editAccountInfoMutableDictionary setValue:contentsArray forKey:@"medical_docs"];
+    [editAccountInfoMutableDictionary setValue:tokenString forKey:@"token"];
+    NSLog(@"Edit Account Dictionary:%@",editAccountInfoMutableDictionary);
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object:%@",responseObject);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        if(status == 0){
+            [self.photosMutableArray removeObjectAtIndex:selectedIndex];
+            [self callingAlertViewControllerWithMessageString:@"Document removed successfully"];
+        }
+        else{
+            NSString *dateString = [[self.photosMutableArray objectAtIndex:selectedIndex] valueForKey:@"date"];
+            NSString *urlString = [[self.photosMutableArray objectAtIndex:selectedIndex] valueForKey:@"url"];
+            [contentDictionary setValue:dateString forKey:@"date"];
+            [contentDictionary setValue:urlString forKey:@"url"];
+            [self.photosMutableArray replaceObjectAtIndex:selectedIndex withObject:contentDictionary];
+            [self callingAlertViewControllerWithMessageString:@"Document updated successfully"];
+            self.popUpTitleTextField.text  =@"";
+            self.topTransparentView.hidden=YES;
+            _AddPopup.hidden=YES;
+        }
+        [self.medicalDocumentsCollectionView reloadData];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        [self callingAlertViewControllerWithMessageString:errorMessage];
+    }];
+}
+
+-(BOOL)isValidInputPopUpCredentials{
+    BOOL isValid = YES;
+    NSString *errorMessageString = @"";
+    if([self.popUpTitleTextField.text empty]){
+        errorMessageString = @"Please enter title";
+        isValid = NO;
+    }
+    if(![errorMessageString empty]){
+        [self callingAlertViewControllerWithMessageString:errorMessageString];
+    }
+    return isValid;
 }
 @end

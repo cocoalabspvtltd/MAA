@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol TMDCollectionViewCellDelegate;
 @interface TMDCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *medicalDocumentImageView;
 @property (nonatomic, strong) NSString *documentUrlString;
+@property (nonatomic, assign) id<TMDCollectionViewCellDelegate>tmdCellDelegate;
+@end
+@protocol TMDCollectionViewCellDelegate <NSObject>
+
+-(void)longPressActionWithIndex:(NSUInteger)cellIndex;
+
 @end

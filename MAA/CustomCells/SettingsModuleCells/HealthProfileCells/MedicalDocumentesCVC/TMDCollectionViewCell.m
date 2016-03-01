@@ -10,6 +10,18 @@
 
 @implementation TMDCollectionViewCell
 
+-(void)awakeFromNib{
+    UILongPressGestureRecognizer *longGesture = [[UILongPressGestureRecognizer alloc]initWithTarget:self action:@selector(longPressTap:)];
+    [self addGestureRecognizer:longGesture];
+}
+
+-(void)longPressTap:(UILongPressGestureRecognizer *)longGesture{
+    if(self.tmdCellDelegate && [self.tmdCellDelegate respondsToSelector:@selector(longPressActionWithIndex:)]){
+        [self.tmdCellDelegate longPressActionWithIndex:self.tag];
+    }
+
+
+}
 -(void)setDocumentUrlString:(NSString *)documentUrlString{
     
 }
