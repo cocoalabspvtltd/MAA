@@ -89,6 +89,7 @@
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
 		C08293EF1C874E0800D987B7 /* FeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08293EE1C874E0800D987B7 /* FeedBackVC.m */; };
+		C08293F31C87577800D987B7 /* AccountSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08293F21C87577800D987B7 /* AccountSettingVC.m */; };
 		C08437F61C6EEEA900610ADC /* NotesPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437F51C6EEEA900610ADC /* NotesPopUp.m */; };
 		C08437F81C6EEEC100610ADC /* NotesPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08437F71C6EEEC100610ADC /* NotesPopUp.xib */; };
 		C08437FC1C6F019600610ADC /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437FB1C6F019600610ADC /* AskQuestionsVC.m */; };
@@ -270,7 +271,6 @@
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
 		C0DE50CC1C86F87B001F40E9 /* human-male-female.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DE50CB1C86F87B001F40E9 /* human-male-female.png */; };
-		C0DE50CF1C8701EE001F40E9 /* AccountSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DE50CE1C8701EE001F40E9 /* AccountSettingVC.m */; };
 		C0E71FBE1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */; };
 		C0E71FBF1C7B4E6E0038BFF5 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */; };
 		C0E71FCD1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FCB1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m */; };
@@ -471,6 +471,8 @@
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
 		C08293ED1C874E0800D987B7 /* FeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackVC.h; sourceTree = "<group>"; };
 		C08293EE1C874E0800D987B7 /* FeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackVC.m; sourceTree = "<group>"; };
+		C08293F11C87577800D987B7 /* AccountSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSettingVC.h; sourceTree = "<group>"; };
+		C08293F21C87577800D987B7 /* AccountSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSettingVC.m; sourceTree = "<group>"; };
 		C08437F41C6EEEA900610ADC /* NotesPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesPopUp.h; sourceTree = "<group>"; };
 		C08437F51C6EEEA900610ADC /* NotesPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesPopUp.m; sourceTree = "<group>"; };
 		C08437F71C6EEEC100610ADC /* NotesPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotesPopUp.xib; sourceTree = "<group>"; };
@@ -698,8 +700,6 @@
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		C0DE50CB1C86F87B001F40E9 /* human-male-female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "human-male-female.png"; sourceTree = "<group>"; };
-		C0DE50CD1C8701EE001F40E9 /* AccountSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSettingVC.h; sourceTree = "<group>"; };
-		C0DE50CE1C8701EE001F40E9 /* AccountSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSettingVC.m; sourceTree = "<group>"; };
 		C0E71FBB1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsCategoryView.h; sourceTree = "<group>"; };
 		C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsCategoryView.m; sourceTree = "<group>"; };
 		C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categories.xib; sourceTree = "<group>"; };
@@ -1146,6 +1146,7 @@
 		9F5F0C441C66604100F7E99D /* SettingsModule */ = {
 			isa = PBXGroup;
 			children = (
+				C08293F01C87577800D987B7 /* AccountSettingsVC */,
 				C08293EC1C874E0800D987B7 /* FeedbackVC */,
 				9F5F0C571C66673A00F7E99D /* SettingsHomePage */,
 				9F5F0C491C66614200F7E99D /* HealthProfileVC */,
@@ -1318,8 +1319,6 @@
 				C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */,
 				C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */,
 				C0A830701C7D7BD0000A60C9 /* ImagesVC.m */,
-				C0DE50CD1C8701EE001F40E9 /* AccountSettingVC.h */,
-				C0DE50CE1C8701EE001F40E9 /* AccountSettingVC.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -1350,6 +1349,15 @@
 				C08293EE1C874E0800D987B7 /* FeedBackVC.m */,
 			);
 			path = FeedbackVC;
+			sourceTree = "<group>";
+		};
+		C08293F01C87577800D987B7 /* AccountSettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				C08293F11C87577800D987B7 /* AccountSettingVC.h */,
+				C08293F21C87577800D987B7 /* AccountSettingVC.m */,
+			);
+			path = AccountSettingsVC;
 			sourceTree = "<group>";
 		};
 		C08437F01C6EEE9300610ADC /* NotesPopUp */ = {
@@ -2286,7 +2294,7 @@
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
-				C0DE50CF1C8701EE001F40E9 /* AccountSettingVC.m in Sources */,
+				C08293F31C87577800D987B7 /* AccountSettingVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,

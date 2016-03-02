@@ -6,10 +6,11 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "FeedBackVC.h"
 #import "SettingsPageVC.h"
+#import "AccountSettingVC.h"
 #import "myHealthProfileVC.h"
 #import "AboutViewController.h"
-#import "FeedBackVC.h"
 
 #import "SettingsTableViewCell.h"
 
@@ -99,6 +100,11 @@
     if(indexPath.row == 0){
         myHealthProfileVC *healthProfileVC = (myHealthProfileVC *)[storyboard instantiateViewControllerWithIdentifier:@"myHealthProfileVC"];
         [self.navigationController pushViewController:healthProfileVC animated:YES];
+    }
+    else if (indexPath.row == 1){
+        AccountSettingVC *accountSettingsVC = (AccountSettingVC *)[storyboard instantiateViewControllerWithIdentifier:@"AccountSettingVC"];
+        accountSettingsVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:accountSettingsVC animated:YES];
     }
     else if (indexPath.row == 4){
         AboutViewController *aboutVC = (AboutViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];
