@@ -107,6 +107,7 @@
     else if (indexPath.row==5)
     {
         FeedBackVC *feedbackVC = (FeedBackVC *)[storyboard instantiateViewControllerWithIdentifier:@"FeedBackVC"];
+        feedbackVC.hidesBottomBarWhenPushed  =YES;
         [self.navigationController pushViewController:feedbackVC animated:YES];
     }
     else if(indexPath.row == 6){

@@ -8,7 +8,7 @@
 
 #import "FeedBackVC.h"
 
-@interface FeedBackVC ()
+@interface FeedBackVC ()<UITextFieldDelegate>
 
 @end
 
@@ -40,6 +40,8 @@
 - (IBAction)Back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)submitButtonAction:(UIButton *)sender {
 }
 
 @end

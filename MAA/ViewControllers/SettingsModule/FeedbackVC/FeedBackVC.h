@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface FeedBackVC : UIViewController
+#import "BaseViewController.h"
+@interface FeedBackVC : BaseViewController
 @property (weak, nonatomic) IBOutlet UITextView *feedbacktextView;
+@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
 
 @end
