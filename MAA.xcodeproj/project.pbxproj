@@ -269,6 +269,8 @@
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
+		C0DE50CC1C86F87B001F40E9 /* human-male-female.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DE50CB1C86F87B001F40E9 /* human-male-female.png */; };
+		C0DE50CF1C8701EE001F40E9 /* AccountSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DE50CE1C8701EE001F40E9 /* AccountSettingVC.m */; };
 		C0E71FBE1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */; };
 		C0E71FBF1C7B4E6E0038BFF5 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */; };
 		C0E71FCD1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FCB1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m */; };
@@ -695,6 +697,9 @@
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		C0DE50CB1C86F87B001F40E9 /* human-male-female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "human-male-female.png"; sourceTree = "<group>"; };
+		C0DE50CD1C8701EE001F40E9 /* AccountSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSettingVC.h; sourceTree = "<group>"; };
+		C0DE50CE1C8701EE001F40E9 /* AccountSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSettingVC.m; sourceTree = "<group>"; };
 		C0E71FBB1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsCategoryView.h; sourceTree = "<group>"; };
 		C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsCategoryView.m; sourceTree = "<group>"; };
 		C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categories.xib; sourceTree = "<group>"; };
@@ -884,6 +889,7 @@
 				55D352E11C0B464C008CCEC1 /* Profile Page */,
 				55D352E31C0B4684008CCEC1 /* Notifications Page */,
 				55D60D8D1C08B94600963D5D /* Assets.xcassets */,
+				C0DE50CB1C86F87B001F40E9 /* human-male-female.png */,
 				7C8AD8571C18BB8100C4E3BD /* Doctor Images */,
 				555BBCEB1C0AA16C00E262F9 /* Assets Extra */,
 				55D60D8F1C08B94600963D5D /* LaunchScreen.storyboard */,
@@ -1313,6 +1319,8 @@
 				C0A830701C7D7BD0000A60C9 /* ImagesVC.m */,
 				C010F17D1C80570400A0CB88 /* FeedBackVC.h */,
 				C010F17E1C80570400A0CB88 /* FeedBackVC.m */,
+				C0DE50CD1C8701EE001F40E9 /* AccountSettingVC.h */,
+				C0DE50CE1C8701EE001F40E9 /* AccountSettingVC.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -2084,6 +2092,7 @@
 				C0BBC4B01C6E5B8E005083B1 /* audio-black@3x.png in Resources */,
 				C0BBC4C81C6E64D6005083B1 /* settings.png in Resources */,
 				C09EF6E01C76211800806600 /* button_bar_background.png in Resources */,
+				C0DE50CC1C86F87B001F40E9 /* human-male-female.png in Resources */,
 				C09EF6D21C76211800806600 /* OTSubscriberErrorCode.html in Resources */,
 				C09EF6D31C76211800806600 /* OTSubscriberVideoEventReason.html in Resources */,
 				C09EF6E91C76211800806600 /* OTPublisherDelegate.html in Resources */,
@@ -2269,6 +2278,7 @@
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
+				C0DE50CF1C8701EE001F40E9 /* AccountSettingVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,

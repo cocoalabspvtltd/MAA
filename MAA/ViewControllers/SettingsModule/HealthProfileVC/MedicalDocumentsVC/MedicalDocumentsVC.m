@@ -57,7 +57,8 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)initialisation{
+-(void)initialisation
+{
     self.limitValue = 20;
     self.offsetValue = 0;
     self.photosMutableArray = [[NSMutableArray alloc] init];
