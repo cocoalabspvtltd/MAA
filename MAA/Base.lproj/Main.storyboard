@@ -14275,7 +14275,7 @@
                                             <constraint firstAttribute="height" constant="30" id="q0N-4G-CG4"/>
                                         </constraints>
                                         <connections>
-                                            <action selector="Back:" destination="0b7-lr-BLz" eventType="touchUpInside" id="wC3-jq-tdi"/>
+                                            <action selector="backButtonAction:" destination="SXv-50-10I" eventType="touchUpInside" id="2di-s4-5Ef"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Account Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXu-CT-hEW">
@@ -14315,12 +14315,17 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="HVP-Tx-TmL">
                                                 <rect key="frame" x="250" y="16" width="100" height="129"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vsb-Dw-dhn">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vsb-Dw-dhn">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="100" id="KEc-sH-d7S"/>
                                                             <constraint firstAttribute="width" constant="100" id="sTl-5o-YhX"/>
                                                         </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                <integer key="value" value="50"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yBb-Pc-dZ3">
                                                         <rect key="frame" x="29" y="108" width="42" height="21"/>
@@ -14340,11 +14345,6 @@
                                                             <constraint firstAttribute="height" constant="30" id="TX6-4y-ciQ"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XhB-Fm-Shd">
-                                                        <rect key="frame" x="55" y="17" width="515" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cj5-E7-prx">
                                                         <rect key="frame" x="55" y="37" width="515" height="1"/>
                                                         <color key="backgroundColor" red="1" green="0.39890607459999999" blue="0.45994756390000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -14359,10 +14359,13 @@
                                                             <constraint firstAttribute="height" constant="30" id="qUo-y5-CWx"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-LJ-QQK">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email id" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kyj-LJ-QQK">
                                                         <rect key="frame" x="55" y="55" width="515" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="SXv-50-10I" id="Zsu-ds-kAp"/>
+                                                        </connections>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kUF-rr-KSk">
                                                         <rect key="frame" x="55" y="75" width="515" height="1"/>
@@ -14378,10 +14381,13 @@
                                                             <constraint firstAttribute="width" constant="35" id="Mf8-rW-9BA"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dx5-Yr-1ke">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dx5-Yr-1ke">
                                                         <rect key="frame" x="55" y="93" width="515" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" keyboardType="numberPad" returnKeyType="next"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="SXv-50-10I" id="3U6-Dd-g8K"/>
+                                                        </connections>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gKg-t9-KEg">
                                                         <rect key="frame" x="55" y="113" width="515" height="1"/>
@@ -14390,6 +14396,14 @@
                                                             <constraint firstAttribute="height" constant="1" id="orL-m9-xsd"/>
                                                         </constraints>
                                                     </imageView>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XhB-Fm-Shd">
+                                                        <rect key="frame" x="55" y="17" width="515" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="SXv-50-10I" id="8hc-X7-5IJ"/>
+                                                        </connections>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -14442,13 +14456,17 @@
                                                             <constraint firstAttribute="width" constant="35" id="yjv-yo-SEA"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O42-ZT-93B">
+                                                    <button opaque="NO" contentMode="scaleAspectFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O42-ZT-93B">
                                                         <rect key="frame" x="55" y="17" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="20" id="mW1-s6-nKE"/>
                                                             <constraint firstAttribute="height" constant="20" id="rgO-cu-Qt6"/>
                                                         </constraints>
-                                                        <state key="normal" backgroundImage="ic_radio_button_checked_2x"/>
+                                                        <state key="normal" backgroundImage="ic_radio_button_unchecked"/>
+                                                        <state key="selected" backgroundImage="ic_radio_button_checked_2x"/>
+                                                        <connections>
+                                                            <action selector="maleRadioButtonAction:" destination="SXv-50-10I" eventType="touchUpInside" id="1Er-fk-ncb"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txJ-fv-UYF">
                                                         <rect key="frame" x="83" y="18" width="33" height="18"/>
@@ -14456,13 +14474,17 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg1-Lt-g87">
+                                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xg1-Lt-g87">
                                                         <rect key="frame" x="124" y="17" width="20" height="20"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="20" id="nm4-Z1-xnc"/>
                                                             <constraint firstAttribute="width" constant="20" id="pzA-Wk-99q"/>
                                                         </constraints>
                                                         <state key="normal" backgroundImage="ic_radio_button_unchecked"/>
+                                                        <state key="selected" backgroundImage="ic_radio_button_checked_2x"/>
+                                                        <connections>
+                                                            <action selector="femaleRadioButtonAction:" destination="SXv-50-10I" eventType="touchUpInside" id="ubo-RS-CzI"/>
+                                                        </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Female" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drl-bO-qQe">
                                                         <rect key="frame" x="152" y="18" width="50" height="18"/>
@@ -14476,7 +14498,7 @@
                                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd/month/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jck-ue-jNa">
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="dd/month/yyyy" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jck-ue-jNa">
                                                         <rect key="frame" x="126" y="54" width="120" height="21"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -14524,7 +14546,10 @@
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="City" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rjW-5a-lfD">
                                                         <rect key="frame" x="12" y="45" width="558" height="20"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="SXv-50-10I" id="goR-ti-TRC"/>
+                                                        </connections>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hJp-ul-hPM">
                                                         <rect key="frame" x="12" y="65" width="558" height="1"/>
@@ -14550,11 +14575,6 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Locality" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SuN-gv-mNh">
-                                                        <rect key="frame" x="12" y="80" width="520" height="20"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                    </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Vkl-OP-LUT">
                                                         <rect key="frame" x="12" y="100" width="520" height="1"/>
                                                         <color key="backgroundColor" red="1" green="0.39890607459999999" blue="0.45994756390000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -14568,7 +14588,7 @@
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="asdhfjhgrtr" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-LA-GdO">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="asdhfjhgrtr" translatesAutoresizingMaskIntoConstraints="NO" id="Taq-LA-GdO">
                                                         <rect key="frame" x="81" y="113" width="459" height="47"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
@@ -14576,9 +14596,20 @@
                                                         </constraints>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                         <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="SXv-50-10I" id="4oA-aN-2cz"/>
+                                                        </connections>
                                                     </textView>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Locality" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SuN-gv-mNh">
+                                                        <rect key="frame" x="12" y="79" width="520" height="20"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                                        <connections>
+                                                            <outlet property="delegate" destination="SXv-50-10I" id="2cM-Ra-Wrm"/>
+                                                        </connections>
+                                                    </textField>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -14667,7 +14698,7 @@
                                     <constraint firstItem="xpq-u3-u8t" firstAttribute="leading" secondItem="jEP-CS-nPX" secondAttribute="leading" id="yfH-Wi-4fa"/>
                                 </constraints>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1g-Aa-tFJ">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j1g-Aa-tFJ">
                                 <rect key="frame" x="0.0" y="740" width="600" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -14698,12 +14729,25 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="780"/>
                     <connections>
+                        <outlet property="addressTextView" destination="Taq-LA-GdO" id="5Kg-HH-INz"/>
+                        <outlet property="backImageView" destination="le7-7E-mWi" id="pPd-GH-YMd"/>
+                        <outlet property="cityTExtField" destination="rjW-5a-lfD" id="Zgn-OT-Mjm"/>
+                        <outlet property="dateOfBirthTextField" destination="jck-ue-jNa" id="wNW-TZ-gJg"/>
+                        <outlet property="emailTesxtField" destination="kyj-LJ-QQK" id="zZ2-C3-HdT"/>
+                        <outlet property="femaleRadioButton" destination="Xg1-Lt-g87" id="D1T-1D-vFp"/>
+                        <outlet property="localityTextField" destination="SuN-gv-mNh" id="pjm-Pq-SBf"/>
+                        <outlet property="maleRadioButton" destination="O42-ZT-93B" id="3io-1a-Hqw"/>
+                        <outlet property="mobileNumberTextField" destination="dx5-Yr-1ke" id="jK1-vq-ZhZ"/>
+                        <outlet property="namLabel" destination="yBb-Pc-dZ3" id="O46-Eb-cBV"/>
+                        <outlet property="nameTxtField" destination="XhB-Fm-Shd" id="Qkh-9f-3fj"/>
+                        <outlet property="profileImageView" destination="Vsb-Dw-dhn" id="VeU-wR-T9Y"/>
                         <outlet property="scroller" destination="jEP-CS-nPX" id="64e-mJ-pSC"/>
+                        <outlet property="submitButton" destination="j1g-Aa-tFJ" id="V16-Xi-HS9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O1D-Ww-Yby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12494" y="4357"/>
+            <point key="canvasLocation" x="12462" y="4169"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pFT-Fe-VVu">
