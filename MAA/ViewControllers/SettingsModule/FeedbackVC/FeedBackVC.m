@@ -8,7 +8,7 @@
 
 #import "FeedBackVC.h"
 
-@interface FeedBackVC ()<UITextFieldDelegate>
+@interface FeedBackVC ()<UITextFieldDelegate,UITextViewDelegate>
 
 @end
 
@@ -19,10 +19,20 @@
     
     self.feedbacktextView.layer.borderWidth = .5f;
     self.feedbacktextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    [self addingGetureRecognizerToTheView];
+    
     
     // Do any additional setup after loading the view.
 }
 
+-(void)addingGetureRecognizerToTheView{
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction)];
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+-(void)tapGestureAction{
+    [self.view endEditing:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -42,6 +52,55 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)submitButtonAction:(UIButton *)sender {
+    if([self isValidInput]){
+        
+    }
 }
 
+
+-(BOOL)isValidInput{
+    BOOL isValid = YES;
+    NSString *messageString = @"";
+    if([self.feedbacktextView.text empty]){
+       messageString = @"Please enter feedback message";
+        isValid = NO;
+    }
+    if(!isValid){
+        [self callingAlertViewControllerWithMessageString:messageString];
+    }
+    return isValid;
+}
+
+#pragma mark - adding Alert View Controller
+
+-(void)callingAlertViewControllerWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - Text Field Delegates
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    if(textField == self.nameTextField){
+        [self.emailTextField becomeFirstResponder];
+    }
+    return YES;
+}
+
+-(void)textViewDidEndEditing:(UITextView *)textView{
+    
+}
 @end
