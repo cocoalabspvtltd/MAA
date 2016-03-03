@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface AccountSettingVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *childView3;
+@property (weak, nonatomic) IBOutlet UIView *childView2;
+@property (weak, nonatomic) IBOutlet UIView *childView1;
 @property (weak, nonatomic) IBOutlet UILabel *namLabel;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroller;
 @property (weak, nonatomic) IBOutlet UITextField *emailTesxtField;

@@ -18,6 +18,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *doctorNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *doctorSpecialityLabel;
 @property (strong, nonatomic) IBOutlet UILabel *answerDateLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *scroller;
 @property (strong, nonatomic) IBOutlet UILabel *answerLabe;
 
 @end

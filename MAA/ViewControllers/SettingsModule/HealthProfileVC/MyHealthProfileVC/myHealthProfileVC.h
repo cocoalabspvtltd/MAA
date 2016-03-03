@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface myHealthProfileVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *childView3;
+@property (weak, nonatomic) IBOutlet UIView *childView2;
+@property (weak, nonatomic) IBOutlet UIView *childView1;
 @property (weak, nonatomic) IBOutlet UIButton *btnDropDown;
 - (IBAction)DropDown:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tblDropDown;

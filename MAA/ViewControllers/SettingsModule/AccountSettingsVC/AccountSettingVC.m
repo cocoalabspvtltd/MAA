@@ -17,7 +17,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self callingGetAccountInfoApi];
+    
+    _childView1.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    _childView1.layer.shadowOffset = CGSizeMake(5, 5);
+    _childView1.layer.shadowOpacity = .5;
+    _childView1.layer.shadowRadius = 1.0;
+   
+    _childView2.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    _childView2.layer.shadowOffset = CGSizeMake(5, 5);
+    _childView2.layer.shadowOpacity = .5;
+    _childView2.layer.shadowRadius = 1.0;
+    
+    _childView3.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+    _childView3.layer.shadowOffset = CGSizeMake(5, 5);
+    _childView3.layer.shadowOpacity = .5;
+    _childView3.layer.shadowRadius = 1.0;
+    
+    _submitButton.hidden=YES;
+    
+    UIDatePicker *datePicker = [[UIDatePicker alloc] init];
+    datePicker.datePickerMode = UIDatePickerModeDate;
+    [datePicker addTarget:self action:@selector(datePickerValueChanged) forControlEvents:UIControlEventValueChanged];
+   // datePicker.tag = indexPath.row;
+    _dateOfBirthTextField.inputView = datePicker;
     // Do any additional setup after loading the view.
+}
+-(void)datePickerValueChanged
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -144,9 +171,11 @@
     self.localityTextField.enabled  =YES;
     self.addressTextView.editable = YES;
     self.submitButton.enabled = YES;
+    self.submitButton.hidden=NO;
 }
 
--(void)disablingInputFields{
+-(void)disablingInputFields
+{
     
 }
 @end
