@@ -5,17 +5,19 @@
 //  Created by Cocoalabs India on 02/03/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
-
+#import "CountriesVC.h"
 #import "AccountSettingVC.h"
 
-@interface AccountSettingVC ()
-
+@interface AccountSettingVC ()<CountriesVCDelegate>
+@property (nonatomic, assign) BOOL isFromCity;
+@property (nonatomic,assign) BOOL isFromLocality;
 @end
 
 @implementation AccountSettingVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
     [self callingGetAccountInfoApi];
     
     _childView1.layer.shadowColor = [UIColor lightGrayColor].CGColor;
@@ -41,6 +43,11 @@
    // datePicker.tag = indexPath.row;
     _dateOfBirthTextField.inputView = datePicker;
     // Do any additional setup after loading the view.
+}
+
+-(void)initialisation{
+    self.isFromCity = NO;
+    self.isFromLocality = NO;
 }
 -(void)datePickerValueChanged
 {
@@ -95,12 +102,13 @@
 }
 
 -(void)populatingProfileDetailsWithResponsedata:(id)profileData{
+    NSLog(@"PRofile Date:%@",profileData);
     if(!([profileData valueForKey:@"e_base_img"] == [NSNull null])){
         NSString *profileImageUrlString = [profileData valueForKey:@"e_base_img"];
         [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:profileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     }
     if(!([profileData valueForKey:@"e_banner_img"] == [NSNull null])){
-        NSString *bannerImageUrlString = [profileData valueForKey:@"e_base_img"];
+        NSString *bannerImageUrlString = [profileData valueForKey:@"e_banner_img"];
         [self.backImageView sd_setImageWithURL:[NSURL URLWithString:bannerImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     }
     if(!([profileData valueForKey:@"name"] == [NSNull null])){
@@ -151,6 +159,8 @@
 }
 
 - (IBAction)Submit:(id)sender {
+    self.isFromCity = YES;
+    [self addingCountriesVC];
 }
 
 - (IBAction)changeMypassword:(id)sender {
@@ -178,4 +188,20 @@
 {
     
 }
+
+-(void)addingCountriesVC{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CountriesVC *countriesVC = (CountriesVC *)[storyboard instantiateViewControllerWithIdentifier:@"CountriesVC"];
+    countriesVC.countriesDelegate = self;
+    [self.navigationController pushViewController:countriesVC animated:YES];
+}
+
+
+#pragma mark - CountriesVCDelegate
+
+-(void)selectedLocationWithDetails:(id)locationDetails{
+    NSLog(@"Is From :%d",self.isFromCity);
+    NSLog(@"Location Details:%@",locationDetails);
+}
+
 @end

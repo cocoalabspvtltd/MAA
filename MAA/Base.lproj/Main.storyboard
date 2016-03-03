@@ -14825,10 +14825,10 @@
             </objects>
             <point key="canvasLocation" x="13243" y="4366"/>
         </scene>
-        <!--View Controller-->
+        <!--CountriesVC-->
         <scene sceneID="M21-Aq-4jP">
             <objects>
-                <viewController id="CgJ-SQ-tCN" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CountriesVC" id="CgJ-SQ-tCN" customClass="CountriesVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sgP-B8-Rth"/>
                         <viewControllerLayoutGuide type="bottom" id="FhV-kr-x9r"/>
@@ -14855,6 +14855,7 @@
                                         </constraints>
                                         <connections>
                                             <action selector="backButtonAction:" destination="SXv-50-10I" eventType="touchUpInside" id="hiO-KK-yIl"/>
+                                            <action selector="backButtonAction:" destination="CgJ-SQ-tCN" eventType="touchUpInside" id="vrQ-cN-bj6"/>
                                         </connections>
                                     </button>
                                     <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hd6-xc-psX">
@@ -14868,6 +14869,9 @@
                                             <string>Title</string>
                                             <string>Title</string>
                                         </scopeButtonTitles>
+                                        <connections>
+                                            <outlet property="delegate" destination="CgJ-SQ-tCN" id="6V5-9O-7jr"/>
+                                        </connections>
                                     </searchBar>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.14530435229999999" blue="0.17924686770000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -14888,6 +14892,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r46-zH-oF0">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="CgJ-SQ-tCN" id="0gD-DU-5v8"/>
+                                    <outlet property="delegate" destination="CgJ-SQ-tCN" id="vpQ-G8-z7P"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -14901,6 +14909,10 @@
                             <constraint firstItem="66p-Xl-Ae7" firstAttribute="leading" secondItem="tb7-7f-MQn" secondAttribute="leading" id="sGU-V5-2gO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="locationsTableView" destination="r46-zH-oF0" id="KFW-ie-6SI"/>
+                        <outlet property="searchBar" destination="Hd6-xc-psX" id="0ID-Vu-4K9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zY3-BD-Xnh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

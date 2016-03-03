@@ -90,7 +90,6 @@
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
 		C08293EF1C874E0800D987B7 /* FeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08293EE1C874E0800D987B7 /* FeedBackVC.m */; };
-		C08293F31C87577800D987B7 /* AccountSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08293F21C87577800D987B7 /* AccountSettingVC.m */; };
 		C08437F61C6EEEA900610ADC /* NotesPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437F51C6EEEA900610ADC /* NotesPopUp.m */; };
 		C08437F81C6EEEC100610ADC /* NotesPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08437F71C6EEEC100610ADC /* NotesPopUp.xib */; };
 		C08437FC1C6F019600610ADC /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437FB1C6F019600610ADC /* AskQuestionsVC.m */; };
@@ -105,6 +104,8 @@
 		C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED231C287546009DF69F /* ResetPasswordVC.m */; };
 		C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */; };
 		C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */; };
+		C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09039C81C8898790059FDC8 /* AccountSettingVC.m */; };
+		C09039CD1C88988E0059FDC8 /* CountriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09039CC1C88988E0059FDC8 /* CountriesVC.m */; };
 		C092EBF41C80B1E000F7B18B /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C092EBD41C80B1E000F7B18B /* MKAnnotationView+WebCache.m */; };
 		C092EBF51C80B1E000F7B18B /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = C092EBD61C80B1E000F7B18B /* NSData+ImageContentType.m */; };
 		C092EBF61C80B1E000F7B18B /* SDImageCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C092EBD81C80B1E000F7B18B /* SDImageCache.m */; };
@@ -473,8 +474,6 @@
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
 		C08293ED1C874E0800D987B7 /* FeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackVC.h; sourceTree = "<group>"; };
 		C08293EE1C874E0800D987B7 /* FeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackVC.m; sourceTree = "<group>"; };
-		C08293F11C87577800D987B7 /* AccountSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSettingVC.h; sourceTree = "<group>"; };
-		C08293F21C87577800D987B7 /* AccountSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSettingVC.m; sourceTree = "<group>"; };
 		C08437F41C6EEEA900610ADC /* NotesPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesPopUp.h; sourceTree = "<group>"; };
 		C08437F51C6EEEA900610ADC /* NotesPopUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesPopUp.m; sourceTree = "<group>"; };
 		C08437F71C6EEEC100610ADC /* NotesPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotesPopUp.xib; sourceTree = "<group>"; };
@@ -500,6 +499,10 @@
 		C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoicePageVC.m; sourceTree = "<group>"; };
 		C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceCell.h; sourceTree = "<group>"; };
 		C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceCell.m; sourceTree = "<group>"; };
+		C09039C71C8898790059FDC8 /* AccountSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSettingVC.h; sourceTree = "<group>"; };
+		C09039C81C8898790059FDC8 /* AccountSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSettingVC.m; sourceTree = "<group>"; };
+		C09039CB1C88988E0059FDC8 /* CountriesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesVC.h; sourceTree = "<group>"; };
+		C09039CC1C88988E0059FDC8 /* CountriesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CountriesVC.m; sourceTree = "<group>"; };
 		C092EBD31C80B1E000F7B18B /* MKAnnotationView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKAnnotationView+WebCache.h"; sourceTree = "<group>"; };
 		C092EBD41C80B1E000F7B18B /* MKAnnotationView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKAnnotationView+WebCache.m"; sourceTree = "<group>"; };
 		C092EBD51C80B1E000F7B18B /* NSData+ImageContentType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+ImageContentType.h"; sourceTree = "<group>"; };
@@ -1357,8 +1360,8 @@
 		C08293F01C87577800D987B7 /* AccountSettingsVC */ = {
 			isa = PBXGroup;
 			children = (
-				C08293F11C87577800D987B7 /* AccountSettingVC.h */,
-				C08293F21C87577800D987B7 /* AccountSettingVC.m */,
+				C09039C61C8898790059FDC8 /* AccountSettingsHome */,
+				C09039C91C8898790059FDC8 /* CountriesVC */,
 			);
 			path = AccountSettingsVC;
 			sourceTree = "<group>";
@@ -1428,6 +1431,24 @@
 				C005F0091C6A011C0095E2CC /* phone_none.png */,
 			);
 			name = dummyicons;
+			sourceTree = "<group>";
+		};
+		C09039C61C8898790059FDC8 /* AccountSettingsHome */ = {
+			isa = PBXGroup;
+			children = (
+				C09039C71C8898790059FDC8 /* AccountSettingVC.h */,
+				C09039C81C8898790059FDC8 /* AccountSettingVC.m */,
+			);
+			path = AccountSettingsHome;
+			sourceTree = "<group>";
+		};
+		C09039C91C8898790059FDC8 /* CountriesVC */ = {
+			isa = PBXGroup;
+			children = (
+				C09039CB1C88988E0059FDC8 /* CountriesVC.h */,
+				C09039CC1C88988E0059FDC8 /* CountriesVC.m */,
+			);
+			path = CountriesVC;
 			sourceTree = "<group>";
 		};
 		C092EBD21C80B1E000F7B18B /* SDWebImage */ = {
@@ -2283,6 +2304,7 @@
 				C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */,
 				9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */,
 				C08293EF1C874E0800D987B7 /* FeedBackVC.m in Sources */,
+				C09039CD1C88988E0059FDC8 /* CountriesVC.m in Sources */,
 				C092EC021C80B1E000F7B18B /* UIImageView+WebCache.m in Sources */,
 				9F5F0C4C1C66614200F7E99D /* HealthProfileVC.m in Sources */,
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
@@ -2298,7 +2320,7 @@
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
-				C08293F31C87577800D987B7 /* AccountSettingVC.m in Sources */,
+				C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
