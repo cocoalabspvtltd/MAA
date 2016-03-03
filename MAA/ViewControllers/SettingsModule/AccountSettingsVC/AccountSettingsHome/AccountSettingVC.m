@@ -159,15 +159,15 @@
 }
 
 - (IBAction)Submit:(id)sender {
-    self.isFromCity = YES;
-    [self addingCountriesVC];
 }
 
 - (IBAction)changeMypassword:(id)sender {
 }
-
-- (IBAction)locality:(id)sender {
+- (IBAction)localityButtonAction:(UIButton *)sender {
+    self.isFromLocality = YES;
+    [self addingCountriesVC];
 }
+
 #pragma mark - Enabling Input Fields
 
 -(void)enablingInputFields{
@@ -200,8 +200,17 @@
 #pragma mark - CountriesVCDelegate
 
 -(void)selectedLocationWithDetails:(id)locationDetails{
+    if(self.isFromLocality){
+        self.localityTextField.text = [locationDetails valueForKey:@"name"];
+    }
+    else if (self.isFromCity){
+        self.cityTExtField.text =  [locationDetails valueForKey:@"name"];
+    }
+    self.isFromLocality = NO;
+    self.isFromCity = NO;
     NSLog(@"Is From :%d",self.isFromCity);
     NSLog(@"Location Details:%@",locationDetails);
 }
+
 
 @end
