@@ -268,6 +268,7 @@
 		C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BCBB591C59377A003F7872 /* fc_right.png */; };
 		C0BCBB5E1C593F82003F7872 /* angle-right.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BCBB5D1C593F82003F7872 /* angle-right.png */; };
 		C0BCBB631C59405D003F7872 /* angle-down.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BCBB621C59405D003F7872 /* angle-down.png */; };
+		C0BD5F5E1C89A3B400C9B8CD /* AnswerVc.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BD5F5D1C89A3B400C9B8CD /* AnswerVc.m */; };
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
@@ -698,6 +699,8 @@
 		C0BCBB591C59377A003F7872 /* fc_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fc_right.png; sourceTree = "<group>"; };
 		C0BCBB5D1C593F82003F7872 /* angle-right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-right.png"; sourceTree = "<group>"; };
 		C0BCBB621C59405D003F7872 /* angle-down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "angle-down.png"; sourceTree = "<group>"; };
+		C0BD5F5C1C89A3B400C9B8CD /* AnswerVc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerVc.h; sourceTree = "<group>"; };
+		C0BD5F5D1C89A3B400C9B8CD /* AnswerVc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerVc.m; sourceTree = "<group>"; };
 		C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLFacebookHandler.xcodeproj; path = CLFacebookHandler/CLFacebookHandler.xcodeproj; sourceTree = "<group>"; };
 		C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLToolKit.xcodeproj; path = CLToolKit/CLToolKit.xcodeproj; sourceTree = "<group>"; };
 		C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MAA/FBSDKCoreKit.framework; sourceTree = "<group>"; };
@@ -1325,6 +1328,8 @@
 				C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */,
 				C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */,
 				C0A830701C7D7BD0000A60C9 /* ImagesVC.m */,
+				C0BD5F5C1C89A3B400C9B8CD /* AnswerVc.h */,
+				C0BD5F5D1C89A3B400C9B8CD /* AnswerVc.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -2322,6 +2327,7 @@
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
 				C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
+				C0BD5F5E1C89A3B400C9B8CD /* AnswerVc.m in Sources */,
 				7C840B681C19FF9B0044C99A /* SearchVC.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
 				7C0981D81C1E661600B1BE99 /* SearchResultsVC.m in Sources */,
