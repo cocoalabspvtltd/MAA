@@ -8,9 +8,10 @@
 #import "CountriesVC.h"
 #import "AccountSettingVC.h"
 
-@interface AccountSettingVC ()<CountriesVCDelegate>
+@interface AccountSettingVC ()<CountriesVCDelegate,UITextFieldDelegate>
 @property (nonatomic, assign) BOOL isFromCity;
 @property (nonatomic,assign) BOOL isFromLocality;
+@property (nonatomic, strong) NSString *cityIdString;
 @end
 
 @implementation AccountSettingVC
@@ -48,6 +49,7 @@
 -(void)initialisation{
     self.isFromCity = NO;
     self.isFromLocality = NO;
+    self.cityIdString = @"";
 }
 -(void)datePickerValueChanged
 {
@@ -159,6 +161,7 @@
 }
 
 - (IBAction)Submit:(id)sender {
+    [self callingEditAccountInfoApi];
 }
 
 - (IBAction)changeMypassword:(id)sender {
@@ -174,8 +177,8 @@
     self.nameTxtField.enabled = YES;
     self.emailTesxtField.enabled  =YES;
     self.mobileNumberTextField.enabled = YES;
-    self.maleRadioButton.enabled = YES;
-    self.femaleRadioButton.enabled = YES;
+    self.maleRadioButton.userInteractionEnabled = YES;
+    self.femaleRadioButton.userInteractionEnabled = YES;
     self.dateOfBirthTextField.enabled  =YES;
     self.cityTExtField.enabled  =YES;
     self.localityTextField.enabled  =YES;
@@ -186,6 +189,17 @@
 
 -(void)disablingInputFields
 {
+    self.nameTxtField.enabled = NO;
+    self.emailTesxtField.enabled  =NO;
+    self.mobileNumberTextField.enabled = NO;
+    self.maleRadioButton.userInteractionEnabled = NO;
+    self.femaleRadioButton.userInteractionEnabled = NO;
+    self.dateOfBirthTextField.enabled  = NO;
+    self.cityTExtField.enabled  = NO;
+    self.localityTextField.enabled  =NO;
+    self.addressTextView.editable = NO;
+    self.submitButton.enabled = NO;
+    self.submitButton.hidden = NO;
     
 }
 
@@ -205,11 +219,121 @@
     }
     else if (self.isFromCity){
         self.cityTExtField.text =  [locationDetails valueForKey:@"name"];
+        self.cityIdString = [locationDetails valueForKey:@"id"];
     }
     self.isFromLocality = NO;
     self.isFromCity = NO;
     NSLog(@"Is From :%d",self.isFromCity);
     NSLog(@"Location Details:%@",locationDetails);
+}
+-(BOOL)textFieldShouldBeginEditing:(UITextField *)textField{
+    if(textField == self.cityTExtField){
+        self.isFromCity = YES;
+        [self addingCountriesVC];
+        return NO;
+    }
+    else if (textField == self.localityTextField){
+        self.isFromLocality = YES;
+        [self addingCountriesVC];
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    if(textField == self.nameTxtField){
+        [self.emailTesxtField becomeFirstResponder];
+    }
+    else if (textField == self.emailTesxtField){
+        [self.mobileNumberTextField becomeFirstResponder];
+    }
+    else if (textField == self.mobileNumberTextField){
+        [self.dateOfBirthTextField becomeFirstResponder];
+    }
+    else if (textField == self.dateOfBirthTextField){
+        [self.cityTExtField becomeFirstResponder];
+    }
+    else if (textField == self.cityTExtField){
+        [self.localityTextField becomeFirstResponder];
+    }
+    else if (textField == self.localityTextField){
+        [self.addressTextView becomeFirstResponder];
+    }
+    return YES;
+}
+
+
+
+#pragma mark - Calling Edit Account Info api
+
+-(void)callingEditAccountInfoApi{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSString *editAccountInfoUrlString = [Baseurl stringByAppendingString:EditAccountInfoUrl];
+    NSString *tokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *editAccountInfoMutableDictionary = [[NSMutableDictionary alloc] init];
+    [editAccountInfoMutableDictionary setValue:self.nameTxtField.text forKey:@"name"];
+    [editAccountInfoMutableDictionary setValue:self.emailTesxtField.text forKey:@"email"];
+    [editAccountInfoMutableDictionary setValue:self.mobileNumberTextField.text forKey:@"phone"];
+    if([self.maleRadioButton isSelected]){
+        [editAccountInfoMutableDictionary setValue:@"1" forKey:@"gender"];
+    }
+    else{
+        [editAccountInfoMutableDictionary setValue:@"2" forKey:@"gender"];
+    }
+    [editAccountInfoMutableDictionary setValue:self.cityIdString forKey:@"city_id"];
+    [editAccountInfoMutableDictionary setValue:[self convertingDateOfBirth:self.dateOfBirthTextField.text] forKey:@"dob"];
+    [editAccountInfoMutableDictionary setValue:self.localityTextField.text forKey:@"location"];
+    [editAccountInfoMutableDictionary setValue:self.addressTextView.text forKey:@"address"];
+    [editAccountInfoMutableDictionary setValue:tokenString forKey:@"token"];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [self disablingInputFields];
+        [self callingAlertViewControllerWithMessageString:[[responseObject valueForKey:Datakey] valueForKey:@"message"]];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        [self callingAlertViewControllerWithMessageString:errorMessage];
+    }];
+}
+
+#pragma mark - Adding Alert View Controller
+
+-(void)callingAlertViewControllerWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(NSString *)convertingDateOfBirth:(NSString *)dobString{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    NSDate *interDate = [dateFormatter dateFromString:dobString];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSString *finalDate = [dateFormatter stringFromDate:interDate];
+    return finalDate;
 }
 
 

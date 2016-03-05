@@ -273,6 +273,9 @@
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
+		C0CABC661C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CABC611C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m */; };
+		C0CABC671C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CABC631C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m */; };
+		C0CABC681C8A8971009F9470 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CABC651C8A8971009F9470 /* TPKeyboardAvoidingTableView.m */; };
 		C0DE50CC1C86F87B001F40E9 /* human-male-female.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DE50CB1C86F87B001F40E9 /* human-male-female.png */; };
 		C0E71FBE1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */; };
 		C0E71FBF1C7B4E6E0038BFF5 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */; };
@@ -707,6 +710,12 @@
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		C0CABC601C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
+		C0CABC611C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingCollectionView.m; sourceTree = "<group>"; };
+		C0CABC621C8A8971009F9470 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		C0CABC631C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		C0CABC641C8A8971009F9470 /* TPKeyboardAvoidingTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingTableView.h; sourceTree = "<group>"; };
+		C0CABC651C8A8971009F9470 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		C0DE50CB1C86F87B001F40E9 /* human-male-female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "human-male-female.png"; sourceTree = "<group>"; };
 		C0E71FBB1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsCategoryView.h; sourceTree = "<group>"; };
 		C0E71FBC1C7B4E6E0038BFF5 /* AskQuestionsCategoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsCategoryView.m; sourceTree = "<group>"; };
@@ -1085,6 +1094,7 @@
 		9F5F0C2A1C66573D00F7E99D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				C0CABC5F1C8A8971009F9470 /* TPKeyboardAvoiding */,
 				C092EBD21C80B1E000F7B18B /* SDWebImage */,
 				C0A831211C7DE4D5000A60C9 /* NetworkHandler.xcodeproj */,
 				C08438131C6F79A200610ADC /* Utilities */,
@@ -1883,6 +1893,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C0CABC5F1C8A8971009F9470 /* TPKeyboardAvoiding */ = {
+			isa = PBXGroup;
+			children = (
+				C0CABC601C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.h */,
+				C0CABC611C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m */,
+				C0CABC621C8A8971009F9470 /* TPKeyboardAvoidingScrollView.h */,
+				C0CABC631C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m */,
+				C0CABC641C8A8971009F9470 /* TPKeyboardAvoidingTableView.h */,
+				C0CABC651C8A8971009F9470 /* TPKeyboardAvoidingTableView.m */,
+			);
+			path = TPKeyboardAvoiding;
+			sourceTree = "<group>";
+		};
 		C0E71FBA1C7B4E6E0038BFF5 /* QuestionsCategoriesview */ = {
 			isa = PBXGroup;
 			children = (
@@ -2275,12 +2298,14 @@
 				C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */,
 				C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
+				C0CABC661C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */,
 				9F991C5F1C5A1C5400F92C11 /* doctorReviewsViewController.m in Sources */,
 				C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */,
 				55D60D861C08B94600963D5D /* AppDelegate.m in Sources */,
 				C08437F61C6EEEA900610ADC /* NotesPopUp.m in Sources */,
 				C095DB461C81B9A80087AA4F /* AllergiesTableViewCell.m in Sources */,
+				C0CABC681C8A8971009F9470 /* TPKeyboardAvoidingTableView.m in Sources */,
 				C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */,
 				55D60D831C08B94600963D5D /* main.m in Sources */,
 				C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */,
@@ -2295,6 +2320,7 @@
 				C092EBF41C80B1E000F7B18B /* MKAnnotationView+WebCache.m in Sources */,
 				C0A8312E1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m in Sources */,
 				7CF6480B1C1F36F5007DA73F /* SearchResultsTVC.m in Sources */,
+				C0CABC671C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				C092EBF61C80B1E000F7B18B /* SDImageCache.m in Sources */,
 				9F5F0C391C665D3100F7E99D /* AskedQuestionsViewController.m in Sources */,
 				C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */,

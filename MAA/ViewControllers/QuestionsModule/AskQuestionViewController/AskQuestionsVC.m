@@ -128,9 +128,11 @@
                              owner:self options:nil]
                             firstObject];
     CGFloat xMargin = 10,yMargin = 150;
+    
     self.askQuestionsCategoryView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
     self.askQuestionsCategoryView.askQuestionsCategoryDelegate = self;
    // [self populatingInvoiceDetailsInInVoiceview];
+    [self.view  addSubview:self.topTransparentView];
     [self.view addSubview:self.askQuestionsCategoryView];
     [self getCategoriesApiCall];
 
