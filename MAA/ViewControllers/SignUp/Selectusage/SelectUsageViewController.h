@@ -16,5 +16,6 @@
 @property (nonatomic, assign) BOOL isUsertypeStatusNull;
 @property (nonatomic, strong) NSString *tokenString;
 @property (nonatomic, assign) BOOL isFromLogin;
+@property (nonatomic, assign) BOOL isDOCSubmitted;
 
 @end

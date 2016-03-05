@@ -111,7 +111,14 @@
                 else{
                     userTypeStatus = NO;
                 }
-                [self settingSelectusageViewControllerWithUserTypeStatus:userTypeStatus wihTokenString:[responseDetails valueForKey:@"token"]];
+                BOOL isDocSubmitted;
+                if([[responseDetails valueForKey:@"doc_submitted"] isEqualToNumber:[NSNumber numberWithInt:1]]){
+                    isDocSubmitted = YES;
+                }
+                else{
+                   isDocSubmitted = NO;
+                }
+                [self settingSelectusageViewControllerWithUserTypeStatus:userTypeStatus wihTokenString:[responseDetails valueForKey:@"token"] isDocSubmitted:isDocSubmitted];
             }
             [[NSUserDefaults standardUserDefaults] setValue:[[responseObject valueForKey:Datakey] valueForKey:@"token"] forKey:ACCESS_TOKEN];
             [[NSUserDefaults standardUserDefaults] synchronize];
@@ -275,11 +282,12 @@
 
 #pragma mark - Adding Select usage View
 
--(void)settingSelectusageViewControllerWithUserTypeStatus:(BOOL)isuserTypeStatusNull wihTokenString:(NSString *)tokenString{
+-(void)settingSelectusageViewControllerWithUserTypeStatus:(BOOL)isuserTypeStatusNull wihTokenString:(NSString *)tokenString isDocSubmitted:(BOOL)isDocSubmtted{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
     SelectUsageViewController *selectusageViewCntrlr = (SelectUsageViewController *)[storyboard instantiateViewControllerWithIdentifier:@"SelectUsageViewController"];
     selectusageViewCntrlr.isUsertypeStatusNull = isuserTypeStatusNull;
     selectusageViewCntrlr.tokenString = tokenString;
+    selectusageViewCntrlr.isDOCSubmitted = isDocSubmtted;
     [self.navigationController pushViewController:selectusageViewCntrlr animated:YES];
 }
 

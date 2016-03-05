@@ -47,7 +47,13 @@
                 [self callingEditAccountInfoApiWithTypeString:TypeCodeForRegisterAsADoctor];
             }
             else{
-                [self settingHomePage];
+                if(self.isDOCSubmitted){
+                    [self settingHomePage];
+                }
+                else{
+                    [self settingDoctorRegistrationPage];
+                }
+                
             }
         }
         else if ([self.userSelectionButton isSelected]){

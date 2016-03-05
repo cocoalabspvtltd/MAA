@@ -16564,12 +16564,6 @@
                                     <constraint firstAttribute="width" constant="20" id="xBs-Tw-ehq"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As a Registered Practioner" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jce-yk-yg1">
-                                <rect key="frame" x="48" y="151" width="532" height="20"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="To search Doctors" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Sr-Rv-Mx3">
                                 <rect key="frame" x="48" y="182" width="532" height="24"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
@@ -16577,10 +16571,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vh4-wU-cTz">
-                                <rect key="frame" x="16" y="146" width="29" height="29"/>
+                                <rect key="frame" x="21" y="151" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="GLo-4g-hKW"/>
-                                    <constraint firstAttribute="width" constant="29" id="oDv-eU-kcy"/>
+                                    <constraint firstAttribute="height" constant="20" id="GLo-4g-hKW"/>
+                                    <constraint firstAttribute="width" constant="20" id="oDv-eU-kcy"/>
                                 </constraints>
                                 <state key="normal" image="unchecked-gray.png"/>
                                 <state key="selected" image="checked-black.png"/>
@@ -16589,10 +16583,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Rg-Xz-vas">
-                                <rect key="frame" x="16" y="179" width="29" height="29"/>
+                                <rect key="frame" x="21" y="179" width="20" height="20"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="Zz0-sZ-8uN"/>
-                                    <constraint firstAttribute="width" constant="29" id="bYf-9E-Qtu"/>
+                                    <constraint firstAttribute="height" constant="20" id="Zz0-sZ-8uN"/>
+                                    <constraint firstAttribute="width" constant="20" id="bYf-9E-Qtu"/>
                                 </constraints>
                                 <state key="normal" image="unchecked-gray.png"/>
                                 <state key="selected" image="checked-black.png"/>
@@ -16601,21 +16595,21 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eAa-zg-Coo">
-                                <rect key="frame" x="20" y="244" width="560" height="29"/>
+                                <rect key="frame" x="20" y="240" width="560" height="29"/>
                                 <string key="text">You can use this Application for Searching Doctors,to Make Appointments With them, to Consult them Online, ask Health Related questions and to review the Doctors</string>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="check_light_gray" translatesAutoresizingMaskIntoConstraints="NO" id="EDw-Eu-mKO">
-                                <rect key="frame" x="215" y="326" width="15" height="15"/>
+                                <rect key="frame" x="215" y="322" width="15" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="EY9-lc-JNn"/>
                                     <constraint firstAttribute="width" constant="15" id="gFV-Hy-s6R"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZAW-gb-75c">
-                                <rect key="frame" x="212" y="323" width="177" height="20"/>
+                                <rect key="frame" x="212" y="319" width="177" height="20"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eT9-JX-ssM">
                                         <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -16646,9 +16640,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQj-06-Y9D">
-                                <rect key="frame" x="243" y="368" width="114" height="30"/>
+                                <rect key="frame" x="243" y="364" width="114" height="30"/>
                                 <state key="normal" title="Terms of service"/>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="As a Registered Practioner" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jce-yk-yg1">
+                                <rect key="frame" x="48" y="151" width="532" height="20"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -16661,7 +16661,7 @@
                             <constraint firstItem="cfi-IC-LsE" firstAttribute="leading" secondItem="RRd-BH-GsW" secondAttribute="leading" id="BKk-Hl-IIG"/>
                             <constraint firstItem="1Sr-Rv-Mx3" firstAttribute="top" secondItem="jce-yk-yg1" secondAttribute="bottom" constant="11" id="DSA-QQ-h2a"/>
                             <constraint firstItem="CJa-n9-DNV" firstAttribute="leading" secondItem="RRd-BH-GsW" secondAttribute="leading" constant="10" id="ETO-79-wFD"/>
-                            <constraint firstItem="eAa-zg-Coo" firstAttribute="top" secondItem="5Rg-Xz-vas" secondAttribute="bottom" constant="36" id="EqT-9D-8Jb"/>
+                            <constraint firstItem="eAa-zg-Coo" firstAttribute="top" secondItem="5Rg-Xz-vas" secondAttribute="bottom" constant="41" id="EqT-9D-8Jb"/>
                             <constraint firstItem="bij-Ei-2ro" firstAttribute="top" secondItem="v0t-Rz-q7h" secondAttribute="bottom" constant="20" id="IcQ-ha-rnJ"/>
                             <constraint firstItem="bQj-06-Y9D" firstAttribute="top" secondItem="ZAW-gb-75c" secondAttribute="bottom" constant="25" id="JEQ-CB-5fk"/>
                             <constraint firstItem="bQj-06-Y9D" firstAttribute="centerX" secondItem="eAa-zg-Coo" secondAttribute="centerX" id="KHn-YL-yk5"/>
@@ -16669,18 +16669,18 @@
                             <constraint firstItem="vh4-wU-cTz" firstAttribute="centerY" secondItem="uNH-Rr-tGy" secondAttribute="centerY" id="OoJ-TI-15b"/>
                             <constraint firstAttribute="trailing" secondItem="cfi-IC-LsE" secondAttribute="trailing" id="Poh-rM-xtl"/>
                             <constraint firstItem="uNH-Rr-tGy" firstAttribute="top" secondItem="CJa-n9-DNV" secondAttribute="bottom" constant="46" id="Scl-AE-tYX"/>
-                            <constraint firstItem="5Rg-Xz-vas" firstAttribute="centerY" secondItem="JbE-Z5-0Ug" secondAttribute="centerY" id="T6q-6V-tTO"/>
+                            <constraint firstItem="5Rg-Xz-vas" firstAttribute="centerY" secondItem="JbE-Z5-0Ug" secondAttribute="centerY" constant="-5" id="T6q-6V-tTO"/>
                             <constraint firstItem="EDw-Eu-mKO" firstAttribute="centerY" secondItem="ZAW-gb-75c" secondAttribute="centerY" id="ZDT-ou-HOg"/>
                             <constraint firstItem="eAa-zg-Coo" firstAttribute="leading" secondItem="RRd-BH-GsW" secondAttribute="leadingMargin" id="aiz-S7-0XR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1Sr-Rv-Mx3" secondAttribute="trailing" id="bKY-fi-asv"/>
-                            <constraint firstItem="5Rg-Xz-vas" firstAttribute="centerX" secondItem="JbE-Z5-0Ug" secondAttribute="centerX" id="bgS-MK-YGh"/>
+                            <constraint firstItem="5Rg-Xz-vas" firstAttribute="centerX" secondItem="JbE-Z5-0Ug" secondAttribute="centerX" constant="1" id="bgS-MK-YGh"/>
                             <constraint firstItem="v0t-Rz-q7h" firstAttribute="trailing" secondItem="RRd-BH-GsW" secondAttribute="trailingMargin" id="cCc-7p-qyh"/>
                             <constraint firstItem="cfi-IC-LsE" firstAttribute="top" secondItem="9O0-Tv-Aav" secondAttribute="bottom" id="ckh-4w-LFM"/>
                             <constraint firstAttribute="trailing" secondItem="CJa-n9-DNV" secondAttribute="trailing" constant="10" id="eA4-uJ-M73"/>
                             <constraint firstItem="uNH-Rr-tGy" firstAttribute="leading" secondItem="RRd-BH-GsW" secondAttribute="leadingMargin" id="fGS-bR-vcN"/>
                             <constraint firstItem="1Sr-Rv-Mx3" firstAttribute="leading" secondItem="JbE-Z5-0Ug" secondAttribute="trailing" constant="8" id="hxy-yy-XAc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eAa-zg-Coo" secondAttribute="trailing" id="ifk-r3-BXj"/>
-                            <constraint firstItem="vh4-wU-cTz" firstAttribute="centerX" secondItem="uNH-Rr-tGy" secondAttribute="centerX" id="oDm-qA-lWd"/>
+                            <constraint firstItem="vh4-wU-cTz" firstAttribute="centerX" secondItem="uNH-Rr-tGy" secondAttribute="centerX" constant="1" id="oDm-qA-lWd"/>
                             <constraint firstItem="JbE-Z5-0Ug" firstAttribute="top" secondItem="uNH-Rr-tGy" secondAttribute="bottom" constant="13" id="rpF-Oa-PhI"/>
                             <constraint firstItem="ZAW-gb-75c" firstAttribute="centerX" secondItem="eAa-zg-Coo" secondAttribute="centerX" id="tky-lH-TFt"/>
                             <constraint firstItem="JbE-Z5-0Ug" firstAttribute="leading" secondItem="RRd-BH-GsW" secondAttribute="leadingMargin" id="wMh-Xi-XvB"/>
