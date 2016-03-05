@@ -8,6 +8,7 @@
 //
 #import "LoginPageVC.h"
 #import "HomePageVC.h"
+#import "SelectUsageViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "CLFacebookHandler/FacebookWrapper.h"
 
@@ -101,9 +102,20 @@
             [errorAlert show];
         }
         else{
+             id responseDetails = [ responseObject valueForKey:Datakey];
+            if([[responseDetails valueForKey:@"is_verified"] isEqualToNumber:[NSNumber numberWithInt:1]]){
+                BOOL userTypeStatus ;
+                if([responseDetails valueForKey:@"user_type"] == [NSNull null]){
+                    userTypeStatus = YES;
+                }
+                else{
+                    userTypeStatus = NO;
+                }
+                [self settingSelectusageViewControllerWithUserTypeStatus:userTypeStatus wihTokenString:[responseDetails valueForKey:@"token"]];
+            }
             [[NSUserDefaults standardUserDefaults] setValue:[[responseObject valueForKey:Datakey] valueForKey:@"token"] forKey:ACCESS_TOKEN];
             [[NSUserDefaults standardUserDefaults] synchronize];
-            [self settingHomePage];
+//            [self settingHomePage];
         }
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         NSLog(@"Error Response:%@",errorResponse);
@@ -258,6 +270,17 @@
         [textFieldPassword resignFirstResponder];
     }
     return YES;
+}
+
+
+#pragma mark - Adding Select usage View
+
+-(void)settingSelectusageViewControllerWithUserTypeStatus:(BOOL)isuserTypeStatusNull wihTokenString:(NSString *)tokenString{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    SelectUsageViewController *selectusageViewCntrlr = (SelectUsageViewController *)[storyboard instantiateViewControllerWithIdentifier:@"SelectUsageViewController"];
+    selectusageViewCntrlr.isUsertypeStatusNull = isuserTypeStatusNull;
+    selectusageViewCntrlr.tokenString = tokenString;
+    [self.navigationController pushViewController:selectusageViewCntrlr animated:YES];
 }
 
 @end

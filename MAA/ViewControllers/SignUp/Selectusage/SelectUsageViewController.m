@@ -46,10 +46,16 @@
             if(self.isUsertypeStatusNull){
                 [self callingEditAccountInfoApiWithTypeString:TypeCodeForRegisterAsADoctor];
             }
+            else{
+                [self settingHomePage];
+            }
         }
         else if ([self.userSelectionButton isSelected]){
             if(self.isUsertypeStatusNull){
                 [self callingEditAccountInfoApiWithTypeString:TypeCodeForRegisterAsAuser];
+            }
+            else{
+                [self settingHomePage];
             }
         }
     }

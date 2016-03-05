@@ -15,5 +15,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *termsOfServiceButton;
 @property (nonatomic, assign) BOOL isUsertypeStatusNull;
 @property (nonatomic, strong) NSString *tokenString;
+@property (nonatomic, assign) BOOL isFromLogin;
 
 @end

@@ -123,6 +123,7 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:forgotPasswordMobileString] withBody:forgotPasswordMobileApiDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSLog(@"Response Object:%@",responseObject);
         if([[responseObject valueForKey:StatusKey] isEqualToString:ERROR]){
             UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:AppName message:[responseObject valueForKey:ErrorMessagekey] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
             [errorAlert show];
