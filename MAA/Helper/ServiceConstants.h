@@ -38,6 +38,7 @@
 #define review_url @"get_reviews"
 #define GetHealthProfileUrl @"get_health_profile"
 #define GetHealthProfilImagesUrl @"get_images"
+#define GetPrescriptionsUrl @"get_prescriptions"
 #define AddImageurl @"add_images"
 #define getAccountinfoApiurl @"get_account_info"
 #define logoutApiUrl @"logout"

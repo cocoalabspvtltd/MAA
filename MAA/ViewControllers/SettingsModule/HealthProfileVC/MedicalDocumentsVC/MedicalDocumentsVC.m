@@ -38,7 +38,12 @@
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
     self.imgFloat.clipsToBounds = YES;
     [self initialisingHeadingLabeltext];
-    [self callingGetDocumentsApiWithType:self.medicalType];
+    if(self.isFromPrescriptions){
+        [self callingGetPrescriptionsApi];
+    }
+    else{
+        [self callingGetDocumentsApiWithType:self.medicalType];
+    }
    // [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
     _AddPopup.hidden=YES;
     _editTitleViewPopup.hidden=YES;
@@ -76,6 +81,7 @@
         self.headingLabel.text = @"Images";
     }
     else if (self.isFromPrescriptions){
+        self.imgFloat.hidden = YES;
         self.headingLabel.text = @"Prescriptions";
     }
 }
@@ -462,6 +468,45 @@
         [self callingAlertViewControllerWithMessageString:errorMessageString];
     }
     return isValid;
+}
+
+#pragma mark - Get PrescriptionsApi
+
+-(void)callingGetPrescriptionsApi{
+        NSString *getPrescriptionsApiUrlString = [Baseurl stringByAppendingString:GetPrescriptionsUrl];
+        NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+        NSMutableDictionary *getPrescriptionssMutableDictionary = [[NSMutableDictionary alloc] init];
+        [getPrescriptionssMutableDictionary setValue:accessToken forKey:@"token"];
+        [getPrescriptionssMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
+        [getPrescriptionssMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
+        if(self.offsetValue == 0){
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }
+        [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getPrescriptionsApiUrlString] withBody:getPrescriptionssMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
+        [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+            
+            self.offsetValue = self.offsetValue+self.limitValue;
+            [self.bottomProgressIndicatorView stopAnimating];
+            NSArray *imagesArray = [responseObject valueForKey:Datakey];
+            NSLog(@"Images :%@",imagesArray);
+            [self.photosMutableArray addObjectsFromArray:imagesArray];
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            [self.medicalDocumentsCollectionView reloadData];
+        } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+            [self.bottomProgressIndicatorView stopAnimating];
+            [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+            NSString *errorMessage;
+            if([errorDescription isEqualToString:NoNetworkErrorName]){
+                errorMessage = NoNetworkmessage;
+            }
+            else{
+                errorMessage = ConnectiontoServerFailedMessage;
+            }
+            UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [erroralert show];
+            NSLog(@"Error :%@",errorResponse);
+        }];
+  
 }
 
 @end
