@@ -163,7 +163,7 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
 
 #pragma mark - File Upload
 
--(void)startUploadRequest:(NSString *)filename withData:(NSData *)Data withType:(FileType)fileType withUrlParameter:(NSString *)urlParameter
+-(void)startUploadRequest:(NSString *)filename withData:(NSData *)Data withType:(FileType)fileType withUrlParameter:(NSString *)urlParameter andFileName:(NSString *)fileName
              SuccessBlock:(void (^)( id responseObject))success
             ProgressBlock:(void (^)( NSUInteger bytesWritten,long long totalBytesWritten, long long totalBytesExpectedToWrite))progress
              FailureBlock:(void (^)( NSString *errorDescription,id errorResponse))failure {
@@ -178,7 +178,7 @@ NSString * const kNetworkFailFailNotification = @"com.CL.NetworkHandler.fail";
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
     AFHTTPRequestOperation *op = [manager POST:urlParameter parameters:self.bodyDictionary constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         if (Data != nil) {
-            [formData appendPartWithFileData:Data name:@"images" fileName:filename mimeType:[self mimeTypeOfFile:fileType]];
+            [formData appendPartWithFileData:Data name:fileName fileName:filename mimeType:[self mimeTypeOfFile:fileType]];
         }
     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
         success(responseObject);

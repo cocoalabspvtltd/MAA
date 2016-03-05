@@ -36,7 +36,7 @@ extern NSString * const kNetworkFailFailNotification;
 - (void)removeNetworkHandlerObserver:(id)observer;
 -(void)requestWithRequestUrl:(NSURL *)requestUrl withBody:(NSMutableDictionary *) data withMethodType:(MethodType) method withAccessToken:(NSString *)accesstoken;
 -(void)startServieRequestWithSucessBlockSuccessBlock:(void (^)( id responseObject))success FailureBlock:(void (^)( NSString *errorDescription,id errorResponse))failure;
--(void)startUploadRequest:(NSString *)filename withData:(NSData *)Data withType:(FileType)fileType withUrlParameter:(NSString *)urlParameter
+-(void)startUploadRequest:(NSString *)filename withData:(NSData *)Data withType:(FileType)fileType withUrlParameter:(NSString *)urlParameter andFileName:(NSString *)fileName
              SuccessBlock:(void (^)( id responseObject))success
             ProgressBlock:(void (^)( NSUInteger bytesWritten,long long totalBytesWritten, long long totalBytesExpectedToWrite))progress
              FailureBlock:(void (^)( NSString *errorDescription,id errorResponse))failure;

@@ -8,7 +8,7 @@
 #import "CountriesVC.h"
 #import "AccountSettingVC.h"
 
-@interface AccountSettingVC ()<CountriesVCDelegate,UITextFieldDelegate>
+@interface AccountSettingVC ()<CountriesVCDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic, assign) BOOL isFromCity;
 @property (nonatomic,assign) BOOL isFromLocality;
 @property (nonatomic, strong) NSString *cityIdString;
@@ -174,6 +174,7 @@
 #pragma mark - Enabling Input Fields
 
 -(void)enablingInputFields{
+    self.profileImageView.userInteractionEnabled  =YES;
     self.nameTxtField.enabled = YES;
     self.emailTesxtField.enabled  =YES;
     self.mobileNumberTextField.enabled = YES;
@@ -189,6 +190,7 @@
 
 -(void)disablingInputFields
 {
+    self.profileImageView.userInteractionEnabled  =NO;
     self.nameTxtField.enabled = NO;
     self.emailTesxtField.enabled  =NO;
     self.mobileNumberTextField.enabled = NO;
@@ -272,7 +274,7 @@
 
 -(void)callingEditAccountInfoApi{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    NSString *editAccountInfoUrlString = [Baseurl stringByAppendingString:EditAccountInfoUrl];
+    NSString *editAccountInfoUrlString = Baseurl;
     NSString *tokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *editAccountInfoMutableDictionary = [[NSMutableDictionary alloc] init];
     [editAccountInfoMutableDictionary setValue:self.nameTxtField.text forKey:@"name"];
@@ -284,16 +286,25 @@
     else{
         [editAccountInfoMutableDictionary setValue:@"2" forKey:@"gender"];
     }
+    NSData *uploadingImageData;
+    if(self.profileImageView.image){
+         uploadingImageData = UIImageJPEGRepresentation(self.profileImageView.image, 0.1);
+    }
     [editAccountInfoMutableDictionary setValue:self.cityIdString forKey:@"city_id"];
     [editAccountInfoMutableDictionary setValue:[self convertingDateOfBirth:self.dateOfBirthTextField.text] forKey:@"dob"];
     [editAccountInfoMutableDictionary setValue:self.localityTextField.text forKey:@"location"];
     [editAccountInfoMutableDictionary setValue:self.addressTextView.text forKey:@"address"];
     [editAccountInfoMutableDictionary setValue:tokenString forKey:@"token"];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
-    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+    [[NetworkHandler sharedHandler]startUploadRequest:@"eajah.jpg" withData:uploadingImageData withType:fileTypeJPGImage withUrlParameter:EditAccountInfoUrl andFileName:@"logo" SuccessBlock:^(id responseObject) {
+        NSDictionary *jsonObject=[NSJSONSerialization
+                                  JSONObjectWithData:responseObject
+                                  options:NSJSONReadingMutableLeaves
+                                  error:nil];
         [self disablingInputFields];
-        [self callingAlertViewControllerWithMessageString:[[responseObject valueForKey:Datakey] valueForKey:@"message"]];
+        [self callingAlertViewControllerWithMessageString:[[jsonObject valueForKey:Datakey] valueForKey:@"message"]];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    } ProgressBlock:^(NSUInteger bytesWritten, long long totalBytesWritten, long long totalBytesExpectedToWrite) {
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -335,6 +346,69 @@
     NSString *finalDate = [dateFormatter stringFromDate:interDate];
     return finalDate;
 }
+- (IBAction)profileImageTapGestureAction:(UITapGestureRecognizer *)sender {
+    [self addingActionSheet];
+}
 
+-(void)addingActionSheet{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Choose Photos" message:@"" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *chooseFromGallery = [UIAlertAction actionWithTitle:@"Choose From Gallery" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        [self chooseLibraryButtonAction];
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *takePhotosAlertAction = [UIAlertAction actionWithTitle:@"Take Photo" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self addingImagePickerView];
+      [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    UIAlertAction *cancelAlertAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:chooseFromGallery];
+    [alertController addAction:takePhotosAlertAction];
+    [alertController addAction:cancelAlertAction];
+    [self presentViewController:alertController animated:YES completion:nil];
+}
+
+
+-(void)addingImagePickerView{
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        
+        UIAlertView *noCameraAlertView = [[UIAlertView alloc] initWithTitle:AppName
+                                                                    message:@"Device has no camera"
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles: nil];
+        
+        [noCameraAlertView show];
+        
+    }
+    else{
+        if([[CLUtilities standardUtilities] goToCamera]){
+            picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:picker animated:YES completion:NULL];
+        }
+    }
+}
+
+- (void)chooseLibraryButtonAction {
+    UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+    picker.delegate = self;
+    picker.allowsEditing = NO;
+    
+    picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    [self presentViewController:picker animated:YES completion:NULL];
+}
+
+#pragma mark - Image Picker Delegates
+
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    UIImage *chosenImage  = [[CLUtilities standardUtilities] scaleAndRotateImage:[info objectForKey:@"UIImagePickerControllerOriginalImage"]];
+    self.profileImageView.image = chosenImage;
+    
+}
 
 @end
