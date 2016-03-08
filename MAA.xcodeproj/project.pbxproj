@@ -89,6 +89,9 @@
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
+		C065F64B1C8EA71700E25726 /* chatSender.xib in Resources */ = {isa = PBXBuildFile; fileRef = C065F64A1C8EA71700E25726 /* chatSender.xib */; };
+		C065F6521C8EAF7C00E25726 /* chatReciever.xib in Resources */ = {isa = PBXBuildFile; fileRef = C065F6511C8EAF7C00E25726 /* chatReciever.xib */; };
+		C065F6551C8EB22700E25726 /* TextChatVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C065F6541C8EB22700E25726 /* TextChatVC.m */; };
 		C08293EF1C874E0800D987B7 /* FeedBackVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08293EE1C874E0800D987B7 /* FeedBackVC.m */; };
 		C08437F61C6EEEA900610ADC /* NotesPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437F51C6EEEA900610ADC /* NotesPopUp.m */; };
 		C08437F81C6EEEC100610ADC /* NotesPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08437F71C6EEEC100610ADC /* NotesPopUp.xib */; };
@@ -482,6 +485,10 @@
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
+		C065F64A1C8EA71700E25726 /* chatSender.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatSender.xib; sourceTree = "<group>"; };
+		C065F6511C8EAF7C00E25726 /* chatReciever.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chatReciever.xib; sourceTree = "<group>"; };
+		C065F6531C8EB22700E25726 /* TextChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextChatVC.h; sourceTree = "<group>"; };
+		C065F6541C8EB22700E25726 /* TextChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextChatVC.m; sourceTree = "<group>"; };
 		C08293ED1C874E0800D987B7 /* FeedBackVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackVC.h; sourceTree = "<group>"; };
 		C08293EE1C874E0800D987B7 /* FeedBackVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackVC.m; sourceTree = "<group>"; };
 		C08437F41C6EEEA900610ADC /* NotesPopUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesPopUp.h; sourceTree = "<group>"; };
@@ -1352,6 +1359,10 @@
 				C0A830701C7D7BD0000A60C9 /* ImagesVC.m */,
 				C0BD5F5C1C89A3B400C9B8CD /* AnswerVc.h */,
 				C0BD5F5D1C89A3B400C9B8CD /* AnswerVc.m */,
+				C065F64A1C8EA71700E25726 /* chatSender.xib */,
+				C065F6511C8EAF7C00E25726 /* chatReciever.xib */,
+				C065F6531C8EB22700E25726 /* TextChatVC.h */,
+				C065F6541C8EB22700E25726 /* TextChatVC.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -2171,6 +2182,7 @@
 				C09EF6C91C76211800806600 /* OTVideoFrame.html in Resources */,
 				C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */,
 				C0BBC4B21C6E5B8E005083B1 /* chat-black@2x.png in Resources */,
+				C065F64B1C8EA71700E25726 /* chatSender.xib in Resources */,
 				C092EC111C80B86000F7B18B /* loadingImage@3x.png in Resources */,
 				C0BBC4731C6E2AE7005083B1 /* cal-a@3x.png in Resources */,
 				C0BBC4721C6E2AE7005083B1 /* cal-a@2x.png in Resources */,
@@ -2201,6 +2213,7 @@
 				C0CABC781C8AE752009F9470 /* checked-black@3x.png in Resources */,
 				C0DE50CC1C86F87B001F40E9 /* human-male-female.png in Resources */,
 				C09EF6D21C76211800806600 /* OTSubscriberErrorCode.html in Resources */,
+				C065F6521C8EAF7C00E25726 /* chatReciever.xib in Resources */,
 				C09EF6D31C76211800806600 /* OTSubscriberVideoEventReason.html in Resources */,
 				C0CABC761C8AE752009F9470 /* checked-black.png in Resources */,
 				C09EF6E91C76211800806600 /* OTPublisherDelegate.html in Resources */,
@@ -2295,6 +2308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C084380F1C6F5F9200610ADC /* DoctorRegistrationVC.m in Sources */,
+				C065F6551C8EB22700E25726 /* TextChatVC.m in Sources */,
 				9F5F0C6C1C6668FF00F7E99D /* PerescriptionsTVC.m in Sources */,
 				C0BBC4931C6E2BED005083B1 /* AppoinmentsDocs.m in Sources */,
 				C092EBFB1C80B1E000F7B18B /* SDWebImageManager.m in Sources */,
