@@ -85,45 +85,17 @@
     NSString *logInUrlString = [Baseurl stringByAppendingString:LogInUrl];
     NSMutableDictionary *logInDictionary = [[NSMutableDictionary alloc] init];
     NSString *passwordInSh1 = [self sha1:textFieldPassword.text];
-   
     [logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
-   // [logInDictionary setValue:@"anju@gmail.com" forKey:@"uname"];
-   // [logInDictionary setValue:@"admin123" forKey:@"pwd"];
     [logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
     NSLog(@"Log In Dictionary:%@",logInDictionary);
     NSLog(@"Log In url:%@",logInUrlString);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:logInUrlString] withBody:logInDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"response Object;%@",responseObject);
+        [[NSUserDefaults standardUserDefaults] setValue:[[responseObject valueForKey:Datakey] valueForKey:@"token"] forKey:ACCESS_TOKEN];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        if([[responseObject valueForKey:ErrorCodeKey] isEqualToString:@"invalid_user"]){
-            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:AppName message:[responseObject valueForKey:ErrorMessagekey] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-            [errorAlert show];
-        }
-        else{
-             id responseDetails = [ responseObject valueForKey:Datakey];
-            if([[responseDetails valueForKey:@"is_verified"] isEqualToNumber:[NSNumber numberWithInt:1]]){
-                BOOL userTypeStatus ;
-                if([responseDetails valueForKey:@"user_type"] == [NSNull null]){
-                    userTypeStatus = YES;
-                }
-                else{
-                    userTypeStatus = NO;
-                }
-                BOOL isDocSubmitted;
-                if([[responseDetails valueForKey:@"doc_submitted"] isEqualToNumber:[NSNumber numberWithInt:1]]){
-                    isDocSubmitted = YES;
-                }
-                else{
-                   isDocSubmitted = NO;
-                }
-                [self settingSelectusageViewControllerWithUserTypeStatus:userTypeStatus wihTokenString:[responseDetails valueForKey:@"token"] isDocSubmitted:isDocSubmitted];
-            }
-            [[NSUserDefaults standardUserDefaults] setValue:[[responseObject valueForKey:Datakey] valueForKey:@"token"] forKey:ACCESS_TOKEN];
-            [[NSUserDefaults standardUserDefaults] synchronize];
-//            [self settingHomePage];
-        }
+        [self settingHomePage];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         NSLog(@"Error Response:%@",errorResponse);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

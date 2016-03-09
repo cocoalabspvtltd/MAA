@@ -141,6 +141,7 @@
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object:%@",responseObject);
         arrayHomePageListing = [responseObject valueForKey:Datakey];
         self.offsetValue=self.offsetValue+self.limitValue;
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

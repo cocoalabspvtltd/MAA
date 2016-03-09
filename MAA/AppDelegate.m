@@ -27,13 +27,6 @@
 }
 
 -(void)initWindow{
-    
-//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
-//    DoctorRegistrationVC *doctorRegistrationVC = (DoctorRegistrationVC *)[storyboard instantiateViewControllerWithIdentifier:@"DoctorRegistrationVC"];
-//    UINavigationController *doctorRegistrationnvCntlr = [[UINavigationController alloc] initWithRootViewController:doctorRegistrationVC];
-//    self.window.rootViewController = doctorRegistrationnvCntlr;
-    //[self.navigationController pushViewController:doctorRegistrationVC animated:YES];
-
    UIStoryboard *sb = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
     if(![self isLoggedIn]){
         UINavigationController *navigationController = [sb instantiateViewControllerWithIdentifier:@"LogInNavigationController"];

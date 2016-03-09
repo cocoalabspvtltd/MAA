@@ -364,7 +364,7 @@
 		55D352D71C0B4485008CCEC1 /* ProfilePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfilePageVC.m; path = "Classes/Profile Page/ProfilePageVC.m"; sourceTree = "<group>"; };
 		55D352DC1C0B461E008CCEC1 /* NotificationsPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationsPageVC.h; path = "Classes/Notifications Page/NotificationsPageVC.h"; sourceTree = "<group>"; };
 		55D352DD1C0B461E008CCEC1 /* NotificationsPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationsPageVC.m; path = "Classes/Notifications Page/NotificationsPageVC.m"; sourceTree = "<group>"; };
-		55D60D7E1C08B94600963D5D /* MAA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAA.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D60D7E1C08B94600963D5D /* MAA_USER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAA_USER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D60D821C08B94600963D5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55D60D841C08B94600963D5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		55D60D851C08B94600963D5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -892,7 +892,7 @@
 		55D60D7F1C08B94600963D5D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55D60D7E1C08B94600963D5D /* MAA.app */,
+				55D60D7E1C08B94600963D5D /* MAA_USER.app */,
 				55D60D971C08B94700963D5D /* MAATests.xctest */,
 				55D60DA21C08B94700963D5D /* MAAUITests.xctest */,
 			);
@@ -1988,7 +1988,7 @@
 			);
 			name = MAA;
 			productName = MAA;
-			productReference = 55D60D7E1C08B94600963D5D /* MAA.app */;
+			productReference = 55D60D7E1C08B94600963D5D /* MAA_USER.app */;
 			productType = "com.apple.product-type.application";
 		};
 		55D60D961C08B94700963D5D /* MAATests */ = {
@@ -2577,8 +2577,8 @@
 					"-Objc",
 					"$(inherited)",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Cocoa-Labs.MAA";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Cocoa-Labs-USer.MAA";
+				PRODUCT_NAME = MAA_USER;
 				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
@@ -2607,8 +2607,8 @@
 					"-all_load",
 					"-Objc",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.Cocoa-Labs.MAA";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Cocoa-Labs-USer.MAA";
+				PRODUCT_NAME = MAA_USER;
 			};
 			name = Release;
 		};
