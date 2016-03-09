@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface TextChatVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIView *msgbackground;
 @property (strong, nonatomic) IBOutlet UITableViewCell *CellSender;
 @property (weak, nonatomic) IBOutlet UILabel *lblSender;
 @property (weak, nonatomic) IBOutlet UILabel *lblSendTime;

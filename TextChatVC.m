@@ -7,8 +7,10 @@
 //
 
 #import "TextChatVC.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface TextChatVC ()<UITableViewDataSource,UITableViewDelegate>
+
 {
     NSMutableArray *DummyMessage;
     int i;
@@ -21,9 +23,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.tblChat.estimatedRowHeight = 49 ;
+    self.tblChat.rowHeight = UITableViewAutomaticDimension;
+    
     _tblChat.delegate=self;
     _tblChat.dataSource=self;
     DummyMessage = [[NSMutableArray alloc]initWithObjects:@"In a storyboard-based application, you will often want to do a little preparation before navigation", nil];
+    
+    self.txtMessage.layer.borderWidth = .5f;
+    self.txtMessage.layer.cornerRadius=5;
+    self.txtMessage.layer.borderColor = [[UIColor lightGrayColor] CGColor];
+    
+    
     
     
     // Do any additional setup after loading the view.
@@ -41,24 +53,24 @@
     static NSString *cellIDent = @"cellIdentifier";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIDent];
    
-    if (cell==nil)
-    {
-        [[NSBundle mainBundle]loadNibNamed:@"chatSender" owner:self options:nil];
-        
-        cell=_CellSender;
-        
-    }
-    else
+//    if (cell==nil)
+//    {
+//        [[NSBundle mainBundle]loadNibNamed:@"chatSender" owner:self options:nil];
+//        
+//        cell=_CellSender;
+//        
+//    }
+     if(cell==nil)
     {
         [[NSBundle mainBundle]loadNibNamed:@"chatReciever" owner:self options:nil];
         
-        cell=_CellSender;
+        cell=_CellReciever;
     }
-    _lblSender = (UILabel*)[cell viewWithTag:10];
-    _lblSender.text=[DummyMessage objectAtIndex:indexPath.row];
+    _lblReciever = (UILabel*)[cell viewWithTag:10];
+    _lblReciever.text=[DummyMessage objectAtIndex:indexPath.row];
 
     return cell;
-}
+}    
 
 - (void)didReceiveMemoryWarning
 {
@@ -76,8 +88,9 @@
 }
 */
 
-- (IBAction)Send:(id)sender {
-    _lblSender.textAlignment = NSTextAlignmentRight;
+- (IBAction)Send:(id)sender
+{
+//    _lblSender.textAlignment = NSTextAlignmentRight;
     [DummyMessage addObject:_txtMessage.text];
     i = 1;
 
