@@ -9,7 +9,6 @@
 
 #import "ResetPasswordVC.h"
 #import "ResetPasswordOTPVC.h"
-#import "SelectUsageViewController.h"
 
 @interface ResetPasswordOTPVC ()
 
@@ -80,13 +79,7 @@
             if(self.isfromRegistration){
                 [[NSUserDefaults standardUserDefaults] setValue:[[responseObject valueForKey:Datakey] valueForKey:@"token"] forKey:ACCESS_TOKEN];
                 [[NSUserDefaults standardUserDefaults] synchronize];
-                if(([[responseObject valueForKey:Datakey] valueForKey:@"user_type"] == [NSNull null])){
-                    [self settingSelectusageViewControllerWithUserTypeStatus:YES wihTokenString:[[responseObject valueForKey:Datakey] valueForKey:@"token"]];
-                }
-                else{
-                     [self settingSelectusageViewControllerWithUserTypeStatus:NO wihTokenString:[[responseObject valueForKey:Datakey] valueForKey:@"token"]];
-                }
-                //[self settingOTPverificationSeccessFulView];
+                [self settingOTPverificationSeccessFulView];
             }
             else{
                 [self settingResetPasswordVc];
@@ -113,18 +106,8 @@
 
 -(void)settingOTPverificationSeccessFulView{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
-    SelectUsageViewController *selectusageViewCntrlr = (SelectUsageViewController *)[storyboard instantiateViewControllerWithIdentifier:@"SelectUsageViewController"];
-    [self.navigationController pushViewController:selectusageViewCntrlr animated:YES];
-//    OTPVerificationSuccessfulViewController *otpverificationSuccessfulPage = (OTPVerificationSuccessfulViewController *)[storyboard instantiateViewControllerWithIdentifier:@"OTPVerificationSuccessfulViewController"];
-//    [self.navigationController pushViewController:otpverificationSuccessfulPage animated:YES];
-}
-
--(void)settingSelectusageViewControllerWithUserTypeStatus:(BOOL)isuserTypeStatusNull wihTokenString:(NSString *)tokenString{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
-    SelectUsageViewController *selectusageViewCntrlr = (SelectUsageViewController *)[storyboard instantiateViewControllerWithIdentifier:@"SelectUsageViewController"];
-    selectusageViewCntrlr.isUsertypeStatusNull = isuserTypeStatusNull;
-    selectusageViewCntrlr.tokenString = tokenString;
-    [self.navigationController pushViewController:selectusageViewCntrlr animated:YES];
+    OTPVerificationSuccessfulViewController *otpverificationSuccessfulPage = (OTPVerificationSuccessfulViewController *)[storyboard instantiateViewControllerWithIdentifier:@"OTPVerificationSuccessfulViewController"];
+    [self.navigationController pushViewController:otpverificationSuccessfulPage animated:YES];
 }
 
 -(void)settingResetPasswordVc{

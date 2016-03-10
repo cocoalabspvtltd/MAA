@@ -85,7 +85,6 @@
 -(void)passingDatatoSignUpPage2VC{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     SignUpPage2VC *signUp2 = (SignUpPage2VC *)[storyboard instantiateViewControllerWithIdentifier:@"SignUpPage2VC"];
-    //SignUpPage2VC *signUp2 = [[SignUpPage2VC alloc] init];
     signUp2.nameString = textFieldName.text;
     signUp2.phoneNumberString = textFieldPhone.text;
     signUp2.emailString = textFieldEmail.text;

@@ -96,7 +96,6 @@
 		C08437F61C6EEEA900610ADC /* NotesPopUp.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437F51C6EEEA900610ADC /* NotesPopUp.m */; };
 		C08437F81C6EEEC100610ADC /* NotesPopUp.xib in Resources */ = {isa = PBXBuildFile; fileRef = C08437F71C6EEEC100610ADC /* NotesPopUp.xib */; };
 		C08437FC1C6F019600610ADC /* AskQuestionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08437FB1C6F019600610ADC /* AskQuestionsVC.m */; };
-		C08438061C6F3DAC00610ADC /* SelectUsageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C08438051C6F3DAC00610ADC /* SelectUsageViewController.m */; };
 		C084380F1C6F5F9200610ADC /* DoctorRegistrationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C084380E1C6F5F9200610ADC /* DoctorRegistrationVC.m */; };
 		C08438161C6F79A200610ADC /* CLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = C08438151C6F79A200610ADC /* CLUtilities.m */; };
 		C086ED021C285D25009DF69F /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C086ED011C285D25009DF69F /* CoreData.framework */; };
@@ -500,8 +499,6 @@
 		C08437F71C6EEEC100610ADC /* NotesPopUp.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NotesPopUp.xib; sourceTree = "<group>"; };
 		C08437FA1C6F019600610ADC /* AskQuestionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionsVC.h; sourceTree = "<group>"; };
 		C08437FB1C6F019600610ADC /* AskQuestionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionsVC.m; sourceTree = "<group>"; };
-		C08438041C6F3DAC00610ADC /* SelectUsageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectUsageViewController.h; sourceTree = "<group>"; };
-		C08438051C6F3DAC00610ADC /* SelectUsageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectUsageViewController.m; sourceTree = "<group>"; };
 		C084380D1C6F5F9200610ADC /* DoctorRegistrationVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorRegistrationVC.h; sourceTree = "<group>"; };
 		C084380E1C6F5F9200610ADC /* DoctorRegistrationVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorRegistrationVC.m; sourceTree = "<group>"; };
 		C08438141C6F79A200610ADC /* CLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLUtilities.h; sourceTree = "<group>"; };
@@ -1446,8 +1443,6 @@
 		C08438031C6F3D7100610ADC /* Selectusage */ = {
 			isa = PBXGroup;
 			children = (
-				C08438041C6F3DAC00610ADC /* SelectUsageViewController.h */,
-				C08438051C6F3DAC00610ADC /* SelectUsageViewController.m */,
 			);
 			path = Selectusage;
 			sourceTree = "<group>";
@@ -2398,7 +2393,6 @@
 				555BBCFE1C0AA5DC00E262F9 /* HomePageVC.m in Sources */,
 				7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */,
 				9F5F0C381C665D3100F7E99D /* QuestionsSDetailVC.m in Sources */,
-				C08438061C6F3DAC00610ADC /* SelectUsageViewController.m in Sources */,
 				C092EBF71C80B1E000F7B18B /* SDWebImageCompat.m in Sources */,
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,
 				9F5F0C5F1C66676B00F7E99D /* SettingsTableViewCell.m in Sources */,

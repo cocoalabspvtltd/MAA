@@ -8,7 +8,6 @@
 //
 #import "LoginPageVC.h"
 #import "HomePageVC.h"
-#import "SelectUsageViewController.h"
 #import <CommonCrypto/CommonDigest.h>
 #import "CLFacebookHandler/FacebookWrapper.h"
 
@@ -249,18 +248,6 @@
         [textFieldPassword resignFirstResponder];
     }
     return YES;
-}
-
-
-#pragma mark - Adding Select usage View
-
--(void)settingSelectusageViewControllerWithUserTypeStatus:(BOOL)isuserTypeStatusNull wihTokenString:(NSString *)tokenString isDocSubmitted:(BOOL)isDocSubmtted{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
-    SelectUsageViewController *selectusageViewCntrlr = (SelectUsageViewController *)[storyboard instantiateViewControllerWithIdentifier:@"SelectUsageViewController"];
-    selectusageViewCntrlr.isUsertypeStatusNull = isuserTypeStatusNull;
-    selectusageViewCntrlr.tokenString = tokenString;
-    selectusageViewCntrlr.isDOCSubmitted = isDocSubmtted;
-    [self.navigationController pushViewController:selectusageViewCntrlr animated:YES];
 }
 
 @end
