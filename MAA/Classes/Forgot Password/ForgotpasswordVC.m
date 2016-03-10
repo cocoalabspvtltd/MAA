@@ -177,6 +177,7 @@
 -(void)settingResetPasswordOTPVCSetting{
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ResetPasswordOTPVC *resetPasswordOTPVC = (ResetPasswordOTPVC *)[storyboard instantiateViewControllerWithIdentifier:@"ResetPasswordOTPVC"];
+    resetPasswordOTPVC.mobileNumberString = textFieldPhone.text;
     [self.navigationController pushViewController:resetPasswordOTPVC animated:YES];
 }
 

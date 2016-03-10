@@ -3345,7 +3345,7 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8s-fs-IXG">
                                         <rect key="frame" x="0.0" y="262" width="480" height="45"/>
-                                        <color key="backgroundColor" red="0.80808080810000005" green="0.22985872860000001" blue="0.086451472530000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.80784313725490198" green="0.23137254901960785" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="W4D-jt-ebb"/>
                                         </constraints>
@@ -3391,15 +3391,32 @@
                                     <action selector="funcButtonBack:" destination="xP8-ly-slx" eventType="touchUpInside" id="q4u-bH-tVo"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vch-Uu-zJn">
+                                <rect key="frame" x="20" y="385" width="560" height="45"/>
+                                <color key="backgroundColor" red="0.80784313725490198" green="0.23137254901960785" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0pD-TS-Kto"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="RESEND OTP">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="resendOTPButtonAction:" destination="xP8-ly-slx" eventType="touchUpInside" id="ti7-G1-14J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="gEs-k4-Nqn" firstAttribute="leading" secondItem="ORx-Be-nnb" secondAttribute="leadingMargin" constant="-5" id="1Hp-Dp-mjN"/>
                             <constraint firstItem="FJK-7I-iwx" firstAttribute="height" secondItem="ORx-Be-nnb" secondAttribute="height" multiplier="0.55666" constant="-26.996000000000038" id="4fq-4h-teu"/>
+                            <constraint firstItem="vch-Uu-zJn" firstAttribute="top" secondItem="z8s-fs-IXG" secondAttribute="bottom" constant="10" id="D8q-S6-C7j"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vch-Uu-zJn" secondAttribute="trailing" id="HjS-bl-fXS"/>
                             <constraint firstItem="FJK-7I-iwx" firstAttribute="width" secondItem="ORx-Be-nnb" secondAttribute="width" multiplier="0.8" id="PZe-tZ-XIg"/>
                             <constraint firstItem="FJK-7I-iwx" firstAttribute="top" secondItem="LUX-6i-xkF" secondAttribute="bottom" constant="48" id="VBt-x1-QQz"/>
                             <constraint firstItem="FJK-7I-iwx" firstAttribute="centerX" secondItem="ORx-Be-nnb" secondAttribute="centerX" id="gom-yI-7lC"/>
                             <constraint firstItem="gEs-k4-Nqn" firstAttribute="top" secondItem="LUX-6i-xkF" secondAttribute="bottom" constant="10" id="o36-Qo-Xaw"/>
+                            <constraint firstItem="vch-Uu-zJn" firstAttribute="leading" secondItem="ORx-Be-nnb" secondAttribute="leadingMargin" id="rpW-HQ-y8F"/>
                         </constraints>
                     </view>
                     <connections>

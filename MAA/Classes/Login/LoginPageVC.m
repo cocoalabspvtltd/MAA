@@ -45,7 +45,7 @@
 
 - (IBAction)loginButtonAction:(UIButton *)sender {
     //if([self isValidLogIn]){
-        [self callingLogInApi];
+        [self callingLogInApiIsFacebookLogIn:NO];
    // }
 }
 - (IBAction)facebookButtonAction:(UIButton *)sender {
@@ -80,17 +80,23 @@
 
 #pragma mark - Calling Log In Api
 
--(void)callingLogInApi{
+-(void)callingLogInApiIsFacebookLogIn:(BOOL)isFacebookLogin{
     NSString *logInUrlString = [Baseurl stringByAppendingString:LogInUrl];
     NSMutableDictionary *logInDictionary = [[NSMutableDictionary alloc] init];
     NSString *passwordInSh1 = [self sha1:textFieldPassword.text];
-    [logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
-    [logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
-    NSLog(@"Log In Dictionary:%@",logInDictionary);
-    NSLog(@"Log In url:%@",logInUrlString);
+    if(isFacebookLogin){
+        [logInDictionary setValue:@"fb" forKey:@"type"];
+        NSString *accesstokenString = [[FacebookWrapper standardWrapper] getCurrntAccessTokn];
+        [logInDictionary setValue:accesstokenString forKey:@"access_token"];
+    }
+    else{
+        [logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
+        [logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
+    }
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:logInUrlString] withBody:logInDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response object:%@",responseObject);
         [[NSUserDefaults standardUserDefaults] setValue:[[responseObject valueForKey:Datakey] valueForKey:@"token"] forKey:ACCESS_TOKEN];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -141,7 +147,9 @@
 #pragma mark - Facebook session state change observer
 
 - (void)fbSessionChanged:(NSNotification *)notification {
+    NSString *faceBookAccessTokenString = [[FacebookWrapper standardWrapper] getCurrntAccessTokn];
     NSDictionary *tempDictionary = notification.object;
+    NSLog(@"Accesstoken:%@",faceBookAccessTokenString);
     NSLog(@"Temp Dictionary:%@",tempDictionary);
     if(![[FacebookWrapper standardWrapper]isUserLoggedIn] ) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[tempDictionary valueForKey:@"FaceBookError"]delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
@@ -149,7 +157,8 @@
         
     }
     else {
-        [self callingRegisterApiWithDictionary:tempDictionary];
+//[self callingRegisterApiWithDictionary:tempDictionary];
+        [self callingLogInApiIsFacebookLogIn:YES];
         //        if([[tempDictionary valueForKey:@"email"] isEqualToString:@""]){
         //            UIAlertView *noEmailFromFbAlert = [[UIAlertView alloc] initWithTitle:AppName message:NoEmailFromFBAlert delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         //            noEmailFromFbAlert.tag = 101;

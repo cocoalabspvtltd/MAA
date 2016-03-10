@@ -15,6 +15,7 @@
 
     IBOutlet UIButton *buttonBack;
 }
+@property (nonatomic, strong) NSString *mobileNumberString;
 @property (nonatomic, assign) BOOL isfromRegistration;
 - (IBAction)funcButtonBack:(id)sender;
 

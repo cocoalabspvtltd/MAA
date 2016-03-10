@@ -112,12 +112,16 @@ NSString *const FBPublicActionNotification = @"com.CL.FBLogin:FBPublicActionNoti
 #pragma mark -  Check User is Logged in
 
 - (BOOL)isUserLoggedIn {
+    NSLog(@"Current Access token :%@",[FBSDKAccessToken currentAccessToken].tokenString);
     if([FBSDKAccessToken currentAccessToken]) {
         return YES;
     }
     return NO;
 }
 
+-(NSString *)getCurrntAccessTokn{
+    return [FBSDKAccessToken currentAccessToken].tokenString;
+}
 
 #pragma mark - Session Change Observers
 

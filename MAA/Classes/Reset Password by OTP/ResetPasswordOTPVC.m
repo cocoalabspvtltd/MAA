@@ -117,7 +117,42 @@
     [self.navigationController pushViewController:resetPasswordVC animated:YES];
 }
 
+- (IBAction)resendOTPButtonAction:(UIButton *)sender {
+    [self callingForgotPasswordMobileOTPApi];
+}
 
+-(void)callingForgotPasswordMobileOTPApi{
+    NSString *forgotPasswordMobileString = [Baseurl stringByAppendingString:ForgotPasswordUrlForMobileOTP];
+    NSMutableDictionary *forgotPasswordMobileApiDictionary = [[NSMutableDictionary alloc] init];
+    [forgotPasswordMobileApiDictionary setValue:self.mobileNumberString forKey:@"phone"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:forgotPasswordMobileString] withBody:forgotPasswordMobileApiDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSLog(@"Response Object:%@",responseObject);
+        if([[responseObject valueForKey:StatusKey] isEqualToString:ERROR]){
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:AppName message:[responseObject valueForKey:ErrorMessagekey] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [errorAlert show];
+        }
+        else{
+            UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:AppName message:@"OTP Sent" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+            [errorAlert show];
+        }
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+    
+}
 /*
  #pragma mark - Navigation
  
