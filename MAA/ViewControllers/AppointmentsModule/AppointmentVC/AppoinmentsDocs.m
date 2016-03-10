@@ -32,11 +32,7 @@ NSString *flag=0;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.ChildView.hidden=YES;
-    self.FromDate.hidden=YES;
-    self.Todate.hidden=YES;
-    self.btnSelectD.hidden=YES;
-    self.tblDropList.hidden=YES;
+    
     _tblAppoinments.dataSource=self;
     _tblAppoinments.delegate=self;
     [self initialisation];
@@ -99,12 +95,7 @@ NSString *flag=0;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
 {
-    if (tableView==_tblDropList)
-    {
-        return DDL.count;
-
-    }
-    else if (tableView==_tblAppoinments)
+    if (tableView==_tblAppoinments)
     {
         return  self.appointmentDoctorsMutableArray.count;
     }
@@ -134,14 +125,7 @@ NSString *flag=0;
         {
             cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:TableIdentifier];
         }
-        if (tableView==_tblDropList)
-        {
-            
-            
-            cell.textLabel.text=[DDL objectAtIndex:indexPath.row];
-            cell.textLabel.font=[UIFont systemFontOfSize:(11.0)];
-            
-        }
+        
         return cell;
     }
     return nil;
@@ -157,10 +141,7 @@ NSString *flag=0;
         appointmentDetailVC.appointmentIdString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
         [self.navigationController pushViewController:appointmentDetailVC animated:YES];
     }
-    else{
-        NSString *x = DDL[indexPath.row];
-        [_btnDropDown setTitle:x forState:UIControlStateNormal];
-    }
+    
     
 }
 
@@ -185,66 +166,7 @@ NSString *flag=0;
 
 - (IBAction)Filter:(id)sender
 {
-    if (self.ChildView.hidden==YES)
-    {
-        self.ChildView.hidden=NO;
-        
-        
-        
-    }
-    else
-    {
-        self.ChildView.hidden=YES;
-        //[self adjustHeightOfTableview];
-    }
-   // [self adjustHeightOfTableview];
-}
-- (IBAction)To:(id)sender
-{
-    if (self.Todate.hidden==YES)
-    {
-        self.Todate.hidden=NO;
-        self.btnSelectD.hidden=NO;
-        self.FromDate.hidden=YES;
-    }
-    else
-    {
-        self.Todate.hidden=YES;
-        self.btnSelectD.hidden=YES;
-        self.FromDate.hidden=YES;
-        
-    }
-}
-
-- (IBAction)From:(id)sender
-{
-    if (self.FromDate.hidden==YES)
-    {
-        self.FromDate.hidden=NO;
-        self.btnSelectD.hidden=NO;
-        self.Todate.hidden=YES;
-        
-    }
-    else
-    {
-        self.FromDate.hidden=YES;
-        self.btnSelectD.hidden=YES;
-        self.Todate.hidden=YES;
-       
-    }
-}
-
-- (IBAction)SelectDate:(id)sender
-{
     
-}
-- (IBAction)DropDown:(id)sender
-{
-    if (_tblDropList.hidden==YES) {
-        _tblDropList.hidden=NO;
-    }
-    else
-        _tblDropList.hidden=YES;
 }
 
 #pragma mark - Calling Search Doctor Names Api

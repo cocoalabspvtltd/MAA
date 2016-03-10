@@ -290,6 +290,10 @@
 		C0E71FBF1C7B4E6E0038BFF5 /* categories.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E71FBD1C7B4E6E0038BFF5 /* categories.xib */; };
 		C0E71FCD1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E71FCB1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m */; };
 		C0E71FCE1C7B50350038BFF5 /* categoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0E71FCC1C7B50350038BFF5 /* categoryCell.xib */; };
+		C0E92BBF1C9183A100443117 /* ic_close_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */; };
+		C0E92BC01C9183A100443117 /* ic_close_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */; };
+		C0E92BC11C9183A100443117 /* ic_close_white_48pt.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBE1C9183A100443117 /* ic_close_white_48pt.png */; };
+		C0E92BC91C91959000443117 /* FilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E92BC81C91959000443117 /* FilterVC.m */; };
 		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
 		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
 /* End PBXBuildFile section */
@@ -742,6 +746,11 @@
 		C0E71FCA1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AskQuestionCategosyTableViewCell.h; sourceTree = "<group>"; };
 		C0E71FCB1C7B50350038BFF5 /* AskQuestionCategosyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskQuestionCategosyTableViewCell.m; sourceTree = "<group>"; };
 		C0E71FCC1C7B50350038BFF5 /* categoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = categoryCell.xib; sourceTree = "<group>"; };
+		C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_2x.png; sourceTree = "<group>"; };
+		C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_3x.png; sourceTree = "<group>"; };
+		C0E92BBE1C9183A100443117 /* ic_close_white_48pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt.png; sourceTree = "<group>"; };
+		C0E92BC71C91959000443117 /* FilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterVC.h; sourceTree = "<group>"; };
+		C0E92BC81C91959000443117 /* FilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterVC.m; sourceTree = "<group>"; };
 		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
 		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
 		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
@@ -1363,6 +1372,8 @@
 				C065F6511C8EAF7C00E25726 /* chatReciever.xib */,
 				C065F6531C8EB22700E25726 /* TextChatVC.h */,
 				C065F6541C8EB22700E25726 /* TextChatVC.m */,
+				C0E92BC71C91959000443117 /* FilterVC.h */,
+				C0E92BC81C91959000443117 /* FilterVC.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -1465,6 +1476,9 @@
 				C005F0011C6A00E20095E2CC /* microphone_slash_none.png */,
 				C005F0051C6A00F70095E2CC /* microphone_off.png */,
 				C005F0031C6A00EE0095E2CC /* video_camera_off.png */,
+				C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */,
+				C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */,
+				C0E92BBE1C9183A100443117 /* ic_close_white_48pt.png */,
 				C005F0071C6A010A0095E2CC /* video_camera_none.png */,
 				C005F0091C6A011C0095E2CC /* phone_none.png */,
 			);
@@ -2236,8 +2250,11 @@
 				55EAC8471C0A09CE00F31280 /* field_white_box@2x.png in Resources */,
 				7CB682A81C38FF4300AC1F90 /* Players.png in Resources */,
 				C0BBC4CA1C6E64D6005083B1 /* settings@3x.png in Resources */,
+				C0E92BC11C9183A100443117 /* ic_close_white_48pt.png in Resources */,
+				C0E92BC01C9183A100443117 /* ic_close_white_48pt_3x.png in Resources */,
 				C09EF6DD1C76211800806600 /* style.scss in Resources */,
 				C09EF6BC1C76211800806600 /* OTAudioDeviceManager.html in Resources */,
+				C0E92BBF1C9183A100443117 /* ic_close_white_48pt_2x.png in Resources */,
 				C0BBC4891C6E2AE7005083B1 /* settings-a.png in Resources */,
 				C09EF6F31C76211800806600 /* OTVideoRender.html in Resources */,
 				C005F0021C6A00E20095E2CC /* microphone_slash_none.png in Resources */,
@@ -2405,6 +2422,7 @@
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
+				C0E92BC91C91959000443117 /* FilterVC.m in Sources */,
 				C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
 				C0BD5F5E1C89A3B400C9B8CD /* AnswerVc.m in Sources */,

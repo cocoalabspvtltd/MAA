@@ -7,18 +7,18 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AskedQuestionsViewController"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="askedQuestionsCell" rowHeight="82" id="hid-TA-XUM" customClass="AskedQuestionsTVC">
-            <rect key="frame" x="0.0" y="0.0" width="600" height="114"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="askedQuestionsCell" rowHeight="80" id="hid-TA-XUM" customClass="AskedQuestionsTVC">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hid-TA-XUM" id="3ZG-Bb-4bK">
-                <rect key="frame" x="0.0" y="0.0" width="600" height="113"/>
+                <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-tK-hD0">
-                        <rect key="frame" x="8" y="8" width="46" height="45"/>
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="46" id="Gno-GC-tn7"/>
-                            <constraint firstAttribute="height" constant="45" id="aii-br-DfE"/>
+                            <constraint firstAttribute="width" constant="40" id="Gno-GC-tn7"/>
+                            <constraint firstAttribute="height" constant="40" id="aii-br-DfE"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -27,42 +27,36 @@
                         </userDefinedRuntimeAttributes>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which brand carries more prestige for the owner:Bentley or Rolls-Roys,and why?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Yk-88-qLx">
-                        <rect key="frame" x="62" y="8" width="527" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="Qcv-NE-Ub2"/>
-                        </constraints>
+                        <rect key="frame" x="56" y="8" width="533" height="16"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which brand carries more prestige for the owner:Bentley or Rolls-Roys,and why?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Emy-XB-ig3">
-                        <rect key="frame" x="62" y="52" width="527" height="40"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="40" id="sFD-M4-uM7"/>
-                        </constraints>
+                        <rect key="frame" x="56" y="39" width="533" height="15"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19 Jan 11:32 am" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBk-yb-gFX">
-                        <rect key="frame" x="516" y="94" width="73" height="10"/>
+                        <rect key="frame" x="516" y="59" width="73" height="12"/>
                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="10"/>
                         <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="1Yk-88-qLx" firstAttribute="leading" secondItem="YZT-tK-hD0" secondAttribute="trailing" constant="8" id="1Y0-ZY-9qO"/>
-                    <constraint firstItem="fBk-yb-gFX" firstAttribute="top" secondItem="Emy-XB-ig3" secondAttribute="bottom" constant="2" id="4xH-dO-WKC"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="1Yk-88-qLx" secondAttribute="trailing" constant="3" id="Cyi-sk-IBd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Emy-XB-ig3" secondAttribute="trailing" constant="3" id="Fzh-Na-Db1"/>
+                    <constraint firstItem="Emy-XB-ig3" firstAttribute="top" secondItem="1Yk-88-qLx" secondAttribute="bottom" constant="15" id="KXt-rC-wPi"/>
                     <constraint firstItem="YZT-tK-hD0" firstAttribute="leading" secondItem="3ZG-Bb-4bK" secondAttribute="leading" constant="8" id="Ncu-wr-8np"/>
-                    <constraint firstItem="Emy-XB-ig3" firstAttribute="top" secondItem="1Yk-88-qLx" secondAttribute="bottom" constant="4" id="PSS-0X-jq9"/>
+                    <constraint firstItem="fBk-yb-gFX" firstAttribute="top" secondItem="Emy-XB-ig3" secondAttribute="bottom" constant="5" id="PL3-CP-62e"/>
+                    <constraint firstItem="1Yk-88-qLx" firstAttribute="top" secondItem="YZT-tK-hD0" secondAttribute="top" id="TM3-Xm-XYV"/>
                     <constraint firstItem="YZT-tK-hD0" firstAttribute="top" secondItem="3ZG-Bb-4bK" secondAttribute="top" constant="8" id="V6F-tt-l2o"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Emy-XB-ig3" secondAttribute="trailing" constant="3" id="ZKW-GO-yxR"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="fBk-yb-gFX" secondAttribute="bottom" constant="1" id="eLZ-Il-F4a"/>
-                    <constraint firstItem="Emy-XB-ig3" firstAttribute="leading" secondItem="3ZG-Bb-4bK" secondAttribute="leadingMargin" constant="54" id="fiv-4f-R4v"/>
-                    <constraint firstItem="1Yk-88-qLx" firstAttribute="top" secondItem="3ZG-Bb-4bK" secondAttribute="topMargin" id="gKW-34-KCq"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="fBk-yb-gFX" secondAttribute="trailing" constant="3" id="l76-Gh-a7e"/>
+                    <constraint firstItem="Emy-XB-ig3" firstAttribute="centerX" secondItem="1Yk-88-qLx" secondAttribute="centerX" id="Zsx-oc-X6l"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1Yk-88-qLx" secondAttribute="trailing" constant="3" id="dpX-Ld-Ozc"/>
+                    <constraint firstItem="1Yk-88-qLx" firstAttribute="leading" secondItem="YZT-tK-hD0" secondAttribute="trailing" constant="8" id="sQB-oZ-AWo"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="fBk-yb-gFX" secondAttribute="trailing" constant="3" id="x8H-Y5-79Z"/>
+                    <constraint firstItem="Emy-XB-ig3" firstAttribute="leading" secondItem="1Yk-88-qLx" secondAttribute="leading" id="zhb-GG-1X7"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
@@ -71,7 +65,7 @@
                 <outlet property="profileImageView" destination="YZT-tK-hD0" id="Bxd-Hm-sHD"/>
                 <outlet property="questionLabel" destination="1Yk-88-qLx" id="g7c-qf-IeS"/>
             </connections>
-            <point key="canvasLocation" x="358" y="337"/>
+            <point key="canvasLocation" x="358" y="319.5"/>
         </tableViewCell>
     </objects>
 </document>

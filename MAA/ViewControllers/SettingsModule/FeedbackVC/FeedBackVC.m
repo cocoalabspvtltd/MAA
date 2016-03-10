@@ -18,7 +18,7 @@
     [super viewDidLoad];
     
     self.feedbacktextView.layer.borderWidth = .5f;
-    self.feedbacktextView.layer.cornerRadius=15;
+    self.feedbacktextView.layer.cornerRadius=5;
     self.feedbacktextView.layer.borderColor = [[UIColor lightGrayColor] CGColor];
     [self addingGetureRecognizerToTheView];
     
