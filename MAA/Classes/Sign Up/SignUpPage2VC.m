@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSString *dobApiValueString;
 @property (nonatomic, strong) NSArray *genderArray;
 @property (nonatomic, strong) NSString *stringGenderValue;
+@property (nonatomic, assign) CGRect oldFrame;
 @end
 
 @implementation SignUpPage2VC
@@ -161,10 +162,18 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [textFieldGender resignFirstResponder];
-    [textFieldDateOfBirth resignFirstResponder];
-    [textFieldPassword resignFirstResponder];
-    [textFieldReTypePassword resignFirstResponder];
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+        [textFieldGender resignFirstResponder];
+        [textFieldDateOfBirth resignFirstResponder];
+        [textFieldPassword resignFirstResponder];
+        [textFieldReTypePassword resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+         
+     }];
 }
 
 - (IBAction)funcButtonBack:(id)sender
@@ -290,18 +299,7 @@
     [self.navigationController pushViewController:resetOTPPage animated:YES];
 }
 
-#pragma mark - TExtField Delegates
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if(textField == textFieldPassword){
-        [textFieldPassword resignFirstResponder];
-        [textFieldReTypePassword becomeFirstResponder];
-    }
-    else if (textField == textFieldReTypePassword){
-        [textFieldReTypePassword resignFirstResponder];
-    }
-    return YES;
-}
 /*
  #pragma mark - Navigation
  
@@ -338,5 +336,64 @@
     }];
  
 }
+
+- (void)viewDidAppear:(BOOL)animated{
+    self.oldFrame = self.view.frame;
+    
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == textFieldDateOfBirth ) {
+        [UIView animateWithDuration:0.20 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= textFieldDateOfBirth.y-100;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    else if (textField == textFieldPassword ) {
+        [UIView animateWithDuration:0.30 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= textFieldPassword.y-120;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    else if (textField == textFieldReTypePassword ) {
+        [UIView animateWithDuration:0.30 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= textFieldReTypePassword.y-120;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    
+}
+
+//self.Outlet_nameOFthegift.height
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == textFieldPassword){
+        [textFieldReTypePassword becomeFirstResponder];
+    }
+    else if (textField == textFieldReTypePassword ) {
+        
+        [UIView animateWithDuration:0.20 animations:^{
+            CGRect newFrame = self.oldFrame;
+            [textFieldReTypePassword resignFirstResponder];
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+        
+    return YES;
+}
+
 
 @end

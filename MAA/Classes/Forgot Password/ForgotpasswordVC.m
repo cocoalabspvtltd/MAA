@@ -11,7 +11,7 @@
 #import "ForgotpasswordVC.h"
 
 @interface ForgotpasswordVC ()<UITextFieldDelegate>
-
+@property (nonatomic, assign) CGRect oldFrame;
 @end
 
 @implementation ForgotpasswordVC
@@ -28,8 +28,16 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [textFieldEmail resignFirstResponder];
-    [textFieldPhone resignFirstResponder];
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+        [textFieldEmail resignFirstResponder];
+        [textFieldPhone resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+     }];
+
 }
 
 - (IBAction)funcButtonBack:(id)sender
@@ -37,6 +45,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)nextButtonAction:(id)sender {
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+        [textFieldPhone resignFirstResponder];
+        [textFieldEmail resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+     }];
     if([self isValid]){
         // [self callingForgotPasswordApi];
     }
@@ -163,17 +180,48 @@
     [self.navigationController pushViewController:resetPasswordOTPVC animated:YES];
 }
 
-#pragma mark - TextField Delegate
+- (void)viewDidAppear:(BOOL)animated{
+    self.oldFrame = self.view.frame;
+    
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == textFieldPhone ) {
+        [UIView animateWithDuration:0.20 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= textFieldPhone.y-100;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    else if (textField == textFieldEmail ) {
+        [UIView animateWithDuration:0.30 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= textFieldEmail.y-120;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    
+}
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if(textField == textFieldEmail){
-        [textFieldEmail resignFirstResponder];
-    }
-    else{
+//self.Outlet_nameOFthegift.height
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
         [textFieldPhone resignFirstResponder];
-    }
+        [textFieldEmail resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+     }];
     return YES;
 }
+
 /*
  #pragma mark - Navigation
  

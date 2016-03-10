@@ -11,15 +11,36 @@
 #import "LoginPageVC.h"
 
 @interface SignUpPage1VC ()<UITextFieldDelegate>
-
+@property (nonatomic,assign)CGRect oldFrame;
 @end
 
 @implementation SignUpPage1VC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
 }
+
+- (void)keyboardWasShown:(NSNotification *)notification
+{
+    //[self viewWillLayoutSubviews];
+    // Get the size of the keyboard.
+    CGSize keyboardSize = [[[notification userInfo] objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    //Given size may not account for screen rotation
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDuration:0.5];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    
+    
+    [UIView commitAnimations];
+    //your other code here.........
+    
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -28,9 +49,19 @@
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [textFieldName resignFirstResponder];
-    [textFieldPhone resignFirstResponder];
-    [textFieldEmail resignFirstResponder];
+  
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+       
+        [textFieldName resignFirstResponder];
+        [textFieldPhone resignFirstResponder];
+        [textFieldEmail resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+         
+     }];
 }
 
 - (IBAction)funcButtonBack:(id)sender
@@ -39,6 +70,18 @@
 }
 
 - (IBAction)nextButtonAction:(UIButton *)sender {
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+        
+        [textFieldName resignFirstResponder];
+        [textFieldPhone resignFirstResponder];
+        [textFieldEmail resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+         
+     }];
     if([self isValid]){
         [self callingCheckEmailApi];
     }
@@ -124,19 +167,6 @@
     }];
 }
 
-
-#pragma mark - TextField Delegate
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if(textField == textFieldName){
-        [textFieldName resignFirstResponder];
-        [textFieldPhone becomeFirstResponder];
-    }
-    else if (textField == textFieldEmail){
-        [textFieldEmail resignFirstResponder];
-    }
-    return YES;
-}
 /*
  #pragma mark - Navigation
  
@@ -146,5 +176,54 @@
  // Pass the selected object to the new view controller.
  }
  */
+- (void)viewDidAppear:(BOOL)animated{
+    self.oldFrame = self.view.frame;
+    
+}
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == textFieldPhone ) {
+        [UIView animateWithDuration:0.20 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= textFieldPhone.y-100;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    else if (textField == textFieldEmail ) {
+        [UIView animateWithDuration:0.30 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= textFieldEmail.y-120;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    
+}
+
+//self.Outlet_nameOFthegift.height
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    if(textField == textFieldName){
+        [textFieldPhone becomeFirstResponder];
+    }
+    else if (textField == textFieldPhone ) {
+        
+        [textFieldEmail becomeFirstResponder];
+    }
+    else if (textField == textFieldEmail ) {
+        [UIView animateWithDuration:0.20 animations:^{
+            CGRect newFrame = self.oldFrame;
+            [textFieldEmail resignFirstResponder];
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    return YES;
+}
 
 @end
