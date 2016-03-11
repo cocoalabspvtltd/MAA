@@ -9,10 +9,15 @@
 #import <UIKit/UIKit.h>
 
 @interface FilterVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *btnSelectCategory;
 @property (weak, nonatomic) IBOutlet UITextField *txtFrom;
 @property (weak, nonatomic) IBOutlet UITextField *txtTo;
 @property (weak, nonatomic) IBOutlet UITextField *txtTypOfAppoinment;
 @property (weak, nonatomic) IBOutlet UITextField *Status;
 - (IBAction)Submit:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *ChildView;
+- (IBAction)Close:(id)sender;
+- (IBAction)SelectCategory:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *txtQuestionType;
 
 @end

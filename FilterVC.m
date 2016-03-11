@@ -8,12 +8,17 @@
 
 #import "FilterVC.h"
 
-@interface FilterVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>
+@interface FilterVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     NSArray *types;
     NSArray *status;
+    NSArray *typeOfQuestions;
     UIPickerView *typofAppoinments;
+    UIPickerView *typofQuestions;
     UIPickerView *StatusPicker;
+    UITapGestureRecognizer *gesture;
+    UIDatePicker *FromdDatePicker;
+    UIDatePicker *ToDatePicker;
 }
 
 @end
@@ -23,27 +28,42 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    _btnSelectCategory.layer.borderWidth=.5f;
+    _btnSelectCategory.layer.cornerRadius=5;
+    _btnSelectCategory.layer.borderColor=[[UIColor lightGrayColor]CGColor];
+    
     typofAppoinments=[[UIPickerView alloc]init];
     typofAppoinments.delegate=self;
     typofAppoinments.dataSource=self;
     _txtTypOfAppoinment.inputView=typofAppoinments;
     types=@[@"Any",@"Audio Call",@"Video Call",@"Direct Appoinment",@"Chat"];
+    typofAppoinments.tag = 10;
     
     StatusPicker=[[UIPickerView alloc]init];
     StatusPicker.delegate=self;
     StatusPicker.dataSource=self;
     _Status.inputView=StatusPicker;
-    
+    StatusPicker.tag = 20;
     status=@[@"All",@"Active",@"Cancelled"];
-
     
-    UIDatePicker *FromdDatePicker = [[UIDatePicker alloc] init];
+    typofQuestions=[[UIPickerView alloc]init];
+    typofQuestions.delegate=self;
+    typofQuestions.dataSource=self;
+    _txtQuestionType.inputView=typofQuestions;
+    typofQuestions.tag = 30;
+    typeOfQuestions=@[@"All",@"Mine"];
+    
+    gesture.delegate=self;
+    gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Tapping)];
+    [self.ChildView addGestureRecognizer:gesture];
+    
+    FromdDatePicker = [[UIDatePicker alloc] init];
     FromdDatePicker.datePickerMode = UIDatePickerModeDate;
     [FromdDatePicker addTarget:self action:@selector(FromDatePickerValueChanged) forControlEvents:UIControlEventValueChanged];
    
     _txtFrom.inputView = FromdDatePicker;
     
-    UIDatePicker *ToDatePicker = [[UIDatePicker alloc] init];
+    ToDatePicker = [[UIDatePicker alloc] init];
     ToDatePicker.datePickerMode = UIDatePickerModeDate;
     [ToDatePicker addTarget:self action:@selector(ToDatePickerValueChanged) forControlEvents:UIControlEventValueChanged];
     
@@ -52,16 +72,41 @@
     // Do any additional setup after loading the view.
 }
 
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (pickerView.tag==20)
+    {
+        _Status.text=status[row];
+    }
+    else if (pickerView.tag==10)
+    {
+        _txtTypOfAppoinment.text=types[row];
+    }
+    else if (pickerView.tag==30)
+    {
+        _txtQuestionType.text=typeOfQuestions[row];
+    }
+    
+}
+
+-(void)Tapping
+{
+    [self.view endEditing:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    if(pickerView==typofAppoinments) {
+    if(pickerView.tag==10) {
         return 1;
     }
-    else if (pickerView==StatusPicker)
+    else if (pickerView.tag==20)
+    {
+        return 1;
+    }
+    else if (pickerView.tag==30)
     {
         return 1;
     }
@@ -70,31 +115,55 @@
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     
-    if(pickerView==typofAppoinments)
+    if(pickerView.tag==10)
     {
         return types.count;
     }
-    else if (pickerView==StatusPicker)
+    else if (pickerView.tag==20)
     {
         return status.count;
+    }
+    else if (pickerView.tag==30)
+    {
+        return typeOfQuestions.count;
     }
     
     return 1;
 }
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    return types[row];
+    if(pickerView.tag==10)
+    {
+        return types[row];
+    }
+    else if (pickerView.tag==20)
+    {
+        return status[row];
+    }
+    else if (pickerView.tag==30)
+    {
+        return typeOfQuestions[row];
+    }
+    return nil;
 
 }
 
 -(void)FromDatePickerValueChanged
 {
+    UIDatePicker *picker = (UIDatePicker*)self.txtFrom.inputView;
     
+    
+    
+    self.txtFrom.text = [NSString stringWithFormat:@"%@",picker.date];
 }
 
 -(void)ToDatePickerValueChanged
 {
+    UIDatePicker *picker = (UIDatePicker*)self.txtTo.inputView;
+   
     
+    self.txtTo.text = [NSString stringWithFormat:@"%@",picker.date];
+
 }
 
 /*
@@ -107,6 +176,18 @@
 }
 */
 
-- (IBAction)Submit:(id)sender {
+- (IBAction)Submit:(id)sender
+{
+    
+}
+
+- (IBAction)Close:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)SelectCategory:(id)sender
+{
+    //navigate to a category listing page
 }
 @end
