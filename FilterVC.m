@@ -28,9 +28,21 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
-    _btnSelectCategory.layer.borderWidth=.5f;
-    _btnSelectCategory.layer.cornerRadius=5;
-    _btnSelectCategory.layer.borderColor=[[UIColor lightGrayColor]CGColor];
+    _txtFrom.layer.borderWidth=.5f;
+    _txtFrom.layer.cornerRadius=5;
+    _txtFrom.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    _txtTo.layer.borderWidth=.5f;
+    _txtTo.layer.cornerRadius=5;
+    _txtTo.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    _txtTypOfAppoinment.layer.borderWidth=.5f;
+    _txtTypOfAppoinment.layer.cornerRadius=5;
+    _txtTypOfAppoinment.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    _Status.layer.borderWidth=.5f;
+    _Status.layer.cornerRadius=5;
+    _Status.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    _txtQuestionType.layer.borderWidth=.5f;
+    _txtQuestionType.layer.cornerRadius=5;
+    _txtQuestionType.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
     
     typofAppoinments=[[UIPickerView alloc]init];
     typofAppoinments.delegate=self;
@@ -71,7 +83,11 @@
     
     // Do any additional setup after loading the view.
 }
-
+//- (void) drawPlaceholderInRect:(CGRect)rect {
+//    [[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00] setFill];
+//    [[self placeholder] drawInRect:rect withFont:[UIFont systemFontOfSize:16]];
+//    
+//}
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (pickerView.tag==20)
