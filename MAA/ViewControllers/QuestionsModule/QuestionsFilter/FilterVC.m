@@ -12,7 +12,6 @@
 {
     NSArray *types;
     NSArray *status;
-    NSArray *typeOfQuestions;
     UIPickerView *typofAppoinments;
     UIPickerView *typofQuestions;
     UIPickerView *StatusPicker;
@@ -20,7 +19,10 @@
     UIDatePicker *FromdDatePicker;
     UIDatePicker *ToDatePicker;
 }
-
+@property (nonatomic, strong) NSMutableArray *questionsTypeArray;
+@property (nonatomic, strong) NSString *fromDateString;
+@property (nonatomic, strong) NSString *toDateString;
+@property (nonatomic, strong) NSString *questionsTypeIdString;
 @end
 
 @implementation FilterVC
@@ -28,6 +30,7 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    [self initialisation];
     _txtFrom.layer.borderWidth=.5f;
     _txtFrom.layer.cornerRadius=5;
     _txtFrom.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
@@ -63,8 +66,6 @@
     typofQuestions.dataSource=self;
     _txtQuestionType.inputView=typofQuestions;
     typofQuestions.tag = 30;
-    typeOfQuestions=@[@"All",@"Mine"];
-    
     gesture.delegate=self;
     gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Tapping)];
     [self.ChildView addGestureRecognizer:gesture];
@@ -83,11 +84,21 @@
     
     // Do any additional setup after loading the view.
 }
-//- (void) drawPlaceholderInRect:(CGRect)rect {
-//    [[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00] setFill];
-//    [[self placeholder] drawInRect:rect withFont:[UIFont systemFontOfSize:16]];
-//    
-//}
+
+-(void)initialisation{
+    self.fromDateString = @"";
+    self.toDateString = @"";
+    self.questionsTypeIdString = @"";
+    [self initialisingTypeArray];
+}
+
+-(void)initialisingTypeArray{
+    self.questionsTypeArray = [[NSMutableArray alloc] init];
+    NSMutableDictionary *questionTypeMutableDictionAry1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"All",@"name",@"0",@"typeId", nil];
+     NSMutableDictionary *questionTypeMutableDictionAry2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Mine",@"name",@"1",@"typeId", nil];
+    [self.questionsTypeArray addObject:questionTypeMutableDictionAry1];
+     [self.questionsTypeArray addObject:questionTypeMutableDictionAry2];
+}
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (pickerView.tag==20)
@@ -96,11 +107,12 @@
     }
     else if (pickerView.tag==10)
     {
-        _txtTypOfAppoinment.text=types[row];
+        _txtTypOfAppoinment.text=[self.questionsTypeArray[row] valueForKey:@"name"];;
     }
     else if (pickerView.tag==30)
     {
-        _txtQuestionType.text=typeOfQuestions[row];
+        _txtQuestionType.text=[self.questionsTypeArray[row] valueForKey:@"name"];
+        self.questionsTypeIdString = [self.questionsTypeArray[row] valueForKey:@"typeId"];
     }
     
 }
@@ -141,7 +153,7 @@
     }
     else if (pickerView.tag==30)
     {
-        return typeOfQuestions.count;
+        return self.questionsTypeArray.count;
     }
     
     return 1;
@@ -158,7 +170,7 @@
     }
     else if (pickerView.tag==30)
     {
-        return typeOfQuestions[row];
+        return [self.questionsTypeArray[row] valueForKey:@"name"];
     }
     return nil;
 
@@ -167,21 +179,28 @@
 -(void)FromDatePickerValueChanged
 {
     UIDatePicker *picker = (UIDatePicker*)self.txtFrom.inputView;
-    
-    
-    
-    self.txtFrom.text = [NSString stringWithFormat:@"%@",picker.date];
+    self.fromDateString = [self convertingDateToStringForApiWithDate:picker.date];
+    self.txtFrom.text = [self convertingDateToStringForETxtFieldDate:picker.date];
 }
 
 -(void)ToDatePickerValueChanged
 {
     UIDatePicker *picker = (UIDatePicker*)self.txtTo.inputView;
-   
-    
-    self.txtTo.text = [NSString stringWithFormat:@"%@",picker.date];
-
+    self.toDateString = [self convertingDateToStringForApiWithDate:picker.date];
+    self.txtTo.text = [self convertingDateToStringForETxtFieldDate:picker.date];
 }
 
+-(NSString *)convertingDateToStringForETxtFieldDate:(NSDate *)inputDate{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    return [dateFormatter stringFromDate:inputDate];
+}
+
+-(NSString *)convertingDateToStringForApiWithDate:(NSDate *)inputDate{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    return [dateFormatter stringFromDate:inputDate];
+}
 /*
 #pragma mark - Navigation
 
@@ -194,7 +213,10 @@
 
 - (IBAction)Submit:(id)sender
 {
-    
+    if(self.filterVCDelegate &&[self.filterVCDelegate respondsToSelector:@selector(submitButtonActionWithQuestionCategoryid:FromDate:andToDate:andType:)]){
+        [self.filterVCDelegate submitButtonActionWithQuestionCategoryid:@"" FromDate:self.fromDateString andToDate:self.toDateString andType:self.questionsTypeIdString];
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 - (IBAction)Close:(id)sender

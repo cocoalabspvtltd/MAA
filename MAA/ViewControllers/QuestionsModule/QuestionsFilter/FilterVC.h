@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol FilterVCDelegate;
 @interface FilterVC : UIViewController
 @property (weak, nonatomic) IBOutlet UIButton *btnSelectCategory;
 @property (weak, nonatomic) IBOutlet UITextField *txtFrom;
@@ -19,5 +19,10 @@
 - (IBAction)Close:(id)sender;
 - (IBAction)SelectCategory:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *txtQuestionType;
+@property (nonatomic, assign) id<FilterVCDelegate>filterVCDelegate;
+@end
+@protocol FilterVCDelegate <NSObject>
+
+-(void)submitButtonActionWithQuestionCategoryid:(NSString *)questionsCategoryId FromDate:(NSString *)fromDate andToDate:(NSString *)toDate andType:(NSString *)type;
 
 @end

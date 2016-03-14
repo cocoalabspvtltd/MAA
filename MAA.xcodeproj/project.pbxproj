@@ -106,6 +106,7 @@
 		C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED231C287546009DF69F /* ResetPasswordVC.m */; };
 		C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */; };
 		C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */; };
+		C08DEF9F1C9712D00025F1AF /* FilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DEF9E1C9712D00025F1AF /* FilterVC.m */; };
 		C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09039C81C8898790059FDC8 /* AccountSettingVC.m */; };
 		C09039CD1C88988E0059FDC8 /* CountriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09039CC1C88988E0059FDC8 /* CountriesVC.m */; };
 		C092EBF41C80B1E000F7B18B /* MKAnnotationView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C092EBD41C80B1E000F7B18B /* MKAnnotationView+WebCache.m */; };
@@ -292,7 +293,6 @@
 		C0E92BBF1C9183A100443117 /* ic_close_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */; };
 		C0E92BC01C9183A100443117 /* ic_close_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */; };
 		C0E92BC11C9183A100443117 /* ic_close_white_48pt.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBE1C9183A100443117 /* ic_close_white_48pt.png */; };
-		C0E92BC91C91959000443117 /* FilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0E92BC81C91959000443117 /* FilterVC.m */; };
 		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
 		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
 /* End PBXBuildFile section */
@@ -517,6 +517,8 @@
 		C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoicePageVC.m; sourceTree = "<group>"; };
 		C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceCell.h; sourceTree = "<group>"; };
 		C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceCell.m; sourceTree = "<group>"; };
+		C08DEF9D1C9712D00025F1AF /* FilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterVC.h; sourceTree = "<group>"; };
+		C08DEF9E1C9712D00025F1AF /* FilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterVC.m; sourceTree = "<group>"; };
 		C09039C71C8898790059FDC8 /* AccountSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSettingVC.h; sourceTree = "<group>"; };
 		C09039C81C8898790059FDC8 /* AccountSettingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountSettingVC.m; sourceTree = "<group>"; };
 		C09039CB1C88988E0059FDC8 /* CountriesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CountriesVC.h; sourceTree = "<group>"; };
@@ -746,8 +748,6 @@
 		C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_2x.png; sourceTree = "<group>"; };
 		C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_3x.png; sourceTree = "<group>"; };
 		C0E92BBE1C9183A100443117 /* ic_close_white_48pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt.png; sourceTree = "<group>"; };
-		C0E92BC71C91959000443117 /* FilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterVC.h; sourceTree = "<group>"; };
-		C0E92BC81C91959000443117 /* FilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterVC.m; sourceTree = "<group>"; };
 		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
 		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
 		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
@@ -1143,6 +1143,7 @@
 		9F5F0C311C665D3100F7E99D /* QuestionsModule */ = {
 			isa = PBXGroup;
 			children = (
+				C08DEF9C1C9712D00025F1AF /* QuestionsFilter */,
 				C08437F91C6F019600610ADC /* AskQuestionViewController */,
 				9F5F0C321C665D3100F7E99D /* AskedQuestionsDetailVC */,
 				9F5F0C351C665D3100F7E99D /* AskedQuestionsViewController */,
@@ -1369,8 +1370,6 @@
 				C065F6511C8EAF7C00E25726 /* chatReciever.xib */,
 				C065F6531C8EB22700E25726 /* TextChatVC.h */,
 				C065F6541C8EB22700E25726 /* TextChatVC.m */,
-				C0E92BC71C91959000443117 /* FilterVC.h */,
-				C0E92BC81C91959000443117 /* FilterVC.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -1478,6 +1477,15 @@
 				C005F0091C6A011C0095E2CC /* phone_none.png */,
 			);
 			name = dummyicons;
+			sourceTree = "<group>";
+		};
+		C08DEF9C1C9712D00025F1AF /* QuestionsFilter */ = {
+			isa = PBXGroup;
+			children = (
+				C08DEF9D1C9712D00025F1AF /* FilterVC.h */,
+				C08DEF9E1C9712D00025F1AF /* FilterVC.m */,
+			);
+			path = QuestionsFilter;
 			sourceTree = "<group>";
 		};
 		C09039C61C8898790059FDC8 /* AccountSettingsHome */ = {
@@ -2393,6 +2401,7 @@
 				555BBCFE1C0AA5DC00E262F9 /* HomePageVC.m in Sources */,
 				7C29EE7A1C1A72B400A9481E /* SearchTVC.m in Sources */,
 				9F5F0C381C665D3100F7E99D /* QuestionsSDetailVC.m in Sources */,
+				C08DEF9F1C9712D00025F1AF /* FilterVC.m in Sources */,
 				C092EBF71C80B1E000F7B18B /* SDWebImageCompat.m in Sources */,
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,
 				9F5F0C5F1C66676B00F7E99D /* SettingsTableViewCell.m in Sources */,
@@ -2416,7 +2425,6 @@
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
-				C0E92BC91C91959000443117 /* FilterVC.m in Sources */,
 				C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */,
 				C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */,
 				C0BD5F5E1C89A3B400C9B8CD /* AnswerVc.m in Sources */,

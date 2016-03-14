@@ -11880,8 +11880,7 @@
                                             <constraint firstAttribute="width" constant="64" id="Ieh-bY-lGw"/>
                                         </constraints>
                                         <connections>
-                                            <action selector="Filter:" destination="tIx-wg-S6z" eventType="touchUpInside" id="nrx-Ly-HuD"/>
-                                            <segue destination="PnV-Pw-1M8" kind="presentation" id="Es5-Z1-l02"/>
+                                            <action selector="filterButtonAction:" destination="sSy-hA-oLe" eventType="touchUpInside" id="h72-Ed-cKx"/>
                                         </connections>
                                     </button>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="529-se-ULe">
@@ -17684,7 +17683,7 @@
         <!--FilterVC-->
         <scene sceneID="aVG-BI-QhR">
             <objects>
-                <viewController id="PnV-Pw-1M8" customClass="FilterVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FilterVC" id="PnV-Pw-1M8" customClass="FilterVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qvy-Sf-Atq"/>
                         <viewControllerLayoutGuide type="bottom" id="zbt-1s-tei"/>

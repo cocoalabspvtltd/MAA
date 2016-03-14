@@ -8,10 +8,11 @@
 
 #define AskedQuestionsTableViewCell @"askedQuestionsCell"
 
+#import "FilterVC.h"
 #import "QuestionsSDetailVC.h"
 #import "AskedQuestionsViewController.h"
 
-@interface AskedQuestionsViewController ()<UISearchBarDelegate,UIScrollViewDelegate>
+@interface AskedQuestionsViewController ()<UISearchBarDelegate,UIScrollViewDelegate,FilterVCDelegate>
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, strong) NSString *searchText;
@@ -63,7 +64,7 @@
     self.limitValue = 10;
     self.isTextSearchValueChanged = NO;
     [self.questionsMutableArray removeAllObjects];
-    [self callingGetQuestionsWithText:self.searchText];
+    [self callingGetQuestionsWithText:self.searchText andFromDate:@"" andToString:@"" andFilterId:@""];
 }
 
 -(void)addSubViews{
@@ -132,25 +133,29 @@
     self.offsetValue = 0;
     self.isTextSearchValueChanged = YES;
     [self.questionsMutableArray removeAllObjects];
-    [self callingGetQuestionsWithText:searchText];
-    NSLog(@"Search Text:%@",searchText);
+    [self callingGetQuestionsWithText:searchText andFromDate:@"" andToString:@"" andFilterId:@""];
 }
 
 #pragma mark - Search Bar Api's
 
--(void)callingGetQuestionsWithText:(NSString *)getQuestionsText{
+-(void)callingGetQuestionsWithText:(NSString *)getQuestionsText andFromDate:(NSString *)fromDateString andToString:(NSString *)toDateString andFilterId:(NSString *)filterIdString{
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *getQuestionsMutableDictionary = [[NSMutableDictionary alloc] init];
     [getQuestionsMutableDictionary setValue:getQuestionsText forKey:@"keyword"];
     [getQuestionsMutableDictionary setValue:accessToken forKey:@"token"];
+    [getQuestionsMutableDictionary setValue:filterIdString forKey:@"filter"];
+    [getQuestionsMutableDictionary setValue:fromDateString forKey:@"date1"];
+    [getQuestionsMutableDictionary setValue:toDateString forKey:@"date2"];
     [getQuestionsMutableDictionary setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [getQuestionsMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
+    NSLog(@"getQuestionsMutableString:%@",getQuestionsMutableDictionary);
     NSString *getQuestionsUrlString = [Baseurl stringByAppendingString:GetQuestionsApiUrl];
     if(self.offsetValue == 0){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getQuestionsUrlString] withBody:getQuestionsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response object:%@",responseObject);
         if(self.isTextSearchValueChanged){
             [self.questionsMutableArray removeAllObjects];
         }
@@ -184,13 +189,28 @@
         if (endScrolling >= scrollView.contentSize.height)
         {
             self.isTextSearchValueChanged = NO;
-            [self callingGetQuestionsWithText:self.searchText];
+            [self callingGetQuestionsWithText:self.searchText andFromDate:@"" andToString:@"" andFilterId:@""];
             [self.bottomProgressIndicatorView startAnimating];
         }
         else{
             [self.bottomProgressIndicatorView stopAnimating];
         }
     }
+}
+- (IBAction)filterButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FilterVC *questionsFilterVC = [storyboard instantiateViewControllerWithIdentifier:@"FilterVC"];
+    questionsFilterVC.filterVCDelegate = self;
+    [self presentViewController:questionsFilterVC animated:YES completion:nil];
+}
+
+-(void)submitButtonActionWithQuestionCategoryid:(NSString *)questionsCategoryId FromDate:(NSString *)fromDate andToDate:(NSString *)toDate andType:(NSString *)type{
+    self.offsetValue = 0;
+    self.limitValue = 10;
+    self.isTextSearchValueChanged = NO;
+    [self.questionsMutableArray removeAllObjects];
+    [self callingGetQuestionsWithText:self.searchText andFromDate:fromDate andToString:toDate andFilterId:type];
+    
 }
 
 /*
