@@ -274,7 +274,7 @@
                      loadNibNamed:@"InvoicePopup"
                      owner:self options:nil]
                     firstObject];
-    CGFloat xMargin = 10,yMargin = 150;
+    CGFloat xMargin = 10,yMargin = 100;
     self.invoicePopupVew.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
     [self populatingInvoiceDetailsInInVoiceview];
     [self.view addSubview:self.invoicePopupVew];

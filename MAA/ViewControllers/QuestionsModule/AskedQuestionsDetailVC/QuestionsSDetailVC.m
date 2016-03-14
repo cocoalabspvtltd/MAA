@@ -22,7 +22,16 @@
     
     // Do any additional setup after loading the view.
 }
+-(void)viewDidLayoutSubviews
+{
+    CGSize labelSize = [_answerLabe.text sizeWithFont:_answerLabe.font
+                                constrainedToSize:_answerLabe.frame.size
+                                    lineBreakMode:NSLineBreakByWordWrapping];
+    
+    CGFloat labelHeight = labelSize.height;
+    [_scroller setContentSize:CGSizeMake(self.view.frame.size.width, 300+labelHeight)];
 
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -64,7 +73,9 @@
     self.questionDetailLabe.text = [detailsData valueForKey:@"description"];
     self.dateLabel.text = [detailsData valueForKey:@"question_timestamp"];
     self.doctorNameLabel.text = [detailsData valueForKey:@"answeree_name"];
-    self.doctorSpecialityLabel.text = [detailsData valueForKey:@"tagline"];
+    if ([detailsData valueForKey:@"tagline"]!=[NSNull null]) {
+        self.doctorSpecialityLabel.text = [detailsData valueForKey:@"tagline"];
+    }
     self.answerDateLabel.text = [detailsData valueForKey:@"answer_timestamp"];
     self.answerLabe.text = [detailsData valueForKey:@"answer"];
     NSString *profileImageurlString = [detailsData valueForKey:@"answeree_image"];
