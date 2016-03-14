@@ -12292,7 +12292,6 @@
                                         </constraints>
                                         <connections>
                                             <action selector="Filter:" destination="tIx-wg-S6z" eventType="touchUpInside" id="yE7-lN-qLl"/>
-                                            <segue destination="8DI-v4-KVi" kind="presentation" id="GpE-fg-aGa"/>
                                         </connections>
                                     </button>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="ZTZ-Fd-1xV">
@@ -12353,7 +12352,7 @@
         <!--FilterVC-->
         <scene sceneID="hPr-CB-8iI">
             <objects>
-                <viewController id="8DI-v4-KVi" customClass="FilterVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AppointmentFilterVC" id="8DI-v4-KVi" customClass="FilterVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bsd-kx-NYn"/>
                         <viewControllerLayoutGuide type="bottom" id="OwH-oo-hpX"/>

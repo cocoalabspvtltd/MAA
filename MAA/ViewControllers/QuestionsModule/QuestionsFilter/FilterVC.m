@@ -10,8 +10,6 @@
 
 @interface FilterVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
-    NSArray *types;
-    NSArray *status;
     UIPickerView *typofAppoinments;
     UIPickerView *typofQuestions;
     UIPickerView *StatusPicker;
@@ -23,6 +21,10 @@
 @property (nonatomic, strong) NSString *fromDateString;
 @property (nonatomic, strong) NSString *toDateString;
 @property (nonatomic, strong) NSString *questionsTypeIdString;
+@property (nonatomic, strong) NSMutableArray *appointmenTypeArray;
+@property (nonatomic, strong) NSMutableArray *appointmenStatusArray;
+@property (nonatomic, strong) NSString *appointmentStatusIdString;
+@property (nonatomic, strong) NSString *appointmentTypeIdString;
 @end
 
 @implementation FilterVC
@@ -51,7 +53,6 @@
     typofAppoinments.delegate=self;
     typofAppoinments.dataSource=self;
     _txtTypOfAppoinment.inputView=typofAppoinments;
-    types=@[@"Any",@"Audio Call",@"Video Call",@"Direct Appoinment",@"Chat"];
     typofAppoinments.tag = 10;
     
     StatusPicker=[[UIPickerView alloc]init];
@@ -59,7 +60,6 @@
     StatusPicker.dataSource=self;
     _Status.inputView=StatusPicker;
     StatusPicker.tag = 20;
-    status=@[@"All",@"Active",@"Cancelled"];
     
     typofQuestions=[[UIPickerView alloc]init];
     typofQuestions.delegate=self;
@@ -89,7 +89,11 @@
     self.fromDateString = @"";
     self.toDateString = @"";
     self.questionsTypeIdString = @"";
+    self.appointmentStatusIdString = @"";
+    self.appointmentTypeIdString = @"";
     [self initialisingTypeArray];
+    [self initialisingAppointmentTypesArray];
+    [self initialisingAppointmentStatusArray];
 }
 
 -(void)initialisingTypeArray{
@@ -99,15 +103,44 @@
     [self.questionsTypeArray addObject:questionTypeMutableDictionAry1];
      [self.questionsTypeArray addObject:questionTypeMutableDictionAry2];
 }
+
+-(void)initialisingAppointmentTypesArray{
+    self.appointmenTypeArray = [[NSMutableArray alloc] init];
+    NSMutableDictionary *appointmentTypeMutableDictionAry0 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Any",@"name",@"0",@"typeId", nil];
+     NSMutableDictionary *appointmentTypeMutableDictionAry1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Direct Appoinment",@"name",@"1",@"typeId", nil];
+    NSMutableDictionary *appointmentTypeMutableDictionAry2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Chat",@"name",@"2",@"typeId", nil];
+    NSMutableDictionary *appointmentTypeMutableDictionAry3 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Audio Call",@"name",@"3",@"typeId", nil];
+    NSMutableDictionary *appointmentTypeMutableDictionAry4 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Video Call",@"name",@"4",@"typeId", nil];
+    [self.appointmenTypeArray addObject:appointmentTypeMutableDictionAry0];
+    [self.appointmenTypeArray addObject:appointmentTypeMutableDictionAry1];
+    [self.appointmenTypeArray addObject:appointmentTypeMutableDictionAry2];
+    [self.appointmenTypeArray addObject:appointmentTypeMutableDictionAry3];
+    [self.appointmenTypeArray addObject:appointmentTypeMutableDictionAry4];
+}
+
+-(void)initialisingAppointmentStatusArray{
+    self.appointmenStatusArray = [[NSMutableArray alloc] init];
+    NSMutableDictionary *appointmentStatusMutableDictionAry0 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"All",@"name",@"0",@"typeId", nil];
+    NSMutableDictionary *appointmentStatusMutableDictionAry1 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Active",@"name",@"1",@"typeId", nil];
+    NSMutableDictionary *appointmentStatusMutableDictionAry2 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Finished",@"name",@"2",@"typeId", nil];
+    NSMutableDictionary *appointmentStatusMutableDictionAry3 = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"Cancelled",@"name",@"3",@"typeId", nil];
+    [self.appointmenStatusArray addObject:appointmentStatusMutableDictionAry0];
+    [self.appointmenStatusArray addObject:appointmentStatusMutableDictionAry1];
+    [self.appointmenStatusArray addObject:appointmentStatusMutableDictionAry2];
+    [self.appointmenStatusArray addObject:appointmentStatusMutableDictionAry3];
+}
+
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (pickerView.tag==20)
     {
-        _Status.text=status[row];
+        _Status.text=[self.appointmenStatusArray[row] valueForKey:@"name"];
+        self.appointmentStatusIdString  = [self.appointmenStatusArray[row] valueForKey:@"typeId"];
     }
     else if (pickerView.tag==10)
     {
-        _txtTypOfAppoinment.text=[self.questionsTypeArray[row] valueForKey:@"name"];;
+        _txtTypOfAppoinment.text=[self.appointmenTypeArray[row] valueForKey:@"name"];
+        self.appointmentTypeIdString  = [self.appointmenTypeArray[row] valueForKey:@"typeId"];
     }
     else if (pickerView.tag==30)
     {
@@ -145,11 +178,11 @@
     
     if(pickerView.tag==10)
     {
-        return types.count;
+        return self.appointmenTypeArray.count;
     }
     else if (pickerView.tag==20)
     {
-        return status.count;
+        return self.appointmenStatusArray.count;
     }
     else if (pickerView.tag==30)
     {
@@ -162,11 +195,11 @@
 {
     if(pickerView.tag==10)
     {
-        return types[row];
+        return [self.appointmenTypeArray[row] valueForKey:@"name"];
     }
     else if (pickerView.tag==20)
     {
-        return status[row];
+        return [self.appointmenStatusArray[row] valueForKey:@"name"];
     }
     else if (pickerView.tag==30)
     {
@@ -213,10 +246,18 @@
 
 - (IBAction)Submit:(id)sender
 {
-    if(self.filterVCDelegate &&[self.filterVCDelegate respondsToSelector:@selector(submitButtonActionWithQuestionCategoryid:FromDate:andToDate:andType:)]){
-        [self.filterVCDelegate submitButtonActionWithQuestionCategoryid:@"" FromDate:self.fromDateString andToDate:self.toDateString andType:self.questionsTypeIdString];
-        [self dismissViewControllerAnimated:YES completion:nil];
+    if(self.isFromAppointment){
+        if(self.filterVCDelegate && [self.filterVCDelegate respondsToSelector:@selector(submitButtonActionForAppointmentWithFromDate:andToDateString:andAppointmenttype:andStatus:)]){
+            [self.filterVCDelegate submitButtonActionForAppointmentWithFromDate:self.fromDateString andToDateString:self.toDateString andAppointmenttype:self.appointmentTypeIdString andStatus:self.appointmentStatusIdString];
+        }
     }
+    else{
+        if(self.filterVCDelegate &&[self.filterVCDelegate respondsToSelector:@selector(submitButtonActionWithQuestionCategoryid:FromDate:andToDate:andType:)]){
+            [self.filterVCDelegate submitButtonActionWithQuestionCategoryid:@"" FromDate:self.fromDateString andToDate:self.toDateString andType:self.questionsTypeIdString];
+            
+        }
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)Close:(id)sender

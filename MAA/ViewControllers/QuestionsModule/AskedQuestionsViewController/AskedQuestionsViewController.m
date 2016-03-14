@@ -64,7 +64,7 @@
     self.limitValue = 10;
     self.isTextSearchValueChanged = NO;
     [self.questionsMutableArray removeAllObjects];
-    [self callingGetQuestionsWithText:self.searchText andFromDate:@"" andToString:@"" andFilterId:@""];
+    [self callingGetQuestionsWithText:self.searchText andFromDate:@"" andToString:@"" andFilterId:@"0"];
 }
 
 -(void)addSubViews{
@@ -133,7 +133,7 @@
     self.offsetValue = 0;
     self.isTextSearchValueChanged = YES;
     [self.questionsMutableArray removeAllObjects];
-    [self callingGetQuestionsWithText:searchText andFromDate:@"" andToString:@"" andFilterId:@""];
+    [self callingGetQuestionsWithText:searchText andFromDate:@"" andToString:@"" andFilterId:@"0"];
 }
 
 #pragma mark - Search Bar Api's
@@ -189,7 +189,7 @@
         if (endScrolling >= scrollView.contentSize.height)
         {
             self.isTextSearchValueChanged = NO;
-            [self callingGetQuestionsWithText:self.searchText andFromDate:@"" andToString:@"" andFilterId:@""];
+            [self callingGetQuestionsWithText:self.searchText andFromDate:@"" andToString:@"" andFilterId:@"0"];
             [self.bottomProgressIndicatorView startAnimating];
         }
         else{
@@ -201,6 +201,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     FilterVC *questionsFilterVC = [storyboard instantiateViewControllerWithIdentifier:@"FilterVC"];
     questionsFilterVC.filterVCDelegate = self;
+    questionsFilterVC.isFromAppointment = NO;
     [self presentViewController:questionsFilterVC animated:YES completion:nil];
 }
 

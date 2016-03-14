@@ -7,11 +7,13 @@
 //
 
 #define AppointmentTableViewCellIdentifier @"appointmentCell"
+
+#import "FilterVC.h"
 #import "AppoinmentsDocs.h"
 #import "AppoinmentDetailVC.h"
 #import "AppointmentTableViewCell.h"
 
-@interface AppoinmentsDocs ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate>
+@interface AppoinmentsDocs ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate,FilterVCDelegate>
 {
     NSArray *DDL;
     UILabel *name;
@@ -75,7 +77,7 @@ NSString *flag=0;
     self.limitValue = 10;
     self.isSearchtextChanged = NO;
     [self.appointmentDoctorsMutableArray removeAllObjects];
-    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString];
+    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:@"0" andStatus:@"0" andFromDate:@"" andToDateString:@""];
 }
 -(void)addSubViews{
     [self.view addSubview:self.bottomProgressIndicatorView];
@@ -151,7 +153,7 @@ NSString *flag=0;
     self.isSearchtextChanged  = YES;
     [self.appointmentDoctorsMutableArray removeAllObjects];
     self.offsetValue = 0;
-    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:searchText];
+    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:@"0" andStatus:@"0" andFromDate:@"" andToDateString:@""];
 }
 /*
 #pragma mark - Navigation
@@ -166,22 +168,30 @@ NSString *flag=0;
 
 - (IBAction)Filter:(id)sender
 {
-    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    FilterVC *appointmentFilterVC = [storyboard instantiateViewControllerWithIdentifier:@"AppointmentFilterVC"];
+    appointmentFilterVC.filterVCDelegate = self;
+    appointmentFilterVC.isFromAppointment = YES;
+    [self presentViewController:appointmentFilterVC animated:YES completion:nil];
 }
 
 #pragma mark - Calling Search Doctor Names Api
 
 
--(void)getSearchDoctorNamesForAppointmentesApiCallWithSearchText:(NSString *)keywordText{
+-(void)getSearchDoctorNamesForAppointmentesApiCallWithSearchText:(NSString *)keywordText andAppointmentType:(NSString *)appointmentType andStatus:(NSString *)status andFromDate:(NSString *)fromDateString andToDateString:(NSString *)toDateString{
     self.searchTextString = keywordText;
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSLog(@"Access Token:%@",accessToken);
     NSString *getDoctorsAppointmentsUrlString = [Baseurl stringByAppendingString:GetUserAppointmentesUrl];
     NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
     [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
+    [getSubcategoriesMutableDictionary setValue:appointmentType forKey:@"type"];
     [getSubcategoriesMutableDictionary  setValue:keywordText forKey:@"keyword"];
+    [getSubcategoriesMutableDictionary setValue:status forKey:@"status"];
     [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
+    [getSubcategoriesMutableDictionary setValue:fromDateString forKey:@"date1"];
+    [getSubcategoriesMutableDictionary setValue:toDateString forKey:@"date2"];
     NSLog(@"Get Sub categories mutable Dictionary:%@",getSubcategoriesMutableDictionary);
     if(self.offsetValue == 0){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -222,13 +232,23 @@ NSString *flag=0;
         if (endScrolling >= scrollView.contentSize.height)
         {
             self.isSearchtextChanged = NO;
-            [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString];
+            [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:@"0" andStatus:@"0" andFromDate:@"" andToDateString:@""];
             [self.bottomProgressIndicatorView startAnimating];
         }
         else{
             [self.bottomProgressIndicatorView stopAnimating];
         }
     }
+}
+
+#pragma mark - Filter Delegate
+
+-(void)submitButtonActionForAppointmentWithFromDate:(NSString *)fromDateString andToDateString:(NSString *)toDateString andAppointmenttype:(NSString *)appintmentType andStatus:(NSString *)statusString{
+    self.offsetValue = 0;
+    self.limitValue = 10;
+    self.isSearchtextChanged = NO;
+    [self.appointmentDoctorsMutableArray removeAllObjects];
+   [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:appintmentType andStatus:statusString andFromDate:fromDateString andToDateString:toDateString];
 }
 
 @end

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 @protocol FilterVCDelegate;
 @interface FilterVC : UIViewController
+@property (nonatomic, assign) BOOL isFromAppointment;
 @property (weak, nonatomic) IBOutlet UIButton *btnSelectCategory;
 @property (weak, nonatomic) IBOutlet UITextField *txtFrom;
 @property (weak, nonatomic) IBOutlet UITextField *txtTo;
@@ -22,7 +23,6 @@
 @property (nonatomic, assign) id<FilterVCDelegate>filterVCDelegate;
 @end
 @protocol FilterVCDelegate <NSObject>
-
 -(void)submitButtonActionWithQuestionCategoryid:(NSString *)questionsCategoryId FromDate:(NSString *)fromDate andToDate:(NSString *)toDate andType:(NSString *)type;
-
+-(void)submitButtonActionForAppointmentWithFromDate:(NSString *)fromDateString andToDateString:(NSString *)toDateString andAppointmenttype:(NSString *)appintmentType andStatus:(NSString *)statusString;
 @end
