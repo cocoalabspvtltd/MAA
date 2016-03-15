@@ -10,6 +10,7 @@
 
 @protocol CategoryDelegate;
 @interface CategoriesList : UIViewController
+@property (nonatomic, assign) BOOL isFromFilter;
 @property (weak, nonatomic) IBOutlet UITableView *tblCategories;
 @property (nonatomic, assign) id<CategoryDelegate>categoryDelegate;
 @end

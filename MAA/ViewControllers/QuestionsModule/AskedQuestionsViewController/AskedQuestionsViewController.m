@@ -20,6 +20,10 @@
 @property (nonatomic, strong) NSMutableArray *questionsMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, assign) BOOL isTextSearchValueChanged;
+@property (nonatomic, strong) NSString *selectedfromDateString;
+@property (nonatomic, strong) NSString *selectedToDateString;
+@property (nonatomic, strong) NSString *selectedSubCategoryIdString;
+@property (nonatomic, strong) NSString *selectedQuestiontype;
 @end
 
 @implementation AskedQuestionsViewController
@@ -42,6 +46,10 @@
 
 -(void)initialisation{
     self.searchText = @"";
+    self.selectedfromDateString = @"";
+    self.selectedToDateString = @"";
+    self.selectedSubCategoryIdString = @"";
+    self.selectedQuestiontype = @"0";
     [self initialisingApiParameters];
     self.questionsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
@@ -64,7 +72,7 @@
     self.limitValue = 10;
     self.isTextSearchValueChanged = NO;
     [self.questionsMutableArray removeAllObjects];
-    [self callingGetQuestionsWithText:self.searchText andFromDate:@"" andToString:@"" andFilterId:@"0"];
+    [self callingGetQuestionsWithText:self.searchText andFromDate:self.selectedfromDateString andToString:self.selectedToDateString andFilterId:self.selectedQuestiontype andSelectedCategoryIdString:self.selectedSubCategoryIdString];
 }
 
 -(void)addSubViews{
@@ -133,15 +141,16 @@
     self.offsetValue = 0;
     self.isTextSearchValueChanged = YES;
     [self.questionsMutableArray removeAllObjects];
-    [self callingGetQuestionsWithText:searchText andFromDate:@"" andToString:@"" andFilterId:@"0"];
+    [self callingGetQuestionsWithText:searchText andFromDate:self.selectedfromDateString andToString:self.selectedToDateString andFilterId:self.selectedQuestiontype andSelectedCategoryIdString:self.selectedSubCategoryIdString];
 }
 
 #pragma mark - Search Bar Api's
 
--(void)callingGetQuestionsWithText:(NSString *)getQuestionsText andFromDate:(NSString *)fromDateString andToString:(NSString *)toDateString andFilterId:(NSString *)filterIdString{
+-(void)callingGetQuestionsWithText:(NSString *)getQuestionsText andFromDate:(NSString *)fromDateString andToString:(NSString *)toDateString andFilterId:(NSString *)filterIdString andSelectedCategoryIdString:(NSString *)categoryIdString{
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *getQuestionsMutableDictionary = [[NSMutableDictionary alloc] init];
     [getQuestionsMutableDictionary setValue:getQuestionsText forKey:@"keyword"];
+     [getQuestionsMutableDictionary setValue:categoryIdString forKey:@""];
     [getQuestionsMutableDictionary setValue:accessToken forKey:@"token"];
     [getQuestionsMutableDictionary setValue:filterIdString forKey:@"filter"];
     [getQuestionsMutableDictionary setValue:fromDateString forKey:@"date1"];
@@ -189,7 +198,7 @@
         if (endScrolling >= scrollView.contentSize.height)
         {
             self.isTextSearchValueChanged = NO;
-            [self callingGetQuestionsWithText:self.searchText andFromDate:@"" andToString:@"" andFilterId:@"0"];
+            [self callingGetQuestionsWithText:self.searchText andFromDate:self.selectedfromDateString andToString:self.selectedToDateString andFilterId:self.selectedQuestiontype andSelectedCategoryIdString:self.selectedSubCategoryIdString];
             [self.bottomProgressIndicatorView startAnimating];
         }
         else{
@@ -210,7 +219,11 @@
     self.limitValue = 10;
     self.isTextSearchValueChanged = NO;
     [self.questionsMutableArray removeAllObjects];
-    [self callingGetQuestionsWithText:self.searchText andFromDate:fromDate andToString:toDate andFilterId:type];
+    self.selectedSubCategoryIdString = questionsCategoryId;
+    self.selectedfromDateString  = fromDate;
+    self.selectedToDateString = toDate;
+    self.selectedQuestiontype = type;
+    [self callingGetQuestionsWithText:self.searchText andFromDate:fromDate andToString:toDate andFilterId:type andSelectedCategoryIdString:questionsCategoryId];
     
 }
 

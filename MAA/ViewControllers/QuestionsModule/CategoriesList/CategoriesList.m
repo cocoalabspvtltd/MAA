@@ -49,7 +49,12 @@
     if(self.categoryDelegate && [self.categoryDelegate respondsToSelector:@selector(tableViewSelectedActionWithCategoryDetails:)]){
         [self.categoryDelegate tableViewSelectedActionWithCategoryDetails:[self.categoriesArray objectAtIndex:indexPath.row]];
     }
-    [self.navigationController popViewControllerAnimated:YES];
+    if(self.isFromFilter){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 /*
 #pragma mark - Navigation
@@ -62,7 +67,12 @@
 */
 - (IBAction)back:(id)sender
 {
-  [self.navigationController popViewControllerAnimated:YES];
+    if(self.isFromFilter){
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    else{
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 

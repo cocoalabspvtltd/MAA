@@ -7,8 +7,9 @@
 //
 
 #import "FilterVC.h"
+#import "CategoriesList.h"
 
-@interface FilterVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate>
+@interface FilterVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate,CategoryDelegate>
 {
     UIPickerView *typofAppoinments;
     UIPickerView *typofQuestions;
@@ -18,6 +19,7 @@
     UIDatePicker *ToDatePicker;
 }
 @property (nonatomic, strong) NSMutableArray *questionsTypeArray;
+@property (nonatomic, strong) NSString *questionsCategoryId;
 @property (nonatomic, strong) NSString *fromDateString;
 @property (nonatomic, strong) NSString *toDateString;
 @property (nonatomic, strong) NSString *questionsTypeIdString;
@@ -86,6 +88,7 @@
 }
 
 -(void)initialisation{
+    self.questionsCategoryId = @"";
     self.fromDateString = @"";
     self.toDateString = @"";
     self.questionsTypeIdString = @"";
@@ -253,7 +256,7 @@
     }
     else{
         if(self.filterVCDelegate &&[self.filterVCDelegate respondsToSelector:@selector(submitButtonActionWithQuestionCategoryid:FromDate:andToDate:andType:)]){
-            [self.filterVCDelegate submitButtonActionWithQuestionCategoryid:@"" FromDate:self.fromDateString andToDate:self.toDateString andType:self.questionsTypeIdString];
+            [self.filterVCDelegate submitButtonActionWithQuestionCategoryid:self.questionsCategoryId FromDate:self.fromDateString andToDate:self.toDateString andType:self.questionsTypeIdString];
             
         }
     }
@@ -267,6 +270,17 @@
 
 - (IBAction)SelectCategory:(id)sender
 {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CategoriesList *categoriesListVC = [storyboard instantiateViewControllerWithIdentifier:@"CategoriesList"];
+    categoriesListVC.categoryDelegate = self;
+    categoriesListVC.isFromFilter = YES;
+    [self presentViewController:categoriesListVC animated:NO completion:nil];
     //navigate to a category listing page
+}
+
+#pragma mark - Category Delegate methd
+
+-(void)tableViewSelectedActionWithCategoryDetails:(id)selectedCategoryDetails{
+    self.questionsCategoryId = [selectedCategoryDetails valueForKey:@"id"];
 }
 @end

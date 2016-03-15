@@ -10,7 +10,6 @@
 #import "AskQuestionsVC.h"
 
 @interface AskQuestionsVC ()<UITabBarControllerDelegate,UITabBarDelegate,UITextFieldDelegate,CategoryDelegate>
-@property (nonatomic, strong) UIView *topTransparentView;
 @property (nonatomic, strong) NSString *selectedCategoryId;
 @property (nonatomic, strong) UITapGestureRecognizer *textFieldEditingTapgesture;
 @end
@@ -20,7 +19,6 @@
 - (void)viewDidLoad
 {
     [self addingTapGeture];
-    self.topTransparentView.hidden = YES;
     self.selectedCategoryId = @"";
     [super viewDidLoad];
     
@@ -99,10 +97,6 @@
     CategoriesList *categoriesListVC = [storyboard instantiateViewControllerWithIdentifier:@"CategoriesList"];
     categoriesListVC.categoryDelegate = self;
     [self.navigationController pushViewController:categoriesListVC animated:YES];
-    [self.view removeGestureRecognizer:self.textFieldEditingTapgesture];
-    [self.view endEditing:YES];
-    self.topTransparentView.hidden = NO;
-
 }
 
 
