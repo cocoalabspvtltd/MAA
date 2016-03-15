@@ -128,13 +128,13 @@
 		C092EC101C80B86000F7B18B /* loadingImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0D1C80B86000F7B18B /* loadingImage@2x.png */; };
 		C092EC111C80B86000F7B18B /* loadingImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */; };
 		C093DE421C4025F100DCFB44 /* DoctorPhotoCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */; };
+		C094F8101C9861D500C73FE9 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C094F80F1C9861D500C73FE9 /* CategoriesList.m */; };
 		C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB3C1C81A1140087AA4F /* MyAllergies.m */; };
 		C095DB411C81A1140087AA4F /* myHealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB3F1C81A1140087AA4F /* myHealthProfileVC.m */; };
 		C095DB461C81B9A80087AA4F /* AllergiesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB441C81B9A80087AA4F /* AllergiesTableViewCell.m */; };
 		C095DB471C81B9A80087AA4F /* AllergiesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C095DB451C81B9A80087AA4F /* AllergiesTableViewCell.xib */; };
 		C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */ = {isa = PBXBuildFile; fileRef = C09A8ABE1C8177D800BAA532 /* ImageFullView.m */; };
 		C09A8AC11C8177EB00BAA532 /* ImageFullView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */; };
-		C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */; };
 		C09BC20A1C64BB7B00DAD2C4 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */; };
 		C09EF6BC1C76211800806600 /* OTAudioDeviceManager.html in Resources */ = {isa = PBXBuildFile; fileRef = C09EF6791C76211800806600 /* OTAudioDeviceManager.html */; };
 		C09EF6BD1C76211800806600 /* OTAudioFormat.html in Resources */ = {isa = PBXBuildFile; fileRef = C09EF67A1C76211800806600 /* OTAudioFormat.html */; };
@@ -558,6 +558,8 @@
 		C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadingImage@3x.png"; sourceTree = "<group>"; };
 		C093DE401C4025F100DCFB44 /* DoctorPhotoCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorPhotoCVC.h; sourceTree = "<group>"; };
 		C093DE411C4025F100DCFB44 /* DoctorPhotoCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorPhotoCVC.m; sourceTree = "<group>"; };
+		C094F80E1C9861D500C73FE9 /* CategoriesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesList.h; sourceTree = "<group>"; };
+		C094F80F1C9861D500C73FE9 /* CategoriesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesList.m; sourceTree = "<group>"; };
 		C095DB3B1C81A1140087AA4F /* MyAllergies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAllergies.h; sourceTree = "<group>"; };
 		C095DB3C1C81A1140087AA4F /* MyAllergies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAllergies.m; sourceTree = "<group>"; };
 		C095DB3E1C81A1140087AA4F /* myHealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myHealthProfileVC.h; sourceTree = "<group>"; };
@@ -568,8 +570,6 @@
 		C09A8ABD1C8177D800BAA532 /* ImageFullView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageFullView.h; sourceTree = "<group>"; };
 		C09A8ABE1C8177D800BAA532 /* ImageFullView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageFullView.m; sourceTree = "<group>"; };
 		C09A8AC01C8177EB00BAA532 /* ImageFullView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageFullView.xib; sourceTree = "<group>"; };
-		C09BC2051C64BB0E00DAD2C4 /* CategoriesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesList.h; sourceTree = "<group>"; };
-		C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesList.m; sourceTree = "<group>"; };
 		C09BC2081C64BB7B00DAD2C4 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
 		C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryCell.m; sourceTree = "<group>"; };
 		C09EF6791C76211800806600 /* OTAudioDeviceManager.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = OTAudioDeviceManager.html; sourceTree = "<group>"; };
@@ -1140,6 +1140,7 @@
 		9F5F0C311C665D3100F7E99D /* QuestionsModule */ = {
 			isa = PBXGroup;
 			children = (
+				C094F80D1C9861D500C73FE9 /* CategoriesList */,
 				C08DEF9C1C9712D00025F1AF /* QuestionsFilter */,
 				C08437F91C6F019600610ADC /* AskQuestionViewController */,
 				9F5F0C321C665D3100F7E99D /* AskedQuestionsDetailVC */,
@@ -1340,8 +1341,6 @@
 			children = (
 				C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */,
 				C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */,
-				C09BC2051C64BB0E00DAD2C4 /* CategoriesList.h */,
-				C09BC2061C64BB0E00DAD2C4 /* CategoriesList.m */,
 				C09BC2081C64BB7B00DAD2C4 /* CategoryCell.h */,
 				C09BC2091C64BB7B00DAD2C4 /* CategoryCell.m */,
 				C08BF4401C65DAFC0047DC49 /* InvoicePageVC.h */,
@@ -1559,6 +1558,15 @@
 				C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */,
 			);
 			path = ImageLoad;
+			sourceTree = "<group>";
+		};
+		C094F80D1C9861D500C73FE9 /* CategoriesList */ = {
+			isa = PBXGroup;
+			children = (
+				C094F80E1C9861D500C73FE9 /* CategoriesList.h */,
+				C094F80F1C9861D500C73FE9 /* CategoriesList.m */,
+			);
+			path = CategoriesList;
 			sourceTree = "<group>";
 		};
 		C095DB3A1C81A1140087AA4F /* AllergiesVC */ = {
@@ -2359,7 +2367,6 @@
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
 				C092EBFD1C80B1E000F7B18B /* UIButton+WebCache.m in Sources */,
 				C0BBC4A21C6E4046005083B1 /* PreviousAppoinmentCell.m in Sources */,
-				C09BC2071C64BB0E00DAD2C4 /* CategoriesList.m in Sources */,
 				C092EBFE1C80B1E000F7B18B /* UIImage+GIF.m in Sources */,
 				9F5F0C5A1C66673A00F7E99D /* SettingsPageVC.m in Sources */,
 				C095DB411C81A1140087AA4F /* myHealthProfileVC.m in Sources */,
@@ -2426,6 +2433,7 @@
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
 				7C0981D81C1E661600B1BE99 /* SearchResultsVC.m in Sources */,
 				C08438161C6F79A200610ADC /* CLUtilities.m in Sources */,
+				C094F8101C9861D500C73FE9 /* CategoriesList.m in Sources */,
 				C09EF6F81C76211800806600 /* release-notes.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
