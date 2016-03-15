@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface CategoryCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIView *imgcategry;
 @property (weak, nonatomic) IBOutlet UILabel *lblcatName;
+@property (weak, nonatomic) IBOutlet UIImageView *categoryImageView;
 
 @end

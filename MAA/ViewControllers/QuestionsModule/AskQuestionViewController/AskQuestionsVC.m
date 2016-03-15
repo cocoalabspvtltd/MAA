@@ -6,12 +6,11 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "CategoriesList.h"
 #import "AskQuestionsVC.h"
-#import "AskQuestionsCategoryView.h"
 
-@interface AskQuestionsVC ()<UITabBarControllerDelegate,UITabBarDelegate,UITextFieldDelegate,AskQuestionsCategoryViewDeleagte>
+@interface AskQuestionsVC ()<UITabBarControllerDelegate,UITabBarDelegate,UITextFieldDelegate,CategoryDelegate>
 @property (nonatomic, strong) UIView *topTransparentView;
-@property (nonatomic, strong) AskQuestionsCategoryView *askQuestionsCategoryView;
 @property (nonatomic, strong) NSString *selectedCategoryId;
 @property (nonatomic, strong) UITapGestureRecognizer *textFieldEditingTapgesture;
 @end
@@ -21,7 +20,6 @@
 - (void)viewDidLoad
 {
     [self addingTapGeture];
-    [self addingToptransparentView];
     self.topTransparentView.hidden = YES;
     self.selectedCategoryId = @"";
     [super viewDidLoad];
@@ -38,29 +36,6 @@
 
 -(void)singletapAction:(UITapGestureRecognizer *)tapgesture{
     [self.view endEditing:YES];
-}
-
--(void)addingToptransparentView{
-    self.topTransparentView = [[UIView alloc] init];
-    self.topTransparentView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
-    self.topTransparentView.backgroundColor = [UIColor blackColor];
-    self.topTransparentView.layer.opacity = 0.5;
-    self.topTransparentView.hidden = YES;
-    [self.view addSubview:self.topTransparentView];
-    [self addingTapGestureToToptransparentView];
-}
-
--(void)addingTapGestureToToptransparentView{
-    UITapGestureRecognizer *transparentTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topTransparentViewTapGestureAction:)];
-    self.topTransparentView.userInteractionEnabled = YES;
-    transparentTapGesture.numberOfTapsRequired = 1;
-    [self.topTransparentView addGestureRecognizer:transparentTapGesture];
-}
-
--(void)topTransparentViewTapGestureAction:(UITapGestureRecognizer *)tapGesture{
-    [self.view addGestureRecognizer:self.textFieldEditingTapgesture];
-    [self.askQuestionsCategoryView removeFromSuperview];
-    self.topTransparentView.hidden = YES;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -120,62 +95,23 @@
 
 - (IBAction)ChooseCategory:(id)sender
 {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CategoriesList *categoriesListVC = [storyboard instantiateViewControllerWithIdentifier:@"CategoriesList"];
+    categoriesListVC.categoryDelegate = self;
+    [self.navigationController pushViewController:categoriesListVC animated:YES];
     [self.view removeGestureRecognizer:self.textFieldEditingTapgesture];
     [self.view endEditing:YES];
     self.topTransparentView.hidden = NO;
-    self.askQuestionsCategoryView = [[[NSBundle mainBundle]
-                             loadNibNamed:@"categories"
-                             owner:self options:nil]
-                            firstObject];
-    CGFloat xMargin = 10,yMargin = 150;
-    
-    self.askQuestionsCategoryView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
-    self.askQuestionsCategoryView.askQuestionsCategoryDelegate = self;
-   // [self populatingInvoiceDetailsInInVoiceview];
-    [self.view  addSubview:self.topTransparentView];
-    [self.view addSubview:self.askQuestionsCategoryView];
-    [self getCategoriesApiCall];
 
 }
 
-#pragma mark - Get Categories api
 
--(void)getCategoriesApiCall{
-    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
-    NSString *getCategoriesUrlString = [Baseurl stringByAppendingString:GetCategoriesUrl];
-    NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
-    [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
-    [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
-    [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:0] forKey:Offsetkey];
-    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:100] forKey:LimitKey];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
-    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        self.askQuestionsCategoryView.categoriesArray = [responseObject valueForKey:Datakey];
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        NSString *errorMessage;
-        if([errorDescription isEqualToString:NoNetworkErrorName]){
-            errorMessage = NoNetworkmessage;
-        }
-        else{
-            errorMessage = ConnectiontoServerFailedMessage;
-        }
-        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [erroralert show];
-    }];
-}
-
-#pragma mark - Ask Questions Category view Delegate
-
--(void)salectedCategoryWithIndex:(NSString *)selectedCategoryIndex withCategoryName:(NSString *)categoryName withImageUrlString:(NSString *)imageUrlString{
-    self.selectedCategoryId = selectedCategoryIndex;
-    self.topTransparentView.hidden = YES;
-    [self.chooseCategoryButton setTitle:categoryName forState:UIControlStateNormal];
-    [self.askQuestionsCategoryView removeFromSuperview];
+#pragma mark - Category Delegate
+-(void)tableViewSelectedActionWithCategoryDetails:(id)selectedCategoryDetails{
+    self.selectedCategoryId = [selectedCategoryDetails valueForKey:@"id"];
+    [self.chooseCategoryButton setTitle:[selectedCategoryDetails valueForKey:@"name"] forState:UIControlStateNormal];
+    NSString *imageUrlString = [selectedCategoryDetails valueForKey:@"logo_image"];
     [self.categoryImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
-    [self.view addGestureRecognizer:self.textFieldEditingTapgesture];
 }
 
 #pragma mark - Text field Delegate

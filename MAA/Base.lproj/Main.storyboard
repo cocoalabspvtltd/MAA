@@ -7318,7 +7318,7 @@
         <!--Categories-->
         <scene sceneID="2zQ-mV-EbW">
             <objects>
-                <viewController title="Categories" id="cqs-6G-oRd" customClass="CategoriesList" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CategoriesList" title="Categories" id="cqs-6G-oRd" customClass="CategoriesList" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mjZ-t4-uUH"/>
                         <viewControllerLayoutGuide type="bottom" id="jr2-P1-hc1"/>
@@ -7371,19 +7371,24 @@
                                 <rect key="frame" x="0.0" y="65" width="600" height="535"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="52" id="IZh-K0-PEb" customClass="CategoryCell">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryReusableCell" rowHeight="52" id="IZh-K0-PEb" customClass="CategoryCell">
                                         <rect key="frame" x="0.0" y="28" width="600" height="52"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IZh-K0-PEb" id="7sW-oU-xRw">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7K-62-62m">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n7K-62-62m">
                                                     <rect key="frame" x="8" y="6" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="nWn-0T-X53"/>
                                                         <constraint firstAttribute="width" constant="40" id="pNl-W8-SCw"/>
                                                     </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="20"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjv-ny-q2l">
                                                     <rect key="frame" x="56" y="17" width="520" height="18"/>
@@ -7401,11 +7406,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imgcategry" destination="7sW-oU-xRw" id="Gn0-vx-GvB"/>
+                                            <outlet property="categoryImageView" destination="n7K-62-62m" id="6hI-Ur-HNC"/>
                                             <outlet property="lblcatName" destination="hjv-ny-q2l" id="Mzm-sc-3hI"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="cqs-6G-oRd" id="SEf-lf-kbN"/>
+                                    <outlet property="delegate" destination="cqs-6G-oRd" id="4rM-xt-QYD"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

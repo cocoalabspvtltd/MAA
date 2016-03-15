@@ -8,7 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CategoryDelegate;
 @interface CategoriesList : UIViewController
 @property (weak, nonatomic) IBOutlet UITableView *tblCategories;
+@property (nonatomic, assign) id<CategoryDelegate>categoryDelegate;
+@end
+@protocol CategoryDelegate <NSObject>
+
+-(void)tableViewSelectedActionWithCategoryDetails:(id)selectedCategoryDetails;
 
 @end

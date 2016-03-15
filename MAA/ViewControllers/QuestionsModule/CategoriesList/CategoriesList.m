@@ -9,14 +9,15 @@
 #import "CategoriesList.h"
 #import "CategoryCell.h"
 
-@interface CategoriesList ()
-
+@interface CategoriesList ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong) NSArray *categoriesArray;
 @end
 
 @implementation CategoriesList
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getCategoriesApiCall];
     // Do any additional setup after loading the view.
 }
 
@@ -24,7 +25,32 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - Table view Datasources
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.categoriesArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    CategoryCell *cell = [self.tblCategories dequeueReusableCellWithIdentifier:@"categoryReusableCell" forIndexPath:indexPath];
+    cell.lblcatName.text = [[self.categoriesArray objectAtIndex:indexPath.row] valueForKey:@"name"];
+    NSString *imageUrlString = [[self.categoriesArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"];
+    [cell.categoryImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    return cell;
+}
+
+#pragma mark - Table View Delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(self.categoryDelegate && [self.categoryDelegate respondsToSelector:@selector(tableViewSelectedActionWithCategoryDetails:)]){
+        [self.categoryDelegate tableViewSelectedActionWithCategoryDetails:[self.categoriesArray objectAtIndex:indexPath.row]];
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
 /*
 #pragma mark - Navigation
 
@@ -36,7 +62,38 @@
 */
 - (IBAction)back:(id)sender
 {
-   [self dismissViewControllerAnimated:YES completion:nil];
+  [self.navigationController popViewControllerAnimated:YES];
 }
 
+
+#pragma mark - Get Categories api
+
+-(void)getCategoriesApiCall{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSString *getCategoriesUrlString = [Baseurl stringByAppendingString:GetCategoriesUrl];
+    NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
+    [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
+    [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
+    [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:0] forKey:Offsetkey];
+    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:100] forKey:LimitKey];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        self.categoriesArray = [responseObject valueForKey:Datakey];
+         NSLog(@"Response Object:%@",self.categoriesArray);
+        [self.tblCategories reloadData];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+}
 @end
