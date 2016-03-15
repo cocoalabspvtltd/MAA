@@ -161,6 +161,7 @@ NSString *flag=0;
     self.isSearchtextChanged  = YES;
     [self.appointmentDoctorsMutableArray removeAllObjects];
     self.offsetValue = 0;
+    self.searchTextString = searchText;
     [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:self.appointmenttypeString andStatus:self.appointmentStatusString andFromDate:self.fromDateString andToDateString:self.toDateString];
 }
 /*
