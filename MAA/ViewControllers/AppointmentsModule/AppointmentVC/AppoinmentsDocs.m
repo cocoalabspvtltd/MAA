@@ -26,6 +26,10 @@
 @property (nonatomic, assign) BOOL isSearchtextChanged;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, strong) NSMutableArray *appointmentDoctorsMutableArray;
+@property (nonatomic, strong) NSString *fromDateString;
+@property (nonatomic, strong) NSString *toDateString;
+@property (nonatomic, strong) NSString *appointmenttypeString;
+@property (nonatomic, strong) NSString *appointmentStatusString;
 
 @end
 NSString *flag=0;
@@ -47,6 +51,10 @@ NSString *flag=0;
 
 -(void)initialisation{
     self.searchTextString = @"";
+    self.fromDateString  =@"";
+    self.toDateString  =@"";
+    self.appointmenttypeString = @"0";
+    self.appointmentStatusString = @"0";
     [self initialisingApiParameters];
     self.searchBar.delegate = self;
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
@@ -77,7 +85,7 @@ NSString *flag=0;
     self.limitValue = 10;
     self.isSearchtextChanged = NO;
     [self.appointmentDoctorsMutableArray removeAllObjects];
-    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:@"0" andStatus:@"0" andFromDate:@"" andToDateString:@""];
+    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:self.appointmenttypeString andStatus:self.appointmentStatusString andFromDate:self.fromDateString andToDateString:self.toDateString];
 }
 -(void)addSubViews{
     [self.view addSubview:self.bottomProgressIndicatorView];
@@ -153,7 +161,7 @@ NSString *flag=0;
     self.isSearchtextChanged  = YES;
     [self.appointmentDoctorsMutableArray removeAllObjects];
     self.offsetValue = 0;
-    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:@"0" andStatus:@"0" andFromDate:@"" andToDateString:@""];
+    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:self.appointmenttypeString andStatus:self.appointmentStatusString andFromDate:self.fromDateString andToDateString:self.toDateString];
 }
 /*
 #pragma mark - Navigation
@@ -232,7 +240,7 @@ NSString *flag=0;
         if (endScrolling >= scrollView.contentSize.height)
         {
             self.isSearchtextChanged = NO;
-            [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:@"0" andStatus:@"0" andFromDate:@"" andToDateString:@""];
+            [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:self.appointmenttypeString andStatus:self.appointmentStatusString andFromDate:self.fromDateString andToDateString:self.toDateString];
             [self.bottomProgressIndicatorView startAnimating];
         }
         else{
@@ -248,6 +256,10 @@ NSString *flag=0;
     self.limitValue = 10;
     self.isSearchtextChanged = NO;
     [self.appointmentDoctorsMutableArray removeAllObjects];
+    self.fromDateString = fromDateString;
+    self.toDateString = toDateString;
+    self.appointmenttypeString = appintmentType;
+    self.appointmentStatusString = statusString;
    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:appintmentType andStatus:statusString andFromDate:fromDateString andToDateString:toDateString];
 }
 
