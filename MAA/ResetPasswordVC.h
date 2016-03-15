@@ -11,5 +11,8 @@
 @interface ResetPasswordVC : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *passwordtextField;
 @property (strong, nonatomic) IBOutlet UITextField *retypPasswordTextField;
+@property (weak, nonatomic) IBOutlet UITextField *txtEnterCurrentPwd;
+@property (weak, nonatomic) IBOutlet UITextField *txtEnterNewPwd;
+@property (weak, nonatomic) IBOutlet UITextField *txtRetypePassword;
 
 @end

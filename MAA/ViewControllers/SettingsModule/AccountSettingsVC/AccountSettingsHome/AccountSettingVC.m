@@ -21,22 +21,29 @@
     [self initialisation];
     [self callingGetAccountInfoApi];
     
-    _childView1.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    _childView1.layer.shadowOffset = CGSizeMake(5, 5);
-    _childView1.layer.shadowOpacity = .5;
-    _childView1.layer.shadowRadius = 1.0;
-   
-    _childView2.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    _childView2.layer.shadowOffset = CGSizeMake(5, 5);
-    _childView2.layer.shadowOpacity = .5;
-    _childView2.layer.shadowRadius = 1.0;
-    
-    _childView3.layer.shadowColor = [UIColor lightGrayColor].CGColor;
-    _childView3.layer.shadowOffset = CGSizeMake(5, 5);
-    _childView3.layer.shadowOpacity = .5;
-    _childView3.layer.shadowRadius = 1.0;
+//    _childView1.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+//    _childView1.layer.shadowOffset = CGSizeMake(5, 5);
+//    _childView1.layer.shadowOpacity = .5;
+//    _childView1.layer.shadowRadius = 1.0;
+//   
+//    _childView2.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+//    _childView2.layer.shadowOffset = CGSizeMake(5, 5);
+//    _childView2.layer.shadowOpacity = .5;
+//    _childView2.layer.shadowRadius = 1.0;
+//    
+//    _childView3.layer.shadowColor = [UIColor lightGrayColor].CGColor;
+//    _childView3.layer.shadowOffset = CGSizeMake(5, 5);
+//    _childView3.layer.shadowOpacity = .5;
+//    _childView3.layer.shadowRadius = 1.0;
     
     _submitButton.hidden=YES;
+    _underlineimg1.hidden=YES;
+    _underlineimg2.hidden=YES;
+    _underlineimg3.hidden=YES;
+    _underlineimg4.hidden=YES;
+    _underlineimg5.hidden=YES;
+    _underlineimg6.hidden=YES;
+    _underlineimg7.hidden=YES;
     
     UIDatePicker *datePicker = [[UIDatePicker alloc] init];
     datePicker.datePickerMode = UIDatePickerModeDate;
@@ -62,7 +69,7 @@
 }
 -(void)viewDidLayoutSubviews
 {
-    [ _scroller setContentSize:CGSizeMake(self.view.frame.size.width, 760)];
+    [ _scroller setContentSize:CGSizeMake(self.view.frame.size.width, 628)];
 }
 
 /*
@@ -186,6 +193,15 @@
     self.addressTextView.editable = YES;
     self.submitButton.enabled = YES;
     self.submitButton.hidden=NO;
+    
+    _underlineimg1.hidden=NO;
+    _underlineimg2.hidden=NO;
+    _underlineimg3.hidden=NO;
+    _underlineimg4.hidden=NO;
+    _underlineimg5.hidden=NO;
+    _underlineimg6.hidden=NO;
+    _underlineimg7.hidden=NO;
+    
 }
 
 -(void)disablingInputFields

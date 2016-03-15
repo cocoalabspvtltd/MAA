@@ -26,5 +26,12 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIImageView *underlineimg1;
+@property (weak, nonatomic) IBOutlet UIImageView *underlineimg2;
+@property (weak, nonatomic) IBOutlet UIImageView *underlineimg3;
+@property (weak, nonatomic) IBOutlet UIImageView *underlineimg4;
+@property (weak, nonatomic) IBOutlet UIImageView *underlineimg5;
+@property (weak, nonatomic) IBOutlet UIImageView *underlineimg6;
+@property (weak, nonatomic) IBOutlet UIImageView *underlineimg7;
 
 @end

@@ -17,6 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _txtEnterCurrentPwd.layer.borderWidth=.5f;
+    _txtEnterCurrentPwd.layer.cornerRadius=5;
+    _txtEnterCurrentPwd.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _txtEnterNewPwd.layer.borderWidth=.5f;
+    _txtEnterNewPwd.layer.cornerRadius=5;
+    _txtEnterNewPwd.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+   
+    _txtRetypePassword.layer.borderWidth=.5f;
+    _txtRetypePassword.layer.cornerRadius=5;
+    _txtRetypePassword.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
     // Do any additional setup after loading the view.
 }
 
@@ -179,6 +191,10 @@
      }];
     }
     return YES;
+}
+- (IBAction)Back:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end
