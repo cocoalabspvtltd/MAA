@@ -282,5 +282,6 @@
 
 -(void)tableViewSelectedActionWithCategoryDetails:(id)selectedCategoryDetails{
     self.questionsCategoryId = [selectedCategoryDetails valueForKey:@"id"];
+    self.selectategoryLabel.text = [selectedCategoryDetails valueForKey:@"name"];
 }
 @end

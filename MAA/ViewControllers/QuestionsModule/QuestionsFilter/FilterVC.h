@@ -20,6 +20,7 @@
 - (IBAction)Close:(id)sender;
 - (IBAction)SelectCategory:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *txtQuestionType;
+@property (weak, nonatomic) IBOutlet UILabel *selectategoryLabel;
 @property (nonatomic, assign) id<FilterVCDelegate>filterVCDelegate;
 @end
 @protocol FilterVCDelegate <NSObject>

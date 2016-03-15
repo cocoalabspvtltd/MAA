@@ -150,7 +150,7 @@
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *getQuestionsMutableDictionary = [[NSMutableDictionary alloc] init];
     [getQuestionsMutableDictionary setValue:getQuestionsText forKey:@"keyword"];
-     [getQuestionsMutableDictionary setValue:categoryIdString forKey:@""];
+     [getQuestionsMutableDictionary setValue:categoryIdString forKey:@"cat_id"];
     [getQuestionsMutableDictionary setValue:accessToken forKey:@"token"];
     [getQuestionsMutableDictionary setValue:filterIdString forKey:@"filter"];
     [getQuestionsMutableDictionary setValue:fromDateString forKey:@"date1"];
