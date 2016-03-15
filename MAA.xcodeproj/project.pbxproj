@@ -51,7 +51,6 @@
 		9F5F0C401C665E8100F7E99D /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C3F1C665E8100F7E99D /* View.xib */; };
 		9F5F0C431C665F6D00F7E99D /* AskedQuestionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C421C665F6D00F7E99D /* AskedQuestionsTVC.m */; };
 		9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C471C66604100F7E99D /* AboutViewController.m */; };
-		9F5F0C4C1C66614200F7E99D /* HealthProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C4B1C66614200F7E99D /* HealthProfileVC.m */; };
 		9F5F0C561C66672300F7E99D /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C551C66672300F7E99D /* MBProgressHUD.m */; };
 		9F5F0C5A1C66673A00F7E99D /* SettingsPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C591C66673A00F7E99D /* SettingsPageVC.m */; };
 		9F5F0C5F1C66676B00F7E99D /* SettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C5E1C66676B00F7E99D /* SettingsTableViewCell.m */; };
@@ -427,8 +426,6 @@
 		9F5F0C421C665F6D00F7E99D /* AskedQuestionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AskedQuestionsTVC.m; sourceTree = "<group>"; };
 		9F5F0C461C66604100F7E99D /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
 		9F5F0C471C66604100F7E99D /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
-		9F5F0C4A1C66614200F7E99D /* HealthProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HealthProfileVC.h; sourceTree = "<group>"; };
-		9F5F0C4B1C66614200F7E99D /* HealthProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HealthProfileVC.m; sourceTree = "<group>"; };
 		9F5F0C541C66672300F7E99D /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		9F5F0C551C66672300F7E99D /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		9F5F0C581C66673A00F7E99D /* SettingsPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsPageVC.h; sourceTree = "<group>"; };
@@ -1216,8 +1213,6 @@
 				C095DB3D1C81A1140087AA4F /* MyHealthProfileVC */,
 				C0A8312B1C7E0F6F000A60C9 /* MedicalDocumentsDetailVC */,
 				C0A830FC1C7DC6FF000A60C9 /* MedicalDocumentsVC */,
-				9F5F0C4A1C66614200F7E99D /* HealthProfileVC.h */,
-				9F5F0C4B1C66614200F7E99D /* HealthProfileVC.m */,
 			);
 			path = HealthProfileVC;
 			sourceTree = "<group>";
@@ -2411,7 +2406,6 @@
 				C08293EF1C874E0800D987B7 /* FeedBackVC.m in Sources */,
 				C09039CD1C88988E0059FDC8 /* CountriesVC.m in Sources */,
 				C092EC021C80B1E000F7B18B /* UIImageView+WebCache.m in Sources */,
-				9F5F0C4C1C66614200F7E99D /* HealthProfileVC.m in Sources */,
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
 				C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */,
 				9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */,
