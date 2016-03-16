@@ -84,14 +84,21 @@
 
 -(void)callingResetPasswordApi{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSString *tokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSString *editAccountInfoUrlString = [Baseurl stringByAppendingString:EditAccountInfoUrl];
     NSMutableDictionary *editAccountInfoMutableDictionary = [[NSMutableDictionary alloc] init];
+    [editAccountInfoMutableDictionary setValue:[self sha1:self.currentPasswordTextFiels.text] forKey:@"old_pwd"];
     [editAccountInfoMutableDictionary setValue:[self sha1:self.newpwdTextField.text] forKey:@"pwd"];
-    // [editAccountInfoMutableDictionary setValue:self.tokenString forKey:@"token"];
+    [editAccountInfoMutableDictionary setValue:tokenString forKey:@"token"];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response object:%@",responseObject);
-        [self callingAlertViewControllerWithMessageString:@"Password reset successfully"];
+        if([[responseObject valueForKey:StatusKey] isEqualToString:@"error"]){
+            [self callingAlertViewControllerWithMessageString:[responseObject valueForKey:@"error_message"]];
+        }
+        else{
+            [self callingPushAlertViewControllerWithMessageString:@"Password reset successfully"];
+        }
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -141,6 +148,24 @@
 }
 
 -(void)callingAlertViewControllerWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+
+-(void)callingPushAlertViewControllerWithMessageString:(NSString *)alertMessage{
     UIAlertController *alert= [UIAlertController
                                alertControllerWithTitle:AppName
                                message:alertMessage
