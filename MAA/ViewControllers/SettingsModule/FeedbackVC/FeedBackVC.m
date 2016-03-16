@@ -9,7 +9,7 @@
 #import "FeedBackVC.h"
 
 @interface FeedBackVC ()<UITextFieldDelegate,UITextViewDelegate>
-
+@property (nonatomic,assign)CGRect oldFrame;
 @end
 
 @implementation FeedBackVC
@@ -33,7 +33,16 @@
 }
 
 -(void)tapGestureAction{
-    [self.view endEditing:YES];
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+        [self.feedbacktextView resignFirstResponder];
+        [self.nameTextField resignFirstResponder];
+        [self.emailTextField resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+     }];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -54,8 +63,15 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)submitButtonAction:(UIButton *)sender {
+    [UIView animateWithDuration:0.30 animations:^{
+        CGRect newFrame = self.oldFrame;
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+     }];
     if([self isValidInput]){
-        
+        [self callingFeedBackApi];
     }
 }
 
@@ -71,6 +87,40 @@
         [self callingAlertViewControllerWithMessageString:messageString];
     }
     return isValid;
+}
+
+#pragma mark - Feedback Api Call
+
+-(void)callingFeedBackApi{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSString *feedbackUrlString = [Baseurl stringByAppendingString:FeedbackUrl];
+    NSString *tokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *feedbackMutableDictionary = [[NSMutableDictionary alloc] init];
+    [feedbackMutableDictionary setValue:self.feedbacktextView.text forKey:@"message"];
+    [feedbackMutableDictionary setValue:self.nameTextField.text forKey:@"name"];
+    [feedbackMutableDictionary setValue:self.emailTextField.text forKey:@"email"];
+    [feedbackMutableDictionary setValue:tokenString forKey:@"token"];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:feedbackUrlString] withBody:feedbackMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        if([[responseObject valueForKey:@"status"] isEqualToString:@"success"]){
+           [self callingPushAlertViewControllerWithMessageString:[responseObject valueForKey:@"data"]];
+        }
+        else{
+          [self callingAlertViewControllerWithMessageString:@"Feed back submission failed"];
+        }
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        [self callingAlertViewControllerWithMessageString:errorMessage];
+    }];
 }
 
 #pragma mark - adding Alert View Controller
@@ -92,17 +142,69 @@
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+-(void)callingPushAlertViewControllerWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   [self.navigationController popViewControllerAnimated:YES];
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 #pragma mark - Text Field Delegates
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
+- (void)viewDidAppear:(BOOL)animated{
+    self.oldFrame = self.view.frame;
+    
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == self.nameTextField ) {
+        [UIView animateWithDuration:0.30 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= self.nameTextField.y-150;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    else if (textField == self.emailTextField ) {
+        [UIView animateWithDuration:0.30 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= self.emailTextField.y-170;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+    
+}
+
+//self.Outlet_nameOFthegift.height
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
     if(textField == self.nameTextField){
         [self.emailTextField becomeFirstResponder];
     }
+    else{
+        [UIView animateWithDuration:0.20 animations:^{
+            CGRect newFrame = self.oldFrame;
+            [self.emailTextField resignFirstResponder];
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
     return YES;
-}
-
--(void)textViewDidEndEditing:(UITextView *)textView{
-    
 }
 @end

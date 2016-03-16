@@ -45,3 +45,4 @@
 #define GetAllergiesUrl @"get_allergies"
 #define AddAllergiesUrl @"add_allergy"
 #define GetLocationsUrl @"get_location"
+#define FeedbackUrl @"feedback"
