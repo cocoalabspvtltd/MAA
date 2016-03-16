@@ -192,6 +192,7 @@
     self.localityTextField.enabled  =YES;
     self.addressTextView.editable = YES;
     self.submitButton.enabled = YES;
+    self.changeMyPasswordButton.enabled =  YES;
     self.submitButton.hidden=NO;
     
     _underlineimg1.hidden=NO;
@@ -216,6 +217,7 @@
     self.cityTExtField.enabled  = NO;
     self.localityTextField.enabled  =NO;
     self.addressTextView.editable = NO;
+    self.changeMyPasswordButton.enabled =  NO;
     self.submitButton.enabled = NO;
     self.submitButton.hidden = NO;
     

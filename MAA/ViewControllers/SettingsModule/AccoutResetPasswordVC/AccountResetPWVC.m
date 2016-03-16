@@ -91,11 +91,8 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response object:%@",responseObject);
-        [self.navigationController popToRootViewControllerAnimated:YES];
-        UIAlertView *passwordresetSuccessfulAlert = [[UIAlertView alloc] initWithTitle:AppName message:@"Password reset successfully" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [passwordresetSuccessfulAlert show];
+        [self callingAlertViewControllerWithMessageString:@"Password reset successfully"];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -143,6 +140,22 @@
     return YES;
 }
 
+-(void)callingAlertViewControllerWithMessageString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   [self.navigationController popViewControllerAnimated:YES];
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 //_txtEnterCurrentPwd.layer.borderWidth=.5f;
 //_txtEnterCurrentPwd.layer.cornerRadius=5;

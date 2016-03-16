@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *localityTextField;
 @property (weak, nonatomic) IBOutlet UITextView *addressTextView;
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet UIButton *changeMyPasswordButton;
 @property (weak, nonatomic) IBOutlet UIImageView *backImageView;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (weak, nonatomic) IBOutlet UIImageView *underlineimg1;

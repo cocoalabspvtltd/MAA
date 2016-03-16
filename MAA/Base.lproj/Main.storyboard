@@ -743,7 +743,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="CBFA4A67-4444-47AF-BF04-4517C133D15F" scopeBarBackgroundImage="CBFA4A67-4444-47AF-BF04-4517C133D15F" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="512ABA4A-5489-4563-A51B-4A695785A5E2" scopeBarBackgroundImage="512ABA4A-5489-4563-A51B-4A695785A5E2" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -753,7 +753,7 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="15"/>
                                                 </userDefinedRuntimeAttributes>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="EC3CF7CC-5F3C-4EBE-A578-5E28E5B1F5D7" scopeBarBackgroundImage="EC3CF7CC-5F3C-4EBE-A578-5E28E5B1F5D7" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="4FF24F3C-3925-494E-8D7A-048C53C39B61" scopeBarBackgroundImage="4FF24F3C-3925-494E-8D7A-048C53C39B61" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -10252,7 +10252,7 @@
                                                                     <constraint firstAttribute="height" constant="20" id="suV-yG-OFe"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1v-HW-U8k">
+                                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1v-HW-U8k">
                                                                 <rect key="frame" x="8" y="5" width="587" height="30"/>
                                                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                                 <state key="normal">
@@ -10355,6 +10355,7 @@
                     <connections>
                         <outlet property="addressTextView" destination="Taq-LA-GdO" id="5Kg-HH-INz"/>
                         <outlet property="backImageView" destination="le7-7E-mWi" id="pPd-GH-YMd"/>
+                        <outlet property="changeMyPasswordButton" destination="a1v-HW-U8k" id="jT1-FI-Loi"/>
                         <outlet property="childView1" destination="352-yo-hkg" id="D4c-yt-z3P"/>
                         <outlet property="childView2" destination="Q0T-Uv-ESy" id="nbJ-D4-VXW"/>
                         <outlet property="childView3" destination="Yd4-Hl-tkd" id="uXB-C0-pZx"/>
@@ -12460,8 +12461,7 @@
     <resources>
         <image name="1.png" width="688" height="853"/>
         <image name="2.jpg" width="256" height="256"/>
-        <image name="5.png" width="260" height="288"/>
-        <image name="CBFA4A67-4444-47AF-BF04-4517C133D15F" width="310" height="78">
+        <image name="4FF24F3C-3925-494E-8D7A-048C53C39B61" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -14126,7 +14126,8 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="EC3CF7CC-5F3C-4EBE-A578-5E28E5B1F5D7" width="310" height="78">
+        <image name="5.png" width="260" height="288"/>
+        <image name="512ABA4A-5489-4563-A51B-4A695785A5E2" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
