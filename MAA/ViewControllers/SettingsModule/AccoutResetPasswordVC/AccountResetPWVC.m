@@ -1,23 +1,23 @@
 //
-//  ResetPasswordVC.m
+//  AccountResetPWVC.m
 //  MAA
 //
-//  Created by Cocoalabs India on 12/12/15.
-//  Copyright © 2015 Cocoa Labs. All rights reserved.
+//  Created by Cocoalabs India on 16/03/16.
+//  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
-#import "ResetPasswordVC.h"
+#import "AccountResetPWVC.h"
 #import <CommonCrypto/CommonDigest.h>
 
-@interface ResetPasswordVC ()<UITextFieldDelegate>
-@property (nonatomic,assign)CGRect oldFrame;
+@interface AccountResetPWVC ()<UITextFieldDelegate>
+
 @end
 
-@implementation ResetPasswordVC
+@implementation AccountResetPWVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
@@ -25,15 +25,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    [self.view endEditing:YES];
+    
+}
 /*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+- (IBAction)backButtonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (IBAction)submitButtonAction:(UIButton *)sender {
     if([self isValid]){
@@ -41,22 +49,28 @@
     }
 }
 
+
 -(BOOL)isValid{
     BOOL valid = YES;
     NSString *messageString = @"";
-    if([self.passwordtextField.text empty]){
+    if([self.currentPasswordTextFiels.text empty]){
         valid = NO;
-        [self.passwordtextField becomeFirstResponder];
+        [self.currentPasswordTextFiels becomeFirstResponder];
+        messageString = @"Please enter current password";
+    }
+    else if([self.newpwdTextField.text empty]){
+        valid = NO;
+        [self.newpwdTextField becomeFirstResponder];
         messageString = @"Please enter password";
     }
-    else if ([self.retypPasswordTextField.text empty]){
+    else if ([self.retyPasswordTextField.text empty]){
         valid = NO;
-        [self.retypPasswordTextField becomeFirstResponder];
+        [self.retyPasswordTextField becomeFirstResponder];
         messageString = @"Please enter confirm password";
     }
-    else if (![self.passwordtextField.text isEqualToString:self.retypPasswordTextField.text]){
+    else if (![self.newpwdTextField.text isEqualToString:self.retyPasswordTextField.text]){
         valid = NO;
-        [self.passwordtextField becomeFirstResponder];
+        [self.newpwdTextField becomeFirstResponder];
         messageString = @"Password and confirm password should be same";
     }
     if(![messageString empty]){
@@ -72,8 +86,8 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     NSString *editAccountInfoUrlString = [Baseurl stringByAppendingString:EditAccountInfoUrl];
     NSMutableDictionary *editAccountInfoMutableDictionary = [[NSMutableDictionary alloc] init];
-    [editAccountInfoMutableDictionary setValue:[self sha1:self.passwordtextField.text] forKey:@"pwd"];
-   // [editAccountInfoMutableDictionary setValue:self.tokenString forKey:@"token"];
+    [editAccountInfoMutableDictionary setValue:[self sha1:self.newpwdTextField.text] forKey:@"pwd"];
+    // [editAccountInfoMutableDictionary setValue:self.tokenString forKey:@"token"];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:editAccountInfoUrlString] withBody:editAccountInfoMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response object:%@",responseObject);
@@ -96,15 +110,6 @@
     }];
 }
 
-- (IBAction)backButtonAction:(UIButton *)sender {
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)viewDidAppear:(BOOL)animated{
-    self.oldFrame = self.view.frame;
-    
-}
-
 #pragma mark - Password encryption
 
 -(NSString*) sha1:(NSString*)input
@@ -124,65 +129,33 @@
     return output;
     
 }
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
-    [UIView animateWithDuration:0.20 animations:^{
-        CGRect newFrame = self.oldFrame;
-        [self.view setFrame:newFrame];
-        [self.passwordtextField resignFirstResponder];
-        [self.retypPasswordTextField resignFirstResponder];
-        
-    }completion:^(BOOL finished)
-     {
-         
-     }];
-   
-}
 
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if (textField == self.passwordtextField ) {
-        [UIView animateWithDuration:0.20 animations:^{
-            CGRect newFrame = self.oldFrame;
-            newFrame.origin.y -= self.passwordtextField.y-100;
-            [self.view setFrame:newFrame];
-        }completion:^(BOOL finished)
-         {
-             
-         }];
-    }
-    else if (textField == self.retypPasswordTextField ) {
-        [UIView animateWithDuration:0.30 animations:^{
-            CGRect newFrame = self.oldFrame;
-            newFrame.origin.y -= self.retypPasswordTextField.y-120;
-            [self.view setFrame:newFrame];
-        }completion:^(BOOL finished)
-         {
-             
-         }];
-    }
-    
-}
+#pragma mark - TextField Delegate
 
-//self.Outlet_nameOFthegift.height
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-    if(textField == self.passwordtextField){
-        [self.retypPasswordTextField becomeFirstResponder];
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    if(textField == self.currentPasswordTextFiels){
+        [self.newpwdTextField becomeFirstResponder];
     }
-    else{
-    [UIView animateWithDuration:0.20 animations:^{
-        CGRect newFrame = self.oldFrame;
-        [self.retypPasswordTextField resignFirstResponder];
-        [self.view setFrame:newFrame];
-    }completion:^(BOOL finished)
-     {
-         
-     }];
+    else if (textField == self.newpwdTextField){
+        [self.retyPasswordTextField becomeFirstResponder];
     }
     return YES;
 }
-- (IBAction)Back:(id)sender
-{
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
+
+//_txtEnterCurrentPwd.layer.borderWidth=.5f;
+//_txtEnterCurrentPwd.layer.cornerRadius=5;
+//_txtEnterCurrentPwd.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+//
+//_txtEnterNewPwd.layer.borderWidth=.5f;
+//_txtEnterNewPwd.layer.cornerRadius=5;
+//_txtEnterNewPwd.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+//
+//_txtRetypePassword.layer.borderWidth=.5f;
+//_txtRetypePassword.layer.cornerRadius=5;
+//_txtRetypePassword.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+
+
 
 @end
