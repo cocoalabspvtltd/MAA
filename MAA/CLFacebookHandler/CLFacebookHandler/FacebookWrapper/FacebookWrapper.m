@@ -11,7 +11,9 @@
 NSString *const FBSessionStateChangedNotification = @"com.CL.FBLogin:FBSessionStateChangedNotification";
 NSString *const FBUserCancelledNotification = @"com.CL.FBLogin:FBUserCancelledNotification";
 NSString *const FBPublicActionNotification = @"com.CL.FBLogin:FBPublicActionNotification";
-
+@interface FacebookWrapper()
+@property (nonatomic, strong) FBSDKLoginManager *login;
+@end
 @implementation FacebookWrapper
 
 + (FacebookWrapper *)standardWrapper {
@@ -64,8 +66,8 @@ NSString *const FBPublicActionNotification = @"com.CL.FBLogin:FBPublicActionNoti
                             @"user_photos",
                             nil];//@"publish_actions",
     
-    FBSDKLoginManager *login = [[FBSDKLoginManager alloc] init];
-    [login logInWithReadPermissions:permissions handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
+    self.login = [[FBSDKLoginManager alloc] init];
+    [self.login logInWithReadPermissions:permissions handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
 
         if (error) {
 
@@ -312,6 +314,10 @@ NSString *const FBPublicActionNotification = @"com.CL.FBLogin:FBPublicActionNoti
         }
     }];
     
+}
+
+- (void)logoutFBSession{
+    [self.login logOut];
 }
 
 @end

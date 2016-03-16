@@ -11,6 +11,7 @@
 #import "AccountSettingVC.h"
 #import "myHealthProfileVC.h"
 #import "AboutViewController.h"
+#import "CLFacebookHandler/FacebookWrapper.h"
 
 #import "SettingsTableViewCell.h"
 
@@ -179,6 +180,7 @@
 -(void)implementingLogot{
     [[NSUserDefaults standardUserDefaults] setValue:@"" forKey:kUserName];
     [[NSUserDefaults standardUserDefaults] synchronize];
+    [[FacebookWrapper standardWrapper] logoutFBSession];
     [[NSNotificationCenter defaultCenter] postNotificationName:ShowLogInScreenObserver object:nil];
  }
 @end
