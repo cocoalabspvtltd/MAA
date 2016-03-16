@@ -57,6 +57,11 @@
     self.isFromCity = NO;
     self.isFromLocality = NO;
     self.cityIdString = @"";
+    BOOL isFBlogIn = [[NSUserDefaults standardUserDefaults] boolForKey:isfaceBookLogIn];
+    if(isFBlogIn){
+        self.changeMyPasswordLabel.hidden = YES;
+        self.changeMyPasswordButton.hidden = YES;
+    }
 }
 -(void)datePickerValueChanged
 {

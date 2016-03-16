@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 #define kUserName @"userName"
+#define isfaceBookLogIn @"isFBLogin"
 #define MainStoryboardName @"Main"
 static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen";
 

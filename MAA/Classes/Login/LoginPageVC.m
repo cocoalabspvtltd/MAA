@@ -98,6 +98,7 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response object:%@",responseObject);
         [[NSUserDefaults standardUserDefaults] setValue:[[responseObject valueForKey:Datakey] valueForKey:@"token"] forKey:ACCESS_TOKEN];
+        [[NSUserDefaults standardUserDefaults] setBool:isFacebookLogin forKey:isfaceBookLogIn];
         [[NSUserDefaults standardUserDefaults] synchronize];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self settingHomePage];
