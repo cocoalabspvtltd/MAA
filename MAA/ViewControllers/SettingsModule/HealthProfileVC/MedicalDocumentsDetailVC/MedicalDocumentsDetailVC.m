@@ -9,7 +9,7 @@
 #import "MedicalDocumentsDetailVC.h"
 
 @interface MedicalDocumentsDetailVC ()<UITextFieldDelegate>
-
+@property (nonatomic,assign)CGRect oldFrame;
 @end
 
 @implementation MedicalDocumentsDetailVC
@@ -23,8 +23,17 @@
 }
 
 -(void)tapGestureAction:(UITapGestureRecognizer *)tapGesture{
-    [self.view endEditing:YES];
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+        [self.view setFrame:newFrame];
+        [self.titleTextField resignFirstResponder];
+        
+    }completion:^(BOOL finished)
+     {
+         
+     }];
 }
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -93,10 +102,34 @@
     }];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    self.oldFrame = self.view.frame;
+    
+}
+
 #pragma mark textField Delegate
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (textField == self.titleTextField ) {
+        [UIView animateWithDuration:0.20 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= self.titleTextField.y-220;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+}
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
-    [textField resignFirstResponder];
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+        [textField resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+     }];
     return YES;
 }
 
