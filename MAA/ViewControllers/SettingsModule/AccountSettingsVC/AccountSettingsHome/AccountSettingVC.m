@@ -121,10 +121,6 @@
         NSString *profileImageUrlString = [profileData valueForKey:@"e_base_img"];
         [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:profileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     }
-    if(!([profileData valueForKey:@"e_banner_img"] == [NSNull null])){
-        NSString *bannerImageUrlString = [profileData valueForKey:@"e_banner_img"];
-        [self.backImageView sd_setImageWithURL:[NSURL URLWithString:bannerImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
-    }
     if(!([profileData valueForKey:@"name"] == [NSNull null])){
         self.namLabel.text = [profileData valueForKey:@"name"];
         self.nameTxtField.text = [profileData valueForKey:@"name"];
