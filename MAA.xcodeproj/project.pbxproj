@@ -285,6 +285,8 @@
 		C0D157FD1C9B134700FC1DE0 /* SearchFilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D157F41C9B134700FC1DE0 /* SearchFilterVC.m */; };
 		C0D157FE1C9B134700FC1DE0 /* SearchResultsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D157F71C9B134700FC1DE0 /* SearchResultsVC.m */; };
 		C0D157FF1C9B134700FC1DE0 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D157FB1C9B134700FC1DE0 /* SearchVC.m */; };
+		C0D1581C1C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D158011C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a */; };
+		C0D1581D1C9B1B9700FC1DE0 /* PayUSDKInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0D158151C9B1B9700FC1DE0 /* PayUSDKInfo.plist */; };
 		C0DE50CC1C86F87B001F40E9 /* human-male-female.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DE50CB1C86F87B001F40E9 /* human-male-female.png */; };
 		C0E92BBF1C9183A100443117 /* ic_close_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */; };
 		C0E92BC01C9183A100443117 /* ic_close_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */; };
@@ -734,6 +736,32 @@
 		C0D157F71C9B134700FC1DE0 /* SearchResultsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsVC.m; sourceTree = "<group>"; };
 		C0D157FA1C9B134700FC1DE0 /* SearchVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchVC.h; sourceTree = "<group>"; };
 		C0D157FB1C9B134700FC1DE0 /* SearchVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchVC.m; sourceTree = "<group>"; };
+		C0D158011C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayU_iOS_CoreSDK.a; sourceTree = "<group>"; };
+		C0D158031C9B1B9700FC1DE0 /* CoreTelephony.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreTelephony.h; sourceTree = "<group>"; };
+		C0D158041C9B1B9700FC1DE0 /* PayU_iOS_CoreSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayU_iOS_CoreSDK.h; sourceTree = "<group>"; };
+		C0D158051C9B1B9700FC1DE0 /* PayUConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUConstants.h; sourceTree = "<group>"; };
+		C0D158061C9B1B9700FC1DE0 /* PayUCreatePostParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUCreatePostParam.h; sourceTree = "<group>"; };
+		C0D158071C9B1B9700FC1DE0 /* PayUCreateRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUCreateRequest.h; sourceTree = "<group>"; };
+		C0D158081C9B1B9700FC1DE0 /* PayUDontUseThisClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUDontUseThisClass.h; sourceTree = "<group>"; };
+		C0D158091C9B1B9700FC1DE0 /* PayUFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUFileManager.h; sourceTree = "<group>"; };
+		C0D1580A1C9B1B9700FC1DE0 /* PayUJSONParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUJSONParser.h; sourceTree = "<group>"; };
+		C0D1580B1C9B1B9700FC1DE0 /* PayUModelCashCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUModelCashCard.h; sourceTree = "<group>"; };
+		C0D1580C1C9B1B9700FC1DE0 /* PayUModelEMI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUModelEMI.h; sourceTree = "<group>"; };
+		C0D1580D1C9B1B9700FC1DE0 /* PayUModelHashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUModelHashes.h; sourceTree = "<group>"; };
+		C0D1580E1C9B1B9700FC1DE0 /* PayUModelNetBanking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUModelNetBanking.h; sourceTree = "<group>"; };
+		C0D1580F1C9B1B9700FC1DE0 /* PayUModelOfferStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUModelOfferStatus.h; sourceTree = "<group>"; };
+		C0D158101C9B1B9700FC1DE0 /* PayUModelPaymentParams.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUModelPaymentParams.h; sourceTree = "<group>"; };
+		C0D158111C9B1B9700FC1DE0 /* PayUModelPaymentRelatedDetail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUModelPaymentRelatedDetail.h; sourceTree = "<group>"; };
+		C0D158121C9B1B9700FC1DE0 /* PayUModelStoredCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUModelStoredCard.h; sourceTree = "<group>"; };
+		C0D158131C9B1B9700FC1DE0 /* PayUReachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUReachability.h; sourceTree = "<group>"; };
+		C0D158141C9B1B9700FC1DE0 /* PayUReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUReachabilityManager.h; sourceTree = "<group>"; };
+		C0D158151C9B1B9700FC1DE0 /* PayUSDKInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PayUSDKInfo.plist; sourceTree = "<group>"; };
+		C0D158161C9B1B9700FC1DE0 /* PayUSharedDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUSharedDataManager.h; sourceTree = "<group>"; };
+		C0D158171C9B1B9700FC1DE0 /* PayUUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUUtils.h; sourceTree = "<group>"; };
+		C0D158181C9B1B9700FC1DE0 /* PayUValidations.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUValidations.h; sourceTree = "<group>"; };
+		C0D158191C9B1B9700FC1DE0 /* PayUWebServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUWebServiceResponse.h; sourceTree = "<group>"; };
+		C0D1581A1C9B1B9700FC1DE0 /* PayUWebViewResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUWebViewResponse.h; sourceTree = "<group>"; };
+		C0D1581B1C9B1B9700FC1DE0 /* PayUWSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUWSManager.h; sourceTree = "<group>"; };
 		C0DE50CB1C86F87B001F40E9 /* human-male-female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "human-male-female.png"; sourceTree = "<group>"; };
 		C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_2x.png; sourceTree = "<group>"; };
 		C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_3x.png; sourceTree = "<group>"; };
@@ -748,6 +776,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0D1581C1C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a in Frameworks */,
 				C0A8312A1C7DE503000A60C9 /* libNetworkHandler.a in Frameworks */,
 				C09EF70E1C7625AB00806600 /* libc++.tbd in Frameworks */,
 				C09EF70C1C76249C00806600 /* OpenTok.framework in Frameworks */,
@@ -884,6 +913,7 @@
 		55D60D801C08B94600963D5D /* MAA */ = {
 			isa = PBXGroup;
 			children = (
+				C0D158001C9B1B9700FC1DE0 /* PayU */,
 				C09EF70B1C76249C00806600 /* OpenTok.framework */,
 				C09EF6751C76211800806600 /* OpenTok-iOS-2.7.1 */,
 				C0BBC4BD1C6E63EE005083B1 /* Views */,
@@ -2036,6 +2066,47 @@
 			path = SearchVC;
 			sourceTree = "<group>";
 		};
+		C0D158001C9B1B9700FC1DE0 /* PayU */ = {
+			isa = PBXGroup;
+			children = (
+				C0D158011C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a */,
+				C0D158021C9B1B9700FC1DE0 /* PayU_iOS_CoreSDK */,
+			);
+			path = PayU;
+			sourceTree = "<group>";
+		};
+		C0D158021C9B1B9700FC1DE0 /* PayU_iOS_CoreSDK */ = {
+			isa = PBXGroup;
+			children = (
+				C0D158031C9B1B9700FC1DE0 /* CoreTelephony.h */,
+				C0D158041C9B1B9700FC1DE0 /* PayU_iOS_CoreSDK.h */,
+				C0D158051C9B1B9700FC1DE0 /* PayUConstants.h */,
+				C0D158061C9B1B9700FC1DE0 /* PayUCreatePostParam.h */,
+				C0D158071C9B1B9700FC1DE0 /* PayUCreateRequest.h */,
+				C0D158081C9B1B9700FC1DE0 /* PayUDontUseThisClass.h */,
+				C0D158091C9B1B9700FC1DE0 /* PayUFileManager.h */,
+				C0D1580A1C9B1B9700FC1DE0 /* PayUJSONParser.h */,
+				C0D1580B1C9B1B9700FC1DE0 /* PayUModelCashCard.h */,
+				C0D1580C1C9B1B9700FC1DE0 /* PayUModelEMI.h */,
+				C0D1580D1C9B1B9700FC1DE0 /* PayUModelHashes.h */,
+				C0D1580E1C9B1B9700FC1DE0 /* PayUModelNetBanking.h */,
+				C0D1580F1C9B1B9700FC1DE0 /* PayUModelOfferStatus.h */,
+				C0D158101C9B1B9700FC1DE0 /* PayUModelPaymentParams.h */,
+				C0D158111C9B1B9700FC1DE0 /* PayUModelPaymentRelatedDetail.h */,
+				C0D158121C9B1B9700FC1DE0 /* PayUModelStoredCard.h */,
+				C0D158131C9B1B9700FC1DE0 /* PayUReachability.h */,
+				C0D158141C9B1B9700FC1DE0 /* PayUReachabilityManager.h */,
+				C0D158151C9B1B9700FC1DE0 /* PayUSDKInfo.plist */,
+				C0D158161C9B1B9700FC1DE0 /* PayUSharedDataManager.h */,
+				C0D158171C9B1B9700FC1DE0 /* PayUUtils.h */,
+				C0D158181C9B1B9700FC1DE0 /* PayUValidations.h */,
+				C0D158191C9B1B9700FC1DE0 /* PayUWebServiceResponse.h */,
+				C0D1581A1C9B1B9700FC1DE0 /* PayUWebViewResponse.h */,
+				C0D1581B1C9B1B9700FC1DE0 /* PayUWSManager.h */,
+			);
+			path = PayU_iOS_CoreSDK;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2282,6 +2353,7 @@
 				C0CABC761C8AE752009F9470 /* checked-black.png in Resources */,
 				C09EF6E91C76211800806600 /* OTPublisherDelegate.html in Resources */,
 				C08437F81C6EEEC100610ADC /* NotesPopUp.xib in Resources */,
+				C0D1581D1C9B1B9700FC1DE0 /* PayUSDKInfo.plist in Resources */,
 				C09EF6DF1C76211800806600 /* hierarchy.html in Resources */,
 				C09EF6E81C76211800806600 /* OTAudioDevice.html in Resources */,
 				C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */,
@@ -2634,6 +2706,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MAA/NwkHndler",
 					"$(PROJECT_DIR)/MAA/FacebookHandler",
+					"$(PROJECT_DIR)/MAA/PayU",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
@@ -2665,6 +2738,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/MAA/NwkHndler",
 					"$(PROJECT_DIR)/MAA/FacebookHandler",
+					"$(PROJECT_DIR)/MAA/PayU",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
