@@ -5,7 +5,6 @@
 //  Created by Roshith on 14/12/15.
 //  Copyright © 2015 Cocoa Labs. All rights reserved.
 //
-#define OnlineAllButtonSelectedBorderColor [UIColor whiteColor].CGColor
 
 #import "DoctorProfileVC.h"
 #import "HospitalProfile.h"
@@ -36,8 +35,7 @@
 -(void)initialisation{
     self.offsetValue = 0;
     self.limitValue = 10;
-    self.isOnlineButtonSelected = NO;
-    self.allButton.layer.borderColor = OnlineAllButtonSelectedBorderColor;
+    self.isOnlineButtonSelected = YES;
     self.doctorsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -96,29 +94,19 @@
     cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
     NSURL *imageUrl;
     if(self.isOnlineButtonSelected){
-        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
-            cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
-        }
-        else{
-            cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
-        }
-        cell.cellLabelRating.text = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
-        NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
+        cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+     //cell.cellLabelRating.text = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+       NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
         cell.cellLabelDescription.text = doctorDescription;
         cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
-        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@ Years",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
-        if([[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
-            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
-        }
-        else{
-            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
-        }
+        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
+        cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
         imageUrl = [NSURL URLWithString:[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
     }
     else{
-        cell.cellLabelRating.text = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+       // cell.cellLabelRating.text = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
         if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
-           cell.cellLabelTitle.text = [NSString stringWithFormat:@"Dr. %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+           cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
         }
         else{
           cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
@@ -229,18 +217,16 @@
         }
     }
 }
-- (IBAction)allButtonAction:(UIButton *)sender {
-    self.isOnlineButtonSelected = NO;
-    sender.layer.borderColor = OnlineAllButtonSelectedBorderColor;
-    self.onlineButton.layer.borderColor = [UIColor clearColor].CGColor;
-    [tableViewSearchResults reloadData];
-}
 
-- (IBAction)onlineButtonAction:(UIButton *)sender {
-    self.isOnlineButtonSelected = YES;
-    sender.layer.borderColor = OnlineAllButtonSelectedBorderColor;
-    self.allButton.layer.borderColor = [UIColor clearColor].CGColor;
-    [tableViewSearchResults reloadData];
+- (IBAction)segmentControlAction:(UISegmentedControl *)sender {
+    if(sender.selectedSegmentIndex == 0){
+      self.isOnlineButtonSelected = YES;
+        [tableViewSearchResults reloadData];
+    }
+    else{
+       self.isOnlineButtonSelected = NO;
+        [tableViewSearchResults reloadData];
+    }
 }
 
 #pragma mark - Search Bar Delegate

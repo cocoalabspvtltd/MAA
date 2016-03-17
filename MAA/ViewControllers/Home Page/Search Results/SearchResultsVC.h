@@ -17,10 +17,8 @@
     
     NSMutableArray *arraySearchResultListing;
 }
-@property (strong, nonatomic) IBOutlet UIButton *onlineButton;
 @property (nonatomic, strong) NSString *departmentId;
 @property (nonatomic, strong) NSString *locationId;
 @property (nonatomic, assign) BOOL isLocationSearch;
-@property (strong, nonatomic) IBOutlet UIButton *allButton;
 
 @end
