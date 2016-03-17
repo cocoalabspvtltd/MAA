@@ -10,27 +10,24 @@
 
 @interface SearchFilterVC : UIViewController
 
-{
-    IBOutlet UILabel *labelMonday, *labelTuesday, *labelWednesday, *labelThursday, *labelFriday, *labelSaturday, *labelSunday;
-    
-    __weak IBOutlet UIImageView *sundayImageView;
-    __weak IBOutlet UIButton *sundayButton;
-    __weak IBOutlet UIImageView *mondayImageView;
-    __weak IBOutlet UIButton *mondaybutton;
-    __weak IBOutlet UIImageView *tuesdayImageView;
-    __weak IBOutlet UIButton *tuedayButton;
-    __weak IBOutlet UIImageView *wednesdayImageView;
-    __weak IBOutlet UIButton *wednesdayButton;
-    __weak IBOutlet UIImageView *thursdayImageView;
-    __weak IBOutlet UIButton *thursdayButton;
-    __weak IBOutlet UIImageView *fridayImageView;
-    __weak IBOutlet UIButton *fridayButton;
-    __weak IBOutlet UIImageView *saturdayImageView;
-    __weak IBOutlet UIButton *saturdayButton;
-    __weak IBOutlet UIButton *maleButton;
-
-    __weak IBOutlet UIButton *femaleButton;
-    __weak IBOutlet UIButton *isOnlineButton;
-}
+@property (weak, nonatomic) IBOutlet UITextField *txtType;
+@property (weak, nonatomic) IBOutlet UIButton *btnExperience;
+- (IBAction)Experience:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnConsultaionFee;
+- (IBAction)ConsultationFee:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *btnSun;
+@property (weak, nonatomic) IBOutlet UIButton *btnMon;
+@property (weak, nonatomic) IBOutlet UIButton *btnTue;
+@property (weak, nonatomic) IBOutlet UIButton *btnWed;
+@property (weak, nonatomic) IBOutlet UIButton *btnThu;
+@property (weak, nonatomic) IBOutlet UIButton *btnFri;
+@property (weak, nonatomic) IBOutlet UIButton *btnSat;
+@property (weak, nonatomic) IBOutlet UITextField *txtFeeFrom;
+@property (weak, nonatomic) IBOutlet UITextField *txtFeeTo;
+@property (weak, nonatomic) IBOutlet UITextField *txtAgeFrom;
+@property (weak, nonatomic) IBOutlet UITextField *txtAgeTo;
+@property (weak, nonatomic) IBOutlet UITextField *txtGender;
+@property (weak, nonatomic) IBOutlet UITextField *txtExperienceFrom;
+@property (weak, nonatomic) IBOutlet UITextField *txtExperienceTo;
 
 @end

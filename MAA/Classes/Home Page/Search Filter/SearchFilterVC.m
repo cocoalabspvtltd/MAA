@@ -17,6 +17,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self callingFilterInfoApi];
+    
+    _txtType.layer.borderWidth=0.5f;
+    
+    _txtType.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _txtFeeFrom.layer.borderWidth=0.5f;
+    _txtFeeFrom.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _txtFeeTo.layer.borderWidth=0.5f;
+    _txtFeeTo.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _txtAgeFrom.layer.borderWidth=0.5f;
+    _txtAgeFrom.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _txtAgeTo.layer.borderWidth=0.5f;
+    _txtAgeTo.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _txtGender.layer.borderWidth=0.5f;
+    _txtGender.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _txtExperienceFrom.layer.borderWidth=0.5f;
+    _txtExperienceFrom.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _txtExperienceTo.layer.borderWidth=0.5f;
+    _txtExperienceTo.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnExperience.layer.borderWidth=0.5f;
+    _btnExperience.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnConsultaionFee.layer.borderWidth=0.5f;
+    _btnConsultaionFee.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnSun.layer.borderWidth=0.5f;
+    _btnSun.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnMon.layer.borderWidth=0.5f;
+    _btnMon.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnTue.layer.borderWidth=0.5f;
+    _btnTue.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnWed.layer.borderWidth=0.5f;
+    _btnWed.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnThu.layer.borderWidth=0.5f;
+    _btnThu.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnFri.layer.borderWidth=0.5f;
+    _btnFri.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnSat.layer.borderWidth=0.5f;
+    _btnSat.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
     // Do any additional setup after loading the view.
     
     
@@ -35,13 +88,7 @@
 
 - (void)setLabelSize
 {
-    [labelSunday sizeToFit];
-    [labelMonday sizeToFit];
-    [labelTuesday sizeToFit];
-    [labelWednesday sizeToFit];
-    [labelThursday sizeToFit];
-    [labelFriday sizeToFit];
-    [labelSaturday sizeToFit];
+    
 }
 
 #pragma mark - Calling Search Filter Api
@@ -77,5 +124,13 @@
 }
 - (IBAction)femaleButtonAction:(UIButton *)sender {
 }
+- (IBAction)Close:(id)sender
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
+- (IBAction)Experience:(id)sender {
+}
+- (IBAction)ConsultationFee:(id)sender {
+}
 @end

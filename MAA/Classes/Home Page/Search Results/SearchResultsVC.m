@@ -86,8 +86,10 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.cellImageViewIcon.clipsToBounds = YES;
-    cell.cellImageViewIcon.layer.cornerRadius = 25.00;
+    cell.cellImageViewIcon.layer.cornerRadius = 30.00;
     cell.cellImageViewIcon.layer.masksToBounds = YES;
+    cell.cellImageViewIcon.layer.borderWidth=0.5f;
+    cell.cellImageViewIcon.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
     
     cell.cellImageViewOnlineStatus.clipsToBounds = YES;
     cell.cellImageViewOnlineStatus.layer.cornerRadius = 5.00;
@@ -244,6 +246,10 @@
 #pragma mark - Search Bar Delegate
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)Back:(id)sender
+{
     [self.navigationController popViewControllerAnimated:YES];
 }
 

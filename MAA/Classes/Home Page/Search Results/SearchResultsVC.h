@@ -15,7 +15,8 @@
    
 //    NSMutableDictionary *dictionaryArrayData;
     
-    NSMutableArray *arraySearchResultListing;}
+    NSMutableArray *arraySearchResultListing;
+}
 @property (strong, nonatomic) IBOutlet UIButton *onlineButton;
 @property (nonatomic, strong) NSString *departmentId;
 @property (nonatomic, strong) NSString *locationId;
