@@ -287,6 +287,8 @@
 		C0D157FF1C9B134700FC1DE0 /* SearchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D157FB1C9B134700FC1DE0 /* SearchVC.m */; };
 		C0D1581C1C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D158011C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a */; };
 		C0D1581D1C9B1B9700FC1DE0 /* PayUSDKInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0D158151C9B1B9700FC1DE0 /* PayUSDKInfo.plist */; };
+		C0D158211C9B231B00FC1DE0 /* PayUSAGetHashes.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D158201C9B231B00FC1DE0 /* PayUSAGetHashes.m */; };
+		C0D158251C9B25AD00FC1DE0 /* PayUSAOneTapToken.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D158241C9B25AD00FC1DE0 /* PayUSAOneTapToken.m */; };
 		C0DE50CC1C86F87B001F40E9 /* human-male-female.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DE50CB1C86F87B001F40E9 /* human-male-female.png */; };
 		C0E92BBF1C9183A100443117 /* ic_close_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */; };
 		C0E92BC01C9183A100443117 /* ic_close_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */; };
@@ -762,6 +764,11 @@
 		C0D158191C9B1B9700FC1DE0 /* PayUWebServiceResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUWebServiceResponse.h; sourceTree = "<group>"; };
 		C0D1581A1C9B1B9700FC1DE0 /* PayUWebViewResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUWebViewResponse.h; sourceTree = "<group>"; };
 		C0D1581B1C9B1B9700FC1DE0 /* PayUWSManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUWSManager.h; sourceTree = "<group>"; };
+		C0D1581F1C9B231B00FC1DE0 /* PayUSAGetHashes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUSAGetHashes.h; sourceTree = "<group>"; };
+		C0D158201C9B231B00FC1DE0 /* PayUSAGetHashes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayUSAGetHashes.m; sourceTree = "<group>"; };
+		C0D158221C9B247300FC1DE0 /* PayUHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUHeader.h; sourceTree = "<group>"; };
+		C0D158231C9B25AD00FC1DE0 /* PayUSAOneTapToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUSAOneTapToken.h; sourceTree = "<group>"; };
+		C0D158241C9B25AD00FC1DE0 /* PayUSAOneTapToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayUSAOneTapToken.m; sourceTree = "<group>"; };
 		C0DE50CB1C86F87B001F40E9 /* human-male-female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "human-male-female.png"; sourceTree = "<group>"; };
 		C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_2x.png; sourceTree = "<group>"; };
 		C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_3x.png; sourceTree = "<group>"; };
@@ -2069,6 +2076,7 @@
 		C0D158001C9B1B9700FC1DE0 /* PayU */ = {
 			isa = PBXGroup;
 			children = (
+				C0D1581E1C9B231B00FC1DE0 /* ExtraObjectsForPayu */,
 				C0D158011C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a */,
 				C0D158021C9B1B9700FC1DE0 /* PayU_iOS_CoreSDK */,
 			);
@@ -2105,6 +2113,18 @@
 				C0D1581B1C9B1B9700FC1DE0 /* PayUWSManager.h */,
 			);
 			path = PayU_iOS_CoreSDK;
+			sourceTree = "<group>";
+		};
+		C0D1581E1C9B231B00FC1DE0 /* ExtraObjectsForPayu */ = {
+			isa = PBXGroup;
+			children = (
+				C0D158231C9B25AD00FC1DE0 /* PayUSAOneTapToken.h */,
+				C0D158241C9B25AD00FC1DE0 /* PayUSAOneTapToken.m */,
+				C0D158221C9B247300FC1DE0 /* PayUHeader.h */,
+				C0D1581F1C9B231B00FC1DE0 /* PayUSAGetHashes.h */,
+				C0D158201C9B231B00FC1DE0 /* PayUSAGetHashes.m */,
+			);
+			path = ExtraObjectsForPayu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2522,12 +2542,14 @@
 				C08DEF9F1C9712D00025F1AF /* FilterVC.m in Sources */,
 				C092EBF71C80B1E000F7B18B /* SDWebImageCompat.m in Sources */,
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,
+				C0D158251C9B25AD00FC1DE0 /* PayUSAOneTapToken.m in Sources */,
 				9F5F0C5F1C66676B00F7E99D /* SettingsTableViewCell.m in Sources */,
 				C092EBFA1C80B1E000F7B18B /* SDWebImageDownloaderOperation.m in Sources */,
 				C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */,
 				9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */,
 				C0D157EC1C9B12C100FC1DE0 /* SearchResultsTVC.m in Sources */,
 				C08293EF1C874E0800D987B7 /* FeedBackVC.m in Sources */,
+				C0D158211C9B231B00FC1DE0 /* PayUSAGetHashes.m in Sources */,
 				C09039CD1C88988E0059FDC8 /* CountriesVC.m in Sources */,
 				C092EC021C80B1E000F7B18B /* UIImageView+WebCache.m in Sources */,
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,

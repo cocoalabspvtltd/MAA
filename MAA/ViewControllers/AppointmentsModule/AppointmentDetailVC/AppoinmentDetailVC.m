@@ -6,6 +6,10 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "PayU_iOS_CoreSDK.h"
+#import "PayUSAGetHashes.h"
+#import "PayUSAOneTapToken.h"
+
 #import "NotesPopUp.h"
 #import "Invoicepopup.h"
 #import "AppoinmentDetailVC.h"
@@ -13,6 +17,11 @@
 #import "PreviousAppoinmentCell.h"
 
 @interface AppoinmentDetailVC ()<UITableViewDataSource,UITableViewDelegate>
+@property (strong, nonatomic) PayUModelPaymentParams *paymentParamForPassing;
+@property (nonatomic, strong) PayUSAGetHashes *getHashesFromServer;
+@property (strong, nonatomic) PayUModelPaymentParams *paymentParam;
+@property (strong, nonatomic) PayUWebServiceResponse *webServiceResponse;
+
 @property (nonatomic, strong) NSArray *previousAppointmentsArray;
 @property (nonatomic, strong) UIView *topTransparentView;
 @property (nonatomic, strong) Invoicepopup *invoicePopupVew;
@@ -287,7 +296,88 @@
 - (IBAction)chatHistorybuttonAction:(UIButton *)sender {
 }
 
+
+
+
 - (IBAction)startappointmentbuttonAction:(UIButton *)sender {
+    [self intialisingPayUmoneyParametes];
 }
 
+#pragma mark - Initialising Payu money parameters
+
+-(void)intialisingPayUmoneyParametes{
+    self.paymentParamForPassing = [PayUModelPaymentParams new];
+    self.paymentParamForPassing.key = @"0MQaQP";
+    self.paymentParamForPassing.transactionID = @"Ywism0Q9XC88qvy";
+    self.paymentParamForPassing.amount = @"10.0";
+    self.paymentParamForPassing.productInfo = @"Nokia";
+    self.paymentParamForPassing.firstName = @"Ram";
+    self.paymentParamForPassing.email = @"email@testsdk1.com";
+    self.paymentParamForPassing.userCredentials = @"ra:ra";
+    self.paymentParamForPassing.phoneNumber = @"1111111111";
+    self.paymentParamForPassing.SURL = @"https://payu.herokuapp.com/ios_success";
+    self.paymentParamForPassing.FURL = @"https://payu.herokuapp.com/ios_failure";
+    self.paymentParamForPassing.udf1 = @"u1";
+    self.paymentParamForPassing.udf2 = @"u2";
+    self.paymentParamForPassing.udf3 = @"u3";
+    self.paymentParamForPassing.udf4 = @"u4";
+    self.paymentParamForPassing.udf5 = @"u5";
+    self.paymentParamForPassing.environment = ENVIRONMENT_PRODUCTION;
+    self.paymentParamForPassing.offerKey = @"offertest@1411";
+    [self initialsingExtraParameters];
+}
+
+
+-(void)initialsingExtraParameters{
+    self.getHashesFromServer = [PayUSAGetHashes new];
+    [self.getHashesFromServer generateHashFromServer:self.paymentParamForPassing withCompletionBlock:^(PayUModelHashes *hashes, NSString *errorString) {
+        NSLog(@"Hashes:%@",hashes);
+        [self callSDKWithHashes:hashes withError:errorString];
+    }];
+}
+
+-(void)callSDKWithHashes:(PayUModelHashes *) allHashes withError:(NSString *) errorMessage{
+    if (errorMessage == nil) {
+        self.paymentParam.hashes = allHashes;
+       // if (self.switchForOneTap.on) {
+            PayUSAOneTapToken *OneTapToken = [PayUSAOneTapToken new];
+            [OneTapToken getOneTapTokenDictionaryFromServerWithPaymentParam:self.paymentParam CompletionBlock:^(NSDictionary *CardTokenAndMerchantHash, NSString *errorString) {
+                if (errorMessage) {
+                    NSLog(@"Error message:%@",errorMessage);
+                    
+                }
+                else{
+                    [self callSDKWithOneTap:CardTokenAndMerchantHash];
+                }
+            }];
+      //  }
+       // else{
+          //  [self callSDKWithOneTap:nil];
+       // }
+    }
+    else{
+       
+    }
+}
+
+-(void) callSDKWithOneTap:(NSDictionary *)oneTapDict{
+    
+    self.paymentParam.OneTapTokenDictionary = oneTapDict;
+    PayUWebServiceResponse *respo = [PayUWebServiceResponse new];
+    [respo callVASForMobileSDKWithPaymentParam:self.paymentParam];        //FORVAS1
+    self.webServiceResponse = [PayUWebServiceResponse new];
+    [self.webServiceResponse getPayUPaymentRelatedDetailForMobileSDK:self.paymentParam withCompletionBlock:^(PayUModelPaymentRelatedDetail *paymentRelatedDetails, NSString *errorMessage, id extraParam) {
+        
+        if (errorMessage) {
+            NSLog(@"Error Message:%@",errorMessage);
+        }
+        else{
+            NSLog(@"Payment related Details:%@",paymentRelatedDetails);
+//            PayUUIPaymentOptionViewController *paymentOptionVC = [self.storyboard instantiateViewControllerWithIdentifier:VIEW_CONTROLLER_IDENTIFIER_PAYMENT_OPTION];
+//            paymentOptionVC.paymentParam = self.paymentParam;
+//            paymentOptionVC.paymentRelatedDetail = paymentRelatedDetails;
+//            [self.navigationController pushViewController:paymentOptionVC animated:true];
+        }
+    }];
+}
 @end
