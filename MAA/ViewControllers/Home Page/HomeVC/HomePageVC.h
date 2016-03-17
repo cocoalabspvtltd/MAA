@@ -19,8 +19,6 @@
     IBOutlet UICollectionView *collectionViewHome;
     
     NSArray *arrayHomePageListing;
-    
-    NSArray *arrayHomePageListingImages;
 }
 
 @end

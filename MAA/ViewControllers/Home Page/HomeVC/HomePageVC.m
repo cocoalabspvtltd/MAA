@@ -31,9 +31,6 @@
     [self initialisation];
     [self addSubViews];
     [self getCategoriesApiCall];
-    arrayHomePageListing = [[NSArray alloc]initWithObjects:@"Audiologist", @"Alergist", @"Cardiologist", @"Dentist", @"Endocrinologist", @"Gynecologist", @"Neonatologist", @"Neurologist", @"Pediatrician", @"Physiologist", @"Plastic Surgeon", @"Surgeon", @"Endocrinologist", @"Alergist", @"Cardiologist", @"Dentist", @"Endocrinologist", @"Gynecologist", @"Neonatologist", @"Neurologist", nil];
-    
-    arrayHomePageListingImages = [[NSArray alloc]initWithObjects:@"4", @"5", @"4", @"5", @"4", @"5", @"4", @"5", @"4", @"5", @"4", @"5", @"4", @"5", @"4", @"5", @"4", @"5", @"4", @"5", @"4", nil];
     [self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
@@ -50,13 +47,6 @@
 }
 - (void)viewWillAppear:(BOOL)animated
 {
-    //    [self.navigationController setNavigationBarHidden:NO animated:NO];
-   // self.navigationController.navigationBarHidden = NO;
-    //    [self.navigationController setTitle:@"Top Specialities"];
-    //    self.navigationController.navigationBar.backgroundColor = [UIColor colorWithRed:234.0f green:63.0f blue:64.0f alpha:1];
-    //
-    //    self.tabBarController.tabBar.hidden = NO;
-    //    [super viewWillAppear:YES];
 }
 
 -(void)viewWillLayoutSubviews{
