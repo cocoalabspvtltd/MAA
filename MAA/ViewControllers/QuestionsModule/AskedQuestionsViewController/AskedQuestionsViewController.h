@@ -16,4 +16,6 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *askedQuestionsSearchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tblquestions;
 @property (weak, nonatomic) IBOutlet UIView *childview;
+@property (weak, nonatomic) IBOutlet UIImageView *noQuestionsBackImageView;
+@property (weak, nonatomic) IBOutlet UILabel *noQuestionsToShowLabel;
 @end

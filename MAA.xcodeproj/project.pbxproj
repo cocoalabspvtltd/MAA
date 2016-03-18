@@ -201,6 +201,7 @@
 		C09EF70E1C7625AB00806600 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF70D1C7625AB00806600 /* libc++.tbd */; };
 		C09F2C071C9C69C900DB040C /* no search result found.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F2C061C9C69C900DB040C /* no search result found.png */; };
 		C09F2C0E1C9C6FA800DB040C /* no appoinments.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F2C0D1C9C6FA800DB040C /* no appoinments.png */; };
+		C09F2C101C9C82F400DB040C /* no questions.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F2C0F1C9C82F400DB040C /* no questions.png */; };
 		C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830701C7D7BD0000A60C9 /* ImagesVC.m */; };
 		C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */; };
 		C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */; };
@@ -636,6 +637,7 @@
 		C09EF70D1C7625AB00806600 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		C09F2C061C9C69C900DB040C /* no search result found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no search result found.png"; sourceTree = "<group>"; };
 		C09F2C0D1C9C6FA800DB040C /* no appoinments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no appoinments.png"; sourceTree = "<group>"; };
+		C09F2C0F1C9C82F400DB040C /* no questions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no questions.png"; sourceTree = "<group>"; };
 		C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesVC.h; sourceTree = "<group>"; };
 		C0A830701C7D7BD0000A60C9 /* ImagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesVC.m; sourceTree = "<group>"; };
 		C0A830FD1C7DC6FF000A60C9 /* MedicalDocumentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsVC.h; sourceTree = "<group>"; };
@@ -1766,6 +1768,7 @@
 			children = (
 				C09F2C0D1C9C6FA800DB040C /* no appoinments.png */,
 				C09F2C061C9C69C900DB040C /* no search result found.png */,
+				C09F2C0F1C9C82F400DB040C /* no questions.png */,
 			);
 			path = NoResult;
 			sourceTree = "<group>";
@@ -2451,6 +2454,7 @@
 				C09EF6CB1C76211800806600 /* OTCameraCaptureResolution.html in Resources */,
 				9F5F0C401C665E8100F7E99D /* View.xib in Resources */,
 				C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */,
+				C09F2C101C9C82F400DB040C /* no questions.png in Resources */,
 				9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */,
 				C09EF6F51C76211800806600 /* NOTICE in Resources */,
 				C0BBC4A11C6E4046005083B1 /* ViewAppoin.xib in Resources */,

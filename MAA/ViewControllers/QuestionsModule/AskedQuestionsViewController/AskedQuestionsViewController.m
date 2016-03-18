@@ -144,6 +144,10 @@
     [self callingGetQuestionsWithText:searchText andFromDate:self.selectedfromDateString andToString:self.selectedToDateString andFilterId:self.selectedQuestiontype andSelectedCategoryIdString:self.selectedSubCategoryIdString];
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
+}
+
 #pragma mark - Search Bar Api's
 
 -(void)callingGetQuestionsWithText:(NSString *)getQuestionsText andFromDate:(NSString *)fromDateString andToString:(NSString *)toDateString andFilterId:(NSString *)filterIdString andSelectedCategoryIdString:(NSString *)categoryIdString{
@@ -172,6 +176,16 @@
         self.questionsArray = [responseObject valueForKey:Datakey];
         [self.questionsMutableArray addObjectsFromArray:self.questionsArray];
         self.offsetValue=self.offsetValue+self.limitValue;
+        if(self.questionsMutableArray.count == 0){
+            self.noQuestionsBackImageView.hidden = NO;
+            self.noQuestionsToShowLabel.hidden = NO;
+            self.tblquestions.hidden = YES;
+        }
+        else{
+            self.noQuestionsBackImageView.hidden = YES;
+            self.noQuestionsToShowLabel.hidden = YES;
+            self.tblquestions.hidden = NO;
+        }
         [self.tblquestions reloadData];
         [self.bottomProgressIndicatorView stopAnimating];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {

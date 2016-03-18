@@ -743,7 +743,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="E2AC5A2C-E037-4290-A1D2-A8B9E4A9DA80" scopeBarBackgroundImage="E2AC5A2C-E037-4290-A1D2-A8B9E4A9DA80" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="6DF71982-A436-46AE-A320-54BC6043B1D4" scopeBarBackgroundImage="6DF71982-A436-46AE-A320-54BC6043B1D4" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -756,7 +756,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="5A9C1C0E-E925-4F90-955F-FFBFF3C9DD89" scopeBarBackgroundImage="5A9C1C0E-E925-4F90-955F-FFBFF3C9DD89" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="AD107A0E-46AE-49F6-B6E9-757531FEDF27" scopeBarBackgroundImage="AD107A0E-46AE-49F6-B6E9-757531FEDF27" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -7896,17 +7896,73 @@
                                     <constraint firstItem="529-se-ULe" firstAttribute="leading" secondItem="vYp-sU-qMI" secondAttribute="leading" id="xsH-df-t71"/>
                                 </constraints>
                             </view>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no questions.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ln1-ZV-xwd">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No questions to show" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nlf-0e-sE4">
+                                <rect key="frame" x="-42" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
+                                <color key="textColor" red="0.78823529411764703" green="0.78823529411764703" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="AgW-90-NY7" firstAttribute="leading" secondItem="Ig1-Nj-mQd" secondAttribute="leading" id="3hf-XK-XHS"/>
                             <constraint firstAttribute="trailing" secondItem="vYp-sU-qMI" secondAttribute="trailing" id="4ab-2Q-6fK"/>
+                            <constraint firstItem="Ln1-ZV-xwd" firstAttribute="leading" secondItem="Ig1-Nj-mQd" secondAttribute="leadingMargin" constant="60" id="AUe-zC-XuW">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="nlf-0e-sE4" secondAttribute="trailing" constant="-20" id="DvL-z9-hWI"/>
+                            <constraint firstItem="nlf-0e-sE4" firstAttribute="top" secondItem="Ln1-ZV-xwd" secondAttribute="bottom" constant="69" id="EG3-Vl-QCC">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                             <constraint firstItem="vYp-sU-qMI" firstAttribute="top" secondItem="dc6-RH-MsI" secondAttribute="bottom" id="Gk0-1Q-Prp"/>
                             <constraint firstItem="EIz-Vv-Bmh" firstAttribute="top" secondItem="AgW-90-NY7" secondAttribute="bottom" id="Ic1-qw-721"/>
                             <constraint firstAttribute="trailing" secondItem="AgW-90-NY7" secondAttribute="trailing" id="KVE-Oi-cQY"/>
+                            <constraint firstItem="nlf-0e-sE4" firstAttribute="leading" secondItem="Ig1-Nj-mQd" secondAttribute="leadingMargin" constant="-20" id="R5j-46-QRz"/>
                             <constraint firstItem="AgW-90-NY7" firstAttribute="top" secondItem="vYp-sU-qMI" secondAttribute="bottom" id="Rkl-Rj-QaN"/>
                             <constraint firstItem="vYp-sU-qMI" firstAttribute="leading" secondItem="Ig1-Nj-mQd" secondAttribute="leading" id="XV4-k2-KBq"/>
+                            <constraint firstItem="Ln1-ZV-xwd" firstAttribute="top" secondItem="vYp-sU-qMI" secondAttribute="bottom" constant="228" id="a79-a9-p6c">
+                                <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ln1-ZV-xwd" secondAttribute="trailing" constant="60" id="oYN-Kw-hya">
+                                <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                            </constraint>
+                            <constraint firstItem="EIz-Vv-Bmh" firstAttribute="top" secondItem="Ln1-ZV-xwd" secondAttribute="bottom" constant="336" id="wi0-Uz-saQ">
+                                <variation key="heightClass=regular-widthClass=compact" constant="100"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Ln1-ZV-xwd"/>
+                                <exclude reference="nlf-0e-sE4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="AUe-zC-XuW"/>
+                                <exclude reference="a79-a9-p6c"/>
+                                <exclude reference="oYN-Kw-hya"/>
+                                <exclude reference="DvL-z9-hWI"/>
+                                <exclude reference="EG3-Vl-QCC"/>
+                                <exclude reference="R5j-46-QRz"/>
+                                <exclude reference="wi0-Uz-saQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Ln1-ZV-xwd"/>
+                                <include reference="nlf-0e-sE4"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="AUe-zC-XuW"/>
+                                <include reference="a79-a9-p6c"/>
+                                <include reference="oYN-Kw-hya"/>
+                                <include reference="DvL-z9-hWI"/>
+                                <include reference="EG3-Vl-QCC"/>
+                                <include reference="R5j-46-QRz"/>
+                                <include reference="wi0-Uz-saQ"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="Players.png" id="nxi-5t-8TD"/>
                     <navigationItem key="navigationItem" id="5Mf-eP-7Iy"/>
@@ -7915,6 +7971,8 @@
                         <outlet property="childview" destination="AgW-90-NY7" id="hGW-Vh-Dm5"/>
                         <outlet property="floatbutton" destination="aAN-0M-JRH" id="Deb-3Y-7Bf"/>
                         <outlet property="floatimage" destination="se7-1S-7Vh" id="kao-m9-LGQ"/>
+                        <outlet property="noQuestionsBackImageView" destination="Ln1-ZV-xwd" id="QNq-d7-gGP"/>
+                        <outlet property="noQuestionsToShowLabel" destination="nlf-0e-sE4" id="yFz-2Q-f0r"/>
                         <outlet property="tblquestions" destination="yUd-EZ-jkp" id="xhe-dO-hJS"/>
                         <segue destination="kPD-0y-MLa" kind="show" identifier="fwdsegue" id="UyN-2k-vaP"/>
                     </connections>
@@ -12851,7 +12909,7 @@
         <image name="1.png" width="688" height="853"/>
         <image name="2.jpg" width="256" height="256"/>
         <image name="5.png" width="260" height="288"/>
-        <image name="5A9C1C0E-E925-4F90-955F-FFBFF3C9DD89" width="310" height="78">
+        <image name="6DF71982-A436-46AE-A320-54BC6043B1D4" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -14516,7 +14574,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="E2AC5A2C-E037-4290-A1D2-A8B9E4A9DA80" width="310" height="78">
+        <image name="AD107A0E-46AE-49F6-B6E9-757531FEDF27" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -16222,6 +16280,7 @@ AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
         <image name="map_pin" width="56" height="56"/>
         <image name="microphone_off.png" width="256" height="256"/>
         <image name="no appoinments.png" width="512" height="512"/>
+        <image name="no questions.png" width="512" height="512"/>
         <image name="no search result found.png" width="512" height="512"/>
         <image name="note_white" width="29" height="29"/>
         <image name="online_button_green" width="56" height="56"/>
