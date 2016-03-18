@@ -72,6 +72,7 @@
 		C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0051C6A00F70095E2CC /* microphone_off.png */; };
 		C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0071C6A010A0095E2CC /* video_camera_none.png */; };
 		C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0091C6A011C0095E2CC /* phone_none.png */; };
+		C00F49DB1C9C11090086D164 /* newkiranViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00F49DA1C9C11090086D164 /* newkiranViewController.m */; };
 		C01420B51C99B18300467D8A /* AccountResetPWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01420B41C99B18300467D8A /* AccountResetPWVC.m */; };
 		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
 		C035E7451C885AA4007809BC /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C035E7441C885AA4007809BC /* line.png */; };
@@ -460,6 +461,8 @@
 		C005F0051C6A00F70095E2CC /* microphone_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_off.png; sourceTree = "<group>"; };
 		C005F0071C6A010A0095E2CC /* video_camera_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera_none.png; sourceTree = "<group>"; };
 		C005F0091C6A011C0095E2CC /* phone_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_none.png; sourceTree = "<group>"; };
+		C00F49D91C9C11090086D164 /* newkiranViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = newkiranViewController.h; path = MAA/newkiranViewController.h; sourceTree = "<group>"; };
+		C00F49DA1C9C11090086D164 /* newkiranViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = newkiranViewController.m; path = MAA/newkiranViewController.m; sourceTree = "<group>"; };
 		C01420B31C99B18300467D8A /* AccountResetPWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPWVC.h; sourceTree = "<group>"; };
 		C01420B41C99B18300467D8A /* AccountResetPWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPWVC.m; sourceTree = "<group>"; };
 		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
@@ -1360,6 +1363,8 @@
 				C065F6511C8EAF7C00E25726 /* chatReciever.xib */,
 				C065F6531C8EB22700E25726 /* TextChatVC.h */,
 				C065F6541C8EB22700E25726 /* TextChatVC.m */,
+				C00F49D91C9C11090086D164 /* newkiranViewController.h */,
+				C00F49DA1C9C11090086D164 /* newkiranViewController.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -2474,6 +2479,7 @@
 				9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */,
 				C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */,
 				C0D157FD1C9B134700FC1DE0 /* SearchFilterVC.m in Sources */,
+				C00F49DB1C9C11090086D164 /* newkiranViewController.m in Sources */,
 				9F6BF5401C396AB1006FB97A /* DoctorThirdTabTVC.m in Sources */,
 				C09EF6F71C76211800806600 /* README.md in Sources */,
 				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
