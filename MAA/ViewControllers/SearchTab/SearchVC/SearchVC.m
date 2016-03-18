@@ -99,6 +99,7 @@
         //SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
         self.locationSerchBar.text =[[self.locationArray objectAtIndex:indexPath.row] valueForKey:@"location"];
         self.locationIdString = [[self.locationArray objectAtIndex:indexPath.row] valueForKey:@"location_id"];
+        [self.doctorSearchBar becomeFirstResponder];
         //searchResults.locationId = self.locationIdString;
        // searchResults.isLocationSearch = YES;
        // [self.navigationController pushViewController:searchResults animated:YES];
@@ -166,6 +167,9 @@
   //  [self.searchTableView reloadData];
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
+}
 #pragma mark - Search Bar Api's
 
 -(void)callingSearchDoctorApiWithText:(NSString *)searchDoctorText{
@@ -178,6 +182,16 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchDoctorUrlString] withBody:getDoctorListMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         self.doctorsArray = [responseObject valueForKey:Datakey];
+        if(self.doctorsArray.count == 0){
+            self.noResultsLabel.hidden = NO;
+            self.noSearchResultsBackImageView.hidden = NO;
+            self.sewarchResultsTableView.hidden = YES;
+        }
+        else{
+            self.noResultsLabel.hidden = YES;
+            self.noSearchResultsBackImageView.hidden = YES;
+            self.sewarchResultsTableView.hidden = NO;
+        }
         [tableViewSearch reloadData];
         NSLog(@"Respoinse object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -195,6 +209,16 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Data:%@",responseObject);
         self.locationArray = [responseObject valueForKey:Datakey];
+        if(self.locationArray.count == 0){
+            self.noResultsLabel.hidden = NO;
+            self.noSearchResultsBackImageView.hidden = NO;
+            self.sewarchResultsTableView.hidden = YES;
+        }
+        else{
+            self.noResultsLabel.hidden = YES;
+            self.noSearchResultsBackImageView.hidden = YES;
+            self.sewarchResultsTableView.hidden = NO;
+        }
         [tableViewSearch reloadData];
         NSLog(@"Respoinse object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {

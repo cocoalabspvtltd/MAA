@@ -110,6 +110,8 @@
     cell.cellImageViewIcon.clipsToBounds = YES;
     cell.cellImageViewIcon.layer.cornerRadius = 30.00;
     cell.cellImageViewIcon.layer.masksToBounds = YES;
+    cell.cellImageViewIcon.layer.borderColor = [UIColor redColor].CGColor;
+    cell.cellImageViewIcon.layer.borderWidth = 1;
     cell.cellLabelTitle.text = [[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"];
     NSURL *imageUrl = [NSURL URLWithString:[[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
     [cell.cellImageViewIcon sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
