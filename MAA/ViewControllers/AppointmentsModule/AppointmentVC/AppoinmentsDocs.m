@@ -244,6 +244,16 @@ NSString *flag=0;
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.bottomProgressIndicatorView stopAnimating];
         [self.appointmentDoctorsMutableArray addObjectsFromArray:self.appointmentDoctorsArray];
+        if(self.appointmentDoctorsMutableArray.count == 0){
+            self.tblAppoinments.hidden = YES;
+            self.noAppointmentsLabel.hidden = NO;
+            self.noAppintmentsImageView.hidden  = NO;
+        }
+        else{
+            self.tblAppoinments.hidden = NO;
+            self.noAppointmentsLabel.hidden = YES;
+            self.noAppintmentsImageView.hidden  = YES;
+        }
         [self.tblAppoinments reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [self.bottomProgressIndicatorView stopAnimating];

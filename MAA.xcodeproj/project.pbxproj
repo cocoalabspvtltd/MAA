@@ -199,6 +199,8 @@
 		C09EF70A1C76234300806600 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF7091C76234300806600 /* CoreVideo.framework */; };
 		C09EF70C1C76249C00806600 /* OpenTok.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF70B1C76249C00806600 /* OpenTok.framework */; };
 		C09EF70E1C7625AB00806600 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = C09EF70D1C7625AB00806600 /* libc++.tbd */; };
+		C09F2C071C9C69C900DB040C /* no search result found.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F2C061C9C69C900DB040C /* no search result found.png */; };
+		C09F2C0E1C9C6FA800DB040C /* no appoinments.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F2C0D1C9C6FA800DB040C /* no appoinments.png */; };
 		C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830701C7D7BD0000A60C9 /* ImagesVC.m */; };
 		C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */; };
 		C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */; };
@@ -632,6 +634,8 @@
 		C09EF7091C76234300806600 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		C09EF70B1C76249C00806600 /* OpenTok.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenTok.framework; path = "OpenTok-iOS-2.7.1/OpenTok.framework"; sourceTree = "<group>"; };
 		C09EF70D1C7625AB00806600 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		C09F2C061C9C69C900DB040C /* no search result found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no search result found.png"; sourceTree = "<group>"; };
+		C09F2C0D1C9C6FA800DB040C /* no appoinments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no appoinments.png"; sourceTree = "<group>"; };
 		C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesVC.h; sourceTree = "<group>"; };
 		C0A830701C7D7BD0000A60C9 /* ImagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesVC.m; sourceTree = "<group>"; };
 		C0A830FD1C7DC6FF000A60C9 /* MedicalDocumentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsVC.h; sourceTree = "<group>"; };
@@ -1077,6 +1081,7 @@
 		9F5F0C061C664EDA00F7E99D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C09F2C051C9C69C900DB040C /* NoResult */,
 				C092EC041C80B80200F7B18B /* Common */,
 				C05BBF411C6F8B4300A308E8 /* PhtoGrid */,
 				C0BBC4A31C6E5B60005083B1 /* Appointmentmodule */,
@@ -1756,6 +1761,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		C09F2C051C9C69C900DB040C /* NoResult */ = {
+			isa = PBXGroup;
+			children = (
+				C09F2C0D1C9C6FA800DB040C /* no appoinments.png */,
+				C09F2C061C9C69C900DB040C /* no search result found.png */,
+			);
+			path = NoResult;
+			sourceTree = "<group>";
+		};
 		C0A830FC1C7DC6FF000A60C9 /* MedicalDocumentsVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2330,6 +2344,7 @@
 				C09EF6D81C76211800806600 /* _normalize.scss in Resources */,
 				C035E7451C885AA4007809BC /* line.png in Resources */,
 				C09EF6DA1C76211800806600 /* _print.scss in Resources */,
+				C09F2C0E1C9C6FA800DB040C /* no appoinments.png in Resources */,
 				C09EF6D91C76211800806600 /* _object.scss in Resources */,
 				C0BBC4B11C6E5B8E005083B1 /* chat-black.png in Resources */,
 				C09EF6EA1C76211800806600 /* OTPublisherKitAudioLevelDelegate.html in Resources */,
@@ -2381,6 +2396,7 @@
 				C0D1581D1C9B1B9700FC1DE0 /* PayUSDKInfo.plist in Resources */,
 				C09EF6DF1C76211800806600 /* hierarchy.html in Resources */,
 				C09EF6E81C76211800806600 /* OTAudioDevice.html in Resources */,
+				C09F2C071C9C69C900DB040C /* no search result found.png in Resources */,
 				C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */,
 				C09EF6C21C76211800806600 /* OTSession.html in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
