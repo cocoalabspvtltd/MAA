@@ -101,6 +101,7 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+
 #pragma mark - Calling Appointment Detail Api
 
 -(void)getAppointmentsDetailsApi{
@@ -114,6 +115,7 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getPatientsAppointmentsDetailUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Object;%@",responseObject);
+        [self findingnumberOfMinutesInbetweentwoDates];
         [self settingDoctorDetailsWithDictionary:[[responseObject valueForKey:Datakey] valueForKey:@"doctor_details"]];
         if(!([[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"] == [NSNull null])){
             self.feesLabel.text = [[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"];
@@ -146,6 +148,20 @@
         UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [erroralert show];
     }];
+}
+
+-(void)findingnumberOfMinutesInbetweentwoDates{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss Z"];
+    NSDate *date1 = [dateFormatter dateFromString:@"2010-01-01 11:00:00 +0000"];
+    NSDate *date2 = [dateFormatter dateFromString:@"2010-01-01 15:30:00 +0000"];
+    NSLog(@"Date n1:%@",date1);
+    NSLog(@"Date 2:%@",date2);
+    NSTimeInterval secondsBetween = [date2 timeIntervalSinceDate:date1];
+    
+    int numberOfMinutes = secondsBetween / 60;
+    
+    NSLog(@"There are %d minutes in between the two dates.", numberOfMinutes);
 }
 
 -(void)settingDoctorDetailsWithDictionary:(id)doctorDetails{

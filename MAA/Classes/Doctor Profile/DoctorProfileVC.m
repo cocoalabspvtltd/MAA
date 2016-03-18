@@ -114,7 +114,9 @@
     else{
         self.consultNowButton.hidden = YES;
     }
-    self.doctorNameLabel.text = [entityDetails valueForKey:@"name"];
+    if(![[entityDetails valueForKey:@"name"] isEqual:[NSNull null]]){
+        self.doctorNameLabel.text = [entityDetails valueForKey:@"name"];
+    }
     if(!([entityDetails valueForKey:@"tagline"] == [NSNull null])){
         self.taglineLabel.text = [entityDetails valueForKey:@"tagline"];
     }

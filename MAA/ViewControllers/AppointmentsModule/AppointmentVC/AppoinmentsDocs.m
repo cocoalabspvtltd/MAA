@@ -13,7 +13,7 @@
 #import "AppoinmentDetailVC.h"
 #import "AppointmentTableViewCell.h"
 
-@interface AppoinmentsDocs ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate,FilterVCDelegate>
+@interface AppoinmentsDocs ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate,FilterVCDelegate,UIGestureRecognizerDelegate>
 {
     NSArray *DDL;
     UILabel *name;
@@ -43,10 +43,34 @@ NSString *flag=0;
     _tblAppoinments.delegate=self;
     [self initialisation];
     [self addSubViews];
+    [self addingTapGesture];
     DDL=@[@"Any",@"Audio Call",@"Video Call",@"Direct Appoinment",@"Chat"];
     
     [self.tblAppoinments registerNib:[UINib nibWithNibName:@"ViewAppoin" bundle:nil] forCellReuseIdentifier:AppointmentTableViewCellIdentifier];
     // Do any additional setup after loading the view.
+}
+
+
+-(void)addingTapGesture{
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapaction:)];
+    [self.view addGestureRecognizer:tapGesture];
+    tapGesture.delegate = self;
+}
+
+-(void)singleTapaction:(UITapGestureRecognizer *)tapGesture{
+    [self.view endEditing:YES];
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if ([touch.view isDescendantOfView:self.tblAppoinments]) {
+        
+        // Don't let selections of auto-complete entries fire the
+        // gesture recognizer
+        return NO;
+    }
+    
+    return YES;
 }
 
 -(void)initialisation{
@@ -164,6 +188,10 @@ NSString *flag=0;
     self.searchTextString = searchText;
     [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:self.appointmenttypeString andStatus:self.appointmentStatusString andFromDate:self.fromDateString andToDateString:self.toDateString];
 }
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
+}
 /*
 #pragma mark - Navigation
 
@@ -263,5 +291,6 @@ NSString *flag=0;
     self.appointmentStatusString = statusString;
    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:appintmentType andStatus:statusString andFromDate:fromDateString andToDateString:toDateString];
 }
+
 
 @end
