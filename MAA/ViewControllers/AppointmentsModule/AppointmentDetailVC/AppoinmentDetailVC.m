@@ -28,16 +28,27 @@
 @property (nonatomic, strong) NotesPopUp *notesPopupView;
 @property (nonatomic, strong) id invoiceDetails;
 @property (nonatomic, strong) NSString *notesString;
+
+@property (nonatomic, strong) NSString *statusString;
+@property (nonatomic, strong) NSString *durationString;
+@property (nonatomic, strong) NSString *timeStampString;
+@property (nonatomic, strong) NSString *cancelDurationString;
+@property (nonatomic, assign) BOOL whetherTimerStop;
 @end
 
 @implementation AppoinmentDetailVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
     [self addingToptransparentView];
     [self getAppointmentsDetailsApi];
     
     // Do any additional setup after loading the view.
+}
+
+-(void)initialisation{
+    self.whetherTimerStop = NO;
 }
 
 -(void)viewWillLayoutSubviews{
@@ -120,9 +131,13 @@
             self.feesLabel.text = [[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"];
         }
         [self settingTypeWithtypeString:[[responseObject valueForKey:Datakey] valueForKey:@"type"]];
-        [self settingStatusWithstatuString:[[responseObject valueForKey:Datakey] valueForKey:@"status"]];
-        [self settingTimeStampString:[[responseObject valueForKey:Datakey] valueForKey:@"timestamp"]];
-        [self checkingCurrentTimingsWithTimeStampString:[[responseObject valueForKey:Datakey] valueForKey:@"timestamp"] andDuration:[[responseObject valueForKey:Datakey] valueForKey:@"duration"]];
+        self.statusString = [[responseObject valueForKey:Datakey] valueForKey:@"status"];
+        self.durationString = [[responseObject valueForKey:Datakey] valueForKey:@"duration"];
+        self.timeStampString = [[responseObject valueForKey:Datakey] valueForKey:@"timestamp"];
+        self.cancelDurationString = [[responseObject valueForKey:Datakey] valueForKey:@"cancellation_interval"];
+        [self settingStatusWithstatuString:self.statusString withCancellationInterval:self.timeStampString andDurationString:self.durationString andTimeStampString:self.timeStampString];
+        [self addingTimerForCheckingAppointmentStatus];
+        [self settingTimeStampString:self.timeStampString];
         self.previousAppointmentsArray = [[responseObject valueForKey:Datakey] valueForKey:@"previous_appointments"];
         [self.previousAppointmentTableview reloadData];
         if(self.previousAppointmentsArray.count == 0){
@@ -175,10 +190,6 @@
         self.appontmentTypeLabel.text = @"Direct Appointment";
         self.chatHistoryButton.hidden = YES;
         self.startAppointmentButton.hidden = YES;
-//        self.playbutton.hidden = YES;
-//        self.playImageView.hidden = YES;
-//        self.closeButton.hidden = YES;
-//        self.closeImageView.hidden = YES;
         
     }
     else if ([typeString isEqualToString:@"2"]){
@@ -197,58 +208,67 @@
         self.chatHistoryButton.hidden = YES;
     }
 }
-
--(void)settingStatusWithstatuString:(NSString *)statusString{
+-(void)addingTimerForCheckingAppointmentStatus{
+    [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(runMethod:) userInfo:nil repeats:YES];
+}
+-(void)runMethod:(NSTimer *)timer{
+    if(!self.whetherTimerStop){
+        [self settingStatusWithstatuString:self.statusString withCancellationInterval:self.timeStampString andDurationString:self.durationString andTimeStampString:self.timeStampString];
+    }
+    else{
+        [timer invalidate];
+    }
+}
+-(void)settingStatusWithstatuString:(NSString *)statusString withCancellationInterval:(NSString *)cancelationTimeString andDurationString:(NSString *)durationTimeString andTimeStampString:(NSString *)timeStampString{
     if([statusString isEqualToString:@"1"]){
         [self.startAppointmentButton setTitle:@"START APPOINTMENT" forState:UIControlStateNormal];
          self.chatHistoryButton.hidden = YES;
         self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:0 green:0.588 blue:0.533 alpha:1];
+        [self checkingCurrentTimingsWithTimeStampString:timeStampString andDuration:durationTimeString andCancellationIntervalString:cancelationTimeString];
     }
     else if ([statusString isEqualToString:@"2"]){
         if(![self.appontmentTypeLabel.text isEqualToString:@"Text Chat"]){
             self.chatHistoryButton.hidden = YES;
         }
+        self.whetherTimerStop = YES;
         [self.startAppointmentButton setTitle:@"PRESCRIPTIONS" forState:UIControlStateNormal];
         self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:0.827 green:0.184 blue:0.184 alpha:1];
     }
     else if ([statusString isEqualToString:@"3"]){
         self.startAppointmentButton.hidden = YES;
          self.chatHistoryButton.hidden = YES;
+        self.whetherTimerStop = YES;
         self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:1 green:0.757 blue:0.027 alpha:1];
     }
 }
 
--(void)settingTimeStampString:(NSString *)timeStampString{
-    NSLog(@"Time Stamp String:%@",timeStampString);
-    [self findingnumberOfMinutesInbetweenCurrentDateandDestinationDate:timeStampString];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
-    NSDate *currentDate = [dateFormatter dateFromString:timeStampString];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
-    [self comparingDateWithToday:timeStampString];
-    NSLog(@"ConvertedDate:%@",[dateFormatter stringFromDate:currentDate]);
-    [dateFormatter setDateFormat:@"MMM"];
-    NSString *monthFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
-    self.monthLabel.text = monthFromCurrentDateString;
-    [dateFormatter setDateFormat:@"HH:mm a"];
-    NSString *timeStringFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
-    self.timeLabel.text = timeStringFromCurrentDateString;
-    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
-    [self splittingDate:currentDate];
-    
-}
-
--(void)checkingCurrentTimingsWithTimeStampString:(NSString *)timeStampString andDuration:(NSString *)durationString{
+-(void)checkingCurrentTimingsWithTimeStampString:(NSString *)timeStampString andDuration:(NSString *)durationString andCancellationIntervalString:(NSString *)cacelDurationString{
     int duration = [durationString intValue];
+    int cancelDuration = [cacelDurationString intValue];
     int numberOfMinutes = [self findingnumberOfMinutesInbetweenCurrentDateandDestinationDate:timeStampString];
+    NSLog(@"Number Of Minutes:%d",numberOfMinutes);
+    NSLog(@"Duration:%@",durationString);
+    NSLog(@"Cancel Duration:%d",cancelDuration);
     if(numberOfMinutes>0){
-        if(numberOfMinutes<duration){
+        if(numberOfMinutes>cancelDuration){
+            [self.startAppointmentButton setTitle:@"Cancel Appointment" forState:UIControlStateNormal];
+            self.startAppointmentButton.hidden = NO;
+        }
+        else{
+            self.startAppointmentButton.hidden = YES;
+        }
+    }
+    else{
+        numberOfMinutes = numberOfMinutes*-1;
+        if(numberOfMinutes>duration){
+            self.startAppointmentButton.hidden = NO;
+            [self.startAppointmentButton setTitle:@"Prescriptions" forState:UIControlStateNormal];
+        }
+        else{
             self.startAppointmentButton.hidden = NO;
         }
     }
-    NSLog(@"Number Of Minutes:%d",numberOfMinutes);
-    NSLog(@"Duration:%@",durationString);
+   
 }
 -(int)findingnumberOfMinutesInbetweenCurrentDateandDestinationDate:(NSString *)destinationDateString{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -266,6 +286,26 @@
     int numberOfMinutes = secondsBetween / 60;
     return numberOfMinutes;
     NSLog(@"There are %d minutes in between the two dates.", numberOfMinutes);
+}
+
+-(void)settingTimeStampString:(NSString *)timeStampString{
+    NSLog(@"Time Stamp String:%@",timeStampString);
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
+    NSDate *currentDate = [dateFormatter dateFromString:timeStampString];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
+    [self comparingDateWithToday:timeStampString];
+    NSLog(@"ConvertedDate:%@",[dateFormatter stringFromDate:currentDate]);
+    [dateFormatter setDateFormat:@"MMM"];
+    NSString *monthFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
+    self.monthLabel.text = monthFromCurrentDateString;
+    [dateFormatter setDateFormat:@"HH:mm a"];
+    NSString *timeStringFromCurrentDateString = [dateFormatter stringFromDate:currentDate];
+    self.timeLabel.text = timeStringFromCurrentDateString;
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    [self splittingDate:currentDate];
+    
 }
 
 -(void)splittingDate:(NSDate *)timeDate{
