@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BaseViewController.h"
-
+@protocol AppointmentDetailDelegate;
 @interface AppoinmentDetailVC : BaseViewController
 - (IBAction)Back:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *leftStatusImageview;
@@ -27,4 +27,11 @@
 @property (weak, nonatomic) IBOutlet UIButton *chatHistoryButton;
 @property (weak, nonatomic) IBOutlet UILabel *noPrevoisappointmentsLAbel;
 @property (weak, nonatomic) IBOutlet UIImageView *appointmentTypeimageview;
+@property (nonatomic, assign) id<AppointmentDetailDelegate>appointmentDetailDelegate;
+@property (nonatomic, assign) NSInteger selectedIndex;
+@end
+@protocol AppointmentDetailDelegate <NSObject>
+
+-(void)appointmentCencelledDelagateWithSelectedIndex:(NSInteger)selectedIndex;
+
 @end

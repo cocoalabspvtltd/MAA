@@ -13,7 +13,7 @@
 #import "AppoinmentDetailVC.h"
 #import "AppointmentTableViewCell.h"
 
-@interface AppoinmentsDocs ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate,FilterVCDelegate,UIGestureRecognizerDelegate>
+@interface AppoinmentsDocs ()<UIPickerViewDelegate,UIPickerViewDelegate,UISearchBarDelegate,UIScrollViewDelegate,FilterVCDelegate,UIGestureRecognizerDelegate,AppointmentDetailDelegate>
 {
     NSArray *DDL;
     UILabel *name;
@@ -172,7 +172,9 @@ NSString *flag=0;
         
         AppoinmentDetailVC *appointmentDetailVC = (AppoinmentDetailVC *)[storyboard instantiateViewControllerWithIdentifier:@"AppoinmentDetailVC"];
         appointmentDetailVC.hidesBottomBarWhenPushed = YES;
+        appointmentDetailVC.selectedIndex = indexPath.row;
         appointmentDetailVC.appointmentIdString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+        appointmentDetailVC.appointmentDetailDelegate = self;
         [self.navigationController pushViewController:appointmentDetailVC animated:YES];
     }
     
@@ -300,6 +302,12 @@ NSString *flag=0;
     self.appointmenttypeString = appintmentType;
     self.appointmentStatusString = statusString;
    [self getSearchDoctorNamesForAppointmentesApiCallWithSearchText:self.searchTextString andAppointmentType:appintmentType andStatus:statusString andFromDate:fromDateString andToDateString:toDateString];
+}
+
+#pragma mark - Appointment Detail Delegate
+-(void)appointmentCencelledDelagateWithSelectedIndex:(NSInteger)selectedIndex{
+    AppointmentTableViewCell *apointmentsCell = (AppointmentTableViewCell *)[self.tblAppoinments cellForRowAtIndexPath:[NSIndexPath indexPathForRow:selectedIndex inSection:0]];
+    apointmentsCell.leftStatusImageView.backgroundColor = [UIColor colorWithRed:1 green:0.757 blue:0.027 alpha:1];
 }
 
 

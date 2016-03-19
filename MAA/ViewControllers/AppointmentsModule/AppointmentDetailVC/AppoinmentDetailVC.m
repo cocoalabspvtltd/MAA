@@ -6,6 +6,10 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#define CancelAppointmentTitleString @"Cancel Appointment"
+#define StartAppointmentitleString @"START APPOINTMENT"
+#define PrescriptonstitltString @"PRESCRIPTIONS"
+
 #import "PayU_iOS_CoreSDK.h"
 #import "PayUSAGetHashes.h"
 #import "PayUSAOneTapToken.h"
@@ -221,7 +225,7 @@
 }
 -(void)settingStatusWithstatuString:(NSString *)statusString withCancellationInterval:(NSString *)cancelationTimeString andDurationString:(NSString *)durationTimeString andTimeStampString:(NSString *)timeStampString{
     if([statusString isEqualToString:@"1"]){
-        [self.startAppointmentButton setTitle:@"START APPOINTMENT" forState:UIControlStateNormal];
+        [self.startAppointmentButton setTitle:StartAppointmentitleString forState:UIControlStateNormal];
          self.chatHistoryButton.hidden = YES;
         self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:0 green:0.588 blue:0.533 alpha:1];
         [self checkingCurrentTimingsWithTimeStampString:timeStampString andDuration:durationTimeString andCancellationIntervalString:cancelationTimeString];
@@ -231,7 +235,7 @@
             self.chatHistoryButton.hidden = YES;
         }
         self.whetherTimerStop = YES;
-        [self.startAppointmentButton setTitle:@"PRESCRIPTIONS" forState:UIControlStateNormal];
+        [self.startAppointmentButton setTitle:PrescriptonstitltString forState:UIControlStateNormal];
         self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:0.827 green:0.184 blue:0.184 alpha:1];
     }
     else if ([statusString isEqualToString:@"3"]){
@@ -251,7 +255,7 @@
     NSLog(@"Cancel Duration:%d",cancelDuration);
     if(numberOfMinutes>0){
         if(numberOfMinutes>cancelDuration){
-            [self.startAppointmentButton setTitle:@"Cancel Appointment" forState:UIControlStateNormal];
+            [self.startAppointmentButton setTitle:CancelAppointmentTitleString forState:UIControlStateNormal];
             self.startAppointmentButton.hidden = NO;
         }
         else{
@@ -263,7 +267,7 @@
         if(numberOfMinutes>duration){
             self.startAppointmentButton.hidden = NO;
             self.whetherTimerStop = YES;
-            [self.startAppointmentButton setTitle:@"Prescriptions" forState:UIControlStateNormal];
+            [self.startAppointmentButton setTitle:PrescriptonstitltString forState:UIControlStateNormal];
         }
         else{
             self.startAppointmentButton.hidden = NO;
@@ -375,13 +379,87 @@
 - (IBAction)chatHistorybuttonAction:(UIButton *)sender {
 }
 
-
-
-
 - (IBAction)startappointmentbuttonAction:(UIButton *)sender {
-    [self intialisingPayUmoneyParametes];
+    NSString *buttonTitle = sender.titleLabel.text;
+    NSLog(@"Button Title:%@",buttonTitle);
+    if([buttonTitle isEqualToString:CancelAppointmentTitleString]){
+      [self methodForCancelAppointment];
+    }
+    else if ([buttonTitle isEqualToString:PrescriptonstitltString]){
+        
+    }
+    else if ([buttonTitle isEqualToString:StartAppointmentitleString]){
+        
+    }
+    // [self intialisingPayUmoneyParametes];
+    
 }
 
+
+-(void)methodForCancelAppointment{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:@"Do you want to cancel this appointment"
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   [self callingCancelAppointmentApi];
+                                                   
+                                               }];
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [alert addAction:cancel];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)callingCancelAppointmentApi{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSLog(@"Access Token:%@",accessToken);
+    NSString *cancelsAppointmentUrlString = [Baseurl stringByAppendingString:CancelAppointmnetUrl];
+    NSMutableDictionary *cancelAppntmtMutableDictionary = [[NSMutableDictionary alloc] init];
+    [cancelAppntmtMutableDictionary  setValue:accessToken forKey:@"token"];
+    [cancelAppntmtMutableDictionary  setValue:self.appointmentIdString forKey:@"app_id"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:cancelsAppointmentUrlString] withBody:cancelAppntmtMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object;%@",responseObject);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self performActionAfterCancellation];
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        
+        NSLog(@"Error Response :%@",errorResponse);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+
+}
+
+-(void)performActionAfterCancellation{
+    if(self.appointmentDetailDelegate && [self.appointmentDetailDelegate respondsToSelector:@selector(appointmentCencelledDelagateWithSelectedIndex:)]){
+        [self.appointmentDetailDelegate appointmentCencelledDelagateWithSelectedIndex:self.selectedIndex];
+    }
+    self.startAppointmentButton.hidden = YES;
+    self.leftStatusImageview.backgroundColor = [UIColor colorWithRed:1 green:0.757 blue:0.027 alpha:1];
+    self.whetherTimerStop = YES;
+    
+}
 #pragma mark - Initialising Payu money parameters
 
 -(void)intialisingPayUmoneyParametes{
