@@ -31,6 +31,7 @@
 #define GetUserAppointmentesUrl @"get_patient_appointments"
 #define GetuserAppointmentDetailsurl @"get_appointment_details"
 #define CancelAppointmnetUrl @"cancel_appointment"
+#define StartAppointmentUrl @"start_appointment"
 #define GetFilterInfoUrl @"get_filter_info"
 #define GetQuestionsApiUrl @"get_questions"
 #define AskQuestionUrl @"ask_question"

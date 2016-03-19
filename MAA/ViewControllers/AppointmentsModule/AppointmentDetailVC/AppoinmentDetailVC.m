@@ -386,10 +386,9 @@
       [self methodForCancelAppointment];
     }
     else if ([buttonTitle isEqualToString:PrescriptonstitltString]){
-        
     }
     else if ([buttonTitle isEqualToString:StartAppointmentitleString]){
-        
+        [self callingStartAppointmentApi];
     }
     // [self intialisingPayUmoneyParametes];
     
@@ -451,6 +450,36 @@
 
 }
 
+-(void)callingStartAppointmentApi{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSLog(@"Access Token:%@",accessToken);
+    NSString *startAppointmentUrlString = [Baseurl stringByAppendingString:StartAppointmentUrl];
+    NSMutableDictionary *startAppntmtMutableDictionary = [[NSMutableDictionary alloc] init];
+    [startAppntmtMutableDictionary  setValue:accessToken forKey:@"token"];
+    [startAppntmtMutableDictionary  setValue:self.appointmentIdString forKey:@"appointment_id"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:startAppointmentUrlString] withBody:startAppntmtMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self performActionAfterAppointmentStartApiWithResponseDetails:[responseObject valueForKey:Datakey]];
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        
+        NSLog(@"Error Response :%@",errorResponse);
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+    
+}
+
 -(void)performActionAfterCancellation{
     if(self.appointmentDetailDelegate && [self.appointmentDetailDelegate respondsToSelector:@selector(appointmentCencelledDelagateWithSelectedIndex:)]){
         [self.appointmentDetailDelegate appointmentCencelledDelagateWithSelectedIndex:self.selectedIndex];
@@ -460,6 +489,11 @@
     self.whetherTimerStop = YES;
     
 }
+
+-(void)performActionAfterAppointmentStartApiWithResponseDetails:(id)appointmentDetails{
+    NSLog(@"Appointment Details:%@",appointmentDetails);
+}
+
 #pragma mark - Initialising Payu money parameters
 
 -(void)intialisingPayUmoneyParametes{
