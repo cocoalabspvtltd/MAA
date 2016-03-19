@@ -115,7 +115,6 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getPatientsAppointmentsDetailUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Object;%@",responseObject);
-        [self findingnumberOfMinutesInbetweentwoDates];
         [self settingDoctorDetailsWithDictionary:[[responseObject valueForKey:Datakey] valueForKey:@"doctor_details"]];
         if(!([[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"] == [NSNull null])){
             self.feesLabel.text = [[[responseObject valueForKey:Datakey] valueForKey:@"invoice"] valueForKey:@"amount"];
@@ -123,13 +122,17 @@
         [self settingTypeWithtypeString:[[responseObject valueForKey:Datakey] valueForKey:@"type"]];
         [self settingStatusWithstatuString:[[responseObject valueForKey:Datakey] valueForKey:@"status"]];
         [self settingTimeStampString:[[responseObject valueForKey:Datakey] valueForKey:@"timestamp"]];
+        [self checkingCurrentTimingsWithTimeStampString:[[responseObject valueForKey:Datakey] valueForKey:@"timestamp"] andDuration:[[responseObject valueForKey:Datakey] valueForKey:@"duration"]];
         self.previousAppointmentsArray = [[responseObject valueForKey:Datakey] valueForKey:@"previous_appointments"];
         [self.previousAppointmentTableview reloadData];
         if(self.previousAppointmentsArray.count == 0){
             self.noPrevoisappointmentsLAbel.hidden = NO;
         }
         self.invoiceDetails = [[responseObject valueForKey:Datakey] valueForKey:@"invoice"];
-        self.notesString = [[responseObject valueForKey:Datakey] valueForKey:@"notes"];
+        if(![[[responseObject valueForKey:Datakey] valueForKey:@"notes"] isEqual:[NSNull null]]){
+            self.notesString = [[responseObject valueForKey:Datakey] valueForKey:@"notes"];
+        }
+        
         if(self.notesString.length == 0){
             self.noteButton.hidden = YES;
         }
@@ -150,19 +153,7 @@
     }];
 }
 
--(void)findingnumberOfMinutesInbetweentwoDates{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat: @"yyyy-MM-dd HH:mm:ss Z"];
-    NSDate *date1 = [dateFormatter dateFromString:@"2010-01-01 11:00:00 +0000"];
-    NSDate *date2 = [dateFormatter dateFromString:@"2010-01-01 15:30:00 +0000"];
-    NSLog(@"Date n1:%@",date1);
-    NSLog(@"Date 2:%@",date2);
-    NSTimeInterval secondsBetween = [date2 timeIntervalSinceDate:date1];
-    
-    int numberOfMinutes = secondsBetween / 60;
-    
-    NSLog(@"There are %d minutes in between the two dates.", numberOfMinutes);
-}
+
 
 -(void)settingDoctorDetailsWithDictionary:(id)doctorDetails{
     self.doctorNameLabel.text = [doctorDetails valueForKey:@"name"];
@@ -183,6 +174,7 @@
         self.appointmentTypeimageview.image = [UIImage imageNamed:@"direct-apnt-black"];
         self.appontmentTypeLabel.text = @"Direct Appointment";
         self.chatHistoryButton.hidden = YES;
+        self.startAppointmentButton.hidden = YES;
 //        self.playbutton.hidden = YES;
 //        self.playImageView.hidden = YES;
 //        self.closeButton.hidden = YES;
@@ -228,6 +220,7 @@
 
 -(void)settingTimeStampString:(NSString *)timeStampString{
     NSLog(@"Time Stamp String:%@",timeStampString);
+    [self findingnumberOfMinutesInbetweenCurrentDateandDestinationDate:timeStampString];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
@@ -244,6 +237,35 @@
     [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
     [self splittingDate:currentDate];
     
+}
+
+-(void)checkingCurrentTimingsWithTimeStampString:(NSString *)timeStampString andDuration:(NSString *)durationString{
+    int duration = [durationString intValue];
+    int numberOfMinutes = [self findingnumberOfMinutesInbetweenCurrentDateandDestinationDate:timeStampString];
+    if(numberOfMinutes>0){
+        if(numberOfMinutes<duration){
+            self.startAppointmentButton.hidden = NO;
+        }
+    }
+    NSLog(@"Number Of Minutes:%d",numberOfMinutes);
+    NSLog(@"Duration:%@",durationString);
+}
+-(int)findingnumberOfMinutesInbetweenCurrentDateandDestinationDate:(NSString *)destinationDateString{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
+    NSDate *currentDate = [dateFormatter dateFromString:destinationDateString];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
+    // NSDate *date1 = [dateFormatter dateFromString:@"2010-01-01 11:00:00 +0000"];
+    // NSDate *date2 = [dateFormatter dateFromString:@"2010-01-01 15:30:00 +0000"];
+    NSDate *date1 = [NSDate date];
+    NSDate *date2 = currentDate;
+    NSLog(@"Date n1:%@",date1);
+    NSLog(@"Date 2:%@",date2);
+    NSTimeInterval secondsBetween = [date2 timeIntervalSinceDate:date1];
+    int numberOfMinutes = secondsBetween / 60;
+    return numberOfMinutes;
+    NSLog(@"There are %d minutes in between the two dates.", numberOfMinutes);
 }
 
 -(void)splittingDate:(NSDate *)timeDate{
