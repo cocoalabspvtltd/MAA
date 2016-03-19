@@ -12,8 +12,6 @@
 @interface AppoinmentsDocs : BaseViewController<UITableViewDataSource,UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tblAppoinments;
 @property (weak, nonatomic) IBOutlet UIButton *btnFilter;
-@property (weak, nonatomic) IBOutlet UIImageView *noAppintmentsImageView;
-@property (weak, nonatomic) IBOutlet UILabel *noAppointmentsLabel;
 @property (weak, nonatomic) IBOutlet UIView *noResultsView;
 
 - (IBAction)Filter:(id)sender;

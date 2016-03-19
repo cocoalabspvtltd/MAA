@@ -183,14 +183,10 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         self.doctorsArray = [responseObject valueForKey:Datakey];
         if(self.doctorsArray.count == 0){
-            self.noResultsLabel.hidden = NO;
-            self.noSearchResultsBackImageView.hidden = NO;
             self.noResultsView.hidden=NO;
             self.sewarchResultsTableView.hidden = YES;
         }
         else{
-            self.noResultsLabel.hidden = YES;
-            self.noSearchResultsBackImageView.hidden = YES;
             self.noResultsView.hidden=YES;
             self.sewarchResultsTableView.hidden = NO;
         }
@@ -212,13 +208,11 @@
         NSLog(@"Response Data:%@",responseObject);
         self.locationArray = [responseObject valueForKey:Datakey];
         if(self.locationArray.count == 0){
-            self.noResultsLabel.hidden = NO;
-            self.noSearchResultsBackImageView.hidden = NO;
+            self.noResultsView.hidden = NO;
             self.sewarchResultsTableView.hidden = YES;
         }
         else{
-            self.noResultsLabel.hidden = YES;
-            self.noSearchResultsBackImageView.hidden = YES;
+            self.noResultsView.hidden = YES;
             self.sewarchResultsTableView.hidden = NO;
         }
         [tableViewSearch reloadData];

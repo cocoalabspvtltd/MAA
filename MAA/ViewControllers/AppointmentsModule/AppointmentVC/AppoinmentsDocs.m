@@ -248,13 +248,11 @@ NSString *flag=0;
         [self.appointmentDoctorsMutableArray addObjectsFromArray:self.appointmentDoctorsArray];
         if(self.appointmentDoctorsMutableArray.count == 0){
             self.tblAppoinments.hidden = YES;
-            self.noAppointmentsLabel.hidden = NO;
-            self.noAppintmentsImageView.hidden  = NO;
+            self.noResultsView.hidden = NO;
         }
         else{
             self.tblAppoinments.hidden = NO;
-            self.noAppointmentsLabel.hidden = YES;
-            self.noAppintmentsImageView.hidden  = YES;
+            self.noResultsView.hidden = YES;
         }
         [self.tblAppoinments reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {

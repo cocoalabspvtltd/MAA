@@ -20,8 +20,6 @@
 }
 @property (strong, nonatomic) IBOutlet UISearchBar *doctorSearchBar;
 @property (strong, nonatomic) IBOutlet UISearchBar *locationSerchBar;
-@property (weak, nonatomic) IBOutlet UIImageView *noSearchResultsBackImageView;
-@property (weak, nonatomic) IBOutlet UILabel *noResultsLabel;
 @property (weak, nonatomic) IBOutlet UIView *sewarchResultsTableView;
 @property (weak, nonatomic) IBOutlet UIView *noResultsView;
 
