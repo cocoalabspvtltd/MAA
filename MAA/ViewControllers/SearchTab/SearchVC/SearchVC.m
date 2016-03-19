@@ -185,11 +185,13 @@
         if(self.doctorsArray.count == 0){
             self.noResultsLabel.hidden = NO;
             self.noSearchResultsBackImageView.hidden = NO;
+            self.noResultsView.hidden=NO;
             self.sewarchResultsTableView.hidden = YES;
         }
         else{
             self.noResultsLabel.hidden = YES;
             self.noSearchResultsBackImageView.hidden = YES;
+            self.noResultsView.hidden=YES;
             self.sewarchResultsTableView.hidden = NO;
         }
         [tableViewSearch reloadData];

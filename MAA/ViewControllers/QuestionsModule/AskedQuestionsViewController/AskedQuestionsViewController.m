@@ -179,11 +179,13 @@
         if(self.questionsMutableArray.count == 0){
             self.noQuestionsBackImageView.hidden = NO;
             self.noQuestionsToShowLabel.hidden = NO;
+            self.noResultsView.hidden=NO;
             self.tblquestions.hidden = YES;
         }
         else{
             self.noQuestionsBackImageView.hidden = YES;
             self.noQuestionsToShowLabel.hidden = YES;
+            self.noResultsView.hidden=YES;
             self.tblquestions.hidden = NO;
         }
         [self.tblquestions reloadData];

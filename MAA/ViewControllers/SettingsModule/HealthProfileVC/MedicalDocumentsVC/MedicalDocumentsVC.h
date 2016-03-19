@@ -21,5 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIView *editTitleViewPopup;
 - (IBAction)cancelEditTitlePopup:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *popUpTitleTextField;
+@property (weak, nonatomic) IBOutlet UIImageView *imgNoResults;
+@property (weak, nonatomic) IBOutlet UILabel *lblNoReults;
 
 @end

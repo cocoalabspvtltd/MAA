@@ -15,5 +15,6 @@
 @property (nonatomic, assign) NSUInteger selectedIndex;
 @property (weak, nonatomic) IBOutlet UITableView *tblAllergies;
 @property (weak, nonatomic) IBOutlet UIView *childView;
+@property (weak, nonatomic) IBOutlet UIView *noResultsView;
 @property (weak, nonatomic) IBOutlet UITextField *allergyTextField;
 @end
