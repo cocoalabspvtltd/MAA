@@ -32,6 +32,7 @@ CGFloat ht=0;
     self.underLineImg4.backgroundColor=[UIColor clearColor];
     self.underLineImg5.backgroundColor=[UIColor clearColor];
     self.underLineImg6.backgroundColor=[UIColor clearColor];
+    self.underLineImg7.backgroundColor=[UIColor clearColor];
     self.submitButton.hidden=YES;
     
     _childView1.layer.shadowColor = [UIColor lightGrayColor].CGColor;
@@ -122,10 +123,7 @@ CGFloat ht=0;
     self.fastingSugarTextField.enabled = YES;
     self.postMealSugarTextField.enabled  =YES;
     self.notestextField.enabled = YES;
-    self.prescriptionButton.enabled = YES;
-    self.medicalDocumentButton.enabled  = YES;
-    self.imagesButton.enabled = YES;
-    self.allergiesButton.enabled = YES;
+    
     self.submitButton.enabled = YES;
     self.underLineImg1.backgroundColor=[UIColor redColor];
     self.underLineImg2.backgroundColor=[UIColor redColor];
@@ -133,6 +131,7 @@ CGFloat ht=0;
     self.underLineImg4.backgroundColor=[UIColor redColor];
     self.underLineImg5.backgroundColor=[UIColor redColor];
     self.underLineImg6.backgroundColor=[UIColor redColor];
+    self.underLineImg7.backgroundColor=[UIColor redColor];
     self.submitButton.hidden=NO;
 }
 
@@ -179,6 +178,9 @@ CGFloat ht=0;
     self.underLineImg2.backgroundColor=[UIColor clearColor];
     self.underLineImg3.backgroundColor=[UIColor clearColor];
     self.underLineImg4.backgroundColor=[UIColor clearColor];
+    self.underLineImg5.backgroundColor=[UIColor clearColor];
+    self.underLineImg6.backgroundColor=[UIColor clearColor];
+    self.underLineImg7.backgroundColor=[UIColor clearColor];
     
 }
 
@@ -349,15 +351,15 @@ CGFloat ht=0;
     self.fastingSugarTextField.enabled = NO;
     self.postMealSugarTextField.enabled  =NO;
     self.notestextField.enabled = NO;
-    self.prescriptionButton.enabled = NO;
-    self.medicalDocumentButton.enabled  =NO;
-    self.imagesButton.enabled = NO;
-    self.allergiesButton.enabled = NO;
+    
     self.submitButton.enabled = NO;
     self.underLineImg1.backgroundColor=[UIColor clearColor];
     self.underLineImg2.backgroundColor=[UIColor clearColor];
     self.underLineImg3.backgroundColor=[UIColor clearColor];
     self.underLineImg4.backgroundColor=[UIColor clearColor];
+    self.underLineImg5.backgroundColor=[UIColor clearColor];
+    self.underLineImg6.backgroundColor=[UIColor clearColor];
+    self.underLineImg7.backgroundColor=[UIColor clearColor];
    
 }
 @end

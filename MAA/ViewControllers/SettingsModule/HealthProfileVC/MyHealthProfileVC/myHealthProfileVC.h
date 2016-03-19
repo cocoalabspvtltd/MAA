@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *underLineImg4;
 @property (weak, nonatomic) IBOutlet UIImageView *underLineImg5;
 @property (weak, nonatomic) IBOutlet UIImageView *underLineImg6;
+@property (weak, nonatomic) IBOutlet UIImageView *underLineImg7;
 @property (weak, nonatomic) IBOutlet UIButton *prescriptionButton;
 @property (weak, nonatomic) IBOutlet UIButton *medicalDocumentButton;
 @property (weak, nonatomic) IBOutlet UIButton *imagesButton;
