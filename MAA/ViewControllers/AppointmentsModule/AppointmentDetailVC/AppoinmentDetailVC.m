@@ -213,7 +213,7 @@
 }
 -(void)runMethod:(NSTimer *)timer{
     if(!self.whetherTimerStop){
-        [self settingStatusWithstatuString:self.statusString withCancellationInterval:self.timeStampString andDurationString:self.durationString andTimeStampString:self.timeStampString];
+         [self checkingCurrentTimingsWithTimeStampString:self.timeStampString andDuration:self.durationString andCancellationIntervalString:self.cancelDurationString];
     }
     else{
         [timer invalidate];
@@ -262,6 +262,7 @@
         numberOfMinutes = numberOfMinutes*-1;
         if(numberOfMinutes>duration){
             self.startAppointmentButton.hidden = NO;
+            self.whetherTimerStop = YES;
             [self.startAppointmentButton setTitle:@"Prescriptions" forState:UIControlStateNormal];
         }
         else{
