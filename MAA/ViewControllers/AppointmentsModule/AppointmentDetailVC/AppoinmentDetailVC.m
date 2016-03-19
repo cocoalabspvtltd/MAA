@@ -113,6 +113,7 @@
 }
 
 - (IBAction)Back:(id)sender {
+    self.whetherTimerStop  = YES;
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -177,14 +178,7 @@
 -(void)settingDoctorDetailsWithDictionary:(id)doctorDetails{
     self.doctorNameLabel.text = [doctorDetails valueForKey:@"name"];
     NSString *docctorProfileUrlString = [doctorDetails valueForKey:@"logo_image"];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:docctorProfileUrlString]];
-        UIImage *tempImage = [UIImage imageWithData:imageData];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.doctorImageView.image = tempImage;
-        }
-                       );
-    });
+    [self.doctorImageView sd_setImageWithURL:[NSURL URLWithString:docctorProfileUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
 }
 
 

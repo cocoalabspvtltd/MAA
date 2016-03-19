@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.rightProfileImageView.layer.borderWidth = 1;
+    self.rightProfileImageView.layer.borderColor = [UIColor redColor].CGColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -21,14 +23,7 @@
 }
 
 -(void)setRightprofileImageurlString:(NSString *)rightprofileImageurlString{
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:rightprofileImageurlString]];
-        UIImage *tempImage = [UIImage imageWithData:imageData];
-        dispatch_async(dispatch_get_main_queue(), ^{
-            self.rightProfileImageView.image = tempImage;
-        }
-                       );
-    });
+    [self.rightProfileImageView sd_setImageWithURL:[NSURL URLWithString:rightprofileImageurlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
 }
 
 -(void)setTimeStampString:(NSString *)timeStampString{
