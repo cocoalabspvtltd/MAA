@@ -20,6 +20,7 @@
     [super viewDidLoad];
     [self initialisation];
     [self callingGetAccountInfoApi];
+    _profileImageView.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
     
 //    _childView1.layer.shadowColor = [UIColor lightGrayColor].CGColor;
 //    _childView1.layer.shadowOffset = CGSizeMake(5, 5);
