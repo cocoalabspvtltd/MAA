@@ -6,16 +6,19 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
+#import "SearchResultsTVC.h"
 
-@interface ClinicProfVC ()
-
+@interface ClinicProfVC ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, strong) NSArray *doctorsArray;
 @end
 
 @implementation ClinicProfVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
     _clinicProfileImage.layer.cornerRadius=_clinicProfileImage.frame.size.width/2;
     _clinicProfileImage.clipsToBounds=YES;
     _btnDirections.layer.borderWidth=0.5f;
@@ -24,6 +27,11 @@
     [self callingGetClinicDetailsApi];
     // Do any additional setup after loading the view.
 }
+
+-(void)initialisation{
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -92,11 +100,66 @@
     if(!([entityDetails valueForKey:@"phone"] == [NSNull null])){
         self.contactNumberLabel.text = [NSString stringWithFormat:@"Contact number: %@",[entityDetails valueForKey:@"phone"]];
     }
-   
+    self.doctorsArray = [entityDetails valueForKey:@"doctors"];
+    [self.doctorsTableView reloadData];
     
     
 //    self.satisfiedpeopleLabel.text = [NSString stringWithFormat:@"%@ satisfied people",[entityDetails valueForKey:@"no_of_consultations"]];
    
+}
+
+#pragma mark - Table view Datasources
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.doctorsArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    SearchResultsTVC *cell = [self.doctorsTableView dequeueReusableCellWithIdentifier:@"cellSearchResults"forIndexPath:indexPath];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.cellImageViewIcon.clipsToBounds = YES;
+    cell.cellImageViewIcon.layer.cornerRadius = 30.00;
+    cell.cellImageViewIcon.layer.masksToBounds = YES;
+    cell.cellImageViewIcon.layer.borderWidth=0.5f;
+    cell.cellImageViewIcon.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    cell.cellImageViewOnlineStatus.clipsToBounds = YES;
+    cell.cellImageViewOnlineStatus.layer.cornerRadius = 5.00;
+    cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
+    cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+    if(![[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"] isEqual:[NSNull null]]){
+        cell.cellLabelRating.text = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+    }
+    NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
+    cell.cellLabelDescription.text = doctorDescription;
+    cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
+    cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
+    NSURL *imageUrl = [NSURL URLWithString:[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
+    [cell.cellImageViewIcon sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    if([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
+        cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
+    }
+    else{
+        cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
+    }
+    return cell;
+}
+
+#pragma mark - Table View Delegates
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DoctorProfVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfVC"];
+    doctorPfofileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+    [self.navigationController pushViewController:doctorPfofileVC animated:YES];
+}
+
+#pragma mark  - Button Actions
+
+- (IBAction)doctorsAllInfoButtonAction:(UIButton *)sender {
 }
 
 @end
