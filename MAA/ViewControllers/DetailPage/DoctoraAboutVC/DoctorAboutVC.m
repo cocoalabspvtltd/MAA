@@ -36,53 +36,32 @@
 
 -(void)initialisationOfAboutPage{
     if(self.specializationArray.count == 0){
-        self.specializationTableViewHeightConstraint.constant = 0;
-        self.specializationHeadingLabel.hidden = YES;
-        self.specializationViewMoreButton.hidden = YES;
-        self.specializationBottomLine.hidden = YES;
-        self.specializationTopView.hidden = YES;
+        self.specializationHeightConstraint.constant = 0;
+        self.scrollContentViewHeightConstarint.constant -= 133;
     }
     if(self.servicesArray.count == 0){
-        self.servicesTableViewHeightConstraint.constant = 0;
-        self.servicesHeadingLabel.hidden = YES;
-        self.servicesViewMoreButton.hidden = YES;
-        self.servicesBottomView.hidden = YES;
-        self.servicesHeaderView.hidden = YES;
+        self.servicesHeightConstraint.constant = 0;
+        self.scrollContentViewHeightConstarint.constant -= 133;
     }
     if(self.membershipsArray.count == 0){
-        self.membershiptableViewheightConstraint.constant = 0;
-        self.membershipHeadingLabel.hidden = YES;
-        self.memberShipViewMoreButton.hidden = YES;
-        self.membershipBottomView.hidden = YES;
-        self.membershipTopView.hidden = YES;
+        self.membershipHeightConstraint.constant = 0;
+        self.scrollContentViewHeightConstarint.constant -= 133;
     }
     if(self.awardsArray.count == 0){
-        self.awardsTableViewHeight.constant = 0;
-        self.awardsHeadingLbael.hidden = YES;
-        self.awardsviewMoreButton.hidden = YES;
-        self.awardsBottomLine.hidden = YES;
-        self.awardHeadingLine.hidden = YES;
+        self.awardsHeightConstraint.constant = 0;
+        self.scrollContentViewHeightConstarint.constant -= 133;
     }
     if(self.experienceArray.count == 0){
-        self.experincetableViewHeightConstraint.constant = 0;
-        self.experineceHeadingLabel.hidden = YES;
-        self.experienceViewMoreButton.hidden = YES;
-        self.experiencetopView.hidden = YES;
-        self.experienceBottomView.hidden = YES;
+        self.experienceHeightConstraint.constant = 0;
+        self.scrollContentViewHeightConstarint.constant -= 133;
     }
     if(self.educationArray.count == 0){
-        self.educationTableViewHeightConstraint.constant = 0;
-        self.educationHeadingLabel.hidden = YES;
-        self.educationViewMoreButton.hidden = YES;
-        self.educationTopView.hidden = YES;
-        self.educationBottomView.hidden = YES;
+        self.educationHeightConstraint.constant = 0;
+        self.scrollContentViewHeightConstarint.constant -= 133;
     }
     if(self.registrationArray.count == 0){
-        self.registartionTableViewHeiightConstraint.constant = 0;
-        self.registrationHeadingLabel.hidden = YES;
-        self.registrationViewMoreButton.hidden = YES;
-        self.registrationTopView.hidden = YES;
-        self.registrationBottomView.hidden = YES;
+        self.registrationHeightConstraint.constant = 0;
+        self.scrollContentViewHeightConstarint.constant -= 133;
     }
     
 }
