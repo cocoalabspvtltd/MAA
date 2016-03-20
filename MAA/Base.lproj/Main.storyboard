@@ -743,7 +743,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="5E3F5035-3502-412A-96A5-16BCA06D8A9B" scopeBarBackgroundImage="5E3F5035-3502-412A-96A5-16BCA06D8A9B" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="EC54C9E5-9AFD-452E-B862-7C6DABAA9BBE" scopeBarBackgroundImage="EC54C9E5-9AFD-452E-B862-7C6DABAA9BBE" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -756,7 +756,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="50DE0CB6-25E5-4681-B5BE-B19ADEDD9DC4" scopeBarBackgroundImage="50DE0CB6-25E5-4681-B5BE-B19ADEDD9DC4" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="4177EE11-3563-4C71-BB82-A7D72A85BB67" scopeBarBackgroundImage="4177EE11-3563-4C71-BB82-A7D72A85BB67" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -5384,9 +5384,6 @@
                                 <state key="normal" title="Page 22">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="KG3-00-QZc" kind="show" id="D5d-gM-JEt"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ri-VN-w30">
                                 <rect key="frame" x="20" y="311" width="60" height="30"/>
@@ -7669,91 +7666,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KEc-l0-K3x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7585" y="2528"/>
-        </scene>
-        <!--Images-->
-        <scene sceneID="hlc-re-xmg">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="KG3-00-QZc" customClass="CollectionViewVC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="u7W-Zl-2mG"/>
-                        <viewControllerLayoutGuide type="bottom" id="7jm-fa-0mr"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="cVR-1F-pZi">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rlB-U5-h9T">
-                                <rect key="frame" x="20" y="72" width="560" height="451"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="2mx-hw-18k">
-                                    <size key="itemSize" width="80" height="80"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="10" minY="10" maxX="10" maxY="10"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="demoCell" id="Rwr-gv-odi" customClass="CollectionViewCell">
-                                        <rect key="frame" x="10" y="10" width="80" height="80"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e4B-RP-rbi">
-                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
-                                                    <color key="backgroundColor" red="0.1155703025" green="0.742483428" blue="0.18034862900000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </imageView>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LMb-Cz-hxS">
-                                                    <rect key="frame" x="25" y="25" width="30" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                    <state key="normal" title="❌"/>
-                                                </button>
-                                            </subviews>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <connections>
-                                            <outlet property="cellButton" destination="LMb-Cz-hxS" id="tQW-p0-3rl"/>
-                                            <outlet property="cellImage" destination="e4B-RP-rbi" id="fE5-Qw-cXh"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <connections>
-                                    <outlet property="dataSource" destination="KG3-00-QZc" id="rNu-Hf-3ap"/>
-                                    <outlet property="delegate" destination="KG3-00-QZc" id="mwO-8k-Ey3"/>
-                                </connections>
-                            </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uJf-3y-KGr">
-                                <rect key="frame" x="0.0" y="560" width="600" height="40"/>
-                                <color key="backgroundColor" red="0.92522885099999996" green="0.19125155939999999" blue="0.1225359867" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="GOn-Wk-Nra"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <state key="normal" title="SUBMIT">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.92156862750000001" green="0.91764705879999997" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="uJf-3y-KGr" firstAttribute="leading" secondItem="cVR-1F-pZi" secondAttribute="leading" id="8Cr-Sx-91Y"/>
-                            <constraint firstAttribute="trailing" secondItem="uJf-3y-KGr" secondAttribute="trailing" id="8LY-R1-CDF"/>
-                            <constraint firstItem="7jm-fa-0mr" firstAttribute="top" secondItem="uJf-3y-KGr" secondAttribute="bottom" id="G9v-9D-fHe"/>
-                            <constraint firstItem="uJf-3y-KGr" firstAttribute="top" secondItem="rlB-U5-h9T" secondAttribute="bottom" constant="37" id="JBb-0t-PFU"/>
-                            <constraint firstItem="rlB-U5-h9T" firstAttribute="top" secondItem="u7W-Zl-2mG" secondAttribute="bottom" constant="8" id="Ltw-Us-qR3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="rlB-U5-h9T" secondAttribute="trailing" id="QmD-Kq-wU7"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="rlB-U5-h9T" secondAttribute="leading" id="cJi-xo-Gd3"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Images" id="cJ9-le-lht"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <connections>
-                        <outlet property="collectionViewMain" destination="rlB-U5-h9T" id="vrz-TH-3ui"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jRu-Tj-rkh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6733" y="2518"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mvg-zc-V2g">
@@ -15870,8 +15782,7 @@
     <resources>
         <image name="1.png" width="688" height="853"/>
         <image name="2.jpg" width="256" height="256"/>
-        <image name="5.png" width="260" height="288"/>
-        <image name="50DE0CB6-25E5-4681-B5BE-B19ADEDD9DC4" width="310" height="78">
+        <image name="4177EE11-3563-4C71-BB82-A7D72A85BB67" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -17536,7 +17447,8 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="5E3F5035-3502-412A-96A5-16BCA06D8A9B" width="310" height="78">
+        <image name="5.png" width="260" height="288"/>
+        <image name="EC54C9E5-9AFD-452E-B862-7C6DABAA9BBE" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
