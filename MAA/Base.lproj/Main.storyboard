@@ -743,7 +743,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="3FE0F808-EA2C-41D6-8B97-778BB445CD2D" scopeBarBackgroundImage="3FE0F808-EA2C-41D6-8B97-778BB445CD2D" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="5E3F5035-3502-412A-96A5-16BCA06D8A9B" scopeBarBackgroundImage="5E3F5035-3502-412A-96A5-16BCA06D8A9B" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -756,7 +756,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="66294E8F-D537-4E4A-864A-07FF264D6568" scopeBarBackgroundImage="66294E8F-D537-4E4A-864A-07FF264D6568" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="50DE0CB6-25E5-4681-B5BE-B19ADEDD9DC4" scopeBarBackgroundImage="50DE0CB6-25E5-4681-B5BE-B19ADEDD9DC4" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -15586,7 +15586,7 @@
         <!--Invoice Screen-->
         <scene sceneID="zW4-Bk-Ugc">
             <objects>
-                <viewController title="Invoice Screen" id="Bfg-hq-ZT1" customClass="doctorInvoicePageVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InvoiceViewController" title="Invoice Screen" id="Bfg-hq-ZT1" customClass="InvoiceViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HDi-mD-r4c"/>
                         <viewControllerLayoutGuide type="bottom" id="qXP-KY-fS9"/>
@@ -15611,9 +15611,6 @@
                                             <constraint firstAttribute="height" constant="30" id="EPj-Kg-FrY"/>
                                             <constraint firstAttribute="width" constant="49" id="o4j-CO-c4A"/>
                                         </constraints>
-                                        <connections>
-                                            <action selector="back:" destination="Bfg-hq-ZT1" eventType="touchUpInside" id="agx-Ph-77K"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invoice " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kOh-Yz-gSG">
                                         <rect key="frame" x="65" y="12" width="56" height="20"/>
@@ -15640,9 +15637,6 @@
                                 <rect key="frame" x="0.0" y="72" width="555" height="29"/>
                                 <color key="barTintColor" red="0.83907433710000001" green="0.83907433710000001" blue="0.83907433710000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="mYT-p9-1cF" id="9vx-Wv-W7u"/>
-                                </connections>
                             </searchBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2n-4b-lUC">
                                 <rect key="frame" x="554" y="79" width="46" height="30"/>
@@ -15666,8 +15660,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="Bfg-hq-ZT1" id="Bc6-ff-nmp"/>
-                                    <outlet property="delegate" destination="Bfg-hq-ZT1" id="4eX-FH-QSF"/>
+                                    <outlet property="dataSource" destination="Bfg-hq-ZT1" id="pa1-3s-op2"/>
+                                    <outlet property="delegate" destination="Bfg-hq-ZT1" id="zPV-W7-0gE"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -15692,10 +15686,6 @@
                             <constraint firstAttribute="trailing" secondItem="mow-xU-8Xj" secondAttribute="trailing" id="xgL-eZ-pC2"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="mySuperview" destination="9dd-G1-ymA" id="EA4-Mr-ZRV"/>
-                        <outlet property="tblInvoices" destination="mow-xU-8Xj" id="EsY-4T-Br5"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4xP-qh-Qr3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -15880,7 +15870,8 @@
     <resources>
         <image name="1.png" width="688" height="853"/>
         <image name="2.jpg" width="256" height="256"/>
-        <image name="3FE0F808-EA2C-41D6-8B97-778BB445CD2D" width="310" height="78">
+        <image name="5.png" width="260" height="288"/>
+        <image name="50DE0CB6-25E5-4681-B5BE-B19ADEDD9DC4" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -17545,8 +17536,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="5.png" width="260" height="288"/>
-        <image name="66294E8F-D537-4E4A-864A-07FF264D6568" width="310" height="78">
+        <image name="5E3F5035-3502-412A-96A5-16BCA06D8A9B" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
