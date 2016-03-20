@@ -55,6 +55,12 @@
 		9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */; };
 		9F6BF54B1C396AC8006FB97A /* HospitalSecondTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5461C396AC8006FB97A /* HospitalSecondTabTVC.m */; };
 		9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */; };
+		9F95DB481C9E2FC700F3EB4F /* no allergies.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB461C9E2FC700F3EB4F /* no allergies.png */; };
+		9F95DB491C9E2FC700F3EB4F /* no locations found.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB471C9E2FC700F3EB4F /* no locations found.png */; };
+		9F95DB4E1C9E2FD800F3EB4F /* no medical documents.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4A1C9E2FD800F3EB4F /* no medical documents.png */; };
+		9F95DB4F1C9E2FD800F3EB4F /* no photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4B1C9E2FD800F3EB4F /* no photos.png */; };
+		9F95DB501C9E2FD800F3EB4F /* no priscriptions.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */; };
+		9F95DB511C9E2FD800F3EB4F /* no time slots.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */; };
 		9F9878EE1C49BE0400DE68A9 /* DoctorConsultingTimingTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9878ED1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.m */; };
 		9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */; };
 		9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */; };
@@ -439,6 +445,12 @@
 		9F6BF5461C396AC8006FB97A /* HospitalSecondTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalSecondTabTVC.m; sourceTree = "<group>"; };
 		9F6BF5471C396AC8006FB97A /* HospitalThirdTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalThirdTabTVC.h; sourceTree = "<group>"; };
 		9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalThirdTabTVC.m; sourceTree = "<group>"; };
+		9F95DB461C9E2FC700F3EB4F /* no allergies.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no allergies.png"; sourceTree = "<group>"; };
+		9F95DB471C9E2FC700F3EB4F /* no locations found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no locations found.png"; sourceTree = "<group>"; };
+		9F95DB4A1C9E2FD800F3EB4F /* no medical documents.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no medical documents.png"; sourceTree = "<group>"; };
+		9F95DB4B1C9E2FD800F3EB4F /* no photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no photos.png"; sourceTree = "<group>"; };
+		9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no priscriptions.png"; sourceTree = "<group>"; };
+		9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no time slots.png"; sourceTree = "<group>"; };
 		9F9878EC1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorConsultingTimingTVC.h; sourceTree = "<group>"; };
 		9F9878ED1C49BE0300DE68A9 /* DoctorConsultingTimingTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorConsultingTimingTVC.m; sourceTree = "<group>"; };
 		9F9878EF1C49BE2D00DE68A9 /* HospitalAboutTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalAboutTVC.h; sourceTree = "<group>"; };
@@ -1766,6 +1778,12 @@
 		C09F2C051C9C69C900DB040C /* NoResult */ = {
 			isa = PBXGroup;
 			children = (
+				9F95DB4A1C9E2FD800F3EB4F /* no medical documents.png */,
+				9F95DB4B1C9E2FD800F3EB4F /* no photos.png */,
+				9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */,
+				9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */,
+				9F95DB461C9E2FC700F3EB4F /* no allergies.png */,
+				9F95DB471C9E2FC700F3EB4F /* no locations found.png */,
 				C09F2C0D1C9C6FA800DB040C /* no appoinments.png */,
 				C09F2C061C9C69C900DB040C /* no search result found.png */,
 				C09F2C0F1C9C82F400DB040C /* no questions.png */,
@@ -2332,6 +2350,7 @@
 				C0BBC4CD1C6E6544005083B1 /* InvoicePopup.xib in Resources */,
 				C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */,
 				C09EF6EB1C76211800806600 /* OTPublisherKitDelegate.html in Resources */,
+				9F95DB4E1C9E2FD800F3EB4F /* no medical documents.png in Resources */,
 				C0BBC4B61C6E5B8E005083B1 /* video-black@3x.png in Resources */,
 				C09EF6EF1C76211800806600 /* OTSubscriberKitDelegate.html in Resources */,
 				C09EF6D11C76211800806600 /* OTStreamVideoType.html in Resources */,
@@ -2352,6 +2371,7 @@
 				C0BBC4B11C6E5B8E005083B1 /* chat-black.png in Resources */,
 				C09EF6EA1C76211800806600 /* OTPublisherKitAudioLevelDelegate.html in Resources */,
 				C0BBC4791C6E2AE7005083B1 /* home-a@3x.png in Resources */,
+				9F95DB4F1C9E2FD800F3EB4F /* no photos.png in Resources */,
 				7C3682D61C2FFAFE002F31FA /* 2.jpg in Resources */,
 				C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */,
 				C0BBC48A1C6E2AE7005083B1 /* settings-a@2x.png in Resources */,
@@ -2374,6 +2394,7 @@
 				C0BCBB631C59405D003F7872 /* angle-down.png in Resources */,
 				C0BBC4811C6E2AE7005083B1 /* ques@2x.png in Resources */,
 				7CB682AA1C38FF4300AC1F90 /* Players@3x.png in Resources */,
+				9F95DB501C9E2FD800F3EB4F /* no priscriptions.png in Resources */,
 				C0BBC4B31C6E5B8E005083B1 /* chat-black@3x.png in Resources */,
 				C0BBC4C91C6E64D6005083B1 /* settings@2x.png in Resources */,
 				9F991C601C5A1C5400F92C11 /* search.xib in Resources */,
@@ -2395,11 +2416,13 @@
 				C09EF6D31C76211800806600 /* OTSubscriberVideoEventReason.html in Resources */,
 				C0CABC761C8AE752009F9470 /* checked-black.png in Resources */,
 				C09EF6E91C76211800806600 /* OTPublisherDelegate.html in Resources */,
+				9F95DB481C9E2FC700F3EB4F /* no allergies.png in Resources */,
 				C08437F81C6EEEC100610ADC /* NotesPopUp.xib in Resources */,
 				C0D1581D1C9B1B9700FC1DE0 /* PayUSDKInfo.plist in Resources */,
 				C09EF6DF1C76211800806600 /* hierarchy.html in Resources */,
 				C09EF6E81C76211800806600 /* OTAudioDevice.html in Resources */,
 				C09F2C071C9C69C900DB040C /* no search result found.png in Resources */,
+				9F95DB491C9E2FC700F3EB4F /* no locations found.png in Resources */,
 				C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */,
 				C09EF6C21C76211800806600 /* OTSession.html in Resources */,
 				7C8AD8651C18BBA500C4E3BD /* 5.png in Resources */,
@@ -2436,6 +2459,7 @@
 				C0CABC791C8AE752009F9470 /* unchecked-gray.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0BBC4851C6E2AE7005083B1 /* search-a@3x.png in Resources */,
+				9F95DB511C9E2FD800F3EB4F /* no time slots.png in Resources */,
 				C09EF6E51C76211800806600 /* index.html in Resources */,
 				C0BBC4781C6E2AE7005083B1 /* home-a@2x.png in Resources */,
 				C09EF6D41C76211800806600 /* OTVideoOrientation.html in Resources */,

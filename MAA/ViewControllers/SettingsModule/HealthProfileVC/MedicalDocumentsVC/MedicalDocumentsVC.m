@@ -5,6 +5,12 @@
 //  Created by Cocoalabs India on 23/02/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
+#define NoMedicalDocumentsLabelText @"No medical documents found"
+#define NoImagesLabelETxt @"No images found"
+#define NoPrescriptiondLabelEtxt @"No prescriptions found"
+#define NoMedicalDocumentsImageName @"no medical documents"
+#define NoImagesImageName @"no photos"
+#define NoPrescriptionsImageName @"no priscriptions"
 
 #define TmdCellTag 300
 
@@ -75,14 +81,20 @@
     if(self.isFromMedicalDocuments){
         self.medicalType = 2;
         self.headingLabel.text = @"Medical Documents";
+        self.imgNoResults.image = [UIImage imageNamed:NoMedicalDocumentsImageName];
+        self.lblNoReults.text = NoMedicalDocumentsLabelText;
     }
     else if (self.isFromImages){
         self.medicalType = 1;
         self.headingLabel.text = @"Images";
+        self.imgNoResults.image = [UIImage imageNamed:NoImagesImageName];
+        self.lblNoReults.text = NoImagesLabelETxt;
     }
     else if (self.isFromPrescriptions){
         self.imgFloat.hidden = YES;
         self.headingLabel.text = @"Prescriptions";
+        self.imgNoResults.image = [UIImage imageNamed:NoPrescriptionsImageName];
+        self.lblNoReults.text = NoPrescriptiondLabelEtxt;
     }
 }
 
@@ -100,6 +112,16 @@
 }
 
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    if(self.photosMutableArray.count == 0){
+        self.imgNoResults.hidden = NO;
+        self.lblNoReults.hidden = NO;
+        self.medicalDocumentsCollectionView.hidden = YES;
+    }
+    else{
+        self.imgNoResults.hidden = YES;
+        self.lblNoReults.hidden = YES;
+        self.medicalDocumentsCollectionView.hidden = NO;
+    }
     return self.photosMutableArray.count;
 }
 
@@ -108,6 +130,9 @@
     photoCell.backgroundColor = [UIColor greenColor];
     photoCell.tmdCellDelegate = self;
     photoCell.tag = indexPath.row+TmdCellTag;
+    if(self.isFromMedicalDocuments){
+        photoCell.headingLabelForMD.text = [[self.photosMutableArray objectAtIndex:indexPath.row] valueForKey:@"title"];
+    }
     NSString *imageUrlString = [[self.photosMutableArray objectAtIndex:indexPath.row] valueForKey:@"url"];
     NSLog(@"Image Url:%@",imageUrlString);
     [photoCell.medicalDocumentImageView  sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
@@ -258,7 +283,6 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:fileUploadUrlString] withBody:imageUploadingDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstokenString];
     
     [[NetworkHandler sharedHandler] startUploadRequest:@"med_doc_img1.jpg" withData:uploadingImageData withType:fileTypeJPGImage withUrlParameter:AddImageurl andFileName:@"images" SuccessBlock:^(id responseObject) {
-        NSLog(@"Response object;%@",responseObject);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self callingAlertViewControllerWithMessageString:@"Document added successfully"];
         NSDictionary *jsonObject=[NSJSONSerialization
@@ -302,7 +326,6 @@
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getDocumentsApiUrlSrtring] withBody:getDocumentsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-       
         self.offsetValue = self.offsetValue+self.limitValue;
         [self.bottomProgressIndicatorView stopAnimating];
         NSArray *imagesArray = [responseObject valueForKey:Datakey];

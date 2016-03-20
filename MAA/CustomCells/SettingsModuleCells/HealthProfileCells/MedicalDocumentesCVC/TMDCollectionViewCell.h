@@ -11,6 +11,7 @@
 @interface TMDCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *medicalDocumentImageView;
 @property (nonatomic, strong) NSString *documentUrlString;
+@property (strong, nonatomic) IBOutlet UILabel *headingLabelForMD;
 @property (nonatomic, assign) id<TMDCollectionViewCellDelegate>tmdCellDelegate;
 @end
 @protocol TMDCollectionViewCellDelegate <NSObject>
