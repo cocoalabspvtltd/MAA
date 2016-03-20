@@ -81,6 +81,14 @@
             [self.locationsMutableArray removeAllObjects];
         }
         NSArray *locationsArray = [responseObject valueForKey:Datakey];
+        if(locationsArray.count == 0){
+            self.noResultsView.hidden = NO;
+            self.locationsTableView.hidden = YES;
+        }
+        else{
+            self.noResultsView.hidden = YES;
+            self.locationsTableView.hidden = NO;
+        }
         [self.locationsMutableArray addObjectsFromArray:locationsArray];
         [self.locationsTableView reloadData];
         if(!(locationsArray.count<self.limit)){

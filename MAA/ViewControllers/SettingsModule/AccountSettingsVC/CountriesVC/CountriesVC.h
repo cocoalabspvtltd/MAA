@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *locationsTableView;
 @property (nonatomic, strong) NSString *searchType;
 @property (nonatomic, strong) NSString *parentLoationID;
+@property (strong, nonatomic) IBOutlet UIView *noResultsView;
 @property (nonatomic, assign) id<CountriesVCDelegate>countriesDelegate;
 @end
 @protocol CountriesVCDelegate <NSObject>
