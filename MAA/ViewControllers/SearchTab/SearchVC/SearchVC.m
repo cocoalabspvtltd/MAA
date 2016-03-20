@@ -11,8 +11,6 @@
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
 
-
-#import "DoctorProfileVC.h"
 #import "HospitalProfile.h"
 #import "SearchResultsVC.h"
 
@@ -123,10 +121,6 @@
             doctorPfofileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             doctorPfofileVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:doctorPfofileVC animated:YES];
-            
-//            DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
-//            doctorPfofileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
-//            [self.navigationController pushViewController:doctorPfofileVC animated:YES];
         }
         else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"clinic"]){
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

@@ -7,7 +7,6 @@
 //
 
 #import "HomePageVC.h"
-#import "DoctorProfileVC.h"
 #import "SearchResultsVC.h"
 #import <QuartzCore/QuartzCore.h>
 #import "HomePageCVC.h"
