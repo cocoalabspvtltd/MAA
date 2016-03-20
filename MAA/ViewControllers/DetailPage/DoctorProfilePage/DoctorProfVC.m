@@ -60,8 +60,7 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        NSLog(@"Response :%@",responseObject);
-        //[self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
+        [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
        // self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
        // self.servicesArray = [[responseObject valueForKey:Datakey] valueForKey:@"attributes"];
         //NSLog(@"Services Array:%@",self.servicesArray);
@@ -82,5 +81,47 @@
     }];
 }
 
+-(void)settingEntityDetailsWithData:(id)entityDetails{
+    NSLog(@"Entity Details:%@",entityDetails);
+    NSString *profileImageUrlString = [entityDetails valueForKey:@"logo_image"];
+    [self.imgProfile sd_setImageWithURL:[NSURL URLWithString:profileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    if(![[entityDetails valueForKey:@"name"] isEqual:[NSNull null]]){
+        self.namLabel.text = [entityDetails valueForKey:@"name"];
+    }
+    if(!([entityDetails valueForKey:@"tagline"] == [NSNull null])){
+        self.tagLineLabel.text = [entityDetails valueForKey:@"tagline"];
+    }
+    if(!([[entityDetails valueForKey:@"location"] valueForKey:@"location_name"] == [NSNull null])){
+        self.locationLabel.text = [[entityDetails valueForKey:@"location"] valueForKey:@"location_name"];
+    }
+    if(!([entityDetails valueForKey:@"average_fee"] == [NSNull null])){
+        self.consultationFeeLabel.text = [NSString stringWithFormat:@"Rs. %@ consultation fee",[entityDetails valueForKey:@"average_fee"]];
+    }
+    if(![[entityDetails valueForKey:@"experience"] isEqualToString:@"0"])
+    {
+        self.experienceLbael.text = [NSString stringWithFormat:@"%@ of experience",[entityDetails valueForKey:@"experience"]];
+    }
+    else{
+        self.experienceLbael.text = @"";
+    }
+    if(!([entityDetails valueForKey:@"no_of_consultations"] == [NSNull null])){
+        self.noOfConsultationsLabel.text = [NSString stringWithFormat:@"%@ consultations",[entityDetails valueForKey:@"no_of_consultations"]];
+    }
+    if(![[entityDetails valueForKey:@"rating"] isEqual:[NSNull null]]){
+        self.ratingLabel.text = [NSString stringWithFormat:@"%@ rating",[entityDetails valueForKey:@"rating"]];
+    }
+    if(![[entityDetails valueForKey:@"rating"] isEqual:[NSNull null]]){
+        self.reviewLabel.text = [NSString stringWithFormat:@"%@ Reviews",[entityDetails valueForKey:@"no_of_reviews"]];
+    }
+    if(![[entityDetails valueForKey:@"phone"] isEqual:[NSNull null]]){
+        self.contactNoLabel.text = [NSString stringWithFormat:@"Contact number:%@",[entityDetails valueForKey:@"phone"]];
+    }
+//    if([[entityDetails valueForKey:@"e_booking_avail"] isEqualToString:@"1"] ){
+//        self.consultNowButton.hidden  = NO;
+//    }
+//    else{
+//        self.consultNowButton.hidden = YES;
+//    }
+}
 
 @end
