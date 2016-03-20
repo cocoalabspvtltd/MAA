@@ -71,6 +71,7 @@
 		9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */; };
 		9F991C601C5A1C5400F92C11 /* search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C591C5A1C5400F92C11 /* search.xib */; };
 		9F991C611C5A1C5400F92C11 /* bin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C5A1C5A1C5400F92C11 /* bin.png */; };
+		9F9C26AA1C9F40FF00EEC883 /* DoctorAboutDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C26A91C9F40FF00EEC883 /* DoctorAboutDetailVC.m */; };
 		9FA914AE1C3797FB00BDCB5D /* DoctorProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */; };
 		9FC62CE91C5725E200AF3EA3 /* DoctorServicesHV.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FC62CE81C5725E200AF3EA3 /* DoctorServicesHV.m */; };
 		9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FC62CED1C57267D00AF3EA3 /* DoctorServicesHV.xib */; };
@@ -479,6 +480,8 @@
 		9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doct_dashCollectionViewCell.m; sourceTree = "<group>"; };
 		9F991C591C5A1C5400F92C11 /* search.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = search.xib; sourceTree = "<group>"; };
 		9F991C5A1C5A1C5400F92C11 /* bin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bin.png; sourceTree = "<group>"; };
+		9F9C26A81C9F40FF00EEC883 /* DoctorAboutDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutDetailVC.h; sourceTree = "<group>"; };
+		9F9C26A91C9F40FF00EEC883 /* DoctorAboutDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorAboutDetailVC.m; sourceTree = "<group>"; };
 		9FA914AC1C3797FB00BDCB5D /* DoctorProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorProfileVC.h; sourceTree = "<group>"; };
 		9FA914AD1C3797FB00BDCB5D /* DoctorProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorProfileVC.m; sourceTree = "<group>"; };
 		9FC62CE71C5725E200AF3EA3 /* DoctorServicesHV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorServicesHV.h; sourceTree = "<group>"; };
@@ -1374,6 +1377,15 @@
 			name = Kiran;
 			sourceTree = "<group>";
 		};
+		9F9C26A21C9F40D600EEC883 /* DoctorAboutDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				9F9C26A81C9F40FF00EEC883 /* DoctorAboutDetailVC.h */,
+				9F9C26A91C9F40FF00EEC883 /* DoctorAboutDetailVC.m */,
+			);
+			path = DoctorAboutDetailVC;
+			sourceTree = "<group>";
+		};
 		9FA914AB1C3797D400BDCB5D /* Doctor Profile */ = {
 			isa = PBXGroup;
 			children = (
@@ -1446,6 +1458,7 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				9F9C26A21C9F40D600EEC883 /* DoctorAboutDetailVC */,
 				C0EC6F9E1CAD9AD200191C49 /* DoctorReviewsVC */,
 				C0AFCA6A1CAC2D6C0026A216 /* DoctoraAboutVC */,
 				C0EC35A91CAAEF130083E735 /* MapVC */,
@@ -2773,6 +2786,7 @@
 				9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */,
 				C0D157ED1C9B12C100FC1DE0 /* SearchTVC.m in Sources */,
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,
+				9F9C26AA1C9F40FF00EEC883 /* DoctorAboutDetailVC.m in Sources */,
 				C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */,

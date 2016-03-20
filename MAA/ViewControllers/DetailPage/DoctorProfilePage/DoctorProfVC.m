@@ -100,7 +100,7 @@
     NSString *profileImageUrlString = [entityDetails valueForKey:@"logo_image"];
     [self.imgProfile sd_setImageWithURL:[NSURL URLWithString:profileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     if(![[entityDetails valueForKey:@"name"] isEqual:[NSNull null]]){
-        self.namLabel.text = [entityDetails valueForKey:@"name"];
+        self.namLabel.text = [NSString stringWithFormat:@"Dr. %@",[entityDetails valueForKey:@"name"]];
     }
     if(!([entityDetails valueForKey:@"tagline"] == [NSNull null])){
         self.tagLineLabel.text = [entityDetails valueForKey:@"tagline"];

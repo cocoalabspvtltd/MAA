@@ -14,8 +14,9 @@
 #define EducationReuseCell @"educationRC"
 #define RegistrationReuseCell @"registrationRC"
 
-#import "DoctorAboutTVC.h"
 #import "DoctorAboutVC.h"
+#import "DoctorAboutTVC.h"
+#import "DoctorAboutDetailVC.h"
 
 @interface DoctorAboutVC ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -30,7 +31,7 @@
 }
 
 -(void)initialisation{
-    self.doctorNameHeadingLabel.text = self.doctorNameString;
+    self.doctorNameHeadingLabel.text = [NSString stringWithFormat:@"Dr. %@",self.doctorNameString];
     [self initialisationOfAboutPage];
 }
 
@@ -192,20 +193,36 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)specializationviewMoreButtonAction:(UIButton *)sender {
+    [self loadingAboutDetailPageWithDetailArray:self.specializationArray andHeadingText:@"Specializations"];
 }
 - (IBAction)servicesViewMoreButtonAction:(UIButton *)sender {
+     [self loadingAboutDetailPageWithDetailArray:self.servicesArray andHeadingText:@"Services"];
 }
 - (IBAction)memberShipViewMoreButtonAction:(UIButton *)sender {
+     [self loadingAboutDetailPageWithDetailArray:self.membershipsArray andHeadingText:@"Memberships"];
 }
 - (IBAction)awardsviewMoreButtonAction:(UIButton *)sender {
+     [self loadingAboutDetailPageWithDetailArray:self.awardsArray andHeadingText:@"Awards"];
 }
 - (IBAction)experienceViewMoreButtonAction:(UIButton *)sender {
+     [self loadingAboutDetailPageWithDetailArray:self.experienceArray andHeadingText:@"Experience"];
 }
 - (IBAction)educationViewMoreButtonAction:(UIButton *)sender {
+     [self loadingAboutDetailPageWithDetailArray:self.educationArray andHeadingText:@"Education"];
 }
 - (IBAction)registrationviewMoreButtonAction:(UIButton *)sender {
+     [self loadingAboutDetailPageWithDetailArray:self.registrationArray andHeadingText:@"Registrations"];
 }
 
+#pragma mark - Loading Doctor About Detail Page
+
+-(void)loadingAboutDetailPageWithDetailArray:(NSArray *)deatilsArray andHeadingText:(NSString *)headingText{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    DoctorAboutDetailVC *doctorAboutVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorAboutDetailVC"];
+    doctorAboutVC.doctorNameString = self.doctorNameString;doctorAboutVC.headingString = headingText;
+    doctorAboutVC.aboutListArray = deatilsArray;
+    [self.navigationController pushViewController:doctorAboutVC animated:YES];
+}
 /*
 #pragma mark - Navigation
 
