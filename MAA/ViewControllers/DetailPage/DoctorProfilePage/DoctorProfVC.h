@@ -20,5 +20,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *reviewLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contactNoLabel;
+@property (strong, nonatomic) IBOutlet UILabel *aboutLabel;
 @property (nonatomic, strong) NSString *entityId;
 @end

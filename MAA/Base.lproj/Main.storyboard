@@ -743,7 +743,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="4FCE55B4-5E14-4CFF-B29F-D807454CF465" scopeBarBackgroundImage="4FCE55B4-5E14-4CFF-B29F-D807454CF465" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="607B3D51-B1B9-465D-990F-3E401384A512" scopeBarBackgroundImage="607B3D51-B1B9-465D-990F-3E401384A512" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -756,7 +756,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="B24648E1-C341-479B-9D86-B2F405C3EC3D" scopeBarBackgroundImage="B24648E1-C341-479B-9D86-B2F405C3EC3D" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="E22D977E-EDBD-4870-B53C-ED818784291D" scopeBarBackgroundImage="E22D977E-EDBD-4870-B53C-ED818784291D" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -12307,7 +12307,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2CI-Td-plT"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SWt-f6-rmR">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1199"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xcn-yS-ule">
@@ -12349,7 +12349,7 @@
                                     <constraint firstAttribute="bottom" secondItem="vNg-9B-5Mq" secondAttribute="bottom" constant="7" id="y8n-D5-nQy"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-0R-bfW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aZq-0R-bfW">
                                 <rect key="frame" x="10" y="64" width="580" height="526"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -12480,7 +12480,7 @@
                         <viewControllerLayoutGuide type="bottom" id="TfK-kX-dOn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vkU-2w-wxe">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="1199"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfo-bz-FyG">
@@ -12526,7 +12526,7 @@
                                     <constraint firstItem="cnf-aa-RXf" firstAttribute="top" secondItem="sfo-bz-FyG" secondAttribute="top" constant="7" id="xn1-Nh-qZF"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-9b-Kc3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rOe-9b-Kc3">
                                 <rect key="frame" x="20" y="108" width="560" height="482"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -13008,6 +13008,7 @@
                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                         </userDefinedRuntimeAttributes>
                                                         <connections>
+                                                            <action selector="allInfoButtonAction:" destination="xzw-XO-a3y" eventType="touchUpInside" id="g9M-av-fOa"/>
                                                             <segue destination="mrF-RS-lVx" kind="show" id="sgg-mT-HOc"/>
                                                         </connections>
                                                     </button>
@@ -13320,6 +13321,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1199"/>
                     <connections>
+                        <outlet property="aboutLabel" destination="eco-uH-7wV" id="Sby-Zj-pPw"/>
                         <outlet property="btnDirection" destination="euN-1X-Dwk" id="X8i-EP-rBA"/>
                         <outlet property="consultationFeeLabel" destination="NYJ-qg-HSf" id="NYi-Wx-rvF"/>
                         <outlet property="contactNoLabel" destination="bp3-R6-ub9" id="q6W-W3-V9U"/>
@@ -15727,7 +15729,8 @@
     <resources>
         <image name="1.png" width="688" height="853"/>
         <image name="2.jpg" width="256" height="256"/>
-        <image name="4FCE55B4-5E14-4CFF-B29F-D807454CF465" width="310" height="78">
+        <image name="5.png" width="260" height="288"/>
+        <image name="607B3D51-B1B9-465D-990F-3E401384A512" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -17392,8 +17395,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="5.png" width="260" height="288"/>
-        <image name="B24648E1-C341-479B-9D86-B2F405C3EC3D" width="310" height="78">
+        <image name="E22D977E-EDBD-4870-B53C-ED818784291D" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

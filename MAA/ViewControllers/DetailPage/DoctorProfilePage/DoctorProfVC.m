@@ -116,12 +116,17 @@
     if(![[entityDetails valueForKey:@"phone"] isEqual:[NSNull null]]){
         self.contactNoLabel.text = [NSString stringWithFormat:@"Contact number:%@",[entityDetails valueForKey:@"phone"]];
     }
+    if(![[entityDetails valueForKey:@"description"] isEqual:[NSNull null]]){
+        self.aboutLabel.text = [entityDetails valueForKey:@"description"];
+    }
 //    if([[entityDetails valueForKey:@"e_booking_avail"] isEqualToString:@"1"] ){
 //        self.consultNowButton.hidden  = NO;
 //    }
 //    else{
 //        self.consultNowButton.hidden = YES;
 //    }
+}
+- (IBAction)allInfoButtonAction:(UIButton *)sender {
 }
 
 @end
