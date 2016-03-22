@@ -8,6 +8,10 @@
 
 #import "SearchVC.h"
 #import "SearchTVC.h"
+#import "DoctorProfVC.h"
+#import "ClinicProfVC.h"
+
+
 #import "DoctorProfileVC.h"
 #import "HospitalProfile.h"
 #import "SearchResultsVC.h"
@@ -115,15 +119,21 @@
         }
         else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+            DoctorProfVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfVC"];
             doctorPfofileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            doctorPfofileVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:doctorPfofileVC animated:YES];
+            
+//            DoctorProfileVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfileVC"];
+//            doctorPfofileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+//            [self.navigationController pushViewController:doctorPfofileVC animated:YES];
         }
         else if ([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"clinic"]){
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            HospitalProfile *hospitalProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"HospitalProfile"];
-            hospitalProfileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
-            [self.navigationController pushViewController:hospitalProfileVC animated:YES];
+            ClinicProfVC *clinicProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"ClinicProfVC"];
+            clinicProfileVC.entityId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            clinicProfileVC.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:clinicProfileVC animated:YES];
             
         }
         
