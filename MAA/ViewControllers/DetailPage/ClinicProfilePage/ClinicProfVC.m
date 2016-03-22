@@ -50,7 +50,7 @@
         NSLog(@"Hospital Detilst;%@",responseObject);
         //self.hospitalDataDictionary = [responseObject valueForKey:Datakey];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        //[self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
+        [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
         //[self.clinicTbableView reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         NSLog(@"Respnse Error;%@",errorResponse);
@@ -67,5 +67,31 @@
     }];
 }
 
+-(void)settingEntityDetailsWithData:(id)entityDetails{
+    NSLog(@"Entity Details:%@",entityDetails);
+    NSString *clinicProfileImageUrlString = [entityDetails valueForKey:@"logo_image"];
+    [self.clinicProfileImage sd_setImageWithURL:[NSURL URLWithString:clinicProfileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    self.clinicNameLabel.text = [entityDetails valueForKey:@"name"];
+    self.clinicDetail.text = [entityDetails valueForKey:@"tagline"];
+    self.locationLabel.text = [[entityDetails valueForKey:@"location"] valueForKey:@"location_name"];
+    self.consultationLabel.text = [NSString stringWithFormat:@"Rs. %@ consultation fee",[entityDetails valueForKey:@"average_fee"]];
+    self.experienceLabel.text = [NSString stringWithFormat:@"%@ of experience",[entityDetails valueForKey:@"experience"]];
+    self.noOfConsultationsLabel.text = [NSString stringWithFormat:@"%@ consultations",[entityDetails valueForKey:@"no_of_consultations"]];
+    if(!([entityDetails valueForKey:@"rating"] == [NSNull null])){
+        self.ratingLabel.text = [NSString stringWithFormat:@"%@ rating",[entityDetails valueForKey:@"rating"]];
+    }
+    else{
+        self.ratingLabel.text = [NSString stringWithFormat:@"0 rating"];
+    }
+     self.reviewCountLabel.text = [NSString stringWithFormat:@"%@ Reviews",[entityDetails valueForKey:@"no_of_reviews"]];
+    if(!([entityDetails valueForKey:@"phone"] == [NSNull null])){
+        self.contactNumberLabel.text = [NSString stringWithFormat:@"Contact number: %@",[entityDetails valueForKey:@"phone"]];
+    }
+   
+    
+    
+//    self.satisfiedpeopleLabel.text = [NSString stringWithFormat:@"%@ satisfied people",[entityDetails valueForKey:@"no_of_consultations"]];
+   
+}
 
 @end
