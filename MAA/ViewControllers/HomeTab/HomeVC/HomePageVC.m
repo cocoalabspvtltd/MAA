@@ -159,6 +159,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         SearchResultsVC *searchResultVC = (SearchResultsVC *)[storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
         searchResultVC.departmentId = [[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+        searchResultVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:searchResultVC animated:YES];
 }
 

@@ -133,9 +133,9 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-   
+    NSLog(@"DWFDBHAD:%@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"]);
     if(self.isOnlineButtonSelected){
-        if([[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
+        if([[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
             DoctorProfVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfVC"];
             doctorPfofileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             [self.navigationController pushViewController:doctorPfofileVC animated:YES];
@@ -156,7 +156,7 @@
        
     }
     else{
-        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
+        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
             DoctorProfVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfVC"];
             doctorPfofileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             [self.navigationController pushViewController:doctorPfofileVC animated:YES];
