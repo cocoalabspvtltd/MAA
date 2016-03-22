@@ -16,6 +16,7 @@
 
 #import "NotesPopUp.h"
 #import "Invoicepopup.h"
+#import "MedicalDocumentsVC.h"
 #import "AppoinmentDetailVC.h"
 
 #import "PreviousAppoinmentCell.h"
@@ -380,6 +381,10 @@
       [self methodForCancelAppointment];
     }
     else if ([buttonTitle isEqualToString:PrescriptonstitltString]){
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+        MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
+        medicalDocumentsVC.isFromPrescriptions = YES;
+        [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
     }
     else if ([buttonTitle isEqualToString:StartAppointmentitleString]){
         [self callingStartAppointmentApi];
