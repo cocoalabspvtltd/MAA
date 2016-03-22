@@ -743,7 +743,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="B1B51B96-1C05-4559-8C44-BB44CE5CB46F" scopeBarBackgroundImage="B1B51B96-1C05-4559-8C44-BB44CE5CB46F" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="A67A28FC-BFD1-4064-8B1F-7C38A69B63D9" scopeBarBackgroundImage="A67A28FC-BFD1-4064-8B1F-7C38A69B63D9" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -756,7 +756,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="3F60A141-DD95-44CF-BC66-81195E3DDA8A" scopeBarBackgroundImage="3F60A141-DD95-44CF-BC66-81195E3DDA8A" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="6D80A942-D863-4E74-A3B1-52B14978DA0F" scopeBarBackgroundImage="6D80A942-D863-4E74-A3B1-52B14978DA0F" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -12410,7 +12410,7 @@
         <!--Detail Page (Doc&Clinic)-->
         <scene sceneID="hta-eM-KwE">
             <objects>
-                <viewController title="Detail Page (Doc&amp;Clinic)" id="xzw-XO-a3y" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoctorProfVC" title="Detail Page (Doc&amp;Clinic)" id="xzw-XO-a3y" customClass="DoctorProfVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="EGE-me-jN4"/>
                         <viewControllerLayoutGuide type="bottom" id="EVy-o0-0tO"/>
@@ -12436,6 +12436,7 @@
                                             <constraint firstAttribute="height" constant="30" id="trY-Og-6z9"/>
                                         </constraints>
                                         <connections>
+                                            <action selector="backButtonAction:" destination="xzw-XO-a3y" eventType="touchUpInside" id="9Wd-Sd-sSU"/>
                                             <action selector="backbuttonAction:" destination="b44-lA-1e7" eventType="touchUpInside" id="mrc-xx-45K"/>
                                         </connections>
                                     </button>
@@ -12494,12 +12495,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A22-SN-dcd" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="1086"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_" translatesAutoresizingMaskIntoConstraints="NO" id="Ndi-GU-IOc">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="Mdm-Iw-QKu"/>
-                                                </constraints>
-                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="DVO-ed-IkY">
                                                 <rect key="frame" x="20" y="35" width="80" height="80"/>
                                                 <constraints>
@@ -13143,6 +13138,12 @@
                                                     <constraint firstAttribute="height" constant="66" id="xqW-cg-uyD"/>
                                                 </constraints>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splash_" translatesAutoresizingMaskIntoConstraints="NO" id="Ndi-GU-IOc">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="Mdm-Iw-QKu"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -13224,7 +13225,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5Y-xL-ptV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16154" y="2742.5"/>
+            <point key="canvasLocation" x="16124" y="2248.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CX7-yP-fA9">
@@ -13950,7 +13951,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VTJ-jr-YOj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="16830" y="2443"/>
+            <point key="canvasLocation" x="16912" y="2355"/>
         </scene>
         <!--Answerpage-->
         <scene sceneID="QGK-e4-s8L">
@@ -14628,7 +14629,7 @@
         <!--Detail Page (Doc&Clinic)-->
         <scene sceneID="Ywy-sd-UF7">
             <objects>
-                <viewController title="Detail Page (Doc&amp;Clinic)" id="6yz-YW-zdf" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ClinicProfVC" title="Detail Page (Doc&amp;Clinic)" id="6yz-YW-zdf" customClass="ClinicProfVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zIs-A5-zxN"/>
                         <viewControllerLayoutGuide type="bottom" id="tKm-eO-woe"/>
@@ -14654,6 +14655,7 @@
                                             <constraint firstAttribute="height" constant="30" id="nvZ-M5-Hbr"/>
                                         </constraints>
                                         <connections>
+                                            <action selector="backButtonAction:" destination="6yz-YW-zdf" eventType="touchUpInside" id="pJU-eu-GqT"/>
                                             <action selector="backbuttonAction:" destination="b44-lA-1e7" eventType="touchUpInside" id="2Bo-zf-Lxj"/>
                                         </connections>
                                     </button>
@@ -15381,7 +15383,8 @@
     <resources>
         <image name="1.png" width="688" height="853"/>
         <image name="2.jpg" width="256" height="256"/>
-        <image name="3F60A141-DD95-44CF-BC66-81195E3DDA8A" width="310" height="78">
+        <image name="5.png" width="260" height="288"/>
+        <image name="6D80A942-D863-4E74-A3B1-52B14978DA0F" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -17046,8 +17049,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="5.png" width="260" height="288"/>
-        <image name="B1B51B96-1C05-4559-8C44-BB44CE5CB46F" width="310" height="78">
+        <image name="A67A28FC-BFD1-4064-8B1F-7C38A69B63D9" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
