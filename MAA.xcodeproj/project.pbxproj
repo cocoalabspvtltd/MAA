@@ -86,6 +86,7 @@
 		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
 		C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C401C71EC5300662BB4 /* professionalInfo.xib */; };
 		C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C441C71F79500662BB4 /* proinfo2.xib */; };
+		C057E5681CA13E020041FCDC /* timingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C057E5671CA13E020041FCDC /* timingsCell.xib */; };
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
@@ -489,6 +490,7 @@
 		C0447C3E1C71EB2200662BB4 /* specialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = specialCell.m; sourceTree = "<group>"; };
 		C0447C401C71EC5300662BB4 /* professionalInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = professionalInfo.xib; sourceTree = "<group>"; };
 		C0447C441C71F79500662BB4 /* proinfo2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = proinfo2.xib; sourceTree = "<group>"; };
+		C057E5671CA13E020041FCDC /* timingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = timingsCell.xib; sourceTree = "<group>"; };
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
@@ -1384,6 +1386,7 @@
 				C065F6541C8EB22700E25726 /* TextChatVC.m */,
 				C00F49D91C9C11090086D164 /* newkiranViewController.h */,
 				C00F49DA1C9C11090086D164 /* newkiranViewController.m */,
+				C057E5671CA13E020041FCDC /* timingsCell.xib */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -2460,6 +2463,7 @@
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0BBC4851C6E2AE7005083B1 /* search-a@3x.png in Resources */,
 				9F95DB511C9E2FD800F3EB4F /* no time slots.png in Resources */,
+				C057E5681CA13E020041FCDC /* timingsCell.xib in Resources */,
 				C09EF6E51C76211800806600 /* index.html in Resources */,
 				C0BBC4781C6E2AE7005083B1 /* home-a@2x.png in Resources */,
 				C09EF6D41C76211800806600 /* OTVideoOrientation.html in Resources */,
