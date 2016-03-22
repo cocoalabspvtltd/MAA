@@ -58,6 +58,14 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(self.allergyMutableArray.count == 0){
+        self.noResultsView.hidden = NO;
+        self.tblAllergies.hidden = YES;
+    }
+    else{
+        self.noResultsView.hidden = YES;
+        self.tblAllergies.hidden = NO;
+    }
     return self.allergyMutableArray.count;
 }
 
