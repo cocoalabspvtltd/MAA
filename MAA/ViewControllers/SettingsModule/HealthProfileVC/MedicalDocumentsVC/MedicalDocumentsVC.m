@@ -133,6 +133,9 @@
     if(self.isFromMedicalDocuments){
         photoCell.headingLabelForMD.text = [[self.photosMutableArray objectAtIndex:indexPath.row] valueForKey:@"title"];
     }
+    else{
+        photoCell.headingLabelForMD.hidden = YES;
+    }
     NSString *imageUrlString = [[self.photosMutableArray objectAtIndex:indexPath.row] valueForKey:@"url"];
     NSLog(@"Image Url:%@",imageUrlString);
     [photoCell.medicalDocumentImageView  sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
