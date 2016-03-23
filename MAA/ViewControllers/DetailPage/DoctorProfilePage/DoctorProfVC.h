@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface DoctorProfVC : UIViewController
+@property (weak, nonatomic) IBOutlet UIImageView *imgProfile;
+@property (weak, nonatomic) IBOutlet UIButton *btnDirection;
 @property (nonatomic, strong) NSString *entityId;
 @end

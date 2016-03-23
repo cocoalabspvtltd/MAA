@@ -81,6 +81,7 @@
 		C00F49DB1C9C11090086D164 /* newkiranViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00F49DA1C9C11090086D164 /* newkiranViewController.m */; };
 		C01420B51C99B18300467D8A /* AccountResetPWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01420B41C99B18300467D8A /* AccountResetPWVC.m */; };
 		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
+		C017899E1CA2B38F00482EBF /* invoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = C017899D1CA2B38F00482EBF /* invoice.xib */; };
 		C01C23D81CA1A10300279A17 /* ClinicProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23D71CA1A10300279A17 /* ClinicProfVC.m */; };
 		C01C23DB1CA1A11500279A17 /* DoctorProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */; };
 		C035E7451C885AA4007809BC /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C035E7441C885AA4007809BC /* line.png */; };
@@ -485,6 +486,7 @@
 		C01420B41C99B18300467D8A /* AccountResetPWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPWVC.m; sourceTree = "<group>"; };
 		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
 		C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Doc'sAccntInfo.m"; sourceTree = "<group>"; };
+		C017899D1CA2B38F00482EBF /* invoice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = invoice.xib; sourceTree = "<group>"; };
 		C01C23D61CA1A10300279A17 /* ClinicProfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClinicProfVC.h; sourceTree = "<group>"; };
 		C01C23D71CA1A10300279A17 /* ClinicProfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicProfVC.m; sourceTree = "<group>"; };
 		C01C23D91CA1A11500279A17 /* DoctorProfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorProfVC.h; sourceTree = "<group>"; };
@@ -1324,9 +1326,6 @@
 				9F991C541C5A1C5400F92C11 /* doctor_dash_xib.xib */,
 				9F991C551C5A1C5400F92C11 /* doct_dashCollectionViewCell.h */,
 				9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */,
-				9F991C571C5A1C5400F92C11 /* doctorReviewsViewController.h */,
-				9F991C581C5A1C5400F92C11 /* doctorReviewsViewController.m */,
-				9F991C591C5A1C5400F92C11 /* search.xib */,
 				9F991C5A1C5A1C5400F92C11 /* bin.png */,
 			);
 			name = Kiran;
@@ -1394,6 +1393,10 @@
 				C00F49D91C9C11090086D164 /* newkiranViewController.h */,
 				C00F49DA1C9C11090086D164 /* newkiranViewController.m */,
 				C057E5671CA13E020041FCDC /* timingsCell.xib */,
+				9F991C571C5A1C5400F92C11 /* doctorReviewsViewController.h */,
+				9F991C581C5A1C5400F92C11 /* doctorReviewsViewController.m */,
+				9F991C591C5A1C5400F92C11 /* search.xib */,
+				C017899D1CA2B38F00482EBF /* invoice.xib */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -2515,6 +2518,7 @@
 				C0BBC4881C6E2AE7005083B1 /* search@3x.png in Resources */,
 				C09EF6CB1C76211800806600 /* OTCameraCaptureResolution.html in Resources */,
 				9F5F0C401C665E8100F7E99D /* View.xib in Resources */,
+				C017899E1CA2B38F00482EBF /* invoice.xib in Resources */,
 				C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */,
 				C09F2C101C9C82F400DB040C /* no questions.png in Resources */,
 				9FC62CEE1C57267D00AF3EA3 /* DoctorServicesHV.xib in Resources */,

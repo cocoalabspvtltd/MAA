@@ -16,6 +16,7 @@
     NSRange stringRange;
 }
 
+- (IBAction)back:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tablee;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableViewCell *celll;

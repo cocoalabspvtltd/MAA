@@ -45,7 +45,7 @@
     _tablee.delegate=self;
     _tablee.dataSource=self;
     _searchBar.delegate=self;
-   _token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6ImFkNTY5NDMzMTc2ZDg1N2M2ZjhlODZiYWIzMDU2ODdkYjlkYzY0M2EifQ.PYNadEyYkRDDLX9iMLD1mMZeIn9zZsKcof-ooS06HU8";
+    _token = [[NSUserDefaults standardUserDefaults]valueForKey:ACCESS_TOKEN];
     
      doctor = [Baseurl stringByAppendingString:review_url];
 
@@ -375,7 +375,7 @@
     totalString = [[NSMutableArray alloc] initWithObjects:@"shoes",@"formal",@"apple",@"american tourister",@"adidas",@"alarm",@"african snake",@"ball",@"baseball",@"bakardi",@"balarama",@"books",@"cigerets",@"camara",@"cd",@"crayons", nil];
     
     
-    _token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6ImFkNTY5NDMzMTc2ZDg1N2M2ZjhlODZiYWIzMDU2ODdkYjlkYzY0M2EifQ.PYNadEyYkRDDLX9iMLD1mMZeIn9zZsKcof-ooS06HU8";
+    _token = [[NSUserDefaults standardUserDefaults]valueForKey:ACCESS_TOKEN];
     
     NSString *doctor = [Baseurl stringByAppendingString:review_url];
     
@@ -569,7 +569,7 @@
 //    NSLog(@"%d",month);
 //
     
-    _token = @"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbiI6ImFkNTY5NDMzMTc2ZDg1N2M2ZjhlODZiYWIzMDU2ODdkYjlkYzY0M2EifQ.PYNadEyYkRDDLX9iMLD1mMZeIn9zZsKcof-ooS06HU8";
+    _token = [[NSUserDefaults standardUserDefaults]valueForKey:ACCESS_TOKEN];
     
     NSString *doctorr = [Baseurl stringByAppendingString:review_url];
     
@@ -630,5 +630,9 @@
     
     
     
+}
+- (IBAction)back:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

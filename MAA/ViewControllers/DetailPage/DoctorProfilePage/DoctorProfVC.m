@@ -16,6 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _imgProfile.layer.cornerRadius=_imgProfile.frame.size.width/2;
+    _imgProfile.clipsToBounds=YES;
+    _imgProfile.layer.borderWidth=0.5f;
+    _imgProfile.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
+    _btnDirection.layer.borderWidth=0.5f;
+    _btnDirection.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
     [self callingGetDoctorDetailsApi];
     // Do any additional setup after loading the view.
 }

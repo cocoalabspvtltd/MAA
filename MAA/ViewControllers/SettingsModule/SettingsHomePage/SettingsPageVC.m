@@ -9,9 +9,11 @@
 #import "FeedBackVC.h"
 #import "SettingsPageVC.h"
 #import "AccountSettingVC.h"
+#import "doctorReviewsViewController.h"
 #import "myHealthProfileVC.h"
 #import "AboutViewController.h"
 #import "CLFacebookHandler/FacebookWrapper.h"
+
 
 #import "SettingsTableViewCell.h"
 
@@ -106,6 +108,11 @@
         AccountSettingVC *accountSettingsVC = (AccountSettingVC *)[storyboard instantiateViewControllerWithIdentifier:@"AccountSettingVC"];
         accountSettingsVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:accountSettingsVC animated:YES];
+    }
+    else if (indexPath.row == 2){
+        doctorReviewsViewController *doctorReviewsVC = (doctorReviewsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"doctorReviewsViewController"];
+        doctorReviewsVC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:doctorReviewsVC animated:YES];
     }
     else if (indexPath.row == 4){
         AboutViewController *aboutVC = (AboutViewController *)[storyboard instantiateViewControllerWithIdentifier:@"AboutViewController"];

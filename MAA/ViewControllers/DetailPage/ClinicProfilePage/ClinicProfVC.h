@@ -20,5 +20,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *contactNumberLabel;
 @property (weak, nonatomic) IBOutlet UITableView *doctorsTableView;
+@property (weak, nonatomic) IBOutlet UIButton *btnDirections;
 @property (nonatomic, strong) NSString *entityId;
 @end
