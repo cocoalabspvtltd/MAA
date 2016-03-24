@@ -68,6 +68,7 @@
     typofQuestions.dataSource=self;
     _txtQuestionType.inputView=typofQuestions;
     typofQuestions.tag = 30;
+    
     gesture.delegate=self;
     gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Tapping)];
     [self.ChildView addGestureRecognizer:gesture];

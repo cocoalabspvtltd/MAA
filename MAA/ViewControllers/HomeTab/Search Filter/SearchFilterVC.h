@@ -29,5 +29,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *txtGender;
 @property (weak, nonatomic) IBOutlet UITextField *txtExperienceFrom;
 @property (weak, nonatomic) IBOutlet UITextField *txtExperienceTo;
+@property (weak, nonatomic) IBOutlet UIView *mainView;
 
 @end

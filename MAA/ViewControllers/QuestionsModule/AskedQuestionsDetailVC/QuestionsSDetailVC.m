@@ -29,6 +29,7 @@
                                     lineBreakMode:NSLineBreakByWordWrapping];
     
     CGFloat labelHeight = labelSize.height;
+    
     [_scroller setContentSize:CGSizeMake(self.view.frame.size.width, 300+labelHeight)];
 
 }

@@ -8,7 +8,16 @@
 
 #import "SearchFilterVC.h"
 
-@interface SearchFilterVC ()
+@interface SearchFilterVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate>
+{
+    UIPickerView *type;
+    UIPickerView *gender;
+    NSArray *Type;
+    NSArray *Gender;
+    UITapGestureRecognizer *gesture;
+    
+    
+}
 
 @end
 
@@ -16,7 +25,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     [self callingFilterInfoApi];
+    Type=@[@"Clinic",@"Doctor",@"All"];
+    Gender=@[@"Male",@"Female"];
+    
+    type=[[UIPickerView alloc]init];
+    _txtType.inputView=type;
+    type.delegate=self;
+    type.dataSource=self;
+    type.tag=10;
+    
+    gender=[[UIPickerView alloc]init];
+    _txtGender.inputView=gender;
+    gender.delegate=self;
+    gender.dataSource=self;
+    gender.tag=20;
+    
+    gesture.delegate=self;
+    gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Tapping)];
+    [self.mainView addGestureRecognizer:gesture];
+    
     
     _txtType.layer.borderWidth=0.5f;
     
@@ -74,6 +103,64 @@
     
     
     
+}
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    if(pickerView.tag==10) {
+        return 1;
+    }
+    else if (pickerView.tag==20)
+    {
+        return 1;
+    }
+    
+    return 1;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    
+    if(pickerView.tag==10)
+    {
+        return Type.count;
+    }
+    else if (pickerView.tag==20)
+    {
+        return Gender.count;
+    }
+    
+    return 1;
+}
+-(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    if(pickerView.tag==10)
+    {
+        return Type[row];
+    }
+    else if (pickerView.tag==20)
+    {
+        return Gender[row];
+    }
+   
+    return nil;
+    
+}
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (pickerView.tag==10)
+    {
+        _txtType.text=Type[row];
+        
+    }
+    else if (pickerView.tag==20)
+    {
+         _txtGender.text=Gender[row];
+    }
+    
+    
+}
+-(void)Tapping
+{
+    [self.view endEditing:YES];
 }
 
 - (void)didReceiveMemoryWarning {
