@@ -134,6 +134,7 @@
 //        self.consultNowButton.hidden = YES;
 //    }
 }
+
 - (IBAction)allInfoButtonAction:(UIButton *)sender {
 }
 
@@ -163,6 +164,7 @@
     cell.reviewerNameLabel.text = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"patient_name"];
     cell.reviewContentLabel.text = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"review"];
     cell.dateString = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
+    cell.ratingString = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
     return cell;
 }
 

@@ -13,11 +13,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *reviewerNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *reviewContentLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *firstRatingStarImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *secondRatingStarImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *thirdRatingStarImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *fourthRatingStarImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *fifthRatingStarImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *ratingStarImageView_1;
+@property (weak, nonatomic) IBOutlet UIImageView *ratingStarImageView_2;
+@property (weak, nonatomic) IBOutlet UIImageView *ratingStarImageView_3;
+@property (weak, nonatomic) IBOutlet UIImageView *ratingStarImageView_4;
+@property (weak, nonatomic) IBOutlet UIImageView *ratingStarImageView_5;
 @property (nonatomic, strong) NSString *profilImageurlString;
 @property (nonatomic, strong) NSString *dateString;
+@property (nonatomic, strong) NSString *ratingString;
 @end
