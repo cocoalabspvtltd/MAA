@@ -304,6 +304,7 @@
 		C0D1581D1C9B1B9700FC1DE0 /* PayUSDKInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = C0D158151C9B1B9700FC1DE0 /* PayUSDKInfo.plist */; };
 		C0D158211C9B231B00FC1DE0 /* PayUSAGetHashes.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D158201C9B231B00FC1DE0 /* PayUSAGetHashes.m */; };
 		C0D158251C9B25AD00FC1DE0 /* PayUSAOneTapToken.m in Sources */ = {isa = PBXBuildFile; fileRef = C0D158241C9B25AD00FC1DE0 /* PayUSAOneTapToken.m */; };
+		C0DD55821CA99E1B00F7CDD1 /* ReviewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0DD55811CA99E1B00F7CDD1 /* ReviewTableViewCell.m */; };
 		C0DE50CC1C86F87B001F40E9 /* human-male-female.png in Resources */ = {isa = PBXBuildFile; fileRef = C0DE50CB1C86F87B001F40E9 /* human-male-female.png */; };
 		C0E92BBF1C9183A100443117 /* ic_close_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */; };
 		C0E92BC01C9183A100443117 /* ic_close_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */; };
@@ -803,6 +804,8 @@
 		C0D158221C9B247300FC1DE0 /* PayUHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUHeader.h; sourceTree = "<group>"; };
 		C0D158231C9B25AD00FC1DE0 /* PayUSAOneTapToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayUSAOneTapToken.h; sourceTree = "<group>"; };
 		C0D158241C9B25AD00FC1DE0 /* PayUSAOneTapToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayUSAOneTapToken.m; sourceTree = "<group>"; };
+		C0DD55801CA99E1B00F7CDD1 /* ReviewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReviewTableViewCell.h; sourceTree = "<group>"; };
+		C0DD55811CA99E1B00F7CDD1 /* ReviewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReviewTableViewCell.m; sourceTree = "<group>"; };
 		C0DE50CB1C86F87B001F40E9 /* human-male-female.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "human-male-female.png"; sourceTree = "<group>"; };
 		C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_2x.png; sourceTree = "<group>"; };
 		C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_3x.png; sourceTree = "<group>"; };
@@ -1078,6 +1081,7 @@
 		9F2B0E1C1C65FB230053D023 /* CustomCells */ = {
 			isa = PBXGroup;
 			children = (
+				C0DD55771CA99DE100F7CDD1 /* ProfilePages */,
 				C0D157E01C9B12C100FC1DE0 /* HomeTab */,
 				C0D157E71C9B12C100FC1DE0 /* SearchTab */,
 				C0BBC4981C6E4046005083B1 /* AppointmentModule */,
@@ -2228,6 +2232,39 @@
 			path = ExtraObjectsForPayu;
 			sourceTree = "<group>";
 		};
+		C0DD55771CA99DE100F7CDD1 /* ProfilePages */ = {
+			isa = PBXGroup;
+			children = (
+				C0DD55781CA99DE100F7CDD1 /* ClinicProfilePage */,
+				C0DD55791CA99DE100F7CDD1 /* DoctorProfilePage */,
+			);
+			path = ProfilePages;
+			sourceTree = "<group>";
+		};
+		C0DD55781CA99DE100F7CDD1 /* ClinicProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ClinicProfilePage;
+			sourceTree = "<group>";
+		};
+		C0DD55791CA99DE100F7CDD1 /* DoctorProfilePage */ = {
+			isa = PBXGroup;
+			children = (
+				C0DD557F1CA99E0400F7CDD1 /* ReviewTableViewCell */,
+			);
+			path = DoctorProfilePage;
+			sourceTree = "<group>";
+		};
+		C0DD557F1CA99E0400F7CDD1 /* ReviewTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0DD55801CA99E1B00F7CDD1 /* ReviewTableViewCell.h */,
+				C0DD55811CA99E1B00F7CDD1 /* ReviewTableViewCell.m */,
+			);
+			path = ReviewTableViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2596,6 +2633,7 @@
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
 				9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */,
 				C094F8141C986A0D00C73FE9 /* CategoryCell.m in Sources */,
+				C0DD55821CA99E1B00F7CDD1 /* ReviewTableViewCell.m in Sources */,
 				C0BBC4D01C6E65BB005083B1 /* Invoicepopup.m in Sources */,
 				C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */,
 				C01C23DB1CA1A11500279A17 /* DoctorProfVC.m in Sources */,

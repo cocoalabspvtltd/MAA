@@ -21,5 +21,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *ratingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *contactNoLabel;
 @property (strong, nonatomic) IBOutlet UILabel *aboutLabel;
+@property (weak, nonatomic) IBOutlet UITableView *reviewTableView;
+@property (weak, nonatomic) IBOutlet UIButton *reviewAllInfoButton;
+
 @property (nonatomic, strong) NSString *entityId;
 @end

@@ -7,9 +7,10 @@
 //
 
 #import "DoctorProfVC.h"
+#import "ReviewTableViewCell.h"
 
-@interface DoctorProfVC ()
-
+@interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic,strong) NSArray *reviewsArray;
 @end
 
 @implementation DoctorProfVC
@@ -56,11 +57,18 @@
     [getEntityDetailsMutableDictionary setValue:accesstoken forKey:@"token"];
     [getEntityDetailsMutableDictionary setValue:self.entityId forKey:@"id"];
     [getEntityDetailsMutableDictionary setValue:[NSNumber numberWithInt:1] forKey:@"format"];
+    [getEntityDetailsMutableDictionary setValue:[NSNumber numberWithInt:3] forKey:@"reviews_count"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+         NSLog(@"Respnse Error;%@",responseObject);
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
+        self.reviewsArray = [[responseObject valueForKey:Datakey] valueForKey:@"e_reviews"];
+        if(self.reviewsArray.count<=2){
+            self.reviewAllInfoButton.hidden = YES;
+        }
+        [self.reviewTableView reloadData];
        // self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
        // self.servicesArray = [[responseObject valueForKey:Datakey] valueForKey:@"attributes"];
         //NSLog(@"Services Array:%@",self.servicesArray);
@@ -127,6 +135,35 @@
 //    }
 }
 - (IBAction)allInfoButtonAction:(UIButton *)sender {
+}
+
+#pragma mark - Table view Datasources
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(tableView == self.reviewTableView){
+        if(self.reviewsArray.count>2){
+            return 2;
+        }
+        else{
+            return self.reviewsArray.count;
+        }
+    }
+    else{
+        return 10;
+    }
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ReviewTableViewCell *cell = [self.reviewTableView dequeueReusableCellWithIdentifier:@"cellReviews"forIndexPath:indexPath];
+    cell.profilImageurlString = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"patient_image"];
+    cell.reviewerNameLabel.text = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"patient_name"];
+    cell.reviewContentLabel.text = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"review"];
+    cell.dateString = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
+    return cell;
 }
 
 @end
