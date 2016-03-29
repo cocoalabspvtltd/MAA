@@ -12,6 +12,7 @@
 
 @interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSArray *reviewsArray;
+@property (nonatomic, strong) id doctorFirstClinicDetails;
 @end
 
 @implementation DoctorProfVC
@@ -128,6 +129,11 @@
     if(![[entityDetails valueForKey:@"description"] isEqual:[NSNull null]]){
         self.aboutLabel.text = [entityDetails valueForKey:@"description"];
     }
+    if([[entityDetails valueForKey:@"clinic_details"] count]>0){
+        self.doctorFirstClinicDetails = [[entityDetails valueForKey:@"clinic_details"] objectAtIndex:0];
+        self.cliniclocationLabel.text = [NSString stringWithFormat:@"%@\n%@",[self.doctorFirstClinicDetails valueForKey:@"clinic_name"],[[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"address"]];
+    }
+    NSLog(@"Doctor Clinic Details:%@",self.doctorFirstClinicDetails);
 //    if([[entityDetails valueForKey:@"e_booking_avail"] isEqualToString:@"1"] ){
 //        self.consultNowButton.hidden  = NO;
 //    }
@@ -140,8 +146,15 @@
 }
 
 - (IBAction)directionButtonAction:(UIButton *)sender {
+    NSLog(@"dfdej:%@",[self.doctorFirstClinicDetails valueForKey:@"clinic_name"]);
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MapVC *mapVC = [storyboard instantiateViewControllerWithIdentifier:@"MapVC"];
+    mapVC.locationString = [self.doctorFirstClinicDetails valueForKey:@"clinic_name"];
+    mapVC.locationDetailString = [[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"address"];
+    mapVC.latitude = [[[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"lat"] floatValue];
+    mapVC.longitude = [[[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"lng"] floatValue];
+    mapVC.latitude = 10.015861;
+    mapVC.longitude = 76.341867;
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 

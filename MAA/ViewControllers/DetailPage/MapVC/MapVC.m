@@ -17,19 +17,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self plottingLocation];
+    [self addingLocationLabelText];
     // Do any additional setup after loading the view.
 }
 
+-(void)addingLocationLabelText{
+    [self.locationLabel sizeToFit];
+    NSString *myString = [NSString stringWithFormat:@"%@\n%@",self.locationString,self.locationDetailString];
+    //Create mutable string from original one
+    NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:myString];
+    
+    //Fing range of the string you want to change colour
+    //If you need to change colour in more that one place just repeat it
+    NSRange range = [myString rangeOfString:self.locationString];
+    [attString addAttributes:[[NSDictionary alloc] initWithObjectsAndKeys:
+                NSFontAttributeName, [UIFont fontWithName:@"Times New Roman" size:25],
+                NSForegroundColorAttributeName, [UIColor blueColor],
+                nil] range:range];
+    
+    //Add it to the label - notice its not text property but it's attributeText
+    self.locationLabel.attributedText = attString;
+}
+
 -(void)plottingLocation{
-    self.latitude = 13.04016;
-    self.longitude = 80.243044;
     MKPointAnnotation*    annotation = [[MKPointAnnotation alloc] init];
     CLLocationCoordinate2D myCoordinate;
     myCoordinate.latitude=self.latitude;
     myCoordinate.longitude=self.longitude;
     annotation.coordinate = myCoordinate;
-    annotation.title = @"My location";
+    annotation.title = self.locationString;
+    annotation.subtitle = self.locationDetailString;
     [self.locationMapView addAnnotation:annotation];
+    
+    CLLocationDistance distance = 1000;
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(myCoordinate,
+                                                                   distance,
+                                                                   distance);
+    MKCoordinateRegion adjusted_region = [self.locationMapView regionThatFits:region];
+    [self.locationMapView setRegion:adjusted_region animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
