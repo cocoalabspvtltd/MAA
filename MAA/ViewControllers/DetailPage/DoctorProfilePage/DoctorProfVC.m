@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "MapVC.h"
 #import "DoctorProfVC.h"
 #import "ReviewTableViewCell.h"
 
@@ -136,6 +137,12 @@
 }
 
 - (IBAction)allInfoButtonAction:(UIButton *)sender {
+}
+
+- (IBAction)directionButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MapVC *mapVC = [storyboard instantiateViewControllerWithIdentifier:@"MapVC"];
+    [self.navigationController pushViewController:mapVC animated:YES];
 }
 
 #pragma mark - Table view Datasources

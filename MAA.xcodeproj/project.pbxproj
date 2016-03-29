@@ -309,6 +309,8 @@
 		C0E92BBF1C9183A100443117 /* ic_close_white_48pt_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */; };
 		C0E92BC01C9183A100443117 /* ic_close_white_48pt_3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */; };
 		C0E92BC11C9183A100443117 /* ic_close_white_48pt.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBE1C9183A100443117 /* ic_close_white_48pt.png */; };
+		C0EC35A81CAAEA660083E735 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC35A71CAAEA660083E735 /* MapKit.framework */; };
+		C0EC35AC1CAAEF130083E735 /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EC35AB1CAAEF130083E735 /* MapVC.m */; };
 		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
 		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
 /* End PBXBuildFile section */
@@ -810,6 +812,9 @@
 		C0E92BBC1C9183A100443117 /* ic_close_white_48pt_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_2x.png; sourceTree = "<group>"; };
 		C0E92BBD1C9183A100443117 /* ic_close_white_48pt_3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt_3x.png; sourceTree = "<group>"; };
 		C0E92BBE1C9183A100443117 /* ic_close_white_48pt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_close_white_48pt.png; sourceTree = "<group>"; };
+		C0EC35A71CAAEA660083E735 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		C0EC35AA1CAAEF130083E735 /* MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
+		C0EC35AB1CAAEF130083E735 /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
 		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
 		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
 		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
@@ -820,6 +825,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0BAF0241C319FC0002F3137 /* CoreLocation.framework in Frameworks */,
+				C0EC35A81CAAEA660083E735 /* MapKit.framework in Frameworks */,
 				C0D1581C1C9B1B9700FC1DE0 /* libPayU_iOS_CoreSDK.a in Frameworks */,
 				C0A8312A1C7DE503000A60C9 /* libNetworkHandler.a in Frameworks */,
 				C09EF70E1C7625AB00806600 /* libc++.tbd in Frameworks */,
@@ -834,7 +841,6 @@
 				C09EF7001C7622BD00806600 /* OpenGLES.framework in Frameworks */,
 				7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */,
 				C0BAF0261C319FE3002F3137 /* UIKit.framework in Frameworks */,
-				C0BAF0241C319FC0002F3137 /* CoreLocation.framework in Frameworks */,
 				C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */,
 				C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */,
 				C086ED061C285D3D009DF69F /* SystemConfiguration.framework in Frameworks */,
@@ -890,6 +896,7 @@
 		55C674E41C09D992005AD9E5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C0EC35A71CAAEA660083E735 /* MapKit.framework */,
 				C09EF70D1C7625AB00806600 /* libc++.tbd */,
 				C09EF7091C76234300806600 /* CoreVideo.framework */,
 				C09EF7071C76232400806600 /* GLKit.framework */,
@@ -1430,6 +1437,7 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				C0EC35A91CAAEF130083E735 /* MapVC */,
 				C01C23D41CA1A0EE00279A17 /* ClinicProfilePage */,
 				C01C23D51CA1A0EE00279A17 /* DoctorProfilePage */,
 			);
@@ -2265,6 +2273,15 @@
 			path = ReviewTableViewCell;
 			sourceTree = "<group>";
 		};
+		C0EC35A91CAAEF130083E735 /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0EC35AA1CAAEF130083E735 /* MapVC.h */,
+				C0EC35AB1CAAEF130083E735 /* MapVC.m */,
+			);
+			path = MapVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2720,6 +2737,7 @@
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
+				C0EC35AC1CAAEF130083E735 /* MapVC.m in Sources */,
 				C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */,
 				C0BD5F5E1C89A3B400C9B8CD /* AnswerVc.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
