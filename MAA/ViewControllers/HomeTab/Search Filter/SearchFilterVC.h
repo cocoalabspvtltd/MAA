@@ -11,6 +11,7 @@
 @interface SearchFilterVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *txtType;
+@property (weak, nonatomic) IBOutlet UITextField *txtCategory;
 @property (weak, nonatomic) IBOutlet UIButton *btnExperience;
 - (IBAction)Experience:(id)sender;
 @property (weak, nonatomic) IBOutlet UIButton *btnConsultaionFee;

@@ -46,6 +46,8 @@
     gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Tapping)];
     [self.mainView addGestureRecognizer:gesture];
     
+    _txtCategory.layer.borderWidth=0.5f;
+    _txtCategory.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
     
     _txtType.layer.borderWidth=0.5f;
     
