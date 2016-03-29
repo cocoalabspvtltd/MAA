@@ -11,5 +11,6 @@
 
 @interface MapVC : UIViewController
 @property (weak, nonatomic) IBOutlet MKMapView *locationMapView;
-
+@property (nonatomic, assign) CGFloat latitude;
+@property (nonatomic, assign) CGFloat longitude;
 @end

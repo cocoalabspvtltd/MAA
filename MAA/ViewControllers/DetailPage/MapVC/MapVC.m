@@ -16,7 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self plottingLocation];
     // Do any additional setup after loading the view.
+}
+
+-(void)plottingLocation{
+    self.latitude = 13.04016;
+    self.longitude = 80.243044;
+    MKPointAnnotation*    annotation = [[MKPointAnnotation alloc] init];
+    CLLocationCoordinate2D myCoordinate;
+    myCoordinate.latitude=self.latitude;
+    myCoordinate.longitude=self.longitude;
+    annotation.coordinate = myCoordinate;
+    annotation.title = @"My location";
+    [self.locationMapView addAnnotation:annotation];
 }
 
 - (void)didReceiveMemoryWarning {
