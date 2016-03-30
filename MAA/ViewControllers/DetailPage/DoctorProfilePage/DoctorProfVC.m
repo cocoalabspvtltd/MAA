@@ -14,6 +14,7 @@
 @interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic,strong) NSArray *reviewsArray;
 @property (nonatomic, strong) id doctorFirstClinicDetails;
+@property (nonatomic, strong) id entityDetails;
 @end
 
 @implementation DoctorProfVC
@@ -66,6 +67,7 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
          NSLog(@"Respnse Error;%@",responseObject);
+        self.entityDetails = [responseObject valueForKey:Datakey];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
         self.reviewsArray = [[responseObject valueForKey:Datakey] valueForKey:@"e_reviews"];
         if(self.reviewsArray.count<=2){
@@ -146,7 +148,10 @@
 - (IBAction)aboutAllInfoButtonAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DoctorAboutVC *doctorAboutVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorAboutVC"];
+    NSLog(@"Name:%@",[self.entityDetails valueForKey:@"name"]);
+    doctorAboutVC.doctorNameString = [self.entityDetails valueForKey:@"name"];
     [self.navigationController pushViewController:doctorAboutVC animated:YES];
+    
 }
 
 - (IBAction)directionButtonAction:(UIButton *)sender {

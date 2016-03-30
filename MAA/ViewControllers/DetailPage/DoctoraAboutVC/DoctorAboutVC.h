@@ -33,4 +33,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *noRegistrationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *registrationViewMoreButton;
 
+@property (nonatomic, strong) NSString *doctorNameString;
+@property (nonatomic, strong) NSArray *specializationArray;
+@property (nonatomic, strong) NSArray *servicesArray;
+@property (nonatomic, strong) NSArray *membershipsArray;
+@property (nonatomic, strong) NSArray *awardsArray;
+@property (nonatomic, strong) NSArray *experienceArray;
+@property (nonatomic, strong) NSArray *educationArray;
+@property (nonatomic, strong) NSArray *registrationArray;
+
+
 @end

@@ -25,7 +25,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
     // Do any additional setup after loading the view.
+}
+
+-(void)initialisation{
+    self.doctorNameHeadingLabel.text = self.doctorNameString;
 }
 
 - (void)didReceiveMemoryWarning {
