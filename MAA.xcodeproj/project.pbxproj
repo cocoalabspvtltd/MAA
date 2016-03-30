@@ -218,6 +218,8 @@
 		C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */; };
 		C0A8312A1C7DE503000A60C9 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A831271C7DE4D6000A60C9 /* libNetworkHandler.a */; };
 		C0A8312E1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A8312D1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m */; };
+		C0AFCA721CAC2D850026A216 /* DoctorAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AFCA711CAC2D850026A216 /* DoctorAboutVC.m */; };
+		C0B47FC31CAC38B200977BFA /* DoctorAboutTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B47FC21CAC38B200977BFA /* DoctorAboutTVC.m */; };
 		C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8D1C08B94600963D5D /* Assets.xcassets */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
 		C0BAF0221C319FAD002F3137 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */; };
@@ -675,6 +677,10 @@
 		C0A831211C7DE4D5000A60C9 /* NetworkHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NetworkHandler.xcodeproj; sourceTree = "<group>"; };
 		C0A8312C1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsDetailVC.h; sourceTree = "<group>"; };
 		C0A8312D1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumentsDetailVC.m; sourceTree = "<group>"; };
+		C0AFCA701CAC2D850026A216 /* DoctorAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutVC.h; sourceTree = "<group>"; };
+		C0AFCA711CAC2D850026A216 /* DoctorAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorAboutVC.m; sourceTree = "<group>"; };
+		C0B47FC11CAC38B200977BFA /* DoctorAboutTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutTVC.h; sourceTree = "<group>"; };
+		C0B47FC21CAC38B200977BFA /* DoctorAboutTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorAboutTVC.m; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		C0BAF0211C319FAD002F3137 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		C0BAF0231C319FC0002F3137 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -1437,6 +1443,7 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				C0AFCA6A1CAC2D6C0026A216 /* DoctoraAboutVC */,
 				C0EC35A91CAAEF130083E735 /* MapVC */,
 				C01C23D41CA1A0EE00279A17 /* ClinicProfilePage */,
 				C01C23D51CA1A0EE00279A17 /* DoctorProfilePage */,
@@ -1891,6 +1898,24 @@
 			path = MedicalDocumentsDetailVC;
 			sourceTree = "<group>";
 		};
+		C0AFCA6A1CAC2D6C0026A216 /* DoctoraAboutVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0AFCA701CAC2D850026A216 /* DoctorAboutVC.h */,
+				C0AFCA711CAC2D850026A216 /* DoctorAboutVC.m */,
+			);
+			path = DoctoraAboutVC;
+			sourceTree = "<group>";
+		};
+		C0B47FBB1CAC388F00977BFA /* DoctoraboutTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0B47FC11CAC38B200977BFA /* DoctorAboutTVC.h */,
+				C0B47FC21CAC38B200977BFA /* DoctorAboutTVC.m */,
+			);
+			path = DoctoraboutTableViewCell;
+			sourceTree = "<group>";
+		};
 		C0BBC4521C6E2AE7005083B1 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -2259,6 +2284,7 @@
 		C0DD55791CA99DE100F7CDD1 /* DoctorProfilePage */ = {
 			isa = PBXGroup;
 			children = (
+				C0B47FBB1CAC388F00977BFA /* DoctoraboutTableViewCell */,
 				C0DD557F1CA99E0400F7CDD1 /* ReviewTableViewCell */,
 			);
 			path = DoctorProfilePage;
@@ -2662,6 +2688,7 @@
 				9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */,
 				C0BBC4971C6E2C5E005083B1 /* AppoinmentDetailVC.m in Sources */,
 				9F5F0C561C66672300F7E99D /* MBProgressHUD.m in Sources */,
+				C0AFCA721CAC2D850026A216 /* DoctorAboutVC.m in Sources */,
 				C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */,
 				C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */,
 				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
@@ -2715,6 +2742,7 @@
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,
 				C0D158251C9B25AD00FC1DE0 /* PayUSAOneTapToken.m in Sources */,
 				C01C23D81CA1A10300279A17 /* ClinicProfVC.m in Sources */,
+				C0B47FC31CAC38B200977BFA /* DoctorAboutTVC.m in Sources */,
 				9F5F0C5F1C66676B00F7E99D /* SettingsTableViewCell.m in Sources */,
 				C092EBFA1C80B1E000F7B18B /* SDWebImageDownloaderOperation.m in Sources */,
 				C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */,

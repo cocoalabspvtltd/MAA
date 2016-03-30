@@ -23,7 +23,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *aboutLabel;
 @property (weak, nonatomic) IBOutlet UITableView *reviewTableView;
 @property (weak, nonatomic) IBOutlet UIButton *reviewAllInfoButton;
+@property (weak, nonatomic) IBOutlet UIButton *aboutAllInfoButton;
 @property (weak, nonatomic) IBOutlet UILabel *cliniclocationLabel;
+@property (weak, nonatomic) IBOutlet UIButton *addReviewButton;
 
 @property (nonatomic, strong) NSString *entityId;
 @end

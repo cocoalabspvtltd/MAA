@@ -8,6 +8,7 @@
 
 #import "MapVC.h"
 #import "DoctorProfVC.h"
+#import "DoctorAboutVC.h"
 #import "ReviewTableViewCell.h"
 
 @interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -142,7 +143,10 @@
 //    }
 }
 
-- (IBAction)allInfoButtonAction:(UIButton *)sender {
+- (IBAction)aboutAllInfoButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DoctorAboutVC *doctorAboutVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorAboutVC"];
+    [self.navigationController pushViewController:doctorAboutVC animated:YES];
 }
 
 - (IBAction)directionButtonAction:(UIButton *)sender {
@@ -156,6 +160,12 @@
     mapVC.latitude = 10.015861;
     mapVC.longitude = 76.341867;
     [self.navigationController pushViewController:mapVC animated:YES];
+}
+- (IBAction)addReviewButtonAction:(UIButton *)sender {
+}
+- (IBAction)reviewAllInfoButtonAction:(UIButton *)sender {
+}
+- (IBAction)timingViewMoreButtonAction:(UIButton *)sender {
 }
 
 #pragma mark - Table view Datasources
