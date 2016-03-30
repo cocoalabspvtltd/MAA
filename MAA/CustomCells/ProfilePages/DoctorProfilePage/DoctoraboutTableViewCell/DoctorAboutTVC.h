@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface DoctorAboutTVC : UITableViewCell
-@property (weak, nonatomic) IBOutlet UILabel *headingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *specializationHeadingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *servicesHeadingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *membershipHeadingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *awardsHedingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *experienceHeadingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *educationHeadingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *registrationheadingLabel;
 
 @end

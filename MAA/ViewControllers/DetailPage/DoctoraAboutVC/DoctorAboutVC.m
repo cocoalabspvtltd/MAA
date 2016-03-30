@@ -31,6 +31,11 @@
 
 -(void)initialisation{
     self.doctorNameHeadingLabel.text = self.doctorNameString;
+    [self initialisationOfAboutPage];
+}
+
+-(void)initialisationOfAboutPage{
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -73,31 +78,37 @@
     if(tableView == self.specializationTableView)
     {
        DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:SpecilizationReuseCell forIndexPath:indexPath];
-        cell.headingLabel.text = [self.specializationArray objectAtIndex:indexPath.row];
+        cell.specializationHeadingLabel.text = [self.specializationArray objectAtIndex:indexPath.row];
         return cell;
     }
     else if(tableView == self.servicesTableView){
         DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:ServicesReuseCell forIndexPath:indexPath];
+        cell.servicesHeadingLabel.text = [self.servicesArray objectAtIndex:indexPath.row];
         return cell;
     }
     else if(tableView == self.memberShipTableView){
         DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:MemberShipReuseCell forIndexPath:indexPath];
+        cell.membershipHeadingLabel.text = [self.membershipsArray objectAtIndex:indexPath.row];
         return cell;
     }
     else if(tableView == self.awardsTableView){
         DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:AwardsReuseCell forIndexPath:indexPath];
+        cell.awardsHedingLabel.text = [self.awardsArray objectAtIndex:indexPath.row];
         return cell;
     }
     else if(tableView == self.experienceTableView){
         DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:ExperienceReuseCell forIndexPath:indexPath];
+        cell.experienceHeadingLabel.text = [self.experienceArray objectAtIndex:indexPath.row];
         return cell;
     }
     else if(tableView == self.educationTableView){
         DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:EducationReuseCell forIndexPath:indexPath];
+        cell.educationHeadingLabel.text = [self.educationArray objectAtIndex:indexPath.row];
         return cell;
     }
     else if(tableView == self.registrationTableView){
         DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:RegistrationReuseCell forIndexPath:indexPath];
+        cell.registrationheadingLabel.text = [self.registrationArray objectAtIndex:indexPath.row];
         return cell;
     }
      return nil;
