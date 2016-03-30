@@ -6,6 +6,14 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#define SpecilizationReuseCell @"specializationRC"
+#define ServicesReuseCell @"servicesRC"
+#define MemberShipReuseCell @"memberShipRC"
+#define AwardsReuseCell @"awardsRC"
+#define ExperienceReuseCell @"experinceRC"
+#define EducationReuseCell @"educationRC"
+#define RegistrationReuseCell @"registrationRC"
+
 #import "DoctorAboutTVC.h"
 #import "DoctorAboutVC.h"
 
@@ -38,10 +46,33 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if(tableView == self.specializationTableView)
     {
-       DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:@"doctorAboutReuseCell"forIndexPath:indexPath];
+       DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:SpecilizationReuseCell forIndexPath:indexPath];
         return cell;
     }
-    else
+    else if(tableView == self.servicesTableView){
+        DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:ServicesReuseCell forIndexPath:indexPath];
+        return cell;
+    }
+    else if(tableView == self.memberShipTableView){
+        DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:MemberShipReuseCell forIndexPath:indexPath];
+        return cell;
+    }
+    else if(tableView == self.awardsTableView){
+        DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:AwardsReuseCell forIndexPath:indexPath];
+        return cell;
+    }
+    else if(tableView == self.experienceTableView){
+        DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:ExperienceReuseCell forIndexPath:indexPath];
+        return cell;
+    }
+    else if(tableView == self.educationTableView){
+        DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:EducationReuseCell forIndexPath:indexPath];
+        return cell;
+    }
+    else if(tableView == self.registrationTableView){
+        DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:RegistrationReuseCell forIndexPath:indexPath];
+        return cell;
+    }
      return nil;
 }
 
