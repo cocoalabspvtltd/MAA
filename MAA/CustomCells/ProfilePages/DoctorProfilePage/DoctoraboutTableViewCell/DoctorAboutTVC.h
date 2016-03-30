@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DoctorAboutTVC : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *headingLabel;
 
 @end

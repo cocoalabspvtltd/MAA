@@ -45,6 +45,27 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if(tableView == self.specializationTableView){
+        return self.specializationArray.count;
+    }
+    else if(tableView == self.servicesTableView){
+        return self.servicesArray.count;
+    }
+    else if(tableView == self.memberShipTableView){
+        return self.membershipsArray.count;
+    }
+    else if(tableView == self.awardsTableView){
+        return self.awardsArray.count;
+    }
+    else if(tableView == self.experienceTableView){
+        return self.experienceArray.count;
+    }
+    else if(tableView == self.educationTableView){
+        return self.educationArray.count;
+    }
+    else if(tableView == self.registrationTableView){
+        return self.registrationArray.count;
+    }
     return 1;
 }
 
@@ -52,6 +73,7 @@
     if(tableView == self.specializationTableView)
     {
        DoctorAboutTVC *cell = [tableView dequeueReusableCellWithIdentifier:SpecilizationReuseCell forIndexPath:indexPath];
+        cell.headingLabel.text = [self.specializationArray objectAtIndex:indexPath.row];
         return cell;
     }
     else if(tableView == self.servicesTableView){

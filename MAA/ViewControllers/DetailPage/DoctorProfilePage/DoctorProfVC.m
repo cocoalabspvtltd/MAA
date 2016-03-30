@@ -150,6 +150,13 @@
     DoctorAboutVC *doctorAboutVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorAboutVC"];
     NSLog(@"Name:%@",[self.entityDetails valueForKey:@"name"]);
     doctorAboutVC.doctorNameString = [self.entityDetails valueForKey:@"name"];
+    doctorAboutVC.specializationArray = [self.entityDetails valueForKey:@"specializations"];
+    doctorAboutVC.servicesArray = [self.entityDetails valueForKey:@"services"];
+    doctorAboutVC.membershipsArray = [self.entityDetails valueForKey:@"memberships"];
+   // doctorAboutVC.awardsArray = [self.entityDetails valueForKey:@"memberships"];
+   // doctorAboutVC.experienceArray = [self.entityDetails valueForKey:@"memberships"];
+    doctorAboutVC.educationArray = [self.entityDetails valueForKey:@"education"];
+    doctorAboutVC.registrationArray = [self.entityDetails valueForKey:@"registrations"];
     [self.navigationController pushViewController:doctorAboutVC animated:YES];
     
 }
