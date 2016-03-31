@@ -100,25 +100,69 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(tableView == self.specializationTableView){
-        return self.specializationArray.count;
+        if(self.specializationArray.count<=3){
+            self.specializationViewMoreButton.hidden = YES;
+            return self.specializationArray.count;
+        }
+        else{
+            return 3;
+        }
+        
+        
     }
     else if(tableView == self.servicesTableView){
-        return self.servicesArray.count;
+        if(self.servicesArray.count<=3){
+             self.servicesViewMoreButton.hidden = YES;
+            return self.servicesArray.count;
+        }
+        else{
+           
+        }
     }
     else if(tableView == self.memberShipTableView){
-        return self.membershipsArray.count;
+        if(self.membershipsArray.count<=3){
+            self.memberShipViewMoreButton.hidden = YES;
+            return self.membershipsArray.count;
+        }
+        else{
+            return 3;
+        }
     }
     else if(tableView == self.awardsTableView){
-        return self.awardsArray.count;
+        if(self.awardsArray.count<=3){
+            self.awardsviewMoreButton.hidden = YES;
+            return self.awardsArray.count;
+        }
+        else{
+            return 3;
+        }
     }
     else if(tableView == self.experienceTableView){
-        return self.experienceArray.count;
+        if(self.experienceArray.count<=3){
+            self.experienceViewMoreButton.hidden = YES;
+            return self.experienceArray.count;
+        }
+        else{
+            return 3;
+        }
     }
     else if(tableView == self.educationTableView){
-        return self.educationArray.count;
+        if(self.educationArray.count<=3){
+            self.educationViewMoreButton.hidden = YES;
+            return self.educationArray.count;
+        }
+        else{
+            return 3;
+        }
     }
     else if(tableView == self.registrationTableView){
-        return self.registrationArray.count;
+        if(self.registrationArray.count<=3){
+            self.registrationViewMoreButton.hidden = YES;
+            return self.registrationArray.count;
+        }
+        else{
+            return 3;
+        }
     }
     return 1;
 }
