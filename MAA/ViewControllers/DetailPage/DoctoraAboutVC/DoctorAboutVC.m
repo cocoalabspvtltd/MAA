@@ -116,7 +116,7 @@
             return self.servicesArray.count;
         }
         else{
-           
+            return 3;
         }
     }
     else if(tableView == self.memberShipTableView){
