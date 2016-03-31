@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface DoctorReviewsVC : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITableView *reviewsTableView;
+@property (nonatomic, strong) NSString *entityId;
 @end

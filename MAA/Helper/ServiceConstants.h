@@ -27,7 +27,7 @@
 #define SearchDoctorsBasedOnLocationApi @"search_location"
 #define SearchApi @"search"
 #define GetEntityDetailsUrl @"get_entity_details"
-#define GetEntityReviewsurl @"get_entity_reviews"
+#define GetEntityReviewsurl @"get_reviews"
 #define GetUserAppointmentesUrl @"get_patient_appointments"
 #define GetuserAppointmentDetailsurl @"get_appointment_details"
 #define CancelAppointmnetUrl @"cancel_appointment"

@@ -743,7 +743,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="E33C857B-E59D-4671-9338-D4845DAAB9DE" scopeBarBackgroundImage="E33C857B-E59D-4671-9338-D4845DAAB9DE" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="C1DCEEED-B775-48DE-927B-2DEF6D0E9424" scopeBarBackgroundImage="C1DCEEED-B775-48DE-927B-2DEF6D0E9424" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -756,7 +756,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="2429C7E0-6F46-464A-BC54-ECB687CC7B79" scopeBarBackgroundImage="2429C7E0-6F46-464A-BC54-ECB687CC7B79" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="B64D8E46-0DC0-4465-B6A5-D32970C015B0" scopeBarBackgroundImage="B64D8E46-0DC0-4465-B6A5-D32970C015B0" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -12207,7 +12207,7 @@
                                             <outlet property="ratingStarImageView_3" destination="yPr-r8-bXD" id="Ixf-5H-MuV"/>
                                             <outlet property="ratingStarImageView_4" destination="qQz-YN-JWc" id="f4f-S3-SCp"/>
                                             <outlet property="ratingStarImageView_5" destination="0xS-h7-Sm1" id="zYp-GD-2yX"/>
-                                            <outlet property="reviewContentLabel" destination="3W9-Ca-NyC" id="VKV-04-veg"/>
+                                            <outlet property="reviewContentLabel" destination="3W9-Ca-NyC" id="L73-TY-NxT"/>
                                             <outlet property="reviewerImageView" destination="eFL-Zz-QH1" id="MoE-IT-VbY"/>
                                             <outlet property="reviewerNameLabel" destination="YQf-dz-lKK" id="W99-U1-xCW"/>
                                         </connections>
@@ -12230,6 +12230,9 @@
                             <constraint firstItem="Xcn-yS-ule" firstAttribute="leading" secondItem="SWt-f6-rmR" secondAttribute="leading" id="xFx-Cl-cVP"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="reviewsTableView" destination="aZq-0R-bfW" id="idk-hv-fD2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8L-DI-EVK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -15649,7 +15652,8 @@
     <resources>
         <image name="1.png" width="688" height="853"/>
         <image name="2.jpg" width="256" height="256"/>
-        <image name="2429C7E0-6F46-464A-BC54-ECB687CC7B79" width="310" height="78">
+        <image name="5.png" width="260" height="288"/>
+        <image name="B64D8E46-0DC0-4465-B6A5-D32970C015B0" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -17314,8 +17318,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="5.png" width="260" height="288"/>
-        <image name="E33C857B-E59D-4671-9338-D4845DAAB9DE" width="310" height="78">
+        <image name="C1DCEEED-B775-48DE-927B-2DEF6D0E9424" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

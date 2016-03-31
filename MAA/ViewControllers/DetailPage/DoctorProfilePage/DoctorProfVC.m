@@ -179,6 +179,7 @@
 - (IBAction)reviewAllInfoButtonAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DoctorReviewsVC *doctorReviewsVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorReviewsVC"];
+    doctorReviewsVC.entityId = self.entityId;
     [self.navigationController pushViewController:doctorReviewsVC animated:YES];
 }
 - (IBAction)timingViewMoreButtonAction:(UIButton *)sender {
