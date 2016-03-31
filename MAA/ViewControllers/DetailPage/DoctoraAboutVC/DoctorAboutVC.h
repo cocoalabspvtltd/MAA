@@ -42,5 +42,44 @@
 @property (nonatomic, strong) NSArray *educationArray;
 @property (nonatomic, strong) NSArray *registrationArray;
 
+@property (weak, nonatomic) IBOutlet UIImageView *specializationTopView;
+
+@property (weak, nonatomic) IBOutlet UILabel *specializationHeadingLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *specializationTableViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *specializationBottomLine;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *servicesHeadingLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *servicesHeaderView;
+@property (weak, nonatomic) IBOutlet UIImageView *servicesBottomView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *servicesTableViewHeightConstraint;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *membershiptableViewheightConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *membershipHeadingLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *membershipBottomView;
+@property (weak, nonatomic) IBOutlet UIImageView *membershipTopView;
+
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *awardsTableViewHeight;
+@property (weak, nonatomic) IBOutlet UILabel *awardsHeadingLbael;
+@property (weak, nonatomic) IBOutlet UIImageView *awardHeadingLine;
+@property (weak, nonatomic) IBOutlet UIImageView *awardsBottomLine;
+
+@property (weak, nonatomic) IBOutlet UIImageView *experienceBottomView;
+@property (weak, nonatomic) IBOutlet UILabel *experineceHeadingLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *experincetableViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UIImageView *experiencetopView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *educationBottomView;
+@property (weak, nonatomic) IBOutlet UIImageView *educationTopView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *educationTableViewHeightConstraint;
+@property (weak, nonatomic) IBOutlet UILabel *educationHeadingLabel;
+
+@property (weak, nonatomic) IBOutlet UIImageView *registrationTopView;
+@property (weak, nonatomic) IBOutlet UILabel *registrationHeadingLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *registartionTableViewHeiightConstraint;
+
+@property (weak, nonatomic) IBOutlet UIImageView *registrationBottomView;
 
 @end
