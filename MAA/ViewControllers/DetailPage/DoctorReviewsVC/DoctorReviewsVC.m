@@ -72,11 +72,10 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"Review Content:%@",[self.reviewsMutableArray objectAtIndex:indexPath.row]);
     ReviewTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellReviews"forIndexPath:indexPath];
-    cell.profilImageurlString = [[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@""];
-    cell.reviewerNameLabel.text =[[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"reviewer"];
-    NSLog(@"Review :%@", [[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"review"]);
+    cell.profilImageurlString = [[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"patient_image"];
+    cell.reviewerNameLabel.text =[[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"patient_name"];
     cell.reviewContentLabel.text = [[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"review"];
-    cell.dateString = [[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"time"];
+    cell.dateString = [[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"date"];
     cell.ratingString = [[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
     return cell;
 }
@@ -90,7 +89,7 @@
     NSMutableDictionary *getEntityReviewsmutableDictionary = [[NSMutableDictionary alloc] init];
     [getEntityReviewsmutableDictionary setValue:accessToken forKey:@"token"];
     [getEntityReviewsmutableDictionary setValue:self.entityId forKey:@"id"];
-    [getEntityReviewsmutableDictionary setValue:@"4" forKey:@"type"];
+    [getEntityReviewsmutableDictionary setValue:@"for" forKey:@"type"];
     [getEntityReviewsmutableDictionary setValue:[NSNumber numberWithInt:self.startIndex] forKey:Offsetkey];
     [getEntityReviewsmutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
     if(self.startIndex == 0){
