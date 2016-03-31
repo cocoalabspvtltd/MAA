@@ -9,6 +9,7 @@
 #import "MapVC.h"
 #import "DoctorProfVC.h"
 #import "DoctorAboutVC.h"
+#import "DoctorReviewsVC.h"
 #import "ReviewTableViewCell.h"
 
 @interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate>
@@ -176,6 +177,9 @@
 - (IBAction)addReviewButtonAction:(UIButton *)sender {
 }
 - (IBAction)reviewAllInfoButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DoctorReviewsVC *doctorReviewsVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorReviewsVC"];
+    [self.navigationController pushViewController:doctorReviewsVC animated:YES];
 }
 - (IBAction)timingViewMoreButtonAction:(UIButton *)sender {
 }

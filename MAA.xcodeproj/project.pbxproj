@@ -313,6 +313,7 @@
 		C0E92BC11C9183A100443117 /* ic_close_white_48pt.png in Resources */ = {isa = PBXBuildFile; fileRef = C0E92BBE1C9183A100443117 /* ic_close_white_48pt.png */; };
 		C0EC35A81CAAEA660083E735 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC35A71CAAEA660083E735 /* MapKit.framework */; };
 		C0EC35AC1CAAEF130083E735 /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EC35AB1CAAEF130083E735 /* MapVC.m */; };
+		C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EC6FA51CAD9B2800191C49 /* DoctorReviewsVC.m */; };
 		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
 		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
 /* End PBXBuildFile section */
@@ -821,6 +822,8 @@
 		C0EC35A71CAAEA660083E735 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C0EC35AA1CAAEF130083E735 /* MapVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapVC.h; sourceTree = "<group>"; };
 		C0EC35AB1CAAEF130083E735 /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
+		C0EC6FA41CAD9B2800191C49 /* DoctorReviewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorReviewsVC.h; sourceTree = "<group>"; };
+		C0EC6FA51CAD9B2800191C49 /* DoctorReviewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorReviewsVC.m; sourceTree = "<group>"; };
 		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
 		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
 		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
@@ -1443,6 +1446,7 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				C0EC6F9E1CAD9AD200191C49 /* DoctorReviewsVC */,
 				C0AFCA6A1CAC2D6C0026A216 /* DoctoraAboutVC */,
 				C0EC35A91CAAEF130083E735 /* MapVC */,
 				C01C23D41CA1A0EE00279A17 /* ClinicProfilePage */,
@@ -2308,6 +2312,15 @@
 			path = MapVC;
 			sourceTree = "<group>";
 		};
+		C0EC6F9E1CAD9AD200191C49 /* DoctorReviewsVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0EC6FA41CAD9B2800191C49 /* DoctorReviewsVC.h */,
+				C0EC6FA51CAD9B2800191C49 /* DoctorReviewsVC.m */,
+			);
+			path = DoctorReviewsVC;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2762,6 +2775,7 @@
 				9F6BF53E1C396AB1006FB97A /* DoctorFirstTabTVC.m in Sources */,
 				C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
+				C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */,
 				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
