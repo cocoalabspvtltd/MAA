@@ -9,6 +9,7 @@
 #import "MapVC.h"
 
 @interface MapVC ()
+@property (strong, nonatomic) IBOutlet UILabel *headingLabel;
 
 @end
 
@@ -16,11 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initalisation];
     [self plottingLocation];
     [self addingLocationLabelText];
     // Do any additional setup after loading the view.
 }
 
+-(void)initalisation{
+    self.headingLabel.text = self.headingString;
+}
 -(void)addingLocationLabelText{
     [self.locationLabel sizeToFit];
     NSString *myString = [NSString stringWithFormat:@"%@\n%@",self.locationString,self.locationDetailString];

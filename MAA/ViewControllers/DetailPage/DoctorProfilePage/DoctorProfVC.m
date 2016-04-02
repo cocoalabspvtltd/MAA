@@ -16,6 +16,7 @@
 @property (nonatomic,strong) NSArray *reviewsArray;
 @property (nonatomic, strong) id doctorFirstClinicDetails;
 @property (nonatomic, strong) id entityDetails;
+@property (nonatomic, strong) UIActivityViewController *activityViewController;
 @end
 
 @implementation DoctorProfVC
@@ -50,6 +51,13 @@
 */
 - (IBAction)backButtonAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)messageButtonAction:(UIButton *)sender {
+}
+- (IBAction)favouriteButtonAction:(UIButton *)sender {
+}
+- (IBAction)shareButtonAction:(UIButton *)sender {
+    [self addingActivityController];
 }
 
 #pragma mark - Get Entity Details Api
@@ -166,6 +174,7 @@
     NSLog(@"dfdej:%@",[self.doctorFirstClinicDetails valueForKey:@"clinic_name"]);
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MapVC *mapVC = [storyboard instantiateViewControllerWithIdentifier:@"MapVC"];
+    mapVC.headingString = [self.doctorFirstClinicDetails valueForKey:@"clinic_name"];
     mapVC.locationString = [self.doctorFirstClinicDetails valueForKey:@"clinic_name"];
     mapVC.locationDetailString = [[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"address"];
     mapVC.latitude = [[[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"lat"] floatValue];
@@ -215,4 +224,45 @@
     return cell;
 }
 
+#pragma mark - Adding Activity Controller
+
+-(void)addingActivityController{
+    NSString *tempString=@"Content";
+    
+    
+    NSString *textToShare  = [NSString stringWithFormat:@"Found an interesting %@ on My App!!",tempString];
+    
+    NSString *contentHeading = @"Heading";
+    NSString *contentDescription = @"Description";
+    UIImage *shareImage;
+    //    if ([self.receivedItemString isEqualToString:EventsmainCategoryString])
+    //    {
+    //        shareImage =self.bannerImage;
+    //    }
+    
+    NSLog(@"share image =%@",shareImage);
+    if (contentHeading==NULL) {
+        contentHeading=@"My App";
+    }
+    NSArray *objectsToShare = @[textToShare,contentHeading,  contentDescription,shareImage];
+    self.activityViewController = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    
+    NSArray *excludeActivities = @[
+                                   UIActivityTypePrint,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   UIActivityTypePostToFlickr,
+                                   UIActivityTypePostToVimeo
+                                   
+                                   ];
+    self.activityViewController.excludedActivityTypes = excludeActivities;
+    if ([self.activityViewController respondsToSelector:@selector(popoverPresentationController)]) {
+        
+        self.activityViewController.popoverPresentationController.sourceView =
+        self.view;
+    }
+    self.activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:self.activityViewController animated:YES completion:nil];
+}
 @end

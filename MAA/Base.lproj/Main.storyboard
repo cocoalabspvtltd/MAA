@@ -743,7 +743,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="043D0522-D809-4E8B-861F-499C8947F710" scopeBarBackgroundImage="043D0522-D809-4E8B-861F-499C8947F710" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="A3D1F919-8853-4B44-B03E-054CE5EC4168" scopeBarBackgroundImage="A3D1F919-8853-4B44-B03E-054CE5EC4168" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -756,7 +756,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="78C32E6C-7538-43C5-82D9-DB648278D744" scopeBarBackgroundImage="78C32E6C-7538-43C5-82D9-DB648278D744" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="5792D669-5957-4135-91BE-E526A045BBDA" scopeBarBackgroundImage="5792D669-5957-4135-91BE-E526A045BBDA" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -11503,6 +11503,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="headingLabel" destination="e0n-6q-TdO" id="7h6-CR-baP"/>
                         <outlet property="locationLabel" destination="xp8-wA-pKz" id="Bxk-Av-dTG"/>
                         <outlet property="locationMapView" destination="yLD-Cl-eQ5" id="GHp-Cs-1lj"/>
                     </connections>
@@ -11650,6 +11651,9 @@
                                             <constraint firstAttribute="width" constant="20" id="sA9-11-ErB"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="share"/>
+                                        <connections>
+                                            <action selector="shareButtonAction:" destination="xzw-XO-a3y" eventType="touchUpInside" id="Cl6-Tc-l3T"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gSW-zn-hyG">
                                         <rect key="frame" x="547" y="12" width="20" height="20"/>
@@ -11658,6 +11662,9 @@
                                             <constraint firstAttribute="width" constant="20" id="IQN-zm-qSh"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="heartwhite"/>
+                                        <connections>
+                                            <action selector="favouriteButtonAction:" destination="xzw-XO-a3y" eventType="touchUpInside" id="bF6-LZ-EgI"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mut-fF-BhF">
                                         <rect key="frame" x="522" y="13" width="20" height="19"/>
@@ -11666,6 +11673,9 @@
                                             <constraint firstAttribute="width" constant="20" id="ldB-59-UbP"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="email"/>
+                                        <connections>
+                                            <action selector="messageButtonAction:" destination="xzw-XO-a3y" eventType="touchUpInside" id="o3z-nQ-fYQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -13979,6 +13989,9 @@
                                             <constraint firstAttribute="height" constant="20" id="fEw-ZR-HTb"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="share"/>
+                                        <connections>
+                                            <action selector="shareButtonAction:" destination="6yz-YW-zdf" eventType="touchUpInside" id="B0C-WY-SEa"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N4U-gh-Ccv">
                                         <rect key="frame" x="547" y="12" width="20" height="20"/>
@@ -13987,6 +14000,9 @@
                                             <constraint firstAttribute="width" constant="20" id="mpf-oz-Neo"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="heartwhite"/>
+                                        <connections>
+                                            <action selector="favouriteButtonAction:" destination="6yz-YW-zdf" eventType="touchUpInside" id="ge6-Z7-Kq2"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6j-ri-H5h">
                                         <rect key="frame" x="522" y="13" width="20" height="19"/>
@@ -13995,6 +14011,9 @@
                                             <constraint firstAttribute="width" constant="20" id="yzj-ku-gOw"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="email"/>
+                                        <connections>
+                                            <action selector="messageButtonAction:" destination="6yz-YW-zdf" eventType="touchUpInside" id="02s-hd-nTN"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -14219,6 +14238,9 @@
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                         </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="servicesviewMoreButtonAction:" destination="6yz-YW-zdf" eventType="touchUpInside" id="p4w-Qf-ie1"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -14457,6 +14479,9 @@
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                     <userDefinedRuntimeAttribute type="string" keyPath="layer5.borderWidth" value="0.5"/>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="directionButtonAction:" destination="6yz-YW-zdf" eventType="touchUpInside" id="8dK-i4-bfy"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wt3-bZ-7M3">
                                                 <rect key="frame" x="0.0" y="829" width="600" height="66"/>
@@ -14925,7 +14950,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="043D0522-D809-4E8B-861F-499C8947F710" width="310" height="78">
+        <image name="1.png" width="688" height="853"/>
+        <image name="2.jpg" width="256" height="256"/>
+        <image name="5.png" width="260" height="288"/>
+        <image name="5792D669-5957-4135-91BE-E526A045BBDA" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -16590,10 +16618,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="1.png" width="688" height="853"/>
-        <image name="2.jpg" width="256" height="256"/>
-        <image name="5.png" width="260" height="288"/>
-        <image name="78C32E6C-7538-43C5-82D9-DB648278D744" width="310" height="78">
+        <image name="A3D1F919-8853-4B44-B03E-054CE5EC4168" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -18336,12 +18361,12 @@ AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
         <image name="view" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="nDN-bk-ewb"/>
         <segue reference="W69-Ux-SHq"/>
         <segue reference="fvG-ou-Cxz"/>
+        <segue reference="nDN-bk-ewb"/>
         <segue reference="Ut8-Vp-X0m"/>
         <segue reference="doQ-G4-j2x"/>
-        <segue reference="zPT-jC-iDc"/>
         <segue reference="QWr-Mc-2kf"/>
+        <segue reference="zPT-jC-iDc"/>
     </inferredMetricsTieBreakers>
 </document>

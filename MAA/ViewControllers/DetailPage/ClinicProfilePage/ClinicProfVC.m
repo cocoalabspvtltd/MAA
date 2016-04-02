@@ -6,12 +6,15 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "MapVC.h"
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
 #import "SearchResultsTVC.h"
 
 @interface ClinicProfVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *doctorsArray;
+@property (nonatomic, strong) id clinicDetails;
+@property (nonatomic, strong) UIActivityViewController *activityViewController;
 @end
 
 @implementation ClinicProfVC
@@ -61,7 +64,7 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Hospital Detilst;%@",responseObject);
-        //self.hospitalDataDictionary = [responseObject valueForKey:Datakey];
+        self.clinicDetails = [responseObject valueForKey:Datakey];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
         //[self.clinicTbableView reloadData];
@@ -158,8 +161,76 @@
 }
 
 #pragma mark  - Button Actions
+- (IBAction)directionButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MapVC *mapVC = [storyboard instantiateViewControllerWithIdentifier:@"MapVC"];
+    mapVC.title = [self.clinicDetails valueForKey:@"name"];
+    mapVC.locationString = [self.clinicDetails valueForKey:@"name"];
+    mapVC.headingString =  [self.clinicDetails valueForKey:@"name"];
+    mapVC.locationDetailString = [[self.clinicDetails valueForKey:@"location"] valueForKey:@"location_name"];
+    if(!([[self.clinicDetails valueForKey:@"location"] valueForKey:@"lat"] == [NSNull null]) ){
+        mapVC.latitude = [[[self.clinicDetails valueForKey:@"location"] valueForKey:@"lat"] floatValue];
+    }
+    if(!([[self.clinicDetails valueForKey:@"location"] valueForKey:@"lng"] == [NSNull null]) ){
+        mapVC.longitude = [[[self.clinicDetails valueForKey:@"location"] valueForKey:@"lng"] floatValue];
+    }
+    mapVC.latitude = 10.015861;
+    mapVC.longitude = 76.341867;
+    [self.navigationController pushViewController:mapVC animated:YES];
+}
+- (IBAction)favouriteButtonAction:(UIButton *)sender {
+}
+- (IBAction)messageButtonAction:(UIButton *)sender {
+}
+- (IBAction)shareButtonAction:(UIButton *)sender {
+    [self addingActivityController];
+}
+- (IBAction)servicesviewMoreButtonAction:(UIButton *)sender {
+}
 
 - (IBAction)doctorsAllInfoButtonAction:(UIButton *)sender {
 }
 
+
+#pragma mark - Adding Activity Controller
+
+-(void)addingActivityController{
+    NSString *tempString=@"Content";
+   
+    
+    NSString *textToShare  = [NSString stringWithFormat:@"Found an interesting %@ on My App!!",tempString];
+   
+    NSString *contentHeading = @"Heading";
+    NSString *contentDescription = @"Description";
+    UIImage *shareImage;
+//    if ([self.receivedItemString isEqualToString:EventsmainCategoryString])
+//    {
+//        shareImage =self.bannerImage;
+//    }
+  
+    NSLog(@"share image =%@",shareImage);
+    if (contentHeading==NULL) {
+        contentHeading=@"My App";
+    }
+    NSArray *objectsToShare = @[textToShare,contentHeading,  contentDescription,shareImage];
+    self.activityViewController = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
+    
+    NSArray *excludeActivities = @[
+                                   UIActivityTypePrint,
+                                   UIActivityTypeAssignToContact,
+                                   UIActivityTypeSaveToCameraRoll,
+                                   UIActivityTypeAddToReadingList,
+                                   UIActivityTypePostToFlickr,
+                                   UIActivityTypePostToVimeo
+                                   
+                                   ];
+    self.activityViewController.excludedActivityTypes = excludeActivities;
+    if ([self.activityViewController respondsToSelector:@selector(popoverPresentationController)]) {
+        
+        self.activityViewController.popoverPresentationController.sourceView =
+        self.view;
+    }
+    self.activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:self.activityViewController animated:YES completion:nil];
+}
 @end

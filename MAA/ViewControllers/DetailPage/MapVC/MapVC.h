@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet MKMapView *locationMapView;
 @property (nonatomic, assign) CGFloat latitude;
 @property (nonatomic, assign) CGFloat longitude;
+@property (nonatomic, strong) NSString *headingString;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (nonatomic, strong) NSString *locationString;
 @property (nonatomic, strong) NSString *locationDetailString;
