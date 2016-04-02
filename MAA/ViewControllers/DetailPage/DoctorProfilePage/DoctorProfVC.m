@@ -244,7 +244,13 @@
     if (contentHeading==NULL) {
         contentHeading=@"My App";
     }
-    NSArray *objectsToShare = @[textToShare,contentHeading,  contentDescription,shareImage];
+    NSArray *objectsToShare;
+    if(shareImage){
+        objectsToShare = @[textToShare,contentHeading,  contentDescription,shareImage];
+    }
+    else{
+        objectsToShare = @[textToShare,contentHeading,  contentDescription];
+    }
     self.activityViewController = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
     
     NSArray *excludeActivities = @[
