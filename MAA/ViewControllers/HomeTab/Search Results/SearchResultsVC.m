@@ -9,7 +9,6 @@
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
 
-#import "HospitalProfile.h"
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
 
@@ -143,10 +142,6 @@
             ClinicProfVC *clinicProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"ClinicProfVC"];
             clinicProfileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             [self.navigationController pushViewController:clinicProfileVC animated:YES];
-        
-//            HospitalProfile *hospitalProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"HospitalProfile"];
-//            hospitalProfileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
-//            [self.navigationController pushViewController:hospitalProfileVC animated:YES];
         }
        
     }
@@ -157,10 +152,6 @@
             [self.navigationController pushViewController:doctorPfofileVC animated:YES];
         }
         else{
-//            HospitalProfile *hospitalProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"HospitalProfile"];
-//            hospitalProfileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
-//            [self.navigationController pushViewController:hospitalProfileVC animated:YES];
-            
             ClinicProfVC *clinicProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"ClinicProfVC"];
             clinicProfileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             [self.navigationController pushViewController:clinicProfileVC animated:YES];

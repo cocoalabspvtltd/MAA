@@ -32,7 +32,6 @@
 		7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97B11C24862D0037E328 /* libCLToolKit.a */; };
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		9F2B0E1B1C65EDE10053D023 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E1A1C65EDE10053D023 /* BaseViewController.m */; };
-		9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5E727A1C38338B00B86477 /* HospitalProfile.m */; };
 		9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C221C66551A00F7E99D /* PhotoGridViewController.m */; };
 		9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C261C6655AB00F7E99D /* PhotogridCollectionViewCell.m */; };
 		9F5F0C291C6655AB00F7E99D /* PhotogridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C271C6655AB00F7E99D /* PhotogridCollectionViewCell.xib */; };
@@ -48,9 +47,6 @@
 		9F5F0C6A1C6668FF00F7E99D /* HealthProfileUserPhotosCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C631C6668FF00F7E99D /* HealthProfileUserPhotosCVC.m */; };
 		9F5F0C6B1C6668FF00F7E99D /* MedicalDocumantsCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C661C6668FF00F7E99D /* MedicalDocumantsCVC.m */; };
 		9F5F0C6C1C6668FF00F7E99D /* PerescriptionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C691C6668FF00F7E99D /* PerescriptionsTVC.m */; };
-		9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */; };
-		9F6BF54B1C396AC8006FB97A /* HospitalSecondTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5461C396AC8006FB97A /* HospitalSecondTabTVC.m */; };
-		9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */; };
 		9F884C111C9E69440058D611 /* doctorReviewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F884C101C9E69430058D611 /* doctorReviewsViewController.m */; };
 		9F884C161C9E6A060058D611 /* InvoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F884C151C9E6A060058D611 /* InvoiceViewController.m */; };
 		9F95DB481C9E2FC700F3EB4F /* no allergies.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB461C9E2FC700F3EB4F /* no allergies.png */; };
@@ -59,7 +55,6 @@
 		9F95DB4F1C9E2FD800F3EB4F /* no photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4B1C9E2FD800F3EB4F /* no photos.png */; };
 		9F95DB501C9E2FD800F3EB4F /* no priscriptions.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */; };
 		9F95DB511C9E2FD800F3EB4F /* no time slots.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */; };
-		9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */; };
 		9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */; };
 		9F991C5C1C5A1C5400F92C11 /* student.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C531C5A1C5400F92C11 /* student.m */; };
 		9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C541C5A1C5400F92C11 /* doctor_dash_xib.xib */; };
@@ -401,8 +396,6 @@
 		7CF40FE81C1D77600020EE33 /* block1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block1@2x.png"; sourceTree = "<group>"; };
 		9F2B0E191C65EDE10053D023 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		9F2B0E1A1C65EDE10053D023 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		9F5E72791C38338B00B86477 /* HospitalProfile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalProfile.h; sourceTree = "<group>"; };
-		9F5E727A1C38338B00B86477 /* HospitalProfile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalProfile.m; sourceTree = "<group>"; };
 		9F5F0C211C66551A00F7E99D /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
 		9F5F0C221C66551A00F7E99D /* PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewController.m; sourceTree = "<group>"; };
 		9F5F0C251C6655AB00F7E99D /* PhotogridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotogridCollectionViewCell.h; sourceTree = "<group>"; };
@@ -433,12 +426,6 @@
 		9F5F0C661C6668FF00F7E99D /* MedicalDocumantsCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumantsCVC.m; sourceTree = "<group>"; };
 		9F5F0C681C6668FF00F7E99D /* PerescriptionsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerescriptionsTVC.h; sourceTree = "<group>"; };
 		9F5F0C691C6668FF00F7E99D /* PerescriptionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerescriptionsTVC.m; sourceTree = "<group>"; };
-		9F6BF5431C396AC8006FB97A /* HospitalFirstTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalFirstTabTVC.h; sourceTree = "<group>"; };
-		9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalFirstTabTVC.m; sourceTree = "<group>"; };
-		9F6BF5451C396AC8006FB97A /* HospitalSecondTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalSecondTabTVC.h; sourceTree = "<group>"; };
-		9F6BF5461C396AC8006FB97A /* HospitalSecondTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalSecondTabTVC.m; sourceTree = "<group>"; };
-		9F6BF5471C396AC8006FB97A /* HospitalThirdTabTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalThirdTabTVC.h; sourceTree = "<group>"; };
-		9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalThirdTabTVC.m; sourceTree = "<group>"; };
 		9F884C0F1C9E69430058D611 /* doctorReviewsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doctorReviewsViewController.h; sourceTree = "<group>"; };
 		9F884C101C9E69430058D611 /* doctorReviewsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doctorReviewsViewController.m; sourceTree = "<group>"; };
 		9F884C141C9E6A060058D611 /* InvoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceViewController.h; sourceTree = "<group>"; };
@@ -449,8 +436,6 @@
 		9F95DB4B1C9E2FD800F3EB4F /* no photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no photos.png"; sourceTree = "<group>"; };
 		9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no priscriptions.png"; sourceTree = "<group>"; };
 		9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no time slots.png"; sourceTree = "<group>"; };
-		9F9878EF1C49BE2D00DE68A9 /* HospitalAboutTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HospitalAboutTVC.h; sourceTree = "<group>"; };
-		9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HospitalAboutTVC.m; sourceTree = "<group>"; };
 		9F991C501C5A1C5400F92C11 /* homepage_doctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homepage_doctorViewController.h; sourceTree = "<group>"; };
 		9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homepage_doctorViewController.m; sourceTree = "<group>"; };
 		9F991C521C5A1C5400F92C11 /* student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
@@ -941,7 +926,6 @@
 				C0BCBB621C59405D003F7872 /* angle-down.png */,
 				C0BCBB5D1C593F82003F7872 /* angle-right.png */,
 				C0BCBB591C59377A003F7872 /* fc_right.png */,
-				9F5E72751C38334C00B86477 /* Clinic Page */,
 				C035E7441C885AA4007809BC /* line.png */,
 				C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */,
 				C0BE979F1C2485C40037E328 /* CLFacebookHandler.xcodeproj */,
@@ -1060,24 +1044,6 @@
 				9F5F0C241C6655AB00F7E99D /* PhotoGridCollectionViewCell */,
 			);
 			path = CustomCells;
-			sourceTree = "<group>";
-		};
-		9F5E72751C38334C00B86477 /* Clinic Page */ = {
-			isa = PBXGroup;
-			children = (
-				9F6BF5431C396AC8006FB97A /* HospitalFirstTabTVC.h */,
-				9F6BF5441C396AC8006FB97A /* HospitalFirstTabTVC.m */,
-				9F6BF5451C396AC8006FB97A /* HospitalSecondTabTVC.h */,
-				9F6BF5461C396AC8006FB97A /* HospitalSecondTabTVC.m */,
-				9F6BF5471C396AC8006FB97A /* HospitalThirdTabTVC.h */,
-				9F6BF5481C396AC8006FB97A /* HospitalThirdTabTVC.m */,
-				9F5E72791C38338B00B86477 /* HospitalProfile.h */,
-				9F5E727A1C38338B00B86477 /* HospitalProfile.m */,
-				9F9878EF1C49BE2D00DE68A9 /* HospitalAboutTVC.h */,
-				9F9878F01C49BE2D00DE68A9 /* HospitalAboutTVC.m */,
-			);
-			name = "Clinic Page";
-			path = "Classes/Clinic Page";
 			sourceTree = "<group>";
 		};
 		9F5F0C061C664EDA00F7E99D /* Resources */ = {
@@ -2631,7 +2597,6 @@
 				C0D157FD1C9B134700FC1DE0 /* SearchFilterVC.m in Sources */,
 				C00F49DB1C9C11090086D164 /* newkiranViewController.m in Sources */,
 				C09EF6F71C76211800806600 /* README.md in Sources */,
-				9F9878F11C49BE2D00DE68A9 /* HospitalAboutTVC.m in Sources */,
 				9F5F0C6B1C6668FF00F7E99D /* MedicalDocumantsCVC.m in Sources */,
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
 				9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */,
@@ -2701,7 +2666,6 @@
 				9F5F0C5F1C66676B00F7E99D /* SettingsTableViewCell.m in Sources */,
 				C092EBFA1C80B1E000F7B18B /* SDWebImageDownloaderOperation.m in Sources */,
 				C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */,
-				9F6BF54C1C396AC8006FB97A /* HospitalThirdTabTVC.m in Sources */,
 				C0D157EC1C9B12C100FC1DE0 /* SearchResultsTVC.m in Sources */,
 				C08293EF1C874E0800D987B7 /* FeedBackVC.m in Sources */,
 				C0D158211C9B231B00FC1DE0 /* PayUSAGetHashes.m in Sources */,
@@ -2710,14 +2674,11 @@
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
 				C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */,
 				9F5F0C301C66589E00F7E99D /* GetGalleryPhotos.m in Sources */,
-				9F6BF54B1C396AC8006FB97A /* HospitalSecondTabTVC.m in Sources */,
-				9F5E727B1C38338B00B86477 /* HospitalProfile.m in Sources */,
 				C0D157ED1C9B12C100FC1DE0 /* SearchTVC.m in Sources */,
 				9F9C26AA1C9F40FF00EEC883 /* DoctorAboutDetailVC.m in Sources */,
 				C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */,
-				9F6BF54A1C396AC8006FB97A /* HospitalFirstTabTVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
 				C092EBF91C80B1E000F7B18B /* SDWebImageDownloader.m in Sources */,
 				C0EC35AC1CAAEF130083E735 /* MapVC.m in Sources */,

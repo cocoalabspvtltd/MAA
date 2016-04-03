@@ -11,7 +11,6 @@
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
 
-#import "HospitalProfile.h"
 #import "SearchResultsVC.h"
 
 @interface SearchVC ()<UISearchBarDelegate>
