@@ -7,6 +7,7 @@
 //
 
 #import "MapVC.h"
+#import "TimingsVC.h"
 #import "DoctorProfVC.h"
 #import "DoctorAboutVC.h"
 #import "DoctorReviewsVC.h"
@@ -192,6 +193,9 @@
     [self.navigationController pushViewController:doctorReviewsVC animated:YES];
 }
 - (IBAction)timingViewMoreButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TimingsVC *timingsVC = [storyboard instantiateViewControllerWithIdentifier:@"TimingsVC"];
+    [self.navigationController pushViewController:timingsVC animated:YES];
 }
 
 #pragma mark - Table view Datasources

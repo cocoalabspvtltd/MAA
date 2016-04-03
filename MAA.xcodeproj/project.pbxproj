@@ -69,6 +69,7 @@
 		9F991C601C5A1C5400F92C11 /* search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C591C5A1C5400F92C11 /* search.xib */; };
 		9F991C611C5A1C5400F92C11 /* bin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C5A1C5A1C5400F92C11 /* bin.png */; };
 		9F9C26AA1C9F40FF00EEC883 /* DoctorAboutDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C26A91C9F40FF00EEC883 /* DoctorAboutDetailVC.m */; };
+		9FDD159D1CB099C90040B646 /* TimingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD159C1CB099C90040B646 /* TimingsVC.m */; };
 		C005F0021C6A00E20095E2CC /* microphone_slash_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0011C6A00E20095E2CC /* microphone_slash_none.png */; };
 		C005F0041C6A00EE0095E2CC /* video_camera_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0031C6A00EE0095E2CC /* video_camera_off.png */; };
 		C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0051C6A00F70095E2CC /* microphone_off.png */; };
@@ -467,6 +468,8 @@
 		9F991C5A1C5A1C5400F92C11 /* bin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bin.png; sourceTree = "<group>"; };
 		9F9C26A81C9F40FF00EEC883 /* DoctorAboutDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutDetailVC.h; sourceTree = "<group>"; };
 		9F9C26A91C9F40FF00EEC883 /* DoctorAboutDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorAboutDetailVC.m; sourceTree = "<group>"; };
+		9FDD159B1CB099C90040B646 /* TimingsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingsVC.h; sourceTree = "<group>"; };
+		9FDD159C1CB099C90040B646 /* TimingsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingsVC.m; sourceTree = "<group>"; };
 		C005F0011C6A00E20095E2CC /* microphone_slash_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_slash_none.png; sourceTree = "<group>"; };
 		C005F0031C6A00EE0095E2CC /* video_camera_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera_off.png; sourceTree = "<group>"; };
 		C005F0051C6A00F70095E2CC /* microphone_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_off.png; sourceTree = "<group>"; };
@@ -1360,6 +1363,15 @@
 			path = DoctorAboutDetailVC;
 			sourceTree = "<group>";
 		};
+		9FDD15951CB099A40040B646 /* TimingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				9FDD159B1CB099C90040B646 /* TimingsVC.h */,
+				9FDD159C1CB099C90040B646 /* TimingsVC.m */,
+			);
+			path = TimingsVC;
+			sourceTree = "<group>";
+		};
 		C01420AD1C99B15E00467D8A /* AccoutResetPasswordVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1408,6 +1420,7 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				9FDD15951CB099A40040B646 /* TimingsVC */,
 				9F9C26A21C9F40D600EEC883 /* DoctorAboutDetailVC */,
 				C0EC6F9E1CAD9AD200191C49 /* DoctorReviewsVC */,
 				C0AFCA6A1CAC2D6C0026A216 /* DoctoraAboutVC */,
@@ -2686,6 +2699,7 @@
 				C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */,
 				55D60D861C08B94600963D5D /* AppDelegate.m in Sources */,
 				C08437F61C6EEEA900610ADC /* NotesPopUp.m in Sources */,
+				9FDD159D1CB099C90040B646 /* TimingsVC.m in Sources */,
 				C095DB461C81B9A80087AA4F /* AllergiesTableViewCell.m in Sources */,
 				C0CABC681C8A8971009F9470 /* TPKeyboardAvoidingTableView.m in Sources */,
 				C0D157EB1C9B12C100FC1DE0 /* HomePageCVC.m in Sources */,
