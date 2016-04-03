@@ -33,6 +33,8 @@
 @property (nonatomic, strong) id selectedTofee;
 @property (nonatomic, strong) id selectedFromExperience;
 @property (nonatomic, strong) id selectedToExperience;
+@property  (nonatomic, assign) BOOL sortBasedOnFee;
+@property  (nonatomic, assign) BOOL sortBasedOnExperience;
 @property (nonatomic, strong) NSMutableArray *selectedAvailabltyDateArray;
 
 @property (nonatomic, strong) id filterCriteriaData;
@@ -149,6 +151,10 @@
 
 -(void)initialisation{
     self.selectedAvailabltyDateArray = [[NSMutableArray alloc] init];
+    self.sortBasedOnExperience = YES;
+    self.sortBasedOnFee = NO;
+    [self.btnExperience setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.btnExperience.backgroundColor = [UIColor redColor];
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -356,21 +362,30 @@
     self.txtExperienceTo.text = [self.selectedToExperience valueForKey:@"label"];
 }
 
-- (IBAction)maleButtonAction:(UIButton *)sender {
-}
+#pragma mark - Button Actions
 
 - (IBAction)isOnlineButtonAction:(UIButton *)sender {
 }
-- (IBAction)femaleButtonAction:(UIButton *)sender {
-}
+
 - (IBAction)Close:(id)sender
 {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-- (IBAction)Experience:(id)sender {
+- (IBAction)consultationFeeButtonAction:(UIButton *)sender {
+    self.sortBasedOnFee = YES;
+    self.sortBasedOnExperience = NO;
+    [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    sender.backgroundColor = [UIColor redColor];
+    [self.btnExperience setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnExperience.backgroundColor = [UIColor whiteColor];
 }
-- (IBAction)ConsultationFee:(id)sender {
+- (IBAction)experienceButtonAction:(UIButton *)sender {
+    self.sortBasedOnFee = NO;
+    self.sortBasedOnExperience = YES;
+    [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    sender.backgroundColor = [UIColor redColor];
+    [self.btnConsultaionFee setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnConsultaionFee.backgroundColor = [UIColor whiteColor];
 }
 
 - (IBAction)availabilityButtonaction:(UIButton *)sender {
