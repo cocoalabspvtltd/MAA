@@ -18,7 +18,8 @@
     
     
 }
-
+@property (nonatomic, strong) id filterCriteriaData;
+@property (nonatomic, strong) NSArray *typeArray;
 @end
 
 @implementation SearchFilterVC
@@ -193,6 +194,9 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Response Object:%@",responseObject);
+        self.filterCriteriaData = [responseObject valueForKey:Datakey];
+        [self gettingTypeArrayFromresponse];
+        
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -205,6 +209,14 @@
         UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [erroralert show];
     }];
+}
+
+-(void)gettingTypeArrayFromresponse{
+    id indicesDetails = [self.filterCriteriaData valueForKey:@"indices"];
+    int index = [[indicesDetails valueForKey:@"type"] intValue];
+    self.typeArray = [[[self.filterCriteriaData valueForKey:@"filter_data"] objectAtIndex:index] valueForKey:@"values"];
+    NSLog(@"Types:%@",self.typeArray);
+    
 }
 - (IBAction)maleButtonAction:(UIButton *)sender {
 }
