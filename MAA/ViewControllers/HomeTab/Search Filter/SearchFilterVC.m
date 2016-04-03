@@ -5,25 +5,26 @@
 //  Created by Roshith on 15/12/15.
 //  Copyright © 2015 Cocoa Labs. All rights reserved.
 //
-#define NameKey @"name"
 
 #define TypePickerViewTag 10
+#define GenderPickerViewTag 20
 
 #import "SearchFilterVC.h"
 
 @interface SearchFilterVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
     UIPickerView *typePickerview;
-    UIPickerView *gender;
-    NSArray *Gender;
+    UIPickerView *genderPickerView;
     UITapGestureRecognizer *gesture;
     
     
 }
 @property (nonatomic, strong) id selectedType;
+@property (nonatomic, strong) id selectedGender;
 
 @property (nonatomic, strong) id filterCriteriaData;
 @property (nonatomic, strong) NSArray *typeArray;
+@property (nonatomic, strong) NSArray *genderArray;
 @end
 
 @implementation SearchFilterVC
@@ -32,19 +33,17 @@
     [super viewDidLoad];
     
     [self callingFilterInfoApi];
-    Gender=@[@"Male",@"Female"];
-    
     typePickerview=[[UIPickerView alloc]init];
     _txtType.inputView = typePickerview;
     typePickerview.delegate = self;
     typePickerview.dataSource = self;
     typePickerview.tag = TypePickerViewTag;
     
-    gender=[[UIPickerView alloc]init];
-    _txtGender.inputView=gender;
-    gender.delegate=self;
-    gender.dataSource=self;
-    gender.tag=20;
+    genderPickerView = [[UIPickerView alloc]init];
+    _txtGender.inputView = genderPickerView;
+    genderPickerView.delegate = self;
+    genderPickerView.dataSource = self;
+    genderPickerView.tag = GenderPickerViewTag;
     
     gesture.delegate=self;
     gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Tapping)];
@@ -115,7 +114,7 @@
     if(pickerView.tag== TypePickerViewTag) {
         return 1;
     }
-    else if (pickerView.tag==20)
+    else if (pickerView.tag == GenderPickerViewTag)
     {
         return 1;
     }
@@ -129,9 +128,9 @@
     {
         return self.typeArray.count;
     }
-    else if (pickerView.tag==20)
+    else if (pickerView.tag == GenderPickerViewTag)
     {
-        return Gender.count;
+        return self.genderArray.count;
     }
     
     return 1;
@@ -142,9 +141,9 @@
     {
         return [self.typeArray[row] valueForKey:@"label"];
     }
-    else if (pickerView.tag==20)
+    else if (pickerView.tag == GenderPickerViewTag)
     {
-        return Gender[row];
+        return [self.genderArray[row] valueForKey:@"label"];
     }
    
     return nil;
@@ -156,12 +155,14 @@
     {
         self.selectedType = self.typeArray[row];
         _txtType.text = [self.typeArray[row] valueForKey:@"label"];
-        NSLog(@"slectd type:%@",self.selectedType);
-        
+        [_txtType resignFirstResponder];
     }
-    else if (pickerView.tag==20)
+    else if (pickerView.tag == GenderPickerViewTag)
     {
-         _txtGender.text=Gender[row];
+        self.selectedGender = self.genderArray[row];
+        _txtGender.text = [self.genderArray[row] valueForKey:@"label"];
+        [_txtGender resignFirstResponder];
+        NSLog(@"slectd Gender:%@",self.selectedType);
     }
     
     
@@ -201,6 +202,7 @@
         NSLog(@"Response Object:%@",responseObject);
         self.filterCriteriaData = [responseObject valueForKey:Datakey];
         [self gettingTypeArrayFromresponse];
+        [self gettingGenderFromResponse];
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -221,11 +223,21 @@
     int index = [[indicesDetails valueForKey:@"type"] intValue];
     self.typeArray = [[[self.filterCriteriaData valueForKey:@"filter_data"] objectAtIndex:index] valueForKey:@"values"];
     self.selectedType = [self.typeArray objectAtIndex:0];
-    self.txtType = [self.selectedType valueForKey:@"label"];
+    self.txtType.text = [self.selectedType valueForKey:@"label"];
+}
 
-    NSLog(@"Types:%@",self.typeArray);
+-(void)gettingGenderFromResponse{
+    id indicesDetails = [self.filterCriteriaData valueForKey:@"indices"];
+    int index = [[indicesDetails valueForKey:@"gender"] intValue];
+    self.genderArray = [[[self.filterCriteriaData valueForKey:@"filter_data"] objectAtIndex:index] valueForKey:@"values"];
+    self.selectedGender = [self.genderArray objectAtIndex:0];
+    self.txtGender.text = [self.selectedGender valueForKey:@"label"];
+}
+
+-(void)gettingAgeFromResponse{
     
 }
+
 - (IBAction)maleButtonAction:(UIButton *)sender {
 }
 
