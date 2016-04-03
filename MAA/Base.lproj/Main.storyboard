@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="7C49BE74-1C10-45EC-AB82-B5A18D58DFC8" scopeBarBackgroundImage="7C49BE74-1C10-45EC-AB82-B5A18D58DFC8" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="3B6F3A27-1C46-4E0A-8D31-CB9003513365" scopeBarBackgroundImage="3B6F3A27-1C46-4E0A-8D31-CB9003513365" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="DF29A257-7794-45DD-8917-3C44EFD2E4BB" scopeBarBackgroundImage="DF29A257-7794-45DD-8917-3C44EFD2E4BB" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="D1401D53-9694-4CFB-BC3F-CA88DE53C23D" scopeBarBackgroundImage="D1401D53-9694-4CFB-BC3F-CA88DE53C23D" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -1028,107 +1028,121 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I5t-5B-Rdq">
                                                 <rect key="frame" x="22" y="184" width="556" height="100"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ucp-4r-vjP">
-                                                        <rect key="frame" x="141" y="18" width="275" height="65"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ucp-4r-vjP">
+                                                        <rect key="frame" x="141" y="18" width="275" height="73"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="XMX-VJ-CE0">
-                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="30"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="275" height="34"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGp-d5-nZK">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="30"/>
+                                                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OGp-d5-nZK">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="65" id="Drz-yJ-ETt"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                                         <state key="normal" title="Sun">
                                                                             <color key="titleColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="availabilityButtonaction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="s5I-0n-HA7"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBp-n1-tHP">
-                                                                        <rect key="frame" x="70" y="0.0" width="65" height="30"/>
+                                                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rBp-n1-tHP">
+                                                                        <rect key="frame" x="70" y="0.0" width="65" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="65" id="4Jw-ME-ggK"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                                         <state key="normal" title="Mon">
                                                                             <color key="titleColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="availabilityButtonaction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="15d-hh-Gfz"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzT-cu-tvc">
-                                                                        <rect key="frame" x="140" y="0.0" width="65" height="30"/>
+                                                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzT-cu-tvc">
+                                                                        <rect key="frame" x="140" y="0.0" width="65" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="65" id="FIm-3Q-kyB"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                                         <state key="normal" title="Tue">
                                                                             <color key="titleColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="availabilityButtonaction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="laH-hb-tw2"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixB-qK-RhU">
-                                                                        <rect key="frame" x="210" y="0.0" width="65" height="30"/>
+                                                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ixB-qK-RhU">
+                                                                        <rect key="frame" x="210" y="0.0" width="65" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="65" id="6Aw-oD-82M"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                                         <state key="normal" title="Wed">
                                                                             <color key="titleColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="availabilityButtonaction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="pPX-Ap-nnu"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="50Q-vx-X8k">
-                                                                <rect key="frame" x="35" y="35" width="205" height="30"/>
+                                                                <rect key="frame" x="35" y="39" width="205" height="34"/>
                                                                 <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu1-Qs-UAl">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="30"/>
+                                                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu1-Qs-UAl">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="65" id="0Oa-EA-Xsu"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                                         <state key="normal" title="Thu">
                                                                             <color key="titleColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="availabilityButtonaction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="NQu-nq-9o5"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7a-xS-FcN">
-                                                                        <rect key="frame" x="70" y="0.0" width="65" height="30"/>
+                                                                    <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7a-xS-FcN">
+                                                                        <rect key="frame" x="70" y="0.0" width="65" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="65" id="Zpi-xV-acf"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                                         <state key="normal" title="Fri">
                                                                             <color key="titleColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="availabilityButtonaction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="lkV-Hg-oyV"/>
+                                                                        </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4M-ep-AM2">
-                                                                        <rect key="frame" x="140" y="0.0" width="65" height="30"/>
+                                                                    <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d4M-ep-AM2">
+                                                                        <rect key="frame" x="140" y="0.0" width="65" height="34"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="65" id="R5h-jj-Q3k"/>
                                                                         </constraints>
-                                                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
                                                                         <state key="normal" title="Sat">
                                                                             <color key="titleColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                                                         </userDefinedRuntimeAttributes>
+                                                                        <connections>
+                                                                            <action selector="availabilityButtonaction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="cXz-KS-KtU"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
@@ -1376,6 +1390,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="cancelFilterButtonAction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="ECU-Cn-DGz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7aK-Zq-hJu">
                                 <rect key="frame" x="304" y="734" width="280" height="40"/>
@@ -1390,6 +1407,9 @@
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="submitButtonAction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="5K1-q2-1s4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1428,7 +1448,7 @@
                         <outlet property="txtAgeTo" destination="rw0-iZ-gDX" id="UrY-Yz-NJV"/>
                         <outlet property="txtCategory" destination="yLb-qF-IBL" id="LG3-qd-AjB"/>
                         <outlet property="txtExperienceFrom" destination="weE-v0-WEm" id="A4E-aN-3Kb"/>
-                        <outlet property="txtExperienceTo" destination="yLb-qF-IBL" id="kyK-oR-T7w"/>
+                        <outlet property="txtExperienceTo" destination="7fi-Ty-Om9" id="Nm1-Q7-UC7"/>
                         <outlet property="txtFeeFrom" destination="VKL-MI-GZI" id="nd5-As-xmK"/>
                         <outlet property="txtFeeTo" destination="WxN-b5-vwf" id="UYS-f6-5JB"/>
                         <outlet property="txtGender" destination="I4r-QJ-oxe" id="0WA-qO-xCR"/>
@@ -13727,7 +13747,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="7C49BE74-1C10-45EC-AB82-B5A18D58DFC8" width="310" height="78">
+        <image name="3B6F3A27-1C46-4E0A-8D31-CB9003513365" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15392,7 +15412,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="DF29A257-7794-45DD-8917-3C44EFD2E4BB" width="310" height="78">
+        <image name="D1401D53-9694-4CFB-BC3F-CA88DE53C23D" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

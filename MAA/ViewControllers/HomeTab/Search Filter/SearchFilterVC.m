@@ -33,6 +33,7 @@
 @property (nonatomic, strong) id selectedTofee;
 @property (nonatomic, strong) id selectedFromExperience;
 @property (nonatomic, strong) id selectedToExperience;
+@property (nonatomic, strong) NSMutableArray *selectedAvailabltyDateArray;
 
 @property (nonatomic, strong) id filterCriteriaData;
 @property (nonatomic, strong) NSArray *typeArray;
@@ -46,6 +47,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
     
     [self callingFilterInfoApi];
     typePickerview=[[UIPickerView alloc]init];
@@ -143,9 +145,12 @@
     
     // Do any additional setup after loading the view.
     
-    
-    
 }
+
+-(void)initialisation{
+    self.selectedAvailabltyDateArray = [[NSMutableArray alloc] init];
+}
+
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
     if(pickerView.tag== TypePickerViewTag) {
@@ -366,5 +371,29 @@
 - (IBAction)Experience:(id)sender {
 }
 - (IBAction)ConsultationFee:(id)sender {
+}
+
+- (IBAction)availabilityButtonaction:(UIButton *)sender {
+    NSNumber *senderTagNumber;
+    if([sender isSelected]){
+        sender.selected = NO;
+        sender.backgroundColor = [UIColor whiteColor];
+        [sender setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+         senderTagNumber = [NSNumber numberWithInteger:sender.tag];
+        [self.selectedAvailabltyDateArray removeObject:senderTagNumber];
+    }
+    else{
+        sender.selected = YES;
+        sender.backgroundColor = [UIColor redColor];
+        [sender setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        senderTagNumber = [NSNumber numberWithInteger:sender.tag];
+        [self.selectedAvailabltyDateArray addObject:senderTagNumber];
+    }
+    NSLog(@"Date Array:%@",self.selectedAvailabltyDateArray);
+    NSLog(@"Sender Tag:%ld",(long)sender.tag);
+}
+- (IBAction)cancelFilterButtonAction:(UIButton *)sender {
+}
+- (IBAction)submitButtonAction:(UIButton *)sender {
 }
 @end
