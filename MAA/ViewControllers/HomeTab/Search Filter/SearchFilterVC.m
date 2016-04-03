@@ -5,19 +5,23 @@
 //  Created by Roshith on 15/12/15.
 //  Copyright © 2015 Cocoa Labs. All rights reserved.
 //
+#define NameKey @"name"
+
+#define TypePickerViewTag 10
 
 #import "SearchFilterVC.h"
 
 @interface SearchFilterVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UIGestureRecognizerDelegate>
 {
-    UIPickerView *type;
+    UIPickerView *typePickerview;
     UIPickerView *gender;
-    NSArray *Type;
     NSArray *Gender;
     UITapGestureRecognizer *gesture;
     
     
 }
+@property (nonatomic, strong) id selectedType;
+
 @property (nonatomic, strong) id filterCriteriaData;
 @property (nonatomic, strong) NSArray *typeArray;
 @end
@@ -28,14 +32,13 @@
     [super viewDidLoad];
     
     [self callingFilterInfoApi];
-    Type=@[@"Clinic",@"Doctor",@"All"];
     Gender=@[@"Male",@"Female"];
     
-    type=[[UIPickerView alloc]init];
-    _txtType.inputView=type;
-    type.delegate=self;
-    type.dataSource=self;
-    type.tag=10;
+    typePickerview=[[UIPickerView alloc]init];
+    _txtType.inputView = typePickerview;
+    typePickerview.delegate = self;
+    typePickerview.dataSource = self;
+    typePickerview.tag = TypePickerViewTag;
     
     gender=[[UIPickerView alloc]init];
     _txtGender.inputView=gender;
@@ -109,7 +112,7 @@
 }
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
 {
-    if(pickerView.tag==10) {
+    if(pickerView.tag== TypePickerViewTag) {
         return 1;
     }
     else if (pickerView.tag==20)
@@ -122,9 +125,9 @@
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
 {
     
-    if(pickerView.tag==10)
+    if(pickerView.tag == TypePickerViewTag)
     {
-        return Type.count;
+        return self.typeArray.count;
     }
     else if (pickerView.tag==20)
     {
@@ -135,9 +138,9 @@
 }
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
 {
-    if(pickerView.tag==10)
+    if(pickerView.tag == TypePickerViewTag)
     {
-        return Type[row];
+        return [self.typeArray[row] valueForKey:@"label"];
     }
     else if (pickerView.tag==20)
     {
@@ -149,9 +152,11 @@
 }
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    if (pickerView.tag==10)
+    if (pickerView.tag == TypePickerViewTag)
     {
-        _txtType.text=Type[row];
+        self.selectedType = self.typeArray[row];
+        _txtType.text = [self.typeArray[row] valueForKey:@"label"];
+        NSLog(@"slectd type:%@",self.selectedType);
         
     }
     else if (pickerView.tag==20)
@@ -215,6 +220,9 @@
     id indicesDetails = [self.filterCriteriaData valueForKey:@"indices"];
     int index = [[indicesDetails valueForKey:@"type"] intValue];
     self.typeArray = [[[self.filterCriteriaData valueForKey:@"filter_data"] objectAtIndex:index] valueForKey:@"values"];
+    self.selectedType = [self.typeArray objectAtIndex:0];
+    self.txtType = [self.selectedType valueForKey:@"label"];
+
     NSLog(@"Types:%@",self.typeArray);
     
 }
