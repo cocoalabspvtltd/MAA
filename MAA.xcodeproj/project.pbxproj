@@ -13,8 +13,6 @@
 		55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BFD1381C0979BE00A07A75 /* LoginPageVC.m */; };
 		55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55C674E01C09D92D005AD9E5 /* JoinNowVC.m */; };
 		55C674E31C09D986005AD9E5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C674E21C09D986005AD9E5 /* QuartzCore.framework */; };
-		55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352D71C0B4485008CCEC1 /* ProfilePageVC.m */; };
-		55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D352DD1C0B461E008CCEC1 /* NotificationsPageVC.m */; };
 		55D60D831C08B94600963D5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D60D821C08B94600963D5D /* main.m */; };
 		55D60D861C08B94600963D5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D60D851C08B94600963D5D /* AppDelegate.m */; };
 		55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8A1C08B94600963D5D /* Main.storyboard */; };
@@ -375,10 +373,6 @@
 		55C674DF1C09D92D005AD9E5 /* JoinNowVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JoinNowVC.h; path = "Classes/Join Now/JoinNowVC.h"; sourceTree = "<group>"; };
 		55C674E01C09D92D005AD9E5 /* JoinNowVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JoinNowVC.m; path = "Classes/Join Now/JoinNowVC.m"; sourceTree = "<group>"; };
 		55C674E21C09D986005AD9E5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		55D352D61C0B4485008CCEC1 /* ProfilePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ProfilePageVC.h; path = "Classes/Profile Page/ProfilePageVC.h"; sourceTree = "<group>"; };
-		55D352D71C0B4485008CCEC1 /* ProfilePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProfilePageVC.m; path = "Classes/Profile Page/ProfilePageVC.m"; sourceTree = "<group>"; };
-		55D352DC1C0B461E008CCEC1 /* NotificationsPageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NotificationsPageVC.h; path = "Classes/Notifications Page/NotificationsPageVC.h"; sourceTree = "<group>"; };
-		55D352DD1C0B461E008CCEC1 /* NotificationsPageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NotificationsPageVC.m; path = "Classes/Notifications Page/NotificationsPageVC.m"; sourceTree = "<group>"; };
 		55D60D7E1C08B94600963D5D /* MAA_USER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MAA_USER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D60D821C08B94600963D5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55D60D841C08B94600963D5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -910,24 +904,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		55D352E11C0B464C008CCEC1 /* Profile Page */ = {
-			isa = PBXGroup;
-			children = (
-				55D352D61C0B4485008CCEC1 /* ProfilePageVC.h */,
-				55D352D71C0B4485008CCEC1 /* ProfilePageVC.m */,
-			);
-			name = "Profile Page";
-			sourceTree = "<group>";
-		};
-		55D352E31C0B4684008CCEC1 /* Notifications Page */ = {
-			isa = PBXGroup;
-			children = (
-				55D352DC1C0B461E008CCEC1 /* NotificationsPageVC.h */,
-				55D352DD1C0B461E008CCEC1 /* NotificationsPageVC.m */,
-			);
-			name = "Notifications Page";
-			sourceTree = "<group>";
-		};
 		55D60D751C08B94600963D5D = {
 			isa = PBXGroup;
 			children = (
@@ -974,8 +950,6 @@
 				55D60D851C08B94600963D5D /* AppDelegate.m */,
 				55EAC8481C0A167500F31280 /* Login Module */,
 				555BBCFB1C0AA2BC00E262F9 /* Sign Up */,
-				55D352E11C0B464C008CCEC1 /* Profile Page */,
-				55D352E31C0B4684008CCEC1 /* Notifications Page */,
 				55D60D8D1C08B94600963D5D /* Assets.xcassets */,
 				C0DE50CB1C86F87B001F40E9 /* human-male-female.png */,
 				7C8AD8571C18BB8100C4E3BD /* Doctor Images */,
@@ -2677,7 +2651,6 @@
 				C0AFCA721CAC2D850026A216 /* DoctorAboutVC.m in Sources */,
 				C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */,
 				C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */,
-				55D352DE1C0B461E008CCEC1 /* NotificationsPageVC.m in Sources */,
 				C0BBC4A01C6E4046005083B1 /* AppointmentTableViewCell.m in Sources */,
 				C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */,
 				C092EBF81C80B1E000F7B18B /* SDWebImageDecoder.m in Sources */,
@@ -2709,7 +2682,6 @@
 				C0D157FF1C9B134700FC1DE0 /* SearchVC.m in Sources */,
 				C092EC031C80B1E000F7B18B /* UIView+WebCacheOperation.m in Sources */,
 				C092EBFF1C80B1E000F7B18B /* UIImage+MultiFormat.m in Sources */,
-				55D352D81C0B4485008CCEC1 /* ProfilePageVC.m in Sources */,
 				C092EC011C80B1E000F7B18B /* UIImageView+HighlightedWebCache.m in Sources */,
 				C092EBF41C80B1E000F7B18B /* MKAnnotationView+WebCache.m in Sources */,
 				C0A8312E1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m in Sources */,
