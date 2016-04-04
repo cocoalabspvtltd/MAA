@@ -14,7 +14,7 @@
 #import "SubmitReviewView.h"
 #import "ReviewTableViewCell.h"
 
-@interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate,SubmitReviewDelegate>
 @property (nonatomic, strong) id entityDetails;
 @property (nonatomic, strong) NSArray *reviewsArray;
 @property (nonatomic, strong) id doctorFirstClinicDetails;
@@ -290,8 +290,68 @@
 
     self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"View" owner:self options:nil]
 firstObject];
+    self.submitReviewView.submitReviewDelegate = self;
     CGFloat xMargin = 0,yMargin = 0;
     self.submitReviewView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
     [self.view addSubview:self.submitReviewView];
+}
+
+#pragma mark - Submit Review Delegate
+
+-(void)submitButtonActionWithReviewContent:(NSString *)reviewContent andRating:(int)reting{
+    [self callingSubmitReviewPaiWithReviewContent:reviewContent andRating:reting];
+    
+}
+
+#pragma mark - Submit Review Api
+
+-(void)callingSubmitReviewPaiWithReviewContent:(NSString *)reviewContent andRating:(int)rating{
+    NSString *submitReviewUrlString = [Baseurl stringByAppendingString:Submit_review_url];
+    NSString *accessTokenString  = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *submitReviewMutableDictionary = [[NSMutableDictionary alloc] init];
+    [submitReviewMutableDictionary setValue:accessTokenString forKey:@"token"];
+     [submitReviewMutableDictionary setValue:reviewContent forKey:@"review"];
+    NSNumber *reviewRating = [NSNumber numberWithInt:rating];
+    [submitReviewMutableDictionary setValue:reviewRating forKey:@"rating"];
+    [submitReviewMutableDictionary setValue:self.entityId forKey:@"entity_id"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:submitReviewUrlString] withBody:submitReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self.submitReviewView removeFromSuperview];
+        [self callingAlertViewControllerWithString:@"Your review submitted sucessfully. It become active after review"];
+        NSLog(@"Response Object:%@",responseObject);
+      
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+}
+
+#pragma mark - Adding Alert Controller
+
+-(void)callingAlertViewControllerWithString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 @end

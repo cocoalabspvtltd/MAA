@@ -38,6 +38,7 @@
 #define doctor_url @"get_dash_info"
 #define doc_status_url @"set_doc_status"
 #define review_url @"get_reviews"
+#define Submit_review_url @"add_review"
 #define GetHealthProfileUrl @"get_health_profile"
 #define GetHealthProfilImagesUrl @"get_images"
 #define GetPrescriptionsUrl @"get_prescriptions"

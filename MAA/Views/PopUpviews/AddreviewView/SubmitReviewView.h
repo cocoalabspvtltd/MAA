@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@protocol SubmitReviewDelegate;
 @interface SubmitReviewView : UIView
 @property (strong, nonatomic) IBOutlet UITextView *contentTextView;
 @property (strong, nonatomic) IBOutlet UIButton *firstStarButton;
@@ -20,5 +20,11 @@
 @property (strong, nonatomic) IBOutlet UIImageView *thirdStarImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *fourthStarImageView;
 @property (strong, nonatomic) IBOutlet UIImageView *fifthStarImageView;
+@property (nonatomic, assign) id<SubmitReviewDelegate>submitReviewDelegate;
+@end
+
+@protocol SubmitReviewDelegate <NSObject>
+
+-(void)submitButtonActionWithReviewContent:(NSString *)reviewContent andRating:(int)reting;
 
 @end

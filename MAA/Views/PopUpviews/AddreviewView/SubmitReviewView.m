@@ -7,7 +7,9 @@
 //
 
 #import "SubmitReviewView.h"
-
+@interface SubmitReviewView()
+@property (nonatomic, assign) int reviewRating;
+@end
 @implementation SubmitReviewView
 
 /*
@@ -18,7 +20,11 @@
 }
 */
 - (IBAction)submitButtonAction:(UIButton *)sender {
+    if(self.submitReviewDelegate && [self.submitReviewDelegate respondsToSelector:@selector(submitButtonActionWithReviewContent:andRating:)]){
+        [self.submitReviewDelegate submitButtonActionWithReviewContent:self.contentTextView.text andRating:self.reviewRating];
+    }
 }
+
 - (IBAction)starButtonAction:(UIButton *)sender {
 }
 
