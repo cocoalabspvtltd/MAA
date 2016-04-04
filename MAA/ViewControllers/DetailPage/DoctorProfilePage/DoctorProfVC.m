@@ -11,13 +11,16 @@
 #import "DoctorProfVC.h"
 #import "DoctorAboutVC.h"
 #import "DoctorReviewsVC.h"
+#import "SubmitReviewView.h"
 #import "ReviewTableViewCell.h"
 
 @interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate>
-@property (nonatomic,strong) NSArray *reviewsArray;
-@property (nonatomic, strong) id doctorFirstClinicDetails;
 @property (nonatomic, strong) id entityDetails;
+@property (nonatomic, strong) NSArray *reviewsArray;
+@property (nonatomic, strong) id doctorFirstClinicDetails;
+@property (nonatomic, strong) SubmitReviewView *submitReviewView;
 @property (nonatomic, strong) UIActivityViewController *activityViewController;
+
 @end
 
 @implementation DoctorProfVC
@@ -185,13 +188,17 @@
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 - (IBAction)addReviewButtonAction:(UIButton *)sender {
+    
+    [self addingReviewView];
 }
+
 - (IBAction)reviewAllInfoButtonAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DoctorReviewsVC *doctorReviewsVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorReviewsVC"];
     doctorReviewsVC.entityId = self.entityId;
     [self.navigationController pushViewController:doctorReviewsVC animated:YES];
 }
+
 - (IBAction)timingViewMoreButtonAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TimingsVC *timingsVC = [storyboard instantiateViewControllerWithIdentifier:@"TimingsVC"];
@@ -274,5 +281,17 @@
     }
     self.activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:self.activityViewController animated:YES completion:nil];
+}
+
+
+#pragma mark - Adding Review view
+
+-(void)addingReviewView{
+
+    self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"View" owner:self options:nil]
+firstObject];
+    CGFloat xMargin = 0,yMargin = 0;
+    self.submitReviewView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
+    [self.view addSubview:self.submitReviewView];
 }
 @end

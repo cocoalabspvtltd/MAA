@@ -25,6 +25,8 @@
 		7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97B11C24862D0037E328 /* libCLToolKit.a */; };
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		9F2B0E1B1C65EDE10053D023 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E1A1C65EDE10053D023 /* BaseViewController.m */; };
+		9F403AA51CB25476000FA5E2 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F403AA41CB25476000FA5E2 /* View.xib */; };
+		9F403AA81CB254A2000FA5E2 /* SubmitReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F403AA71CB254A2000FA5E2 /* SubmitReviewView.m */; };
 		9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C221C66551A00F7E99D /* PhotoGridViewController.m */; };
 		9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C261C6655AB00F7E99D /* PhotogridCollectionViewCell.m */; };
 		9F5F0C291C6655AB00F7E99D /* PhotogridCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F5F0C271C6655AB00F7E99D /* PhotogridCollectionViewCell.xib */; };
@@ -295,7 +297,6 @@
 		C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EC6FA51CAD9B2800191C49 /* DoctorReviewsVC.m */; };
 		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
 		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
-		C0FC52531CB22A5D0062D1F5 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0FC52521CB22A5D0062D1F5 /* View.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -383,6 +384,9 @@
 		7CF40FE81C1D77600020EE33 /* block1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block1@2x.png"; sourceTree = "<group>"; };
 		9F2B0E191C65EDE10053D023 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		9F2B0E1A1C65EDE10053D023 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		9F403AA41CB25476000FA5E2 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		9F403AA61CB254A2000FA5E2 /* SubmitReviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitReviewView.h; sourceTree = "<group>"; };
+		9F403AA71CB254A2000FA5E2 /* SubmitReviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitReviewView.m; sourceTree = "<group>"; };
 		9F5F0C211C66551A00F7E99D /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
 		9F5F0C221C66551A00F7E99D /* PhotoGridViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoGridViewController.m; sourceTree = "<group>"; };
 		9F5F0C251C6655AB00F7E99D /* PhotogridCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotogridCollectionViewCell.h; sourceTree = "<group>"; };
@@ -774,7 +778,6 @@
 		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
 		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
 		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
-		C0FC52521CB22A5D0062D1F5 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1017,6 +1020,16 @@
 				9F5F0C241C6655AB00F7E99D /* PhotoGridCollectionViewCell */,
 			);
 			path = CustomCells;
+			sourceTree = "<group>";
+		};
+		9F403AA31CB25476000FA5E2 /* AddreviewView */ = {
+			isa = PBXGroup;
+			children = (
+				9F403AA41CB25476000FA5E2 /* View.xib */,
+				9F403AA61CB254A2000FA5E2 /* SubmitReviewView.h */,
+				9F403AA71CB254A2000FA5E2 /* SubmitReviewView.m */,
+			);
+			path = AddreviewView;
 			sourceTree = "<group>";
 		};
 		9F5F0C061C664EDA00F7E99D /* Resources */ = {
@@ -1325,7 +1338,6 @@
 				C057E5671CA13E020041FCDC /* timingsCell.xib */,
 				9F991C591C5A1C5400F92C11 /* search.xib */,
 				C017899D1CA2B38F00482EBF /* invoice.xib */,
-				C0FC52521CB22A5D0062D1F5 /* View.xib */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -1940,6 +1952,7 @@
 		C0BBC4BE1C6E63EE005083B1 /* PopUpviews */ = {
 			isa = PBXGroup;
 			children = (
+				9F403AA31CB25476000FA5E2 /* AddreviewView */,
 				C09A8AB71C8177C100BAA532 /* ImageFullView */,
 				C08437F01C6EEE9300610ADC /* NotesPopUp */,
 				C0BBC4CB1C6E6544005083B1 /* InvoicepopUp */,
@@ -2380,7 +2393,7 @@
 				C0BBC4841C6E2AE7005083B1 /* search-a@2x.png in Resources */,
 				C09EF6EC1C76211800806600 /* OTSessionDelegate.html in Resources */,
 				C0BBC4BB1C6E5C82005083B1 /* direct-apnt-black@3x (1).png in Resources */,
-				C0FC52531CB22A5D0062D1F5 /* View.xib in Resources */,
+				9F403AA51CB25476000FA5E2 /* View.xib in Resources */,
 				C09A8AC11C8177EB00BAA532 /* ImageFullView.xib in Resources */,
 				C0CABC7B1C8AE752009F9470 /* unchecked-gray@3x.png in Resources */,
 				C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */,
@@ -2591,6 +2604,7 @@
 				C0D157FE1C9B134700FC1DE0 /* SearchResultsVC.m in Sources */,
 				C092EC001C80B1E000F7B18B /* UIImage+WebP.m in Sources */,
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
+				9F403AA81CB254A2000FA5E2 /* SubmitReviewView.m in Sources */,
 				C092EBFD1C80B1E000F7B18B /* UIButton+WebCache.m in Sources */,
 				C0BBC4A21C6E4046005083B1 /* PreviousAppoinmentCell.m in Sources */,
 				C092EBFE1C80B1E000F7B18B /* UIImage+GIF.m in Sources */,
