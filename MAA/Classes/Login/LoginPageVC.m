@@ -93,6 +93,11 @@
         [logInDictionary setValue:textFieldEmail.text forKey:@"uname"];
         [logInDictionary setValue:passwordInSh1 forKey:@"pwd"];
     }
+    NSString *deviceTokenString = [[NSUserDefaults standardUserDefaults] valueForKey:DeviceTokenKey];
+    if(deviceTokenString.length>0){
+     [logInDictionary setValue:passwordInSh1 forKey:@"device_token"];
+    }
+    [logInDictionary setValue:@"iOS" forKey:@"device_type"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:logInUrlString] withBody:logInDictionary withMethodType:HTTPMethodPOST withAccessToken:nil];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {

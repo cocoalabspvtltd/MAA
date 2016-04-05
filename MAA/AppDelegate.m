@@ -21,9 +21,37 @@
 {
     // Override point for customization after application launch.
     [self addObserver];
+    if ([application respondsToSelector:@selector(registerUserNotificationSettings:)]) {
+        // iOS 8
+        UIUserNotificationSettings* settings = [UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert | UIUserNotificationTypeBadge | UIUserNotificationTypeSound categories:nil];
+        [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
+    }
     [self initWindow];
     return [[FacebookWrapper standardWrapper] handlerApplication:application didFinishLaunchingWithOptions:launchOptions ];
     return YES;
+}
+
+#pragma mark - Remote Notification Delegates
+
+-(void)application:(UIApplication *)application didRegisterUserNotificationSettings:(nonnull UIUserNotificationSettings *)notificationSettings{
+    [application registerForRemoteNotifications];
+}
+
+-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken{
+    NSString *newDeviceToken = [[deviceToken description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]];
+    newDeviceToken = [newDeviceToken stringByReplacingOccurrencesOfString:@" " withString:@""];
+    NSLog(@"###### DEVICE TOKEN = %@ #########",newDeviceToken);
+    [[NSUserDefaults standardUserDefaults ] setValue:newDeviceToken forKey:DeviceTokenKey];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error{
+    UIAlertView *errorAlert = [[UIAlertView alloc] initWithTitle:AppName message:@"Registration Failure" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+    [errorAlert show];
+}
+
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler{
+     NSLog(@"User Info:%@",[userInfo valueForKey:@"aps"]);
 }
 
 -(void)initWindow{

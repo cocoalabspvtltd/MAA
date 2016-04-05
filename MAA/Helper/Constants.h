@@ -16,6 +16,7 @@ static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen"
 #define AppName @"MAA"
 #define ERROR @"error"
 #define ACCESS_TOKEN @"token"
+#define DeviceTokenKey @"deviceToken"
 
 #define NoNetworkmessage @"Network not available"
 #define NoNetworkErrorName @"No internet Access"
