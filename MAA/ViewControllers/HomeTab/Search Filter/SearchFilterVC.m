@@ -11,6 +11,7 @@
 #define AgePickerViewTag 30
 #define FeePickerViewTag 40
 #define ExperiencePickerViewTag 50
+#define CategoryPickerViewTag 60
 
 #import "SearchFilterVC.h"
 
@@ -21,6 +22,7 @@
     UIPickerView *agePickerView;
     UIPickerView *feePickerView;
     UIPickerView *experiencePickerView;
+    UIPickerView *categoryPickerView;
     UITapGestureRecognizer *gesture;
     
     
@@ -36,6 +38,7 @@
 @property  (nonatomic, assign) BOOL sortBasedOnFee;
 @property  (nonatomic, assign) BOOL sortBasedOnExperience;
 @property (nonatomic, strong) NSMutableArray *selectedAvailabltyDateArray;
+@property (nonatomic, strong) id selectedCategory;
 
 @property (nonatomic, strong) id filterCriteriaData;
 @property (nonatomic, strong) NSArray *typeArray;
@@ -43,6 +46,7 @@
 @property (nonatomic, strong) NSArray *ageArray;
 @property (nonatomic, strong) NSArray *feeArray;
 @property (nonatomic, strong) NSArray *experienceArray;
+@property (nonatomic, strong) NSArray *categoriesArray;
 @end
 
 @implementation SearchFilterVC
@@ -85,6 +89,12 @@
     experiencePickerView.delegate = self;
     experiencePickerView.dataSource = self;
     experiencePickerView.tag = ExperiencePickerViewTag;
+    
+    categoryPickerView = [[UIPickerView alloc]init];
+    _txtCategory.inputView = categoryPickerView;
+    categoryPickerView.delegate = self;
+    categoryPickerView.dataSource = self;
+    categoryPickerView.tag = CategoryPickerViewTag;
     
     gesture.delegate=self;
     gesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(Tapping)];
@@ -172,6 +182,9 @@
     else if (pickerView.tag == FeePickerViewTag){
         return 1;
     }
+    else if (pickerView.tag == CategoryPickerViewTag){
+        return 1;
+    }
     return 1;
 }
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
@@ -193,6 +206,9 @@
     }
     else if (pickerView.tag == ExperiencePickerViewTag){
         return self.experienceArray.count;
+    }
+    else if (pickerView.tag == CategoryPickerViewTag){
+        return self.categoriesArray.count;
     }
     return 1;
 }
@@ -217,6 +233,10 @@
     else if (pickerView.tag == ExperiencePickerViewTag)
     {
         return [self.experienceArray[row] valueForKey:@"label"];
+    }
+    else if (pickerView.tag == CategoryPickerViewTag)
+    {
+        return [self.categoriesArray[row] valueForKey:@"name"];
     }
     return nil;
     
@@ -251,7 +271,6 @@
         _txtFeeTo.text = [self.feeArray[row] valueForKey:@"label"];
         [_txtFeeFrom resignFirstResponder];
         [_txtFeeTo resignFirstResponder];
-        NSLog(@"slectd Gender:%@",self.selectedType);
     }
     else if (pickerView.tag == ExperiencePickerViewTag)
     {
@@ -260,7 +279,14 @@
         _txtExperienceTo.text = [self.experienceArray[row] valueForKey:@"label"];
         [_txtExperienceFrom resignFirstResponder];
         [_txtExperienceTo resignFirstResponder];
-        NSLog(@"slectd Gender:%@",self.selectedType);
+    }
+    else if (pickerView.tag == CategoryPickerViewTag)
+    {
+        self.selectedCategory = self.categoriesArray[row];
+        _txtCategory.text = [self.categoriesArray[row] valueForKey:@"name"];
+        
+        [_txtCategory resignFirstResponder];
+        NSLog(@"slectd Category:%@",self.selectedCategory);
     }
 }
 -(void)Tapping
@@ -302,6 +328,7 @@
         [self gettingAgeFromResponse];
         [self gettingFeeFromResponse];
         [self gettingExperienceFromResponse];
+        [self getCategoriesApiCall];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -360,6 +387,38 @@
     self.selectedToExperience = [self.experienceArray objectAtIndex:0];
     self.txtExperienceFrom.text = [self.selectedFromExperience valueForKey:@"label"];
     self.txtExperienceTo.text = [self.selectedToExperience valueForKey:@"label"];
+}
+
+#pragma mark - Get Categories Api Calle
+
+-(void)getCategoriesApiCall{
+    NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSString *getCategoriesUrlString = [Baseurl stringByAppendingString:GetCategoriesUrl];
+    NSMutableDictionary *getSubcategoriesMutableDictionary = [[NSMutableDictionary alloc] init];
+    [getSubcategoriesMutableDictionary  setValue:accessToken forKey:@"token"];
+    [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
+    [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:0] forKey:Offsetkey];
+    [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:100] forKey:LimitKey];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object:%@",responseObject);
+        self.categoriesArray = [responseObject valueForKey:Datakey];
+        self.selectedCategory = [self.categoriesArray objectAtIndex:0];
+        self.txtCategory.text =[self.selectedCategory valueForKey:@"name"];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
 }
 
 #pragma mark - Button Actions
