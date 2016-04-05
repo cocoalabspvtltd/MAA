@@ -8,9 +8,12 @@
 
 #define TypePickerViewTag 10
 #define GenderPickerViewTag 20
-#define AgePickerViewTag 30
-#define FeePickerViewTag 40
-#define ExperiencePickerViewTag 50
+#define FromAgePickerViewTag 30
+#define ToAgePickerViewTag 70
+#define FromFeePickerViewTag 40
+#define ToFeePickerViewTag 80
+#define FromExperiencePickerViewTag 50
+#define ToExperiencePickerViewTag 100
 #define CategoryPickerViewTag 60
 
 #import "SearchFilterVC.h"
@@ -19,9 +22,12 @@
 {
     UIPickerView *typePickerview;
     UIPickerView *genderPickerView;
-    UIPickerView *agePickerView;
-    UIPickerView *feePickerView;
-    UIPickerView *experiencePickerView;
+    UIPickerView *fromAgePickerView;
+    UIPickerView *toAgePickerView;
+    UIPickerView *fromFeePickerView;
+    UIPickerView *ToFeePickerView;
+    UIPickerView *fromExperiencePickerView;
+    UIPickerView *toExperiencePickerView;
     UIPickerView *categoryPickerView;
     UITapGestureRecognizer *gesture;
     
@@ -69,26 +75,41 @@
     genderPickerView.tag = GenderPickerViewTag;
     
     
-    agePickerView = [[UIPickerView alloc]init];
-    _txtAgeFrom.inputView = agePickerView;
-    _txtAgeTo.inputView = agePickerView;
-    agePickerView.delegate = self;
-    agePickerView.dataSource = self;
-    agePickerView.tag = AgePickerViewTag;
+    fromAgePickerView = [[UIPickerView alloc]init];
+    _txtAgeFrom.inputView = fromAgePickerView;
+    fromAgePickerView.delegate = self;
+    fromAgePickerView.dataSource = self;
+    fromAgePickerView.tag = FromAgePickerViewTag;
     
-    feePickerView = [[UIPickerView alloc]init];
-    _txtFeeFrom.inputView = feePickerView;
-    _txtFeeTo.inputView = feePickerView;
-    feePickerView.delegate = self;
-    feePickerView.dataSource = self;
-    feePickerView.tag = FeePickerViewTag;
+    toAgePickerView = [[UIPickerView alloc]init];
+    _txtAgeTo.inputView = toAgePickerView;
+    toAgePickerView.delegate = self;
+    toAgePickerView.dataSource = self;
+    toAgePickerView.tag = ToAgePickerViewTag;
     
-    experiencePickerView = [[UIPickerView alloc]init];
-    _txtExperienceFrom.inputView = experiencePickerView;
-    _txtExperienceTo.inputView = experiencePickerView;
-    experiencePickerView.delegate = self;
-    experiencePickerView.dataSource = self;
-    experiencePickerView.tag = ExperiencePickerViewTag;
+    fromFeePickerView = [[UIPickerView alloc]init];
+    _txtFeeFrom.inputView = fromFeePickerView;
+    fromFeePickerView.delegate = self;
+    fromFeePickerView.dataSource = self;
+    fromFeePickerView.tag = FromFeePickerViewTag;
+    
+    ToFeePickerView = [[UIPickerView alloc]init];
+    _txtFeeTo.inputView = ToFeePickerView;
+    ToFeePickerView.delegate = self;
+    ToFeePickerView.dataSource = self;
+    ToFeePickerView.tag = ToFeePickerViewTag;
+    
+    fromExperiencePickerView = [[UIPickerView alloc]init];
+    _txtExperienceFrom.inputView = fromExperiencePickerView;
+    fromExperiencePickerView.delegate = self;
+    fromExperiencePickerView.dataSource = self;
+    fromExperiencePickerView.tag = FromExperiencePickerViewTag;
+    
+    toExperiencePickerView = [[UIPickerView alloc]init];
+    _txtExperienceTo.inputView = toExperiencePickerView;
+    toExperiencePickerView.delegate = self;
+    toExperiencePickerView.dataSource = self;
+    toExperiencePickerView.tag = ToExperiencePickerViewTag;
     
     categoryPickerView = [[UIPickerView alloc]init];
     _txtCategory.inputView = categoryPickerView;
@@ -176,13 +197,16 @@
     {
         return 1;
     }
-    else if (pickerView.tag == AgePickerViewTag){
+    else if ((pickerView.tag == FromAgePickerViewTag)||(pickerView.tag == ToAgePickerViewTag)){
         return 1;
     }
-    else if (pickerView.tag == FeePickerViewTag){
+    else if ((pickerView.tag == FromFeePickerViewTag)||(pickerView.tag == ToFeePickerViewTag)){
         return 1;
     }
     else if (pickerView.tag == CategoryPickerViewTag){
+        return 1;
+    }
+    else if ((pickerView.tag == FromExperiencePickerViewTag)||(pickerView.tag == ToExperiencePickerViewTag)){
         return 1;
     }
     return 1;
@@ -198,13 +222,13 @@
     {
         return self.genderArray.count;
     }
-    else if (pickerView.tag == AgePickerViewTag){
+    else if ((pickerView.tag == FromAgePickerViewTag)||(pickerView.tag == ToAgePickerViewTag)){
         return self.ageArray.count;
     }
-    else if (pickerView.tag == FeePickerViewTag){
+    else if ((pickerView.tag == FromFeePickerViewTag)||(pickerView.tag == ToFeePickerViewTag)){
         return self.feeArray.count;
     }
-    else if (pickerView.tag == ExperiencePickerViewTag){
+    else if ((pickerView.tag == FromExperiencePickerViewTag)||(pickerView.tag == ToExperiencePickerViewTag)){
         return self.experienceArray.count;
     }
     else if (pickerView.tag == CategoryPickerViewTag){
@@ -222,15 +246,15 @@
     {
         return [self.genderArray[row] valueForKey:@"label"];
     }
-    else if (pickerView.tag == AgePickerViewTag)
+    else if ((pickerView.tag == FromAgePickerViewTag)||(pickerView.tag == ToAgePickerViewTag))
     {
         return [self.ageArray[row] valueForKey:@"label"];
     }
-    else if (pickerView.tag == FeePickerViewTag)
+    else if ((pickerView.tag == FromFeePickerViewTag)||(pickerView.tag == ToFeePickerViewTag))
     {
         return [self.feeArray[row] valueForKey:@"label"];
     }
-    else if (pickerView.tag == ExperiencePickerViewTag)
+    else if ((pickerView.tag == FromExperiencePickerViewTag)||(pickerView.tag == ToExperiencePickerViewTag))
     {
         return [self.experienceArray[row] valueForKey:@"label"];
     }
@@ -255,36 +279,45 @@
         _txtGender.text = [self.genderArray[row] valueForKey:@"label"];
         [_txtGender resignFirstResponder];
     }
-    else if (pickerView.tag == AgePickerViewTag)
+    else if (pickerView.tag == FromAgePickerViewTag)
     {
         self.selectedFromAge = self.ageArray[row];
         _txtAgeFrom.text = [self.ageArray[row] valueForKey:@"label"];
-        _txtAgeTo.text = [self.ageArray[row] valueForKey:@"label"];
         [_txtAgeFrom resignFirstResponder];
-        [_txtAgeTo resignFirstResponder];
-        NSLog(@"slectd Gender:%@",self.selectedType);
     }
-    else if (pickerView.tag == FeePickerViewTag)
+    else if (pickerView.tag == ToAgePickerViewTag)
     {
+        self.selectedToAge = self.ageArray[row];
+        _txtAgeTo.text = [self.ageArray[row] valueForKey:@"label"];
+        [_txtAgeTo resignFirstResponder];
+    }
+    else if (pickerView.tag == FromFeePickerViewTag){
         self.selectedFromFee = self.feeArray[row];
         _txtFeeFrom.text = [self.feeArray[row] valueForKey:@"label"];
-        _txtFeeTo.text = [self.feeArray[row] valueForKey:@"label"];
         [_txtFeeFrom resignFirstResponder];
+    }
+    else if (pickerView.tag == ToFeePickerViewTag)
+    {
+        self.selectedTofee = self.feeArray[row];
+        _txtFeeTo.text = [self.feeArray[row] valueForKey:@"label"];
         [_txtFeeTo resignFirstResponder];
     }
-    else if (pickerView.tag == ExperiencePickerViewTag)
+    else if (pickerView.tag == FromExperiencePickerViewTag)
     {
         self.selectedFromExperience = self.experienceArray[row];
         _txtExperienceFrom.text = [self.experienceArray[row] valueForKey:@"label"];
-        _txtExperienceTo.text = [self.experienceArray[row] valueForKey:@"label"];
         [_txtExperienceFrom resignFirstResponder];
+    }
+    else if (pickerView.tag == ToExperiencePickerViewTag)
+    {
+        self.selectedToExperience = self.experienceArray[row];
+        _txtExperienceTo.text = [self.experienceArray[row] valueForKey:@"label"];
         [_txtExperienceTo resignFirstResponder];
     }
     else if (pickerView.tag == CategoryPickerViewTag)
     {
         self.selectedCategory = self.categoriesArray[row];
         _txtCategory.text = [self.categoriesArray[row] valueForKey:@"name"];
-        
         [_txtCategory resignFirstResponder];
         NSLog(@"slectd Category:%@",self.selectedCategory);
     }
@@ -467,6 +500,59 @@
     NSLog(@"Sender Tag:%ld",(long)sender.tag);
 }
 - (IBAction)cancelFilterButtonAction:(UIButton *)sender {
+    self.selectedType = [self.typeArray objectAtIndex:0];
+    self.txtType.text = [self.selectedType valueForKey:@"label"];
+    [typePickerview selectRow:0 inComponent:0 animated:NO];
+    self.sortBasedOnFee = NO;
+    self.sortBasedOnExperience = YES;
+    [self.btnExperience setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    self.btnExperience.backgroundColor = [UIColor redColor];
+    [self.btnConsultaionFee setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnConsultaionFee.backgroundColor = [UIColor whiteColor];
+    [self.selectedAvailabltyDateArray removeAllObjects];
+    self.btnSun.selected = NO;
+    self.btnSun.backgroundColor = [UIColor whiteColor];
+    [self.btnSun setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnMon.selected = NO;
+    self.btnMon.backgroundColor = [UIColor whiteColor];
+    [self.btnMon setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnTue.selected = NO;
+    self.btnTue.backgroundColor = [UIColor whiteColor];
+    [self.btnTue setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnWed.selected = NO;
+    self.btnWed.backgroundColor = [UIColor whiteColor];
+    [self.btnWed setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnThu.selected = NO;
+    self.btnThu.backgroundColor = [UIColor whiteColor];
+    [self.btnThu setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnFri.selected = NO;
+    self.btnFri.backgroundColor = [UIColor whiteColor];
+    [self.btnFri setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.btnSat.selected = NO;
+    self.btnSat.backgroundColor = [UIColor whiteColor];
+    [self.btnSat setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    self.selectedFromFee = [self.feeArray objectAtIndex:0];
+    self.txtFeeFrom.text = [self.selectedFromFee valueForKey:@"label"];
+    [fromFeePickerView selectRow:0 inComponent:0 animated:NO];
+    self.selectedTofee = [self.feeArray objectAtIndex:0];
+    self.txtFeeTo.text = [self.selectedTofee valueForKey:@"label"];
+    [ToFeePickerView selectRow:0 inComponent:0 animated:NO];
+    self.selectedFromAge = [self.ageArray objectAtIndex:0];
+    self.txtAgeFrom.text = [self.selectedFromAge valueForKey:@"label"];
+    [fromAgePickerView selectRow:0 inComponent:0 animated:NO];
+    self.selectedToAge = [self.ageArray objectAtIndex:0];
+    self.txtAgeTo.text = [self.selectedToAge valueForKey:@"label"];
+    [toAgePickerView selectRow:0 inComponent:0 animated:NO];
+    self.selectedGender = [self.genderArray objectAtIndex:0];
+    self.txtGender.text = [self.selectedGender valueForKey:@"label"];
+    [genderPickerView selectRow:0 inComponent:0 animated:NO];
+    self.selectedFromExperience = [self.experienceArray objectAtIndex:0];
+    self.txtExperienceFrom.text = [self.selectedFromExperience valueForKey:@"label"];
+    [fromExperiencePickerView selectRow:0 inComponent:0 animated:NO];
+    self.selectedToExperience = [self.experienceArray objectAtIndex:0];
+    self.txtExperienceTo.text = [self.selectedToExperience valueForKey:@"label"];
+    [toExperiencePickerView selectRow:0 inComponent:0 animated:NO];
+    
 }
 - (IBAction)submitButtonAction:(UIButton *)sender {
 }
