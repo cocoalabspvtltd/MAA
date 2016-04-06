@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="DAE32726-928A-45D9-A060-350B75CFBC85" scopeBarBackgroundImage="DAE32726-928A-45D9-A060-350B75CFBC85" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="FBFD4AAE-16C5-49E5-9D0A-AEB44F56B51A" scopeBarBackgroundImage="FBFD4AAE-16C5-49E5-9D0A-AEB44F56B51A" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="3A8E1957-B230-48EF-A043-B23A915EBA26" scopeBarBackgroundImage="3A8E1957-B230-48EF-A043-B23A915EBA26" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="3F7089F5-C7F0-4C60-9F0D-E172084D81AA" scopeBarBackgroundImage="3F7089F5-C7F0-4C60-9F0D-E172084D81AA" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -911,7 +911,7 @@
         <!--SearchFilter-->
         <scene sceneID="LdW-JO-yWq">
             <objects>
-                <viewController title="SearchFilter" id="sNg-c7-fIs" customClass="SearchFilterVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchFilterVC" title="SearchFilter" id="sNg-c7-fIs" customClass="SearchFilterVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="snE-Es-kCl"/>
                         <viewControllerLayoutGuide type="bottom" id="cTB-zg-E0P"/>
@@ -943,8 +943,7 @@
                                             <constraint firstAttribute="width" constant="30" id="d5I-dG-qVt"/>
                                         </constraints>
                                         <connections>
-                                            <action selector="Close:" destination="8DI-v4-KVi" eventType="touchUpInside" id="fW7-Al-1js"/>
-                                            <action selector="Close:" destination="sNg-c7-fIs" eventType="touchUpInside" id="krv-iy-GIF"/>
+                                            <action selector="closeButtonAction:" destination="sNg-c7-fIs" eventType="touchUpInside" id="3iN-r3-zNY"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1716,7 +1715,7 @@
                                         </constraints>
                                         <state key="normal" backgroundImage="filter"/>
                                         <connections>
-                                            <segue destination="sNg-c7-fIs" kind="presentation" id="v1n-SZ-LxY"/>
+                                            <action selector="filterButtonAction:" destination="48E-F8-RGl" eventType="touchUpInside" id="ud6-0c-ad0"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -13684,7 +13683,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="3A8E1957-B230-48EF-A043-B23A915EBA26" width="310" height="78">
+        <image name="3F7089F5-C7F0-4C60-9F0D-E172084D81AA" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15349,7 +15348,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="DAE32726-928A-45D9-A060-350B75CFBC85" width="310" height="78">
+        <image name="FBFD4AAE-16C5-49E5-9D0A-AEB44F56B51A" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

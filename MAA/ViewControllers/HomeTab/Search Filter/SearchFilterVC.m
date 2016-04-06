@@ -555,5 +555,35 @@
     
 }
 - (IBAction)submitButtonAction:(UIButton *)sender {
+    NSMutableArray *feeArray = [[NSMutableArray alloc] init];
+    if([self.selectedFromFee valueForKey:@"value"]){
+        [feeArray addObject:[self.selectedFromFee valueForKey:@"value"]];
+    }
+    if([self.selectedTofee valueForKey:@"value"]){
+        [feeArray addObject:[self.selectedTofee valueForKey:@"value"]];
+    }
+    NSMutableArray *ageArray = [[NSMutableArray alloc] init];
+    if([self.selectedFromAge valueForKey:@"value"]){
+        [ageArray addObject:[self.selectedFromAge valueForKey:@"value"]];
+    }
+    if([self.selectedToAge valueForKey:@"value"]){
+        [ageArray addObject:[self.selectedToAge valueForKey:@"value"]];
+    }
+    NSMutableArray *experienceArray = [[NSMutableArray alloc] init];
+    if([self.selectedFromExperience valueForKey:@"value"]){
+        [experienceArray addObject:[self.selectedFromExperience valueForKey:@"value"]];
+    }
+    if([self.selectedToExperience valueForKey:@"value"]){
+        [experienceArray addObject:[self.selectedToExperience valueForKey:@"value"]];
+    }
+    
+    if(self.searchFilterDelagate && [self.searchFilterDelagate respondsToSelector:@selector(submitButtonActionWithType:andWhetherSortbyExperience:andwhetherSortByConsultationFee:andAvailabilityArra:andCategory:andFeeDetails:andAgeDetail:andGenderDetail:andExperienceDetail:)]){
+        [self.searchFilterDelagate submitButtonActionWithType:self.selectedType andWhetherSortbyExperience:self.sortBasedOnExperience andwhetherSortByConsultationFee:self.sortBasedOnFee andAvailabilityArra:self.selectedAvailabltyDateArray andCategory:self.selectedCategory andFeeDetails:feeArray andAgeDetail:ageArray andGenderDetail:self.selectedGender andExperienceDetail:experienceArray];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)closeButtonAction:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

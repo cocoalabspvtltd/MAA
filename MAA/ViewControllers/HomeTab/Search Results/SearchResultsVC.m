@@ -8,11 +8,12 @@
 
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
+#import "SearchFilterVC.h"
 
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
 
-@interface SearchResultsVC ()<UIScrollViewDelegate,UISearchBarDelegate>
+@interface SearchResultsVC ()<UIScrollViewDelegate,UISearchBarDelegate,SearchFilterVCDelegate>
 @property (nonatomic, strong) NSArray *doctorsArray;
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, assign) int limitValue;
@@ -238,6 +239,19 @@
 - (IBAction)Back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)filterButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    SearchFilterVC *searchFilterVC = [storyboard instantiateViewControllerWithIdentifier:@"SearchFilterVC"];
+    searchFilterVC.searchFilterDelagate = self;
+    [self presentViewController:searchFilterVC animated:YES completion:nil];
+}
+
+#pragma mark - Search FilterVC Delegate
+
+-(void)submitButtonActionWithType:(id)filterType andWhetherSortbyExperience:(BOOL)isSortByExperience andwhetherSortByConsultationFee:(BOOL)whetherConsultFee andAvailabilityArra:(NSMutableArray *)availabilityArray andCategory:(id)categoryDetails andFeeDetails:(NSArray *)feeDetail andAgeDetail:(NSArray *)ageDetail andGenderDetail:(id)genderDetails andExperienceDetail:(NSArray *)experienceDetail{
+    
 }
 
 @end

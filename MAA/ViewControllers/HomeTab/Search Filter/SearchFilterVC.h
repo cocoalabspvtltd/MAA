@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SearchFilterVCDelegate;
+
 @interface SearchFilterVC : UIViewController
 
 @property (weak, nonatomic) IBOutlet UITextField *txtType;
@@ -32,5 +34,12 @@
 //@property (weak, nonatomic) IBOutlet UITextField *txtExperienceTo;
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (strong, nonatomic) IBOutlet UITextField *txtExperienceTo;
+@property (nonatomic, assign) id <SearchFilterVCDelegate>searchFilterDelagate;
+
+@end
+
+@protocol SearchFilterVCDelegate <NSObject>
+
+-(void)submitButtonActionWithType:(id)filterType andWhetherSortbyExperience:(BOOL)isSortByExperience andwhetherSortByConsultationFee:(BOOL)whetherConsultFee andAvailabilityArra:(NSMutableArray *)availabilityArray andCategory:(id)categoryDetails andFeeDetails:(NSArray *)feeDetail andAgeDetail:(NSArray *)ageDetail andGenderDetail:(id)genderDetails andExperienceDetail:(NSArray *)experienceDetail;
 
 @end
