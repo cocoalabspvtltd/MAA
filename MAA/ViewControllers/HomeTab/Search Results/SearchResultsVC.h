@@ -17,8 +17,9 @@
     
     NSMutableArray *arraySearchResultListing;
 }
-@property (nonatomic, strong) NSString *departmentId;
-@property (nonatomic, strong) NSString *locationId;
+@property (nonatomic, strong) id selectedDepartmentDetails;
+@property (nonatomic, strong) id selectedLocationDetail;
+@property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (nonatomic, assign) BOOL isLocationSearch;
 
 @end

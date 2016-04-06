@@ -21,6 +21,17 @@
 @property (nonatomic, strong) NSArray *onlineDoctorsArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, assign) BOOL isOnlineButtonSelected;
+
+@property (nonatomic, strong) NSString *searchTypeId;
+@property (nonatomic, assign) BOOL isSortbyExperience;
+@property (nonatomic, assign) BOOL IsSortByFee;
+@property (nonatomic, strong) NSArray *availabilityArray;
+@property (nonatomic, strong) NSString *searchCategoryId;
+@property (nonatomic, strong) NSArray *feeArray;
+@property (nonatomic, strong) NSArray *ageArray;
+@property (nonatomic, strong) NSString *searchGander;
+@property (nonatomic, strong) NSArray *experienceArray;
+
 @end
 
 @implementation SearchResultsVC
@@ -31,6 +42,8 @@
     [self customisation];
     [self addSubViews];
     [self callingSearchapi];
+    NSLog(@"Loation Dtail:%@",self.selectedLocationDetail);
+    self.locationLabel.text = [self.selectedLocationDetail valueForKey:@"location"];
     // Do any additional setup after loading the view.
 }
 
@@ -41,6 +54,8 @@
     self.doctorsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    
+    self.isSortbyExperience = NO;
 }
 
 -(void)customisation{
@@ -162,7 +177,6 @@
 }
 
 -(void)callingSearchapi{
-    NSLog(@"Departmentid:%@",self.departmentId);
     if(self.offsetValue == 0){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     }
@@ -172,11 +186,23 @@
     [searchMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [searchMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
     [searchMutableDictionary setValue:accesToken forKey:@"token"];
+    [searchMutableDictionary setValue:self.experienceArray forKey:@"experience"];
+    [searchMutableDictionary setValue:self.feeArray forKey:@"fee"];
+    [searchMutableDictionary setValue:self.availabilityArray forKey:@"availability"];
+   // [searchMutableDictionary setValue:self.availabilityArray forKey:@"status"];
+    [searchMutableDictionary setValue:self.searchGander forKey:@"gender"];
+    [searchMutableDictionary setValue:self.searchTypeId forKey:@"type"];
+    [searchMutableDictionary setValue:self.ageArray forKey:@"age"];
+    [searchMutableDictionary setValue:[self.selectedDepartmentDetails valueForKey:@"id"] forKey:@"dept_id"];
+    [searchMutableDictionary setValue:[self.selectedLocationDetail valueForKey:@"location_id"] forKey:@"location_id"];
+    [searchMutableDictionary setValue:[NSNumber numberWithBool:self.isSortbyExperience] forKey:@"s_exp"];
+     [searchMutableDictionary setValue:[NSNumber numberWithBool:self.IsSortByFee] forKey:@"s_fee"];
+
     //if(self.isLocationSearch){
-        [searchMutableDictionary setValue:self.locationId forKey:@"location_id"];
+    
     //}
     //else{
-        [searchMutableDictionary setValue:self.departmentId forKey:@"dept_id"];
+    
     //}
     NSLog(@"Search Mutable Dictionary:%@",searchMutableDictionary);
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchUrlString] withBody:searchMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesToken];
@@ -245,12 +271,25 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
     SearchFilterVC *searchFilterVC = [storyboard instantiateViewControllerWithIdentifier:@"SearchFilterVC"];
     searchFilterVC.searchFilterDelagate = self;
+    searchFilterVC.selectedDepartmentDetails = self.selectedDepartmentDetails;
     [self presentViewController:searchFilterVC animated:YES completion:nil];
 }
 
 #pragma mark - Search FilterVC Delegate
 
 -(void)submitButtonActionWithType:(id)filterType andWhetherSortbyExperience:(BOOL)isSortByExperience andwhetherSortByConsultationFee:(BOOL)whetherConsultFee andAvailabilityArra:(NSMutableArray *)availabilityArray andCategory:(id)categoryDetails andFeeDetails:(NSArray *)feeDetail andAgeDetail:(NSArray *)ageDetail andGenderDetail:(id)genderDetails andExperienceDetail:(NSArray *)experienceDetail{
+    self.searchTypeId = [filterType valueForKey:@"value"];
+    self.isSortbyExperience  = isSortByExperience;
+    self.IsSortByFee = whetherConsultFee;
+    self.availabilityArray = availabilityArray;
+    self.searchCategoryId = [categoryDetails valueForKey:@"value"];
+    self.feeArray = feeDetail;
+    self.ageArray = ageDetail;
+    self.searchGander = [genderDetails valueForKey:@"value"];
+    self.experienceArray = experienceDetail;
+    self.offsetValue = 0;
+    [self.doctorsMutableArray removeAllObjects];
+    [self callingSearchapi];
     
 }
 

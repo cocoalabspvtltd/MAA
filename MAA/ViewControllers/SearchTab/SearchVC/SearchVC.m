@@ -17,7 +17,7 @@
 @property (nonatomic, assign) BOOL isLocationSearch;
 @property (nonatomic, strong) NSArray *locationArray;
 @property (nonatomic, strong) NSArray *doctorsArray;
-@property (nonatomic, strong) NSString *locationIdString;
+@property (nonatomic, strong) id locationDetail;
 @end
 
 @implementation SearchVC
@@ -36,7 +36,6 @@
 -(void)initialisation{
     self.doctorSearchBar.delegate = self;
     self.locationSerchBar.delegate = self;
-    self.locationIdString = @"";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -99,7 +98,7 @@
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         //SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
         self.locationSerchBar.text =[[self.locationArray objectAtIndex:indexPath.row] valueForKey:@"location"];
-        self.locationIdString = [[self.locationArray objectAtIndex:indexPath.row] valueForKey:@"location_id"];
+        self.locationDetail = [self.locationArray objectAtIndex:indexPath.row];
         [self.doctorSearchBar becomeFirstResponder];
         //searchResults.locationId = self.locationIdString;
        // searchResults.isLocationSearch = YES;
@@ -109,8 +108,8 @@
         if([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"department"]){
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             SearchResultsVC *searchResults = [storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
-            searchResults.departmentId = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
-            searchResults.locationId = self.locationIdString;
+            searchResults.selectedDepartmentDetails = [self.doctorsArray objectAtIndex:indexPath.row];
+            searchResults.selectedLocationDetail = self.locationDetail;
             //searchResults.isLocationSearch = NO;
             [self.navigationController pushViewController:searchResults animated:YES];
         }

@@ -437,7 +437,11 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Object:%@",responseObject);
         self.categoriesArray = [responseObject valueForKey:Datakey];
-        self.selectedCategory = [self.categoriesArray objectAtIndex:0];
+        NSLog(@"Selected Department Details :%@",self.selectedDepartmentDetails);
+        NSPredicate *filterArrayPrediate = [NSPredicate predicateWithFormat:@"SELF.id == %@",[self.selectedDepartmentDetails valueForKey:@"id"]];
+        NSArray *filteredArray = [self.categoriesArray filteredArrayUsingPredicate:filterArrayPrediate];
+        NSLog(@"Filtered Array;%@",filteredArray);
+        self.selectedCategory = [filteredArray objectAtIndex:0];
         self.txtCategory.text =[self.selectedCategory valueForKey:@"name"];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {

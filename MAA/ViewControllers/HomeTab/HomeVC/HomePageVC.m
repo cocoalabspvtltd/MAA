@@ -157,7 +157,7 @@
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
         UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         SearchResultsVC *searchResultVC = (SearchResultsVC *)[storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
-        searchResultVC.departmentId = [[self.categoriesMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+        searchResultVC.selectedDepartmentDetails = [self.categoriesMutableArray objectAtIndex:indexPath.row];
         searchResultVC.hidesBottomBarWhenPushed = YES;
         [self.navigationController pushViewController:searchResultVC animated:YES];
 }

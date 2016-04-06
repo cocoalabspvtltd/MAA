@@ -35,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UIView *mainView;
 @property (strong, nonatomic) IBOutlet UITextField *txtExperienceTo;
 @property (nonatomic, assign) id <SearchFilterVCDelegate>searchFilterDelagate;
+@property (nonatomic, strong) id selectedDepartmentDetails;
 
 @end
 
