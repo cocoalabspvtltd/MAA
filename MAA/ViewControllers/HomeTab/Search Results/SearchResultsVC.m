@@ -189,7 +189,7 @@
     [searchMutableDictionary setValue:self.experienceArray forKey:@"experience"];
     [searchMutableDictionary setValue:self.feeArray forKey:@"fee"];
     [searchMutableDictionary setValue:self.availabilityArray forKey:@"availability"];
-   // [searchMutableDictionary setValue:self.availabilityArray forKey:@"status"];
+    [searchMutableDictionary setValue:[NSNumber numberWithBool:self.isOnlineButtonSelected] forKey:@"status"];
     [searchMutableDictionary setValue:self.searchGander forKey:@"gender"];
     [searchMutableDictionary setValue:self.searchTypeId forKey:@"type"];
     [searchMutableDictionary setValue:self.ageArray forKey:@"age"];
@@ -249,11 +249,17 @@
 - (IBAction)segmentControlAction:(UISegmentedControl *)sender {
     if(sender.selectedSegmentIndex == 0){
       self.isOnlineButtonSelected = YES;
-        [tableViewSearchResults reloadData];
+        [self.doctorsMutableArray removeAllObjects];
+        self.offsetValue = 0;
+        [self callingSearchapi];
+       // [tableViewSearchResults reloadData];
     }
     else{
        self.isOnlineButtonSelected = NO;
-        [tableViewSearchResults reloadData];
+        [self.doctorsMutableArray removeAllObjects];
+        self.offsetValue = 0;
+        [self callingSearchapi];
+       // [tableViewSearchResults reloadData];
     }
 }
 

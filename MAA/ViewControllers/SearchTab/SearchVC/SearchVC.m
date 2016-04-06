@@ -18,6 +18,7 @@
 @property (nonatomic, strong) NSArray *locationArray;
 @property (nonatomic, strong) NSArray *doctorsArray;
 @property (nonatomic, strong) id locationDetail;
+
 @end
 
 @implementation SearchVC
