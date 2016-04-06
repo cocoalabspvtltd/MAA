@@ -42,15 +42,22 @@
     [self customisation];
     [self addSubViews];
     [self callingSearchapi];
-    NSLog(@"Loation Dtail:%@",self.selectedLocationDetail);
-    self.locationLabel.text = [self.selectedLocationDetail valueForKey:@"location"];
+    if([self.selectedLocationDetail valueForKey:@"location"]){
+        self.locationLabel.text = [self.selectedLocationDetail valueForKey:@"location"];
+        self.headingLabel.text = [NSString stringWithFormat:@"%@ in %@",[self.selectedDepartmentDetails valueForKey:@"name"],[self.selectedLocationDetail valueForKey:@"location"]];
+    }
+    else{
+        self.locationLabel.text = @"All";
+        self.headingLabel.text = [self.selectedDepartmentDetails valueForKey:@"name"];
+    }
+    
     // Do any additional setup after loading the view.
 }
 
 -(void)initialisation{
     self.offsetValue = 0;
     self.limitValue = 10;
-    self.isOnlineButtonSelected = YES;
+    self.isOnlineButtonSelected = NO;
     self.doctorsMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -97,7 +104,6 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     SearchResultsTVC *cell = [tableViewSearchResults dequeueReusableCellWithIdentifier:@"cellSearchResults"forIndexPath:indexPath];
-    
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.cellImageViewIcon.clipsToBounds = YES;
@@ -248,14 +254,14 @@
 
 - (IBAction)segmentControlAction:(UISegmentedControl *)sender {
     if(sender.selectedSegmentIndex == 0){
-      self.isOnlineButtonSelected = YES;
+        self.isOnlineButtonSelected = NO;
         [self.doctorsMutableArray removeAllObjects];
         self.offsetValue = 0;
         [self callingSearchapi];
        // [tableViewSearchResults reloadData];
     }
     else{
-       self.isOnlineButtonSelected = NO;
+        self.isOnlineButtonSelected = YES;
         [self.doctorsMutableArray removeAllObjects];
         self.offsetValue = 0;
         [self callingSearchapi];

@@ -21,5 +21,6 @@
 @property (nonatomic, strong) id selectedLocationDetail;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (nonatomic, assign) BOOL isLocationSearch;
+@property (weak, nonatomic) IBOutlet UILabel *headingLabel;
 
 @end

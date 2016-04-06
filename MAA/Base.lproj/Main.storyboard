@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="B6781110-AE00-49F1-88B5-E1BC251EB26E" scopeBarBackgroundImage="B6781110-AE00-49F1-88B5-E1BC251EB26E" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="342D6384-29FA-4F4F-B0FA-F09CAEF34749" scopeBarBackgroundImage="342D6384-29FA-4F4F-B0FA-F09CAEF34749" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="594259F5-3F35-4987-A31F-3094D9726F96" scopeBarBackgroundImage="594259F5-3F35-4987-A31F-3094D9726F96" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="082D8B85-9456-4C9C-821F-FB5A14569E35" scopeBarBackgroundImage="082D8B85-9456-4C9C-821F-FB5A14569E35" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -1641,8 +1641,8 @@
                                     <constraint firstAttribute="height" constant="20" id="nGH-NA-OT5"/>
                                 </constraints>
                                 <segments>
-                                    <segment title="Online"/>
                                     <segment title="All"/>
+                                    <segment title="Online"/>
                                 </segments>
                                 <color key="tintColor" red="1" green="0.0" blue="0.27058823529999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
@@ -1751,6 +1751,7 @@
                     </view>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="headingLabel" destination="1mT-5O-zop" id="baf-sC-PUt"/>
                         <outlet property="locationLabel" destination="GkV-fx-9Cv" id="5UG-r9-uJN"/>
                         <outlet property="tableViewSearchResults" destination="PiV-qU-buW" id="MJz-Cc-ZsQ"/>
                     </connections>
@@ -13683,8 +13684,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1.png" width="688" height="853"/>
-        <image name="594259F5-3F35-4987-A31F-3094D9726F96" width="310" height="78">
+        <image name="082D8B85-9456-4C9C-821F-FB5A14569E35" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15349,7 +15349,8 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="B6781110-AE00-49F1-88B5-E1BC251EB26E" width="310" height="78">
+        <image name="1.png" width="688" height="853"/>
+        <image name="342D6384-29FA-4F4F-B0FA-F09CAEF34749" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
