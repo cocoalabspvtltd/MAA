@@ -69,6 +69,7 @@
 		C017899E1CA2B38F00482EBF /* invoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = C017899D1CA2B38F00482EBF /* invoice.xib */; };
 		C01C23D81CA1A10300279A17 /* ClinicProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23D71CA1A10300279A17 /* ClinicProfVC.m */; };
 		C01C23DB1CA1A11500279A17 /* DoctorProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */; };
+		C035D6591CB4D09E0045AD25 /* doc_success.png in Resources */ = {isa = PBXBuildFile; fileRef = C035D6581CB4D09E0045AD25 /* doc_success.png */; };
 		C035E7451C885AA4007809BC /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C035E7441C885AA4007809BC /* line.png */; };
 		C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C381C71B96C00662BB4 /* ViewProfileVC.m */; };
 		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
@@ -456,6 +457,7 @@
 		C01C23D71CA1A10300279A17 /* ClinicProfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicProfVC.m; sourceTree = "<group>"; };
 		C01C23D91CA1A11500279A17 /* DoctorProfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorProfVC.h; sourceTree = "<group>"; };
 		C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorProfVC.m; sourceTree = "<group>"; };
+		C035D6581CB4D09E0045AD25 /* doc_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doc_success.png; sourceTree = "<group>"; };
 		C035E7441C885AA4007809BC /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		C0447C371C71B96C00662BB4 /* ViewProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileVC.h; sourceTree = "<group>"; };
 		C0447C381C71B96C00662BB4 /* ViewProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewProfileVC.m; sourceTree = "<group>"; };
@@ -1764,6 +1766,7 @@
 		C09F2C051C9C69C900DB040C /* NoResult */ = {
 			isa = PBXGroup;
 			children = (
+				C035D6581CB4D09E0045AD25 /* doc_success.png */,
 				9F95DB4A1C9E2FD800F3EB4F /* no medical documents.png */,
 				9F95DB4B1C9E2FD800F3EB4F /* no photos.png */,
 				9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */,
@@ -2495,6 +2498,7 @@
 				C0E92BC01C9183A100443117 /* ic_close_white_48pt_3x.png in Resources */,
 				C09EF6DD1C76211800806600 /* style.scss in Resources */,
 				C09EF6BC1C76211800806600 /* OTAudioDeviceManager.html in Resources */,
+				C035D6591CB4D09E0045AD25 /* doc_success.png in Resources */,
 				C0E92BBF1C9183A100443117 /* ic_close_white_48pt_2x.png in Resources */,
 				C0BBC4891C6E2AE7005083B1 /* settings-a.png in Resources */,
 				C09EF6F31C76211800806600 /* OTVideoRender.html in Resources */,

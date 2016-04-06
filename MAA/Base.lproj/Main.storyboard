@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="777299CD-5431-439D-91C5-26A85B1EB78E" scopeBarBackgroundImage="777299CD-5431-439D-91C5-26A85B1EB78E" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="DAE32726-928A-45D9-A060-350B75CFBC85" scopeBarBackgroundImage="DAE32726-928A-45D9-A060-350B75CFBC85" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="7203B30B-9E02-4A51-8987-B0BA91A27945" scopeBarBackgroundImage="7203B30B-9E02-4A51-8987-B0BA91A27945" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="3A8E1957-B230-48EF-A043-B23A915EBA26" scopeBarBackgroundImage="3A8E1957-B230-48EF-A043-B23A915EBA26" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -9890,6 +9890,73 @@
             </objects>
             <point key="canvasLocation" x="15295" y="4316"/>
         </scene>
+        <!--review Succes-->
+        <scene sceneID="0EH-eR-wr8">
+            <objects>
+                <viewController title="review Succes" id="2zo-Xl-gsp" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qvx-lx-kn7"/>
+                        <viewControllerLayoutGuide type="bottom" id="7tr-Q8-MD8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NhV-WG-Hhw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zut-BD-TGj">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <color key="backgroundColor" red="1" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="EUi-9e-Rxb"/>
+                                </constraints>
+                            </view>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" image="doc_success.png" translatesAutoresizingMaskIntoConstraints="NO" id="GoJ-4E-N80">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="kGb-Dp-zrG"/>
+                                    <constraint firstAttribute="width" constant="200" id="nNv-YK-MOW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your review is succssfully posted." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEA-2P-KzR">
+                                <rect key="frame" x="30" y="408" width="540" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BJ6-OM-4eI">
+                                <rect key="frame" x="528" y="560" width="50" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="fSV-tf-ch1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="15"/>
+                                <state key="normal" title="Got,it">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.9137254901960784" blue="0.9137254901960784" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="NEA-2P-KzR" firstAttribute="top" secondItem="GoJ-4E-N80" secondAttribute="bottom" constant="8" id="3ji-tp-l6G"/>
+                            <constraint firstAttribute="trailing" secondItem="BJ6-OM-4eI" secondAttribute="trailing" constant="22" id="3xZ-IF-PVU"/>
+                            <constraint firstItem="NEA-2P-KzR" firstAttribute="centerX" secondItem="GoJ-4E-N80" secondAttribute="centerX" id="Fe3-0L-uRg"/>
+                            <constraint firstItem="Zut-BD-TGj" firstAttribute="top" secondItem="Qvx-lx-kn7" secondAttribute="bottom" id="aye-8m-RDW"/>
+                            <constraint firstItem="7tr-Q8-MD8" firstAttribute="top" secondItem="BJ6-OM-4eI" secondAttribute="bottom" constant="10" id="bow-O2-xOj"/>
+                            <constraint firstAttribute="trailing" secondItem="Zut-BD-TGj" secondAttribute="trailing" id="kSA-nC-2ck"/>
+                            <constraint firstItem="Zut-BD-TGj" firstAttribute="leading" secondItem="NhV-WG-Hhw" secondAttribute="leading" id="lhg-uv-jOL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NEA-2P-KzR" secondAttribute="trailing" constant="10" id="p6U-6N-cCH"/>
+                            <constraint firstItem="GoJ-4E-N80" firstAttribute="centerY" secondItem="NhV-WG-Hhw" secondAttribute="centerY" id="rfb-mq-Rmx"/>
+                            <constraint firstItem="NEA-2P-KzR" firstAttribute="leading" secondItem="NhV-WG-Hhw" secondAttribute="leadingMargin" constant="10" id="vE8-u9-OjS"/>
+                            <constraint firstItem="GoJ-4E-N80" firstAttribute="centerX" secondItem="NhV-WG-Hhw" secondAttribute="centerX" id="wJ4-2D-XNe"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCx-9s-OLL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13955" y="3327"/>
+        </scene>
         <!--Doctor ReviewsVC-->
         <scene sceneID="IOa-Pb-he2">
             <objects>
@@ -13617,7 +13684,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="7203B30B-9E02-4A51-8987-B0BA91A27945" width="310" height="78">
+        <image name="3A8E1957-B230-48EF-A043-B23A915EBA26" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15282,7 +15349,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="777299CD-5431-439D-91C5-26A85B1EB78E" width="310" height="78">
+        <image name="DAE32726-928A-45D9-A060-350B75CFBC85" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -16959,6 +17026,7 @@ AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
         <image name="check_light_gray" width="29" height="29"/>
         <image name="close-2" width="48" height="48"/>
         <image name="comments_white" width="29" height="29"/>
+        <image name="doc_success.png" width="512" height="512"/>
         <image name="doctor" width="30" height="30"/>
         <image name="edit" width="48" height="48"/>
         <image name="edit_white" width="29" height="29"/>
