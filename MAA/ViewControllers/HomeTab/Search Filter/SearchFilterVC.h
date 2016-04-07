@@ -42,6 +42,7 @@
 @property  (nonatomic, assign) BOOL sortBasedOnFee;
 @property  (nonatomic, assign) BOOL sortBasedOnExperience;
 @property (nonatomic, strong) NSMutableArray *selectedAvailabltyDateArray;
+@property (nonatomic, strong) id selectedGender;
 
 
 @end

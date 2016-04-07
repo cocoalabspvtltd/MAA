@@ -34,7 +34,6 @@
     
 }
 
-@property (nonatomic, strong) id selectedGender;
 @property (nonatomic, strong) id selectedFromAge;
 @property (nonatomic, strong) id selectedToAge;
 @property (nonatomic, strong) id selectedFromFee;
@@ -431,7 +430,9 @@
     id indicesDetails = [self.filterCriteriaData valueForKey:@"indices"];
     int index = [[indicesDetails valueForKey:@"gender"] intValue];
     self.genderArray = [[[self.filterCriteriaData valueForKey:@"filter_data"] objectAtIndex:index] valueForKey:@"values"];
-    self.selectedGender = [self.genderArray objectAtIndex:0];
+    if(![self.selectedGender valueForKey:@"value"]){
+        self.selectedGender = [self.genderArray objectAtIndex:0];
+    }
     self.txtGender.text = [self.selectedGender valueForKey:@"label"];
 }
 

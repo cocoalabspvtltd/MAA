@@ -27,9 +27,10 @@
 @property (nonatomic, assign) BOOL IsSortByFee;
 @property (nonatomic, strong) NSArray *availabilityArray;
 @property (nonatomic, strong) id selectedsearchCategoryDetails;
+@property (nonatomic, strong) id selectedsearchGenderDetails;
 @property (nonatomic, strong) NSArray *feeArray;
 @property (nonatomic, strong) NSArray *ageArray;
-@property (nonatomic, strong) NSString *searchGander;
+
 @property (nonatomic, strong) NSArray *experienceArray;
 
 @end
@@ -196,7 +197,7 @@
     [searchMutableDictionary setValue:self.feeArray forKey:@"fee"];
     [searchMutableDictionary setValue:self.availabilityArray forKey:@"availability"];
     [searchMutableDictionary setValue:[NSNumber numberWithBool:self.isOnlineButtonSelected] forKey:@"status"];
-    [searchMutableDictionary setValue:self.searchGander forKey:@"gender"];
+    [searchMutableDictionary setValue:[self.selectedsearchGenderDetails valueForKey:@"value"] forKey:@"gender"];
     [searchMutableDictionary setValue:[self.selectedSearchTypeDetails valueForKey:@"value"] forKey:@"type"];
     [searchMutableDictionary setValue:self.ageArray forKey:@"age"];
     if([self.selectedsearchCategoryDetails valueForKey:@"name"]){
@@ -292,6 +293,7 @@
     searchFilterVC.sortBasedOnExperience = self.isSortbyExperience;
     searchFilterVC.selectedAvailabltyDateArray = [[NSMutableArray alloc] initWithArray:self.availabilityArray];
     searchFilterVC.selectedCategory = self.selectedsearchCategoryDetails;
+    searchFilterVC.selectedGender = self.selectedsearchGenderDetails;
     [self presentViewController:searchFilterVC animated:YES completion:nil];
 }
 
@@ -305,7 +307,7 @@
     self.selectedsearchCategoryDetails = categoryDetails;
     self.feeArray = feeDetail;
     self.ageArray = ageDetail;
-    self.searchGander = [genderDetails valueForKey:@"value"];
+    self.selectedsearchGenderDetails = genderDetails;
     self.experienceArray = experienceDetail;
     self.offsetValue = 0;
     [self.doctorsMutableArray removeAllObjects];
