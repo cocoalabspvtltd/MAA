@@ -295,6 +295,7 @@
     searchFilterVC.selectedCategory = self.selectedsearchCategoryDetails;
     searchFilterVC.selectedGender = self.selectedsearchGenderDetails;
     searchFilterVC.selectedFeeMutableArray = [[NSMutableArray alloc] initWithArray:self.feeArray];
+    searchFilterVC.selectedAgeMutableArray = [[NSMutableArray alloc] initWithArray:self.ageArray];
     [self presentViewController:searchFilterVC animated:YES completion:nil];
 }
 

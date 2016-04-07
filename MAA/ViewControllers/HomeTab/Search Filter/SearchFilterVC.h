@@ -45,6 +45,7 @@
 @property (nonatomic, strong) id selectedGender;
 
 @property (nonatomic, strong) NSMutableArray *selectedFeeMutableArray;
+@property (nonatomic, strong) NSMutableArray *selectedAgeMutableArray;
 
 
 @end
