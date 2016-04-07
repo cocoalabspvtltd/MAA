@@ -294,6 +294,7 @@
     searchFilterVC.selectedAvailabltyDateArray = [[NSMutableArray alloc] initWithArray:self.availabilityArray];
     searchFilterVC.selectedCategory = self.selectedsearchCategoryDetails;
     searchFilterVC.selectedGender = self.selectedsearchGenderDetails;
+    searchFilterVC.selectedFeeMutableArray = [[NSMutableArray alloc] initWithArray:self.feeArray];
     [self presentViewController:searchFilterVC animated:YES completion:nil];
 }
 

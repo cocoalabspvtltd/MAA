@@ -450,10 +450,24 @@
     id indicesDetails = [self.filterCriteriaData valueForKey:@"indices"];
     int index = [[indicesDetails valueForKey:@"fee"] intValue];
     self.feeArray = [[[self.filterCriteriaData valueForKey:@"filter_data"] objectAtIndex:index] valueForKey:@"values"];
-    self.selectedFromFee = [self.feeArray objectAtIndex:0];
-    self.selectedTofee = [self.feeArray objectAtIndex:0];
-    self.txtFeeFrom.text = [self.selectedFromFee valueForKey:@"label"];
-    self.txtFeeTo.text = [self.selectedTofee valueForKey:@"label"];
+    
+    if(self.selectedFeeMutableArray.count>0){
+        NSPredicate *feepredicate1 = [NSPredicate predicateWithFormat:@"SELF.value == %@",[self.selectedFeeMutableArray objectAtIndex:0]];
+        NSArray *filteredArray1 = [self.feeArray filteredArrayUsingPredicate:feepredicate1];
+        _txtFeeFrom.text = [filteredArray1[0] valueForKey:@"label"];
+        self.selectedFromFee = [filteredArray1 objectAtIndex:0];
+        NSPredicate *feepredicate2 = [NSPredicate predicateWithFormat:@"SELF.value == %@",[self.selectedFeeMutableArray objectAtIndex:1]];
+        NSArray *filteredArray2 = [self.feeArray filteredArrayUsingPredicate:feepredicate2];
+        _txtFeeTo.text = [filteredArray2[0] valueForKey:@"label"];
+        self.selectedTofee = [filteredArray2 objectAtIndex:0];
+    }
+    else{
+        self.selectedFromFee = [self.feeArray objectAtIndex:0];
+        self.selectedTofee = [self.feeArray objectAtIndex:0];
+        self.txtFeeFrom.text = [self.selectedFromFee valueForKey:@"label"];
+        self.txtFeeTo.text = [self.selectedTofee valueForKey:@"label"];
+    }
+   
 }
 
 -(void)gettingExperienceFromResponse{
@@ -603,12 +617,14 @@
     
 }
 - (IBAction)submitButtonAction:(UIButton *)sender {
-    NSMutableArray *feeArray = [[NSMutableArray alloc] init];
-    if([self.selectedFromFee valueForKey:@"value"]){
-        [feeArray addObject:[self.selectedFromFee valueForKey:@"value"]];
-    }
-    if([self.selectedTofee valueForKey:@"value"]){
-        [feeArray addObject:[self.selectedTofee valueForKey:@"value"]];
+    if(self.selectedFeeMutableArray.count == 0){
+        self.selectedFeeMutableArray = [[NSMutableArray alloc] init];
+        if([self.selectedFromFee valueForKey:@"value"]){
+            [self.selectedFeeMutableArray addObject:[self.selectedFromFee valueForKey:@"value"]];
+        }
+        if([self.selectedTofee valueForKey:@"value"]){
+            [self.selectedFeeMutableArray addObject:[self.selectedTofee valueForKey:@"value"]];
+        }
     }
     NSMutableArray *ageArray = [[NSMutableArray alloc] init];
     if([self.selectedFromAge valueForKey:@"value"]){
@@ -626,7 +642,7 @@
     }
     
     if(self.searchFilterDelagate && [self.searchFilterDelagate respondsToSelector:@selector(submitButtonActionWithType:andWhetherSortbyExperience:andwhetherSortByConsultationFee:andAvailabilityArra:andCategory:andFeeDetails:andAgeDetail:andGenderDetail:andExperienceDetail:)]){
-        [self.searchFilterDelagate submitButtonActionWithType:self.selectedType andWhetherSortbyExperience:self.sortBasedOnExperience andwhetherSortByConsultationFee:self.sortBasedOnFee andAvailabilityArra:self.selectedAvailabltyDateArray andCategory:self.selectedCategory andFeeDetails:feeArray andAgeDetail:ageArray andGenderDetail:self.selectedGender andExperienceDetail:experienceArray];
+        [self.searchFilterDelagate submitButtonActionWithType:self.selectedType andWhetherSortbyExperience:self.sortBasedOnExperience andwhetherSortByConsultationFee:self.sortBasedOnFee andAvailabilityArra:self.selectedAvailabltyDateArray andCategory:self.selectedCategory andFeeDetails:self.selectedFeeMutableArray andAgeDetail:ageArray andGenderDetail:self.selectedGender andExperienceDetail:experienceArray];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
