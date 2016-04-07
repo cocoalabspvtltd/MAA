@@ -486,10 +486,24 @@
     id indicesDetails = [self.filterCriteriaData valueForKey:@"indices"];
     int index = [[indicesDetails valueForKey:@"experience"] intValue];
     self.experienceArray = [[[self.filterCriteriaData valueForKey:@"filter_data"] objectAtIndex:index] valueForKey:@"values"];
-    self.selectedFromExperience = [self.experienceArray objectAtIndex:0];
-    self.selectedToExperience = [self.experienceArray objectAtIndex:0];
-    self.txtExperienceFrom.text = [self.selectedFromExperience valueForKey:@"label"];
-    self.txtExperienceTo.text = [self.selectedToExperience valueForKey:@"label"];
+    
+    if(self.selectedExperienceMutableArray.count>0){
+        NSPredicate *experiencePredicate1 = [NSPredicate predicateWithFormat:@"SELF.value == %@",[self.selectedExperienceMutableArray objectAtIndex:0]];
+        NSArray *filteredArray1 = [self.experienceArray filteredArrayUsingPredicate:experiencePredicate1];
+        _txtExperienceFrom.text = [filteredArray1[0] valueForKey:@"label"];
+        self.selectedFromExperience = [filteredArray1 objectAtIndex:0];
+        
+        NSPredicate *experiencepredicate2 = [NSPredicate predicateWithFormat:@"SELF.value == %@",[self.selectedExperienceMutableArray objectAtIndex:1]];
+        NSArray *filteredArray2 = [self.experienceArray filteredArrayUsingPredicate:experiencepredicate2];
+        _txtExperienceTo.text = [filteredArray2[0] valueForKey:@"label"];
+        self.selectedToExperience = [filteredArray2 objectAtIndex:0];
+    }
+    else{
+        self.selectedFromExperience = [self.experienceArray objectAtIndex:0];
+        self.selectedToExperience = [self.experienceArray objectAtIndex:0];
+        self.txtExperienceFrom.text = [self.selectedFromExperience valueForKey:@"label"];
+        self.txtExperienceTo.text = [self.selectedToExperience valueForKey:@"label"];
+    }
 }
 
 #pragma mark - Get Categories Api Calle
@@ -629,7 +643,7 @@
     
 }
 - (IBAction)submitButtonAction:(UIButton *)sender {
-    if(self.selectedFeeMutableArray.count == 0){
+   // if(self.selectedFeeMutableArray.count == 0){
         self.selectedFeeMutableArray = [[NSMutableArray alloc] init];
         if([self.selectedFromFee valueForKey:@"value"]){
             [self.selectedFeeMutableArray addObject:[self.selectedFromFee valueForKey:@"value"]];
@@ -637,8 +651,8 @@
         if([self.selectedTofee valueForKey:@"value"]){
             [self.selectedFeeMutableArray addObject:[self.selectedTofee valueForKey:@"value"]];
         }
-    }
-    if(self.selectedAgeMutableArray.count == 0){
+  //  }
+  //  if(self.selectedAgeMutableArray.count == 0){
         self.selectedAgeMutableArray= [[NSMutableArray alloc] init];
         if([self.selectedFromAge valueForKey:@"value"]){
             [self.selectedAgeMutableArray addObject:[self.selectedFromAge valueForKey:@"value"]];
@@ -646,17 +660,18 @@
         if([self.selectedToAge valueForKey:@"value"]){
             [self.selectedAgeMutableArray addObject:[self.selectedToAge valueForKey:@"value"]];
         }
-    }
-    NSMutableArray *experienceArray = [[NSMutableArray alloc] init];
-    if([self.selectedFromExperience valueForKey:@"value"]){
-        [experienceArray addObject:[self.selectedFromExperience valueForKey:@"value"]];
-    }
-    if([self.selectedToExperience valueForKey:@"value"]){
-        [experienceArray addObject:[self.selectedToExperience valueForKey:@"value"]];
-    }
-    
+   // }
+    //if(self.selectedExperienceMutableArray.count == 0){
+        self.selectedExperienceMutableArray = [[NSMutableArray alloc] init];
+        if([self.selectedFromExperience valueForKey:@"value"]){
+            [self.selectedExperienceMutableArray addObject:[self.selectedFromExperience valueForKey:@"value"]];
+        }
+        if([self.selectedToExperience valueForKey:@"value"]){
+            [self.selectedExperienceMutableArray addObject:[self.selectedToExperience valueForKey:@"value"]];
+        }
+   // }
     if(self.searchFilterDelagate && [self.searchFilterDelagate respondsToSelector:@selector(submitButtonActionWithType:andWhetherSortbyExperience:andwhetherSortByConsultationFee:andAvailabilityArra:andCategory:andFeeDetails:andAgeDetail:andGenderDetail:andExperienceDetail:)]){
-        [self.searchFilterDelagate submitButtonActionWithType:self.selectedType andWhetherSortbyExperience:self.sortBasedOnExperience andwhetherSortByConsultationFee:self.sortBasedOnFee andAvailabilityArra:self.selectedAvailabltyDateArray andCategory:self.selectedCategory andFeeDetails:self.selectedFeeMutableArray andAgeDetail:self.selectedAgeMutableArray andGenderDetail:self.selectedGender andExperienceDetail:experienceArray];
+        [self.searchFilterDelagate submitButtonActionWithType:self.selectedType andWhetherSortbyExperience:self.sortBasedOnExperience andwhetherSortByConsultationFee:self.sortBasedOnFee andAvailabilityArra:self.selectedAvailabltyDateArray andCategory:self.selectedCategory andFeeDetails:self.selectedFeeMutableArray andAgeDetail:self.selectedAgeMutableArray andGenderDetail:self.selectedGender andExperienceDetail:self.selectedExperienceMutableArray];
     }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
