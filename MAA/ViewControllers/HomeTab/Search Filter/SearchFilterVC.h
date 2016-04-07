@@ -37,6 +37,13 @@
 @property (nonatomic, assign) id <SearchFilterVCDelegate>searchFilterDelagate;
 @property (nonatomic, strong) id selectedDepartmentDetails;
 
+@property (nonatomic, strong) id selectedType;
+@property (nonatomic, strong) id selectedCategory;
+@property  (nonatomic, assign) BOOL sortBasedOnFee;
+@property  (nonatomic, assign) BOOL sortBasedOnExperience;
+@property (nonatomic, strong) NSMutableArray *selectedAvailabltyDateArray;
+
+
 @end
 
 @protocol SearchFilterVCDelegate <NSObject>

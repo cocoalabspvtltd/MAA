@@ -22,11 +22,11 @@
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, assign) BOOL isOnlineButtonSelected;
 
-@property (nonatomic, strong) NSString *searchTypeId;
+@property (nonatomic, strong) id selectedSearchTypeDetails;
 @property (nonatomic, assign) BOOL isSortbyExperience;
 @property (nonatomic, assign) BOOL IsSortByFee;
 @property (nonatomic, strong) NSArray *availabilityArray;
-@property (nonatomic, strong) NSString *searchCategoryId;
+@property (nonatomic, strong) id selectedsearchCategoryDetails;
 @property (nonatomic, strong) NSArray *feeArray;
 @property (nonatomic, strong) NSArray *ageArray;
 @property (nonatomic, strong) NSString *searchGander;
@@ -197,8 +197,11 @@
     [searchMutableDictionary setValue:self.availabilityArray forKey:@"availability"];
     [searchMutableDictionary setValue:[NSNumber numberWithBool:self.isOnlineButtonSelected] forKey:@"status"];
     [searchMutableDictionary setValue:self.searchGander forKey:@"gender"];
-    [searchMutableDictionary setValue:self.searchTypeId forKey:@"type"];
+    [searchMutableDictionary setValue:[self.selectedSearchTypeDetails valueForKey:@"value"] forKey:@"type"];
     [searchMutableDictionary setValue:self.ageArray forKey:@"age"];
+    if([self.selectedsearchCategoryDetails valueForKey:@"name"]){
+        self.selectedDepartmentDetails = self.selectedsearchCategoryDetails;
+    }
     [searchMutableDictionary setValue:[self.selectedDepartmentDetails valueForKey:@"id"] forKey:@"dept_id"];
     [searchMutableDictionary setValue:[self.selectedLocationDetail valueForKey:@"location_id"] forKey:@"location_id"];
     [searchMutableDictionary setValue:[NSNumber numberWithBool:self.isSortbyExperience] forKey:@"s_exp"];
@@ -284,17 +287,22 @@
     SearchFilterVC *searchFilterVC = [storyboard instantiateViewControllerWithIdentifier:@"SearchFilterVC"];
     searchFilterVC.searchFilterDelagate = self;
     searchFilterVC.selectedDepartmentDetails = self.selectedDepartmentDetails;
+    searchFilterVC.selectedType = self.selectedSearchTypeDetails;
+    searchFilterVC.sortBasedOnFee = self.IsSortByFee;
+    searchFilterVC.sortBasedOnExperience = self.isSortbyExperience;
+    searchFilterVC.selectedAvailabltyDateArray = [[NSMutableArray alloc] initWithArray:self.availabilityArray];
+    searchFilterVC.selectedCategory = self.selectedsearchCategoryDetails;
     [self presentViewController:searchFilterVC animated:YES completion:nil];
 }
 
 #pragma mark - Search FilterVC Delegate
 
 -(void)submitButtonActionWithType:(id)filterType andWhetherSortbyExperience:(BOOL)isSortByExperience andwhetherSortByConsultationFee:(BOOL)whetherConsultFee andAvailabilityArra:(NSMutableArray *)availabilityArray andCategory:(id)categoryDetails andFeeDetails:(NSArray *)feeDetail andAgeDetail:(NSArray *)ageDetail andGenderDetail:(id)genderDetails andExperienceDetail:(NSArray *)experienceDetail{
-    self.searchTypeId = [filterType valueForKey:@"value"];
+    self.selectedSearchTypeDetails = filterType;
     self.isSortbyExperience  = isSortByExperience;
     self.IsSortByFee = whetherConsultFee;
     self.availabilityArray = availabilityArray;
-    self.searchCategoryId = [categoryDetails valueForKey:@"value"];
+    self.selectedsearchCategoryDetails = categoryDetails;
     self.feeArray = feeDetail;
     self.ageArray = ageDetail;
     self.searchGander = [genderDetails valueForKey:@"value"];
@@ -304,5 +312,4 @@
     [self callingSearchapi];
     
 }
-
 @end

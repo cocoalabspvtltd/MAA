@@ -33,7 +33,7 @@
     
     
 }
-@property (nonatomic, strong) id selectedType;
+
 @property (nonatomic, strong) id selectedGender;
 @property (nonatomic, strong) id selectedFromAge;
 @property (nonatomic, strong) id selectedToAge;
@@ -41,10 +41,6 @@
 @property (nonatomic, strong) id selectedTofee;
 @property (nonatomic, strong) id selectedFromExperience;
 @property (nonatomic, strong) id selectedToExperience;
-@property  (nonatomic, assign) BOOL sortBasedOnFee;
-@property  (nonatomic, assign) BOOL sortBasedOnExperience;
-@property (nonatomic, strong) NSMutableArray *selectedAvailabltyDateArray;
-@property (nonatomic, strong) id selectedCategory;
 
 @property (nonatomic, strong) id filterCriteriaData;
 @property (nonatomic, strong) NSArray *typeArray;
@@ -181,11 +177,55 @@
 }
 
 -(void)initialisation{
-    self.selectedAvailabltyDateArray = [[NSMutableArray alloc] init];
-    self.sortBasedOnExperience = YES;
-    self.sortBasedOnFee = NO;
-    [self.btnExperience setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    self.btnExperience.backgroundColor = [UIColor redColor];
+    if(self.selectedAvailabltyDateArray.count == 0){
+        self.selectedAvailabltyDateArray = [[NSMutableArray alloc] init];
+    }
+    else{
+        for (int i = 0; i<self.selectedAvailabltyDateArray.count; i++) {
+            if(([[self.selectedAvailabltyDateArray objectAtIndex:i] intValue] == 1)){
+                self.btnSun.backgroundColor = [UIColor redColor];
+                [self.btnSun setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            }
+            else if(([[self.selectedAvailabltyDateArray objectAtIndex:i] intValue] == 2)){
+                self.btnMon.backgroundColor = [UIColor redColor];
+                [self.btnMon setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            }
+            else if(([[self.selectedAvailabltyDateArray objectAtIndex:i] intValue] == 3)){
+                self.btnTue.backgroundColor = [UIColor redColor];
+                [self.btnTue setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            }
+            else if(([[self.selectedAvailabltyDateArray objectAtIndex:i] intValue] == 4)){
+                self.btnWed.backgroundColor = [UIColor redColor];
+                [self.btnWed setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            }
+            else if(([[self.selectedAvailabltyDateArray objectAtIndex:i] intValue] == 5)){
+                self.btnThu.backgroundColor = [UIColor redColor];
+                [self.btnThu setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            }
+            else if(([[self.selectedAvailabltyDateArray objectAtIndex:i] intValue] == 6)){
+                self.btnFri.backgroundColor = [UIColor redColor];
+                [self.btnFri setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            }
+            else if(([[self.selectedAvailabltyDateArray objectAtIndex:i] intValue] == 7)){
+                self.btnSat.backgroundColor = [UIColor redColor];
+                [self.btnSat setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+            }
+        }
+    }
+    if(self.sortBasedOnExperience){
+        [self.btnExperience setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.btnExperience.backgroundColor = [UIColor redColor];
+    }
+    else if (self.sortBasedOnFee){
+        [self.btnConsultaionFee setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.btnConsultaionFee.backgroundColor = [UIColor redColor];
+    }
+    else{
+        self.sortBasedOnExperience = YES;
+        self.sortBasedOnFee = NO;
+        [self.btnExperience setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        self.btnExperience.backgroundColor = [UIColor redColor];
+    }
 }
 
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
@@ -377,10 +417,13 @@
 }
 
 -(void)gettingTypeArrayFromresponse{
+    NSLog(@"type Details:%@",self.selectedType);
     id indicesDetails = [self.filterCriteriaData valueForKey:@"indices"];
     int index = [[indicesDetails valueForKey:@"type"] intValue];
     self.typeArray = [[[self.filterCriteriaData valueForKey:@"filter_data"] objectAtIndex:index] valueForKey:@"values"];
-    self.selectedType = [self.typeArray objectAtIndex:0];
+    if(![self.selectedType valueForKey:@"value"]){
+        self.selectedType = [self.typeArray objectAtIndex:0];
+    }
     self.txtType.text = [self.selectedType valueForKey:@"label"];
 }
 
