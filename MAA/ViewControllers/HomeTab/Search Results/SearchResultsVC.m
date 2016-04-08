@@ -138,32 +138,32 @@
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     NSLog(@"DWFDBHAD:%@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"]);
-    if(self.isOnlineButtonSelected){
-        if([[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
+   // if(self.isOnlineButtonSelected){
+        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
             DoctorProfVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfVC"];
-            doctorPfofileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            doctorPfofileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             [self.navigationController pushViewController:doctorPfofileVC animated:YES];
         }
         else{
             ClinicProfVC *clinicProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"ClinicProfVC"];
-            clinicProfileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            clinicProfileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
             [self.navigationController pushViewController:clinicProfileVC animated:YES];
         }
        
-    }
-    else{
-        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
-            DoctorProfVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfVC"];
-            doctorPfofileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
-            [self.navigationController pushViewController:doctorPfofileVC animated:YES];
-        }
-        else{
-            ClinicProfVC *clinicProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"ClinicProfVC"];
-            clinicProfileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
-            [self.navigationController pushViewController:clinicProfileVC animated:YES];
-        }
-
-    }
+  //  }
+//    else{
+//        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
+//            DoctorProfVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfVC"];
+//            doctorPfofileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+//            [self.navigationController pushViewController:doctorPfofileVC animated:YES];
+//        }
+//        else{
+//            ClinicProfVC *clinicProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"ClinicProfVC"];
+//            clinicProfileVC.entityId = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+//            [self.navigationController pushViewController:clinicProfileVC animated:YES];
+//        }
+//
+//    }
 }
 
 -(void)callingSearchapi{
