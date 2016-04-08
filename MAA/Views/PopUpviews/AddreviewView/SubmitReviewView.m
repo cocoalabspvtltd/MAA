@@ -19,6 +19,17 @@
     // Drawing code
 }
 */
+
+-(void)awakeFromNib{
+    
+    UITapGestureRecognizer *singleTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    [self addGestureRecognizer:singleTapGesture];
+}
+
+-(void)tapGestureAction:(UITapGestureRecognizer *)tapgesture{
+    [self endEditing:NO];
+}
+
 - (IBAction)submitButtonAction:(UIButton *)sender {
     if(self.submitReviewDelegate && [self.submitReviewDelegate respondsToSelector:@selector(submitButtonActionWithReviewContent:andRating:)]){
         [self.submitReviewDelegate submitButtonActionWithReviewContent:self.contentTextView.text andRating:self.reviewRating];
