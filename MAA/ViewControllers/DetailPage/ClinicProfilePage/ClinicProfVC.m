@@ -11,6 +11,7 @@
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
 #import "SearchResultsTVC.h"
+#import "TakeAppointmentVC.h"
 
 @interface ClinicProfVC ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSArray *doctorsArray;
@@ -250,5 +251,11 @@
     }
     self.activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:self.activityViewController animated:YES completion:nil];
+}
+
+- (IBAction)bokkNowButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TakeAppointmentVC *takeAppointmentVC = [storyboard instantiateViewControllerWithIdentifier:@"TakeAppointmentVC"];
+    [self.navigationController pushViewController:takeAppointmentVC animated:YES];
 }
 @end

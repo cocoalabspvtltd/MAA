@@ -12,6 +12,7 @@
 #import "DoctorAboutVC.h"
 #import "DoctorReviewsVC.h"
 #import "SubmitReviewView.h"
+#import "TakeAppointmentVC.h"
 #import "ReviewTableViewCell.h"
 
 @interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate,SubmitReviewDelegate>
@@ -358,5 +359,10 @@ firstObject];
     
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
+}
+- (IBAction)bookNowButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TakeAppointmentVC *takeAppointmentVC = [storyboard instantiateViewControllerWithIdentifier:@"TakeAppointmentVC"];
+    [self.navigationController pushViewController:takeAppointmentVC animated:YES];
 }
 @end
