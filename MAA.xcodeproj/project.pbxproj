@@ -75,7 +75,6 @@
 		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
 		C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C401C71EC5300662BB4 /* professionalInfo.xib */; };
 		C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C441C71F79500662BB4 /* proinfo2.xib */; };
-		C057E5681CA13E020041FCDC /* timingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C057E5671CA13E020041FCDC /* timingsCell.xib */; };
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
@@ -203,6 +202,8 @@
 		C0A8312A1C7DE503000A60C9 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A831271C7DE4D6000A60C9 /* libNetworkHandler.a */; };
 		C0A8312E1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A8312D1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m */; };
 		C0AFCA721CAC2D850026A216 /* DoctorAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AFCA711CAC2D850026A216 /* DoctorAboutVC.m */; };
+		C0B397BC1CB81FD20046E6CA /* timingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B397BB1CB81FD20046E6CA /* timingsCell.xib */; };
+		C0B397BF1CB81FE90046E6CA /* TimingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B397BE1CB81FE90046E6CA /* TimingsTableViewCell.m */; };
 		C0B47FC31CAC38B200977BFA /* DoctorAboutTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B47FC21CAC38B200977BFA /* DoctorAboutTVC.m */; };
 		C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D60D8D1C08B94600963D5D /* Assets.xcassets */; };
 		C0BAF01A1C319DFC002F3137 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */; };
@@ -465,7 +466,6 @@
 		C0447C3E1C71EB2200662BB4 /* specialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = specialCell.m; sourceTree = "<group>"; };
 		C0447C401C71EC5300662BB4 /* professionalInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = professionalInfo.xib; sourceTree = "<group>"; };
 		C0447C441C71F79500662BB4 /* proinfo2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = proinfo2.xib; sourceTree = "<group>"; };
-		C057E5671CA13E020041FCDC /* timingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = timingsCell.xib; sourceTree = "<group>"; };
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
@@ -636,6 +636,9 @@
 		C0A8312D1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumentsDetailVC.m; sourceTree = "<group>"; };
 		C0AFCA701CAC2D850026A216 /* DoctorAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutVC.h; sourceTree = "<group>"; };
 		C0AFCA711CAC2D850026A216 /* DoctorAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorAboutVC.m; sourceTree = "<group>"; };
+		C0B397BB1CB81FD20046E6CA /* timingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = timingsCell.xib; sourceTree = "<group>"; };
+		C0B397BD1CB81FE90046E6CA /* TimingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimingsTableViewCell.h; sourceTree = "<group>"; };
+		C0B397BE1CB81FE90046E6CA /* TimingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimingsTableViewCell.m; sourceTree = "<group>"; };
 		C0B47FC11CAC38B200977BFA /* DoctorAboutTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutTVC.h; sourceTree = "<group>"; };
 		C0B47FC21CAC38B200977BFA /* DoctorAboutTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorAboutTVC.m; sourceTree = "<group>"; };
 		C0BAF0191C319DFC002F3137 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -1337,7 +1340,6 @@
 				C065F6541C8EB22700E25726 /* TextChatVC.m */,
 				C00F49D91C9C11090086D164 /* newkiranViewController.h */,
 				C00F49DA1C9C11090086D164 /* newkiranViewController.m */,
-				C057E5671CA13E020041FCDC /* timingsCell.xib */,
 				9F991C591C5A1C5400F92C11 /* search.xib */,
 				C017899D1CA2B38F00482EBF /* invoice.xib */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
@@ -1816,6 +1818,24 @@
 			path = DoctoraAboutVC;
 			sourceTree = "<group>";
 		};
+		C0B397B91CB81FD20046E6CA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C0B397BA1CB81FD20046E6CA /* TimingsCell */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		C0B397BA1CB81FD20046E6CA /* TimingsCell */ = {
+			isa = PBXGroup;
+			children = (
+				C0B397BB1CB81FD20046E6CA /* timingsCell.xib */,
+				C0B397BD1CB81FE90046E6CA /* TimingsTableViewCell.h */,
+				C0B397BE1CB81FE90046E6CA /* TimingsTableViewCell.m */,
+			);
+			path = TimingsCell;
+			sourceTree = "<group>";
+		};
 		C0B47FBB1CAC388F00977BFA /* DoctoraboutTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2178,6 +2198,7 @@
 		C0DD55771CA99DE100F7CDD1 /* ProfilePages */ = {
 			isa = PBXGroup;
 			children = (
+				C0B397B91CB81FD20046E6CA /* Common */,
 				C0DD55781CA99DE100F7CDD1 /* ClinicProfilePage */,
 				C0DD55791CA99DE100F7CDD1 /* DoctorProfilePage */,
 			);
@@ -2413,6 +2434,7 @@
 				9F95DB4E1C9E2FD800F3EB4F /* no medical documents.png in Resources */,
 				C0BBC4B61C6E5B8E005083B1 /* video-black@3x.png in Resources */,
 				C09EF6EF1C76211800806600 /* OTSubscriberKitDelegate.html in Resources */,
+				C0B397BC1CB81FD20046E6CA /* timingsCell.xib in Resources */,
 				C09EF6D11C76211800806600 /* OTStreamVideoType.html in Resources */,
 				C092EC0F1C80B86000F7B18B /* loadingImage.png in Resources */,
 				C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */,
@@ -2516,7 +2538,6 @@
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
 				C0BBC4851C6E2AE7005083B1 /* search-a@3x.png in Resources */,
 				9F95DB511C9E2FD800F3EB4F /* no time slots.png in Resources */,
-				C057E5681CA13E020041FCDC /* timingsCell.xib in Resources */,
 				C09EF6E51C76211800806600 /* index.html in Resources */,
 				C0BBC4781C6E2AE7005083B1 /* home-a@2x.png in Resources */,
 				C09EF6D41C76211800806600 /* OTVideoOrientation.html in Resources */,
@@ -2606,6 +2627,7 @@
 				C092EBF81C80B1E000F7B18B /* SDWebImageDecoder.m in Sources */,
 				9F5F0C431C665F6D00F7E99D /* AskedQuestionsTVC.m in Sources */,
 				C0D157FE1C9B134700FC1DE0 /* SearchResultsVC.m in Sources */,
+				C0B397BF1CB81FE90046E6CA /* TimingsTableViewCell.m in Sources */,
 				C092EC001C80B1E000F7B18B /* UIImage+WebP.m in Sources */,
 				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
 				9F403AA81CB254A2000FA5E2 /* SubmitReviewView.m in Sources */,

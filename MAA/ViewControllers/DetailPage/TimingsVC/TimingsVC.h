@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface TimingsVC : UIViewController
-
+@property (weak, nonatomic) IBOutlet UITableView *timingsTableView;
+@property (nonatomic,assign) BOOL isFromClinic;
+@property (nonatomic, strong) NSString *doctorNameString;
+@property (nonatomic, strong) NSArray *timingsArray;
 @end

@@ -202,6 +202,11 @@
 - (IBAction)timingViewMoreButtonAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TimingsVC *timingsVC = [storyboard instantiateViewControllerWithIdentifier:@"TimingsVC"];
+    timingsVC.isFromClinic = NO;
+    timingsVC.timingsArray = [self.entityDetails valueForKey:@"clinic_details"];
+     if(![[self.entityDetails valueForKey:@"name"] isEqual:[NSNull null]]){
+        timingsVC.doctorNameString = [self.entityDetails valueForKey:@"name"];
+    }
     [self.navigationController pushViewController:timingsVC animated:YES];
 }
 
