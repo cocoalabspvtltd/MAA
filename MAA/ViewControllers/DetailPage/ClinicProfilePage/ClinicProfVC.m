@@ -7,6 +7,7 @@
 //
 
 #import "MapVC.h"
+#import "DoctorAboutVC.h"
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
 #import "SearchResultsTVC.h"
@@ -63,7 +64,6 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        NSLog(@"Hospital Detilst;%@",responseObject);
         self.clinicDetails = [responseObject valueForKey:Datakey];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
@@ -84,7 +84,6 @@
 }
 
 -(void)settingEntityDetailsWithData:(id)entityDetails{
-    NSLog(@"Entity Details:%@",entityDetails);
     NSString *clinicProfileImageUrlString = [entityDetails valueForKey:@"logo_image"];
     [self.clinicProfileImage sd_setImageWithURL:[NSURL URLWithString:clinicProfileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     self.clinicNameLabel.text = [entityDetails valueForKey:@"name"];
@@ -186,6 +185,19 @@
     [self addingActivityController];
 }
 - (IBAction)servicesviewMoreButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DoctorAboutVC *doctorAboutVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorAboutVC"];
+    doctorAboutVC.doctorNameString = [self.clinicDetails valueForKey:@"name"];
+    doctorAboutVC.specializationArray = [self.clinicDetails valueForKey:@"specializations"];
+    doctorAboutVC.servicesArray = [self.clinicDetails valueForKey:@"services"];
+    doctorAboutVC.membershipsArray = [self.clinicDetails valueForKey:@"memberships"];
+    // doctorAboutVC.awardsArray = [self.clinicDetails valueForKey:@"memberships"];
+    // doctorAboutVC.experienceArray = [self.clinicDetails valueForKey:@"memberships"];
+    doctorAboutVC.educationArray = [self.clinicDetails valueForKey:@"education"];
+    doctorAboutVC.registrationArray = [self.clinicDetails valueForKey:@"registrations"];
+    doctorAboutVC.isFromClinic = YES;
+    doctorAboutVC.clinicNameString = [self.clinicDetails valueForKey:@"name"];
+    [self.navigationController pushViewController:doctorAboutVC animated:YES];
 }
 
 - (IBAction)doctorsAllInfoButtonAction:(UIButton *)sender {

@@ -31,7 +31,12 @@
 }
 
 -(void)initialisation{
-    self.doctorNameHeadingLabel.text = [NSString stringWithFormat:@"Dr. %@",self.doctorNameString];
+    if(self.isFromClinic){
+        self.doctorNameHeadingLabel.text = self.clinicNameString;
+    }
+    else{
+        self.doctorNameHeadingLabel.text = [NSString stringWithFormat:@"Dr. %@",self.doctorNameString];
+    }
     [self initialisationOfAboutPage];
 }
 

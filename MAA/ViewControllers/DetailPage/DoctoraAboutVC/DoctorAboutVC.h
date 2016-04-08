@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface DoctorAboutVC : UIViewController
+@property (nonatomic, assign) BOOL isFromClinic;
+
 @property (weak, nonatomic) IBOutlet UILabel *doctorNameHeadingLabel;
 @property (weak, nonatomic) IBOutlet UILabel *aboutLabel;
 @property (weak, nonatomic) IBOutlet UITableView *specializationTableView;
@@ -33,6 +35,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *noRegistrationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *registrationViewMoreButton;
 
+@property (nonatomic, strong) NSString *clinicNameString;
 @property (nonatomic, strong) NSString *doctorNameString;
 @property (nonatomic, strong) NSArray *specializationArray;
 @property (nonatomic, strong) NSArray *servicesArray;
