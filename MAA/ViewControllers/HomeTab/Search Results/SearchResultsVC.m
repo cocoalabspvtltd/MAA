@@ -94,12 +94,12 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if(self.isOnlineButtonSelected){
-        return self.onlineDoctorsArray.count;
-    }
-    else{
+//    if(self.isOnlineButtonSelected){
+//        return self.onlineDoctorsArray.count;
+//    }
+//    else{
         return self.doctorsMutableArray.count;
-    }
+   // }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -117,36 +117,19 @@
     cell.cellImageViewOnlineStatus.layer.cornerRadius = 5.00;
     cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
     NSURL *imageUrl;
-    if(self.isOnlineButtonSelected){
-        cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
-       cell.cellLabelRating.text = [[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
-       NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
-        cell.cellLabelDescription.text = doctorDescription;
-        cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
-        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@",[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
+     cell.cellLabelRating.text = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+    NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
+     cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+    cell.cellLabelDescription.text = doctorDescription;
+    cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
+    cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
+    if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
         cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
-        imageUrl = [NSURL URLWithString:[[self.onlineDoctorsArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
     }
     else{
-        cell.cellLabelRating.text = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
-        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"1"]){
-           cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
-        }
-        else{
-          cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
-        }
-        NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
-        cell.cellLabelDescription.text = doctorDescription;
-        cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
-        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@",[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
-        if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
-            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
-        }
-        else{
-            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
-        }
-        imageUrl = [NSURL URLWithString:[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
+        cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
     }
+    imageUrl = [NSURL URLWithString:[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
     [cell.cellImageViewIcon sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     return cell;
 }
@@ -222,8 +205,8 @@
         self.offsetValue=self.offsetValue+self.limitValue;
         [self.bottomProgressIndicatorView stopAnimating];
         [self.doctorsMutableArray addObjectsFromArray:self.doctorsArray];
-        NSPredicate *onlineDoctorsPredicate = [NSPredicate predicateWithFormat:@"SELF.is_online == %@",@"1"];
-        self.onlineDoctorsArray = [self.doctorsMutableArray filteredArrayUsingPredicate:onlineDoctorsPredicate];
+//        NSPredicate *onlineDoctorsPredicate = [NSPredicate predicateWithFormat:@"SELF.is_online == %@",@"1"];
+//        self.onlineDoctorsArray = [self.doctorsMutableArray filteredArrayUsingPredicate:onlineDoctorsPredicate];
         [tableViewSearchResults reloadData];
         NSLog(@"Response object:%@",responseObject);
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
