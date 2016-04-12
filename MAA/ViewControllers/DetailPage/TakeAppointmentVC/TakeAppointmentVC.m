@@ -10,10 +10,12 @@
 
 @interface TakeAppointmentVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
-    NSArray *coll1;
-    NSArray *coll2;
+  
 }
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
+@property (nonatomic, strong) NSArray *dateArray;
+@property (nonatomic, strong) NSArray *timeArray;
+@property (nonatomic, strong) NSIndexPath *previousSelectedIndex;
 
 @end
 
@@ -22,8 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    coll1 = [NSArray arrayWithObjects:@"March 16",@"March 17",@"March 18",@"March 19",@"March 20",@"March 21", nil];
-    coll2 = [NSArray arrayWithObjects:@"10:30 am",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00",@"10:30",@"11:00",@"12:00", nil];
+    self.previousSelectedIndex = nil;
     _btnBookNow.layer.borderWidth=0.5f;
     _btnBookNow.layer.borderColor=[[UIColor whiteColor]CGColor];
     _imgProfile.layer.cornerRadius = _imgProfile.frame.size.width / 2;
@@ -60,7 +61,17 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Response object:%@",responseObject);
-      
+        self.dateArray = [[responseObject valueForKey:Datakey] valueForKey:@"timings"];
+        [self.datecollectionView reloadData];
+        if(self.dateArray.count>0){
+            self.previousSelectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
+            self.timeArray = [[self.dateArray objectAtIndex:0] valueForKey:@"slots"];
+            [self.timeCollectionview reloadData];
+            UICollectionViewCell *currentCollectionViewCell = [self.datecollectionView cellForItemAtIndexPath:self.previousSelectedIndex];
+            UILabel *labell = [currentCollectionViewCell viewWithTag:10];
+            labell.textColor = [UIColor whiteColor];
+            currentCollectionViewCell.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
+        }
         // self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
         // self.servicesArray = [[responseObject valueForKey:Datakey] valueForKey:@"attributes"];
         //NSLog(@"Services Array:%@",self.servicesArray);
@@ -89,10 +100,10 @@
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
     if (collectionView == self.datecollectionView) {
-        return coll1.count;
+        return self.dateArray.count;
     }
-    if (collectionView == self.timeCollectionview) {
-        return coll2.count;
+    else if (collectionView == self.timeCollectionview) {
+        return self.timeArray.count;
     }
     return 1;
 }
@@ -101,13 +112,28 @@
     
     
     if (collectionView==self.datecollectionView) {
-        
         static NSString*cellident = @"cell1";
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellident forIndexPath:indexPath];
         UILabel *labell = [cell viewWithTag:10];
-        labell.text = coll1[indexPath.item];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setTimeZone:[NSTimeZone systemTimeZone]];
+        [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+        NSDate *date = [dateFormatter dateFromString:[self.dateArray[indexPath.row] valueForKey:@"date"]];
+        [dateFormatter setDateFormat:@"dd-MMM-yy"];
+        labell.text = [dateFormatter stringFromDate:date];
         cell.layer.borderWidth=0.5f;
         cell.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+        if(indexPath != self.previousSelectedIndex){
+            UILabel *labell = [cell viewWithTag:10];
+            labell.textColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
+            cell.backgroundColor = [UIColor whiteColor];
+        }
+        else{
+            UILabel *labell = [cell viewWithTag:10];
+            labell.textColor = [UIColor whiteColor]; /*#ff0045*/
+            cell.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
+            
+        }
         
         return cell;
     }
@@ -124,12 +150,33 @@
         
         cell.layer.borderColor=[[UIColor colorWithRed:0.800 green:0.800 blue:0.812 alpha:1.00]CGColor];
         UILabel *labellx = [cell viewWithTag:20];
-        labellx.text = coll2[indexPath.item];
+        labellx.text = [self.timeArray[indexPath.item] valueForKey:@"time"];;
         
         return cell;
     }
     UICollectionViewCell *cell;
     return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(collectionView == self.datecollectionView){
+        if(self.previousSelectedIndex){
+            UICollectionViewCell *prevoiusCollectionViewCell = [collectionView cellForItemAtIndexPath:self.previousSelectedIndex];
+            UILabel *labell = [prevoiusCollectionViewCell viewWithTag:10];
+            labell.textColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
+            prevoiusCollectionViewCell.backgroundColor = [UIColor whiteColor];
+        }
+        UICollectionViewCell *currentCollectionViewCell = [collectionView cellForItemAtIndexPath:indexPath];
+        UILabel *labell = [currentCollectionViewCell viewWithTag:10];
+        labell.textColor = [UIColor whiteColor];
+        currentCollectionViewCell.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
+        self.previousSelectedIndex = indexPath;
+        self.timeArray = [[self.dateArray objectAtIndex:indexPath.row] valueForKey:@"slots"];
+        [self.timeCollectionview reloadData];
+    }
+    else if (collectionView == self.timeCollectionview){
+        
+    }
 }
 
 - (void)didReceiveMemoryWarning {
