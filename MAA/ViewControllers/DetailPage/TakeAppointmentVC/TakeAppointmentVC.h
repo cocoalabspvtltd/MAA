@@ -9,5 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface TakeAppointmentVC : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *doctorNameLabel;
+@property (weak, nonatomic) IBOutlet UICollectionView *timeCollectionview;
+@property (weak, nonatomic) IBOutlet UIButton *btnBookNow;
+
+@property (weak, nonatomic) IBOutlet UIImageView *imgProfile;
+
+@property (weak, nonatomic) IBOutlet UICollectionView *datecollectionView;
 
 @end
