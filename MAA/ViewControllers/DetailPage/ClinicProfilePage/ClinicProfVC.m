@@ -271,8 +271,14 @@
 }
 
 - (IBAction)bokkNowButtonAction:(UIButton *)sender {
+    NSLog(@"Entity Details:%@",self.clinicDetails);
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TakeAppointmentVC *takeAppointmentVC = [storyboard instantiateViewControllerWithIdentifier:@"TakeAppointmentVC"];
+    takeAppointmentVC.entityIDString = self.entityId;
+    takeAppointmentVC.isfromClinic = YES;
+    takeAppointmentVC.headingString = [self.clinicDetails valueForKey:@"name"];
+    takeAppointmentVC.profileImageUrlString = [self.clinicDetails valueForKey:@"banner_image"];
+    takeAppointmentVC.locationDetails = [self.clinicDetails valueForKey:@"location"];
     [self.navigationController pushViewController:takeAppointmentVC animated:YES];
 }
 @end

@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="41AD150A-5530-479A-B1CC-094A19A58888" scopeBarBackgroundImage="41AD150A-5530-479A-B1CC-094A19A58888" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="37BB2157-AAED-4A82-BB21-8467B343F7C2" scopeBarBackgroundImage="37BB2157-AAED-4A82-BB21-8467B343F7C2" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="B0BF7EBD-3C80-4756-AA13-F9CB64596148" scopeBarBackgroundImage="B0BF7EBD-3C80-4756-AA13-F9CB64596148" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="F6D0C904-77B1-4953-9BEB-6EADA449A132" scopeBarBackgroundImage="F6D0C904-77B1-4953-9BEB-6EADA449A132" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -12256,7 +12256,7 @@
                                             <action selector="backButtonAction:" destination="Hhp-BF-6OX" eventType="touchUpInside" id="haB-oc-ENC"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="asK-Pg-hgJ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="doctor" translatesAutoresizingMaskIntoConstraints="NO" id="asK-Pg-hgJ">
                                         <rect key="frame" x="71" y="9" width="26" height="26"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="26" id="85Q-bj-RbQ"/>
@@ -12353,9 +12353,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="2RZ-gb-BF4" id="eNW-Zl-8Sd"/>
                         <outlet property="btnBookNow" destination="c1M-rr-7uY" id="q8f-le-uMb"/>
                         <outlet property="datecollectionView" destination="4wO-l4-IrE" id="ovg-Rz-1DT"/>
-                        <outlet property="doctorNameLabel" destination="pgv-MX-uGR" id="L9m-xm-LSr"/>
+                        <outlet property="headingLabel" destination="pgv-MX-uGR" id="yn6-EM-w3z"/>
                         <outlet property="imgProfile" destination="asK-Pg-hgJ" id="Z4s-sS-jYc"/>
                         <outlet property="timeCollectionview" destination="hE0-TX-sqE" id="8ay-fV-fKl"/>
                     </connections>
@@ -13373,7 +13374,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="41AD150A-5530-479A-B1CC-094A19A58888" width="310" height="78">
+        <image name="37BB2157-AAED-4A82-BB21-8467B343F7C2" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15038,7 +15039,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="B0BF7EBD-3C80-4756-AA13-F9CB64596148" width="310" height="78">
+        <image name="F6D0C904-77B1-4953-9BEB-6EADA449A132" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

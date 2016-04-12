@@ -352,6 +352,11 @@ firstObject];
 - (IBAction)bookNowButtonAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TakeAppointmentVC *takeAppointmentVC = [storyboard instantiateViewControllerWithIdentifier:@"TakeAppointmentVC"];
+    takeAppointmentVC.entityIDString = self.entityId;
+    takeAppointmentVC.isfromClinic = NO;
+    takeAppointmentVC.headingString = [self.entityDetails valueForKey:@"name"];
+    takeAppointmentVC.profileImageUrlString = [self.entityDetails valueForKey:@"logo_image"];
+    takeAppointmentVC.locationDetails = self.doctorFirstClinicDetails;;
     [self.navigationController pushViewController:takeAppointmentVC animated:YES];
 }
 @end

@@ -49,3 +49,5 @@
 #define AddAllergiesUrl @"add_allergy"
 #define GetLocationsUrl @"get_location"
 #define FeedbackUrl @"feedback"
+#define getAppointmentTimeSlotsApiUrl @"get_time_slots"
+

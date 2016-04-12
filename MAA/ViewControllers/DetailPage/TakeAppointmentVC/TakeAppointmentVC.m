@@ -28,7 +28,59 @@
     _btnBookNow.layer.borderColor=[[UIColor whiteColor]CGColor];
     _imgProfile.layer.cornerRadius = _imgProfile.frame.size.width / 2;
     _imgProfile.clipsToBounds = YES;
+    [self initialisingDetails];
+    [self callingGetAppointmentTimeSlotsApi];
 }
+
+-(void)initialisingDetails{
+    if(self.isfromClinic){
+        self.headingLabel.text = self.headingString;
+    }
+    else{
+        self.headingLabel.text = [NSString stringWithFormat:@"Dr. %@",self.headingString];
+    }
+    [self.imgProfile sd_setImageWithURL:[NSURL URLWithString:self.profileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    if(self.isfromClinic){
+        self.addressLabel.text = [self.locationDetails valueForKey:@"location_name"];
+    }
+    else{
+        self.addressLabel.text = [self.locationDetails valueForKey:@"clinic_name"];
+    }
+    
+}
+
+-(void)callingGetAppointmentTimeSlotsApi{
+    NSString *getTimeSlotsUrlString = [Baseurl stringByAppendingString:getAppointmentTimeSlotsApiUrl];
+    NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *getTimeSlotsMutableDictionary = [[NSMutableDictionary alloc] init];
+    [getTimeSlotsMutableDictionary setValue:accesstoken forKey:@"token"];
+    [getTimeSlotsMutableDictionary setValue:self.entityIDString forKey:@"entity_id"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getTimeSlotsUrlString] withBody:getTimeSlotsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSLog(@"Response object:%@",responseObject);
+      
+        // self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
+        // self.servicesArray = [[responseObject valueForKey:Datakey] valueForKey:@"attributes"];
+        //NSLog(@"Services Array:%@",self.servicesArray);
+        // [self.doctoDetailsTableView reloadData];
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+}
+
+#pragma mark - Collection View Datasources
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
