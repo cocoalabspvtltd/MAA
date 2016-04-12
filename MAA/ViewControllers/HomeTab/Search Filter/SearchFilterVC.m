@@ -525,7 +525,9 @@
         NSPredicate *filterArrayPrediate = [NSPredicate predicateWithFormat:@"SELF.id == %@",[self.selectedDepartmentDetails valueForKey:@"id"]];
         NSArray *filteredArray = [self.categoriesArray filteredArrayUsingPredicate:filterArrayPrediate];
         NSLog(@"Filtered Array;%@",filteredArray);
-        self.selectedCategory = [filteredArray objectAtIndex:0];
+        if(filteredArray.count>0){
+            self.selectedCategory = [filteredArray objectAtIndex:0];
+        }
         self.txtCategory.text =[self.selectedCategory valueForKey:@"name"];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {

@@ -173,6 +173,7 @@
     NSString *searchUrlString = [Baseurl stringByAppendingString:SearchApi];
     NSString *accesToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *searchMutableDictionary = [[NSMutableDictionary alloc] init];
+    [searchMutableDictionary setValue:self.clinicParentId forKey:@"parent_id"];
     [searchMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [searchMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
     [searchMutableDictionary setValue:accesToken forKey:@"token"];

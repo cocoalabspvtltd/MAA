@@ -7,9 +7,11 @@
 //
 
 #import "MapVC.h"
+
 #import "DoctorAboutVC.h"
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
+#import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
 #import "TakeAppointmentVC.h"
 
@@ -70,7 +72,6 @@
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
         //[self.clinicTbableView reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
-        NSLog(@"Respnse Error;%@",errorResponse);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
         if([errorDescription isEqualToString:NoNetworkErrorName]){
@@ -105,10 +106,16 @@
     }
     self.doctorsArray = [entityDetails valueForKey:@"doctors"];
     [self.doctorsTableView reloadData];
-    
+    [self settingUIBasedOnDoctorDetails];
     
 //    self.satisfiedpeopleLabel.text = [NSString stringWithFormat:@"%@ satisfied people",[entityDetails valueForKey:@"no_of_consultations"]];
    
+}
+
+-(void)settingUIBasedOnDoctorDetails{
+    if(self.doctorsArray.count<=2){
+        self.doctorsAllInfoButton.hidden = YES;
+    }
 }
 
 #pragma mark - Table view Datasources
@@ -118,7 +125,12 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.doctorsArray.count;
+    if(self.doctorsArray.count<=2){
+        return self.doctorsArray.count;
+    }
+    else{
+        return 2;
+    }
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -202,6 +214,12 @@
 }
 
 - (IBAction)doctorsAllInfoButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SearchResultsVC *searchResultVC = (SearchResultsVC *)[storyboard instantiateViewControllerWithIdentifier:@"SearchResultsVC"];
+    //searchResultVC.selectedDepartmentDetails = [self.categoriesMutableArray objectAtIndex:indexPath.row];
+    searchResultVC.clinicParentId = self.entityId;
+    searchResultVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:searchResultVC animated:YES];
 }
 
 
@@ -220,8 +238,7 @@
 //    {
 //        shareImage =self.bannerImage;
 //    }
-  
-    NSLog(@"share image =%@",shareImage);
+
     if (contentHeading==NULL) {
         contentHeading=@"My App";
     }

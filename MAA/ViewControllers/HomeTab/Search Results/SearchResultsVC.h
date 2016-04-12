@@ -22,5 +22,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
 @property (nonatomic, assign) BOOL isLocationSearch;
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
+@property (nonatomic, strong) NSString *clinicParentId;
 
 @end

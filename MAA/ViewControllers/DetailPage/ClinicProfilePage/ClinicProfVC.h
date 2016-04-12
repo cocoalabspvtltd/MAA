@@ -22,5 +22,6 @@
 //@property (weak, nonatomic) IBOutlet UITableView *doctorsTableView;
 @property (weak, nonatomic) IBOutlet UIButton *btnDirections;
 @property (strong, nonatomic) IBOutlet UITableView *doctorsTableView;
+@property (weak, nonatomic) IBOutlet UIButton *doctorsAllInfoButton;
 @property (nonatomic, strong) NSString *entityId;
 @end

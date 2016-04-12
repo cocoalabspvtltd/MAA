@@ -68,7 +68,6 @@
 #pragma mark - Get Entity Details Api
 
 -(void)callingGetDoctorDetailsApi{
-    NSLog(@"Get Doctor Id;%@",self.entityId);
     NSString *getEntityDetailsUrlString = [Baseurl stringByAppendingString:GetEntityDetailsUrl];
     NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *getEntityDetailsMutableDictionary = [[NSMutableDictionary alloc] init];
@@ -80,7 +79,6 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-         NSLog(@"Respnse Error;%@",responseObject);
         self.entityDetails = [responseObject valueForKey:Datakey];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
         self.reviewsArray = [[responseObject valueForKey:Datakey] valueForKey:@"e_reviews"];
@@ -94,7 +92,6 @@
        // [self.doctoDetailsTableView reloadData];
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
-        NSLog(@"Respnse Error;%@",errorResponse);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
         if([errorDescription isEqualToString:NoNetworkErrorName]){
@@ -109,7 +106,6 @@
 }
 
 -(void)settingEntityDetailsWithData:(id)entityDetails{
-    NSLog(@"Entity Details:%@",entityDetails);
     NSString *profileImageUrlString = [entityDetails valueForKey:@"logo_image"];
     [self.imgProfile sd_setImageWithURL:[NSURL URLWithString:profileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     if(![[entityDetails valueForKey:@"name"] isEqual:[NSNull null]]){
@@ -150,7 +146,6 @@
         self.doctorFirstClinicDetails = [[entityDetails valueForKey:@"clinic_details"] objectAtIndex:0];
         self.cliniclocationLabel.text = [NSString stringWithFormat:@"%@\n%@",[self.doctorFirstClinicDetails valueForKey:@"clinic_name"],[[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"address"]];
     }
-    NSLog(@"Doctor Clinic Details:%@",self.doctorFirstClinicDetails);
 //    if([[entityDetails valueForKey:@"e_booking_avail"] isEqualToString:@"1"] ){
 //        self.consultNowButton.hidden  = NO;
 //    }
@@ -162,7 +157,6 @@
 - (IBAction)aboutAllInfoButtonAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     DoctorAboutVC *doctorAboutVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorAboutVC"];
-    NSLog(@"Name:%@",[self.entityDetails valueForKey:@"name"]);
     doctorAboutVC.doctorNameString = [self.entityDetails valueForKey:@"name"];
     doctorAboutVC.specializationArray = [self.entityDetails valueForKey:@"specializations"];
     doctorAboutVC.servicesArray = [self.entityDetails valueForKey:@"services"];
@@ -176,7 +170,6 @@
 }
 
 - (IBAction)directionButtonAction:(UIButton *)sender {
-    NSLog(@"dfdej:%@",[self.doctorFirstClinicDetails valueForKey:@"clinic_name"]);
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     MapVC *mapVC = [storyboard instantiateViewControllerWithIdentifier:@"MapVC"];
     mapVC.headingString = [self.doctorFirstClinicDetails valueForKey:@"clinic_name"];
@@ -256,8 +249,6 @@
     //    {
     //        shareImage =self.bannerImage;
     //    }
-    
-    NSLog(@"share image =%@",shareImage);
     if (contentHeading==NULL) {
         contentHeading=@"My App";
     }
@@ -326,8 +317,6 @@ firstObject];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.submitReviewView removeFromSuperview];
         [self callingAlertViewControllerWithString:@"Your review submitted sucessfully. It become active after review"];
-        NSLog(@"Response Object:%@",responseObject);
-      
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;

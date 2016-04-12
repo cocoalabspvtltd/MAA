@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="20BD47CD-2097-4333-89CD-44D86BF9EFF9" scopeBarBackgroundImage="20BD47CD-2097-4333-89CD-44D86BF9EFF9" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="AF1A5CC2-B175-4F56-8265-8C5DFDC5C9C9" scopeBarBackgroundImage="AF1A5CC2-B175-4F56-8265-8C5DFDC5C9C9" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="4BFE54EB-7596-40AB-854B-EB41FCBA3EA5" scopeBarBackgroundImage="4BFE54EB-7596-40AB-854B-EB41FCBA3EA5" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="D24203B8-04DE-42EE-985B-6C50C5481157" scopeBarBackgroundImage="D24203B8-04DE-42EE-985B-6C50C5481157" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -13056,6 +13056,7 @@
                         <outlet property="clinicProfileImage" destination="EPB-RY-aRc" id="lMx-Ue-qJY"/>
                         <outlet property="consultationLabel" destination="x2p-YT-YeY" id="t6K-wJ-GN2"/>
                         <outlet property="contactNumberLabel" destination="Hpf-e6-NZB" id="00r-zC-TEI"/>
+                        <outlet property="doctorsAllInfoButton" destination="xP5-Av-iKS" id="c7m-Wr-CY7"/>
                         <outlet property="doctorsTableView" destination="58A-tC-6Pa" id="13i-73-juD"/>
                         <outlet property="experienceLabel" destination="C9i-IL-xf3" id="wqw-N3-m2N"/>
                         <outlet property="locationLabel" destination="PAU-PM-Wpf" id="nAr-ww-tNe"/>
@@ -13354,7 +13355,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="20BD47CD-2097-4333-89CD-44D86BF9EFF9" width="310" height="78">
+        <image name="AF1A5CC2-B175-4F56-8265-8C5DFDC5C9C9" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15019,7 +15020,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="4BFE54EB-7596-40AB-854B-EB41FCBA3EA5" width="310" height="78">
+        <image name="D24203B8-04DE-42EE-985B-6C50C5481157" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
