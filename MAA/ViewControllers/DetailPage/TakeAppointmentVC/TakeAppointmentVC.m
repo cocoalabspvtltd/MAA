@@ -16,7 +16,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
 @property (nonatomic, strong) NSArray *dateArray;
 @property (nonatomic, strong) NSArray *timeArray;
-@property (nonatomic, strong) NSIndexPath *previousSelectedIndex;
+@property (nonatomic, strong) NSIndexPath *previousDateSelectedIndex;
+@property (nonatomic, strong) NSIndexPath *previousTimeSelectedIndex;
 
 @end
 
@@ -25,7 +26,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.previousSelectedIndex = nil;
+    self.previousTimeSelectedIndex = nil;
+    self.previousDateSelectedIndex = nil;
     _btnBookNow.layer.borderWidth=0.5f;
     _btnBookNow.layer.borderColor=[[UIColor whiteColor]CGColor];
     _imgProfile.layer.cornerRadius = _imgProfile.frame.size.width / 2;
@@ -68,10 +70,10 @@
         
         [self.datecollectionView reloadData];
         if(self.dateArray.count>0){
-            self.previousSelectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
+            self.previousDateSelectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
             self.timeArray = [[self.dateArray objectAtIndex:0] valueForKey:@"slots"];
             [self.timeCollectionview reloadData];
-            UICollectionViewCell *currentCollectionViewCell = [self.datecollectionView cellForItemAtIndexPath:self.previousSelectedIndex];
+            UICollectionViewCell *currentCollectionViewCell = [self.datecollectionView cellForItemAtIndexPath:self.previousDateSelectedIndex];
             UILabel *labell = [currentCollectionViewCell viewWithTag:10];
             labell.textColor = [UIColor whiteColor];
             currentCollectionViewCell.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
@@ -127,7 +129,7 @@
         labell.text = [dateFormatter stringFromDate:date];
         cell.layer.borderWidth=0.5f;
         cell.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
-        if(indexPath != self.previousSelectedIndex){
+        if(indexPath != self.previousDateSelectedIndex){
             UILabel *labell = [cell viewWithTag:10];
             labell.textColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
             cell.backgroundColor = [UIColor whiteColor];
@@ -142,19 +144,39 @@
         return cell;
     }
     if (collectionView==self.timeCollectionview) {
-        
+        NSLog(@"Time Array;%@",self.timeArray[indexPath.item]);
         static NSString*cellident = @"cell2";
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellident forIndexPath:indexPath];
-        
+       
         UIImageView *backGroundImg=[cell viewWithTag:11];
         backGroundImg.layer.cornerRadius = backGroundImg.frame.size.width / 2;
         backGroundImg.clipsToBounds = YES;
         backGroundImg.backgroundColor=[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
         backGroundImg.layer.borderWidth=.50f;
-        
-        cell.layer.borderColor=[[UIColor colorWithRed:0.800 green:0.800 blue:0.812 alpha:1.00]CGColor];
         UILabel *labellx = [cell viewWithTag:20];
-        labellx.text = [self.timeArray[indexPath.item] valueForKey:@"time"];;
+        labellx.text = [self.timeArray[indexPath.item] valueForKey:@"time"];
+        if([[self.timeArray[indexPath.item] valueForKey:@"status"] isEqualToNumber:[NSNumber numberWithInt:1]]){
+            backGroundImg.backgroundColor = [UIColor whiteColor];
+            labellx.textColor = [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
+        }
+        else{
+            backGroundImg.backgroundColor = [UIColor grayColor];
+            labellx.textColor = [UIColor whiteColor];
+        }
+        cell.layer.borderColor=[[UIColor colorWithRed:0.800 green:0.800 blue:0.812 alpha:1.00]CGColor];
+        
+        if(indexPath != self.previousTimeSelectedIndex){
+            UIImageView *backGroundImg=[cell viewWithTag:11];
+            backGroundImg.backgroundColor = [UIColor whiteColor];
+            UILabel *labellx = [cell viewWithTag:20];
+            labellx.textColor = [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
+        }
+        else{
+            UIImageView *backGroundImg=[cell viewWithTag:11];
+            backGroundImg.backgroundColor = [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
+            UILabel *labellx = [cell viewWithTag:20];
+            labellx.textColor = [UIColor whiteColor];
+        }
         
         return cell;
     }
@@ -164,8 +186,8 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if(collectionView == self.datecollectionView){
-        if(self.previousSelectedIndex){
-            UICollectionViewCell *prevoiusCollectionViewCell = [collectionView cellForItemAtIndexPath:self.previousSelectedIndex];
+        if(self.previousDateSelectedIndex){
+            UICollectionViewCell *prevoiusCollectionViewCell = [collectionView cellForItemAtIndexPath:self.previousDateSelectedIndex];
             UILabel *labell = [prevoiusCollectionViewCell viewWithTag:10];
             labell.textColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
             prevoiusCollectionViewCell.backgroundColor = [UIColor whiteColor];
@@ -174,12 +196,26 @@
         UILabel *labell = [currentCollectionViewCell viewWithTag:10];
         labell.textColor = [UIColor whiteColor];
         currentCollectionViewCell.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
-        self.previousSelectedIndex = indexPath;
+        self.previousDateSelectedIndex = indexPath;
         self.timeArray = [[self.dateArray objectAtIndex:indexPath.row] valueForKey:@"slots"];
         [self.timeCollectionview reloadData];
     }
     else if (collectionView == self.timeCollectionview){
-        
+        if([[self.timeArray[indexPath.item] valueForKey:@"status"] isEqualToNumber:[NSNumber numberWithInt:1]]){
+            if(self.previousTimeSelectedIndex){
+                UICollectionViewCell *prevoiusTimeCollectionViewCell = [collectionView cellForItemAtIndexPath:self.previousTimeSelectedIndex];
+                UIImageView *backGroundImg=[prevoiusTimeCollectionViewCell viewWithTag:11];
+                backGroundImg.backgroundColor = [UIColor whiteColor];
+                UILabel *labellx = [prevoiusTimeCollectionViewCell viewWithTag:20];
+                labellx.textColor = [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
+            }
+            UICollectionViewCell *currentCollectionViewCell = [collectionView cellForItemAtIndexPath:indexPath];
+            UIImageView *backGroundImg=[currentCollectionViewCell viewWithTag:11];
+            backGroundImg.backgroundColor =  [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
+            UILabel *labellx = [currentCollectionViewCell viewWithTag:20];
+            labellx.textColor = [UIColor whiteColor];
+            self.previousTimeSelectedIndex = indexPath;
+        }
     }
 }
 

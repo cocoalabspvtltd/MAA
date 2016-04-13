@@ -37,6 +37,21 @@
 }
 
 - (IBAction)starButtonAction:(UIButton *)sender {
+    if(sender.tag == 1){
+        sender.selected = YES;
+    }
+    else if (sender.tag == 2){
+        sender.highlighted = YES;
+    }
+    else if (sender.tag == 3){
+        
+    }
+    else if (sender.tag == 4){
+        
+    }
+    else if (sender.tag == 5){
+        
+    }
 }
 
 @end
