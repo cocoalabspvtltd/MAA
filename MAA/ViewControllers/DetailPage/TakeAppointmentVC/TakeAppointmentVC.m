@@ -77,6 +77,14 @@
             UILabel *labell = [currentCollectionViewCell viewWithTag:10];
             labell.textColor = [UIColor whiteColor];
             currentCollectionViewCell.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
+            
+            self.previousTimeSelectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
+            UICollectionViewCell *currentTimeCollectionViewCell = [self.timeCollectionview cellForItemAtIndexPath:self.previousTimeSelectedIndex];
+            UIImageView *backGroundImg=[currentTimeCollectionViewCell viewWithTag:11];
+            backGroundImg.backgroundColor =  [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
+            UILabel *labellx = [currentTimeCollectionViewCell viewWithTag:20];
+            labellx.textColor = [UIColor whiteColor];
+            self.addressLabel.text = [self.timeArray[self.previousTimeSelectedIndex.row] valueForKey:@"location"];
         }
         // self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
         // self.servicesArray = [[responseObject valueForKey:Datakey] valueForKey:@"attributes"];
@@ -165,19 +173,12 @@
         }
         cell.layer.borderColor=[[UIColor colorWithRed:0.800 green:0.800 blue:0.812 alpha:1.00]CGColor];
         
-        if(indexPath != self.previousTimeSelectedIndex){
-            UIImageView *backGroundImg=[cell viewWithTag:11];
-            backGroundImg.backgroundColor = [UIColor whiteColor];
-            UILabel *labellx = [cell viewWithTag:20];
-            labellx.textColor = [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
-        }
-        else{
+        if(indexPath == self.previousTimeSelectedIndex){
             UIImageView *backGroundImg=[cell viewWithTag:11];
             backGroundImg.backgroundColor = [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
             UILabel *labellx = [cell viewWithTag:20];
             labellx.textColor = [UIColor whiteColor];
         }
-        
         return cell;
     }
     UICollectionViewCell *cell;
@@ -216,6 +217,9 @@
             labellx.textColor = [UIColor whiteColor];
             self.previousTimeSelectedIndex = indexPath;
         }
+        if(!self.isfromClinic){
+            self.addressLabel.text = [self.timeArray[self.previousTimeSelectedIndex.row] valueForKey:@"location"];
+        }
     }
 }
 
@@ -242,14 +246,14 @@
     }
     else{
         mapVC.title = _headingString;
-        mapVC.locationString = [self.locationDetails valueForKey:@"clinic_name"];
-        mapVC.headingString =  [NSString stringWithFormat:@"Dr. %@",self.headingString];;
-        mapVC.locationDetailString = [[self.locationDetails valueForKey:@"location"] valueForKey:@"address"];
-        if(!([[self.locationDetails valueForKey:@"location"] valueForKey:@"lat"] == [NSNull null]) ){
-            mapVC.latitude = [[[self.locationDetails valueForKey:@"location"] valueForKey:@"lat"]  floatValue];
+        mapVC.headingString =  [NSString stringWithFormat:@"Dr. %@",self.headingString];
+        mapVC.locationString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"location"];
+        mapVC.locationDetailString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"address"];
+        if(!([[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"lat"] == [NSNull null]) ){
+            mapVC.latitude = [[[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"lat"]  floatValue];
         }
-        if(!([self.locationDetails valueForKey:@"lng"] == [NSNull null]) ){
-            mapVC.longitude = [[[self.locationDetails valueForKey:@"location"] valueForKey:@"lng"]  floatValue];
+        if(!([[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"lng"] == [NSNull null]) ){
+            mapVC.latitude = [[[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"lng"]  floatValue];
         }
     }
     mapVC.latitude = 10.015861;
