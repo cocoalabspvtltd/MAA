@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "MapVC.h"
 #import "TakeAppointmentVC.h"
 
 @interface TakeAppointmentVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -61,7 +62,10 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Response object:%@",responseObject);
-        self.dateArray = [[responseObject valueForKey:Datakey] valueForKey:@"timings"];
+        if(![[responseObject valueForKey:Datakey] isEqual:[NSNull null]]){
+            self.dateArray = [[responseObject valueForKey:Datakey] valueForKey:@"timings"];
+        }
+        
         [self.datecollectionView reloadData];
         if(self.dateArray.count>0){
             self.previousSelectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
@@ -184,6 +188,37 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)Location:(id)sender {
+    NSLog(@"Location:%@",self.locationDetails);
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    MapVC *mapVC = [storyboard instantiateViewControllerWithIdentifier:@"MapVC"];
+    if(self.isfromClinic){
+        mapVC.title = _headingString;
+        mapVC.locationString = _headingString;
+        mapVC.headingString =  _headingString;
+        mapVC.locationDetailString = [self.locationDetails valueForKey:@"location_name"];
+        if(!([self.locationDetails valueForKey:@"lat"] == [NSNull null]) ){
+            mapVC.latitude = [[self.locationDetails valueForKey:@"lat"] floatValue];
+        }
+        if(!([self.locationDetails valueForKey:@"lng"] == [NSNull null]) ){
+            mapVC.longitude = [[self.locationDetails valueForKey:@"lng"] floatValue];
+        }
+
+    }
+    else{
+        mapVC.title = _headingString;
+        mapVC.locationString = [self.locationDetails valueForKey:@"clinic_name"];
+        mapVC.headingString =  [NSString stringWithFormat:@"Dr. %@",self.headingString];;
+        mapVC.locationDetailString = [[self.locationDetails valueForKey:@"location"] valueForKey:@"address"];
+        if(!([[self.locationDetails valueForKey:@"location"] valueForKey:@"lat"] == [NSNull null]) ){
+            mapVC.latitude = [[[self.locationDetails valueForKey:@"location"] valueForKey:@"lat"]  floatValue];
+        }
+        if(!([self.locationDetails valueForKey:@"lng"] == [NSNull null]) ){
+            mapVC.longitude = [[[self.locationDetails valueForKey:@"location"] valueForKey:@"lng"]  floatValue];
+        }
+    }
+    mapVC.latitude = 10.015861;
+    mapVC.longitude = 76.341867;
+    [self.navigationController pushViewController:mapVC animated:YES];
 }
 
 /*
