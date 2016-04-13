@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
@@ -23,12 +23,6 @@
                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-hu-JFE">
-                                    <rect key="frame" x="10" y="44" width="540" height="302"/>
-                                    <color key="backgroundColor" red="0.73894251749999995" green="0.73894251749999995" blue="0.73894251749999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                </textView>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7w8-jF-HzS">
                                     <rect key="frame" x="10" y="351" width="540" height="3"/>
                                     <color key="backgroundColor" red="0.91764705879999997" green="0.16862745100000001" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -56,47 +50,14 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Pq-Rb-Tzi">
                                     <rect key="frame" x="10" y="362" width="540" height="48"/>
                                     <subviews>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="star-sel" translatesAutoresizingMaskIntoConstraints="NO" id="Fmw-N2-XSK">
-                                            <rect key="frame" x="47" y="9" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="4ER-Yz-ahw"/>
-                                                <constraint firstAttribute="height" constant="30" id="7bw-hk-KnB"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="starempty" translatesAutoresizingMaskIntoConstraints="NO" id="cdQ-AN-OF4">
-                                            <rect key="frame" x="151" y="9" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="J0I-AO-PPF"/>
-                                                <constraint firstAttribute="width" constant="30" id="rmk-ZW-mud"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="starempty" translatesAutoresizingMaskIntoConstraints="NO" id="aKD-z1-DCY">
-                                            <rect key="frame" x="255" y="9" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="PK1-oL-kyE"/>
-                                                <constraint firstAttribute="width" constant="30" id="TfF-qg-OpS"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="starempty" translatesAutoresizingMaskIntoConstraints="NO" id="0nQ-4W-4vJ">
-                                            <rect key="frame" x="359" y="9" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="gcf-nQ-4Bh"/>
-                                                <constraint firstAttribute="height" constant="30" id="tFg-aK-i9O"/>
-                                            </constraints>
-                                        </imageView>
-                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="starempty" translatesAutoresizingMaskIntoConstraints="NO" id="uVf-l7-aJs">
-                                            <rect key="frame" x="463" y="9" width="30" height="30"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="30" id="6BW-1J-6JX"/>
-                                                <constraint firstAttribute="height" constant="30" id="Mnh-uh-XVJ"/>
-                                            </constraints>
-                                        </imageView>
                                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UaN-Jx-cup">
                                             <rect key="frame" x="20" y="9" width="84" height="30"/>
                                             <color key="tintColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
-                                            <state key="normal">
+                                            <state key="normal" image="starempty">
                                                 <color key="titleColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <state key="selected" image="starse"/>
+                                            <state key="highlighted" image="starhalf"/>
                                             <connections>
                                                 <action selector="starButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="0sh-hm-Ky4"/>
                                             </connections>
@@ -104,6 +65,9 @@
                                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDV-vi-JWs">
                                             <rect key="frame" x="124" y="9" width="84" height="30"/>
                                             <color key="tintColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="starempty"/>
+                                            <state key="selected" image="starse"/>
+                                            <state key="highlighted" image="starhalf"/>
                                             <connections>
                                                 <action selector="starButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="gBC-AR-Nys"/>
                                             </connections>
@@ -111,6 +75,9 @@
                                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpM-h9-G0a">
                                             <rect key="frame" x="228" y="9" width="84" height="30"/>
                                             <color key="tintColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="starempty"/>
+                                            <state key="selected" image="starse"/>
+                                            <state key="highlighted" image="starhalf"/>
                                             <connections>
                                                 <action selector="starButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="Om7-fJ-BDY"/>
                                             </connections>
@@ -118,6 +85,9 @@
                                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOI-nC-WZr">
                                             <rect key="frame" x="332" y="9" width="84" height="30"/>
                                             <color key="tintColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="starempty"/>
+                                            <state key="selected" image="starse"/>
+                                            <state key="highlighted" image="starhalf"/>
                                             <connections>
                                                 <action selector="starButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="BwD-2e-wlz"/>
                                             </connections>
@@ -125,6 +95,9 @@
                                         <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyo-Ie-IYH">
                                             <rect key="frame" x="436" y="9" width="84" height="30"/>
                                             <color key="tintColor" red="1" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <state key="normal" image="starempty"/>
+                                            <state key="selected" image="starse"/>
+                                            <state key="highlighted" image="starhalf"/>
                                             <connections>
                                                 <action selector="starButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="sKg-Oh-Tzf"/>
                                             </connections>
@@ -133,34 +106,24 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <constraints>
                                         <constraint firstItem="jpM-h9-G0a" firstAttribute="top" secondItem="1Pq-Rb-Tzi" secondAttribute="top" constant="9" id="2zM-Lo-K6x"/>
-                                        <constraint firstItem="uVf-l7-aJs" firstAttribute="centerX" secondItem="qyo-Ie-IYH" secondAttribute="centerX" id="6Nf-8w-ylq"/>
-                                        <constraint firstItem="uVf-l7-aJs" firstAttribute="centerY" secondItem="qyo-Ie-IYH" secondAttribute="centerY" id="6Vf-rB-0WG"/>
                                         <constraint firstItem="UaN-Jx-cup" firstAttribute="leading" secondItem="1Pq-Rb-Tzi" secondAttribute="leading" constant="20" id="ANQ-h2-Q0I"/>
                                         <constraint firstAttribute="trailing" secondItem="qyo-Ie-IYH" secondAttribute="trailing" constant="20" id="BUA-vW-eHl"/>
-                                        <constraint firstItem="cdQ-AN-OF4" firstAttribute="centerX" secondItem="IDV-vi-JWs" secondAttribute="centerX" id="CP6-ft-hcw"/>
                                         <constraint firstAttribute="bottom" secondItem="qyo-Ie-IYH" secondAttribute="bottom" constant="9" id="FZJ-h0-Hq6"/>
                                         <constraint firstItem="qyo-Ie-IYH" firstAttribute="height" secondItem="UaN-Jx-cup" secondAttribute="height" id="FzQ-Ps-axd"/>
                                         <constraint firstItem="IDV-vi-JWs" firstAttribute="width" secondItem="UaN-Jx-cup" secondAttribute="width" id="H31-0L-KxU"/>
-                                        <constraint firstItem="Fmw-N2-XSK" firstAttribute="centerX" secondItem="UaN-Jx-cup" secondAttribute="centerX" id="Hkm-i6-c1I"/>
-                                        <constraint firstItem="0nQ-4W-4vJ" firstAttribute="centerY" secondItem="nOI-nC-WZr" secondAttribute="centerY" id="J5X-AD-Pdr"/>
                                         <constraint firstAttribute="bottom" secondItem="IDV-vi-JWs" secondAttribute="bottom" constant="9" id="KuZ-FP-Fnb"/>
                                         <constraint firstItem="jpM-h9-G0a" firstAttribute="height" secondItem="UaN-Jx-cup" secondAttribute="height" id="LbV-mV-pp0"/>
                                         <constraint firstItem="UaN-Jx-cup" firstAttribute="top" secondItem="1Pq-Rb-Tzi" secondAttribute="top" constant="9" id="Ndi-V8-VeS"/>
-                                        <constraint firstItem="cdQ-AN-OF4" firstAttribute="centerY" secondItem="IDV-vi-JWs" secondAttribute="centerY" id="SLV-nR-Yc2"/>
                                         <constraint firstAttribute="bottom" secondItem="UaN-Jx-cup" secondAttribute="bottom" constant="9" id="Stt-kC-Wy9"/>
                                         <constraint firstItem="nOI-nC-WZr" firstAttribute="width" secondItem="UaN-Jx-cup" secondAttribute="width" id="Vup-k1-E7h"/>
                                         <constraint firstItem="nOI-nC-WZr" firstAttribute="top" secondItem="1Pq-Rb-Tzi" secondAttribute="top" constant="9" id="a5N-En-fAx"/>
-                                        <constraint firstItem="aKD-z1-DCY" firstAttribute="centerX" secondItem="jpM-h9-G0a" secondAttribute="centerX" id="ayJ-eG-nnC"/>
-                                        <constraint firstItem="aKD-z1-DCY" firstAttribute="centerY" secondItem="jpM-h9-G0a" secondAttribute="centerY" id="exU-Um-mfK"/>
                                         <constraint firstAttribute="bottom" secondItem="jpM-h9-G0a" secondAttribute="bottom" constant="9" id="i8P-3b-Wzi"/>
                                         <constraint firstItem="qyo-Ie-IYH" firstAttribute="leading" secondItem="nOI-nC-WZr" secondAttribute="trailing" constant="20" id="jp2-jM-Pni"/>
-                                        <constraint firstItem="0nQ-4W-4vJ" firstAttribute="centerX" secondItem="nOI-nC-WZr" secondAttribute="centerX" id="juF-Qc-Tc3"/>
                                         <constraint firstItem="qyo-Ie-IYH" firstAttribute="top" secondItem="1Pq-Rb-Tzi" secondAttribute="top" constant="9" id="l3f-T1-nlI"/>
                                         <constraint firstAttribute="bottom" secondItem="nOI-nC-WZr" secondAttribute="bottom" constant="9" id="n9C-YG-ExS"/>
                                         <constraint firstItem="nOI-nC-WZr" firstAttribute="height" secondItem="UaN-Jx-cup" secondAttribute="height" id="oh7-TV-FwC"/>
                                         <constraint firstItem="jpM-h9-G0a" firstAttribute="leading" secondItem="IDV-vi-JWs" secondAttribute="trailing" constant="20" id="qYZ-P7-fbu"/>
                                         <constraint firstItem="qyo-Ie-IYH" firstAttribute="width" secondItem="UaN-Jx-cup" secondAttribute="width" id="sDS-fW-wSq"/>
-                                        <constraint firstItem="Fmw-N2-XSK" firstAttribute="centerY" secondItem="UaN-Jx-cup" secondAttribute="centerY" id="sVq-fv-Uzu"/>
                                         <constraint firstItem="IDV-vi-JWs" firstAttribute="top" secondItem="1Pq-Rb-Tzi" secondAttribute="top" constant="9" id="vyD-VJ-7yz"/>
                                         <constraint firstItem="nOI-nC-WZr" firstAttribute="leading" secondItem="jpM-h9-G0a" secondAttribute="trailing" constant="20" id="yIH-Y8-IdB"/>
                                         <constraint firstItem="jpM-h9-G0a" firstAttribute="width" secondItem="UaN-Jx-cup" secondAttribute="width" id="yPz-g3-Xbl"/>
@@ -169,6 +132,12 @@
                                         <constraint firstAttribute="height" constant="48" id="zks-o0-kFo"/>
                                     </constraints>
                                 </view>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iMf-hu-JFE">
+                                    <rect key="frame" x="10" y="44" width="540" height="302"/>
+                                    <color key="backgroundColor" red="0.73894251749999995" green="0.73894251749999995" blue="0.73894251749999995" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
@@ -209,20 +178,16 @@
             <connections>
                 <outlet property="contentTextView" destination="iMf-hu-JFE" id="c1A-l3-pWY"/>
                 <outlet property="fifthStarButton" destination="qyo-Ie-IYH" id="6tl-8d-dzP"/>
-                <outlet property="fifthStarImageView" destination="uVf-l7-aJs" id="I8j-1N-gdg"/>
-                <outlet property="firdtStarImageView" destination="Fmw-N2-XSK" id="PNJ-LH-mbG"/>
                 <outlet property="firstStarButton" destination="UaN-Jx-cup" id="CVF-fF-PZx"/>
                 <outlet property="fourthStarButton" destination="nOI-nC-WZr" id="8Nj-Dg-y43"/>
-                <outlet property="fourthStarImageView" destination="0nQ-4W-4vJ" id="pLy-X4-Q67"/>
-                <outlet property="secondStarImageView" destination="cdQ-AN-OF4" id="uAB-92-wdu"/>
                 <outlet property="seconsStarButton" destination="IDV-vi-JWs" id="TwP-Qn-kPM"/>
                 <outlet property="thirdStarButton" destination="jpM-h9-G0a" id="iNp-Xi-WuP"/>
-                <outlet property="thirdStarImageView" destination="aKD-z1-DCY" id="IoS-uu-ky9"/>
             </connections>
         </view>
     </objects>
     <resources>
-        <image name="star-sel" width="29" height="29"/>
         <image name="starempty" width="30" height="30"/>
+        <image name="starhalf" width="30" height="30"/>
+        <image name="starse" width="29" height="29"/>
     </resources>
 </document>

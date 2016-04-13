@@ -14,28 +14,28 @@
                 <rect key="frame" x="0.0" y="0.0" width="560" height="164"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="igK-0C-Oe1">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="igK-0C-Oe1">
                         <rect key="frame" x="8" y="15" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="IcR-TT-oFB"/>
                             <constraint firstAttribute="height" constant="25" id="JpW-SI-0uf"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gmi-Fb-Q41">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location" translatesAutoresizingMaskIntoConstraints="NO" id="gmi-Fb-Q41">
                         <rect key="frame" x="8" y="64" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="3aS-Nb-lBC"/>
                             <constraint firstAttribute="width" constant="25" id="Pfl-OR-iMv"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oXT-MT-yG8">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phone" translatesAutoresizingMaskIntoConstraints="NO" id="oXT-MT-yG8">
                         <rect key="frame" x="8" y="92" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="41Q-n7-P1W"/>
                             <constraint firstAttribute="height" constant="25" id="sdR-yB-dSZ"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="77M-Je-1wB">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fees" translatesAutoresizingMaskIntoConstraints="NO" id="77M-Je-1wB">
                         <rect key="frame" x="8" y="122" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="Ehb-kk-fJo"/>
@@ -128,4 +128,10 @@
             <point key="canvasLocation" x="427" y="392.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="fees" width="48" height="48"/>
+        <image name="location" width="48" height="48"/>
+        <image name="phone" width="48" height="48"/>
+        <image name="time" width="48" height="48"/>
+    </resources>
 </document>

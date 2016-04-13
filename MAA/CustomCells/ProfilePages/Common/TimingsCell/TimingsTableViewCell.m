@@ -10,8 +10,15 @@
 
 @implementation TimingsTableViewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
+    
+    _directionButton.layer.borderWidth=.5;
+    _directionButton.layer.cornerRadius=5;
+    _directionButton.clipsToBounds=YES;
+    _directionButton.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+    
     // Initialization code
 }
 

@@ -15,11 +15,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *thirdStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *fourthStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *fifthStarButton;
-@property (strong, nonatomic) IBOutlet UIImageView *firdtStarImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *secondStarImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *thirdStarImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *fourthStarImageView;
-@property (strong, nonatomic) IBOutlet UIImageView *fifthStarImageView;
+
 @property (nonatomic, assign) id<SubmitReviewDelegate>submitReviewDelegate;
 @end
 
