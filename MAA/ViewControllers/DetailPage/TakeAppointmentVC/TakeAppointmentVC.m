@@ -77,19 +77,25 @@
             UILabel *labell = [currentCollectionViewCell viewWithTag:10];
             labell.textColor = [UIColor whiteColor];
             currentCollectionViewCell.backgroundColor = [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1]; /*#ff0045*/
-            
-            self.previousTimeSelectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
-            UICollectionViewCell *currentTimeCollectionViewCell = [self.timeCollectionview cellForItemAtIndexPath:self.previousTimeSelectedIndex];
-            UIImageView *backGroundImg=[currentTimeCollectionViewCell viewWithTag:11];
-            backGroundImg.backgroundColor =  [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
-            UILabel *labellx = [currentTimeCollectionViewCell viewWithTag:20];
-            labellx.textColor = [UIColor whiteColor];
-            self.addressLabel.text = [self.timeArray[self.previousTimeSelectedIndex.row] valueForKey:@"location"];
+            if(self.timeArray.count>0){
+                self.previousTimeSelectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
+                UICollectionViewCell *currentTimeCollectionViewCell = [self.timeCollectionview cellForItemAtIndexPath:self.previousTimeSelectedIndex];
+                UIImageView *backGroundImg=[currentTimeCollectionViewCell viewWithTag:11];
+                backGroundImg.backgroundColor =  [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
+                UILabel *labellx = [currentTimeCollectionViewCell viewWithTag:20];
+                labellx.textColor = [UIColor whiteColor];
+                self.addressLabel.text = [self.timeArray[self.previousTimeSelectedIndex.row] valueForKey:@"location"];
+                self.locationButton.enabled = YES;
+            }
+            else{
+                self.addressLabel.text = @"";
+                self.locationButton.enabled = NO;
+            }
         }
-        // self.clinicDetailsArray = [[responseObject valueForKey:Datakey] valueForKey:@"clinic_details"];
-        // self.servicesArray = [[responseObject valueForKey:Datakey] valueForKey:@"attributes"];
-        //NSLog(@"Services Array:%@",self.servicesArray);
-        // [self.doctoDetailsTableView reloadData];
+        else{
+            self.addressLabel.text = @"";
+            self.locationButton.enabled = NO;
+        }
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -117,6 +123,14 @@
         return self.dateArray.count;
     }
     else if (collectionView == self.timeCollectionview) {
+        if(self.timeArray.count == 0){
+            self.noResultsView.hidden = NO;
+            self.timeCollectionview.hidden = YES;
+        }
+        else{
+            self.noResultsView.hidden = YES;
+            self.timeCollectionview.hidden = NO;
+        }
         return self.timeArray.count;
     }
     return 1;
@@ -200,6 +214,20 @@
         self.previousDateSelectedIndex = indexPath;
         self.timeArray = [[self.dateArray objectAtIndex:indexPath.row] valueForKey:@"slots"];
         [self.timeCollectionview reloadData];
+        if(self.timeArray.count>0){
+            self.previousTimeSelectedIndex = [NSIndexPath indexPathForRow:0 inSection:0];
+            UICollectionViewCell *currentTimeCollectionViewCell = [self.timeCollectionview cellForItemAtIndexPath:self.previousTimeSelectedIndex];
+            UIImageView *backGroundImg=[currentTimeCollectionViewCell viewWithTag:11];
+            backGroundImg.backgroundColor =  [UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00];
+            UILabel *labellx = [currentTimeCollectionViewCell viewWithTag:20];
+            labellx.textColor = [UIColor whiteColor];
+            self.addressLabel.text = [self.timeArray[self.previousTimeSelectedIndex.row] valueForKey:@"location"];
+            self.locationButton.enabled = YES;
+        }
+        else{
+            self.addressLabel.text = @"";
+            self.locationButton.enabled = NO;
+        }
     }
     else if (collectionView == self.timeCollectionview){
         if([[self.timeArray[indexPath.item] valueForKey:@"status"] isEqualToNumber:[NSNumber numberWithInt:1]]){

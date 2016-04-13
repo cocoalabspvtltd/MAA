@@ -22,5 +22,7 @@
 @property (nonatomic, assign) BOOL isfromClinic;
 @property (nonatomic, strong) NSString *profileImageUrlString;
 @property (nonatomic, strong) id locationDetails;
+@property (weak, nonatomic) IBOutlet UIView *noResultsView;
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
 
 @end
