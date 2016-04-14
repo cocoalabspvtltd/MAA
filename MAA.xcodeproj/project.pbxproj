@@ -64,6 +64,9 @@
 		C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0071C6A010A0095E2CC /* video_camera_none.png */; };
 		C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0091C6A011C0095E2CC /* phone_none.png */; };
 		C00B695C1CBF54270081EF68 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B695B1CBF54270081EF68 /* WebViewController.m */; };
+		C00B69631CBFBB640081EF68 /* InvoiceFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B69621CBFBB640081EF68 /* InvoiceFilterViewController.m */; };
+		C00B69661CBFC0230081EF68 /* invoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00B69651CBFC0230081EF68 /* invoiceCell.xib */; };
+		C00B69691CBFC0410081EF68 /* InvoiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B69681CBFC0410081EF68 /* InvoiceTableViewCell.m */; };
 		C01420B51C99B18300467D8A /* AccountResetPWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01420B41C99B18300467D8A /* AccountResetPWVC.m */; };
 		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
 		C017899E1CA2B38F00482EBF /* invoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = C017899D1CA2B38F00482EBF /* invoice.xib */; };
@@ -450,6 +453,11 @@
 		C005F0091C6A011C0095E2CC /* phone_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_none.png; sourceTree = "<group>"; };
 		C00B695A1CBF54270081EF68 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		C00B695B1CBF54270081EF68 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		C00B69611CBFBB640081EF68 /* InvoiceFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceFilterViewController.h; sourceTree = "<group>"; };
+		C00B69621CBFBB640081EF68 /* InvoiceFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceFilterViewController.m; sourceTree = "<group>"; };
+		C00B69651CBFC0230081EF68 /* invoiceCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = invoiceCell.xib; sourceTree = "<group>"; };
+		C00B69671CBFC0410081EF68 /* InvoiceTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceTableViewCell.h; sourceTree = "<group>"; };
+		C00B69681CBFC0410081EF68 /* InvoiceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceTableViewCell.m; sourceTree = "<group>"; };
 		C01420B31C99B18300467D8A /* AccountResetPWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPWVC.h; sourceTree = "<group>"; };
 		C01420B41C99B18300467D8A /* AccountResetPWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPWVC.m; sourceTree = "<group>"; };
 		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
@@ -1147,6 +1155,7 @@
 		9F5F0C441C66604100F7E99D /* SettingsModule */ = {
 			isa = PBXGroup;
 			children = (
+				C00B69601CBFBB640081EF68 /* InvoiceFilterVC */,
 				9F884C0D1C9E69430058D611 /* Invoice */,
 				9F884C0E1C9E69430058D611 /* Reviews */,
 				C01420AD1C99B15E00467D8A /* AccoutResetPasswordVC */,
@@ -1200,6 +1209,7 @@
 		9F5F0C5B1C66676B00F7E99D /* SettingsModuleCells */ = {
 			isa = PBXGroup;
 			children = (
+				C00B69641CBFC0120081EF68 /* InvoiceTableViewCell */,
 				9F5F0C601C6668FF00F7E99D /* HealthProfileCells */,
 				9F5F0C5C1C66676B00F7E99D /* SettingsHomeTVC */,
 			);
@@ -1313,6 +1323,25 @@
 				C00B695B1CBF54270081EF68 /* WebViewController.m */,
 			);
 			path = WebViewController;
+			sourceTree = "<group>";
+		};
+		C00B69601CBFBB640081EF68 /* InvoiceFilterVC */ = {
+			isa = PBXGroup;
+			children = (
+				C00B69611CBFBB640081EF68 /* InvoiceFilterViewController.h */,
+				C00B69621CBFBB640081EF68 /* InvoiceFilterViewController.m */,
+			);
+			path = InvoiceFilterVC;
+			sourceTree = "<group>";
+		};
+		C00B69641CBFC0120081EF68 /* InvoiceTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C00B69651CBFC0230081EF68 /* invoiceCell.xib */,
+				C00B69671CBFC0410081EF68 /* InvoiceTableViewCell.h */,
+				C00B69681CBFC0410081EF68 /* InvoiceTableViewCell.m */,
+			);
+			path = InvoiceTableViewCell;
 			sourceTree = "<group>";
 		};
 		C01420AD1C99B15E00467D8A /* AccoutResetPasswordVC */ = {
@@ -2448,6 +2477,7 @@
 				C09EF6E61C76211800806600 /* script.js in Resources */,
 				C09EF6E31C76211800806600 /* library_background.png in Resources */,
 				C0CABC7A1C8AE752009F9470 /* unchecked-gray@2x.png in Resources */,
+				C00B69661CBFC0230081EF68 /* invoiceCell.xib in Resources */,
 				C09EF6E41C76211800806600 /* title_background.png in Resources */,
 				C0BBC4CD1C6E6544005083B1 /* InvoicePopup.xib in Resources */,
 				C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */,
@@ -2661,6 +2691,7 @@
 				9F2B0E1B1C65EDE10053D023 /* BaseViewController.m in Sources */,
 				C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */,
 				C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */,
+				C00B69631CBFBB640081EF68 /* InvoiceFilterViewController.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
 				C0CABC661C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m in Sources */,
 				55EAC8431C0A052D00F31280 /* ForgotpasswordVC.m in Sources */,
@@ -2680,6 +2711,7 @@
 				C092EC011C80B1E000F7B18B /* UIImageView+HighlightedWebCache.m in Sources */,
 				C092EBF41C80B1E000F7B18B /* MKAnnotationView+WebCache.m in Sources */,
 				C0A8312E1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m in Sources */,
+				C00B69691CBFC0410081EF68 /* InvoiceTableViewCell.m in Sources */,
 				C0CABC671C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				C092EBF61C80B1E000F7B18B /* SDImageCache.m in Sources */,
 				9F5F0C391C665D3100F7E99D /* AskedQuestionsViewController.m in Sources */,

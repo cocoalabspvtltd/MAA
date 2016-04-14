@@ -378,10 +378,6 @@
     _token = [[NSUserDefaults standardUserDefaults]valueForKey:ACCESS_TOKEN];
     
     NSString *doctor = [Baseurl stringByAppendingString:review_url];
-    
-    
-    
-    
     NSMutableDictionary *searchMutableDictionary = [[NSMutableDictionary alloc] init];
     [searchMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [searchMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="invoiceCell" rowHeight="98" id="1Nu-5e-t72" customClass="InvoiceTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="584" height="89"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Nu-5e-t72" id="lp3-vb-LeP">
+                <rect key="frame" x="0.0" y="0.0" width="584" height="88"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="sHv-HC-pax">
+                        <rect key="frame" x="8" y="9" width="70" height="70"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="70" id="BLm-jr-zwn"/>
+                            <constraint firstAttribute="width" constant="70" id="p7x-ai-sIq"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="35"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Lz2-ih-rxL">
+                        <rect key="frame" x="86" y="14" width="147" height="60"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" tag="5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dr.Venu Gopal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lts-zK-OwX">
+                                <rect key="frame" x="0.0" y="0.0" width="147" height="20"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="FFb-jE-0O3">
+                                <rect key="frame" x="0.0" y="25" width="147" height="15"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rupee" translatesAutoresizingMaskIntoConstraints="NO" id="xhi-DE-wZG">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="rBh-jQ-0Jj"/>
+                                            <constraint firstAttribute="width" constant="15" id="rnu-HU-sgJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="155.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yRM-Mz-od8">
+                                        <rect key="frame" x="20" y="0.0" width="127" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="127" id="wQ3-WP-i0v"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="fJL-mc-BWK">
+                                <rect key="frame" x="0.0" y="45" width="147" height="15"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map_pin" translatesAutoresizingMaskIntoConstraints="NO" id="cPJ-QT-o6u">
+                                        <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="3dC-l8-e5s"/>
+                                            <constraint firstAttribute="width" constant="15" id="ckg-Iw-2jv"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" tag="200" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Call" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouL-8q-PDx">
+                                        <rect key="frame" x="20" y="0.0" width="127" height="15"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="13"/>
+                                        <color key="textColor" red="0.7725490196" green="0.7725490196" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                    </stackView>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IxA-aK-xdN">
+                        <rect key="frame" x="525" y="17" width="51" height="15"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rupee" translatesAutoresizingMaskIntoConstraints="NO" id="d63-Bk-KNZ">
+                                <rect key="frame" x="0.0" y="0.0" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="15" id="lnu-S2-1mb"/>
+                                    <constraint firstAttribute="width" constant="15" id="p14-Vy-WbZ"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lL-7D-y0c">
+                                <rect key="frame" x="25" y="0.0" width="26" height="15"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sHv-HC-pax" firstAttribute="centerY" secondItem="lp3-vb-LeP" secondAttribute="centerY" id="XUv-nP-oEZ"/>
+                    <constraint firstItem="Lz2-ih-rxL" firstAttribute="leading" secondItem="sHv-HC-pax" secondAttribute="trailing" constant="8" symbolic="YES" id="aBX-v6-OKe"/>
+                    <constraint firstItem="IxA-aK-xdN" firstAttribute="centerY" secondItem="lts-zK-OwX" secondAttribute="centerY" id="pGR-OE-naG"/>
+                    <constraint firstAttribute="trailing" secondItem="IxA-aK-xdN" secondAttribute="trailing" constant="8" id="tSF-MM-8AN"/>
+                    <constraint firstItem="sHv-HC-pax" firstAttribute="leading" secondItem="lp3-vb-LeP" secondAttribute="leadingMargin" id="tTd-dq-MuM"/>
+                    <constraint firstItem="Lz2-ih-rxL" firstAttribute="centerY" secondItem="sHv-HC-pax" secondAttribute="centerY" id="vaf-Zx-lgP"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="amountLabel" destination="6lL-7D-y0c" id="5ib-Pm-NPt"/>
+                <outlet property="dateLabel" destination="yRM-Mz-od8" id="no1-PJ-mqe"/>
+                <outlet property="doctorNameLabel" destination="lts-zK-OwX" id="QqK-CF-o5M"/>
+                <outlet property="invoiceImageView" destination="sHv-HC-pax" id="eL8-OX-Moj"/>
+                <outlet property="timeLabel" destination="ouL-8q-PDx" id="v4e-KX-7T3"/>
+            </connections>
+            <point key="canvasLocation" x="444" y="466.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="1.png" width="256" height="256"/>
+        <image name="map_pin" width="56" height="56"/>
+        <image name="rupee" width="48" height="48"/>
+    </resources>
+</document>

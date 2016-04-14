@@ -6,19 +6,60 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "Invoicepopup.h"
+#import "InvoiceTableViewCell.h"
+#import "InvoiceFilterViewController.h"
 #import "InvoiceViewController.h"
 
-@interface InvoiceViewController ()
-
+@interface InvoiceViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, assign) int offsetValue;
+@property (nonatomic, assign) int limitValue;
+@property (nonatomic, strong) NSMutableArray *invoiceMutableArray;
+@property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
+@property (nonatomic, strong) Invoicepopup *invoicePopupVew;
+@property (nonatomic, strong) UIView *topTransparentView;
 @end
 
 @implementation InvoiceViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
+     [self.invoicetableView registerNib:[UINib nibWithNibName:@"invoiceCell" bundle:nil] forCellReuseIdentifier:@"invoiceCell"];
+    [self callingGettingInvoiceApi];
     // Do any additional setup after loading the view.
 }
 
+-(void)initialisation{
+   self.offsetValue = 0;
+    self.limitValue = 50;
+    self.invoiceMutableArray = [[NSMutableArray alloc] init];
+    self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
+    self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    [self addingToptransparentView];
+}
+
+-(void)addingToptransparentView{
+    self.topTransparentView = [[UIView alloc] init];
+    self.topTransparentView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+    self.topTransparentView.backgroundColor = [UIColor blackColor];
+    self.topTransparentView.layer.opacity = 0.5;
+    self.topTransparentView.hidden = YES;
+    [self.view addSubview:self.topTransparentView];
+    [self addingTapGestureToToptransparentView];
+}
+
+-(void)addingTapGestureToToptransparentView{
+    UITapGestureRecognizer *transparentTapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(topTransparentViewTapGestureAction:)];
+    self.topTransparentView.userInteractionEnabled = YES;
+    transparentTapGesture.numberOfTapsRequired = 1;
+    [self.topTransparentView addGestureRecognizer:transparentTapGesture];
+}
+
+-(void)topTransparentViewTapGestureAction:(UITapGestureRecognizer *)tapGesture{
+    [self.invoicePopupVew removeFromSuperview];
+    self.topTransparentView.hidden = YES;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -33,5 +74,103 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)filterButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    InvoiceFilterViewController *invoiceFiltertVC = [storyboard instantiateViewControllerWithIdentifier:@"InvoiceFilterViewController"];
+    [self presentViewController:invoiceFiltertVC animated:YES completion:nil];
+}
+- (IBAction)backButtonAction:(UIButton *)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.invoiceMutableArray.count;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    InvoiceTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"invoiceCell"];
+    if(cell == nil){
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"invoiceCell" owner:self options:nil];
+        cell = (InvoiceTableViewCell *)[nib objectAtIndex:0];
+    }
+    cell.doctorNameLabel.text = [[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"treator_name"];
+    [cell.invoiceImageView sd_setImageWithURL:[[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"treator_image"] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    cell.amountLabel.text = [[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"amount"];
+    cell.dateLabel.text = [[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"date"];
+    cell.timeLabel.text = [[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"time"];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.topTransparentView.hidden = NO;
+    self.invoicePopupVew = [[[NSBundle mainBundle]
+                             loadNibNamed:@"InvoicePopup"
+                             owner:self options:nil]
+                            firstObject];
+    CGFloat xMargin = 10,yMargin = 80;
+    self.invoicePopupVew.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
+    [self populatingInvoiceDetailsInInVoiceviewWithDetails:[self.invoiceMutableArray objectAtIndex:indexPath.row]];
+    [self.view addSubview:self.invoicePopupVew];
+}
+
+-(void)populatingInvoiceDetailsInInVoiceviewWithDetails:(id)invoiceDetails{
+    self.invoicePopupVew.invoiceDetails = invoiceDetails;
+}
+
+-(void)callingGettingInvoiceApi{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSString *accesstokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *invoiceMutableDictionary = [[NSMutableDictionary alloc] init];
+    [invoiceMutableDictionary setValue:accesstokenString forKey:@"token"];
+    [invoiceMutableDictionary setValue:@"to" forKey:@"type"];
+    [invoiceMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
+    [invoiceMutableDictionary setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
+    NSString *invoiceUrlString = [Baseurl stringByAppendingString:GettingInvoiceurl];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:invoiceUrlString] withBody:invoiceMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstokenString];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSArray *invoiceArray = [responseObject valueForKey:Datakey];
+        self.offsetValue=self.offsetValue+self.limitValue;
+        [self.bottomProgressIndicatorView stopAnimating];
+        [self.invoiceMutableArray addObjectsFromArray:invoiceArray];
+        [self.invoicetableView reloadData];
+        NSLog(@"Response object:%@",responseObject);
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self.bottomProgressIndicatorView stopAnimating];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    if(scrollView == self.invoicetableView){
+        float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
+        if (endScrolling >= scrollView.contentSize.height)
+        {
+            [self callingGettingInvoiceApi];
+            [self.bottomProgressIndicatorView startAnimating];
+        }
+        else{
+            [self.bottomProgressIndicatorView stopAnimating];
+        }
+    }
+}
 
 @end

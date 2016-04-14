@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface InvoiceViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITableView *invoicetableView;
 
 @end

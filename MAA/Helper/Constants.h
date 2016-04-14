@@ -46,3 +46,5 @@ static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen"
 #define MedicalDegreeCertificateidentifier @"MedicalDegreeCertificateidentifier"
 #define GovernmentIdCertifiateIdentifier @"GovernmentIdCertificateIdentifier"
 #define PrescriptionletterCertificateIdentifier @"PrescriptionLetterIdentifier"
+
+#define AppCommnRedColor [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1] /*#ff0045*/

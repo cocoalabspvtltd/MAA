@@ -51,3 +51,5 @@
 #define FeedbackUrl @"feedback"
 #define getAppointmentTimeSlotsApiUrl @"get_time_slots"
 
+#define GettingInvoiceurl @"get_invoices"
+
