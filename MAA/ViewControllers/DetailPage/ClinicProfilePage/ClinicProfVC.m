@@ -8,6 +8,7 @@
 
 #import "MapVC.h"
 
+#import "WebViewController.h"
 #import "DoctorAboutVC.h"
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
@@ -36,7 +37,6 @@
 }
 
 -(void)initialisation{
-    
 }
 
 
@@ -67,6 +67,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object;%@",responseObject);
         self.clinicDetails = [responseObject valueForKey:Datakey];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
@@ -271,7 +272,6 @@
 }
 
 - (IBAction)bokkNowButtonAction:(UIButton *)sender {
-    NSLog(@"Entity Details:%@",self.clinicDetails);
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TakeAppointmentVC *takeAppointmentVC = [storyboard instantiateViewControllerWithIdentifier:@"TakeAppointmentVC"];
     takeAppointmentVC.entityIDString = self.entityId;
@@ -281,4 +281,24 @@
     takeAppointmentVC.locationDetails = [self.clinicDetails valueForKey:@"location"];
     [self.navigationController pushViewController:takeAppointmentVC animated:YES];
 }
+
+- (IBAction)facebookButtonAction:(UIButton *)sender {
+    [self addingWebViewControllerWithUrlString:[self.clinicDetails valueForKey:@"fb_url"]];
+}
+- (IBAction)googlePlusButtonAction:(UIButton *)sender {
+    [self addingWebViewControllerWithUrlString:[self.clinicDetails valueForKey:@"gp_url"]];
+}
+- (IBAction)twitterButtonAction:(UIButton *)sender {
+    [self addingWebViewControllerWithUrlString:[self.clinicDetails valueForKey:@"tw_url"]];
+}
+
+-(void)addingWebViewControllerWithUrlString:(NSString *)webviewurlString{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webViewController.urlString = webviewurlString;
+    [self.navigationController pushViewController:webViewController animated:YES];
+    
+}
+
 @end

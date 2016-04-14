@@ -142,11 +142,13 @@
         if([[[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"type"] isEqualToString:@"doctor"]){
             DoctorProfVC *doctorPfofileVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorProfVC"];
             doctorPfofileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            doctorPfofileVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:doctorPfofileVC animated:YES];
         }
         else{
             ClinicProfVC *clinicProfileVC = [storyboard instantiateViewControllerWithIdentifier:@"ClinicProfVC"];
             clinicProfileVC.entityId = [[self.doctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
+            clinicProfileVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:clinicProfileVC animated:YES];
         }
        

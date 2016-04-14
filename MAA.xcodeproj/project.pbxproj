@@ -63,6 +63,7 @@
 		C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0051C6A00F70095E2CC /* microphone_off.png */; };
 		C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0071C6A010A0095E2CC /* video_camera_none.png */; };
 		C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0091C6A011C0095E2CC /* phone_none.png */; };
+		C00B695C1CBF54270081EF68 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B695B1CBF54270081EF68 /* WebViewController.m */; };
 		C01420B51C99B18300467D8A /* AccountResetPWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01420B41C99B18300467D8A /* AccountResetPWVC.m */; };
 		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
 		C017899E1CA2B38F00482EBF /* invoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = C017899D1CA2B38F00482EBF /* invoice.xib */; };
@@ -447,6 +448,8 @@
 		C005F0051C6A00F70095E2CC /* microphone_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_off.png; sourceTree = "<group>"; };
 		C005F0071C6A010A0095E2CC /* video_camera_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera_none.png; sourceTree = "<group>"; };
 		C005F0091C6A011C0095E2CC /* phone_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_none.png; sourceTree = "<group>"; };
+		C00B695A1CBF54270081EF68 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		C00B695B1CBF54270081EF68 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		C01420B31C99B18300467D8A /* AccountResetPWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPWVC.h; sourceTree = "<group>"; };
 		C01420B41C99B18300467D8A /* AccountResetPWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPWVC.m; sourceTree = "<group>"; };
 		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
@@ -1303,6 +1306,15 @@
 			path = TimingsVC;
 			sourceTree = "<group>";
 		};
+		C00B69541CBF54050081EF68 /* WebViewController */ = {
+			isa = PBXGroup;
+			children = (
+				C00B695A1CBF54270081EF68 /* WebViewController.h */,
+				C00B695B1CBF54270081EF68 /* WebViewController.m */,
+			);
+			path = WebViewController;
+			sourceTree = "<group>";
+		};
 		C01420AD1C99B15E00467D8A /* AccoutResetPasswordVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -1348,6 +1360,7 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				C00B69541CBF54050081EF68 /* WebViewController */,
 				C0B397C01CB834320046E6CA /* TakeAppointmentVC */,
 				9FDD15951CB099A40040B646 /* TimingsVC */,
 				9F9C26A21C9F40D600EEC883 /* DoctorAboutDetailVC */,
@@ -2624,6 +2637,7 @@
 				C092EBF51C80B1E000F7B18B /* NSData+ImageContentType.m in Sources */,
 				C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */,
 				C0D157FC1C9B134700FC1DE0 /* HomePageVC.m in Sources */,
+				C00B695C1CBF54270081EF68 /* WebViewController.m in Sources */,
 				9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */,
 				C0BBC4971C6E2C5E005083B1 /* AppoinmentDetailVC.m in Sources */,
 				9F5F0C561C66672300F7E99D /* MBProgressHUD.m in Sources */,

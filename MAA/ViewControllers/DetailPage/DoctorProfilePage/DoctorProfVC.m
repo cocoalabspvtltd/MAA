@@ -13,6 +13,7 @@
 #import "DoctorReviewsVC.h"
 #import "SubmitReviewView.h"
 #import "TakeAppointmentVC.h"
+#import "WebViewController.h"
 #import "ReviewTableViewCell.h"
 
 @interface DoctorProfVC ()<UITableViewDataSource,UITableViewDelegate,SubmitReviewDelegate>
@@ -78,6 +79,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getEntityDetailsUrlString] withBody:getEntityDetailsMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Respnse object:%@",responseObject);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         self.entityDetails = [responseObject valueForKey:Datakey];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
@@ -359,4 +361,23 @@ firstObject];
     takeAppointmentVC.locationDetails = self.doctorFirstClinicDetails;;
     [self.navigationController pushViewController:takeAppointmentVC animated:YES];
 }
+- (IBAction)facebookButtonAction:(UIButton *)sender {
+    [self addingWebViewControllerWithUrlString:[self.entityDetails valueForKey:@"fb_url"]];
+}
+- (IBAction)googlrPlusbuttonAction:(UIButton *)sender {
+    [self addingWebViewControllerWithUrlString:[self.entityDetails valueForKey:@"gp_url"]];
+}
+- (IBAction)twitterButtonAction:(UIButton *)sender {
+    [self addingWebViewControllerWithUrlString:[self.entityDetails valueForKey:@"tw_url"]];
+}
+
+-(void)addingWebViewControllerWithUrlString:(NSString *)webviewurlString{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webViewController.urlString = webviewurlString;
+    webViewController.title  =@"Webview";
+    [self.navigationController pushViewController:webViewController animated:YES];
+    
+}
+
 @end
