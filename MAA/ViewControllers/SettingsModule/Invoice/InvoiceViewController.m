@@ -11,18 +11,26 @@
 #import "InvoiceFilterViewController.h"
 #import "InvoiceViewController.h"
 
-@interface InvoiceViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface InvoiceViewController ()<UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate,InvoiceFilterVCDelegate>
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, strong) NSMutableArray *invoiceMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, strong) Invoicepopup *invoicePopupVew;
 @property (nonatomic, strong) UIView *topTransparentView;
+@property (nonatomic, assign) NSInteger selectedYear;
+@property (nonatomic, assign) NSInteger selectedMonth;
+@property (nonatomic, strong) NSString *searchText;
+@property (nonatomic, assign) BOOL isSearchTextChanged;
 @end
 
 @implementation InvoiceViewController
 
 - (void)viewDidLoad {
+    self.isSearchTextChanged = NO;
+    self.searchText  =@"";
+    self.selectedYear = 0;
+    self.selectedMonth = 0;
     [super viewDidLoad];
     [self initialisation];
      [self.invoicetableView registerNib:[UINib nibWithNibName:@"invoiceCell" bundle:nil] forCellReuseIdentifier:@"invoiceCell"];
@@ -77,15 +85,25 @@
 - (IBAction)filterButtonAction:(UIButton *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     InvoiceFilterViewController *invoiceFiltertVC = [storyboard instantiateViewControllerWithIdentifier:@"InvoiceFilterViewController"];
+    invoiceFiltertVC.invoiceFilterDelegate = self;
+    invoiceFiltertVC.yearSelectedIndex = self.selectedYear;
+    invoiceFiltertVC.monthSelectedIndex = self.selectedMonth;
     [self presentViewController:invoiceFiltertVC animated:YES completion:nil];
 }
 - (IBAction)backButtonAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - search bar Delegate
+
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    
+    self.isSearchTextChanged = YES;
+    self.searchText  = searchText;
+    self.offsetValue = 0;
+    [self callingGettingInvoiceApi];
 }
+
+#pragma mark - Table View Datasources
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
@@ -109,6 +127,8 @@
     return cell;
 }
 
+#pragma mark - Table view Deleagate
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     self.topTransparentView.hidden = NO;
     self.invoicePopupVew = [[[NSBundle mainBundle]
@@ -126,11 +146,27 @@
 }
 
 -(void)callingGettingInvoiceApi{
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    if(self.offsetValue == 0){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
     NSString *accesstokenString = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *invoiceMutableDictionary = [[NSMutableDictionary alloc] init];
     [invoiceMutableDictionary setValue:accesstokenString forKey:@"token"];
     [invoiceMutableDictionary setValue:@"to" forKey:@"type"];
+    NSArray *yearArray = @[@"All",@"2016",@"2015",@"2014",@"2013",@"2012",@"2011",@"2010",@"2009"];
+    if(self.selectedYear == 0){
+        [invoiceMutableDictionary setValue:[NSNumber numberWithInt:-1] forKey:@"year"];
+    }
+    else{
+        [invoiceMutableDictionary setValue:[yearArray objectAtIndex:self.selectedYear] forKey:@"year"];
+    }
+    if(self.selectedMonth == 0){
+        [invoiceMutableDictionary setValue:[NSNumber numberWithInt:-1] forKey:@"month"];
+    }
+    else{
+        [invoiceMutableDictionary setValue:[NSNumber numberWithInteger:self.selectedMonth] forKey:@"month"];
+    }
+    [invoiceMutableDictionary setValue:self.searchText forKey:@"keyword"];
     [invoiceMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
     [invoiceMutableDictionary setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     NSString *invoiceUrlString = [Baseurl stringByAppendingString:GettingInvoiceurl];
@@ -138,8 +174,11 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSArray *invoiceArray = [responseObject valueForKey:Datakey];
-        self.offsetValue=self.offsetValue+self.limitValue;
+        self.offsetValue = self.offsetValue+(int)invoiceArray.count;
         [self.bottomProgressIndicatorView stopAnimating];
+        if(self.isSearchTextChanged){
+            [self.invoiceMutableArray removeAllObjects];
+        }
         [self.invoiceMutableArray addObjectsFromArray:invoiceArray];
         [self.invoicetableView reloadData];
         NSLog(@"Response object:%@",responseObject);
@@ -161,6 +200,7 @@
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     if(scrollView == self.invoicetableView){
+        self.isSearchTextChanged  = NO;
         float endScrolling = scrollView.contentOffset.y + scrollView.frame.size.height;
         if (endScrolling >= scrollView.contentSize.height)
         {
@@ -171,6 +211,17 @@
             [self.bottomProgressIndicatorView stopAnimating];
         }
     }
+}
+
+#pragma mark - Invoice VC Delegate
+
+-(void)submitButtonActionWithYearIndex:(NSInteger)yearSelectedIndex andMonthSelectedIndex:(NSInteger)monthSelectedIndex{
+    self.offsetValue = 0;
+    self.isSearchTextChanged = NO;
+    [self.invoiceMutableArray removeAllObjects];
+    self.selectedYear = yearSelectedIndex;
+    self.selectedMonth = monthSelectedIndex;
+    [self callingGettingInvoiceApi];
 }
 
 @end
