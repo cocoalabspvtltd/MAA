@@ -21,6 +21,6 @@
 
 @protocol SubmitReviewDelegate <NSObject>
 
--(void)submitButtonActionWithReviewContent:(NSString *)reviewContent andRating:(int)reting;
+-(void)submitButtonActionWithReviewContent:(NSString *)reviewContent andRating:(float)reting;
 
 @end

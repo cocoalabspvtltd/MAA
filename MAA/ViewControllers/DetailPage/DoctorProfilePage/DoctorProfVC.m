@@ -297,20 +297,20 @@ firstObject];
 
 #pragma mark - Submit Review Delegate
 
--(void)submitButtonActionWithReviewContent:(NSString *)reviewContent andRating:(int)reting{
+-(void)submitButtonActionWithReviewContent:(NSString *)reviewContent andRating:(float)reting{
     [self callingSubmitReviewPaiWithReviewContent:reviewContent andRating:reting];
     
 }
 
 #pragma mark - Submit Review Api
 
--(void)callingSubmitReviewPaiWithReviewContent:(NSString *)reviewContent andRating:(int)rating{
+-(void)callingSubmitReviewPaiWithReviewContent:(NSString *)reviewContent andRating:(float)rating{
     NSString *submitReviewUrlString = [Baseurl stringByAppendingString:Submit_review_url];
     NSString *accessTokenString  = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *submitReviewMutableDictionary = [[NSMutableDictionary alloc] init];
     [submitReviewMutableDictionary setValue:accessTokenString forKey:@"token"];
      [submitReviewMutableDictionary setValue:reviewContent forKey:@"review"];
-    NSNumber *reviewRating = [NSNumber numberWithInt:rating];
+    NSNumber *reviewRating = [NSNumber numberWithFloat:rating];
     [submitReviewMutableDictionary setValue:reviewRating forKey:@"rating"];
     [submitReviewMutableDictionary setValue:self.entityId forKey:@"entity_id"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
