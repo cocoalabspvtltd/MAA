@@ -5,6 +5,7 @@
 //  Created by Cocoalabs India on 28/03/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
+#define HalfStarImageName @"starhalf"
 #define SelectStarImagename @"star_sel@2x"
 #import "ReviewTableViewCell.h"
 
@@ -26,21 +27,45 @@
 }
 
 -(void)setDateString:(NSString *)dateString{
-    self.dateLabel.text = dateString;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"dd/MM/yyyy"];
+    [dateFormatter setTimeZone:[NSTimeZone localTimeZone]];
+    NSDate *date = [dateFormatter dateFromString:dateString];
+    [dateFormatter setDateFormat:@"dd-MMM-yy"];
+    self.dateLabel.text = [dateFormatter stringFromDate:date];
 }
 
 -(void)setRatingString:(NSString *)ratingString{
+    NSLog(@"Rating String:%@",ratingString);
+    if([ratingString isEqualToString:@"0.5"]){
+       self.ratingStarImageView_1.image = [UIImage imageNamed:HalfStarImageName];
+    }
     if([ratingString isEqualToString:@"1"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
+    }
+    else if ([ratingString isEqualToString:@"1.5"]){
+       self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
+       self.ratingStarImageView_2.image = [UIImage imageNamed:HalfStarImageName];
     }
     else if ([ratingString isEqualToString:@"2"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
     }
+    else if ([ratingString isEqualToString:@"2.5"]){
+        self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_3.image = [UIImage imageNamed:HalfStarImageName];
+    }
     else if ([ratingString isEqualToString:@"3"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];
+    }
+    else if ([ratingString isEqualToString:@"3.5"]){
+        self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_4.image = [UIImage imageNamed:HalfStarImageName];
     }
     else if ([ratingString isEqualToString:@"4"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
@@ -48,12 +73,19 @@
         self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_4.image = [UIImage imageNamed:SelectStarImagename];
     }
+    else if ([ratingString isEqualToString:@"4.5"]){
+        self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_4.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_5.image = [UIImage imageNamed:HalfStarImageName];
+    }
     else if ([ratingString isEqualToString:@"5"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_4.image = [UIImage imageNamed:SelectStarImagename];
-         self.ratingStarImageView_5.image = [UIImage imageNamed:SelectStarImagename];
+        self.ratingStarImageView_5.image = [UIImage imageNamed:SelectStarImagename];
     }
 }
 @end
