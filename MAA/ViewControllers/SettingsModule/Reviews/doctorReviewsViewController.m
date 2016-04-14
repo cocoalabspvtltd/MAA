@@ -70,7 +70,7 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         doctorsArray = [responseObject valueForKey:@"data"];
-        NSLog(@"%@jgvjmgcjgcjhjcjcgj",doctorsArray[0]);
+        NSLog(@"Doctors Response:%@",responseObject);
         //  [doctorsMutableArray addObjectsFromArray:doctorsArray];
         for (NSDictionary *item in doctorsArray) {
             student *q = [[student alloc]init];
