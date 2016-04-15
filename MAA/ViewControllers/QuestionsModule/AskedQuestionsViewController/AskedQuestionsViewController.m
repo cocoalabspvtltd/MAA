@@ -34,7 +34,7 @@
     [self addSubViews];
     self.floatimage.layer.cornerRadius = self.floatimage.frame.size.width / 2;
     self.floatimage.clipsToBounds = YES;
-    [self.tblquestions registerNib:[UINib nibWithNibName:@"View" bundle:nil] forCellReuseIdentifier:AskedQuestionsTableViewCell];
+    [self.tblquestions registerNib:[UINib nibWithNibName:@"askedQuestionsCell" bundle:nil] forCellReuseIdentifier:AskedQuestionsTableViewCell];
     // Do any additional setup after loading the view.
 }
 
@@ -109,7 +109,7 @@
 {
     AskedQuestionsTVC *cell = [tableView dequeueReusableCellWithIdentifier:AskedQuestionsTableViewCell forIndexPath:indexPath];
     if(cell == nil){
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"View" owner:self options:nil];
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"askedQuestionsCell" owner:self options:nil];
         cell = (AskedQuestionsTVC *)[nib objectAtIndex:0];
     }
     
