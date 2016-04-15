@@ -78,6 +78,8 @@
 		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
 		C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C401C71EC5300662BB4 /* professionalInfo.xib */; };
 		C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C441C71F79500662BB4 /* proinfo2.xib */; };
+		C04EC3A51CC1095800470A74 /* PaymentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C04EC3A11CC1095800470A74 /* PaymentStatusViewController.m */; };
+		C04EC3A61CC1095800470A74 /* PaymentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C04EC3A41CC1095800470A74 /* PaymentPageViewController.m */; };
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
@@ -475,6 +477,10 @@
 		C0447C3E1C71EB2200662BB4 /* specialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = specialCell.m; sourceTree = "<group>"; };
 		C0447C401C71EC5300662BB4 /* professionalInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = professionalInfo.xib; sourceTree = "<group>"; };
 		C0447C441C71F79500662BB4 /* proinfo2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = proinfo2.xib; sourceTree = "<group>"; };
+		C04EC3A01CC1095800470A74 /* PaymentStatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentStatusViewController.h; sourceTree = "<group>"; };
+		C04EC3A11CC1095800470A74 /* PaymentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentStatusViewController.m; sourceTree = "<group>"; };
+		C04EC3A31CC1095800470A74 /* PaymentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentPageViewController.h; sourceTree = "<group>"; };
+		C04EC3A41CC1095800470A74 /* PaymentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentPageViewController.m; sourceTree = "<group>"; };
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
@@ -1389,6 +1395,8 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				C04EC39F1CC1095800470A74 /* PaymentStatusVC */,
+				C04EC3A21CC1095800470A74 /* PaymentVC */,
 				C00B69541CBF54050081EF68 /* WebViewController */,
 				C0B397C01CB834320046E6CA /* TakeAppointmentVC */,
 				9FDD15951CB099A40040B646 /* TimingsVC */,
@@ -1418,6 +1426,24 @@
 				C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */,
 			);
 			path = DoctorProfilePage;
+			sourceTree = "<group>";
+		};
+		C04EC39F1CC1095800470A74 /* PaymentStatusVC */ = {
+			isa = PBXGroup;
+			children = (
+				C04EC3A01CC1095800470A74 /* PaymentStatusViewController.h */,
+				C04EC3A11CC1095800470A74 /* PaymentStatusViewController.m */,
+			);
+			path = PaymentStatusVC;
+			sourceTree = "<group>";
+		};
+		C04EC3A21CC1095800470A74 /* PaymentVC */ = {
+			isa = PBXGroup;
+			children = (
+				C04EC3A31CC1095800470A74 /* PaymentPageViewController.h */,
+				C04EC3A41CC1095800470A74 /* PaymentPageViewController.m */,
+			);
+			path = PaymentVC;
 			sourceTree = "<group>";
 		};
 		C05BBF411C6F8B4300A308E8 /* PhtoGrid */ = {
@@ -2703,6 +2729,7 @@
 				C0CABC681C8A8971009F9470 /* TPKeyboardAvoidingTableView.m in Sources */,
 				C0D157EB1C9B12C100FC1DE0 /* HomePageCVC.m in Sources */,
 				C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */,
+				C04EC3A51CC1095800470A74 /* PaymentStatusViewController.m in Sources */,
 				55D60D831C08B94600963D5D /* main.m in Sources */,
 				C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */,
 				C0D157FF1C9B134700FC1DE0 /* SearchVC.m in Sources */,
@@ -2721,6 +2748,7 @@
 				C08DEF9F1C9712D00025F1AF /* FilterVC.m in Sources */,
 				C092EBF71C80B1E000F7B18B /* SDWebImageCompat.m in Sources */,
 				9F884C161C9E6A060058D611 /* InvoiceViewController.m in Sources */,
+				C04EC3A61CC1095800470A74 /* PaymentPageViewController.m in Sources */,
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,
 				C0D158251C9B25AD00FC1DE0 /* PayUSAOneTapToken.m in Sources */,
 				C01C23D81CA1A10300279A17 /* ClinicProfVC.m in Sources */,
