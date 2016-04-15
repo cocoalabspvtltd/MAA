@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="86110827-CAEA-4D4E-A10E-0EBEF86B22E5" scopeBarBackgroundImage="86110827-CAEA-4D4E-A10E-0EBEF86B22E5" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="E9EDAACA-5BBA-4838-8850-FC824D88A05A" scopeBarBackgroundImage="E9EDAACA-5BBA-4838-8850-FC824D88A05A" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="67F0FE57-AE10-4AE3-A39D-39EE7078E473" scopeBarBackgroundImage="67F0FE57-AE10-4AE3-A39D-39EE7078E473" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="ED0AE0D2-985F-414B-B30A-C69C7F4EAA3C" scopeBarBackgroundImage="ED0AE0D2-985F-414B-B30A-C69C7F4EAA3C" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -2537,28 +2537,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RoT-qq-esi">
-                                                    <rect key="frame" x="24" y="5" width="35" height="35"/>
+                                                    <rect key="frame" x="24" y="10" width="25" height="25"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="35" id="H4x-Ri-d77"/>
-                                                        <constraint firstAttribute="width" constant="35" id="f0c-ko-BzW"/>
+                                                        <constraint firstAttribute="height" constant="25" id="H4x-Ri-d77"/>
+                                                        <constraint firstAttribute="width" constant="25" id="f0c-ko-BzW"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vux-IM-c9l">
-                                                    <rect key="frame" x="69" y="13" width="508" height="20"/>
+                                                    <rect key="frame" x="59" y="13" width="518" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="RoT-qq-esi" firstAttribute="top" secondItem="KKm-FQ-YbW" secondAttribute="topMargin" constant="-3" id="AlW-NQ-EZo"/>
                                                 <constraint firstItem="vux-IM-c9l" firstAttribute="centerY" secondItem="KKm-FQ-YbW" secondAttribute="centerY" constant="1" id="CvP-Hu-kO7"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="vux-IM-c9l" secondAttribute="bottom" constant="4" id="M3G-0B-teK"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="vux-IM-c9l" secondAttribute="trailing" constant="15" id="O6d-Xg-1eT"/>
                                                 <constraint firstItem="vux-IM-c9l" firstAttribute="leading" secondItem="RoT-qq-esi" secondAttribute="trailing" constant="10" id="P7m-8X-YAf"/>
                                                 <constraint firstItem="RoT-qq-esi" firstAttribute="leading" secondItem="KKm-FQ-YbW" secondAttribute="leadingMargin" constant="16" id="RAF-99-eKK"/>
                                                 <constraint firstItem="vux-IM-c9l" firstAttribute="top" secondItem="KKm-FQ-YbW" secondAttribute="topMargin" constant="5" id="bzv-HQ-cTA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="RoT-qq-esi" secondAttribute="bottom" constant="-3" id="wNo-tW-oJs"/>
                                                 <constraint firstItem="vux-IM-c9l" firstAttribute="centerY" secondItem="RoT-qq-esi" secondAttribute="centerY" id="yxF-Bt-BN2"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -13782,7 +13780,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="67F0FE57-AE10-4AE3-A39D-39EE7078E473" width="310" height="78">
+        <image name="E9EDAACA-5BBA-4838-8850-FC824D88A05A" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15447,7 +15445,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="86110827-CAEA-4D4E-A10E-0EBEF86B22E5" width="310" height="78">
+        <image name="ED0AE0D2-985F-414B-B30A-C69C7F4EAA3C" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
