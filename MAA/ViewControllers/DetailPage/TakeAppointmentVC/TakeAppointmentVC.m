@@ -7,6 +7,7 @@
 //
 
 #import "MapVC.h"
+#import "PaymentPageViewController.h"
 #import "TakeAppointmentVC.h"
 
 @interface TakeAppointmentVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -302,6 +303,8 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)bookNowButtonAction:(UIButton *)sender {
+    PaymentPageViewController *paymentVC = [[PaymentPageViewController alloc] init];
+    [self.navigationController pushViewController:paymentVC animated:YES];
 }
 
 @end
