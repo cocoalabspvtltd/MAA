@@ -18,8 +18,8 @@
     [super viewDidLoad];
     self.delegate = self;
     UITabBarItem *tabBarItem = [self.tabBar.items objectAtIndex:0];
-    UIImage *unselectedImage = [UIImage imageNamed:@"home"];
-    UIImage *selectedImage = [UIImage imageNamed:@"home-a"];
+    UIImage *unselectedImage = [UIImage imageNamed:@"homeGREY"];
+    UIImage *selectedImage = [UIImage imageNamed:@"home"];
     [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
@@ -30,20 +30,20 @@
     [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     tabBarItem = [self.tabBar.items objectAtIndex:2];
-    unselectedImage = [UIImage imageNamed:@"cal"];
-    selectedImage = [UIImage imageNamed:@"cal-a"];
+    unselectedImage = [UIImage imageNamed:@"calendarGREY"];
+    selectedImage = [UIImage imageNamed:@"calendar"];
     [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     tabBarItem = [self.tabBar.items objectAtIndex:3];
-    unselectedImage = [UIImage imageNamed:@"ques"];
-    selectedImage = [UIImage imageNamed:@"ques-a"];
+    unselectedImage = [UIImage imageNamed:@"QUESTIONGREY"];
+    selectedImage = [UIImage imageNamed:@"question"];
     [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     
     tabBarItem = [self.tabBar.items objectAtIndex:4];
-    unselectedImage = [UIImage imageNamed:@"settings"];
-    selectedImage = [UIImage imageNamed:@"settings-a"];
+    unselectedImage = [UIImage imageNamed:@"settingsGREY"];
+    selectedImage = [UIImage imageNamed:@"settingsNew"];
     [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
    //  Do any additional setup after loading the view.
