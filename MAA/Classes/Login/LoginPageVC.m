@@ -95,7 +95,7 @@
     }
     NSString *deviceTokenString = [[NSUserDefaults standardUserDefaults] valueForKey:DeviceTokenKey];
     if(deviceTokenString.length>0){
-     [logInDictionary setValue:passwordInSh1 forKey:@"device_token"];
+     [logInDictionary setValue:deviceTokenString forKey:@"device_token"];
     }
     [logInDictionary setValue:@"iOS" forKey:@"device_type"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
