@@ -73,11 +73,11 @@
     }
     else if (indexPath.row == 1){
         settingsTVC.headingLabel.text = @"Account Settings";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"gear"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"settingsred"];
     }
     else if (indexPath.row == 2){
         settingsTVC.headingLabel.text = @"My Reviews";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"speechbubblered"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"myreview"];
     }
     else if (indexPath.row == 3){
         settingsTVC.headingLabel.text = @"Invoices";
@@ -85,7 +85,7 @@
     }
     else if (indexPath.row == 4){
         settingsTVC.headingLabel.text = @"About";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"info-red"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"aboutred"];
     }
     else if (indexPath.row == 5){
         settingsTVC.headingLabel.text = @"Feedback";
@@ -93,7 +93,7 @@
     }
     else if (indexPath.row == 6){
         settingsTVC.headingLabel.text = @"Sign Out";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"uploadside"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"logout"];
     }
     
     return settingsTVC;
