@@ -10,6 +10,7 @@
 #import "TimingsVC.h"
 #import "DoctorProfVC.h"
 #import "DoctorAboutVC.h"
+#import "AddMessagesVC.h"
 #import "DoctorReviewsVC.h"
 #import "SubmitReviewView.h"
 #import "TakeAppointmentVC.h"
@@ -41,6 +42,8 @@
     // Do any additional setup after loading the view.
 }
 
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -55,10 +58,17 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - Button Actions
+
 - (IBAction)backButtonAction:(UIButton *)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)messageButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AddMessagesVC *addMessagesVC = [storyboard instantiateViewControllerWithIdentifier:@"AddMessagesVC"];
+    addMessagesVC.entityId = self.entityId;
+    [self.navigationController pushViewController:addMessagesVC animated:YES];
 }
 - (IBAction)favouriteButtonAction:(UIButton *)sender {
 }

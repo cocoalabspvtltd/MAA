@@ -80,6 +80,7 @@
 		C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C441C71F79500662BB4 /* proinfo2.xib */; };
 		C04EC3A51CC1095800470A74 /* PaymentStatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C04EC3A11CC1095800470A74 /* PaymentStatusViewController.m */; };
 		C04EC3A61CC1095800470A74 /* PaymentPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C04EC3A41CC1095800470A74 /* PaymentPageViewController.m */; };
+		C04EC3AA1CC122B500470A74 /* AddMessagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C04EC3A91CC122B500470A74 /* AddMessagesVC.m */; };
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
@@ -481,6 +482,8 @@
 		C04EC3A11CC1095800470A74 /* PaymentStatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentStatusViewController.m; sourceTree = "<group>"; };
 		C04EC3A31CC1095800470A74 /* PaymentPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaymentPageViewController.h; sourceTree = "<group>"; };
 		C04EC3A41CC1095800470A74 /* PaymentPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaymentPageViewController.m; sourceTree = "<group>"; };
+		C04EC3A81CC122B500470A74 /* AddMessagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMessagesVC.h; sourceTree = "<group>"; };
+		C04EC3A91CC122B500470A74 /* AddMessagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMessagesVC.m; sourceTree = "<group>"; };
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
@@ -1395,6 +1398,7 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				C04EC3A71CC1229300470A74 /* AddMessageVC */,
 				C04EC39F1CC1095800470A74 /* PaymentStatusVC */,
 				C04EC3A21CC1095800470A74 /* PaymentVC */,
 				C00B69541CBF54050081EF68 /* WebViewController */,
@@ -1444,6 +1448,15 @@
 				C04EC3A41CC1095800470A74 /* PaymentPageViewController.m */,
 			);
 			path = PaymentVC;
+			sourceTree = "<group>";
+		};
+		C04EC3A71CC1229300470A74 /* AddMessageVC */ = {
+			isa = PBXGroup;
+			children = (
+				C04EC3A81CC122B500470A74 /* AddMessagesVC.h */,
+				C04EC3A91CC122B500470A74 /* AddMessagesVC.m */,
+			);
+			path = AddMessageVC;
 			sourceTree = "<group>";
 		};
 		C05BBF411C6F8B4300A308E8 /* PhtoGrid */ = {
@@ -2735,6 +2748,7 @@
 				C0D157FF1C9B134700FC1DE0 /* SearchVC.m in Sources */,
 				C092EC031C80B1E000F7B18B /* UIView+WebCacheOperation.m in Sources */,
 				C092EBFF1C80B1E000F7B18B /* UIImage+MultiFormat.m in Sources */,
+				C04EC3AA1CC122B500470A74 /* AddMessagesVC.m in Sources */,
 				C092EC011C80B1E000F7B18B /* UIImageView+HighlightedWebCache.m in Sources */,
 				C092EBF41C80B1E000F7B18B /* MKAnnotationView+WebCache.m in Sources */,
 				C0A8312E1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m in Sources */,

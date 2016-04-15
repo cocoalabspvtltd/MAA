@@ -52,4 +52,5 @@
 #define getAppointmentTimeSlotsApiUrl @"get_time_slots"
 
 #define GettingInvoiceurl @"get_invoices"
+#define SendEnquiryUrl @"send_enquiry"
 

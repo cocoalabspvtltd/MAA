@@ -8,6 +8,7 @@
 
 #import "MapVC.h"
 
+#import "AddMessagesVC.h"
 #import "WebViewController.h"
 #import "DoctorAboutVC.h"
 #import "DoctorProfVC.h"
@@ -194,6 +195,11 @@
 - (IBAction)favouriteButtonAction:(UIButton *)sender {
 }
 - (IBAction)messageButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AddMessagesVC *addMessagesVC = [storyboard instantiateViewControllerWithIdentifier:@"AddMessagesVC"];
+    addMessagesVC.entityId = self.entityId;
+    [self.navigationController pushViewController:addMessagesVC animated:YES];
+    
 }
 - (IBAction)shareButtonAction:(UIButton *)sender {
     [self addingActivityController];
