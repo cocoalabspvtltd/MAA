@@ -91,8 +91,9 @@
 
 #define Merchant_Key @"C9qqP0Lf"
 #define Salt @"PqkIrvEABS"
+//#define Base_URL @"https://test.payu.in"
 #define Base_URL @"https://secure.payu.in"
-#define Success_URL @"https://www.google.co.in/"
+#define Success_URL @"https://mobiletest.payumoney.com/mobileapp/payumoney/success.php"
 #define Failure_URL @"http://www.bing.com/"
 #define Product_Info @"Denim Jeans"
 #define Paid_Amount @"1549.00"
@@ -265,11 +266,23 @@
 }
 
 - (void)navigateToPaymentStatusScreen: (NSMutableDictionary *)mutDictTransactionDetails {
-    dispatch_async(dispatch_get_main_queue(), ^{
-        PaymentStatusViewController *paymentStatusViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PaymentStatusScreenID"];
-        paymentStatusViewController.mutDictTransactionDetails = mutDictTransactionDetails;
-        [self.navigationController pushViewController:paymentStatusViewController animated:YES];
-    });
+    NSLog(@"Finished");
+    [self addingAlertControllerForPaymentSuccess];
+   // dispatch_async(dispatch_get_main_queue(), ^{
+//        PaymentStatusViewController *paymentStatusViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"PaymentStatusScreenID"];
+//        paymentStatusViewController.mutDictTransactionDetails = mutDictTransactionDetails;
+//        [self.navigationController pushViewController:paymentStatusViewController animated:YES];
+  //  });
+}
+
+-(void)addingAlertControllerForPaymentSuccess{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:AppName message:@"Payment Successful" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+       [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:okaction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
 }
 
 @end

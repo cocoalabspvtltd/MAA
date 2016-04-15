@@ -304,7 +304,9 @@
 }
 - (IBAction)bookNowButtonAction:(UIButton *)sender {
     PaymentPageViewController *paymentVC = [[PaymentPageViewController alloc] init];
-    [self.navigationController pushViewController:paymentVC animated:YES];
+    UINavigationController *paymentNavController = [[UINavigationController alloc] initWithRootViewController:paymentVC];
+    [self presentViewController:paymentNavController animated:YES completion:nil];
+   
 }
 
 @end
