@@ -25,7 +25,7 @@
 		7CB682AB1C3908A900AC1F90 /* libCLToolKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97B11C24862D0037E328 /* libCLToolKit.a */; };
 		7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7CF40FE81C1D77600020EE33 /* block1@2x.png */; };
 		9F2B0E1B1C65EDE10053D023 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F2B0E1A1C65EDE10053D023 /* BaseViewController.m */; };
-		9F403AA51CB25476000FA5E2 /* View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F403AA41CB25476000FA5E2 /* View.xib */; };
+		9F403AA51CB25476000FA5E2 /* submitReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F403AA41CB25476000FA5E2 /* submitReviewView.xib */; };
 		9F403AA81CB254A2000FA5E2 /* SubmitReviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F403AA71CB254A2000FA5E2 /* SubmitReviewView.m */; };
 		9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C221C66551A00F7E99D /* PhotoGridViewController.m */; };
 		9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F5F0C261C6655AB00F7E99D /* PhotogridCollectionViewCell.m */; };
@@ -393,7 +393,7 @@
 		7CF40FE81C1D77600020EE33 /* block1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "block1@2x.png"; sourceTree = "<group>"; };
 		9F2B0E191C65EDE10053D023 /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		9F2B0E1A1C65EDE10053D023 /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
-		9F403AA41CB25476000FA5E2 /* View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = View.xib; sourceTree = "<group>"; };
+		9F403AA41CB25476000FA5E2 /* submitReviewView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = submitReviewView.xib; sourceTree = "<group>"; };
 		9F403AA61CB254A2000FA5E2 /* SubmitReviewView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubmitReviewView.h; sourceTree = "<group>"; };
 		9F403AA71CB254A2000FA5E2 /* SubmitReviewView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubmitReviewView.m; sourceTree = "<group>"; };
 		9F5F0C211C66551A00F7E99D /* PhotoGridViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoGridViewController.h; sourceTree = "<group>"; };
@@ -1050,7 +1050,7 @@
 		9F403AA31CB25476000FA5E2 /* AddreviewView */ = {
 			isa = PBXGroup;
 			children = (
-				9F403AA41CB25476000FA5E2 /* View.xib */,
+				9F403AA41CB25476000FA5E2 /* submitReviewView.xib */,
 				9F403AA61CB254A2000FA5E2 /* SubmitReviewView.h */,
 				9F403AA71CB254A2000FA5E2 /* SubmitReviewView.m */,
 			);
@@ -2506,7 +2506,7 @@
 				C0BBC4841C6E2AE7005083B1 /* search-a@2x.png in Resources */,
 				C09EF6EC1C76211800806600 /* OTSessionDelegate.html in Resources */,
 				C0BBC4BB1C6E5C82005083B1 /* direct-apnt-black@3x (1).png in Resources */,
-				9F403AA51CB25476000FA5E2 /* View.xib in Resources */,
+				9F403AA51CB25476000FA5E2 /* submitReviewView.xib in Resources */,
 				C09A8AC11C8177EB00BAA532 /* ImageFullView.xib in Resources */,
 				C0CABC7B1C8AE752009F9470 /* unchecked-gray@3x.png in Resources */,
 				C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */,

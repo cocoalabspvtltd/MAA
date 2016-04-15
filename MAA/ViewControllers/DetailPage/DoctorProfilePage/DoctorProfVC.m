@@ -297,7 +297,7 @@
 
 -(void)addingReviewView{
 
-    self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"View" owner:self options:nil]
+    self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"submitReviewView" owner:self options:nil]
 firstObject];
     self.submitReviewView.submitReviewDelegate = self;
     CGFloat xMargin = 0,yMargin = 0;
