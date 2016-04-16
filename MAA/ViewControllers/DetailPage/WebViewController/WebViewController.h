@@ -11,5 +11,7 @@
 @interface WebViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) NSString *urlString;
+- (IBAction)Back:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *TitleLabel;
 
 @end
