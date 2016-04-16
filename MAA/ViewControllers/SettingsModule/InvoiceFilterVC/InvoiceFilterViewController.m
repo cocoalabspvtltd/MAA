@@ -29,6 +29,10 @@
     [self intialisation];
     [self addDoneToolBar];
     [self addingDonetoolBarForMonth];
+    
+    _monthTextField.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.275 alpha:1.00]CGColor];
+    _yearTextField.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.275 alpha:1.00]CGColor];
+    
     // Do any additional setup after loading the view.
 }
 
