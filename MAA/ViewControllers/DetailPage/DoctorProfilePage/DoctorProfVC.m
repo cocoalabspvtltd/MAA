@@ -22,6 +22,7 @@
 @property (nonatomic, strong) NSArray *reviewsArray;
 @property (nonatomic, strong) id doctorFirstClinicDetails;
 @property (nonatomic, strong) SubmitReviewView *submitReviewView;
+@property (nonatomic, strong) UIView *gradientView;
 @property (nonatomic, strong) UIActivityViewController *activityViewController;
 
 @end
@@ -29,6 +30,7 @@
 @implementation DoctorProfVC
 
 - (void)viewDidLoad {
+    [self initialisation];
     [super viewDidLoad];
     _imgProfile.layer.cornerRadius=_imgProfile.frame.size.width/2;
     _imgProfile.clipsToBounds=YES;
@@ -37,11 +39,25 @@
     
     _btnDirection.layer.borderWidth=0.5f;
     _btnDirection.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
-    
+    [self addSubViews];
     [self callingGetDoctorDetailsApi];
     // Do any additional setup after loading the view.
 }
 
+-(void)initialisation{
+    self.gradientView = [[UIView alloc] init];
+    self.gradientView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+    self.gradientView.hidden = YES;
+}
+
+
+-(void)addSubViews{
+    [self.view addSubview:self.gradientView];
+}
+
+-(void)viewWillLayoutSubviews{
+    self.gradientView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -296,13 +312,25 @@
 #pragma mark - Adding Review view
 
 -(void)addingReviewView{
-
+    [self addingGradientView];
     self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"submitReviewView" owner:self options:nil]
-firstObject];
+    firstObject];
     self.submitReviewView.submitReviewDelegate = self;
-    CGFloat xMargin = 0,yMargin = 0;
+    CGFloat xMargin = 20,yMargin = 50;
     self.submitReviewView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
     [self.view addSubview:self.submitReviewView];
+}
+
+-(void)addingGradientView{
+    self.gradientView.hidden = NO;
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gradientViewGestureAction:)];
+    self.gradientView.userInteractionEnabled = YES;
+    [self.gradientView addGestureRecognizer:tapGestureRecognizer];
+}
+
+-(void)gradientViewGestureAction:(UITapGestureRecognizer *)tapGesture{
+    self.gradientView.hidden = YES;
+    [self.submitReviewView removeFromSuperview];
 }
 
 #pragma mark - Submit Review Delegate
@@ -327,6 +355,7 @@ firstObject];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:submitReviewUrlString] withBody:submitReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        self.gradientView.hidden = YES;
         [self.submitReviewView removeFromSuperview];
         [self callingAlertViewControllerWithString:@"Your review submitted sucessfully. It become active after review"];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
