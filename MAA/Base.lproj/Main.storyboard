@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="C0244C19-4A0D-4EA0-BBC2-31E47A99F050" scopeBarBackgroundImage="C0244C19-4A0D-4EA0-BBC2-31E47A99F050" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="C3EC83B5-DCD0-4572-90C2-446D1AEE0856" scopeBarBackgroundImage="C3EC83B5-DCD0-4572-90C2-446D1AEE0856" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="2DE07BBA-2B5E-4C8C-991F-CD94D3CC58BB" scopeBarBackgroundImage="2DE07BBA-2B5E-4C8C-991F-CD94D3CC58BB" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="C93DC89F-2738-4B7C-A0CC-0117687BD31D" scopeBarBackgroundImage="C93DC89F-2738-4B7C-A0CC-0117687BD31D" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -9255,7 +9255,7 @@
         <!--Confirm booking-->
         <scene sceneID="2qz-gg-Tqy">
             <objects>
-                <viewController title="Confirm booking" id="LYk-T6-TCK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ConfirmBookingVC" title="Confirm booking" id="LYk-T6-TCK" customClass="ConfirmBookingVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SJ4-q0-mLl"/>
                         <viewControllerLayoutGuide type="bottom" id="ggo-t8-qS7"/>
@@ -9280,6 +9280,9 @@
                                             <constraint firstAttribute="width" constant="46" id="drA-Ku-40E"/>
                                             <constraint firstAttribute="height" constant="30" id="kBg-CN-N9n"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="closeButtonAction:" destination="LYk-T6-TCK" eventType="touchUpInside" id="3hg-3g-9wI"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confirm Booking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YOR-po-wPJ">
                                         <rect key="frame" x="74" y="11" width="506" height="22"/>
@@ -9401,6 +9404,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="confirmButtonAction:" destination="LYk-T6-TCK" eventType="touchUpInside" id="cee-Fq-697"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -9453,10 +9459,16 @@
                             <constraint firstAttribute="trailing" secondItem="JIS-Pg-IEp" secondAttribute="trailing" id="pMR-LJ-USy"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="amountLabel" destination="5Kb-qj-4ia" id="HGY-t4-89K"/>
+                        <outlet property="dateLabel" destination="gUL-ge-wNu" id="7Xo-cZ-5IF"/>
+                        <outlet property="locationLabel" destination="wyN-DN-66U" id="iXv-MX-aZA"/>
+                        <outlet property="timeLabel" destination="zMP-Wg-hoz" id="359-rT-fC0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T7d-jT-0lM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12917" y="2102"/>
+            <point key="canvasLocation" x="12672" y="2044"/>
         </scene>
         <!--Web View Controller-->
         <scene sceneID="n8s-CT-21G">
@@ -11068,14 +11080,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="n9T-Iz-nhT" firstAttribute="top" secondItem="yH9-8x-rbK" secondAttribute="bottom" id="F4d-l0-a4z"/>
                             <constraint firstItem="oTG-Jg-pmK" firstAttribute="leading" secondItem="tEG-t2-Jpz" secondAttribute="leading" id="Meu-S8-dOr"/>
-                            <constraint firstItem="n9T-Iz-nhT" firstAttribute="top" secondItem="yH9-8x-rbK" secondAttribute="bottom" id="N8k-BV-Ba0"/>
-                            <constraint firstItem="Ewn-Ob-tCX" firstAttribute="top" secondItem="oTG-Jg-pmK" secondAttribute="bottom" id="NwI-H2-3aj"/>
                             <constraint firstItem="oTG-Jg-pmK" firstAttribute="width" secondItem="tEG-t2-Jpz" secondAttribute="width" id="SBI-5z-Abv"/>
                             <constraint firstItem="n9T-Iz-nhT" firstAttribute="leading" secondItem="tEG-t2-Jpz" secondAttribute="leading" id="Wao-vi-Akq"/>
                             <constraint firstAttribute="trailing" secondItem="oTG-Jg-pmK" secondAttribute="trailing" id="chN-Gl-hkV"/>
                             <constraint firstAttribute="trailing" secondItem="n9T-Iz-nhT" secondAttribute="trailing" id="duj-za-vXw"/>
                             <constraint firstItem="oTG-Jg-pmK" firstAttribute="top" secondItem="n9T-Iz-nhT" secondAttribute="bottom" id="igv-Dv-BKq"/>
+                            <constraint firstItem="Ewn-Ob-tCX" firstAttribute="top" secondItem="oTG-Jg-pmK" secondAttribute="bottom" id="y8z-2q-0HQ"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
@@ -13358,7 +13370,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="2DE07BBA-2B5E-4C8C-991F-CD94D3CC58BB" width="310" height="78">
+        <image name="C3EC83B5-DCD0-4572-90C2-446D1AEE0856" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15023,7 +15035,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="C0244C19-4A0D-4EA0-BBC2-31E47A99F050" width="310" height="78">
+        <image name="C93DC89F-2738-4B7C-A0CC-0117687BD31D" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -16758,9 +16770,9 @@ AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
         <image name="view" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Q50-MZ-tRA"/>
-        <segue reference="Ct0-e5-A1b"/>
-        <segue reference="NoA-rF-ykh"/>
         <segue reference="aue-uf-5SZ"/>
+        <segue reference="Ct0-e5-A1b"/>
+        <segue reference="Ut8-Vp-X0m"/>
+        <segue reference="FpB-4z-5hg"/>
     </inferredMetricsTieBreakers>
 </document>

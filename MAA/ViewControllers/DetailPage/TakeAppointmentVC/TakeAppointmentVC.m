@@ -7,8 +7,10 @@
 //
 
 #import "MapVC.h"
-#import "PaymentPageViewController.h"
+#import "ConfirmBookingVC.h"
 #import "TakeAppointmentVC.h"
+#import "PaymentPageViewController.h"
+
 
 @interface TakeAppointmentVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
 {
@@ -303,10 +305,21 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (IBAction)bookNowButtonAction:(UIButton *)sender {
-    PaymentPageViewController *paymentVC = [[PaymentPageViewController alloc] init];
-    UINavigationController *paymentNavController = [[UINavigationController alloc] initWithRootViewController:paymentVC];
-    [self presentViewController:paymentNavController animated:YES completion:nil];
+    [self addingConfirmBookingViewController];
+//    PaymentPageViewController *paymentVC = [[PaymentPageViewController alloc] init];
+//    UINavigationController *paymentNavController = [[UINavigationController alloc] initWithRootViewController:paymentVC];
+//    [self presentViewController:paymentNavController animated:YES completion:nil];
    
+}
+
+-(void)addingConfirmBookingViewController{
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    ConfirmBookingVC *confirmBookingVC = [storyboard instantiateViewControllerWithIdentifier:@"ConfirmBookingVC"];
+    confirmBookingVC.dateString = [self.dateArray objectAtIndex:self.previousDateSelectedIndex.row];
+    confirmBookingVC.timeString = [self.timeArray objectAtIndex:self.previousDateSelectedIndex.row];
+    [self presentViewController:confirmBookingVC animated:YES completion:nil];
+    
 }
 
 @end

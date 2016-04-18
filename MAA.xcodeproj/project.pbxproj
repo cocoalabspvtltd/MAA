@@ -290,6 +290,7 @@
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
+		C0C5CF961CC5508C005A6170 /* ConfirmBookingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
 		C0CABC661C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CABC611C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m */; };
 		C0CABC671C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CABC631C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m */; };
@@ -760,6 +761,8 @@
 		C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLToolKit.xcodeproj; path = CLToolKit/CLToolKit.xcodeproj; sourceTree = "<group>"; };
 		C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MAA/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C0C5CF941CC5508C005A6170 /* ConfirmBookingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmBookingVC.h; sourceTree = "<group>"; };
+		C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmBookingVC.m; sourceTree = "<group>"; };
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		C0C78D551C68F00E002A534A /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		C0CABC601C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingCollectionView.h; sourceTree = "<group>"; };
@@ -1430,6 +1433,7 @@
 		C01C23C61CA19D9F00279A17 /* DetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				C0C5CF8E1CC5505F005A6170 /* ConfirmBookingVC */,
 				C04EC3A71CC1229300470A74 /* AddMessageVC */,
 				C04EC39F1CC1095800470A74 /* PaymentStatusVC */,
 				C04EC3A21CC1095800470A74 /* PaymentVC */,
@@ -2160,6 +2164,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C0C5CF8E1CC5505F005A6170 /* ConfirmBookingVC */ = {
+			isa = PBXGroup;
+			children = (
+				C0C5CF941CC5508C005A6170 /* ConfirmBookingVC.h */,
+				C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */,
+			);
+			path = ConfirmBookingVC;
+			sourceTree = "<group>";
+		};
 		C0CABC5F1C8A8971009F9470 /* TPKeyboardAvoiding */ = {
 			isa = PBXGroup;
 			children = (
@@ -2850,6 +2863,7 @@
 				C08293EF1C874E0800D987B7 /* FeedBackVC.m in Sources */,
 				C0D158211C9B231B00FC1DE0 /* PayUSAGetHashes.m in Sources */,
 				C09039CD1C88988E0059FDC8 /* CountriesVC.m in Sources */,
+				C0C5CF961CC5508C005A6170 /* ConfirmBookingVC.m in Sources */,
 				C092EC021C80B1E000F7B18B /* UIImageView+WebCache.m in Sources */,
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
 				C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */,
