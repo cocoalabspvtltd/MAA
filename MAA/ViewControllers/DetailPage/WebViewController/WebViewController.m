@@ -17,10 +17,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.webView.backgroundColor = [UIColor whiteColor];
+    [self initialisation];
     [self loadingWebView];
     // Do any additional setup after loading the view.
 }
 
+-(void)initialisation{
+    self.TitleLabel.text = _headingString;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -56,5 +60,6 @@
 */
 
 - (IBAction)Back:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

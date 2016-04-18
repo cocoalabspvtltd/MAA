@@ -303,6 +303,7 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
     webViewController.urlString = webviewurlString;
+    webViewController.headingString = [self.clinicDetails valueForKey:@"name"];
     [self.navigationController pushViewController:webViewController animated:YES];
     
 }

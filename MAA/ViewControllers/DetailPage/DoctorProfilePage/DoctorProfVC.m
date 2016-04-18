@@ -385,7 +385,7 @@ firstObject];
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
     webViewController.urlString = webviewurlString;
-    webViewController.title  =@"Webview";
+    webViewController.headingString = [NSString stringWithFormat:@"Dr. %@",[self.entityDetails valueForKey:@"name"]];
     [self.navigationController pushViewController:webViewController animated:YES];
     
 }

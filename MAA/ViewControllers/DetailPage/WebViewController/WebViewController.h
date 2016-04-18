@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString *urlString;
 - (IBAction)Back:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *TitleLabel;
+@property (nonatomic, strong) NSString *headingString;
 
 @end
