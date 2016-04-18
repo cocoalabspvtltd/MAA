@@ -37,6 +37,7 @@
     _imgProfile.clipsToBounds = YES;
     [self initialisingDetails];
     [self callingGetAppointmentTimeSlotsApi];
+    self.btnBookNow.enabled = NO;
 }
 
 -(void)initialisingDetails{
@@ -170,6 +171,7 @@
     }
     if (collectionView==self.timeCollectionview) {
         NSLog(@"Time Array;%@",self.timeArray[indexPath.item]);
+        self.btnBookNow.enabled = YES;
         static NSString*cellident = @"cell2";
         UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellident forIndexPath:indexPath];
        
@@ -316,8 +318,10 @@
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     ConfirmBookingVC *confirmBookingVC = [storyboard instantiateViewControllerWithIdentifier:@"ConfirmBookingVC"];
-    confirmBookingVC.dateString = [self.dateArray objectAtIndex:self.previousDateSelectedIndex.row];
-    confirmBookingVC.timeString = [self.timeArray objectAtIndex:self.previousDateSelectedIndex.row];
+    confirmBookingVC.dateString = [[self.dateArray objectAtIndex:self.previousDateSelectedIndex.row] valueForKey:@"date"] ;
+    confirmBookingVC.timeString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"time"];
+     confirmBookingVC.amountString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"fee"];
+     confirmBookingVC.locationString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"location"];
     [self presentViewController:confirmBookingVC animated:YES completion:nil];
     
 }

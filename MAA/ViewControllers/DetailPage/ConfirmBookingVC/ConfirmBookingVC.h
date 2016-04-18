@@ -16,5 +16,7 @@
 
 @property (nonatomic, strong) NSString *dateString;
 @property (nonatomic, strong) NSString *timeString;
+@property (nonatomic, strong) NSString *amountString;
+@property (nonatomic, strong) NSString *locationString;
 
 @end

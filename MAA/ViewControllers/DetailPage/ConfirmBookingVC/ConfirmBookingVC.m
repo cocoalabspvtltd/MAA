@@ -23,6 +23,8 @@
 -(void)initialisation{
     self.dateLabel.text  = self.dateString;
     self.timeLabel.text = self.timeString;
+    self.amountLabel.text = self.amountString;
+    self.locationLabel.text = self.locationString;
 }
 
 - (void)didReceiveMemoryWarning {
