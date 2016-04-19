@@ -99,7 +99,7 @@
 -(void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillAppear:YES];
-    [self setTitle:@"Make A Payment"];
+    [self setTitle:@"Make Payment"];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -154,7 +154,8 @@
     NSString *email = [NSString stringWithFormat:@"%@",self.payeeEmailidString]; // Generated a fake mail id for testing
     NSString *phone = [NSString stringWithFormat:@"%@",self.payeePhoneString];
     NSString *serviceprovider = @"payu_paisa";
-    
+    NSString *appointmentidString = self.appointmentIdString;
+    NSLog(@"Appointment String:%@",appointmentidString);
     NSString *hashValue = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@|||||||||||%@",key,txnid1,amount,productInfo,firstname,email,Salt];
     NSString *hash = [self createSHA512:hashValue];
     NSDictionary *parameters = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:txnid1,key,amount,productInfo,firstname,email,phone,Success_URL,Failure_URL,hash,serviceprovider
@@ -227,9 +228,11 @@
     NSURL *requestURL = [[_webviewPaymentPage request] URL];
     NSLog(@"WebView failed loading with requestURL: %@ with error: %@ & error code: %ld",requestURL, [error localizedDescription], (long)[error code]);
     if (error.code == -1009 || error.code == -1003 || error.code == -1001) { //error.code == -999
-        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops !!!" message:@"Please check your internet connection!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        alert.tag = 1;
-        [alert show];
+        
+        [self addingAlertControllerForPaymentSfailure];
+//        UIAlertView *alert = [[UIAlertView alloc]initWithTitle:@"Oops !!!" message:@"Please check your internet connection!" delegate:self cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
+//        alert.tag = 1;
+//        [alert show];
     }
 }
 
@@ -278,6 +281,16 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:AppName message:@"Payment Successful" preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:okaction];
+    [self presentViewController:alertController animated:YES completion:nil];
+    
+}
+
+-(void)addingAlertControllerForPaymentSfailure{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:AppName message:@"Please check your internet connection!" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *okaction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:YES completion:nil];
     }];
     [alertController addAction:okaction];
     [self presentViewController:alertController animated:YES completion:nil];

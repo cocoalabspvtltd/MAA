@@ -210,7 +210,8 @@
     paymentVC.payeeEmailidString = [responseData valueForKey:@"patient_email"];
     paymentVC.payeeNameString = [responseData valueForKey:@"patient_name"];
     paymentVC.payeePhoneString = [responseData valueForKey:@"patient_phone"];
-    paymentVC.productInfoString = selectedappointmenttypeString;
+    paymentVC.productInfoString = [responseData valueForKey:@"ap_id"];
+    paymentVC.appointmentIdString = [responseData valueForKey:@"ap_id"];
     [self presentViewController:paymentNavController animated:YES completion:nil];
 }
 @end

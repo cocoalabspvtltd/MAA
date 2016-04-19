@@ -14,6 +14,7 @@
 @property (nonatomic, strong) NSString *payeeEmailidString;
 @property (nonatomic, strong) NSString *productInfoString;
 @property (nonatomic, strong) NSString *payeePhoneString;
+@property (nonatomic, strong) NSString *appointmentIdString;
 
 @end
 
