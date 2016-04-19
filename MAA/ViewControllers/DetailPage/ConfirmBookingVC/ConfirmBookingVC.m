@@ -8,8 +8,13 @@
 
 #import "ConfirmBookingVC.h"
 
-@interface ConfirmBookingVC ()
-
+@interface ConfirmBookingVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
+    NSMutableArray *appointmentTypemutableArray;
+    NSArray *appointmentTypePickerArray;
+    UIPickerView *appointmentTypePickerView;
+    NSInteger selectedAppointmwnttype;
+    NSString *selectedappointmenttypeString;
+}
 @end
 
 @implementation ConfirmBookingVC
@@ -21,15 +26,89 @@
 }
 
 -(void)initialisation{
+    [self initialisationofPickerView];
+    [self addDoneToolBar];
     self.dateLabel.text  = self.dateString;
     self.timeLabel.text = self.timeString;
     self.amountLabel.text = self.amountString;
     self.locationLabel.text = self.locationString;
 }
 
+-(void)initialisationofPickerView{
+    appointmentTypePickerArray = @[@"Direct Appointment",@"Text Chat",@"Audio Call",@"Video Call"];
+    selectedAppointmwnttype = 0;
+    selectedappointmenttypeString = [appointmentTypePickerArray objectAtIndex:0];
+    appointmentTypePickerView = [[UIPickerView alloc] init];
+    appointmentTypePickerView.dataSource = self;
+    appointmentTypePickerView.delegate = self;
+    self.appointmentTypetextfield.inputView = appointmentTypePickerView;
+}
+
+-(void)addDoneToolBar {
+    
+    UIToolbar *toolBar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 44)];
+    toolBar.barStyle = UIBarStyleBlackOpaque;
+    
+    UIBarButtonItem *doneButton1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonTouched:)];
+    
+    [toolBar setItems:[NSArray arrayWithObjects:doneButton1, nil]];
+    self.appointmentTypetextfield.inputAccessoryView = toolBar;
+    
+}
+
+-(void)doneButtonTouched:(UIButton *)button{
+    [self.appointmentTypetextfield resignFirstResponder];
+    self.appointmentTypetextfield.text = selectedappointmenttypeString;
+    
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Picker View Datasources
+
+-(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+-(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if (pickerView ==appointmentTypePickerView) {
+        return [appointmentTypePickerArray count];
+        
+    }
+    return 1;
+}
+-(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    
+    
+    if (pickerView ==appointmentTypePickerView) {
+        return appointmentTypePickerArray[row];
+        
+    }
+    return @"a";
+    
+    
+}
+
+#pragma mark - Picker view Delegate
+
+-(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    if (pickerView ==appointmentTypePickerView) {
+        selectedAppointmwnttype = row+1;
+        selectedappointmenttypeString = appointmentTypePickerArray[row];
+    }
+}
+
+#pragma mark - Text Field Delegate
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    if([selectedappointmenttypeString isEqualToString:[appointmentTypePickerArray objectAtIndex:0]]){
+        selectedAppointmwnttype = 1;
+    }
 }
 
 /*
@@ -45,7 +124,73 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)confirmButtonAction:(UIButton *)sender {
+    if([self isValidInput]){
+        [self callingBookAppointmentApi];
+    }
     
 }
 
+-(BOOL)isValidInput{
+    BOOL isValid = YES;
+    NSString *errorMessageString;
+    if(selectedAppointmwnttype == 0){
+        errorMessageString = @"Please select appointment type";
+        isValid = NO;
+    }
+    if(!isValid){
+        [self callingAlertViewControllerWithString:errorMessageString];
+    }
+    return isValid;
+}
+
+#pragma mark - Adding Alert Controller
+
+-(void)callingAlertViewControllerWithString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+#pragma mark - Calling Booking Api
+
+-(void)callingBookAppointmentApi{
+    NSString *bookingAppointmentUrlString = [Baseurl stringByAppendingString:BookAppointmentUrl];
+    NSString *accesstoken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *bookAppointmentMutableDictionary = [[NSMutableDictionary alloc] init];
+    [bookAppointmentMutableDictionary setValue:accesstoken forKey:@"token"];
+    [bookAppointmentMutableDictionary setValue:self.timeSlotId forKey:@"time_slot_id"];
+    [bookAppointmentMutableDictionary setValue:self.dateString forKey:@"date"];
+    [bookAppointmentMutableDictionary setValue:self.entityIdString forKey:@"user_entity_id"];
+    [bookAppointmentMutableDictionary setValue:[NSNumber numberWithInteger:selectedAppointmwnttype] forKey:@"appointment_type"];
+    [bookAppointmentMutableDictionary setValue:@"" forKey:@"notes"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:bookingAppointmentUrlString] withBody:bookAppointmentMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSLog(@"Response object:%@",responseObject);
+        
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+}
 @end

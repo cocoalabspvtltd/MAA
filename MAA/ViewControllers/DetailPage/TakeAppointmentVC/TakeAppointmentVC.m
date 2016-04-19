@@ -322,6 +322,8 @@
     confirmBookingVC.timeString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"time"];
      confirmBookingVC.amountString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"fee"];
      confirmBookingVC.locationString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"location"];
+    confirmBookingVC.entityIdString = self.entityIDString;
+    confirmBookingVC.timeSlotId = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"id"];
     [self presentViewController:confirmBookingVC animated:YES completion:nil];
     
 }

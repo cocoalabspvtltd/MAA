@@ -50,6 +50,7 @@
 #define GetLocationsUrl @"get_location"
 #define FeedbackUrl @"feedback"
 #define getAppointmentTimeSlotsApiUrl @"get_time_slots"
+#define BookAppointmentUrl @"book_timeslot"
 
 #define GettingInvoiceurl @"get_invoices"
 #define SendEnquiryUrl @"send_enquiry"

@@ -13,10 +13,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *locationLabel;
+@property (weak, nonatomic) IBOutlet UITextField *appointmentTypetextfield;
 
 @property (nonatomic, strong) NSString *dateString;
 @property (nonatomic, strong) NSString *timeString;
 @property (nonatomic, strong) NSString *amountString;
 @property (nonatomic, strong) NSString *locationString;
+@property (nonatomic, strong) NSString *timeSlotId;
+@property (nonatomic, strong) NSString *entityIdString;
 
 @end
