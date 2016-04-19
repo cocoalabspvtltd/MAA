@@ -81,7 +81,7 @@
     }
     else if (indexPath.row == 3){
         settingsTVC.headingLabel.text = @"Invoices";
-        settingsTVC.iconImageView.image = [UIImage imageNamed:@"file"];
+        settingsTVC.iconImageView.image = [UIImage imageNamed:@"invoice"];
     }
     else if (indexPath.row == 4){
         settingsTVC.headingLabel.text = @"About";

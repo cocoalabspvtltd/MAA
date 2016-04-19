@@ -25,7 +25,7 @@
     
     tabBarItem = [self.tabBar.items objectAtIndex:1];
     unselectedImage = [UIImage imageNamed:@"search"];
-    selectedImage = [UIImage imageNamed:@"search-a"];
+    selectedImage = [UIImage imageNamed:@"searchred"];
     [tabBarItem setImage: [unselectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     [tabBarItem setSelectedImage: [selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     

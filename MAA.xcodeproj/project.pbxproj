@@ -120,6 +120,15 @@
 		C04EC4141CC1565700470A74 /* myreview.png in Resources */ = {isa = PBXBuildFile; fileRef = C04EC4111CC1565700470A74 /* myreview.png */; };
 		C04EC4151CC1565700470A74 /* myreview@@2X.png in Resources */ = {isa = PBXBuildFile; fileRef = C04EC4121CC1565700470A74 /* myreview@@2X.png */; };
 		C04EC4161CC1565700470A74 /* myreview@3X.png in Resources */ = {isa = PBXBuildFile; fileRef = C04EC4131CC1565700470A74 /* myreview@3X.png */; };
+		C05AE1FF1CC68436003AF9CB /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE1F91CC68436003AF9CB /* search.png */; };
+		C05AE2001CC68436003AF9CB /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE1FA1CC68436003AF9CB /* search@2x.png */; };
+		C05AE2011CC68436003AF9CB /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE1FB1CC68436003AF9CB /* search@3x.png */; };
+		C05AE2021CC68436003AF9CB /* searchred.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE1FC1CC68436003AF9CB /* searchred.png */; };
+		C05AE2031CC68436003AF9CB /* searchred@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE1FD1CC68436003AF9CB /* searchred@2x.png */; };
+		C05AE2041CC68436003AF9CB /* searchred@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE1FE1CC68436003AF9CB /* searchred@3x.png */; };
+		C05AE2081CC68572003AF9CB /* invoice.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE2051CC68572003AF9CB /* invoice.png */; };
+		C05AE2091CC68572003AF9CB /* invoice@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE2061CC68572003AF9CB /* invoice@2x.png */; };
+		C05AE20A1CC68572003AF9CB /* invoice@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05AE2071CC68572003AF9CB /* invoice@3x.png */; };
 		C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF431C6F8B4300A308E8 /* tick-red.png */; };
 		C05BBF471C6F8B4300A308E8 /* tick-red@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */; };
 		C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */; };
@@ -258,12 +267,6 @@
 		C0BAF0261C319FE3002F3137 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0251C319FE3002F3137 /* UIKit.framework */; };
 		C0BAF0281C319FEB002F3137 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0271C319FEB002F3137 /* Foundation.framework */; };
 		C0BAF02A1C31A005002F3137 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BAF0291C31A005002F3137 /* CoreTelephony.framework */; };
-		C0BBC4831C6E2AE7005083B1 /* search-a.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC4651C6E2AE7005083B1 /* search-a.png */; };
-		C0BBC4841C6E2AE7005083B1 /* search-a@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC4661C6E2AE7005083B1 /* search-a@2x.png */; };
-		C0BBC4851C6E2AE7005083B1 /* search-a@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC4671C6E2AE7005083B1 /* search-a@3x.png */; };
-		C0BBC4861C6E2AE7005083B1 /* search.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC4681C6E2AE7005083B1 /* search.png */; };
-		C0BBC4871C6E2AE7005083B1 /* search@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC4691C6E2AE7005083B1 /* search@2x.png */; };
-		C0BBC4881C6E2AE7005083B1 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0BBC46A1C6E2AE7005083B1 /* search@3x.png */; };
 		C0BBC4931C6E2BED005083B1 /* AppoinmentsDocs.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BBC4921C6E2BED005083B1 /* AppoinmentsDocs.m */; };
 		C0BBC4971C6E2C5E005083B1 /* AppoinmentDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BBC4961C6E2C5E005083B1 /* AppoinmentDetailVC.m */; };
 		C0BBC4A01C6E4046005083B1 /* AppointmentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0BBC49B1C6E4046005083B1 /* AppointmentTableViewCell.m */; };
@@ -539,6 +542,15 @@
 		C04EC4111CC1565700470A74 /* myreview.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myreview.png; sourceTree = "<group>"; };
 		C04EC4121CC1565700470A74 /* myreview@@2X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myreview@@2X.png"; sourceTree = "<group>"; };
 		C04EC4131CC1565700470A74 /* myreview@3X.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "myreview@3X.png"; sourceTree = "<group>"; };
+		C05AE1F91CC68436003AF9CB /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
+		C05AE1FA1CC68436003AF9CB /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
+		C05AE1FB1CC68436003AF9CB /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
+		C05AE1FC1CC68436003AF9CB /* searchred.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchred.png; sourceTree = "<group>"; };
+		C05AE1FD1CC68436003AF9CB /* searchred@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchred@2x.png"; sourceTree = "<group>"; };
+		C05AE1FE1CC68436003AF9CB /* searchred@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "searchred@3x.png"; sourceTree = "<group>"; };
+		C05AE2051CC68572003AF9CB /* invoice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = invoice.png; sourceTree = "<group>"; };
+		C05AE2061CC68572003AF9CB /* invoice@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invoice@2x.png"; sourceTree = "<group>"; };
+		C05AE2071CC68572003AF9CB /* invoice@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "invoice@3x.png"; sourceTree = "<group>"; };
 		C05BBF431C6F8B4300A308E8 /* tick-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red.png"; sourceTree = "<group>"; };
 		C05BBF441C6F8B4300A308E8 /* tick-red@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@2x.png"; sourceTree = "<group>"; };
 		C05BBF451C6F8B4300A308E8 /* tick-red@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tick-red@3x.png"; sourceTree = "<group>"; };
@@ -722,12 +734,6 @@
 		C0BAF0251C319FE3002F3137 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		C0BAF0271C319FEB002F3137 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C0BAF0291C31A005002F3137 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
-		C0BBC4651C6E2AE7005083B1 /* search-a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-a.png"; sourceTree = "<group>"; };
-		C0BBC4661C6E2AE7005083B1 /* search-a@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-a@2x.png"; sourceTree = "<group>"; };
-		C0BBC4671C6E2AE7005083B1 /* search-a@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search-a@3x.png"; sourceTree = "<group>"; };
-		C0BBC4681C6E2AE7005083B1 /* search.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = search.png; sourceTree = "<group>"; };
-		C0BBC4691C6E2AE7005083B1 /* search@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@2x.png"; sourceTree = "<group>"; };
-		C0BBC46A1C6E2AE7005083B1 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
 		C0BBC4911C6E2BED005083B1 /* AppoinmentsDocs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentsDocs.h; sourceTree = "<group>"; };
 		C0BBC4921C6E2BED005083B1 /* AppoinmentsDocs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentsDocs.m; sourceTree = "<group>"; };
 		C0BBC4951C6E2C5E005083B1 /* AppoinmentDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailVC.h; sourceTree = "<group>"; };
@@ -1529,6 +1535,9 @@
 		C04EC3F61CC1525C00470A74 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C05AE2051CC68572003AF9CB /* invoice.png */,
+				C05AE2061CC68572003AF9CB /* invoice@2x.png */,
+				C05AE2071CC68572003AF9CB /* invoice@3x.png */,
 				C04EC4111CC1565700470A74 /* myreview.png */,
 				C04EC4121CC1565700470A74 /* myreview@@2X.png */,
 				C04EC4131CC1565700470A74 /* myreview@3X.png */,
@@ -2026,12 +2035,12 @@
 		C0BBC4521C6E2AE7005083B1 /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
-				C0BBC4651C6E2AE7005083B1 /* search-a.png */,
-				C0BBC4661C6E2AE7005083B1 /* search-a@2x.png */,
-				C0BBC4671C6E2AE7005083B1 /* search-a@3x.png */,
-				C0BBC4681C6E2AE7005083B1 /* search.png */,
-				C0BBC4691C6E2AE7005083B1 /* search@2x.png */,
-				C0BBC46A1C6E2AE7005083B1 /* search@3x.png */,
+				C05AE1F91CC68436003AF9CB /* search.png */,
+				C05AE1FA1CC68436003AF9CB /* search@2x.png */,
+				C05AE1FB1CC68436003AF9CB /* search@3x.png */,
+				C05AE1FC1CC68436003AF9CB /* searchred.png */,
+				C05AE1FD1CC68436003AF9CB /* searchred@2x.png */,
+				C05AE1FE1CC68436003AF9CB /* searchred@3x.png */,
 			);
 			path = Tabbar;
 			sourceTree = "<group>";
@@ -2571,11 +2580,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */,
-				C0BBC4831C6E2AE7005083B1 /* search-a.png in Resources */,
 				C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */,
 				C0CABC771C8AE752009F9470 /* checked-black@2x.png in Resources */,
 				C09EF6D61C76211800806600 /* _index.scss in Resources */,
-				C0BBC4841C6E2AE7005083B1 /* search-a@2x.png in Resources */,
 				C09EF6EC1C76211800806600 /* OTSessionDelegate.html in Resources */,
 				C0BBC4BB1C6E5C82005083B1 /* direct-apnt-black@3x (1).png in Resources */,
 				C04EC4011CC153F100470A74 /* aboutred@2x.png in Resources */,
@@ -2587,6 +2594,7 @@
 				C09EF6E61C76211800806600 /* script.js in Resources */,
 				C09EF6E31C76211800806600 /* library_background.png in Resources */,
 				C04EC3D61CC14D0300470A74 /* question.png in Resources */,
+				C05AE2041CC68436003AF9CB /* searchred@3x.png in Resources */,
 				C0CABC7A1C8AE752009F9470 /* unchecked-gray@2x.png in Resources */,
 				C00B69661CBFC0230081EF68 /* invoiceCell.xib in Resources */,
 				C09EF6E41C76211800806600 /* title_background.png in Resources */,
@@ -2594,6 +2602,7 @@
 				C04EC40F1CC155C600470A74 /* feedback@2x.png in Resources */,
 				C0BBC4CD1C6E6544005083B1 /* InvoicePopup.xib in Resources */,
 				C05BBF481C6F8B4300A308E8 /* tick-red@3x.png in Resources */,
+				C05AE2011CC68436003AF9CB /* search@3x.png in Resources */,
 				C09EF6EB1C76211800806600 /* OTPublisherKitDelegate.html in Resources */,
 				9F95DB4E1C9E2FD800F3EB4F /* no medical documents.png in Resources */,
 				C0BBC4B61C6E5B8E005083B1 /* video-black@3x.png in Resources */,
@@ -2610,6 +2619,7 @@
 				C09EF6F11C76211800806600 /* OTVideoCapture.html in Resources */,
 				C09EF6E11C76211800806600 /* disclosure.png in Resources */,
 				C09EF6F21C76211800806600 /* OTVideoCaptureConsumer.html in Resources */,
+				C05AE2021CC68436003AF9CB /* searchred.png in Resources */,
 				C04EC4021CC153F100470A74 /* aboutred@3x.png in Resources */,
 				C0BBC4AE1C6E5B8E005083B1 /* audio-black.png in Resources */,
 				C04EC3C11CC149E000470A74 /* calendarGREY@3x.png in Resources */,
@@ -2619,6 +2629,7 @@
 				C04EC3CA1CC14BD200470A74 /* home.png in Resources */,
 				C09EF6DA1C76211800806600 /* _print.scss in Resources */,
 				C09F2C0E1C9C6FA800DB040C /* no appoinments.png in Resources */,
+				C05AE2031CC68436003AF9CB /* searchred@2x.png in Resources */,
 				C09EF6D91C76211800806600 /* _object.scss in Resources */,
 				C04EC3DA1CC14D0300470A74 /* QUESTIONGREY@2x.png in Resources */,
 				C0BBC4B11C6E5B8E005083B1 /* chat-black.png in Resources */,
@@ -2636,6 +2647,8 @@
 				C04EC4141CC1565700470A74 /* myreview.png in Resources */,
 				C05BBF461C6F8B4300A308E8 /* tick-red.png in Resources */,
 				C0BBC4B21C6E5B8E005083B1 /* chat-black@2x.png in Resources */,
+				C05AE2001CC68436003AF9CB /* search@2x.png in Resources */,
+				C05AE1FF1CC68436003AF9CB /* search.png in Resources */,
 				C065F64B1C8EA71700E25726 /* chatSender.xib in Resources */,
 				C092EC111C80B86000F7B18B /* loadingImage@3x.png in Resources */,
 				9F991C611C5A1C5400F92C11 /* bin.png in Resources */,
@@ -2656,6 +2669,7 @@
 				C09EF6C41C76211800806600 /* OTSubscriber.html in Resources */,
 				C09EF6DE1C76211800806600 /* style.css in Resources */,
 				C04EC4161CC1565700470A74 /* myreview@3X.png in Resources */,
+				C05AE2081CC68572003AF9CB /* invoice.png in Resources */,
 				C04EC4151CC1565700470A74 /* myreview@@2X.png in Resources */,
 				C04EC4041CC1543600470A74 /* aboutred.png in Resources */,
 				C0BCBB5A1C59377A003F7872 /* fc_right.png in Resources */,
@@ -2689,6 +2703,7 @@
 				C09EF6C71C76211800806600 /* OTSubscriberKitVideoNetworkStats.html in Resources */,
 				C09EF6CD1C76211800806600 /* OTPublisherErrorCode.html in Resources */,
 				55EAC8471C0A09CE00F31280 /* field_white_box@2x.png in Resources */,
+				C05AE2091CC68572003AF9CB /* invoice@2x.png in Resources */,
 				C04EC3F41CC14FDC00470A74 /* settingsNew@2x.png in Resources */,
 				C0E92BC11C9183A100443117 /* ic_close_white_48pt.png in Resources */,
 				C04EC3E61CC14DB200470A74 /* settingsGREY@2x.png in Resources */,
@@ -2712,10 +2727,10 @@
 				C09EF6CA1C76211800806600 /* OTCameraCaptureFrameRate.html in Resources */,
 				C0CABC791C8AE752009F9470 /* unchecked-gray.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,
-				C0BBC4851C6E2AE7005083B1 /* search-a@3x.png in Resources */,
 				9F95DB511C9E2FD800F3EB4F /* no time slots.png in Resources */,
 				C04EC40A1CC154CB00470A74 /* settingsred@3x.png in Resources */,
 				C04EC4091CC154CB00470A74 /* settingsred@2x.png in Resources */,
+				C05AE20A1CC68572003AF9CB /* invoice@3x.png in Resources */,
 				C09EF6E51C76211800806600 /* index.html in Resources */,
 				C09EF6D41C76211800806600 /* OTVideoOrientation.html in Resources */,
 				C09EF6F41C76211800806600 /* LICENSE in Resources */,
@@ -2725,10 +2740,8 @@
 				C09EF6BF1C76211800806600 /* OTError.html in Resources */,
 				C04EC3CB1CC14BD200470A74 /* home@2x.png in Resources */,
 				C09EF6DC1C76211800806600 /* _xcode.scss in Resources */,
-				C0BBC4871C6E2AE7005083B1 /* search@2x.png in Resources */,
 				C0BBC4BA1C6E5C82005083B1 /* direct-apnt-black@2x.png in Resources */,
 				C09EF6E21C76211800806600 /* disclosure_open.png in Resources */,
-				C0BBC4881C6E2AE7005083B1 /* search@3x.png in Resources */,
 				C09EF6CB1C76211800806600 /* OTCameraCaptureResolution.html in Resources */,
 				9F5F0C401C665E8100F7E99D /* askedQuestionsCell.xib in Resources */,
 				C017899E1CA2B38F00482EBF /* invoice.xib in Resources */,
@@ -2736,7 +2749,6 @@
 				C09F2C101C9C82F400DB040C /* no questions.png in Resources */,
 				C09EF6F51C76211800806600 /* NOTICE in Resources */,
 				C0BBC4A11C6E4046005083B1 /* ViewAppoin.xib in Resources */,
-				C0BBC4861C6E2AE7005083B1 /* search.png in Resources */,
 				C04EC3CD1CC14BD200470A74 /* homeGREY.png in Resources */,
 				55D60D8C1C08B94600963D5D /* Main.storyboard in Resources */,
 				C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */,
