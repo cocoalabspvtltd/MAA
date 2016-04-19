@@ -9,7 +9,6 @@
 #import "MapVC.h"
 #import "ConfirmBookingVC.h"
 #import "TakeAppointmentVC.h"
-#import "PaymentPageViewController.h"
 
 
 @interface TakeAppointmentVC ()<UICollectionViewDataSource,UICollectionViewDelegate>
@@ -308,10 +307,6 @@
 }
 - (IBAction)bookNowButtonAction:(UIButton *)sender {
     [self addingConfirmBookingViewController];
-//    PaymentPageViewController *paymentVC = [[PaymentPageViewController alloc] init];
-//    UINavigationController *paymentNavController = [[UINavigationController alloc] initWithRootViewController:paymentVC];
-//    [self presentViewController:paymentNavController animated:YES completion:nil];
-   
 }
 
 -(void)addingConfirmBookingViewController{

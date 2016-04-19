@@ -95,15 +95,11 @@
 #define Base_URL @"https://secure.payu.in"
 #define Success_URL @"https://mobiletest.payumoney.com/mobileapp/payumoney/success.php"
 #define Failure_URL @"http://www.bing.com/"
-#define Product_Info @"Denim Jeans"
-#define Paid_Amount @"1549.00"
-#define Payee_Name @"Suraj Mirajkar"
 
 -(void)viewWillAppear:(BOOL)animated {
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [super viewWillAppear:YES];
     [self setTitle:@"Make A Payment"];
-    [self initPayment];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -116,6 +112,7 @@
     [self initialisation];
     [self customisation];
     [self addSubviews];
+    [self initPayment];
 }
 
 -(void)initialisation{
@@ -149,18 +146,20 @@
     NSString *strHash = [self createSHA512:[NSString stringWithFormat:@"%d%@",i,[NSDate date]]];// Generatehash512(rnd.ToString() + DateTime.Now);
     NSString *txnid1 = [strHash substringToIndex:20];
     strMIHPayID = txnid1;
+    
     NSString *key = Merchant_Key;
-    NSString *amount = Paid_Amount;
-    NSString *productInfo = Product_Info;
-    NSString *firstname = Payee_Name;
-    NSString *email = [NSString stringWithFormat:@"suraj%d@yopmail.com",i]; // Generated a fake mail id for testing
-    NSString *phone = @"9762159571";
+    NSString *amount = self.amountString;
+    NSString *productInfo = self.productInfoString;
+    NSString *firstname = self.payeeNameString;
+    NSString *email = [NSString stringWithFormat:@"%@",self.payeeEmailidString]; // Generated a fake mail id for testing
+    NSString *phone = [NSString stringWithFormat:@"%@",self.payeePhoneString];
     NSString *serviceprovider = @"payu_paisa";
     
     NSString *hashValue = [NSString stringWithFormat:@"%@|%@|%@|%@|%@|%@|||||||||||%@",key,txnid1,amount,productInfo,firstname,email,Salt];
     NSString *hash = [self createSHA512:hashValue];
     NSDictionary *parameters = [NSDictionary dictionaryWithObjects:[NSArray arrayWithObjects:txnid1,key,amount,productInfo,firstname,email,phone,Success_URL,Failure_URL,hash,serviceprovider
                                                                     , nil] forKeys:[NSArray arrayWithObjects:@"txnid",@"key",@"amount",@"productinfo",@"firstname",@"email",@"phone",@"surl",@"furl",@"hash",@"service_provider", nil]];
+    NSLog(@"Parameters:%@",parameters);
     __block NSString *post = @"";
     [parameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
         if ([post isEqualToString:@""]) {
@@ -239,9 +238,9 @@
         NSMutableDictionary *mutDictTransactionDetails = [[NSMutableDictionary alloc] init];
         [mutDictTransactionDetails setObject:strMIHPayID forKey:@"Transaction_ID"];
         [mutDictTransactionDetails setObject:@"Success" forKey:@"Transaction_Status"];
-        [mutDictTransactionDetails setObject:Payee_Name forKey:@"Payee_Name"];
-        [mutDictTransactionDetails setObject:Product_Info forKey:@"Product_Info"];
-        [mutDictTransactionDetails setObject:Paid_Amount forKey:@"Paid_Amount"];
+        [mutDictTransactionDetails setObject:self.payeeNameString forKey:@"Payee_Name"];
+        [mutDictTransactionDetails setObject:self.productInfoString forKey:@"Product_Info"];
+        [mutDictTransactionDetails setObject:self.amountString forKey:@"Paid_Amount"];
         
         [self navigateToPaymentStatusScreen:mutDictTransactionDetails];
     });
@@ -252,9 +251,9 @@
     if (alertView.tag == 1 && buttonIndex == 0) {
         // Navigate to Payment Status Screen
         NSMutableDictionary *mutDictTransactionDetails = [[NSMutableDictionary alloc] init];
-        [mutDictTransactionDetails setObject:Payee_Name forKey:@"Payee_Name"];
-        [mutDictTransactionDetails setObject:Product_Info forKey:@"Product_Info"];
-        [mutDictTransactionDetails setObject:Paid_Amount forKey:@"Paid_Amount"];
+        [mutDictTransactionDetails setObject:self.payeeNameString forKey:@"Payee_Name"];
+        [mutDictTransactionDetails setObject:self.productInfoString forKey:@"Product_Info"];
+        [mutDictTransactionDetails setObject:self.amountString forKey:@"Paid_Amount"];
         [mutDictTransactionDetails setObject:strMIHPayID forKey:@"Transaction_ID"];
         [mutDictTransactionDetails setObject:@"Failed" forKey:@"Transaction_Status"];
         [self navigateToPaymentStatusScreen:mutDictTransactionDetails];

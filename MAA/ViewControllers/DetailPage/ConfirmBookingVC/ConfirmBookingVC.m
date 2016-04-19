@@ -7,6 +7,7 @@
 //
 
 #import "ConfirmBookingVC.h"
+#import "PaymentPageViewController.h"
 
 @interface ConfirmBookingVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
     NSMutableArray *appointmentTypemutableArray;
@@ -179,6 +180,12 @@
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Response object:%@",responseObject);
+        if([[responseObject valueForKey:StatusKey] isEqualToString:@"error"]){
+            [self callingAlertViewControllerWithString:[responseObject valueForKey:@"error_message"]];
+        }
+        else{
+            [self addingPaymentgateWayWithResponseData:[responseObject valueForKey:Datakey]];
+        }
         
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -192,5 +199,18 @@
         UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [erroralert show];
     }];
+}
+
+#pragma mark - Adding Payment Gateway Page
+
+-(void)addingPaymentgateWayWithResponseData:(id)responseData{
+    PaymentPageViewController *paymentVC = [[PaymentPageViewController alloc] init];
+    UINavigationController *paymentNavController = [[UINavigationController alloc] initWithRootViewController:paymentVC];
+    paymentVC.amountString = self.amountString;
+    paymentVC.payeeEmailidString = [responseData valueForKey:@"patient_email"];
+    paymentVC.payeeNameString = [responseData valueForKey:@"patient_name"];
+    paymentVC.payeePhoneString = [responseData valueForKey:@"patient_phone"];
+    paymentVC.productInfoString = selectedappointmenttypeString;
+    [self presentViewController:paymentNavController animated:YES completion:nil];
 }
 @end

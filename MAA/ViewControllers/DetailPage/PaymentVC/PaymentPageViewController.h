@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface PaymentPageViewController : UIViewController
-
+@property (nonatomic, strong) NSString *amountString;
+@property (nonatomic, strong) NSString *payeeNameString;
+@property (nonatomic, strong) NSString *payeeEmailidString;
+@property (nonatomic, strong) NSString *productInfoString;
+@property (nonatomic, strong) NSString *payeePhoneString;
 
 @end
 
