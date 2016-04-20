@@ -315,10 +315,11 @@
     ConfirmBookingVC *confirmBookingVC = [storyboard instantiateViewControllerWithIdentifier:@"ConfirmBookingVC"];
     confirmBookingVC.dateString = [[self.dateArray objectAtIndex:self.previousDateSelectedIndex.row] valueForKey:@"date"] ;
     confirmBookingVC.timeString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"time"];
-     confirmBookingVC.amountString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"fee"];
-     confirmBookingVC.locationString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"location"];
+    confirmBookingVC.amountString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"fee"];
+    confirmBookingVC.locationString = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"location"];
     confirmBookingVC.entityIdString = self.entityIDString;
     confirmBookingVC.timeSlotId = [[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"id"];
+    confirmBookingVC.entityDetails = self.entityDetails;
     [self presentViewController:confirmBookingVC animated:YES completion:nil];
     
 }

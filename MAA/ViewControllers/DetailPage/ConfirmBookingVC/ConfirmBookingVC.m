@@ -10,8 +10,7 @@
 #import "PaymentPageViewController.h"
 
 @interface ConfirmBookingVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
-    NSMutableArray *appointmentTypemutableArray;
-    NSArray *appointmentTypePickerArray;
+    NSMutableArray *appointmentTypePickerArray;
     UIPickerView *appointmentTypePickerView;
     NSInteger selectedAppointmwnttype;
     NSString *selectedappointmenttypeString;
@@ -27,6 +26,7 @@
 }
 
 -(void)initialisation{
+    
     [self initialisationofPickerView];
     [self addDoneToolBar];
     self.dateLabel.text  = self.dateString;
@@ -36,7 +36,20 @@
 }
 
 -(void)initialisationofPickerView{
-    appointmentTypePickerArray = @[@"Direct Appointment",@"Text Chat",@"Audio Call",@"Video Call"];
+    NSLog(@"EntityDetails:%@",self.entityDetails);
+    appointmentTypePickerArray = [[NSMutableArray alloc] init];
+    if([[self.entityDetails valueForKey:@"e_audio_call_avail"] isEqualToString:@"1"]){
+        [appointmentTypePickerArray addObject:@"Audio Call"];
+    }
+    if([[self.entityDetails valueForKey:@"e_direct_cons_avail"] isEqualToString:@"1"]){
+        [appointmentTypePickerArray addObject:@"Direct Appointment"];
+    }
+    if([[self.entityDetails valueForKey:@"e_text_chat_avail"] isEqualToString:@"1"]){
+        [appointmentTypePickerArray addObject:@"Text Chat"];
+    }
+    if([[self.entityDetails valueForKey:@"e_video_call_avail"] isEqualToString:@"1"]){
+        [appointmentTypePickerArray addObject:@"Video Call"];
+    }
     selectedAppointmwnttype = 0;
     selectedappointmenttypeString = [appointmentTypePickerArray objectAtIndex:0];
     appointmentTypePickerView = [[UIPickerView alloc] init];

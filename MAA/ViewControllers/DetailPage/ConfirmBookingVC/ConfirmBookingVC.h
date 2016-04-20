@@ -21,5 +21,5 @@
 @property (nonatomic, strong) NSString *locationString;
 @property (nonatomic, strong) NSString *timeSlotId;
 @property (nonatomic, strong) NSString *entityIdString;
-
+@property (nonatomic, strong) id entityDetails;
 @end

@@ -24,5 +24,6 @@
 @property (nonatomic, strong) id locationDetails;
 @property (weak, nonatomic) IBOutlet UIView *noResultsView;
 @property (weak, nonatomic) IBOutlet UIButton *locationButton;
+@property (nonatomic, strong) id entityDetails;
 
 @end

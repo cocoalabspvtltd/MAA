@@ -397,7 +397,8 @@
     takeAppointmentVC.isfromClinic = NO;
     takeAppointmentVC.headingString = [self.entityDetails valueForKey:@"name"];
     takeAppointmentVC.profileImageUrlString = [self.entityDetails valueForKey:@"logo_image"];
-    takeAppointmentVC.locationDetails = self.doctorFirstClinicDetails;;
+    takeAppointmentVC.locationDetails = self.doctorFirstClinicDetails;
+    takeAppointmentVC.entityDetails = self.entityDetails;
     [self.navigationController pushViewController:takeAppointmentVC animated:YES];
 }
 - (IBAction)facebookButtonAction:(UIButton *)sender {
