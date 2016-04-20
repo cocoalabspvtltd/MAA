@@ -303,6 +303,7 @@
 		C0C2B2021CC7D7E600C1DF5A /* MessageComposerView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B1FF1CC7D7E600C1DF5A /* MessageComposerView.m */; };
 		C0C2B2031CC7D7E600C1DF5A /* newTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B2011CC7D7E600C1DF5A /* newTableViewController.m */; };
 		C0C2B2061CC7D91600C1DF5A /* markasFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B2051CC7D91600C1DF5A /* markasFinishedViewController.m */; };
+		C0C2B20A1CC7E1E300C1DF5A /* bg-blurred.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0C2B2091CC7E1E300C1DF5A /* bg-blurred.jpg */; };
 		C0C5CF961CC5508C005A6170 /* ConfirmBookingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
 		C0CABC661C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CABC611C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m */; };
@@ -797,6 +798,7 @@
 		C0C2B2041CC7D91600C1DF5A /* markasFinishedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = markasFinishedViewController.h; sourceTree = "<group>"; };
 		C0C2B2051CC7D91600C1DF5A /* markasFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = markasFinishedViewController.m; sourceTree = "<group>"; };
 		C0C2B2071CC7D93B00C1DF5A /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
+		C0C2B2091CC7E1E300C1DF5A /* bg-blurred.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-blurred.jpg"; sourceTree = "<group>"; };
 		C0C5CF941CC5508C005A6170 /* ConfirmBookingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmBookingVC.h; sourceTree = "<group>"; };
 		C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmBookingVC.m; sourceTree = "<group>"; };
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -1130,6 +1132,7 @@
 		9F5F0C061C664EDA00F7E99D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C0C2B2081CC7E1E300C1DF5A /* VideoCall */,
 				C04EC3F61CC1525C00470A74 /* Settings */,
 				C04EC3AB1CC1499D00470A74 /* TabbarIcons */,
 				C09F2C051C9C69C900DB040C /* NoResult */,
@@ -2231,6 +2234,14 @@
 			path = VideoCall;
 			sourceTree = "<group>";
 		};
+		C0C2B2081CC7E1E300C1DF5A /* VideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				C0C2B2091CC7E1E300C1DF5A /* bg-blurred.jpg */,
+			);
+			path = VideoCall;
+			sourceTree = "<group>";
+		};
 		C0C5CF8E1CC5505F005A6170 /* ConfirmBookingVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2716,6 +2727,7 @@
 				C04EC3DB1CC14D0300470A74 /* QUESTIONGREY@3x.png in Resources */,
 				C09EF6E71C76211800806600 /* OTAudioBus.html in Resources */,
 				C04EC3C31CC149ED00470A74 /* calendarGREY@2x.png in Resources */,
+				C0C2B20A1CC7E1E300C1DF5A /* bg-blurred.jpg in Resources */,
 				C09EF6C31C76211800806600 /* OTStream.html in Resources */,
 				C09EF6F01C76211800806600 /* OTSubscriberKitNetworkStatsDelegate.html in Resources */,
 				C0BCBB631C59405D003F7872 /* angle-down.png in Resources */,
