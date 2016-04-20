@@ -6,6 +6,9 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#define typeIdkey @"typeId"
+#define typeNamekey @"typeName"
+
 #import "ConfirmBookingVC.h"
 #import "PaymentPageViewController.h"
 
@@ -39,19 +42,31 @@
     NSLog(@"EntityDetails:%@",self.entityDetails);
     appointmentTypePickerArray = [[NSMutableArray alloc] init];
     if([[self.entityDetails valueForKey:@"e_audio_call_avail"] isEqualToString:@"1"]){
-        [appointmentTypePickerArray addObject:@"Audio Call"];
+        NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] init];
+        [dataDictionary setValue:@"Audio Call" forKey:typeNamekey];
+        [dataDictionary setValue:@"3" forKey:typeIdkey];
+        [appointmentTypePickerArray addObject:dataDictionary];
     }
     if([[self.entityDetails valueForKey:@"e_direct_cons_avail"] isEqualToString:@"1"]){
-        [appointmentTypePickerArray addObject:@"Direct Appointment"];
+        NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] init];
+        [dataDictionary setValue:@"Direct Appointment" forKey:typeNamekey];
+        [dataDictionary setValue:@"1" forKey:typeIdkey];
+        [appointmentTypePickerArray addObject:dataDictionary];
     }
     if([[self.entityDetails valueForKey:@"e_text_chat_avail"] isEqualToString:@"1"]){
-        [appointmentTypePickerArray addObject:@"Text Chat"];
+        NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] init];
+        [dataDictionary setValue:@"Text Chat" forKey:typeNamekey];
+        [dataDictionary setValue:@"2" forKey:typeIdkey];
+        [appointmentTypePickerArray addObject:dataDictionary];
     }
     if([[self.entityDetails valueForKey:@"e_video_call_avail"] isEqualToString:@"1"]){
-        [appointmentTypePickerArray addObject:@"Video Call"];
+        NSMutableDictionary *dataDictionary = [[NSMutableDictionary alloc] init];
+        [dataDictionary setValue:@"Video Call" forKey:typeNamekey];
+        [dataDictionary setValue:@"4" forKey:typeIdkey];
+        [appointmentTypePickerArray addObject:dataDictionary];
     }
     selectedAppointmwnttype = 0;
-    selectedappointmenttypeString = [appointmentTypePickerArray objectAtIndex:0];
+    selectedappointmenttypeString = [[appointmentTypePickerArray objectAtIndex:0] valueForKey:typeNamekey];
     appointmentTypePickerView = [[UIPickerView alloc] init];
     appointmentTypePickerView.dataSource = self;
     appointmentTypePickerView.delegate = self;
@@ -100,7 +115,7 @@
     
     
     if (pickerView ==appointmentTypePickerView) {
-        return appointmentTypePickerArray[row];
+        return [appointmentTypePickerArray[row] valueForKey:typeNamekey];
         
     }
     return @"a";
@@ -113,15 +128,15 @@
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
     if (pickerView ==appointmentTypePickerView) {
-        selectedAppointmwnttype = row+1;
-        selectedappointmenttypeString = appointmentTypePickerArray[row];
+        selectedAppointmwnttype = [[[appointmentTypePickerArray objectAtIndex:row] valueForKey:typeIdkey] integerValue];;
+        selectedappointmenttypeString = [appointmentTypePickerArray[row] valueForKey:typeNamekey];
     }
 }
 
 #pragma mark - Text Field Delegate
 -(void)textFieldDidBeginEditing:(UITextField *)textField{
-    if([selectedappointmenttypeString isEqualToString:[appointmentTypePickerArray objectAtIndex:0]]){
-        selectedAppointmwnttype = 1;
+    if([selectedappointmenttypeString isEqualToString:[[appointmentTypePickerArray objectAtIndex:0] valueForKey:typeNamekey]]){
+        selectedAppointmwnttype = [[[appointmentTypePickerArray objectAtIndex:0] valueForKey:typeIdkey] integerValue];
     }
 }
 
