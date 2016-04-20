@@ -74,11 +74,11 @@
     
    // UIImageView* animatedImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
 
-    _apple.animationImages = [NSArray arrayWithObjects:
-                                         [UIImage imageNamed:@"a.gif"],[UIImage imageNamed:@"b.gif"],[UIImage imageNamed:@"c.gif"],[UIImage imageNamed:@"d.gif"],[UIImage imageNamed:@"e.gif"],[UIImage imageNamed:@"f.gif"],[UIImage imageNamed:@"g.gif"],[UIImage imageNamed:@"h.gif"],[UIImage imageNamed:@"i.gif"],[UIImage imageNamed:@"j.gif"],[UIImage imageNamed:@"k.gif"],[UIImage imageNamed:@"l.gif"],[UIImage imageNamed:@"m.gif"],[UIImage imageNamed:@"n.gif"],[UIImage imageNamed:@"o.gif"],[UIImage imageNamed:@"p.gif"],[UIImage imageNamed:@"q.gif"],[UIImage imageNamed:@"r.gif"],[UIImage imageNamed:@"s.gif"],[UIImage imageNamed:@"t.gif"],[UIImage imageNamed:@"u.gif"],[UIImage imageNamed:@"v.gif"],[UIImage imageNamed:@"w.gif"],[UIImage imageNamed:@"x.gif"],[UIImage imageNamed:@"y.gif"],[UIImage imageNamed:@"z.gif"],[UIImage imageNamed:@"aa.gif"],[UIImage imageNamed:@"bb.gif"],[UIImage imageNamed:@"cc.gif"],[UIImage imageNamed:@"dd.gif"],nil];
-   _apple.animationDuration = 1.0f;
-    _apple.animationRepeatCount = 0;
-    [_apple startAnimating];
+//    _apple.animationImages = [NSArray arrayWithObjects:
+//                                         [UIImage imageNamed:@"a.gif"],[UIImage imageNamed:@"b.gif"],[UIImage imageNamed:@"c.gif"],[UIImage imageNamed:@"d.gif"],[UIImage imageNamed:@"e.gif"],[UIImage imageNamed:@"f.gif"],[UIImage imageNamed:@"g.gif"],[UIImage imageNamed:@"h.gif"],[UIImage imageNamed:@"i.gif"],[UIImage imageNamed:@"j.gif"],[UIImage imageNamed:@"k.gif"],[UIImage imageNamed:@"l.gif"],[UIImage imageNamed:@"m.gif"],[UIImage imageNamed:@"n.gif"],[UIImage imageNamed:@"o.gif"],[UIImage imageNamed:@"p.gif"],[UIImage imageNamed:@"q.gif"],[UIImage imageNamed:@"r.gif"],[UIImage imageNamed:@"s.gif"],[UIImage imageNamed:@"t.gif"],[UIImage imageNamed:@"u.gif"],[UIImage imageNamed:@"v.gif"],[UIImage imageNamed:@"w.gif"],[UIImage imageNamed:@"x.gif"],[UIImage imageNamed:@"y.gif"],[UIImage imageNamed:@"z.gif"],[UIImage imageNamed:@"aa.gif"],[UIImage imageNamed:@"bb.gif"],[UIImage imageNamed:@"cc.gif"],[UIImage imageNamed:@"dd.gif"],nil];
+//   _apple.animationDuration = 1.0f;
+//    _apple.animationRepeatCount = 0;
+//    [_apple startAnimating];
     //[self.view addSubview: _apple];
     _docImage.clipsToBounds = YES;
     [self setRoundedView:_docImage toDiameter:50.0];
@@ -97,7 +97,7 @@
 }
 
 -(void)apiCall{
-    NSString *yurl = @"http://freemaart.com/dev/my_maa/api/get_appointment_session";
+    NSString *yurl = @"http://freemaart.com/dev/my_maa/api/start_appointment";
     NSMutableDictionary *searchMutableDictionary = [[NSMutableDictionary alloc] init];
     [searchMutableDictionary setValue:_appID forKey:@"appointment_id"];
     
@@ -187,7 +187,7 @@
     NSLog(@"%@%@%@",_token,_sessionId,x);
     
     
-   _apiKey = @"45535562";
+   _apiKey = @"45567942";
 //    _token = @"T1==cGFydG5lcl9pZD00NTQ0NjA4MiZzaWc9ZTg4NjZiN2RmNTBkMDJkNTExMTk0ZDUxMzkwZTgyODQ3NjVkZTViNjpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTFfTVg0ME5UUTBOakE0TW41LU1UUTFNRGt6TVRVM01EVXdOSDV5Wmt0b1JrUkdUbGx4VTJsblVqVlJNa3ByWnpkNk1pdC1VSDQmY3JlYXRlX3RpbWU9MTQ1MDkzMTY1MiZub25jZT0wLjgwMDkyNzgzMDAzNTc5ODcmZXhwaXJlX3RpbWU9MTQ1MzUyMzUzOSZjb25uZWN0aW9uX2RhdGE9Y29jb2FsYWJz";
 //    _sessionId = @"1_MX40NTQ0NjA4Mn5-MTQ1MDkzMTU3MDUwNH5yZktoRkRGTllxU2lnUjVRMkprZzd6Mit-UH4";
 //    

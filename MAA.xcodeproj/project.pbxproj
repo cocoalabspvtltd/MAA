@@ -304,6 +304,10 @@
 		C0C2B2031CC7D7E600C1DF5A /* newTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B2011CC7D7E600C1DF5A /* newTableViewController.m */; };
 		C0C2B2061CC7D91600C1DF5A /* markasFinishedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B2051CC7D91600C1DF5A /* markasFinishedViewController.m */; };
 		C0C2B20A1CC7E1E300C1DF5A /* bg-blurred.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0C2B2091CC7E1E300C1DF5A /* bg-blurred.jpg */; };
+		C0C2B20C1CC7F2EF00C1DF5A /* chat.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0C2B20B1CC7F2EF00C1DF5A /* chat.xib */; };
+		C0C2B2101CC7FD8000C1DF5A /* Docimageloading.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C2B20D1CC7FD8000C1DF5A /* Docimageloading.png */; };
+		C0C2B2111CC7FD8000C1DF5A /* Docimageloading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C2B20E1CC7FD8000C1DF5A /* Docimageloading@2x.png */; };
+		C0C2B2121CC7FD8000C1DF5A /* Docimageloading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C0C2B20F1CC7FD8000C1DF5A /* Docimageloading@3x.png */; };
 		C0C5CF961CC5508C005A6170 /* ConfirmBookingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
 		C0CABC661C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CABC611C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m */; };
@@ -799,6 +803,10 @@
 		C0C2B2051CC7D91600C1DF5A /* markasFinishedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = markasFinishedViewController.m; sourceTree = "<group>"; };
 		C0C2B2071CC7D93B00C1DF5A /* Config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		C0C2B2091CC7E1E300C1DF5A /* bg-blurred.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-blurred.jpg"; sourceTree = "<group>"; };
+		C0C2B20B1CC7F2EF00C1DF5A /* chat.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = chat.xib; sourceTree = "<group>"; };
+		C0C2B20D1CC7FD8000C1DF5A /* Docimageloading.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Docimageloading.png; sourceTree = "<group>"; };
+		C0C2B20E1CC7FD8000C1DF5A /* Docimageloading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Docimageloading@2x.png"; sourceTree = "<group>"; };
+		C0C2B20F1CC7FD8000C1DF5A /* Docimageloading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Docimageloading@3x.png"; sourceTree = "<group>"; };
 		C0C5CF941CC5508C005A6170 /* ConfirmBookingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmBookingVC.h; sourceTree = "<group>"; };
 		C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmBookingVC.m; sourceTree = "<group>"; };
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -1775,6 +1783,9 @@
 		C092EC051C80B80200F7B18B /* ImageLoad */ = {
 			isa = PBXGroup;
 			children = (
+				C0C2B20D1CC7FD8000C1DF5A /* Docimageloading.png */,
+				C0C2B20E1CC7FD8000C1DF5A /* Docimageloading@2x.png */,
+				C0C2B20F1CC7FD8000C1DF5A /* Docimageloading@3x.png */,
 				C092EC0C1C80B86000F7B18B /* loadingImage.png */,
 				C092EC0D1C80B86000F7B18B /* loadingImage@2x.png */,
 				C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */,
@@ -2211,6 +2222,7 @@
 		C0C2B1E61CC7D60900C1DF5A /* VideoCall */ = {
 			isa = PBXGroup;
 			children = (
+				C0C2B20B1CC7F2EF00C1DF5A /* chat.xib */,
 				C0C2B2071CC7D93B00C1DF5A /* Config.h */,
 				C0C2B2041CC7D91600C1DF5A /* markasFinishedViewController.h */,
 				C0C2B2051CC7D91600C1DF5A /* markasFinishedViewController.m */,
@@ -2665,7 +2677,9 @@
 				C09EF6E31C76211800806600 /* library_background.png in Resources */,
 				C04EC3D61CC14D0300470A74 /* question.png in Resources */,
 				C05AE2041CC68436003AF9CB /* searchred@3x.png in Resources */,
+				C0C2B2121CC7FD8000C1DF5A /* Docimageloading@3x.png in Resources */,
 				C0CABC7A1C8AE752009F9470 /* unchecked-gray@2x.png in Resources */,
+				C0C2B2111CC7FD8000C1DF5A /* Docimageloading@2x.png in Resources */,
 				C00B69661CBFC0230081EF68 /* invoiceCell.xib in Resources */,
 				C09EF6E41C76211800806600 /* title_background.png in Resources */,
 				C04EC3CF1CC14BD200470A74 /* homeGREY@3x.png in Resources */,
@@ -2689,6 +2703,7 @@
 				C09EF6F11C76211800806600 /* OTVideoCapture.html in Resources */,
 				C09EF6E11C76211800806600 /* disclosure.png in Resources */,
 				C09EF6F21C76211800806600 /* OTVideoCaptureConsumer.html in Resources */,
+				C0C2B20C1CC7F2EF00C1DF5A /* chat.xib in Resources */,
 				C05AE2021CC68436003AF9CB /* searchred.png in Resources */,
 				C04EC4021CC153F100470A74 /* aboutred@3x.png in Resources */,
 				C0BBC4AE1C6E5B8E005083B1 /* audio-black.png in Resources */,
@@ -2795,6 +2810,7 @@
 				C09EF6C61C76211800806600 /* OTSubscriberKitAudioNetworkStats.html in Resources */,
 				C04EC3FA1CC1525C00470A74 /* logout.png in Resources */,
 				55EAC8461C0A09CE00F31280 /* field__white_box2@2x.png in Resources */,
+				C0C2B2101CC7FD8000C1DF5A /* Docimageloading.png in Resources */,
 				C09EF6CA1C76211800806600 /* OTCameraCaptureFrameRate.html in Resources */,
 				C0CABC791C8AE752009F9470 /* unchecked-gray.png in Resources */,
 				7CF40FE91C1D77610020EE33 /* block1@2x.png in Resources */,

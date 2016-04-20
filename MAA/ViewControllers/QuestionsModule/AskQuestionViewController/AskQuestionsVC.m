@@ -105,7 +105,7 @@
     self.selectedCategoryId = [selectedCategoryDetails valueForKey:@"id"];
     [self.chooseCategoryButton setTitle:[selectedCategoryDetails valueForKey:@"name"] forState:UIControlStateNormal];
     NSString *imageUrlString = [selectedCategoryDetails valueForKey:@"logo_image"];
-    [self.categoryImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    [self.categoryImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageForDocumentLoading]];
 }
 
 #pragma mark - Text field Delegate

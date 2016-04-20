@@ -120,7 +120,7 @@
         cell = (InvoiceTableViewCell *)[nib objectAtIndex:0];
     }
     cell.doctorNameLabel.text = [[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"treator_name"];
-    [cell.invoiceImageView sd_setImageWithURL:[[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"treator_image"] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    [cell.invoiceImageView sd_setImageWithURL:[[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"treator_image"] placeholderImage:[UIImage imageNamed:PlaceholderImageForDocumentLoading]];
     cell.amountLabel.text = [[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"amount"];
     cell.dateLabel.text = [[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"date"];
     cell.timeLabel.text = [[self.invoiceMutableArray objectAtIndex:indexPath.row] valueForKey:@"time"];

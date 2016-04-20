@@ -39,7 +39,7 @@
     CategoryCell *cell = [self.tblCategories dequeueReusableCellWithIdentifier:@"categoryReusableCell" forIndexPath:indexPath];
     cell.lblcatName.text = [[self.categoriesArray objectAtIndex:indexPath.row] valueForKey:@"name"];
     NSString *imageUrlString = [[self.categoriesArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"];
-    [cell.categoryImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    [cell.categoryImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageForDocumentLoading]];
     return cell;
 }
 

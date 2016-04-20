@@ -42,6 +42,7 @@ static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen"
 
 #pragma mark - Image Identifiers
 #define PlaceholderImageNameForUser @"loadingImage"
+#define PlaceholderImageForDocumentLoading @"Docimageloading"
 #define MedicalRegistratioCertificateIdentifier @"MedicalRegistrationCertificateidentifier"
 #define MedicalDegreeCertificateidentifier @"MedicalDegreeCertificateidentifier"
 #define GovernmentIdCertifiateIdentifier @"GovernmentIdCertificateIdentifier"
