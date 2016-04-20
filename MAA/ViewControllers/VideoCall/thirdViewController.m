@@ -8,7 +8,7 @@
 
 #import "thirdViewController.h"
 #import "markasFinishedViewController.h"
-#import "AppointmentsDocsViewController.h"
+//#import "AppointmentsDocsViewController.h"
 
 @interface thirdViewController ()
 
@@ -58,7 +58,7 @@
     
 }
 -(void)apiCall{
-    NSString *yurl = @"http://freemaart.com/dev/my_maa/api/get_appointment_session";
+    NSString *yurl = @"http://freemaart.com/dev/my_maa/api/start_appointment";
     NSMutableDictionary *searchMutableDictionary = [[NSMutableDictionary alloc] init];
     [searchMutableDictionary setValue:_appID forKey:@"appointment_id"];
     
@@ -552,15 +552,15 @@ didFailWithError:(OTError*)error
 }
 -(void)subscriberDidDisconnectFromStream:(OTSubscriberKit *)subscriber
 {
-    UIAlertController *ctr = [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Call disconnected" preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *act = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        AppointmentsDocsViewController *resetOTPPage = (AppointmentsDocsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"appoint"];
-        [self.navigationController pushViewController:resetOTPPage animated:YES];    }];
-    UIAlertAction *Act2 = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil];
-    [ctr addAction:act];
-    [ctr addAction:Act2];
-    [self presentViewController:ctr animated:YES completion:nil];
+//    UIAlertController *ctr = [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Call disconnected" preferredStyle:UIAlertControllerStyleActionSheet];
+//    UIAlertAction *act = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        AppointmentsDocsViewController *resetOTPPage = (AppointmentsDocsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"appoint"];
+//        [self.navigationController pushViewController:resetOTPPage animated:YES];    }];
+//    UIAlertAction *Act2 = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil];
+//    [ctr addAction:act];
+//    [ctr addAction:Act2];
+//    [self presentViewController:ctr animated:YES completion:nil];
     
 }
 

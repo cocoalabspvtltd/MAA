@@ -18,6 +18,7 @@
 #import "Invoicepopup.h"
 #import "MedicalDocumentsVC.h"
 #import "AppoinmentDetailVC.h"
+#import "Video_permissionViewController.h"
 
 #import "PreviousAppoinmentCell.h"
 
@@ -39,6 +40,7 @@
 @property (nonatomic, strong) NSString *timeStampString;
 @property (nonatomic, strong) NSString *cancelDurationString;
 @property (nonatomic, assign) BOOL whetherTimerStop;
+@property (nonatomic, strong)  NSString *docctorProfileUrlString;
 @end
 
 @implementation AppoinmentDetailVC
@@ -178,8 +180,8 @@
 
 -(void)settingDoctorDetailsWithDictionary:(id)doctorDetails{
     self.doctorNameLabel.text = [doctorDetails valueForKey:@"name"];
-    NSString *docctorProfileUrlString = [doctorDetails valueForKey:@"logo_image"];
-    [self.doctorImageView sd_setImageWithURL:[NSURL URLWithString:docctorProfileUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+    self.docctorProfileUrlString = [doctorDetails valueForKey:@"logo_image"];
+    [self.doctorImageView sd_setImageWithURL:[NSURL URLWithString:self.docctorProfileUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
 }
 
 
@@ -198,12 +200,12 @@
     }
     else if ([typeString isEqualToString:@"3"]){
         self.appointmentTypeimageview.image = [UIImage imageNamed:@"audio-black"];
-        self.appontmentTypeLabel.text = @"Audio Call";
+        self.appontmentTypeLabel.text = @"Audio Chat";
         self.chatHistoryButton.hidden = YES;
     }
     else if ([typeString isEqualToString:@"4"]){
         self.appointmentTypeimageview.image = [UIImage imageNamed:@"video-black"];
-        self.appontmentTypeLabel.text = @"Video Call";
+        self.appontmentTypeLabel.text = @"Video Chat";
         self.chatHistoryButton.hidden = YES;
     }
 }
@@ -378,16 +380,19 @@
     NSString *buttonTitle = sender.titleLabel.text;
     NSLog(@"Button Title:%@",buttonTitle);
     if([buttonTitle isEqualToString:CancelAppointmentTitleString]){
-      [self methodForCancelAppointment];
+      //[self methodForCancelAppointment];
+      [self addingSTartAppointmentviewController];
     }
     else if ([buttonTitle isEqualToString:PrescriptonstitltString]){
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
-        MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
-        medicalDocumentsVC.isFromPrescriptions = YES;
-        [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
+        [self addingSTartAppointmentviewController];
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+//        MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
+//        medicalDocumentsVC.isFromPrescriptions = YES;
+//        [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
     }
     else if ([buttonTitle isEqualToString:StartAppointmentitleString]){
-        [self callingStartAppointmentApi];
+        [self addingSTartAppointmentviewController];
+       // [self callingStartAppointmentApi];
     }
     // [self intialisingPayUmoneyParametes];
     
@@ -449,6 +454,18 @@
 
 }
 
+-(void)addingSTartAppointmentviewController{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    Video_permissionViewController *resetOTPPage = (Video_permissionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"chat_permission"];
+    resetOTPPage.appID = self.appointmentIdString;
+    resetOTPPage.type = _appontmentTypeLabel.text;
+    resetOTPPage.namee = self.doctorNameLabel.text;
+    resetOTPPage.imagee = [NSURL URLWithString:self.docctorProfileUrlString];
+    //duration =_receivingArray[16];
+    resetOTPPage.duration = @"10";
+    [self.navigationController pushViewController:resetOTPPage animated:YES];
+}
+
 -(void)callingStartAppointmentApi{
     NSString *accessToken = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSLog(@"Access Token:%@",accessToken);
@@ -492,6 +509,7 @@
 -(void)performActionAfterAppointmentStartApiWithResponseDetails:(id)appointmentDetails{
     NSLog(@"Appointment Details:%@",appointmentDetails);
 }
+
 
 #pragma mark - Initialising Payu money parameters
 

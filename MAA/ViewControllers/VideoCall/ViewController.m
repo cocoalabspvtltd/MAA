@@ -7,7 +7,7 @@
 
 #import "ViewController.h"
 #import <OpenTok/OpenTok.h>
-#import "AppointmentsDocsViewController.h"
+//#import "AppointmentsDocsViewController.h"
 
 
 @interface ViewController ()
@@ -572,15 +572,15 @@ didFailWithError:(OTError*)error
 
 -(void)subscriberDidDisconnectFromStream:(OTSubscriberKit *)subscriber
 {
-    UIAlertController *ctr = [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Call disconnected" preferredStyle:UIAlertControllerStyleActionSheet];
-    UIAlertAction *act = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        AppointmentsDocsViewController *resetOTPPage = (AppointmentsDocsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"appoint"];
-        [self.navigationController pushViewController:resetOTPPage animated:YES];    }];
-    UIAlertAction *Act2 = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil];
-    [ctr addAction:act];
-    [ctr addAction:Act2];
-    [self presentViewController:ctr animated:YES completion:nil];
+//    UIAlertController *ctr = [UIAlertController alertControllerWithTitle:@"Alert!!" message:@"Call disconnected" preferredStyle:UIAlertControllerStyleActionSheet];
+//    UIAlertAction *act = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//        AppointmentsDocsViewController *resetOTPPage = (AppointmentsDocsViewController *)[storyboard instantiateViewControllerWithIdentifier:@"appoint"];
+//        [self.navigationController pushViewController:resetOTPPage animated:YES];    }];
+//    UIAlertAction *Act2 = [UIAlertAction actionWithTitle:@"cancel" style:UIAlertActionStyleCancel handler:nil];
+//    [ctr addAction:act];
+//    [ctr addAction:Act2];
+//    [self presentViewController:ctr animated:YES completion:nil];
 
 }
 
