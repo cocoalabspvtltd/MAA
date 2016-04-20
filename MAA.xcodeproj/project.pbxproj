@@ -294,6 +294,12 @@
 		C0BE97B91C24870D0037E328 /* libCLFacebookHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97A51C2485C40037E328 /* libCLFacebookHandler.a */; };
 		C0BE97BD1C2487250037E328 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */; };
 		C0BE97BE1C2487250037E328 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */; };
+		C0C2B1F31CC7D60900C1DF5A /* fourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B1E81CC7D60900C1DF5A /* fourthViewController.m */; };
+		C0C2B1F41CC7D60900C1DF5A /* secondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B1EA1CC7D60900C1DF5A /* secondViewController.m */; };
+		C0C2B1F51CC7D60900C1DF5A /* thirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B1EC1CC7D60900C1DF5A /* thirdViewController.m */; };
+		C0C2B1F61CC7D60900C1DF5A /* Video_permissionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B1EE1CC7D60900C1DF5A /* Video_permissionViewController.m */; };
+		C0C2B1F71CC7D60900C1DF5A /* Video_ringingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B1F01CC7D60900C1DF5A /* Video_ringingViewController.m */; };
+		C0C2B1F81CC7D60900C1DF5A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C2B1F21CC7D60900C1DF5A /* ViewController.m */; };
 		C0C5CF961CC5508C005A6170 /* ConfirmBookingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */; };
 		C0C78D561C68F00E002A534A /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0C78D551C68F00E002A534A /* TabBarViewController.m */; };
 		C0CABC661C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = C0CABC611C8A8971009F9470 /* TPKeyboardAvoidingCollectionView.m */; };
@@ -769,6 +775,18 @@
 		C0BE97AA1C24862D0037E328 /* CLToolKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CLToolKit.xcodeproj; path = CLToolKit/CLToolKit.xcodeproj; sourceTree = "<group>"; };
 		C0BE97BB1C2487250037E328 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = MAA/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		C0BE97BC1C2487250037E328 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = MAA/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		C0C2B1E71CC7D60900C1DF5A /* fourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fourthViewController.h; sourceTree = "<group>"; };
+		C0C2B1E81CC7D60900C1DF5A /* fourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fourthViewController.m; sourceTree = "<group>"; };
+		C0C2B1E91CC7D60900C1DF5A /* secondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = secondViewController.h; sourceTree = "<group>"; };
+		C0C2B1EA1CC7D60900C1DF5A /* secondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = secondViewController.m; sourceTree = "<group>"; };
+		C0C2B1EB1CC7D60900C1DF5A /* thirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = thirdViewController.h; sourceTree = "<group>"; };
+		C0C2B1EC1CC7D60900C1DF5A /* thirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = thirdViewController.m; sourceTree = "<group>"; };
+		C0C2B1ED1CC7D60900C1DF5A /* Video_permissionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video_permissionViewController.h; sourceTree = "<group>"; };
+		C0C2B1EE1CC7D60900C1DF5A /* Video_permissionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video_permissionViewController.m; sourceTree = "<group>"; };
+		C0C2B1EF1CC7D60900C1DF5A /* Video_ringingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Video_ringingViewController.h; sourceTree = "<group>"; };
+		C0C2B1F01CC7D60900C1DF5A /* Video_ringingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Video_ringingViewController.m; sourceTree = "<group>"; };
+		C0C2B1F11CC7D60900C1DF5A /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C0C2B1F21CC7D60900C1DF5A /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C0C5CF941CC5508C005A6170 /* ConfirmBookingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfirmBookingVC.h; sourceTree = "<group>"; };
 		C0C5CF951CC5508C005A6170 /* ConfirmBookingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfirmBookingVC.m; sourceTree = "<group>"; };
 		C0C78D541C68F00E002A534A /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -1052,6 +1070,7 @@
 		9F2B0E0F1C65DFBF0053D023 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				C0C2B1E61CC7D60900C1DF5A /* VideoCall */,
 				C01C23C61CA19D9F00279A17 /* DetailPage */,
 				C0D157EE1C9B134700FC1DE0 /* HomeTab */,
 				C0D157F81C9B134700FC1DE0 /* SearchTab */,
@@ -2176,6 +2195,25 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		C0C2B1E61CC7D60900C1DF5A /* VideoCall */ = {
+			isa = PBXGroup;
+			children = (
+				C0C2B1E71CC7D60900C1DF5A /* fourthViewController.h */,
+				C0C2B1E81CC7D60900C1DF5A /* fourthViewController.m */,
+				C0C2B1E91CC7D60900C1DF5A /* secondViewController.h */,
+				C0C2B1EA1CC7D60900C1DF5A /* secondViewController.m */,
+				C0C2B1EB1CC7D60900C1DF5A /* thirdViewController.h */,
+				C0C2B1EC1CC7D60900C1DF5A /* thirdViewController.m */,
+				C0C2B1ED1CC7D60900C1DF5A /* Video_permissionViewController.h */,
+				C0C2B1EE1CC7D60900C1DF5A /* Video_permissionViewController.m */,
+				C0C2B1EF1CC7D60900C1DF5A /* Video_ringingViewController.h */,
+				C0C2B1F01CC7D60900C1DF5A /* Video_ringingViewController.m */,
+				C0C2B1F11CC7D60900C1DF5A /* ViewController.h */,
+				C0C2B1F21CC7D60900C1DF5A /* ViewController.m */,
+			);
+			path = VideoCall;
+			sourceTree = "<group>";
+		};
 		C0C5CF8E1CC5505F005A6170 /* ConfirmBookingVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -2792,6 +2830,7 @@
 				9F5F0C6C1C6668FF00F7E99D /* PerescriptionsTVC.m in Sources */,
 				C0BBC4931C6E2BED005083B1 /* AppoinmentsDocs.m in Sources */,
 				C092EBFB1C80B1E000F7B18B /* SDWebImageManager.m in Sources */,
+				C0C2B1F61CC7D60900C1DF5A /* Video_permissionViewController.m in Sources */,
 				C08437FC1C6F019600610ADC /* AskQuestionsVC.m in Sources */,
 				9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */,
 				C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */,
@@ -2799,6 +2838,7 @@
 				C0D157FD1C9B134700FC1DE0 /* SearchFilterVC.m in Sources */,
 				C09EF6F71C76211800806600 /* README.md in Sources */,
 				9F5F0C6B1C6668FF00F7E99D /* MedicalDocumantsCVC.m in Sources */,
+				C0C2B1F71CC7D60900C1DF5A /* Video_ringingViewController.m in Sources */,
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
 				9F5F0C231C66551A00F7E99D /* PhotoGridViewController.m in Sources */,
 				C094F8141C986A0D00C73FE9 /* CategoryCell.m in Sources */,
@@ -2814,6 +2854,8 @@
 				C00B695C1CBF54270081EF68 /* WebViewController.m in Sources */,
 				9F5F0C281C6655AB00F7E99D /* PhotogridCollectionViewCell.m in Sources */,
 				C0BBC4971C6E2C5E005083B1 /* AppoinmentDetailVC.m in Sources */,
+				C0C2B1F41CC7D60900C1DF5A /* secondViewController.m in Sources */,
+				C0C2B1F51CC7D60900C1DF5A /* thirdViewController.m in Sources */,
 				9F5F0C561C66672300F7E99D /* MBProgressHUD.m in Sources */,
 				C0AFCA721CAC2D850026A216 /* DoctorAboutVC.m in Sources */,
 				C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */,
@@ -2884,9 +2926,11 @@
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
 				C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */,
 				9F5F0C301C66589E00F7E99D /* GetGalleryPhotos.m in Sources */,
+				C0C2B1F31CC7D60900C1DF5A /* fourthViewController.m in Sources */,
 				C0D157ED1C9B12C100FC1DE0 /* SearchTVC.m in Sources */,
 				9F9C26AA1C9F40FF00EEC883 /* DoctorAboutDetailVC.m in Sources */,
 				C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */,
+				C0C2B1F81CC7D60900C1DF5A /* ViewController.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */,
 				C092EBFC1C80B1E000F7B18B /* SDWebImagePrefetcher.m in Sources */,
