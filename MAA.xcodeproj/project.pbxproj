@@ -255,6 +255,7 @@
 		C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */; };
 		C0A8312A1C7DE503000A60C9 /* libNetworkHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0A831271C7DE4D6000A60C9 /* libNetworkHandler.a */; };
 		C0A8312E1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A8312D1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m */; };
+		C0AB69C21CC75F330082BC98 /* no invoices.png in Resources */ = {isa = PBXBuildFile; fileRef = C0AB69C11CC75F330082BC98 /* no invoices.png */; };
 		C0AFCA721CAC2D850026A216 /* DoctorAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0AFCA711CAC2D850026A216 /* DoctorAboutVC.m */; };
 		C0B397BC1CB81FD20046E6CA /* timingsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0B397BB1CB81FD20046E6CA /* timingsCell.xib */; };
 		C0B397BF1CB81FE90046E6CA /* TimingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0B397BE1CB81FE90046E6CA /* TimingsTableViewCell.m */; };
@@ -719,6 +720,7 @@
 		C0A831211C7DE4D5000A60C9 /* NetworkHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = NetworkHandler.xcodeproj; sourceTree = "<group>"; };
 		C0A8312C1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsDetailVC.h; sourceTree = "<group>"; };
 		C0A8312D1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicalDocumentsDetailVC.m; sourceTree = "<group>"; };
+		C0AB69C11CC75F330082BC98 /* no invoices.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no invoices.png"; sourceTree = "<group>"; };
 		C0AFCA701CAC2D850026A216 /* DoctorAboutVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutVC.h; sourceTree = "<group>"; };
 		C0AFCA711CAC2D850026A216 /* DoctorAboutVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorAboutVC.m; sourceTree = "<group>"; };
 		C0B397BB1CB81FD20046E6CA /* timingsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = timingsCell.xib; sourceTree = "<group>"; };
@@ -1955,6 +1957,7 @@
 				9F95DB471C9E2FC700F3EB4F /* no locations found.png */,
 				C09F2C0D1C9C6FA800DB040C /* no appoinments.png */,
 				C09F2C061C9C69C900DB040C /* no search result found.png */,
+				C0AB69C11CC75F330082BC98 /* no invoices.png */,
 				C09F2C0F1C9C82F400DB040C /* no questions.png */,
 			);
 			path = NoResult;
@@ -2582,6 +2585,7 @@
 				C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */,
 				C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */,
 				C0CABC771C8AE752009F9470 /* checked-black@2x.png in Resources */,
+				C0AB69C21CC75F330082BC98 /* no invoices.png in Resources */,
 				C09EF6D61C76211800806600 /* _index.scss in Resources */,
 				C09EF6EC1C76211800806600 /* OTSessionDelegate.html in Resources */,
 				C0BBC4BB1C6E5C82005083B1 /* direct-apnt-black@3x (1).png in Resources */,
