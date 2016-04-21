@@ -62,6 +62,10 @@
     
 }
 
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    [self.view endEditing:YES];
+}
+
 #pragma mark - Table view Datasources
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
