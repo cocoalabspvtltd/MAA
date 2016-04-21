@@ -21,5 +21,6 @@
 @property (nonatomic, strong) NSString *locationString;
 @property (nonatomic, strong) NSString *timeSlotId;
 @property (nonatomic, strong) NSString *entityIdString;
+@property (weak, nonatomic) IBOutlet UITextView *txtNotes;
 @property (nonatomic, strong) id entityDetails;
 @end

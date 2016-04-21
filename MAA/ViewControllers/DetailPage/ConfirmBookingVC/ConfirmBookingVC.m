@@ -25,6 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialisation];
+    _appointmentTypetextfield.layer.borderWidth=.5;
+    _appointmentTypetextfield.layer.cornerRadius=5;
+    _appointmentTypetextfield.clipsToBounds=YES;
+    _appointmentTypetextfield.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.275 alpha:1.00]CGColor];
+    _txtNotes.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.275 alpha:1.00]CGColor];
     // Do any additional setup after loading the view.
 }
 
