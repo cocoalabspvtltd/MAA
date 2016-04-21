@@ -72,6 +72,7 @@
 		C017899E1CA2B38F00482EBF /* invoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = C017899D1CA2B38F00482EBF /* invoice.xib */; };
 		C01C23D81CA1A10300279A17 /* ClinicProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23D71CA1A10300279A17 /* ClinicProfVC.m */; };
 		C01C23DB1CA1A11500279A17 /* DoctorProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */; };
+		C02DC4861CC92D2200289AA5 /* dp.png in Resources */ = {isa = PBXBuildFile; fileRef = C02DC4851CC92D2200289AA5 /* dp.png */; };
 		C035D6591CB4D09E0045AD25 /* doc_success.png in Resources */ = {isa = PBXBuildFile; fileRef = C035D6581CB4D09E0045AD25 /* doc_success.png */; };
 		C035E7451C885AA4007809BC /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C035E7441C885AA4007809BC /* line.png */; };
 		C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C381C71B96C00662BB4 /* ViewProfileVC.m */; };
@@ -168,9 +169,6 @@
 		C092EC011C80B1E000F7B18B /* UIImageView+HighlightedWebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C092EBEF1C80B1E000F7B18B /* UIImageView+HighlightedWebCache.m */; };
 		C092EC021C80B1E000F7B18B /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = C092EBF11C80B1E000F7B18B /* UIImageView+WebCache.m */; };
 		C092EC031C80B1E000F7B18B /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C092EBF31C80B1E000F7B18B /* UIView+WebCacheOperation.m */; };
-		C092EC0F1C80B86000F7B18B /* loadingImage.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0C1C80B86000F7B18B /* loadingImage.png */; };
-		C092EC101C80B86000F7B18B /* loadingImage@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0D1C80B86000F7B18B /* loadingImage@2x.png */; };
-		C092EC111C80B86000F7B18B /* loadingImage@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */; };
 		C094F8101C9861D500C73FE9 /* CategoriesList.m in Sources */ = {isa = PBXBuildFile; fileRef = C094F80F1C9861D500C73FE9 /* CategoriesList.m */; };
 		C094F8141C986A0D00C73FE9 /* CategoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C094F8131C986A0D00C73FE9 /* CategoryCell.m */; };
 		C095DB401C81A1140087AA4F /* MyAllergies.m in Sources */ = {isa = PBXBuildFile; fileRef = C095DB3C1C81A1140087AA4F /* MyAllergies.m */; };
@@ -504,6 +502,7 @@
 		C01C23D71CA1A10300279A17 /* ClinicProfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicProfVC.m; sourceTree = "<group>"; };
 		C01C23D91CA1A11500279A17 /* DoctorProfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorProfVC.h; sourceTree = "<group>"; };
 		C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorProfVC.m; sourceTree = "<group>"; };
+		C02DC4851CC92D2200289AA5 /* dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dp.png; sourceTree = "<group>"; };
 		C035D6581CB4D09E0045AD25 /* doc_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doc_success.png; sourceTree = "<group>"; };
 		C035E7441C885AA4007809BC /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		C0447C371C71B96C00662BB4 /* ViewProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileVC.h; sourceTree = "<group>"; };
@@ -637,9 +636,6 @@
 		C092EBF11C80B1E000F7B18B /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		C092EBF21C80B1E000F7B18B /* UIView+WebCacheOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+WebCacheOperation.h"; sourceTree = "<group>"; };
 		C092EBF31C80B1E000F7B18B /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
-		C092EC0C1C80B86000F7B18B /* loadingImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loadingImage.png; sourceTree = "<group>"; };
-		C092EC0D1C80B86000F7B18B /* loadingImage@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadingImage@2x.png"; sourceTree = "<group>"; };
-		C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loadingImage@3x.png"; sourceTree = "<group>"; };
 		C094F80E1C9861D500C73FE9 /* CategoriesList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoriesList.h; sourceTree = "<group>"; };
 		C094F80F1C9861D500C73FE9 /* CategoriesList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoriesList.m; sourceTree = "<group>"; };
 		C094F8121C986A0D00C73FE9 /* CategoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryCell.h; sourceTree = "<group>"; };
@@ -1783,12 +1779,10 @@
 		C092EC051C80B80200F7B18B /* ImageLoad */ = {
 			isa = PBXGroup;
 			children = (
+				C02DC4851CC92D2200289AA5 /* dp.png */,
 				C0C2B20D1CC7FD8000C1DF5A /* Docimageloading.png */,
 				C0C2B20E1CC7FD8000C1DF5A /* Docimageloading@2x.png */,
 				C0C2B20F1CC7FD8000C1DF5A /* Docimageloading@3x.png */,
-				C092EC0C1C80B86000F7B18B /* loadingImage.png */,
-				C092EC0D1C80B86000F7B18B /* loadingImage@2x.png */,
-				C092EC0E1C80B86000F7B18B /* loadingImage@3x.png */,
 			);
 			path = ImageLoad;
 			sourceTree = "<group>";
@@ -2696,7 +2690,6 @@
 				C04EC3BE1CC149E000470A74 /* calendar@2x.png in Resources */,
 				C09EF6D11C76211800806600 /* OTStreamVideoType.html in Resources */,
 				C04EC40E1CC155C600470A74 /* feedback.png in Resources */,
-				C092EC0F1C80B86000F7B18B /* loadingImage.png in Resources */,
 				C04EC3BD1CC149E000470A74 /* calendar.png in Resources */,
 				C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */,
 				C09EF6D01C76211800806600 /* OTSessionErrorCode.html in Resources */,
@@ -2707,6 +2700,7 @@
 				C05AE2021CC68436003AF9CB /* searchred.png in Resources */,
 				C04EC4021CC153F100470A74 /* aboutred@3x.png in Resources */,
 				C0BBC4AE1C6E5B8E005083B1 /* audio-black.png in Resources */,
+				C02DC4861CC92D2200289AA5 /* dp.png in Resources */,
 				C04EC3C11CC149E000470A74 /* calendarGREY@3x.png in Resources */,
 				C09EF6D51C76211800806600 /* OTVideoViewScaleBehavior.html in Resources */,
 				C09EF6D81C76211800806600 /* _normalize.scss in Resources */,
@@ -2735,7 +2729,6 @@
 				C05AE2001CC68436003AF9CB /* search@2x.png in Resources */,
 				C05AE1FF1CC68436003AF9CB /* search.png in Resources */,
 				C065F64B1C8EA71700E25726 /* chatSender.xib in Resources */,
-				C092EC111C80B86000F7B18B /* loadingImage@3x.png in Resources */,
 				9F991C611C5A1C5400F92C11 /* bin.png in Resources */,
 				C09EF6CC1C76211800806600 /* OTPixelFormat.html in Resources */,
 				C095DB471C81B9A80087AA4F /* AllergiesTableViewCell.xib in Resources */,
@@ -2750,7 +2743,6 @@
 				9F95DB501C9E2FD800F3EB4F /* no priscriptions.png in Resources */,
 				C0BBC4B31C6E5B8E005083B1 /* chat-black@3x.png in Resources */,
 				9F991C601C5A1C5400F92C11 /* search.xib in Resources */,
-				C092EC101C80B86000F7B18B /* loadingImage@2x.png in Resources */,
 				C09EF6C01C76211800806600 /* OTPublisher.html in Resources */,
 				C09EF6C41C76211800806600 /* OTSubscriber.html in Resources */,
 				C09EF6DE1C76211800806600 /* style.css in Resources */,
