@@ -44,12 +44,7 @@
     self.imgFloat.layer.cornerRadius = self.imgFloat.frame.size.width / 2;
     self.imgFloat.clipsToBounds = YES;
     [self initialisingHeadingLabeltext];
-    if(self.isFromPrescriptions){
-        [self callingGetPrescriptionsApi];
-    }
-    else{
-        [self callingGetDocumentsApiWithType:self.medicalType];
-    }
+    [self callingGetDocumentsApiWithType:self.medicalType];
    // [self callingImageUploadingApiWithImage:[UIImage imageNamed:@"fc_right"]];
     _AddPopup.hidden=YES;
     _editTitleViewPopup.hidden=YES;
@@ -89,12 +84,6 @@
         self.headingLabel.text = @"Images";
         self.imgNoResults.image = [UIImage imageNamed:NoImagesImageName];
         self.lblNoReults.text = NoImagesLabelETxt;
-    }
-    else if (self.isFromPrescriptions){
-        self.imgFloat.hidden = YES;
-        self.headingLabel.text = @"Prescriptions";
-        self.imgNoResults.image = [UIImage imageNamed:NoPrescriptionsImageName];
-        self.lblNoReults.text = NoPrescriptiondLabelEtxt;
     }
 }
 

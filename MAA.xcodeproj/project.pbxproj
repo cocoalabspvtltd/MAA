@@ -73,6 +73,8 @@
 		C01C23D81CA1A10300279A17 /* ClinicProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23D71CA1A10300279A17 /* ClinicProfVC.m */; };
 		C01C23DB1CA1A11500279A17 /* DoctorProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */; };
 		C02DC4861CC92D2200289AA5 /* dp.png in Resources */ = {isa = PBXBuildFile; fileRef = C02DC4851CC92D2200289AA5 /* dp.png */; };
+		C02DC48A1CC930CF00289AA5 /* PrescriptionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C02DC4891CC930CF00289AA5 /* PrescriptionsVC.m */; };
+		C02DC4921CC93E2500289AA5 /* PrescriptionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C02DC4911CC93E2500289AA5 /* PrescriptionsTVC.m */; };
 		C035D6591CB4D09E0045AD25 /* doc_success.png in Resources */ = {isa = PBXBuildFile; fileRef = C035D6581CB4D09E0045AD25 /* doc_success.png */; };
 		C035E7451C885AA4007809BC /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C035E7441C885AA4007809BC /* line.png */; };
 		C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C381C71B96C00662BB4 /* ViewProfileVC.m */; };
@@ -503,6 +505,10 @@
 		C01C23D91CA1A11500279A17 /* DoctorProfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorProfVC.h; sourceTree = "<group>"; };
 		C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorProfVC.m; sourceTree = "<group>"; };
 		C02DC4851CC92D2200289AA5 /* dp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dp.png; sourceTree = "<group>"; };
+		C02DC4881CC930CF00289AA5 /* PrescriptionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionsVC.h; sourceTree = "<group>"; };
+		C02DC4891CC930CF00289AA5 /* PrescriptionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionsVC.m; sourceTree = "<group>"; };
+		C02DC4901CC93E2500289AA5 /* PrescriptionsTVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionsTVC.h; sourceTree = "<group>"; };
+		C02DC4911CC93E2500289AA5 /* PrescriptionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionsTVC.m; sourceTree = "<group>"; };
 		C035D6581CB4D09E0045AD25 /* doc_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doc_success.png; sourceTree = "<group>"; };
 		C035E7441C885AA4007809BC /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		C0447C371C71B96C00662BB4 /* ViewProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileVC.h; sourceTree = "<group>"; };
@@ -1268,6 +1274,7 @@
 		9F5F0C491C66614200F7E99D /* HealthProfileVC */ = {
 			isa = PBXGroup;
 			children = (
+				C02DC4871CC930AF00289AA5 /* Prescriptions */,
 				C095DB3A1C81A1140087AA4F /* AllergiesVC */,
 				C095DB3D1C81A1140087AA4F /* MyHealthProfileVC */,
 				C0A8312B1C7E0F6F000A60C9 /* MedicalDocumentsDetailVC */,
@@ -1297,6 +1304,7 @@
 		9F5F0C5B1C66676B00F7E99D /* SettingsModuleCells */ = {
 			isa = PBXGroup;
 			children = (
+				C02DC48F1CC93E2500289AA5 /* PrescriptionsTVC */,
 				C00B69641CBFC0120081EF68 /* InvoiceTableViewCell */,
 				9F5F0C601C6668FF00F7E99D /* HealthProfileCells */,
 				9F5F0C5C1C66676B00F7E99D /* SettingsHomeTVC */,
@@ -1510,6 +1518,24 @@
 				C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */,
 			);
 			path = DoctorProfilePage;
+			sourceTree = "<group>";
+		};
+		C02DC4871CC930AF00289AA5 /* Prescriptions */ = {
+			isa = PBXGroup;
+			children = (
+				C02DC4881CC930CF00289AA5 /* PrescriptionsVC.h */,
+				C02DC4891CC930CF00289AA5 /* PrescriptionsVC.m */,
+			);
+			path = Prescriptions;
+			sourceTree = "<group>";
+		};
+		C02DC48F1CC93E2500289AA5 /* PrescriptionsTVC */ = {
+			isa = PBXGroup;
+			children = (
+				C02DC4901CC93E2500289AA5 /* PrescriptionsTVC.h */,
+				C02DC4911CC93E2500289AA5 /* PrescriptionsTVC.m */,
+			);
+			path = PrescriptionsTVC;
 			sourceTree = "<group>";
 		};
 		C04EC39F1CC1095800470A74 /* PaymentStatusVC */ = {
@@ -2939,6 +2965,7 @@
 				C092EBF41C80B1E000F7B18B /* MKAnnotationView+WebCache.m in Sources */,
 				C0A8312E1C7E0F9D000A60C9 /* MedicalDocumentsDetailVC.m in Sources */,
 				C00B69691CBFC0410081EF68 /* InvoiceTableViewCell.m in Sources */,
+				C02DC48A1CC930CF00289AA5 /* PrescriptionsVC.m in Sources */,
 				C0CABC671C8A8971009F9470 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				C092EBF61C80B1E000F7B18B /* SDImageCache.m in Sources */,
 				9F5F0C391C665D3100F7E99D /* AskedQuestionsViewController.m in Sources */,
@@ -2978,6 +3005,7 @@
 				C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */,
 				C0BD5F5E1C89A3B400C9B8CD /* AnswerVc.m in Sources */,
 				55C674E11C09D92D005AD9E5 /* JoinNowVC.m in Sources */,
+				C02DC4921CC93E2500289AA5 /* PrescriptionsTVC.m in Sources */,
 				C0C2B2031CC7D7E600C1DF5A /* newTableViewController.m in Sources */,
 				C08438161C6F79A200610ADC /* CLUtilities.m in Sources */,
 				C094F8101C9861D500C73FE9 /* CategoriesList.m in Sources */,

@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 #import "MyAllergies.h"
+#import "PrescriptionsVC.h"
 #import "MedicalDocumentsVC.h"
 #import "myHealthProfileVC.h"
 
@@ -146,9 +147,8 @@ CGFloat ht=0;
 - (IBAction)prescriptionsButtonAction:(UIButton *)sender
 {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
-    MedicalDocumentsVC *medicalDocumentsVC = (MedicalDocumentsVC *)[storyboard instantiateViewControllerWithIdentifier:@"MedicalDocumentsVC"];
-    medicalDocumentsVC.isFromPrescriptions = YES;
-    [self.navigationController pushViewController:medicalDocumentsVC animated:YES];
+    PrescriptionsVC *prescriptionsVC = (PrescriptionsVC *)[storyboard instantiateViewControllerWithIdentifier:@"PrescriptionsVC"];
+    [self.navigationController pushViewController:prescriptionsVC animated:YES];
 }
 - (IBAction)medicalDocumentsbuttonAction:(UIButton *)sender
 {
