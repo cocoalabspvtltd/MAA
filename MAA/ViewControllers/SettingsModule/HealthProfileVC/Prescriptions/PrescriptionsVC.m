@@ -31,7 +31,7 @@
 -(void)initialisation{
     self.searchText = @"";
     self.offsetValue = 0;
-    self.limitValue = 1;
+    self.limitValue = 20;
     self.isTextSearchValueChanged = NO;
     _prescriptionsmutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
@@ -80,6 +80,18 @@
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     PrescriptionsTVC *prescriptionsTableViewCell = [tableView dequeueReusableCellWithIdentifier:PrescriptionsTableViewCellIdentifier forIndexPath:indexPath];
+    prescriptionsTableViewCell.doctorNameLabel.text = [[self.prescriptionsmutableArray objectAtIndex:indexPath.row] valueForKey:@"treator_name"];
+    
+    NSString *dateString = [[self.prescriptionsmutableArray objectAtIndex:indexPath.row] valueForKey:@"date"];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
+    NSDate *interDate = [dateFormatter dateFromString:dateString];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:mm a"];
+    NSString *finalDate = [dateFormatter stringFromDate:interDate];
+    prescriptionsTableViewCell.presDateLabel.text = finalDate;
+    NSString *imageUrlString = [[self.prescriptionsmutableArray objectAtIndex:indexPath.row] valueForKey:@"url"];
+    [prescriptionsTableViewCell.prescriptionImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageForDocumentLoading]];
+    prescriptionsTableViewCell.contentLabel.text = [[self.prescriptionsmutableArray objectAtIndex:indexPath.row] valueForKey:@"title"];
     return prescriptionsTableViewCell;
 }
 
@@ -111,10 +123,9 @@
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getPrescriptionsApiUrlString] withBody:getPrescriptionssMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessToken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        
-        self.offsetValue = self.offsetValue+self.limitValue;
         [self.bottomProgressIndicatorView stopAnimating];
         NSArray *imagesArray = [responseObject valueForKey:Datakey];
+        self.offsetValue = self.offsetValue+(int)imagesArray.count;
         NSLog(@"Images :%@",imagesArray);
         if(self.isTextSearchValueChanged){
             [self.prescriptionsmutableArray removeAllObjects];

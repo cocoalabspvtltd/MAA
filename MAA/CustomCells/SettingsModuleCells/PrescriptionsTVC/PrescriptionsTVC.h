@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface PrescriptionsTVC : UITableViewCell
-
+@property (weak, nonatomic) IBOutlet UILabel *doctorNameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *presDateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *prescriptionImageView;
+@property (weak, nonatomic) IBOutlet UILabel *contentLabel;
 @end

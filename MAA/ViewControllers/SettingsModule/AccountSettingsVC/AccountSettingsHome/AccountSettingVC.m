@@ -360,9 +360,9 @@
 
 -(NSString *)convertingDateOfBirth:(NSString *)dobString{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"dd-MM-yyyy"];
+    [dateFormatter setDateFormat:@"dd-MM-yyyy hh:MM"];
     NSDate *interDate = [dateFormatter dateFromString:dobString];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd "];
     NSString *finalDate = [dateFormatter stringFromDate:interDate];
     return finalDate;
 }
