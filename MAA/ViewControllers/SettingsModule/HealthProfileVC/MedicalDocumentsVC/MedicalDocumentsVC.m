@@ -403,12 +403,40 @@
                                 }]];
     }
     [actionSheet addAction:[UIAlertAction actionWithTitle:@"Remove" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
-        [self callingEditOrDeleteDocumentsApiWithStatus:0 withSelectdIndex:self.selectedIndex];
+        [actionSheet dismissViewControllerAnimated:YES completion:^{
+           
+        }];
+         [self addingAlertControllerForDocumentDeletion];
+        
         // choose photo button tapped.
         // [self choosePhoto];
         
     }]];
+    UIPopoverPresentationController *popPresenter = [actionSheet
+                                                     popoverPresentationController];
+    popPresenter.sourceView = self.view;
+    CGRect frameRect = self.medicalDocumentsCollectionView.frame;
+    frameRect.origin.y = self.view.frame.size.height/2;
+    frameRect.size.height = 100;
+     popPresenter.sourceRect = frameRect;
+    popPresenter.permittedArrowDirections = UIPopoverArrowDirectionUp;
+    //popPresenter.sourceRect = self.medicalDocumentsCollectionView.bounds;
     [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+-(void)addingAlertControllerForDocumentDeletion{
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:AppName message:@"Do you want delete this Document?" preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *yesAction = [UIAlertAction actionWithTitle:@"YES" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+       [self callingEditOrDeleteDocumentsApiWithStatus:0 withSelectdIndex:self.selectedIndex];
+    }];
+    UIAlertAction *noAction = [UIAlertAction actionWithTitle:@"NO" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [alertController dismissViewControllerAnimated:YES completion:nil];
+    }];
+    [alertController addAction:yesAction];
+    [alertController addAction:noAction];
+    [self presentViewController:alertController animated:YES completion:^{
+        
+    }];
 }
 - (IBAction)updateButtonAction:(UIButton *)sender {
     if([self isValidInputPopUpCredentials]){
