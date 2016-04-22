@@ -13,14 +13,19 @@
 #import "DoctorAboutVC.h"
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
+#import "SubmitReviewView.h"
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
 #import "TakeAppointmentVC.h"
+#import "ReviewTableViewCell.h"
 
-@interface ClinicProfVC ()<UITableViewDataSource,UITableViewDelegate>
+@interface ClinicProfVC ()<UITableViewDataSource,UITableViewDelegate,SubmitReviewDelegate>
 @property (nonatomic, strong) NSArray *doctorsArray;
 @property (nonatomic, strong) id clinicDetails;
 @property (nonatomic, strong) UIActivityViewController *activityViewController;
+@property (nonnull, strong) NSArray *reviewsArray;
+@property (nonatomic, strong) SubmitReviewView *submitReviewView;
+@property (nonatomic, strong) UIView *gradientView;
 @end
 
 @implementation ClinicProfVC
@@ -28,6 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initialisation];
+    [self addSubViews];
     _clinicProfileImage.layer.cornerRadius=_clinicProfileImage.frame.size.width/2;
     _clinicProfileImage.clipsToBounds=YES;
     _btnDirections.layer.borderWidth=0.5f;
@@ -38,8 +44,18 @@
 }
 
 -(void)initialisation{
+    self.gradientView = [[UIView alloc] init];
+    self.gradientView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+    self.gradientView.hidden = YES;
 }
 
+-(void)addSubViews{
+    [self.view addSubview:self.gradientView];
+}
+
+-(void)viewWillLayoutSubviews{
+   self.gradientView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -72,7 +88,11 @@
         self.clinicDetails = [responseObject valueForKey:Datakey];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self settingEntityDetailsWithData:[responseObject valueForKey:Datakey]];
-        //[self.clinicTbableView reloadData];
+        self.reviewsArray = [[responseObject valueForKey:Datakey] valueForKey:@"e_reviews"];
+        if(self.reviewsArray.count<=2){
+            self.allReviewsButton.hidden = YES;
+        }
+        [self.reviewsTableView reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -127,8 +147,21 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    if(self.doctorsArray.count<=2){
-        return self.doctorsArray.count;
+    if(tableView == self.doctorsTableView){
+        if(self.doctorsArray.count<=2){
+            return self.doctorsArray.count;
+        }
+        else{
+            return 2;
+        }
+    }
+    else if (tableView == self.reviewsTableView){
+        if(self.reviewsArray.count<=2){
+            return self.reviewsArray.count;
+        }
+        else{
+            return 2;
+        }
     }
     else{
         return 2;
@@ -136,33 +169,128 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    SearchResultsTVC *cell = [self.doctorsTableView dequeueReusableCellWithIdentifier:@"cellSearchResults"forIndexPath:indexPath];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    cell.cellImageViewIcon.clipsToBounds = YES;
-    cell.cellImageViewIcon.layer.cornerRadius = 30.00;
-    cell.cellImageViewIcon.layer.masksToBounds = YES;
-    cell.cellImageViewIcon.layer.borderWidth=0.5f;
-    cell.cellImageViewIcon.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
-    cell.cellImageViewOnlineStatus.clipsToBounds = YES;
-    cell.cellImageViewOnlineStatus.layer.cornerRadius = 5.00;
-    cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
-    cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
-    if(![[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"] isEqual:[NSNull null]]){
-        cell.cellLabelRating.text = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+    if(tableView == self.doctorsTableView){
+        SearchResultsTVC *cell = [self.doctorsTableView dequeueReusableCellWithIdentifier:@"cellSearchResults"forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.cellImageViewIcon.clipsToBounds = YES;
+        cell.cellImageViewIcon.layer.cornerRadius = 30.00;
+        cell.cellImageViewIcon.layer.masksToBounds = YES;
+        cell.cellImageViewIcon.layer.borderWidth=0.5f;
+        cell.cellImageViewIcon.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.271 alpha:1.00]CGColor];
+        cell.cellImageViewOnlineStatus.clipsToBounds = YES;
+        cell.cellImageViewOnlineStatus.layer.cornerRadius = 5.00;
+        cell.cellImageViewOnlineStatus.layer.masksToBounds = YES;
+        cell.cellLabelTitle.text = [NSString stringWithFormat:@"%@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"name"]];
+        if(![[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"] isEqual:[NSNull null]]){
+            cell.cellLabelRating.text = [[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+        }
+        NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
+        cell.cellLabelDescription.text = doctorDescription;
+        cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
+        cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
+        NSURL *imageUrl = [NSURL URLWithString:[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
+        [cell.cellImageViewIcon sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+        if([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
+            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
+        }
+        else{
+            cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
+        }
+        return cell;
     }
-    NSString *doctorDescription = [NSString stringWithFormat:@"%@ | %@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"tagline"],[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"location"]];
-    cell.cellLabelDescription.text = doctorDescription;
-    cell.cellLabelConsultFee.text = [NSString stringWithFormat:@"Rs.%@ consultation fee",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"fee"]];
-    cell.cellLabelExperience.text = [NSString stringWithFormat:@"%@",[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"experience"]];
-    NSURL *imageUrl = [NSURL URLWithString:[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"logo_image"]];
-    [cell.cellImageViewIcon sd_setImageWithURL:imageUrl placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
-    if([[[self.doctorsArray objectAtIndex:indexPath.row] valueForKey:@"is_online"] isEqualToString:@"1"]){
-        cell.cellImageViewOnlineStatus.backgroundColor = [UIColor greenColor];
+    else if (tableView == self.reviewsTableView){
+        ReviewTableViewCell *cell = [self.reviewsTableView dequeueReusableCellWithIdentifier:@"cellReviews"forIndexPath:indexPath];
+        cell.profilImageurlString = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"patient_image"];
+        cell.reviewerNameLabel.text = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"patient_name"];
+        cell.reviewContentLabel.text = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"review"];
+        cell.dateString = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"date"];
+        cell.ratingString = [[self.reviewsArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+        return cell;
     }
-    else{
-        cell.cellImageViewOnlineStatus.backgroundColor = [UIColor grayColor];
-    }
-    return cell;
+    else
+        return nil;
+}
+
+#pragma mark - Adding Review view
+
+-(void)addingReviewView{
+    [self addingGradientView];
+    self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"submitReviewView" owner:self options:nil]
+                             firstObject];
+    self.submitReviewView.submitReviewDelegate = self;
+    CGFloat xMargin = 20,yMargin = 50;
+    self.submitReviewView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
+    [self.view addSubview:self.submitReviewView];
+}
+
+-(void)addingGradientView{
+    self.gradientView.hidden = NO;
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gradientViewGestureAction:)];
+    self.gradientView.userInteractionEnabled = YES;
+    [self.gradientView addGestureRecognizer:tapGestureRecognizer];
+}
+
+-(void)gradientViewGestureAction:(UITapGestureRecognizer *)tapGesture{
+    self.gradientView.hidden = YES;
+    [self.submitReviewView removeFromSuperview];
+}
+
+#pragma mark - Submit Review Delegate
+
+-(void)submitButtonActionWithReviewContent:(NSString *)reviewContent andRating:(float)reting{
+    [self callingSubmitReviewPaiWithReviewContent:reviewContent andRating:reting];
+    
+}
+
+#pragma mark - Submit Review Api
+
+-(void)callingSubmitReviewPaiWithReviewContent:(NSString *)reviewContent andRating:(float)rating{
+    NSString *submitReviewUrlString = [Baseurl stringByAppendingString:Submit_review_url];
+    NSString *accessTokenString  = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *submitReviewMutableDictionary = [[NSMutableDictionary alloc] init];
+    [submitReviewMutableDictionary setValue:accessTokenString forKey:@"token"];
+    [submitReviewMutableDictionary setValue:reviewContent forKey:@"review"];
+    NSNumber *reviewRating = [NSNumber numberWithFloat:rating];
+    [submitReviewMutableDictionary setValue:reviewRating forKey:@"rating"];
+    [submitReviewMutableDictionary setValue:self.entityId forKey:@"entity_id"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:submitReviewUrlString] withBody:submitReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        self.gradientView.hidden = YES;
+        [self.submitReviewView removeFromSuperview];
+        [self callingAlertViewControllerWithString:@"Your review submitted sucessfully. It become active after review"];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+}
+
+#pragma mark - Adding Alert Controller
+
+-(void)callingAlertViewControllerWithString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Table View Delegates
@@ -306,6 +434,9 @@
     webViewController.headingString = [self.clinicDetails valueForKey:@"name"];
     [self.navigationController pushViewController:webViewController animated:YES];
     
+}
+- (IBAction)addReviewButtonAction:(UIButton *)sender {
+    [self addingReviewView];
 }
 
 @end

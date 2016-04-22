@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="401A5F12-E33C-431D-990C-C48349EAE83D" scopeBarBackgroundImage="401A5F12-E33C-431D-990C-C48349EAE83D" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="D2910CC2-FA99-491E-8E7E-83A3C75A6388" scopeBarBackgroundImage="D2910CC2-FA99-491E-8E7E-83A3C75A6388" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="6CE2258C-FA2B-4F72-A680-2B1975C8A969" scopeBarBackgroundImage="6CE2258C-FA2B-4F72-A680-2B1975C8A969" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="091415B0-B416-40CE-A56B-CE54D26A30BC" scopeBarBackgroundImage="091415B0-B416-40CE-A56B-CE54D26A30BC" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -12678,6 +12678,7 @@
                                                         <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                                         <state key="normal" title="Add Review"/>
                                                         <connections>
+                                                            <action selector="addReviewButtonAction:" destination="6yz-YW-zdf" eventType="touchUpInside" id="Khq-AH-LOv"/>
                                                             <action selector="addReviewButtonAction:" destination="xzw-XO-a3y" eventType="touchUpInside" id="TET-1A-1vI"/>
                                                         </connections>
                                                     </button>
@@ -12806,8 +12807,8 @@
                                                             </tableViewCell>
                                                         </prototypes>
                                                         <connections>
-                                                            <outlet property="dataSource" destination="xzw-XO-a3y" id="6Ya-q5-ZfS"/>
-                                                            <outlet property="delegate" destination="xzw-XO-a3y" id="CVK-3I-e1o"/>
+                                                            <outlet property="dataSource" destination="6yz-YW-zdf" id="YCW-4z-cxi"/>
+                                                            <outlet property="delegate" destination="6yz-YW-zdf" id="57d-03-eTm"/>
                                                         </connections>
                                                     </tableView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iqf-PB-blq">
@@ -12929,6 +12930,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="1335"/>
                     <connections>
+                        <outlet property="allReviewsButton" destination="iqf-PB-blq" id="cbK-HB-ZW3"/>
                         <outlet property="btnDirections" destination="xT0-yc-dgm" id="C8G-Rd-rbM"/>
                         <outlet property="clinicDetail" destination="dGK-HP-uLa" id="i5J-qU-6bw"/>
                         <outlet property="clinicNameLabel" destination="hBP-Zy-zko" id="kAR-Kq-IWt"/>
@@ -12942,6 +12944,7 @@
                         <outlet property="noOfConsultationsLabel" destination="CKH-Td-Xxq" id="xMy-CN-Nuo"/>
                         <outlet property="ratingLabel" destination="wPc-Z9-6fz" id="pWB-P4-9RO"/>
                         <outlet property="reviewCountLabel" destination="QOp-SZ-PIi" id="z08-Md-Zoo"/>
+                        <outlet property="reviewsTableView" destination="UHV-mD-HFI" id="kVv-dR-2qG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W9Y-fs-sWu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -14601,9 +14604,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1" width="48" height="48"/>
-        <image name="1.png" width="688" height="853"/>
-        <image name="401A5F12-E33C-431D-990C-C48349EAE83D" width="310" height="78">
+        <image name="091415B0-B416-40CE-A56B-CE54D26A30BC" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -16268,8 +16269,10 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
+        <image name="1" width="48" height="48"/>
+        <image name="1.png" width="688" height="853"/>
         <image name="5.png" width="48" height="48"/>
-        <image name="6CE2258C-FA2B-4F72-A680-2B1975C8A969" width="310" height="78">
+        <image name="D2910CC2-FA99-491E-8E7E-83A3C75A6388" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
