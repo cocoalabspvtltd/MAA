@@ -25,5 +25,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *doctorsAllInfoButton;
 @property (weak, nonatomic) IBOutlet UIButton *allReviewsButton;
 @property (weak, nonatomic) IBOutlet UITableView *reviewsTableView;
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (nonatomic, strong) NSString *entityId;
 @end

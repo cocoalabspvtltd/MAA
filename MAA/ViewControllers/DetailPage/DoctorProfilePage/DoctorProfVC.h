@@ -27,5 +27,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *cliniclocationLabel;
 @property (weak, nonatomic) IBOutlet UIButton *addReviewButton;
 
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (nonatomic, strong) NSString *entityId;
 @end

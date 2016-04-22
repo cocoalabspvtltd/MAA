@@ -302,9 +302,15 @@
     if ([self.activityViewController respondsToSelector:@selector(popoverPresentationController)]) {
         
         self.activityViewController.popoverPresentationController.sourceView =
-        self.view;
+        self.shareButton;
+        //self.activityViewController.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionUp;
     }
-    self.activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+   
+   
+    
+    
+  //  self.activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
     [self presentViewController:self.activityViewController animated:YES completion:nil];
 }
 
