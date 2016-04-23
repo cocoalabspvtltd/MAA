@@ -6,11 +6,12 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 #import "student.h"
+#import "SubmitReviewView.h"
 #import "ReviewTableViewCell.h"
 #import "InvoiceFilterViewController.h"
 #import "doctorReviewsViewController.h"
 
-@interface doctorReviewsViewController ()<InvoiceFilterVCDelegate>
+@interface doctorReviewsViewController ()<InvoiceFilterVCDelegate,SubmitReviewDelegate>
 {
     
         UIViewController *SearchViewController;
@@ -18,10 +19,13 @@
     NSInteger selectedIndex;
     NSString *formatedDate;
 }
+@property (nonatomic, strong) UIView *gradientView;
 @property (nonatomic, assign) NSInteger selectedYear;
 @property (nonatomic, assign) NSInteger selectedMonth;
 @property (nonatomic, strong) NSString *searchText;
 @property (nonatomic, assign) BOOL isSearchTextChanged;
+@property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, strong) SubmitReviewView *submitReviewView;
 @property (nonatomic, strong) NSMutableArray *categoriesMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 
@@ -53,14 +57,19 @@
     reviewsMutableArray = [@[]mutableCopy];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
+    self.gradientView = [[UIView alloc] init];
+    self.gradientView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.7];
+    self.gradientView.hidden = YES;
 }
 
 -(void)addSubViews{
+    [self.view addSubview:self.gradientView];
     [self.view addSubview:self.bottomProgressIndicatorView];
 }
 
 -(void)viewWillLayoutSubviews{
     self.bottomProgressIndicatorView.frame = CGRectMake(self.view.frame.size.width/2 - 5, self.view.frame.size.height - 20, 10, 10);
+    self.gradientView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
 }
 
 
@@ -95,6 +104,7 @@
     }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:reviewUrlString] withBody:searchMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:tokenString];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        NSLog(@"Response Object:%@",responseObject);
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSArray *reviewsArray = [responseObject valueForKey:@"data"];
         self.offsetValue = self.offsetValue+(int)reviewsArray.count;
@@ -190,6 +200,178 @@
 -(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return UITableViewAutomaticDimension;
+}
+
+-(NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Edit" handler:^(UITableViewRowAction *action, NSIndexPath *indexPath)
+                                        {
+                                            //insert your editAction here
+                                            UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Do you want to edit ?" preferredStyle:UIAlertControllerStyleActionSheet];
+                                            
+                                            [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+                                            
+                                                // Cancel button tappped.
+                                                [self dismissViewControllerAnimated:YES completion:^{
+                                                }];
+                                            }]];
+                                            
+                                            [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+                                                [actionSheet dismissViewControllerAnimated:YES completion:nil];
+                                                selectedIndex = indexPath.row;
+                                                [self addingReviewView];
+                                                // Distructive button tapped.
+                                                //            [self dismissViewControllerAnimated:YES completion:^{
+                                                //            }];
+                                            }]];
+                                            
+                                            
+                                            // Present action sheet.
+                                            [self presentViewController:actionSheet animated:YES completion:nil];
+                                            
+                                        }];
+    editAction.backgroundColor = [UIColor lightGrayColor];
+    
+    UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"Delete"  handler:^(UITableViewRowAction *action, NSIndexPath *indexPath){
+        //insert your deleteAction here
+        UIAlertController *actionSheet = [UIAlertController alertControllerWithTitle:@"Alert" message:@"Do you want to Delete ?" preferredStyle:UIAlertControllerStyleActionSheet];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
+            
+            // Cancel button tappped.
+            [self dismissViewControllerAnimated:YES completion:^{
+            }];
+        }]];
+        
+        [actionSheet addAction:[UIAlertAction actionWithTitle:@"Delete" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+            self.selectedIndex = indexPath.row;
+            [self callingDeleteReviewApi];
+            // Distructive button tapped.
+            //            [self dismissViewControllerAnimated:YES completion:^{
+            //            }];
+        }]];
+        
+        
+        // Present action sheet.
+        [self presentViewController:actionSheet animated:YES completion:nil];
+        
+    }];
+    deleteAction.backgroundColor = [UIColor redColor];
+    
+    return @[deleteAction,editAction];
+}
+
+#pragma mark - Adding Review view
+
+-(void)addingReviewView{
+    [self addingGradientView];
+    self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"submitReviewView" owner:self options:nil]
+                             firstObject];
+    self.submitReviewView.submitReviewDelegate = self;
+    CGFloat xMargin = 20,yMargin = 50;
+    self.submitReviewView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
+    [self.view addSubview:self.submitReviewView];
+}
+
+-(void)addingGradientView{
+    self.gradientView.hidden = NO;
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(gradientViewGestureAction:)];
+    self.gradientView.userInteractionEnabled = YES;
+    [self.gradientView addGestureRecognizer:tapGestureRecognizer];
+}
+
+-(void)gradientViewGestureAction:(UITapGestureRecognizer *)tapGesture{
+    self.gradientView.hidden = YES;
+    [self.submitReviewView removeFromSuperview];
+}
+
+#pragma mark - Submit Review Delegate
+
+-(void)submitButtonActionWithReviewContent:(NSString *)reviewContent andRating:(float)reting{
+    [self callingSubmitReviewPaiWithReviewContent:reviewContent andRating:reting];
+    
+}
+
+#pragma mark - Submit Review Api
+
+-(void)callingSubmitReviewPaiWithReviewContent:(NSString *)reviewContent andRating:(float)rating{
+    NSString *submitReviewUrlString = [Baseurl stringByAppendingString:Submit_review_url];
+    NSString *accessTokenString  = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *submitReviewMutableDictionary = [[NSMutableDictionary alloc] init];
+    [submitReviewMutableDictionary setValue:accessTokenString forKey:@"token"];
+    [submitReviewMutableDictionary setValue:reviewContent forKey:@"review"];
+    NSNumber *reviewRating = [NSNumber numberWithFloat:rating];
+    [submitReviewMutableDictionary setValue:reviewRating forKey:@"rating"];
+    //[submitReviewMutableDictionary setValue:self.entityId forKey:@"entity_id"];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:submitReviewUrlString] withBody:submitReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        self.gradientView.hidden = YES;
+        [self.submitReviewView removeFromSuperview];
+        [self callingAlertViewControllerWithString:@"Your review submitted sucessfully. It become active after review"];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+}
+
+#pragma mark - Calling  Delete Review Api
+
+-(void)callingDeleteReviewApi{
+    NSString *deleteReviewUrlString = [Baseurl stringByAppendingString:Delete_review_url];
+    NSString *accessTokenString  = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
+    NSMutableDictionary *deleteReviewMutableDictionary = [[NSMutableDictionary alloc] init];
+    [deleteReviewMutableDictionary setValue:accessTokenString forKey:@"token"];
+    [deleteReviewMutableDictionary setValue:[[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"id"] forKey:@"id"];
+    NSLog(@"Selectd Index:%ld",(long)self.selectedIndex);
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:deleteReviewUrlString] withBody:deleteReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
+    [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self callingAlertViewControllerWithString:@"Your review deleted sucessfully"];
+    } FailureBlock:^(NSString *errorDescription, id errorResponse) {
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        NSString *errorMessage;
+        if([errorDescription isEqualToString:NoNetworkErrorName]){
+            errorMessage = NoNetworkmessage;
+        }
+        else{
+            errorMessage = ConnectiontoServerFailedMessage;
+        }
+        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        [erroralert show];
+    }];
+}
+
+#pragma mark - Adding Alert Controller
+
+-(void)callingAlertViewControllerWithString:(NSString *)alertMessage{
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:alertMessage
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
+                                                   [reviewsMutableArray removeObjectAtIndex:self.selectedIndex];
+                                                   [self.tablee reloadData];
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Button Actions
