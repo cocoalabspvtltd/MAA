@@ -5,6 +5,8 @@
 //  Created by Cocoalabs India on 28/03/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
+
+#define EmptyStarImageName @"star_empty_x"
 #define HalfStarImageName @"starhalf"
 #define SelectStarImagename @"star_sel@2x"
 #import "ReviewTableViewCell.h"
@@ -36,7 +38,11 @@
 }
 
 -(void)setRatingString:(NSString *)ratingString{
-    NSLog(@"Rating String:%@",ratingString);
+    self.ratingStarImageView_1.image = [UIImage imageNamed:EmptyStarImageName];
+    self.ratingStarImageView_2.image = [UIImage imageNamed:EmptyStarImageName];
+    self.ratingStarImageView_3.image = [UIImage imageNamed:EmptyStarImageName];
+    self.ratingStarImageView_4.image = [UIImage imageNamed:EmptyStarImageName];
+    self.ratingStarImageView_5.image = [UIImage imageNamed:EmptyStarImageName];
     if([ratingString isEqualToString:@"0.5"]){
        self.ratingStarImageView_1.image = [UIImage imageNamed:HalfStarImageName];
     }

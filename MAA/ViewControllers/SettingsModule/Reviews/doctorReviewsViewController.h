@@ -23,20 +23,18 @@
 @property (weak, nonatomic) IBOutlet UILabel *doctorName;
 @property (weak, nonatomic) IBOutlet UILabel *reviewContent;
 @property (strong, nonatomic) UISearchController *searchController;
-@property(nonatomic,retain)NSString *token;
 @property (nonatomic, assign) int offsetValue;
 @property (nonatomic, assign) int limitValue;
-@property (nonatomic, assign) NSString * type;
-@property (nonatomic, assign) NSString* keyword;
 @property (nonatomic, assign) NSString* month;
 @property (nonatomic, assign) NSString* year;
 @property (weak, nonatomic) IBOutlet UILabel *selected_date;
 @property (weak, nonatomic) IBOutlet UIDatePicker *date_picker;
-- (IBAction)picker_action:(id)sender;
 @property (weak, nonatomic) IBOutlet UIImageView *s1;
 @property (weak, nonatomic) IBOutlet UIImageView *s2;
 @property (weak, nonatomic) IBOutlet UIImageView *s3;
 @property (weak, nonatomic) IBOutlet UIImageView *s4;
 @property (weak, nonatomic) IBOutlet UIImageView *s5;
+
+@property (weak, nonatomic) IBOutlet UIStackView *noReviewsView;
 
 @end
