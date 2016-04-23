@@ -12,12 +12,13 @@
 #import "ConfirmBookingVC.h"
 #import "PaymentPageViewController.h"
 
-@interface ConfirmBookingVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>{
+@interface ConfirmBookingVC ()<UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UITextViewDelegate>{
     NSMutableArray *appointmentTypePickerArray;
     UIPickerView *appointmentTypePickerView;
     NSInteger selectedAppointmwnttype;
     NSString *selectedappointmenttypeString;
 }
+@property (nonatomic,assign)CGRect oldFrame;
 @end
 
 @implementation ConfirmBookingVC
@@ -76,6 +77,24 @@
     appointmentTypePickerView.dataSource = self;
     appointmentTypePickerView.delegate = self;
     self.appointmentTypetextfield.inputView = appointmentTypePickerView;
+    [self addingGesturerecognizer];
+}
+
+-(void)addingGesturerecognizer{
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapGestureAction:)];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
+}
+
+-(void)tapGestureAction:(UITapGestureRecognizer *)tapgesture{
+    [UIView animateWithDuration:0.20 animations:^{
+        CGRect newFrame = self.oldFrame;
+        [self.appointmentTypetextfield resignFirstResponder];
+        [self.txtNotes resignFirstResponder];
+        [self.view setFrame:newFrame];
+    }completion:^(BOOL finished)
+     {
+         
+     }];
 }
 
 -(void)addDoneToolBar {
@@ -207,7 +226,7 @@
     [bookAppointmentMutableDictionary setValue:self.dateString forKey:@"date"];
     [bookAppointmentMutableDictionary setValue:self.entityIdString forKey:@"user_entity_id"];
     [bookAppointmentMutableDictionary setValue:[NSNumber numberWithInteger:selectedAppointmwnttype] forKey:@"appointment_type"];
-    [bookAppointmentMutableDictionary setValue:@"" forKey:@"notes"];
+    [bookAppointmentMutableDictionary setValue:self.txtNotes.text forKey:@"notes"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:bookingAppointmentUrlString] withBody:bookAppointmentMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accesstoken];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
@@ -247,4 +266,27 @@
     paymentVC.appointmentIdString = [responseData valueForKey:@"ap_id"];
     [self presentViewController:paymentNavController animated:YES completion:nil];
 }
+
+- (void)viewDidAppear:(BOOL)animated{
+    self.oldFrame = self.view.frame;
+    
+}
+
+
+#pragma mark - TextView Delegate
+
+-(void)textViewDidBeginEditing:(UITextView *)textView{
+    if (textView == self.txtNotes ) {
+        [UIView animateWithDuration:0.20 animations:^{
+            CGRect newFrame = self.oldFrame;
+            newFrame.origin.y -= self.txtNotes.y-300;;
+            [self.view setFrame:newFrame];
+        }completion:^(BOOL finished)
+         {
+             
+         }];
+    }
+}
+
+
 @end
