@@ -15,7 +15,9 @@
 @property (strong, nonatomic) IBOutlet UIButton *thirdStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *fourthStarButton;
 @property (strong, nonatomic) IBOutlet UIButton *fifthStarButton;
-
+@property (nonatomic, assign) BOOL isFromReviewEdit;
+@property (nonatomic, strong) NSString *reviewContent;
+@property (nonatomic, strong) NSString *ratingString;
 @property (nonatomic, assign) id<SubmitReviewDelegate>submitReviewDelegate;
 @end
 

@@ -204,7 +204,61 @@
     }
 }
 
-
+-(void)setIsFromReviewEdit:(BOOL)isFromReviewEdit{
+    self.contentTextView.text = self.reviewContent;
+    if(isFromReviewEdit){
+        if([self.ratingString isEqualToString:@"0.5"]){
+            [self.firstStarButton setImage:[UIImage imageNamed:HalfStarImageName] forState:UIControlStateNormal];
+        }
+        if([self.ratingString isEqualToString:@"1"]){
+             [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+        }
+        else if ([self.ratingString isEqualToString:@"1.5"]){
+             [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.seconsStarButton setImage:[UIImage imageNamed:HalfStarImageName] forState:UIControlStateNormal];
+        }
+        else if ([self.ratingString isEqualToString:@"2"]){
+            [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.seconsStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+        }
+        else if ([self.ratingString isEqualToString:@"2.5"]){
+            [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.seconsStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.thirdStarButton setImage:[UIImage imageNamed:HalfStarImageName] forState:UIControlStateNormal];
+        }
+        else if ([self.ratingString isEqualToString:@"3"]){
+            [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.seconsStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.thirdStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+        }
+        else if ([self.ratingString isEqualToString:@"3.5"]){
+            [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.seconsStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.thirdStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+             [self.fourthStarButton setImage:[UIImage imageNamed:HalfStarImageName] forState:UIControlStateNormal];
+        }
+        else if ([self.ratingString isEqualToString:@"4"]){
+            [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.seconsStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.thirdStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.fourthStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+        }
+        else if ([self.ratingString isEqualToString:@"4.5"]){
+            [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.seconsStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.thirdStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.fourthStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.fifthStarButton setImage:[UIImage imageNamed:HalfStarImageName] forState:UIControlStateNormal];
+        }
+        else if ([self.ratingString isEqualToString:@"5"]){
+            [self.firstStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.seconsStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.thirdStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.fourthStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+            [self.fifthStarButton setImage:[UIImage imageNamed:FullStarImageName] forState:UIControlStateNormal];
+        }
+    }
+}
 
 
 @end

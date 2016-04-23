@@ -269,6 +269,9 @@
     self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"submitReviewView" owner:self options:nil]
                              firstObject];
     self.submitReviewView.submitReviewDelegate = self;
+    self.submitReviewView.reviewContent = [[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"review"];
+    self.submitReviewView.ratingString = [[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"rating"];
+    self.submitReviewView.isFromReviewEdit = YES;
     CGFloat xMargin = 20,yMargin = 50;
     self.submitReviewView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - 2*yMargin);
     [self.view addSubview:self.submitReviewView];
@@ -303,14 +306,15 @@
     [submitReviewMutableDictionary setValue:reviewContent forKey:@"review"];
     NSNumber *reviewRating = [NSNumber numberWithFloat:rating];
     [submitReviewMutableDictionary setValue:reviewRating forKey:@"rating"];
-    //[submitReviewMutableDictionary setValue:self.entityId forKey:@"entity_id"];
+    [submitReviewMutableDictionary setValue:[[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"id"] forKey:@"id"];
+    [submitReviewMutableDictionary setValue:[[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"treator_id"] forKey:@"entity_id"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:submitReviewUrlString] withBody:submitReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         self.gradientView.hidden = YES;
         [self.submitReviewView removeFromSuperview];
-        [self callingAlertViewControllerWithString:@"Your review submitted sucessfully. It become active after review"];
+        [self callingAlertViewControllerWithString:@"Your review changed sucessfully. It become active after review"];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -333,7 +337,6 @@
     NSMutableDictionary *deleteReviewMutableDictionary = [[NSMutableDictionary alloc] init];
     [deleteReviewMutableDictionary setValue:accessTokenString forKey:@"token"];
     [deleteReviewMutableDictionary setValue:[[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"id"] forKey:@"id"];
-    NSLog(@"Selectd Index:%ld",(long)self.selectedIndex);
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:deleteReviewUrlString] withBody:deleteReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
