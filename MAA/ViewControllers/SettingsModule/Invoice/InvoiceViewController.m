@@ -33,6 +33,7 @@
     self.selectedMonth = 0;
     [super viewDidLoad];
     [self initialisation];
+    [self addSubViews];
      [self.invoicetableView registerNib:[UINib nibWithNibName:@"invoiceCell" bundle:nil] forCellReuseIdentifier:@"invoiceCell"];
     [self callingGettingInvoiceApi];
     // Do any additional setup after loading the view.
@@ -46,6 +47,15 @@
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
     [self addingToptransparentView];
 }
+
+-(void)addSubViews{
+    [self.view addSubview:self.bottomProgressIndicatorView];
+}
+
+-(void)viewWillLayoutSubviews{
+    self.bottomProgressIndicatorView.frame = CGRectMake(self.view.frame.size.width/2 - 5, self.view.frame.size.height - 20, 10, 10);
+}
+
 
 -(void)addingToptransparentView{
     self.topTransparentView = [[UIView alloc] init];
