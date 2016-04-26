@@ -389,18 +389,22 @@
     NSString *accessTokenString  = [[NSUserDefaults standardUserDefaults] valueForKey:ACCESS_TOKEN];
     NSMutableDictionary *filterMutableDictionary = [[NSMutableDictionary alloc] init];
     [filterMutableDictionary setValue:accessTokenString forKey:@"token"];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.filterCriteriaData = [[NSUserDefaults standardUserDefaults] valueForKey:FilterInfoStorageKey];
+    NSLog(@"Filter Criteria Data:%@",self.filterCriteriaData);
+    if(self.filterCriteriaData == NULL){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    else{
+        [self loadingFilterDetails];
+    }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:searchInfoUrlString] withBody:filterMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSLog(@"Response Object:%@",responseObject);
+        [[NSUserDefaults standardUserDefaults] setValue:[responseObject valueForKey:Datakey] forKey:FilterInfoStorageKey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         self.filterCriteriaData = [responseObject valueForKey:Datakey];
-        [self gettingTypeArrayFromresponse];
-        [self gettingGenderFromResponse];
-        [self gettingAgeFromResponse];
-        [self gettingFeeFromResponse];
-        [self gettingExperienceFromResponse];
-        [self getCategoriesApiCall];
+        [self loadingFilterDetails];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -413,6 +417,15 @@
         UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [erroralert show];
     }];
+}
+
+-(void)loadingFilterDetails{
+    [self gettingTypeArrayFromresponse];
+    [self gettingGenderFromResponse];
+    [self gettingAgeFromResponse];
+    [self gettingFeeFromResponse];
+    [self gettingExperienceFromResponse];
+    [self getCategoriesApiCall];
 }
 
 -(void)gettingTypeArrayFromresponse{

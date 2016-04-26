@@ -49,3 +49,8 @@ static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen"
 #define PrescriptionletterCertificateIdentifier @"PrescriptionLetterIdentifier"
 
 #define AppCommnRedColor [UIColor colorWithRed:1 green:0 blue:0.271 alpha:1] /*#ff0045*/
+
+
+#pragma mark - User Defaults Constants
+
+#define FilterInfoStorageKey @"filterInfoKey"
