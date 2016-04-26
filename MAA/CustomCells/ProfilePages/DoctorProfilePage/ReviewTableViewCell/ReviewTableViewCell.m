@@ -46,14 +46,14 @@
     if([ratingString isEqualToString:@"0.5"]){
        self.ratingStarImageView_1.image = [UIImage imageNamed:HalfStarImageName];
     }
-    if([ratingString isEqualToString:@"1"]){
+    if([ratingString isEqualToString:@"1.0"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
     }
     else if ([ratingString isEqualToString:@"1.5"]){
        self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
        self.ratingStarImageView_2.image = [UIImage imageNamed:HalfStarImageName];
     }
-    else if ([ratingString isEqualToString:@"2"]){
+    else if ([ratingString isEqualToString:@"2.0"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
     }
@@ -62,7 +62,7 @@
         self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_3.image = [UIImage imageNamed:HalfStarImageName];
     }
-    else if ([ratingString isEqualToString:@"3"]){
+    else if ([ratingString isEqualToString:@"3.0"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];
@@ -73,7 +73,7 @@
         self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_4.image = [UIImage imageNamed:HalfStarImageName];
     }
-    else if ([ratingString isEqualToString:@"4"]){
+    else if ([ratingString isEqualToString:@"4.0"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];
@@ -86,7 +86,7 @@
         self.ratingStarImageView_4.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_5.image = [UIImage imageNamed:HalfStarImageName];
     }
-    else if ([ratingString isEqualToString:@"5"]){
+    else if ([ratingString isEqualToString:@"5.0"]){
         self.ratingStarImageView_1.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_2.image = [UIImage imageNamed:SelectStarImagename];
         self.ratingStarImageView_3.image = [UIImage imageNamed:SelectStarImagename];

@@ -16,7 +16,6 @@
     
         UIViewController *SearchViewController;
     NSMutableArray *reviewsMutableArray;
-    NSInteger selectedIndex;
     NSString *formatedDate;
 }
 @property (nonatomic, strong) UIView *gradientView;
@@ -35,7 +34,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    selectedIndex=-1;
+    self.selectedIndex=-1;
     
     _month = @"";
     _year = @"";
@@ -188,7 +187,8 @@
     cell.reviewerNameLabel.text =[[reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"patient_name"];
     cell.reviewContentLabel.text = [[reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"review"];
     cell.dateString = [[reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"date"];
-    cell.ratingString = [[reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
+    CGFloat ratingFloat = [[[reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"] floatValue];
+    cell.ratingString = [NSString stringWithFormat:@"%0.1f",ratingFloat];
     return cell;
 }
 
@@ -218,13 +218,21 @@
                                             
                                             [actionSheet addAction:[UIAlertAction actionWithTitle:@"Edit" style:UIAlertActionStyleDestructive handler:^(UIAlertAction *action) {
                                                 [actionSheet dismissViewControllerAnimated:YES completion:nil];
-                                                selectedIndex = indexPath.row;
+                                                self.selectedIndex = indexPath.row;
                                                 [self addingReviewView];
                                                 // Distructive button tapped.
                                                 //            [self dismissViewControllerAnimated:YES completion:^{
                                                 //            }];
                                             }]];
                                             
+                                            UIPopoverPresentationController *popPresenter = [actionSheet
+                                                                                             popoverPresentationController];
+                                            popPresenter.sourceView = self.view;
+                                            CGRect frameRect = self.view.frame;
+                                            frameRect.origin.y = self.view.frame.size.height/2 - 50;
+                                            frameRect.size.height = 100;
+                                            popPresenter.sourceRect = frameRect;
+                                            popPresenter.permittedArrowDirections = 0;
                                             
                                             // Present action sheet.
                                             [self presentViewController:actionSheet animated:YES completion:nil];
@@ -251,7 +259,14 @@
             //            [self dismissViewControllerAnimated:YES completion:^{
             //            }];
         }]];
-        
+        UIPopoverPresentationController *popPresenter = [actionSheet
+                                                         popoverPresentationController];
+        popPresenter.sourceView = self.view;
+        CGRect frameRect = self.view.frame;
+        frameRect.origin.y = self.view.frame.size.height/2 - 50;
+        frameRect.size.height = 100;
+        popPresenter.sourceRect = frameRect;
+        popPresenter.permittedArrowDirections = 0;
         
         // Present action sheet.
         [self presentViewController:actionSheet animated:YES completion:nil];
@@ -269,6 +284,7 @@
     self.submitReviewView = [[[NSBundle mainBundle]loadNibNamed:@"submitReviewView" owner:self options:nil]
                              firstObject];
     self.submitReviewView.submitReviewDelegate = self;
+    NSLog(@"Selected Index:%ld",(long)self.selectedIndex);
     self.submitReviewView.reviewContent = [[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"review"];
     self.submitReviewView.ratingString = [[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"rating"];
     self.submitReviewView.isFromReviewEdit = YES;
@@ -309,12 +325,16 @@
     [submitReviewMutableDictionary setValue:[[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"id"] forKey:@"id"];
     [submitReviewMutableDictionary setValue:[[reviewsMutableArray objectAtIndex:self.selectedIndex] valueForKey:@"treator_id"] forKey:@"entity_id"];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    NSLog(@"Submit Review Details:%@",submitReviewMutableDictionary);
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:submitReviewUrlString] withBody:submitReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         self.gradientView.hidden = YES;
         [self.submitReviewView removeFromSuperview];
-        [self callingAlertViewControllerWithString:@"Your review changed sucessfully. It become active after review"];
+        self.offsetValue = 0;
+        [reviewsMutableArray removeAllObjects];
+        [self apiCall];
+        [self callingAlertViewControllerWithString:@"Your review changed sucessfully."];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -341,7 +361,7 @@
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:deleteReviewUrlString] withBody:deleteReviewMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:accessTokenString];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        [self callingAlertViewControllerWithString:@"Your review deleted sucessfully"];
+        [self alertViewControllerForDelete];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
@@ -367,6 +387,24 @@
     UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action){
                                                    //Do Some action here
+                                                   [alert dismissViewControllerAnimated:YES completion:nil];
+                                                   
+                                               }];
+    
+    [alert addAction:ok];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
+-(void)alertViewControllerForDelete{
+    
+    UIAlertController *alert= [UIAlertController
+                               alertControllerWithTitle:AppName
+                               message:@"Your review deleted successfully"
+                               preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                               handler:^(UIAlertAction * action){
+                                                   //Do Some action here
                                                    [reviewsMutableArray removeObjectAtIndex:self.selectedIndex];
                                                    [self.tablee reloadData];
                                                    [alert dismissViewControllerAnimated:YES completion:nil];
@@ -375,6 +413,7 @@
     
     [alert addAction:ok];
     [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 #pragma mark - Button Actions
