@@ -13,6 +13,7 @@
 #import "DoctorAboutVC.h"
 #import "DoctorProfVC.h"
 #import "ClinicProfVC.h"
+#import "DoctorReviewsVC.h"
 #import "SubmitReviewView.h"
 #import "SearchResultsVC.h"
 #import "SearchResultsTVC.h"
@@ -439,4 +440,10 @@
     [self addingReviewView];
 }
 
+- (IBAction)allReviewsButtonAction:(UIButton *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    DoctorReviewsVC *doctorReviewsVC = [storyboard instantiateViewControllerWithIdentifier:@"DoctorReviewsVC"];
+    doctorReviewsVC.entityId = self.entityId;
+    [self.navigationController pushViewController:doctorReviewsVC animated:YES];
+}
 @end
