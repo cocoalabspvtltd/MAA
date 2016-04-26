@@ -86,10 +86,19 @@
     [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
     [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:0] forKey:Offsetkey];
     [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:100] forKey:LimitKey];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    self.categoriesArray = [[NSUserDefaults standardUserDefaults] valueForKey:CategoriesStoragekey];
+    if(self.categoriesArray == NULL){
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    else{
+         [self.tblCategories reloadData];
+    }
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         self.categoriesArray = [responseObject valueForKey:Datakey];
+        [[NSUserDefaults standardUserDefaults] setValue:[responseObject valueForKey:Datakey] forKey:CategoriesStoragekey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
          NSLog(@"Response Object:%@",self.categoriesArray);
         [self.tblCategories reloadData];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];

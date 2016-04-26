@@ -54,3 +54,4 @@ static  NSString *const ShowLogInScreenObserver = @"com.maa.home:ShowHomeScreen"
 #pragma mark - User Defaults Constants
 
 #define FilterInfoStorageKey @"filterInfoKey"
+#define CategoriesStoragekey @"categoryKey"

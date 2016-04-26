@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *categoriesMutableArray;
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (readonly) OTConnection *otConnection;
+@property (nonatomic, assign) BOOL isFromLocalDb;
 @end
 
 @implementation HomePageVC
@@ -35,7 +36,7 @@
 
 -(void)initialisation{
     self.offsetValue = 0;
-    self.limitValue = 10;
+    self.limitValue = 100;
     self.categoriesMutableArray = [[NSMutableArray alloc] init];
     self.bottomProgressIndicatorView = [[UIActivityIndicatorView alloc] init];
     self.bottomProgressIndicatorView.activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
@@ -127,16 +128,35 @@
     [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
     [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:self.offsetValue] forKey:Offsetkey];
     [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:self.limitValue] forKey:LimitKey];
-    if(self.offsetValue == 0){
+    
+    arrayHomePageListing = [[NSUserDefaults standardUserDefaults] valueForKey:CategoriesStoragekey];
+    if(arrayHomePageListing == NULL){
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        if(self.offsetValue == 0){
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        }
     }
+    else{
+        [self.categoriesMutableArray removeAllObjects];
+        arrayHomePageListing = [[NSUserDefaults standardUserDefaults] valueForKey:CategoriesStoragekey];
+         [self.categoriesMutableArray addObjectsFromArray:arrayHomePageListing];
+         self.isFromLocalDb = YES;
+         [collectionViewHome reloadData];
+    }
+   
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Object:%@",responseObject);
         arrayHomePageListing = [responseObject valueForKey:Datakey];
+        [[NSUserDefaults standardUserDefaults] setValue:[responseObject valueForKey:Datakey] forKey:CategoriesStoragekey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         self.offsetValue=self.offsetValue+self.limitValue;
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self.bottomProgressIndicatorView stopAnimating];
+        if(self.isFromLocalDb){
+            [self.categoriesMutableArray removeAllObjects];
+            self.isFromLocalDb = NO;
+        }
         [self.categoriesMutableArray addObjectsFromArray:arrayHomePageListing];
         [collectionViewHome reloadData];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
@@ -176,6 +196,7 @@
         }
     }
 }
+
 /*
  #pragma mark - Navigation
  

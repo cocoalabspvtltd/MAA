@@ -529,19 +529,22 @@
     [getSubcategoriesMutableDictionary  setValue:@"" forKey:@"keyword"];
     [getSubcategoriesMutableDictionary  setValue:[NSNumber numberWithInt:0] forKey:Offsetkey];
     [getSubcategoriesMutableDictionary setValue:[NSNumber numberWithInt:100] forKey:LimitKey];
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.categoriesArray = [[NSUserDefaults standardUserDefaults] valueForKey:CategoriesStoragekey];
+    if(self.categoriesArray == NULL){
+       [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
+    else{
+        [self loadingCategories];
+    }
+    
     [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:getCategoriesUrlString] withBody:getSubcategoriesMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:[NSString stringWithFormat:@"Bearer %@",accessToken]];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
         NSLog(@"Response Object:%@",responseObject);
         self.categoriesArray = [responseObject valueForKey:Datakey];
+        [[NSUserDefaults standardUserDefaults] setValue:[responseObject valueForKey:Datakey] forKey:CategoriesStoragekey];
+        [[NSUserDefaults standardUserDefaults] synchronize];
         NSLog(@"Selected Department Details :%@",self.selectedDepartmentDetails);
-        NSPredicate *filterArrayPrediate = [NSPredicate predicateWithFormat:@"SELF.id == %@",[self.selectedDepartmentDetails valueForKey:@"id"]];
-        NSArray *filteredArray = [self.categoriesArray filteredArrayUsingPredicate:filterArrayPrediate];
-        NSLog(@"Filtered Array;%@",filteredArray);
-        if(filteredArray.count>0){
-            self.selectedCategory = [filteredArray objectAtIndex:0];
-        }
-        self.txtCategory.text =[self.selectedCategory valueForKey:@"name"];
+        [self loadingCategories];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -555,6 +558,16 @@
         UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [erroralert show];
     }];
+}
+
+-(void)loadingCategories{
+    NSPredicate *filterArrayPrediate = [NSPredicate predicateWithFormat:@"SELF.id == %@",[self.selectedDepartmentDetails valueForKey:@"id"]];
+    NSArray *filteredArray = [self.categoriesArray filteredArrayUsingPredicate:filterArrayPrediate];
+    NSLog(@"Filtered Array;%@",filteredArray);
+    if(filteredArray.count>0){
+        self.selectedCategory = [filteredArray objectAtIndex:0];
+    }
+    self.txtCategory.text =[self.selectedCategory valueForKey:@"name"];
 }
 
 #pragma mark - Button Actions
