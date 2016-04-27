@@ -10,12 +10,7 @@
 #import <OpenTok/OpenTok.h>
 
 @interface thirdViewController : UIViewController<OTSessionDelegate,OTSubscriberDelegate,OTPublisherDelegate>
-- (IBAction)connnnnnnn:(id)sender;
-- (IBAction)disccccccc:(id)sender;
-- (IBAction)accept:(id)sender;
-- (IBAction)reject:(id)sender;
-@property (weak, nonatomic) IBOutlet UIButton *accept;
-@property (weak, nonatomic) IBOutlet UIButton *reject;
+
 @property (weak, nonatomic) IBOutlet UIImageView *end;
 @property (weak, nonatomic) IBOutlet UIImageView *end1;
 @property (weak, nonatomic) IBOutlet UIImageView *docImage;

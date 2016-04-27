@@ -42,12 +42,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self initialisation];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     token = [[NSUserDefaults standardUserDefaults]valueForKey:ACCESS_TOKEN];
     [self getSessionCredentials];
     [self apiCall];
     
 }
+
+-(void)initialisation{
+    self.docName.text = self.doctorNameString;
+    [self.docImage sd_setImageWithURL:[NSURL URLWithString:self.doctorProfileImageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+}
+
 -(void)apiCall{
     NSString *yurl = @"http://freemaart.com/dev/my_maa/api/start_appointment";
     NSMutableDictionary *searchMutableDictionary = [[NSMutableDictionary alloc] init];
@@ -403,8 +410,7 @@ didFailWithError:(OTError*)error
 }
 
 - (IBAction)accept:(id)sender {
-    _accept.hidden = YES;
-    _reject.hidden = YES;
+    
     _end.hidden = NO;
     _end1.hidden = NO;
     _docImage.hidden = NO;
@@ -531,7 +537,6 @@ didFailWithError:(OTError*)error
             
             
         }
-
         else{
             errorMessage = @"Connection to server failed!";
         }
