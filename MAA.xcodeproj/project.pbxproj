@@ -256,6 +256,7 @@
 		C09F2C071C9C69C900DB040C /* no search result found.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F2C061C9C69C900DB040C /* no search result found.png */; };
 		C09F2C0E1C9C6FA800DB040C /* no appoinments.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F2C0D1C9C6FA800DB040C /* no appoinments.png */; };
 		C09F2C101C9C82F400DB040C /* no questions.png in Resources */ = {isa = PBXBuildFile; fileRef = C09F2C0F1C9C82F400DB040C /* no questions.png */; };
+		C0A266BD1CD13A2F0055D262 /* tocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A266BC1CD13A2F0055D262 /* tocViewController.m */; };
 		C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830701C7D7BD0000A60C9 /* ImagesVC.m */; };
 		C0A830FF1C7DC6FF000A60C9 /* MedicalDocumentsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A830FE1C7DC6FF000A60C9 /* MedicalDocumentsVC.m */; };
 		C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0A831011C7DD05A000A60C9 /* TMDCollectionViewCell.m */; };
@@ -741,6 +742,8 @@
 		C09F2C061C9C69C900DB040C /* no search result found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no search result found.png"; sourceTree = "<group>"; };
 		C09F2C0D1C9C6FA800DB040C /* no appoinments.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no appoinments.png"; sourceTree = "<group>"; };
 		C09F2C0F1C9C82F400DB040C /* no questions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no questions.png"; sourceTree = "<group>"; };
+		C0A266BB1CD13A2F0055D262 /* tocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tocViewController.h; sourceTree = "<group>"; };
+		C0A266BC1CD13A2F0055D262 /* tocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tocViewController.m; sourceTree = "<group>"; };
 		C0A8306F1C7D7BD0000A60C9 /* ImagesVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImagesVC.h; sourceTree = "<group>"; };
 		C0A830701C7D7BD0000A60C9 /* ImagesVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImagesVC.m; sourceTree = "<group>"; };
 		C0A830FD1C7DC6FF000A60C9 /* MedicalDocumentsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicalDocumentsVC.h; sourceTree = "<group>"; };
@@ -2272,6 +2275,8 @@
 		C0C2B1E61CC7D60900C1DF5A /* VideoCall */ = {
 			isa = PBXGroup;
 			children = (
+				C0A266BB1CD13A2F0055D262 /* tocViewController.h */,
+				C0A266BC1CD13A2F0055D262 /* tocViewController.m */,
 				C0C2B20B1CC7F2EF00C1DF5A /* chat.xib */,
 				C0C2B2071CC7D93B00C1DF5A /* Config.h */,
 				C0C2B2041CC7D91600C1DF5A /* markasFinishedViewController.h */,
@@ -2994,6 +2999,7 @@
 				C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */,
 				C0D157FF1C9B134700FC1DE0 /* SearchVC.m in Sources */,
 				C092EC031C80B1E000F7B18B /* UIView+WebCacheOperation.m in Sources */,
+				C0A266BD1CD13A2F0055D262 /* tocViewController.m in Sources */,
 				C092EBFF1C80B1E000F7B18B /* UIImage+MultiFormat.m in Sources */,
 				C04EC3AA1CC122B500470A74 /* AddMessagesVC.m in Sources */,
 				C092EC011C80B1E000F7B18B /* UIImageView+HighlightedWebCache.m in Sources */,
