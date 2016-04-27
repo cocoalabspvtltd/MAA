@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 #define PrescriptionsTableViewCellIdentifier @"prescriptionsReusableCell"
+#import "ImageFullView.h"
 #import "PrescriptionsVC.h"
 #import "PrescriptionsTVC.h"
 
@@ -16,6 +17,7 @@
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (nonatomic, strong) NSString *searchText;
 @property (nonatomic, assign) BOOL isTextSearchValueChanged;
+@property (nonatomic, strong) ImageFullView *imageFulleView;
 @end
 
 @implementation PrescriptionsVC
@@ -99,6 +101,18 @@
     return prescriptionsTableViewCell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.imageFulleView = [[[NSBundle mainBundle]
+                            loadNibNamed:@"ImageFullView"
+                            owner:self options:nil]
+                           firstObject];
+    CGFloat xMargin = 0,yMargin = 20;
+    self.imageFulleView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - yMargin);
+    self.imageFulleView.selecetdIndex = (int)indexPath.row;
+    self.imageFulleView.imagesArray = self.prescriptionsmutableArray;
+    [self.view addSubview:self.imageFulleView];
+    
+}
 /*
 #pragma mark - Navigation
 
