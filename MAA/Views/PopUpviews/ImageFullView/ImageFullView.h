@@ -14,4 +14,5 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageFullImageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scroller;
 @property (nonatomic, assign) int selecetdIndex;
+@property (nonatomic, strong) NSArray *imagesArray;
 @end
