@@ -7,9 +7,10 @@
 //
 
 #import "ImageFullView.h"
-@interface ImageFullView()
+@interface ImageFullView()<UIScrollViewDelegate>
 @property (nonatomic, assign) int currentSelectedIndex;
 @property (nonatomic, strong) NSArray *currentImagesArray;
+
 @end
 @implementation ImageFullView
 
@@ -20,6 +21,17 @@
     // Drawing code
 }
 */
+-(void)awakeFromNib
+{
+    self.scroller.minimumZoomScale = 1.0;
+    self.scroller.maximumZoomScale = 2.0;
+    self.scroller.contentSize = self.imageFullImageView.frame.size;
+    self.scroller.delegate = self;
+    
+    
+    //    _scroller.delegate=self;
+    
+}
 - (IBAction)leftSwipeGestureActions:(UISwipeGestureRecognizer *)sender {
     CATransition *transition = nil;
     if(self.currentSelectedIndex+1<self.currentImagesArray.count){
@@ -65,5 +77,13 @@
     NSString *imageUrlString = [[imagesArray objectAtIndex:self.currentSelectedIndex] valueForKey:@"url"];
     [self.imageFullImageView sd_setImageWithURL:[NSURL URLWithString:imageUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
     self.currentImagesArray = imagesArray;
+}
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    return self.imageFullImageView;
+}
+- (void)scrollViewDidZoom:(UIScrollView *)scrollView
+{
+    self.imageFullImageView.center=CGPointMake(CGRectGetMidX(self.scroller.bounds), CGRectGetMidY(self.scroller.bounds));
 }
 @end

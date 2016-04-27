@@ -10,7 +10,8 @@
 
 @interface ImageFullView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *headingLabel;
+@property (weak, nonatomic) IBOutlet UIPinchGestureRecognizer *PinchGesture;
 @property (weak, nonatomic) IBOutlet UIImageView *imageFullImageView;
-@property (nonatomic, strong) NSArray *imagesArray;
+@property (weak, nonatomic) IBOutlet UIScrollView *scroller;
 @property (nonatomic, assign) int selecetdIndex;
 @end

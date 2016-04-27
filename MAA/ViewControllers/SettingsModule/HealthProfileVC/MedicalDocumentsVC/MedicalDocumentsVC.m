@@ -140,7 +140,7 @@
     CGFloat xMargin = 0,yMargin = 20;
     self.imageFulleView.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - yMargin);
     self.imageFulleView.selecetdIndex = (int)indexPath.row;
-    self.imageFulleView.imagesArray = self.photosMutableArray;
+  ////////////////// // self.imageFulleView.imagesArray = self.photosMutableArray;
     [self.view addSubview:self.imageFulleView];
 }
 /*

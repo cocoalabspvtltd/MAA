@@ -63,6 +63,11 @@
 		C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0051C6A00F70095E2CC /* microphone_off.png */; };
 		C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0071C6A010A0095E2CC /* video_camera_none.png */; };
 		C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0091C6A011C0095E2CC /* phone_none.png */; };
+		C009050E1CD0A34000B91EBD /* PrescriptionDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C009050D1CD0A34000B91EBD /* PrescriptionDetailView.xib */; };
+		C00905161CD0B5B000B91EBD /* PrescriptionDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = C00905151CD0B5B000B91EBD /* PrescriptionDetailView.m */; };
+		C00905181CD0BA8B00B91EBD /* NoNetworkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00905171CD0BA8B00B91EBD /* NoNetworkView.xib */; };
+		C009051A1CD0C0E800B91EBD /* no internet connection 2.png in Resources */ = {isa = PBXBuildFile; fileRef = C00905191CD0C0E800B91EBD /* no internet connection 2.png */; };
+		C009051D1CD0C69800B91EBD /* NoNetworkView.m in Sources */ = {isa = PBXBuildFile; fileRef = C009051C1CD0C69800B91EBD /* NoNetworkView.m */; };
 		C00B695C1CBF54270081EF68 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B695B1CBF54270081EF68 /* WebViewController.m */; };
 		C00B69631CBFBB640081EF68 /* InvoiceFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B69621CBFBB640081EF68 /* InvoiceFilterViewController.m */; };
 		C00B69661CBFC0230081EF68 /* invoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00B69651CBFC0230081EF68 /* invoiceCell.xib */; };
@@ -489,6 +494,13 @@
 		C005F0051C6A00F70095E2CC /* microphone_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_off.png; sourceTree = "<group>"; };
 		C005F0071C6A010A0095E2CC /* video_camera_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera_none.png; sourceTree = "<group>"; };
 		C005F0091C6A011C0095E2CC /* phone_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_none.png; sourceTree = "<group>"; };
+		C009050D1CD0A34000B91EBD /* PrescriptionDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionDetailView.xib; sourceTree = "<group>"; };
+		C00905141CD0B5B000B91EBD /* PrescriptionDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionDetailView.h; sourceTree = "<group>"; };
+		C00905151CD0B5B000B91EBD /* PrescriptionDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionDetailView.m; sourceTree = "<group>"; };
+		C00905171CD0BA8B00B91EBD /* NoNetworkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoNetworkView.xib; sourceTree = "<group>"; };
+		C00905191CD0C0E800B91EBD /* no internet connection 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "no internet connection 2.png"; path = "../../../no internet connection 2.png"; sourceTree = "<group>"; };
+		C009051B1CD0C69800B91EBD /* NoNetworkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoNetworkView.h; sourceTree = "<group>"; };
+		C009051C1CD0C69800B91EBD /* NoNetworkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoNetworkView.m; sourceTree = "<group>"; };
 		C00B695A1CBF54270081EF68 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		C00B695B1CBF54270081EF68 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		C00B69611CBFBB640081EF68 /* InvoiceFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceFilterViewController.h; sourceTree = "<group>"; };
@@ -1479,6 +1491,12 @@
 				C065F6541C8EB22700E25726 /* TextChatVC.m */,
 				9F991C591C5A1C5400F92C11 /* search.xib */,
 				C017899D1CA2B38F00482EBF /* invoice.xib */,
+				C009050D1CD0A34000B91EBD /* PrescriptionDetailView.xib */,
+				C00905141CD0B5B000B91EBD /* PrescriptionDetailView.h */,
+				C00905151CD0B5B000B91EBD /* PrescriptionDetailView.m */,
+				C00905171CD0BA8B00B91EBD /* NoNetworkView.xib */,
+				C009051B1CD0C69800B91EBD /* NoNetworkView.h */,
+				C009051C1CD0C69800B91EBD /* NoNetworkView.m */,
 				C08BF4541C66086F0047DC49 /* dummyicons */,
 			);
 			name = Thanveer;
@@ -2023,6 +2041,7 @@
 			isa = PBXGroup;
 			children = (
 				C035D6581CB4D09E0045AD25 /* doc_success.png */,
+				C00905191CD0C0E800B91EBD /* no internet connection 2.png */,
 				9F95DB4A1C9E2FD800F3EB4F /* no medical documents.png */,
 				9F95DB4B1C9E2FD800F3EB4F /* no photos.png */,
 				9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */,
@@ -2743,6 +2762,7 @@
 				C09EF6D81C76211800806600 /* _normalize.scss in Resources */,
 				C035E7451C885AA4007809BC /* line.png in Resources */,
 				C04EC3CA1CC14BD200470A74 /* home.png in Resources */,
+				C009050E1CD0A34000B91EBD /* PrescriptionDetailView.xib in Resources */,
 				C09EF6DA1C76211800806600 /* _print.scss in Resources */,
 				C09F2C0E1C9C6FA800DB040C /* no appoinments.png in Resources */,
 				C05AE2031CC68436003AF9CB /* searchred@2x.png in Resources */,
@@ -2766,6 +2786,7 @@
 				C05AE2001CC68436003AF9CB /* search@2x.png in Resources */,
 				C05AE1FF1CC68436003AF9CB /* search.png in Resources */,
 				C065F64B1C8EA71700E25726 /* chatSender.xib in Resources */,
+				C009051A1CD0C0E800B91EBD /* no internet connection 2.png in Resources */,
 				9F991C611C5A1C5400F92C11 /* bin.png in Resources */,
 				C09EF6CC1C76211800806600 /* OTPixelFormat.html in Resources */,
 				C095DB471C81B9A80087AA4F /* AllergiesTableViewCell.xib in Resources */,
@@ -2862,6 +2883,7 @@
 				C09EF6CB1C76211800806600 /* OTCameraCaptureResolution.html in Resources */,
 				9F5F0C401C665E8100F7E99D /* askedQuestionsCell.xib in Resources */,
 				C017899E1CA2B38F00482EBF /* invoice.xib in Resources */,
+				C00905181CD0BA8B00B91EBD /* NoNetworkView.xib in Resources */,
 				C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */,
 				C09F2C101C9C82F400DB040C /* no questions.png in Resources */,
 				C09EF6F51C76211800806600 /* NOTICE in Resources */,
@@ -2912,6 +2934,7 @@
 				C0B397C31CB8344D0046E6CA /* TakeAppointmentVC.m in Sources */,
 				C0D157FD1C9B134700FC1DE0 /* SearchFilterVC.m in Sources */,
 				C09EF6F71C76211800806600 /* README.md in Sources */,
+				C009051D1CD0C69800B91EBD /* NoNetworkView.m in Sources */,
 				9F5F0C6B1C6668FF00F7E99D /* MedicalDocumantsCVC.m in Sources */,
 				C0C2B1F71CC7D60900C1DF5A /* Video_ringingViewController.m in Sources */,
 				9F991C5C1C5A1C5400F92C11 /* student.m in Sources */,
@@ -2986,6 +3009,7 @@
 				9F5F0C381C665D3100F7E99D /* QuestionsSDetailVC.m in Sources */,
 				C08DEF9F1C9712D00025F1AF /* FilterVC.m in Sources */,
 				C092EBF71C80B1E000F7B18B /* SDWebImageCompat.m in Sources */,
+				C00905161CD0B5B000B91EBD /* PrescriptionDetailView.m in Sources */,
 				9F884C161C9E6A060058D611 /* InvoiceViewController.m in Sources */,
 				C04EC3A61CC1095800470A74 /* PaymentPageViewController.m in Sources */,
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,

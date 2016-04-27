@@ -10,6 +10,7 @@
 #import "SearchResultsVC.h"
 #import <QuartzCore/QuartzCore.h>
 #import "HomePageCVC.h"
+#import "NoNetworkView.h"
 
 @interface HomePageVC ()<UIScrollViewDelegate,UICollectionViewDelegate>
 @property (nonatomic, assign) int offsetValue;
@@ -18,6 +19,8 @@
 @property (nonatomic, strong) UIActivityIndicatorView *bottomProgressIndicatorView;
 @property (readonly) OTConnection *otConnection;
 @property (nonatomic, assign) BOOL isFromLocalDb;
+@property (nonatomic,strong) NoNetworkView *nonetwork;
+
 @end
 
 @implementation HomePageVC
@@ -96,6 +99,18 @@
     [searchBar resignFirstResponder];
 }
 
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (UIEventSubtypeMotionShake)
+    {
+       
+        [_nonetwork removeFromSuperview];
+       [self getCategoriesApiCall];
+        
+        NSLog(@"I'm shaking!");
+        AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+        
+    }
+}
 
 #pragma mark - UICollectionView methods
 
@@ -169,8 +184,15 @@
         else{
             errorMessage = ConnectiontoServerFailedMessage;
         }
-        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        [erroralert show];
+//        UIAlertView *erroralert = [[UIAlertView alloc] initWithTitle:AppName message:errorMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+//        [erroralert show];
+        self.nonetwork = [[[NSBundle mainBundle]
+                           loadNibNamed:@"NoNetworkView"
+                           owner:self options:nil]
+                          firstObject];
+        CGFloat xMargin = 0,yMargin = 20;
+        self.nonetwork.frame = CGRectMake(xMargin, yMargin, self.view.frame.size.width - 2*xMargin, self.view.frame.size.height - yMargin);
+        [self.view addSubview:self.nonetwork];
     }];
 }
 
