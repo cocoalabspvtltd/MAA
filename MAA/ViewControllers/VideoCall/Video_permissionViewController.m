@@ -85,38 +85,35 @@
 
 - (IBAction)start:(id)sender {
     if (i == 1) {
-//        [self performSegueWithIdentifier:@"ring" sender:nil];
+        //        [self performSegueWithIdentifier:@"ring" sender:nil];
         if ([_type isEqual:@"Direct Appointment"]) {
             
         }
         if ([_type isEqual:@"Text Chat"]) {
             
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            newTableViewController *resetOTPPage = (newTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"chatNew"];
-            resetOTPPage.appID=[NSString stringWithFormat:@"%@",_appID];
-            [self.navigationController pushViewController:resetOTPPage animated:YES];
+            newTableViewController *chatVC = (newTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"chatNew"];
+            chatVC.appID=[NSString stringWithFormat:@"%@",_appID];
+            [self.navigationController pushViewController:chatVC animated:YES];
             
             
         }
-        if ([_type isEqual:@"Audio Chat"]) {
+        else if ([_type isEqual:@"Audio Chat"]) {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-            thirdViewController *resetOTPPage = (thirdViewController *)[storyboard instantiateViewControllerWithIdentifier:@"audio"];
-            resetOTPPage.appID=[NSString stringWithFormat:@"%@",_appID];
-            [self.navigationController pushViewController:resetOTPPage animated:YES];
+            thirdViewController *audioVC = (thirdViewController *)[storyboard instantiateViewControllerWithIdentifier:@"audio"];
+            audioVC.appID=[NSString stringWithFormat:@"%@",_appID];
+            [self.navigationController pushViewController:audioVC animated:YES];
             
         }
-        if ([_type isEqual:@"Video Chat"]) {
+        else if ([_type isEqual:@"Video Chat"]) {
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-
-            ViewController *resetOTPPage = (ViewController *)[storyboard instantiateViewControllerWithIdentifier:@"video"];
-                        resetOTPPage.appID=[NSString stringWithFormat:@"%@",_appID];
-            [self.navigationController pushViewController:resetOTPPage animated:YES];
-
-            
+            ViewController *videoViewController = (ViewController *)[storyboard instantiateViewControllerWithIdentifier:@"video"];
+            videoViewController.appID=[NSString stringWithFormat:@"%@",_appID];
+            [self.navigationController pushViewController:videoViewController animated:YES];
         }
         
     }
-   }
+}
 - (IBAction)back:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }

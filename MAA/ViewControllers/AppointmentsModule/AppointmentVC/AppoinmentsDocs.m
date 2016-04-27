@@ -175,6 +175,7 @@ NSString *flag=0;
         appointmentDetailVC.selectedIndex = indexPath.row;
         appointmentDetailVC.appointmentIdString = [[self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row] valueForKey:@"id"];
         appointmentDetailVC.appointmentDetailDelegate = self;
+        appointmentDetailVC.appointmentDetails = [self.appointmentDoctorsMutableArray objectAtIndex:indexPath.row];
         [self.navigationController pushViewController:appointmentDetailVC animated:YES];
     }
     

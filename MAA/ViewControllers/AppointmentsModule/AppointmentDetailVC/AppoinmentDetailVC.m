@@ -455,15 +455,16 @@
 }
 
 -(void)addingSTartAppointmentviewController{
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    Video_permissionViewController *resetOTPPage = (Video_permissionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"chat_permission"];
-    resetOTPPage.appID = self.appointmentIdString;
-    resetOTPPage.type = _appontmentTypeLabel.text;
-    resetOTPPage.namee = self.doctorNameLabel.text;
-    resetOTPPage.imagee = [NSURL URLWithString:self.docctorProfileUrlString];
-    //duration =_receivingArray[16];
-    resetOTPPage.duration = @"10";
-    [self.navigationController pushViewController:resetOTPPage animated:YES];
+    NSLog(@"Appointment Details:%@",self.appointmentDetails);
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
+    Video_permissionViewController *videoPermissionVC = (Video_permissionViewController *)[storyboard instantiateViewControllerWithIdentifier:@"chat_permission"];
+    videoPermissionVC.appID = self.appointmentIdString;
+    videoPermissionVC.type = _appontmentTypeLabel.text;
+    videoPermissionVC.namee = self.doctorNameLabel.text;
+    videoPermissionVC.imagee = [NSURL URLWithString:self.docctorProfileUrlString];
+    videoPermissionVC.duration = [self.appointmentDetails valueForKey:@"duration"];
+    videoPermissionVC.appointmentDetails = self.appointmentDetails;
+    [self.navigationController pushViewController:videoPermissionVC animated:YES];
 }
 
 -(void)callingStartAppointmentApi{

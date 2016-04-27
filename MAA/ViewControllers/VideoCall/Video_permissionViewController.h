@@ -24,5 +24,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *app_dur;
 @property (weak, nonatomic) IBOutlet UILabel *name;
 - (IBAction)back:(id)sender;
+@property (nonatomic, strong) id appointmentDetails;
 
 @end

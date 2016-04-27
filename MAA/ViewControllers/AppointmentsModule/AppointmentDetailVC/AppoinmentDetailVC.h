@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *appointmentTypeimageview;
 @property (nonatomic, assign) id<AppointmentDetailDelegate>appointmentDetailDelegate;
 @property (nonatomic, assign) NSInteger selectedIndex;
+@property (nonatomic, strong) id appointmentDetails;
 @end
 @protocol AppointmentDetailDelegate <NSObject>
 
