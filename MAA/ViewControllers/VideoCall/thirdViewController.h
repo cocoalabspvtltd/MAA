@@ -20,11 +20,11 @@
 @property (weak, nonatomic) IBOutlet UIImageView *end1;
 @property (weak, nonatomic) IBOutlet UIImageView *docImage;
 @property (weak, nonatomic) IBOutlet UILabel *docName;
-@property (weak, nonatomic) IBOutlet UIView *up;
-@property(nonatomic,retain)NSString *appID;
-@property (weak, nonatomic) IBOutlet UIImageView *pat_image;
 @property (weak, nonatomic) IBOutlet UILabel *progress;
 - (IBAction)end:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *connecting;
 
+@property(nonatomic,retain)NSString *appID;
+@property (nonatomic, strong) NSString *doctorNameString;
+@property (nonatomic, strong) NSString *doctorProfileImageUrlString;
 @end

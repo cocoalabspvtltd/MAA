@@ -18,7 +18,6 @@
 - (IBAction)send:(id)sender;
 @property (weak, nonatomic) IBOutlet UITextField *textf;
 @property (weak, nonatomic) IBOutlet UITableView *tablee;
-- (IBAction)patientSend:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *pat_name;
 @property (weak, nonatomic) IBOutlet UIImageView *pat_image;
 @property (weak, nonatomic) IBOutlet UIImageView *pat_ballon;
@@ -30,5 +29,8 @@
 @property (nonatomic, strong) MessageComposerView *messageComposerView;
 @property (nonatomic, assign) CGRect oldFrame;
 - (IBAction)back:(id)sender;
+
+@property (nonatomic, strong) NSString *doctorNameString;
+@property (nonatomic, strong) NSString *doctorProfileImageUrlString;
 
 @end

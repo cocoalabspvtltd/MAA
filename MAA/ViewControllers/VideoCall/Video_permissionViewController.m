@@ -91,24 +91,29 @@
         }
         if ([_type isEqual:@"Text Chat"]) {
             
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
             newTableViewController *chatVC = (newTableViewController *)[storyboard instantiateViewControllerWithIdentifier:@"chatNew"];
             chatVC.appID=[NSString stringWithFormat:@"%@",_appID];
+            chatVC.doctorProfileImageUrlString = [[self.appointmentDetails valueForKey:@"doctor_details"] valueForKey:@"logo_image"];
+            chatVC.doctorNameString = [[self.appointmentDetails valueForKey:@"doctor_details"] valueForKey:@"name"];
             [self.navigationController pushViewController:chatVC animated:YES];
-            
-            
         }
         else if ([_type isEqual:@"Audio Chat"]) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
             thirdViewController *audioVC = (thirdViewController *)[storyboard instantiateViewControllerWithIdentifier:@"audio"];
             audioVC.appID=[NSString stringWithFormat:@"%@",_appID];
+            audioVC.doctorProfileImageUrlString = [[self.appointmentDetails valueForKey:@"doctor_details"] valueForKey:@"logo_image"];
+            audioVC.doctorNameString = [[self.appointmentDetails valueForKey:@"doctor_details"] valueForKey:@"name"];
             [self.navigationController pushViewController:audioVC animated:YES];
             
         }
         else if ([_type isEqual:@"Video Chat"]) {
-            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            NSLog(@"Appointment Details;%@",self.appointmentDetails);
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:MainStoryboardName bundle:nil];
             ViewController *videoViewController = (ViewController *)[storyboard instantiateViewControllerWithIdentifier:@"video"];
             videoViewController.appID=[NSString stringWithFormat:@"%@",_appID];
+            videoViewController.doctorProfUrlString = [[self.appointmentDetails valueForKey:@"doctor_details"] valueForKey:@"logo_image"];
+            videoViewController.doctorNamneString = [[self.appointmentDetails valueForKey:@"doctor_details"] valueForKey:@"name"];
             [self.navigationController pushViewController:videoViewController animated:YES];
         }
         

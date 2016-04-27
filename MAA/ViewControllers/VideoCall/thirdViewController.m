@@ -44,16 +44,7 @@
     [super viewDidLoad];
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     token = [[NSUserDefaults standardUserDefaults]valueForKey:ACCESS_TOKEN];
-
-    _connecting.hidden=NO;
-    currMinute=0;
-    currSeconds=00;
-    _end.hidden = NO;
-    _end1.hidden = NO;
-    _up.hidden = NO;
     [self getSessionCredentials];
-    _pat_image.clipsToBounds = YES;
-    _pat_image.layer.cornerRadius = _docImage.frame.size.width/2;
     [self apiCall];
     
 }
@@ -418,7 +409,6 @@ didFailWithError:(OTError*)error
     _end1.hidden = NO;
     _docImage.hidden = NO;
     _docName.hidden = NO;
-    _up.hidden = NO;
     
     if(!_apiKey || !_token || !_sessionId) {
         NSLog(@"Error blabla");

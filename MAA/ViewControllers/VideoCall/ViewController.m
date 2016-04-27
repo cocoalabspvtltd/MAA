@@ -50,10 +50,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [self initialisation];
     token = [[NSUserDefaults standardUserDefaults]valueForKey:ACCESS_TOKEN];
     progress.textColor=[UIColor whiteColor];
-    //   [progress setText:@"0:00"];
     progress.backgroundColor=[UIColor clearColor];
     progress=[[UILabel alloc] initWithFrame:CGRectMake(self.view.frame.size.width/2, 0, 100, 50)];
 
@@ -64,29 +63,20 @@
     j = 0;
     p = 0;
     arr = [[NSMutableArray alloc]init];
-   // [self getSessionCredentials];
     self.bar = [[UIView alloc]init];
     self.bar.backgroundColor = [UIColor redColor];
     self.topbar = [[UIView alloc]init];
     self.topbar.backgroundColor = [UIColor lightGrayColor];
-    
-    
-    
-   // UIImageView* animatedImageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
-
-//    _apple.animationImages = [NSArray arrayWithObjects:
-//                                         [UIImage imageNamed:@"a.gif"],[UIImage imageNamed:@"b.gif"],[UIImage imageNamed:@"c.gif"],[UIImage imageNamed:@"d.gif"],[UIImage imageNamed:@"e.gif"],[UIImage imageNamed:@"f.gif"],[UIImage imageNamed:@"g.gif"],[UIImage imageNamed:@"h.gif"],[UIImage imageNamed:@"i.gif"],[UIImage imageNamed:@"j.gif"],[UIImage imageNamed:@"k.gif"],[UIImage imageNamed:@"l.gif"],[UIImage imageNamed:@"m.gif"],[UIImage imageNamed:@"n.gif"],[UIImage imageNamed:@"o.gif"],[UIImage imageNamed:@"p.gif"],[UIImage imageNamed:@"q.gif"],[UIImage imageNamed:@"r.gif"],[UIImage imageNamed:@"s.gif"],[UIImage imageNamed:@"t.gif"],[UIImage imageNamed:@"u.gif"],[UIImage imageNamed:@"v.gif"],[UIImage imageNamed:@"w.gif"],[UIImage imageNamed:@"x.gif"],[UIImage imageNamed:@"y.gif"],[UIImage imageNamed:@"z.gif"],[UIImage imageNamed:@"aa.gif"],[UIImage imageNamed:@"bb.gif"],[UIImage imageNamed:@"cc.gif"],[UIImage imageNamed:@"dd.gif"],nil];
-//   _apple.animationDuration = 1.0f;
-//    _apple.animationRepeatCount = 0;
-//    [_apple startAnimating];
-    //[self.view addSubview: _apple];
     _docImage.clipsToBounds = YES;
     [self setRoundedView:_docImage toDiameter:50.0];
-
-
     [self apiCall];
-    
 }
+
+-(void)initialisation{
+    self.doctorNameLabel.text = self.doctorNamneString;
+    [self.docImage sd_setImageWithURL:[NSURL URLWithString:self.doctorProfUrlString] placeholderImage:[UIImage imageNamed:PlaceholderImageNameForUser]];
+}
+
 -(void)setRoundedView:(UIImageView *)roundedView toDiameter:(float)newSize;
 {
     CGPoint saveCenter = roundedView.center;
@@ -97,41 +87,24 @@
 }
 
 -(void)apiCall{
-    NSString *yurl = @"http://freemaart.com/dev/my_maa/api/start_appointment";
+    NSString *startAppointmenturlsTring = [Baseurl stringByAppendingString:StartAppointmentUrl];
     NSMutableDictionary *searchMutableDictionary = [[NSMutableDictionary alloc] init];
     [searchMutableDictionary setValue:_appID forKey:@"appointment_id"];
-    
-    
     [searchMutableDictionary setValue:token forKey:@"token"];
-    
-    NSLog(@"Search Mutable Dictionary:%@",searchMutableDictionary);
-    
-    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:yurl] withBody:searchMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:token];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [[NetworkHandler sharedHandler] requestWithRequestUrl:[NSURL URLWithString:startAppointmenturlsTring] withBody:searchMutableDictionary withMethodType:HTTPMethodPOST withAccessToken:token];
     [[NetworkHandler sharedHandler] startServieRequestWithSucessBlockSuccessBlock:^(id responseObject) {
-        //   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         dict = [responseObject valueForKey:@"data"];
         _sessionId = dict[@"session_id"];
         _token = dict[@"token"];
         x = dict[@"token"];
         [arr addObject:_token];
         [arr addObject:_sessionId];
-        NSLog(@"%@",x);
-        //        for (NSDictionary *item in thirdArray) {
-        //            student *objy= [[student alloc]init];
-        //
-        //            objy.pp3 = item[@"name"];
-        //            objy.pp4 = item[@"id"];
-        //            //   NSLog(@"%@%@",objy.pp1,objy.pp2);
-        //            //  [myo addObject:item[@"name"]];
-        //            [disco addObject:objy];
-        
-        
-        NSLog(@"Response object:%@",responseObject);
         [self getSessionCredentials];
 
     } FailureBlock:^(NSString *errorDescription, id errorResponse) {
-        // [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-        // [self.bottomProgressIndicatorView stopAnimating];
+         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         NSString *errorMessage;
         if([errorDescription isEqualToString:@"No internet Access"]){
             errorMessage = @"No internet Access";
@@ -168,71 +141,13 @@
 }
 - (void)getSessionCredentials
 {
-    
-    
-    
-  //  [self apiCall];
-    
-    
-    
-    
-    
-    
-    
     NSLog(@"%lu",(unsigned long)[arr count]);
-    
-    
-    
-    
-    NSLog(@"%@%@%@",_token,_sessionId,x);
-    
-    
    _apiKey = @"45567942";
-//    _token = @"T1==cGFydG5lcl9pZD00NTQ0NjA4MiZzaWc9ZTg4NjZiN2RmNTBkMDJkNTExMTk0ZDUxMzkwZTgyODQ3NjVkZTViNjpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTFfTVg0ME5UUTBOakE0TW41LU1UUTFNRGt6TVRVM01EVXdOSDV5Wmt0b1JrUkdUbGx4VTJsblVqVlJNa3ByWnpkNk1pdC1VSDQmY3JlYXRlX3RpbWU9MTQ1MDkzMTY1MiZub25jZT0wLjgwMDkyNzgzMDAzNTc5ODcmZXhwaXJlX3RpbWU9MTQ1MzUyMzUzOSZjb25uZWN0aW9uX2RhdGE9Y29jb2FsYWJz";
-//    _sessionId = @"1_MX40NTQ0NjA4Mn5-MTQ1MDkzMTU3MDUwNH5yZktoRkRGTllxU2lnUjVRMkprZzd6Mit-UH4";
-//    
-//    sessionId = @"2_MX40NTQ0NjA4Mn5-MTQ1MDg1MTE1MDE4NH5iYklOMmMybGQydlJhU1A0VHZFclh0QjZ-UH4";
-//    apikey = @"45446082";
-//    token= @"T1==cGFydG5lcl9pZD00NTQ0NjA4MiZzaWc9MmNkZDYzYzM3NjRiODE5MGU5OGU5ZTliNzA4M2YxYmVmYTY4ZWFmYTpyb2xlPXB1Ymxpc2hlciZzZXNzaW9uX2lkPTFfTVg0ME5UUTBOakE0TW41LU1UUTFNRGt6TVRVM01EVXdOSDV5Wmt0b1JrUkdUbGx4VTJsblVqVlJNa3ByWnpkNk1pdC1VSDQmY3JlYXRlX3RpbWU9MTQ1MTI5MzM3NSZub25jZT0wLjA0NTk1OTQwMTQ5MTk3NTg2JmV4cGlyZV90aW1lPTE0NTM4ODUyMjQmY29ubmVjdGlvbl9kYXRhPWlsdWo=";
-    
     if(!_apiKey || !_token || !_sessionId) {
         NSLog(@"Error blabla");
     } else {
         [self doConnect];
     }
-    
-   /* if(!apikey || !token || !sessionId) {
-        NSLog(@"Error blabla");
-    } else {
-        [self dooConnect];
-    }*/
-
-    
-    
-    /*
-     NSString* urlPath = SAMPLE_SERVER_BASE_URL;
-     urlPath = [urlPath stringByAppendingString:@"/session"];
-     NSURL *url = [NSURL URLWithString: urlPath];
-     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData timeoutInterval:10];
-     [request setHTTPMethod: @"GET"];
-     
-     [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *error){
-     if (error){
-     NSLog(@"Error,%@, URL: %@", [error localizedDescription],urlPath);
-     }
-     else{
-     NSDictionary *roomInfo = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-     // _apiKey = [roomInfo objectForKey:@"apiKey"];
-     //_token = [roomInfo objectForKey:@"token"];
-     //_sessionId = [roomInfo objectForKey:@"sessionId"];
-     
-     if(!_apiKey || !_token || !_sessionId) {
-     NSLog(@"Error invalid response from server, URL: %@",urlPath);
-     } else {
-     [self doConnect];
-     }
-     }
-     }];*/
 }
 
 - (BOOL)prefersStatusBarHidden
