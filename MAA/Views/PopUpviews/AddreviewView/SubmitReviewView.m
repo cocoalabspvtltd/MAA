@@ -5,7 +5,7 @@
 //  Created by Kiran on 04/04/16.
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
-#define StarEmptyImageName @"starempty"
+#define StarEmptyImageName @"star_empty_x"
 #define HalfStarImageName @"starhalf"
 #define FullStarImageName @"star-sel"
 

@@ -9,7 +9,7 @@
 #import "ReviewTableViewCell.h"
 #import "DoctorReviewsVC.h"
 
-@interface DoctorReviewsVC ()<UITableViewDataSource,UIScrollViewDelegate>
+@interface DoctorReviewsVC ()<UITableViewDataSource,UIScrollViewDelegate,UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *reviewsMutableArray;
 @property (nonatomic, assign) int startIndex;
 @property (nonatomic, assign) int limitValue;
@@ -79,8 +79,14 @@
     cell.ratingString = [[self.reviewsMutableArray objectAtIndex:indexPath.row] valueForKey:@"rating"];
     return cell;
 }
-
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
+}
+-(CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewAutomaticDimension;
+}
 #pragma maRK - Calling get Entity Reviews Api
 
 -(void)callinggetEntityReviewssApi{

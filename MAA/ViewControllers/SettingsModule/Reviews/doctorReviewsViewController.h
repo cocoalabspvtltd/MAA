@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *reviewContent;
 @property (strong, nonatomic) UISearchController *searchController;
 @property (nonatomic, assign) int offsetValue;
+@property (weak, nonatomic) IBOutlet UIView *NoResultsView;
 @property (nonatomic, assign) int limitValue;
 @property (nonatomic, assign) NSString* month;
 @property (nonatomic, assign) NSString* year;

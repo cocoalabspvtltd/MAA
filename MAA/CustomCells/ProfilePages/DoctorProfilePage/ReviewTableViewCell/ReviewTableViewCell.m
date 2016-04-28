@@ -13,8 +13,11 @@
 
 @implementation ReviewTableViewCell
 
-- (void)awakeFromNib {
+- (void)awakeFromNib
+{
     [super awakeFromNib];
+    _reviewerImageView.layer.borderWidth=.5;
+    _reviewerImageView.layer.borderColor=[[UIColor colorWithRed:1.000 green:0.000 blue:0.275 alpha:1.00]CGColor];
     // Initialization code
 }
 
