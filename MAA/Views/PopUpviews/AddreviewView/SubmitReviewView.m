@@ -7,7 +7,7 @@
 //
 #define StarEmptyImageName @"star_empty_x"
 #define HalfStarImageName @"starhalf"
-#define FullStarImageName @"star-sel"
+#define FullStarImageName @"star_sel@2x"
 
 #import "SubmitReviewView.h"
 @interface SubmitReviewView()
