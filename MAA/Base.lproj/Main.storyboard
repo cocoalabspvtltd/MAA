@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="759B1740-3B1B-43D1-95C9-FEB4475C4CBD" scopeBarBackgroundImage="759B1740-3B1B-43D1-95C9-FEB4475C4CBD" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="D94B9DB4-825A-43AD-80BC-8AFC04213B85" scopeBarBackgroundImage="D94B9DB4-825A-43AD-80BC-8AFC04213B85" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="0E0695F5-58C3-427C-88E7-A429156D357E" scopeBarBackgroundImage="0E0695F5-58C3-427C-88E7-A429156D357E" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="BA9C013F-9202-4EF4-A9AA-8A53160C431A" scopeBarBackgroundImage="BA9C013F-9202-4EF4-A9AA-8A53160C431A" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -10019,10 +10019,10 @@
                                                 <rect key="frame" x="0.0" y="497" width="600" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Jbn-Nv-cY5">
-                                                        <rect key="frame" x="194" y="11" width="109" height="18"/>
+                                                        <rect key="frame" x="0.0" y="11" width="600" height="18"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Number:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp3-R6-ub9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="109" height="18"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contact Number:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp3-R6-ub9">
+                                                                <rect key="frame" x="0.0" y="0.0" width="600" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="18" id="OKX-Wz-k2s"/>
                                                                 </constraints>
@@ -10039,10 +10039,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstItem="Jbn-Nv-cY5" firstAttribute="centerX" secondItem="jZB-Js-ppN" secondAttribute="centerX" constant="-51.5" id="Krh-A3-HSs"/>
                                                     <constraint firstAttribute="height" constant="40" id="Lls-dA-dvj"/>
-                                                    <constraint firstItem="Jbn-Nv-cY5" firstAttribute="leading" secondItem="jZB-Js-ppN" secondAttribute="leading" constant="194" id="XYL-ka-iJb"/>
-                                                    <constraint firstAttribute="trailing" secondItem="Jbn-Nv-cY5" secondAttribute="trailing" constant="297" id="aL0-xh-czn"/>
+                                                    <constraint firstItem="Jbn-Nv-cY5" firstAttribute="leading" secondItem="jZB-Js-ppN" secondAttribute="leading" id="XYL-ka-iJb"/>
+                                                    <constraint firstAttribute="trailing" secondItem="Jbn-Nv-cY5" secondAttribute="trailing" id="aL0-xh-czn"/>
                                                     <constraint firstItem="Jbn-Nv-cY5" firstAttribute="centerY" secondItem="jZB-Js-ppN" secondAttribute="centerY" id="j6l-wI-LkP"/>
                                                 </constraints>
                                             </view>
@@ -10581,7 +10580,7 @@
                                                             <constraint firstAttribute="height" constant="133" id="aXZ-r3-iQA"/>
                                                         </constraints>
                                                         <prototypes>
-                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="specializationRC" id="bjb-ge-1Ky" customClass="DoctorAboutTVC">
+                                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="specializationRC" id="bjb-ge-1Ky" customClass="DoctorAboutTVC">
                                                                 <rect key="frame" x="0.0" y="28" width="560" height="35"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bjb-ge-1Ky" id="pTf-RE-YM8">
@@ -11188,26 +11187,33 @@
                     <connections>
                         <outlet property="aboutLabel" destination="bqZ-51-syN" id="ah1-V3-tan"/>
                         <outlet property="awardsHeightConstraint" destination="Qks-h3-GPm" id="2VB-a7-hEa"/>
+                        <outlet property="awardsLabel" destination="fFy-zD-2AF" id="tZW-0N-fgj"/>
                         <outlet property="awardsTableView" destination="KlI-dB-QKC" id="iiN-Hn-MUN"/>
                         <outlet property="awardsviewMoreButton" destination="M3R-8d-go9" id="wLs-bC-COO"/>
                         <outlet property="doctorNameHeadingLabel" destination="LN8-Cq-dT8" id="g7n-2F-ROP"/>
                         <outlet property="educationHeightConstraint" destination="MkH-HC-mWN" id="xch-gZ-dNS"/>
+                        <outlet property="educationLabel" destination="5Fw-Cc-Cg3" id="LtG-tI-b1E"/>
                         <outlet property="educationTableView" destination="oQa-bY-Phr" id="Opj-PR-XvW"/>
                         <outlet property="educationViewMoreButton" destination="337-BT-bgb" id="4VU-yf-v0k"/>
                         <outlet property="experienceHeightConstraint" destination="hfX-Mh-qzb" id="Dfo-Va-Tid"/>
+                        <outlet property="experienceLabel" destination="MBD-D6-yOK" id="0ol-Co-eDZ"/>
                         <outlet property="experienceTableView" destination="K5B-S3-XtY" id="UAl-au-b9w"/>
                         <outlet property="experienceViewMoreButton" destination="i0j-91-Xlo" id="Djm-GA-9kg"/>
                         <outlet property="memberShipTableView" destination="0Fv-FG-cCZ" id="KmM-MT-4iF"/>
                         <outlet property="memberShipViewMoreButton" destination="5FP-d1-E89" id="Q5R-YF-AGJ"/>
                         <outlet property="membershipHeightConstraint" destination="2aJ-J5-Po5" id="AgC-EB-SIW"/>
+                        <outlet property="memebershipLabel" destination="cfp-tC-MVJ" id="xvn-GY-gqV"/>
                         <outlet property="registrationHeightConstraint" destination="XdH-1y-qo8" id="Cko-ZO-rSF"/>
+                        <outlet property="registrationLabel" destination="fTI-YY-ZxP" id="y9t-pm-Y54"/>
                         <outlet property="registrationTableView" destination="I4d-Eq-fSM" id="YvE-fz-71U"/>
                         <outlet property="registrationViewMoreButton" destination="UPz-A4-7y9" id="RXi-ZQ-G9m"/>
                         <outlet property="scrollContentViewHeightConstarint" destination="QxV-mK-WOe" id="tqc-Id-345"/>
                         <outlet property="servicesHeightConstraint" destination="Fpj-LE-cbY" id="bBZ-5x-eOb"/>
+                        <outlet property="servicesLabel" destination="rl0-wD-MxA" id="2o6-cL-MJh"/>
                         <outlet property="servicesTableView" destination="GZZ-CA-WKe" id="5Vb-Uo-l6N"/>
                         <outlet property="servicesViewMoreButton" destination="KB9-0e-WdI" id="KcS-Ec-b38"/>
                         <outlet property="specializationHeightConstraint" destination="bnW-AY-0iZ" id="edo-VB-pfV"/>
+                        <outlet property="specializationLabel" destination="cPZ-XM-e11" id="KuU-Ey-Y7x"/>
                         <outlet property="specializationTableView" destination="PDe-IM-L7F" id="rc7-Zc-d2s"/>
                         <outlet property="specializationViewMoreButton" destination="RUm-gK-Kxi" id="o7u-4q-nJr"/>
                     </connections>
@@ -14585,7 +14591,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="0E0695F5-58C3-427C-88E7-A429156D357E" width="310" height="78">
+        <image name="1.png" width="688" height="853"/>
+        <image name="BA9C013F-9202-4EF4-A9AA-8A53160C431A" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -16250,8 +16257,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="1.png" width="688" height="853"/>
-        <image name="759B1740-3B1B-43D1-95C9-FEB4475C4CBD" width="310" height="78">
+        <image name="D94B9DB4-825A-43AD-80BC-8AFC04213B85" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

@@ -6,6 +6,8 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#define SectionHeight 233
+
 #define SpecilizationReuseCell @"specializationRC"
 #define ServicesReuseCell @"servicesRC"
 #define MemberShipReuseCell @"memberShipRC"
@@ -43,31 +45,38 @@
 -(void)initialisationOfAboutPage{
     if(self.specializationArray.count == 0){
         self.specializationHeightConstraint.constant = 0;
-        self.scrollContentViewHeightConstarint.constant -= 133;
+        self.specializationLabel.hidden = YES;
+        self.scrollContentViewHeightConstarint.constant -= SectionHeight;
     }
     if(self.servicesArray.count == 0){
         self.servicesHeightConstraint.constant = 0;
-        self.scrollContentViewHeightConstarint.constant -= 133;
+        self.servicesLabel.hidden = YES;
+        self.scrollContentViewHeightConstarint.constant -= SectionHeight;
     }
     if(self.membershipsArray.count == 0){
+        self.memebershipLabel.hidden = YES;
         self.membershipHeightConstraint.constant = 0;
-        self.scrollContentViewHeightConstarint.constant -= 133;
+        self.scrollContentViewHeightConstarint.constant -= SectionHeight;
     }
     if(self.awardsArray.count == 0){
+        self.awardsLabel.hidden = YES;
         self.awardsHeightConstraint.constant = 0;
-        self.scrollContentViewHeightConstarint.constant -= 133;
+        self.scrollContentViewHeightConstarint.constant -= SectionHeight;
     }
     if(self.experienceArray.count == 0){
+        self.experienceLabel.hidden = YES;
         self.experienceHeightConstraint.constant = 0;
-        self.scrollContentViewHeightConstarint.constant -= 133;
+        self.scrollContentViewHeightConstarint.constant -= SectionHeight;
     }
     if(self.educationArray.count == 0){
+        self.educationLabel.hidden = YES;
         self.educationHeightConstraint.constant = 0;
-        self.scrollContentViewHeightConstarint.constant -= 133;
+        self.scrollContentViewHeightConstarint.constant -= SectionHeight;
     }
     if(self.registrationArray.count == 0){
+        self.registrationLabel.hidden = YES;
         self.registrationHeightConstraint.constant = 0;
-        self.scrollContentViewHeightConstarint.constant -= 133;
+        self.scrollContentViewHeightConstarint.constant -= SectionHeight;
     }
     
 }

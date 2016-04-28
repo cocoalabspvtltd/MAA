@@ -165,7 +165,7 @@
         self.reviewLabel.text = [NSString stringWithFormat:@"%@ Reviews",[entityDetails valueForKey:@"no_of_reviews"]];
     }
     if(![[entityDetails valueForKey:@"phone"] isEqual:[NSNull null]]){
-        self.contactNoLabel.text = [NSString stringWithFormat:@"Contact number:%@",[entityDetails valueForKey:@"phone"]];
+        self.contactNoLabel.text = [NSString stringWithFormat:@"Contact number: %@",[entityDetails valueForKey:@"phone"]];
     }
     if(![[entityDetails valueForKey:@"description"] isEqual:[NSNull null]]){
         self.aboutLabel.text = [entityDetails valueForKey:@"description"];
