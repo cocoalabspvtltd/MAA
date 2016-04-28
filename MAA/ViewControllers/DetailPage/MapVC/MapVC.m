@@ -28,10 +28,15 @@
 }
 -(void)addingLocationLabelText{
     [self.locationLabel sizeToFit];
+    if(self.locationString.length == 0){
+        self.locationString = @"";
+    }
     NSString *myString = [NSString stringWithFormat:@"%@\n%@",self.locationString,self.locationDetailString];
     //Create mutable string from original one
     NSMutableAttributedString *attString = [[NSMutableAttributedString alloc] initWithString:myString];
-    
+    if(myString.length == 0){
+        myString = @"";
+    }
     //Fing range of the string you want to change colour
     //If you need to change colour in more that one place just repeat it
     NSRange range = [myString rangeOfString:self.locationString];
