@@ -176,6 +176,12 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if(reviewsMutableArray.count == 0){
+        self.noReviewsView.hidden = NO;
+    }
+    else{
+       self.noReviewsView.hidden = YES;
+    }
     return reviewsMutableArray.count;
 }
 
