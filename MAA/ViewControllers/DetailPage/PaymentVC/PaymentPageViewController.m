@@ -112,6 +112,7 @@
     [self initialisation];
     [self customisation];
     [self addSubviews];
+    [self addingBackButton];
     [self initPayment];
 }
 
@@ -124,11 +125,29 @@
 
 -(void)customisation{
   self.view.backgroundColor = [UIColor whiteColor];
+  self.navigationController.navigationBar.barTintColor = AppCommnRedColor;
+  self.navigationController.navigationBar.translucent = NO;
 }
 
 -(void)addSubviews{
     [self.view addSubview:self.webviewPaymentPage];
     [self.view addSubview:activityIndicatorView];
+}
+
+-(void)addingBackButton{
+    UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    [backButton setImage:[UIImage imageNamed:@"back_white"] forState:UIControlStateNormal];
+    [backButton addTarget:self action:@selector(backButtonAction:) forControlEvents:UIControlEventTouchUpInside];
+    backButton.frame = CGRectMake(0, 0, 45, 19);
+    UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:backButton];
+    self.navigationItem.leftBarButtonItem = leftButton;
+}
+
+#pragma mark - Back Button Action
+
+-(void)backButtonAction:(UIButton *)button{
+    [self dismissViewControllerAnimated:YES completion:nil];
+  
 }
 
 -(void)viewWillLayoutSubviews{
