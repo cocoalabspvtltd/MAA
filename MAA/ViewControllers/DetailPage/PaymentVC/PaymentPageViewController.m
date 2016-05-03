@@ -126,6 +126,7 @@
 -(void)customisation{
   self.view.backgroundColor = [UIColor whiteColor];
   self.navigationController.navigationBar.barTintColor = AppCommnRedColor;
+  self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
   self.navigationController.navigationBar.translucent = NO;
 }
 
@@ -138,7 +139,8 @@
     UIButton *backButton = [UIButton buttonWithType:UIButtonTypeCustom];
     [backButton setImage:[UIImage imageNamed:@"back_white"] forState:UIControlStateNormal];
     [backButton addTarget:self action:@selector(backButtonAction:) forControlEvents:UIControlEventTouchUpInside];
-    backButton.frame = CGRectMake(0, 0, 45, 19);
+    backButton.frame = CGRectMake(0, 0, 45, 22);
+    backButton.imageEdgeInsets = UIEdgeInsetsMake(0, 12, 0, 10);
     UIBarButtonItem *leftButton = [[UIBarButtonItem alloc]initWithCustomView:backButton];
     self.navigationItem.leftBarButtonItem = leftButton;
 }

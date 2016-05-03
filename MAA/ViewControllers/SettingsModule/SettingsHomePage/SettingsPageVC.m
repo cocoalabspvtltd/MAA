@@ -131,9 +131,7 @@
         [self.navigationController pushViewController:feedbackVC animated:YES];
     }
     else if(indexPath.row == 6){
-        
         [self callingLogoutAlertViewController];
-        
     }
 }
 
