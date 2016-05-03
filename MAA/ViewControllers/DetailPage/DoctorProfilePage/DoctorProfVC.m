@@ -265,27 +265,17 @@
 #pragma mark - Adding Activity Controller
 
 -(void)addingActivityController{
-    NSString *tempString=@"Content";
-    
-    
-    NSString *textToShare  = [NSString stringWithFormat:@"Found an interesting %@ on My App!!",tempString];
-    
-    NSString *contentHeading = @"Heading";
-    NSString *contentDescription = @"Description";
+    NSString *textToShare  = [NSString stringWithFormat:@"%@\n",[self.entityDetails valueForKey:@"sharing_text"]];
+    NSString *sharingUrlString = [self.entityDetails valueForKey:@"sharing_url"];
+    NSURL *sharingUrl = [NSURL URLWithString:sharingUrlString];
+    NSString *contentDescription = @"";
     UIImage *shareImage;
-    //    if ([self.receivedItemString isEqualToString:EventsmainCategoryString])
-    //    {
-    //        shareImage =self.bannerImage;
-    //    }
-    if (contentHeading==NULL) {
-        contentHeading=@"My App";
-    }
     NSArray *objectsToShare;
     if(shareImage){
-        objectsToShare = @[textToShare,contentHeading,  contentDescription,shareImage];
+        objectsToShare = @[textToShare,sharingUrl,  contentDescription,shareImage];
     }
     else{
-        objectsToShare = @[textToShare,contentHeading,  contentDescription];
+        objectsToShare = @[textToShare,sharingUrl,  contentDescription];
     }
     self.activityViewController = [[UIActivityViewController alloc] initWithActivityItems:objectsToShare applicationActivities:nil];
     
