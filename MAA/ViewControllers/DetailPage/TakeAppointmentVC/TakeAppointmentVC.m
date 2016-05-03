@@ -288,8 +288,6 @@
             mapVC.latitude = [[[self.timeArray objectAtIndex:self.previousTimeSelectedIndex.row] valueForKey:@"lng"]  floatValue];
         }
     }
-    mapVC.latitude = 10.015861;
-    mapVC.longitude = 76.341867;
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 

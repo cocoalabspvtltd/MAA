@@ -96,8 +96,6 @@
     mapVC.locationDetailString = [[clinicDetais valueForKey:@"location"] valueForKey:@"address"];
     mapVC.latitude = [[[clinicDetais valueForKey:@"location"] valueForKey:@"lat"] floatValue];
     mapVC.longitude = [[[clinicDetais valueForKey:@"location"] valueForKey:@"lng"] floatValue];;
-    mapVC.latitude = 10.015861;
-    mapVC.longitude = 76.341867;
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 

@@ -205,8 +205,6 @@
     mapVC.locationDetailString = [[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"address"];
     mapVC.latitude = [[[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"lat"] floatValue];
     mapVC.longitude = [[[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"lng"] floatValue];
-    mapVC.latitude = 10.015861;
-    mapVC.longitude = 76.341867;
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 - (IBAction)addReviewButtonAction:(UIButton *)sender {

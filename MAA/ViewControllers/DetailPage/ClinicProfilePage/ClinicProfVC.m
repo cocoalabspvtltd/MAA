@@ -317,8 +317,6 @@
     if(!([[self.clinicDetails valueForKey:@"location"] valueForKey:@"lng"] == [NSNull null]) ){
         mapVC.longitude = [[[self.clinicDetails valueForKey:@"location"] valueForKey:@"lng"] floatValue];
     }
-    mapVC.latitude = 10.015861;
-    mapVC.longitude = 76.341867;
     [self.navigationController pushViewController:mapVC animated:YES];
 }
 - (IBAction)favouriteButtonAction:(UIButton *)sender {
