@@ -11,6 +11,7 @@
 @implementation SearchResultsTVC
 
 - (void)awakeFromNib {
+    self.cellImageViewOnlineStatus.layer.cornerRadius = 5;
     // Initialization code
 }
 
