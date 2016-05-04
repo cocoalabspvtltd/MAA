@@ -8,7 +8,6 @@
 
 #import "AppDelegate.h"
 #import "LoginPageVC.h"
-#import "DoctorRegistrationVC.h"
 #import "CLFacebookHandler/FacebookWrapper.h"
 @interface AppDelegate ()
 
