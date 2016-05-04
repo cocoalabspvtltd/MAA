@@ -6,6 +6,7 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 
+#import "WebViewController.h"
 #import "AboutViewController.h"
 
 @interface AboutViewController ()
@@ -36,8 +37,29 @@
 }
 */
 
+#pragma mark - Button Actions
+
 - (IBAction)Back:(id)sender
 {
     [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)googlePlusButtonAction:(UIButton *)sender {
+    [self loadingWebViewControllerWithUrlString:@"https://google.com" andHEadingString:@"Google Plus"];
+}
+- (IBAction)facebookButtonAction:(UIButton *)sender {
+    [self loadingWebViewControllerWithUrlString:@"https://google.com" andHEadingString:@"Facebook"];
+}
+- (IBAction)twitterButtonAction:(UIButton *)sender {
+    [self loadingWebViewControllerWithUrlString:@"https://google.com" andHEadingString:@"Twitter"];
+}
+
+#pragma mark - Loading Web view Controller
+
+-(void)loadingWebViewControllerWithUrlString:(NSString *)webViewUrlString andHEadingString:(NSString *)headingString{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webViewController.urlString = webViewUrlString;
+    webViewController.headingString = headingString;
+    [self.navigationController pushViewController:webViewController animated:YES];
 }
 @end
