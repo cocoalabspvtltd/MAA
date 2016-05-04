@@ -329,7 +329,6 @@
 		C0EC35A81CAAEA660083E735 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0EC35A71CAAEA660083E735 /* MapKit.framework */; };
 		C0EC35AC1CAAEF130083E735 /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EC35AB1CAAEF130083E735 /* MapVC.m */; };
 		C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EC6FA51CAD9B2800191C49 /* DoctorReviewsVC.m */; };
-		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -855,8 +854,6 @@
 		C0EC35AB1CAAEF130083E735 /* MapVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapVC.m; sourceTree = "<group>"; };
 		C0EC6FA41CAD9B2800191C49 /* DoctorReviewsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorReviewsVC.h; sourceTree = "<group>"; };
 		C0EC6FA51CAD9B2800191C49 /* DoctorReviewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorReviewsVC.m; sourceTree = "<group>"; };
-		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
-		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1420,8 +1417,6 @@
 		C014EF031C5F3EA6009AB9DD /* Thanveer */ = {
 			isa = PBXGroup;
 			children = (
-				C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */,
-				C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */,
 				C065F64A1C8EA71700E25726 /* chatSender.xib */,
 				C065F6511C8EAF7C00E25726 /* chatReciever.xib */,
 				C065F6531C8EB22700E25726 /* TextChatVC.h */,
@@ -2950,7 +2945,6 @@
 				C0C2B1F31CC7D60900C1DF5A /* fourthViewController.m in Sources */,
 				C0D157ED1C9B12C100FC1DE0 /* SearchTVC.m in Sources */,
 				9F9C26AA1C9F40FF00EEC883 /* DoctorAboutDetailVC.m in Sources */,
-				C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */,
 				C0C2B1F81CC7D60900C1DF5A /* ViewController.m in Sources */,
 				55BFD1391C0979BE00A07A75 /* LoginPageVC.m in Sources */,
 				C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */,
