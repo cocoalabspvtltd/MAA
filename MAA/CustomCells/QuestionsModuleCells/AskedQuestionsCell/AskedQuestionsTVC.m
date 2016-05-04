@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     // Initialization code
+    self.profileImageView.layer.borderWidth = 1;
+    self.profileImageView.layer.borderColor = AppCommnRedColor.CGColor;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
