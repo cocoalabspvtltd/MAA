@@ -73,7 +73,6 @@
 		C00B69661CBFC0230081EF68 /* invoiceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00B69651CBFC0230081EF68 /* invoiceCell.xib */; };
 		C00B69691CBFC0410081EF68 /* InvoiceTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C00B69681CBFC0410081EF68 /* InvoiceTableViewCell.m */; };
 		C01420B51C99B18300467D8A /* AccountResetPWVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01420B41C99B18300467D8A /* AccountResetPWVC.m */; };
-		C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */; };
 		C017899E1CA2B38F00482EBF /* invoice.xib in Resources */ = {isa = PBXBuildFile; fileRef = C017899D1CA2B38F00482EBF /* invoice.xib */; };
 		C01C23D81CA1A10300279A17 /* ClinicProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23D71CA1A10300279A17 /* ClinicProfVC.m */; };
 		C01C23DB1CA1A11500279A17 /* DoctorProfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C01C23DA1CA1A11500279A17 /* DoctorProfVC.m */; };
@@ -82,7 +81,6 @@
 		C02DC4921CC93E2500289AA5 /* PrescriptionsTVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C02DC4911CC93E2500289AA5 /* PrescriptionsTVC.m */; };
 		C035D6591CB4D09E0045AD25 /* doc_success.png in Resources */ = {isa = PBXBuildFile; fileRef = C035D6581CB4D09E0045AD25 /* doc_success.png */; };
 		C035E7451C885AA4007809BC /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = C035E7441C885AA4007809BC /* line.png */; };
-		C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C381C71B96C00662BB4 /* ViewProfileVC.m */; };
 		C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C0447C3E1C71EB2200662BB4 /* specialCell.m */; };
 		C0447C411C71EC5300662BB4 /* professionalInfo.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C401C71EC5300662BB4 /* professionalInfo.xib */; };
 		C0447C451C71F79500662BB4 /* proinfo2.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0447C441C71F79500662BB4 /* proinfo2.xib */; };
@@ -155,8 +153,6 @@
 		C086ED1B1C287364009DF69F /* EmailSentVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED1A1C287364009DF69F /* EmailSentVC.m */; };
 		C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */; };
 		C086ED241C287546009DF69F /* ResetPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C086ED231C287546009DF69F /* ResetPasswordVC.m */; };
-		C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */; };
-		C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */; };
 		C08DEF9F1C9712D00025F1AF /* FilterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C08DEF9E1C9712D00025F1AF /* FilterVC.m */; };
 		C09039CA1C8898790059FDC8 /* AccountSettingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09039C81C8898790059FDC8 /* AccountSettingVC.m */; };
 		C09039CD1C88988E0059FDC8 /* CountriesVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C09039CC1C88988E0059FDC8 /* CountriesVC.m */; };
@@ -511,8 +507,6 @@
 		C00B69681CBFC0410081EF68 /* InvoiceTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceTableViewCell.m; sourceTree = "<group>"; };
 		C01420B31C99B18300467D8A /* AccountResetPWVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountResetPWVC.h; sourceTree = "<group>"; };
 		C01420B41C99B18300467D8A /* AccountResetPWVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountResetPWVC.m; sourceTree = "<group>"; };
-		C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Doc'sAccntInfo.h"; sourceTree = "<group>"; };
-		C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Doc'sAccntInfo.m"; sourceTree = "<group>"; };
 		C017899D1CA2B38F00482EBF /* invoice.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = invoice.xib; sourceTree = "<group>"; };
 		C01C23D61CA1A10300279A17 /* ClinicProfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClinicProfVC.h; sourceTree = "<group>"; };
 		C01C23D71CA1A10300279A17 /* ClinicProfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClinicProfVC.m; sourceTree = "<group>"; };
@@ -525,8 +519,6 @@
 		C02DC4911CC93E2500289AA5 /* PrescriptionsTVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionsTVC.m; sourceTree = "<group>"; };
 		C035D6581CB4D09E0045AD25 /* doc_success.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doc_success.png; sourceTree = "<group>"; };
 		C035E7441C885AA4007809BC /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
-		C0447C371C71B96C00662BB4 /* ViewProfileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewProfileVC.h; sourceTree = "<group>"; };
-		C0447C381C71B96C00662BB4 /* ViewProfileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewProfileVC.m; sourceTree = "<group>"; };
 		C0447C3D1C71EB2200662BB4 /* specialCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = specialCell.h; sourceTree = "<group>"; };
 		C0447C3E1C71EB2200662BB4 /* specialCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = specialCell.m; sourceTree = "<group>"; };
 		C0447C401C71EC5300662BB4 /* professionalInfo.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = professionalInfo.xib; sourceTree = "<group>"; };
@@ -613,10 +605,6 @@
 		C086ED201C28748D009DF69F /* OTPVerificationSuccessfulViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OTPVerificationSuccessfulViewController.m; sourceTree = "<group>"; };
 		C086ED221C287546009DF69F /* ResetPasswordVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResetPasswordVC.h; sourceTree = "<group>"; };
 		C086ED231C287546009DF69F /* ResetPasswordVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResetPasswordVC.m; sourceTree = "<group>"; };
-		C08BF4401C65DAFC0047DC49 /* InvoicePageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoicePageVC.h; sourceTree = "<group>"; };
-		C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoicePageVC.m; sourceTree = "<group>"; };
-		C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InvoiceCell.h; sourceTree = "<group>"; };
-		C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InvoiceCell.m; sourceTree = "<group>"; };
 		C08DEF9D1C9712D00025F1AF /* FilterVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterVC.h; sourceTree = "<group>"; };
 		C08DEF9E1C9712D00025F1AF /* FilterVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterVC.m; sourceTree = "<group>"; };
 		C09039C71C8898790059FDC8 /* AccountSettingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountSettingVC.h; sourceTree = "<group>"; };
@@ -1469,14 +1457,6 @@
 		C014EF031C5F3EA6009AB9DD /* Thanveer */ = {
 			isa = PBXGroup;
 			children = (
-				C014EF071C5F3EE5009AB9DD /* Doc'sAccntInfo.h */,
-				C014EF081C5F3EE5009AB9DD /* Doc'sAccntInfo.m */,
-				C08BF4401C65DAFC0047DC49 /* InvoicePageVC.h */,
-				C08BF4411C65DAFC0047DC49 /* InvoicePageVC.m */,
-				C08BF4461C65DBCF0047DC49 /* InvoiceCell.h */,
-				C08BF4471C65DBCF0047DC49 /* InvoiceCell.m */,
-				C0447C371C71B96C00662BB4 /* ViewProfileVC.h */,
-				C0447C381C71B96C00662BB4 /* ViewProfileVC.m */,
 				C0447C401C71EC5300662BB4 /* professionalInfo.xib */,
 				C0447C441C71F79500662BB4 /* proinfo2.xib */,
 				C0447C3D1C71EB2200662BB4 /* specialCell.h */,
@@ -2961,7 +2941,6 @@
 				C0C2B1F51CC7D60900C1DF5A /* thirdViewController.m in Sources */,
 				9F5F0C561C66672300F7E99D /* MBProgressHUD.m in Sources */,
 				C0AFCA721CAC2D850026A216 /* DoctorAboutVC.m in Sources */,
-				C0447C391C71B96C00662BB4 /* ViewProfileVC.m in Sources */,
 				C0A830741C7D7BD0000A60C9 /* ImagesVC.m in Sources */,
 				C0BBC4A01C6E4046005083B1 /* AppointmentTableViewCell.m in Sources */,
 				C0447C3F1C71EB2200662BB4 /* specialCell.m in Sources */,
@@ -2980,7 +2959,6 @@
 				9F5F0C5A1C66673A00F7E99D /* SettingsPageVC.m in Sources */,
 				C095DB411C81A1140087AA4F /* myHealthProfileVC.m in Sources */,
 				9F2B0E1B1C65EDE10053D023 /* BaseViewController.m in Sources */,
-				C014EF091C5F3EE5009AB9DD /* Doc'sAccntInfo.m in Sources */,
 				C09A8ABF1C8177D800BAA532 /* ImageFullView.m in Sources */,
 				C00B69631CBFBB640081EF68 /* InvoiceFilterViewController.m in Sources */,
 				555BBCF11C0AA25200E262F9 /* SignUpPage1VC.m in Sources */,
@@ -2996,7 +2974,6 @@
 				C086ED211C28748D009DF69F /* OTPVerificationSuccessfulViewController.m in Sources */,
 				C04EC3A51CC1095800470A74 /* PaymentStatusViewController.m in Sources */,
 				55D60D831C08B94600963D5D /* main.m in Sources */,
-				C08BF4481C65DBCF0047DC49 /* InvoiceCell.m in Sources */,
 				C0D157FF1C9B134700FC1DE0 /* SearchVC.m in Sources */,
 				C092EC031C80B1E000F7B18B /* UIView+WebCacheOperation.m in Sources */,
 				C0A266BD1CD13A2F0055D262 /* tocViewController.m in Sources */,
@@ -3032,7 +3009,6 @@
 				C0C5CF961CC5508C005A6170 /* ConfirmBookingVC.m in Sources */,
 				C092EC021C80B1E000F7B18B /* UIImageView+WebCache.m in Sources */,
 				555BBCEE1C0AA1D200E262F9 /* ResetPasswordOTPVC.m in Sources */,
-				C08BF4421C65DAFC0047DC49 /* InvoicePageVC.m in Sources */,
 				9F5F0C301C66589E00F7E99D /* GetGalleryPhotos.m in Sources */,
 				C0C2B1F31CC7D60900C1DF5A /* fourthViewController.m in Sources */,
 				C0D157ED1C9B12C100FC1DE0 /* SearchTVC.m in Sources */,
