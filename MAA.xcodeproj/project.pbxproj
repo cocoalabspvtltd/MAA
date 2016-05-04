@@ -51,7 +51,6 @@
 		9F95DB501C9E2FD800F3EB4F /* no priscriptions.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */; };
 		9F95DB511C9E2FD800F3EB4F /* no time slots.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */; };
 		9F991C5C1C5A1C5400F92C11 /* student.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C531C5A1C5400F92C11 /* student.m */; };
-		9F991C601C5A1C5400F92C11 /* search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C591C5A1C5400F92C11 /* search.xib */; };
 		9F991C611C5A1C5400F92C11 /* bin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C5A1C5A1C5400F92C11 /* bin.png */; };
 		9F9C26AA1C9F40FF00EEC883 /* DoctorAboutDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C26A91C9F40FF00EEC883 /* DoctorAboutDetailVC.m */; };
 		9FDD159D1CB099C90040B646 /* TimingsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FDD159C1CB099C90040B646 /* TimingsVC.m */; };
@@ -60,8 +59,6 @@
 		C005F0061C6A00F70095E2CC /* microphone_off.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0051C6A00F70095E2CC /* microphone_off.png */; };
 		C005F0081C6A010A0095E2CC /* video_camera_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0071C6A010A0095E2CC /* video_camera_none.png */; };
 		C005F00A1C6A011C0095E2CC /* phone_none.png in Resources */ = {isa = PBXBuildFile; fileRef = C005F0091C6A011C0095E2CC /* phone_none.png */; };
-		C009050E1CD0A34000B91EBD /* PrescriptionDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C009050D1CD0A34000B91EBD /* PrescriptionDetailView.xib */; };
-		C00905161CD0B5B000B91EBD /* PrescriptionDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = C00905151CD0B5B000B91EBD /* PrescriptionDetailView.m */; };
 		C00905181CD0BA8B00B91EBD /* NoNetworkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C00905171CD0BA8B00B91EBD /* NoNetworkView.xib */; };
 		C009051A1CD0C0E800B91EBD /* no internet connection 2.png in Resources */ = {isa = PBXBuildFile; fileRef = C00905191CD0C0E800B91EBD /* no internet connection 2.png */; };
 		C009051D1CD0C69800B91EBD /* NoNetworkView.m in Sources */ = {isa = PBXBuildFile; fileRef = C009051C1CD0C69800B91EBD /* NoNetworkView.m */; };
@@ -333,7 +330,6 @@
 		C0EC35AC1CAAEF130083E735 /* MapVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EC35AB1CAAEF130083E735 /* MapVC.m */; };
 		C0EC6FA61CAD9B2800191C49 /* DoctorReviewsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0EC6FA51CAD9B2800191C49 /* DoctorReviewsVC.m */; };
 		C0ECCE551C76E79800FAA614 /* AppoinmentDetailDocVC.m in Sources */ = {isa = PBXBuildFile; fileRef = C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */; };
-		C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -466,7 +462,6 @@
 		9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no time slots.png"; sourceTree = "<group>"; };
 		9F991C521C5A1C5400F92C11 /* student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
 		9F991C531C5A1C5400F92C11 /* student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = student.m; sourceTree = "<group>"; };
-		9F991C591C5A1C5400F92C11 /* search.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = search.xib; sourceTree = "<group>"; };
 		9F991C5A1C5A1C5400F92C11 /* bin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bin.png; sourceTree = "<group>"; };
 		9F9C26A81C9F40FF00EEC883 /* DoctorAboutDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutDetailVC.h; sourceTree = "<group>"; };
 		9F9C26A91C9F40FF00EEC883 /* DoctorAboutDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorAboutDetailVC.m; sourceTree = "<group>"; };
@@ -477,9 +472,6 @@
 		C005F0051C6A00F70095E2CC /* microphone_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = microphone_off.png; sourceTree = "<group>"; };
 		C005F0071C6A010A0095E2CC /* video_camera_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = video_camera_none.png; sourceTree = "<group>"; };
 		C005F0091C6A011C0095E2CC /* phone_none.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone_none.png; sourceTree = "<group>"; };
-		C009050D1CD0A34000B91EBD /* PrescriptionDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionDetailView.xib; sourceTree = "<group>"; };
-		C00905141CD0B5B000B91EBD /* PrescriptionDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrescriptionDetailView.h; sourceTree = "<group>"; };
-		C00905151CD0B5B000B91EBD /* PrescriptionDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PrescriptionDetailView.m; sourceTree = "<group>"; };
 		C00905171CD0BA8B00B91EBD /* NoNetworkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoNetworkView.xib; sourceTree = "<group>"; };
 		C00905191CD0C0E800B91EBD /* no internet connection 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "no internet connection 2.png"; path = "../../../no internet connection 2.png"; sourceTree = "<group>"; };
 		C009051B1CD0C69800B91EBD /* NoNetworkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoNetworkView.h; sourceTree = "<group>"; };
@@ -865,7 +857,6 @@
 		C0EC6FA51CAD9B2800191C49 /* DoctorReviewsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoctorReviewsVC.m; sourceTree = "<group>"; };
 		C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppoinmentDetailDocVC.h; sourceTree = "<group>"; };
 		C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppoinmentDetailDocVC.m; sourceTree = "<group>"; };
-		C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PrescriptionTblCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1431,15 +1422,10 @@
 			children = (
 				C0ECCE531C76E79800FAA614 /* AppoinmentDetailDocVC.h */,
 				C0ECCE541C76E79800FAA614 /* AppoinmentDetailDocVC.m */,
-				C0ECCE5B1C772B6000FAA614 /* PrescriptionTblCell.xib */,
 				C065F64A1C8EA71700E25726 /* chatSender.xib */,
 				C065F6511C8EAF7C00E25726 /* chatReciever.xib */,
 				C065F6531C8EB22700E25726 /* TextChatVC.h */,
 				C065F6541C8EB22700E25726 /* TextChatVC.m */,
-				9F991C591C5A1C5400F92C11 /* search.xib */,
-				C009050D1CD0A34000B91EBD /* PrescriptionDetailView.xib */,
-				C00905141CD0B5B000B91EBD /* PrescriptionDetailView.h */,
-				C00905151CD0B5B000B91EBD /* PrescriptionDetailView.m */,
 				C00905171CD0BA8B00B91EBD /* NoNetworkView.xib */,
 				C009051B1CD0C69800B91EBD /* NoNetworkView.h */,
 				C009051C1CD0C69800B91EBD /* NoNetworkView.m */,
@@ -2659,7 +2645,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0B50F111C6C5CB300602DDA /* Assets.xcassets in Resources */,
-				C0ECCE5C1C772B6000FAA614 /* PrescriptionTblCell.xib in Resources */,
 				C0CABC771C8AE752009F9470 /* checked-black@2x.png in Resources */,
 				C0AB69C21CC75F330082BC98 /* no invoices.png in Resources */,
 				C09EF6D61C76211800806600 /* _index.scss in Resources */,
@@ -2709,7 +2694,6 @@
 				C09EF6D81C76211800806600 /* _normalize.scss in Resources */,
 				C035E7451C885AA4007809BC /* line.png in Resources */,
 				C04EC3CA1CC14BD200470A74 /* home.png in Resources */,
-				C009050E1CD0A34000B91EBD /* PrescriptionDetailView.xib in Resources */,
 				C09EF6DA1C76211800806600 /* _print.scss in Resources */,
 				C09F2C0E1C9C6FA800DB040C /* no appoinments.png in Resources */,
 				C05AE2031CC68436003AF9CB /* searchred@2x.png in Resources */,
@@ -2747,7 +2731,6 @@
 				C04EC3E51CC14DB200470A74 /* settingsGREY.png in Resources */,
 				9F95DB501C9E2FD800F3EB4F /* no priscriptions.png in Resources */,
 				C0BBC4B31C6E5B8E005083B1 /* chat-black@3x.png in Resources */,
-				9F991C601C5A1C5400F92C11 /* search.xib in Resources */,
 				C09EF6C01C76211800806600 /* OTPublisher.html in Resources */,
 				C09EF6C41C76211800806600 /* OTSubscriber.html in Resources */,
 				C09EF6DE1C76211800806600 /* style.css in Resources */,
@@ -2947,7 +2930,6 @@
 				9F5F0C381C665D3100F7E99D /* QuestionsSDetailVC.m in Sources */,
 				C08DEF9F1C9712D00025F1AF /* FilterVC.m in Sources */,
 				C092EBF71C80B1E000F7B18B /* SDWebImageCompat.m in Sources */,
-				C00905161CD0B5B000B91EBD /* PrescriptionDetailView.m in Sources */,
 				9F884C161C9E6A060058D611 /* InvoiceViewController.m in Sources */,
 				C04EC3A61CC1095800470A74 /* PaymentPageViewController.m in Sources */,
 				9F5F0C481C66604100F7E99D /* AboutViewController.m in Sources */,
