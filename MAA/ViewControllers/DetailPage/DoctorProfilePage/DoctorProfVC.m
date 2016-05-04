@@ -170,10 +170,23 @@
     if(![[entityDetails valueForKey:@"description"] isEqual:[NSNull null]]){
         self.aboutLabel.text = [entityDetails valueForKey:@"description"];
     }
-    if([[entityDetails valueForKey:@"clinic_details"] count]>0){
-        self.doctorFirstClinicDetails = [[entityDetails valueForKey:@"clinic_details"] objectAtIndex:0];
+    NSArray *clinicDetailsArray = [entityDetails valueForKey:@"clinic_details"];
+    if([clinicDetailsArray count]>0){
+        self.doctorFirstClinicDetails = [clinicDetailsArray objectAtIndex:0];
         self.cliniclocationLabel.text = [NSString stringWithFormat:@"%@\n%@",[self.doctorFirstClinicDetails valueForKey:@"clinic_name"],[[self.doctorFirstClinicDetails valueForKey:@"location"] valueForKey:@"address"]];
+        NSString *timingString = @"";
+        NSArray *timingsArray = [self.doctorFirstClinicDetails valueForKey:@"timings"];
+        for (int i = 0; i<timingsArray.count; i++) {
+            timingString = [timingString stringByAppendingString:[NSString stringWithFormat:@"%@ ",[timingsArray objectAtIndex:i]]];
+        }
+        self.timingLabel.text = timingString;
     }
+    else{
+        self.timingsViewHeightConstraint = 0;
+        self.timingsViewMoreButton.hidden = YES;
+    }
+    
+    
 //    if([[entityDetails valueForKey:@"e_booking_avail"] isEqualToString:@"1"] ){
 //        self.consultNowButton.hidden  = NO;
 //    }

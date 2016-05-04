@@ -29,4 +29,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (nonatomic, strong) NSString *entityId;
+@property (weak, nonatomic) IBOutlet UIButton *timingsViewMoreButton;
+@property (weak, nonatomic) IBOutlet UILabel *timingLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *timingsViewHeightConstraint;
 @end
