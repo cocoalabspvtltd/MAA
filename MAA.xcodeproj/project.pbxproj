@@ -50,10 +50,7 @@
 		9F95DB4F1C9E2FD800F3EB4F /* no photos.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4B1C9E2FD800F3EB4F /* no photos.png */; };
 		9F95DB501C9E2FD800F3EB4F /* no priscriptions.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */; };
 		9F95DB511C9E2FD800F3EB4F /* no time slots.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */; };
-		9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */; };
 		9F991C5C1C5A1C5400F92C11 /* student.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C531C5A1C5400F92C11 /* student.m */; };
-		9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C541C5A1C5400F92C11 /* doctor_dash_xib.xib */; };
-		9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */; };
 		9F991C601C5A1C5400F92C11 /* search.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C591C5A1C5400F92C11 /* search.xib */; };
 		9F991C611C5A1C5400F92C11 /* bin.png in Resources */ = {isa = PBXBuildFile; fileRef = 9F991C5A1C5A1C5400F92C11 /* bin.png */; };
 		9F9C26AA1C9F40FF00EEC883 /* DoctorAboutDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F9C26A91C9F40FF00EEC883 /* DoctorAboutDetailVC.m */; };
@@ -470,13 +467,8 @@
 		9F95DB4B1C9E2FD800F3EB4F /* no photos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no photos.png"; sourceTree = "<group>"; };
 		9F95DB4C1C9E2FD800F3EB4F /* no priscriptions.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no priscriptions.png"; sourceTree = "<group>"; };
 		9F95DB4D1C9E2FD800F3EB4F /* no time slots.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no time slots.png"; sourceTree = "<group>"; };
-		9F991C501C5A1C5400F92C11 /* homepage_doctorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = homepage_doctorViewController.h; sourceTree = "<group>"; };
-		9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homepage_doctorViewController.m; sourceTree = "<group>"; };
 		9F991C521C5A1C5400F92C11 /* student.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = student.h; sourceTree = "<group>"; };
 		9F991C531C5A1C5400F92C11 /* student.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = student.m; sourceTree = "<group>"; };
-		9F991C541C5A1C5400F92C11 /* doctor_dash_xib.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = doctor_dash_xib.xib; sourceTree = "<group>"; };
-		9F991C551C5A1C5400F92C11 /* doct_dashCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = doct_dashCollectionViewCell.h; sourceTree = "<group>"; };
-		9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = doct_dashCollectionViewCell.m; sourceTree = "<group>"; };
 		9F991C591C5A1C5400F92C11 /* search.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = search.xib; sourceTree = "<group>"; };
 		9F991C5A1C5A1C5400F92C11 /* bin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bin.png; sourceTree = "<group>"; };
 		9F9C26A81C9F40FF00EEC883 /* DoctorAboutDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoctorAboutDetailVC.h; sourceTree = "<group>"; };
@@ -1380,13 +1372,8 @@
 		9F991C651C5A466300F92C11 /* Kiran */ = {
 			isa = PBXGroup;
 			children = (
-				9F991C501C5A1C5400F92C11 /* homepage_doctorViewController.h */,
-				9F991C511C5A1C5400F92C11 /* homepage_doctorViewController.m */,
 				9F991C521C5A1C5400F92C11 /* student.h */,
 				9F991C531C5A1C5400F92C11 /* student.m */,
-				9F991C541C5A1C5400F92C11 /* doctor_dash_xib.xib */,
-				9F991C551C5A1C5400F92C11 /* doct_dashCollectionViewCell.h */,
-				9F991C561C5A1C5400F92C11 /* doct_dashCollectionViewCell.m */,
 				9F991C5A1C5A1C5400F92C11 /* bin.png */,
 			);
 			name = Kiran;
@@ -2825,7 +2812,6 @@
 				C09EF6F31C76211800806600 /* OTVideoRender.html in Resources */,
 				C005F0021C6A00E20095E2CC /* microphone_slash_none.png in Resources */,
 				C09EF6CF1C76211800806600 /* OTSessionConnectionStatus.html in Resources */,
-				9F991C5D1C5A1C5400F92C11 /* doctor_dash_xib.xib in Resources */,
 				C04EC3D81CC14D0300470A74 /* question@3x.png in Resources */,
 				C0BBC4B51C6E5B8E005083B1 /* video-black@2x.png in Resources */,
 				C09EF6CE1C76211800806600 /* OTPublisherKitVideoType.html in Resources */,
@@ -2901,7 +2887,6 @@
 				C092EBFB1C80B1E000F7B18B /* SDWebImageManager.m in Sources */,
 				C0C2B1F61CC7D60900C1DF5A /* Video_permissionViewController.m in Sources */,
 				C08437FC1C6F019600610ADC /* AskQuestionsVC.m in Sources */,
-				9F991C5B1C5A1C5400F92C11 /* homepage_doctorViewController.m in Sources */,
 				C0A831021C7DD05A000A60C9 /* TMDCollectionViewCell.m in Sources */,
 				C0B397C31CB8344D0046E6CA /* TakeAppointmentVC.m in Sources */,
 				C0D157FD1C9B134700FC1DE0 /* SearchFilterVC.m in Sources */,
@@ -2936,7 +2921,6 @@
 				C0D157FE1C9B134700FC1DE0 /* SearchResultsVC.m in Sources */,
 				C0B397BF1CB81FE90046E6CA /* TimingsTableViewCell.m in Sources */,
 				C092EC001C80B1E000F7B18B /* UIImage+WebP.m in Sources */,
-				9F991C5E1C5A1C5400F92C11 /* doct_dashCollectionViewCell.m in Sources */,
 				9F403AA81CB254A2000FA5E2 /* SubmitReviewView.m in Sources */,
 				C0C2B2061CC7D91600C1DF5A /* markasFinishedViewController.m in Sources */,
 				C092EBFD1C80B1E000F7B18B /* UIButton+WebCache.m in Sources */,
