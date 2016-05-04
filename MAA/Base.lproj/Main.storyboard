@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="7A733470-CCD1-450D-8B24-0F63FCE73EBF" scopeBarBackgroundImage="7A733470-CCD1-450D-8B24-0F63FCE73EBF" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="02A1EEF2-714A-4BB0-AA8F-3A7814ABB96F" scopeBarBackgroundImage="02A1EEF2-714A-4BB0-AA8F-3A7814ABB96F" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="5FED2E86-A72D-47C6-AF2D-68A1865032A3" scopeBarBackgroundImage="5FED2E86-A72D-47C6-AF2D-68A1865032A3" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="12214381-5C58-4F96-BEE9-D460F2968674" scopeBarBackgroundImage="12214381-5C58-4F96-BEE9-D460F2968674" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -9768,6 +9768,7 @@
                         <outlet property="contactNoLabel" destination="bp3-R6-ub9" id="q6W-W3-V9U"/>
                         <outlet property="experienceLbael" destination="uxz-bo-IRQ" id="oek-dS-D2c"/>
                         <outlet property="imgProfile" destination="DVO-ed-IkY" id="OZY-6v-yVw"/>
+                        <outlet property="locationLabel" destination="D56-n9-ea9" id="X8i-22-wvE"/>
                         <outlet property="namLabel" destination="XMB-pz-kKJ" id="p8G-On-PFC"/>
                         <outlet property="noOfConsultationsLabel" destination="vIa-Ke-qys" id="XAQ-5K-eZq"/>
                         <outlet property="ratingLabel" destination="Vl0-io-mID" id="BAw-ke-AgV"/>
@@ -13921,8 +13922,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1.png" width="688" height="853"/>
-        <image name="5FED2E86-A72D-47C6-AF2D-68A1865032A3" width="310" height="78">
+        <image name="02A1EEF2-714A-4BB0-AA8F-3A7814ABB96F" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15587,7 +15587,8 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="7A733470-CCD1-450D-8B24-0F63FCE73EBF" width="310" height="78">
+        <image name="1.png" width="688" height="853"/>
+        <image name="12214381-5C58-4F96-BEE9-D460F2968674" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
