@@ -736,7 +736,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="557D8038-F77D-4EF8-A036-06E19342056F" scopeBarBackgroundImage="557D8038-F77D-4EF8-A036-06E19342056F" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="DA8C01A5-E5DD-4CF7-A64C-A9425807373F" scopeBarBackgroundImage="DA8C01A5-E5DD-4CF7-A64C-A9425807373F" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -749,7 +749,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="4FEF582E-D8BB-4ABA-B9F2-ED0D62E8AFA5" scopeBarBackgroundImage="4FEF582E-D8BB-4ABA-B9F2-ED0D62E8AFA5" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="025729D8-EEA4-412D-9D42-2BF2A4F87C54" scopeBarBackgroundImage="025729D8-EEA4-412D-9D42-2BF2A4F87C54" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -3158,21 +3158,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AWb-Jb-uDc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6897" y="4356"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="mvg-zc-V2g">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SHJ-Aa-EAb" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h1I-eL-0Vo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6zM-n5-L0T" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2246" y="173"/>
         </scene>
         <!--Home-->
         <scene sceneID="2pK-hs-oxh">
@@ -13284,8 +13269,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1.png" width="688" height="853"/>
-        <image name="4FEF582E-D8BB-4ABA-B9F2-ED0D62E8AFA5" width="310" height="78">
+        <image name="025729D8-EEA4-412D-9D42-2BF2A4F87C54" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -14950,7 +14934,8 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="557D8038-F77D-4EF8-A036-06E19342056F" width="310" height="78">
+        <image name="1.png" width="688" height="853"/>
+        <image name="DA8C01A5-E5DD-4CF7-A64C-A9425807373F" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -16685,7 +16670,7 @@ AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
         <image name="view" width="48" height="48"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Ut8-Vp-X0m"/>
         <segue reference="Q50-MZ-tRA"/>
+        <segue reference="NoA-rF-ykh"/>
     </inferredMetricsTieBreakers>
 </document>
