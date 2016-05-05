@@ -62,10 +62,13 @@
 -(BOOL)isValid{
     BOOL valid = YES;
     NSString *messageString = @"";
+    
     if([self.currentPasswordTextFiels.text empty]){
-        valid = NO;
-        [self.currentPasswordTextFiels becomeFirstResponder];
-        messageString = @"Please enter current password";
+        if(!self.isFromNewPassord){
+            valid = NO;
+            [self.currentPasswordTextFiels becomeFirstResponder];
+            messageString = @"Please enter current password";
+        }
     }
     else if([self.newpwdTextField.text empty]){
         valid = NO;
