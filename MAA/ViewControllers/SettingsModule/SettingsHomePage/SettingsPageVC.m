@@ -9,10 +9,11 @@
 #import "FeedBackVC.h"
 #import "SettingsPageVC.h"
 #import "AccountSettingVC.h"
-#import "doctorReviewsViewController.h"
+#import "WebViewController.h"
 #import "myHealthProfileVC.h"
 #import "AboutViewController.h"
 #import "InvoiceViewController.h"
+#import "doctorReviewsViewController.h"
 #import "CLFacebookHandler/FacebookWrapper.h"
 
 
@@ -194,4 +195,14 @@
     [[FacebookWrapper standardWrapper] logoutFBSession];
     [[NSNotificationCenter defaultCenter] postNotificationName:ShowLogInScreenObserver object:nil];
  }
+
+#pragma mark-Tap Gesture Action
+
+- (IBAction)termsAndConditionsTapgestureAction:(UITapGestureRecognizer *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    WebViewController *webViewController = [storyboard instantiateViewControllerWithIdentifier:@"WebViewController"];
+    webViewController.urlString = @"https://google.com";
+    webViewController.headingString = @"Terms and Conditions";
+    [self.navigationController pushViewController:webViewController animated:YES];
+}
 @end
