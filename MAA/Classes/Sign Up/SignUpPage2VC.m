@@ -396,5 +396,13 @@
     return YES;
 }
 
+- (IBAction)tickButtonAction:(UIButton *)sender {
+    if([sender isSelected]){
+        sender.selected = NO;
+    }
+    else{
+        sender.selected = YES;
+    }
+}
 
 @end
