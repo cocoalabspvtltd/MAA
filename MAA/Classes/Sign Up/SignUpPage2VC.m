@@ -214,6 +214,10 @@
         messageString = @"Password and confirm password are not same";
         valid = NO;
     }
+    else if (![self.termsAndConditionsButton isSelected]){
+        messageString = @"Please accept terms and conditions";
+        valid = NO;
+    }
     if(![messageString empty]){
         UIAlertView *validationAlert = [[UIAlertView alloc] initWithTitle:AppName message:messageString delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
         [validationAlert show];

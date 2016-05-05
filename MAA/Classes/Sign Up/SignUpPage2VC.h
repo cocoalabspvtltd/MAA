@@ -26,6 +26,7 @@
 - (IBAction)funcButtonBack:(id)sender;
 
 - (IBAction)funcButtonSubmit:(id)sender;
+@property (weak, nonatomic) IBOutlet UIButton *termsAndConditionsButton;
 
 
 @end

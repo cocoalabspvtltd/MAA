@@ -252,23 +252,6 @@
                                     <segue destination="USm-td-k5Z" kind="show" id="hsg-F9-m0F"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MwB-QO-92Y">
-                                <rect key="frame" x="75" y="545" width="450" height="45"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Click here to register as a practising doctor in MAA">
-                                        <attributes>
-                                            <color key="NSColor" red="0.29547427398989901" green="0.29547427398989901" blue="0.29547427398989901" alpha="1" colorSpace="calibratedRGB"/>
-                                            <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yPU-3h-upM" userLabel="Button - Register">
-                                <rect key="frame" x="75" y="545" width="450" height="45"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="69K-hf-QD7">
                                 <rect key="frame" x="15" y="30" width="30" height="30"/>
                                 <constraints>
@@ -285,22 +268,13 @@
                         <constraints>
                             <constraint firstItem="ILd-gM-WNr" firstAttribute="top" secondItem="saF-LT-fNp" secondAttribute="bottom" constant="17" id="0hv-Ka-TTr"/>
                             <constraint firstItem="saF-LT-fNp" firstAttribute="top" secondItem="JhO-FW-fyf" secondAttribute="bottom" constant="27" id="2oE-i3-AWa"/>
-                            <constraint firstItem="S01-sJ-7r7" firstAttribute="top" secondItem="yPU-3h-upM" secondAttribute="bottom" constant="10" id="5gM-LY-BT4"/>
                             <constraint firstItem="69K-hf-QD7" firstAttribute="leading" secondItem="de6-vE-Gp0" secondAttribute="leading" constant="15" id="C9G-Hx-lRh"/>
-                            <constraint firstItem="MwB-QO-92Y" firstAttribute="centerX" secondItem="de6-vE-Gp0" secondAttribute="centerX" id="EUO-CZ-Nuz"/>
                             <constraint firstItem="JhO-FW-fyf" firstAttribute="top" secondItem="QnP-h3-Y46" secondAttribute="bottom" constant="68" id="HFS-JO-zpr"/>
-                            <constraint firstItem="yPU-3h-upM" firstAttribute="height" secondItem="de6-vE-Gp0" secondAttribute="height" multiplier="0.0666" constant="5.0399999999999991" id="HvN-Td-6yQ"/>
                             <constraint firstItem="kU6-YI-pMN" firstAttribute="top" secondItem="ILd-gM-WNr" secondAttribute="bottom" constant="28" id="Saa-7Q-E75"/>
-                            <constraint firstItem="yPU-3h-upM" firstAttribute="centerY" secondItem="MwB-QO-92Y" secondAttribute="centerY" id="Tmc-cc-HLq"/>
-                            <constraint firstItem="S01-sJ-7r7" firstAttribute="top" secondItem="MwB-QO-92Y" secondAttribute="bottom" constant="10" id="YX7-Xv-X6U"/>
                             <constraint firstItem="saF-LT-fNp" firstAttribute="centerX" secondItem="JhO-FW-fyf" secondAttribute="centerX" id="Yqc-yV-bjF"/>
                             <constraint firstItem="kU6-YI-pMN" firstAttribute="centerX" secondItem="ILd-gM-WNr" secondAttribute="centerX" id="b4d-A2-iew"/>
-                            <constraint firstItem="MwB-QO-92Y" firstAttribute="height" secondItem="de6-vE-Gp0" secondAttribute="height" multiplier="0.0666" constant="5.0399999999999991" id="bYp-1S-HU9"/>
                             <constraint firstItem="JhO-FW-fyf" firstAttribute="centerX" secondItem="de6-vE-Gp0" secondAttribute="centerX" id="eZR-Fb-eNa"/>
-                            <constraint firstItem="yPU-3h-upM" firstAttribute="centerX" secondItem="de6-vE-Gp0" secondAttribute="centerX" id="eog-qj-liD"/>
-                            <constraint firstItem="MwB-QO-92Y" firstAttribute="width" secondItem="de6-vE-Gp0" secondAttribute="width" multiplier="0.6666" constant="50.019999999999982" id="ew2-Ew-l2T"/>
                             <constraint firstItem="ILd-gM-WNr" firstAttribute="centerX" secondItem="saF-LT-fNp" secondAttribute="centerX" id="iLO-Cn-wur"/>
-                            <constraint firstItem="yPU-3h-upM" firstAttribute="width" secondItem="de6-vE-Gp0" secondAttribute="width" multiplier="0.6666" constant="50.019999999999982" id="r4O-Wf-7co"/>
                             <constraint firstItem="69K-hf-QD7" firstAttribute="top" secondItem="QnP-h3-Y46" secondAttribute="bottom" constant="10" id="vYM-9W-G7c"/>
                         </constraints>
                     </view>
@@ -736,7 +710,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="A70C408C-CC27-45D8-AB7B-78CCAF12A0B4" scopeBarBackgroundImage="A70C408C-CC27-45D8-AB7B-78CCAF12A0B4" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="4B16602C-D580-4495-BB58-CD831EA41A31" scopeBarBackgroundImage="4B16602C-D580-4495-BB58-CD831EA41A31" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -749,7 +723,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="769B2B63-CC9A-4921-BF82-9CAA74029EAE" scopeBarBackgroundImage="769B2B63-CC9A-4921-BF82-9CAA74029EAE" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="5DD7520B-D271-4AB3-B854-3D86270ED124" scopeBarBackgroundImage="5DD7520B-D271-4AB3-B854-3D86270ED124" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -2838,6 +2812,7 @@
                     <connections>
                         <outlet property="buttonBack" destination="aIc-DQ-8nF" id="FId-hN-cXG"/>
                         <outlet property="buttonSubmit" destination="p2F-PJ-PrN" id="wNg-TX-BtN"/>
+                        <outlet property="termsAndConditionsButton" destination="WUA-uK-QTC" id="qMg-x5-run"/>
                         <outlet property="textFieldDateOfBirth" destination="gMX-L8-9yd" id="tum-Li-HTA"/>
                         <outlet property="textFieldGender" destination="i8z-Ve-98F" id="08j-Uf-dWO"/>
                         <outlet property="textFieldPassword" destination="gLd-Bx-r9W" id="6MB-m6-Ld1"/>
@@ -13273,7 +13248,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="769B2B63-CC9A-4921-BF82-9CAA74029EAE" width="310" height="78">
+        <image name="4B16602C-D580-4495-BB58-CD831EA41A31" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -14938,7 +14913,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="A70C408C-CC27-45D8-AB7B-78CCAF12A0B4" width="310" height="78">
+        <image name="5DD7520B-D271-4AB3-B854-3D86270ED124" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
