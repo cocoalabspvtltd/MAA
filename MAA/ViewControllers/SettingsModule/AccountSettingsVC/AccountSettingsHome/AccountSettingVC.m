@@ -6,11 +6,13 @@
 //  Copyright © 2016 Cocoa Labs. All rights reserved.
 //
 #import "CountriesVC.h"
+#import "AccountResetPWVC.h"
 #import "AccountSettingVC.h"
 
 @interface AccountSettingVC ()<CountriesVCDelegate,UITextFieldDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 @property (nonatomic, assign) BOOL isFromCity;
-@property (nonatomic,assign) BOOL isFromLocality;
+@property (nonatomic, assign) BOOL isFromLocality;
+@property (nonatomic, assign) BOOL isFromCreateNewPassword;
 @property (nonatomic, strong) NSString *cityIdString;
 @end
 
@@ -58,11 +60,6 @@
     self.isFromCity = NO;
     self.isFromLocality = NO;
     self.cityIdString = @"";
-    BOOL isFBlogIn = [[NSUserDefaults standardUserDefaults] boolForKey:isfaceBookLogIn];
-    if(isFBlogIn){
-        self.changeMyPasswordLabel.hidden = YES;
-        self.changeMyPasswordButton.hidden = YES;
-    }
 }
 -(void)datePickerValueChanged
 {
@@ -148,6 +145,15 @@
         self.dateOfBirthTextField.text = [profileData valueForKey:@"dob"];
     }
     
+    BOOL isFBlogIn = [[NSUserDefaults standardUserDefaults] boolForKey:isfaceBookLogIn];
+    if(isFBlogIn){
+        if([[profileData valueForKey:@"has_password"] isEqualToNumber:[NSNumber numberWithInt:0]]){
+            self.isFromCreateNewPassword = YES;
+            self.changeMyPasswordLabel.text = @"Create Password";
+        }
+        
+    }
+    
 }
 
 #pragma mark - Button Actions
@@ -174,6 +180,11 @@
 }
 
 - (IBAction)changeMypassword:(id)sender {
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    AccountResetPWVC *accountResetPasswordVC = [storyboard instantiateViewControllerWithIdentifier:@"changePasswordVC"];
+    accountResetPasswordVC.isFromNewPassord = self.isFromCreateNewPassword;
+    [self.navigationController pushViewController:accountResetPasswordVC animated:YES];
 }
 - (IBAction)localityButtonAction:(UIButton *)sender {
     self.isFromLocality = YES;

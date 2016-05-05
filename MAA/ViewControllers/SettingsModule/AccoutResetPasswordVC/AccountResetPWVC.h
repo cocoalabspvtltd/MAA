@@ -13,5 +13,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *newpwdTextField;
 
 @property (weak, nonatomic) IBOutlet UITextField *retyPasswordTextField;
-
+@property (nonatomic, assign) BOOL isFromNewPassord;
 @end

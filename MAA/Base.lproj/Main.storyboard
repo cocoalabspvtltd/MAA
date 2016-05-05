@@ -742,7 +742,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Ne-of-NIS">
                                         <rect key="frame" x="10" y="9" width="580" height="70"/>
                                         <subviews>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="17CE06A1-70C0-4DD3-B3BA-CD0D2BC47460" scopeBarBackgroundImage="17CE06A1-70C0-4DD3-B3BA-CD0D2BC47460" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Location" backgroundImage="2691BCE0-1EFB-403E-8B91-BB95A8F43AD4" scopeBarBackgroundImage="2691BCE0-1EFB-403E-8B91-BB95A8F43AD4" translatesAutoresizingMaskIntoConstraints="NO" id="5Ed-Z4-dJi" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="0.0" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="Zke-6k-eV7"/>
@@ -755,7 +755,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="380" height="35"/>
                                                 </variation>
                                             </searchBar>
-                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="9DA29FF9-95CE-406B-9A4E-C2B1C321EC25" scopeBarBackgroundImage="9DA29FF9-95CE-406B-9A4E-C2B1C321EC25" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
+                                            <searchBar contentMode="redraw" misplaced="YES" placeholder="Search Speciality" backgroundImage="675820BE-97C9-45ED-B69F-F48255A93E8B" scopeBarBackgroundImage="675820BE-97C9-45ED-B69F-F48255A93E8B" translatesAutoresizingMaskIntoConstraints="NO" id="5BB-w8-BfK" userLabel="Search Bar Location">
                                                 <rect key="frame" x="0.0" y="35" width="580" height="35"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="35" id="A7b-gW-Elr"/>
@@ -6277,7 +6277,6 @@
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="changeMypassword:" destination="SXv-50-10I" eventType="touchUpInside" id="riO-AN-bKu"/>
-                                                                    <segue destination="fdF-a5-GaE" kind="show" id="o1r-WN-yKu"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -6415,7 +6414,7 @@
                         <viewControllerLayoutGuide type="bottom" id="4rd-7F-veq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="C6t-SI-zc5">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gK-P0-AN7">
@@ -6458,7 +6457,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z8F-FL-4ye">
-                                <rect key="frame" x="0.0" y="660" width="600" height="40"/>
+                                <rect key="frame" x="0.0" y="560" width="600" height="40"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.27058823529411763" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="TJB-wz-u1y"/>
@@ -6540,6 +6539,8 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="changeMyPasswordLabel" destination="Rxr-mU-fRu" id="OUw-ay-bgg"/>
+                        <outlet property="currentPasswordHeightConstraint" destination="FRa-aE-YQG" id="9Qg-ds-nTq"/>
                         <outlet property="currentPasswordTextFiels" destination="Cmm-KR-IEU" id="htR-xB-fCK"/>
                         <outlet property="newpwdTextField" destination="AXJ-Dj-dT3" id="hjn-ZA-2v9"/>
                         <outlet property="retyPasswordTextField" destination="G4u-t6-Qqq" id="aE7-1p-Zey"/>
@@ -13942,7 +13943,7 @@
     </scenes>
     <resources>
         <image name="1.png" width="688" height="853"/>
-        <image name="17CE06A1-70C0-4DD3-B3BA-CD0D2BC47460" width="310" height="78">
+        <image name="2691BCE0-1EFB-403E-8B91-BB95A8F43AD4" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
@@ -15607,7 +15608,7 @@ AYOjAAGDpgABg6sAAYO6AAGDvgABg8UAAYPNAAGD2gABg98AAYPhAAGD4wABg+gAAYPwAAGD8wABg/gA
 AYQAAAGEAwABhBUAAYQYAAGEHQAAAAAAAAQBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAYQfA
 </mutableData>
         </image>
-        <image name="9DA29FF9-95CE-406B-9A4E-C2B1C321EC25" width="310" height="78">
+        <image name="675820BE-97C9-45ED-B69F-F48255A93E8B" width="310" height="78">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw

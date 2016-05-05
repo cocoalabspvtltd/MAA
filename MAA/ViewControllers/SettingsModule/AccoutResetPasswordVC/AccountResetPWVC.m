@@ -10,6 +10,8 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @interface AccountResetPWVC ()<UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *changeMyPasswordLabel;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *currentPasswordHeightConstraint;
 
 @end
 
@@ -17,9 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self initialisation];
     // Do any additional setup after loading the view.
 }
 
+-(void)initialisation{
+    if(self.isFromNewPassord){
+        self.changeMyPasswordLabel.text = @"Create Password";
+        self.currentPasswordHeightConstraint.constant = 0;
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
